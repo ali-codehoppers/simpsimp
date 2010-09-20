@@ -7,6 +7,10 @@ body {
 	line-height:20px;
 	background: #506f8e url(../Images/bg_repeat.jpg) repeat-x;
 }
+body img
+{
+    border:0px;
+}
 h2 {
 	font: normal 20px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 	color: #145b86;
@@ -517,7 +521,12 @@ div.navBarHover
 	padding-left:50px;
 	padding-bottom:10px;
 }
-
+#ourProducts
+{
+	padding-top:30px;
+	padding-left:0px;
+	padding-bottom:10px;    
+}
 #links
 {
 	padding-top:15px;

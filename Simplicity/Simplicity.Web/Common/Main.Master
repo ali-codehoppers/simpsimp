@@ -16,7 +16,11 @@
         <div id="container">
 	        <div id="header">
 		        <div>
-			        <div class="headerLinksButton"><a href="#"><img src="images/btn_go.jpg" style="margin-bottom:1px;" alt="" width="25" height="24" border="0" /></a></div>	
+			        <div class="headerLinksButton">
+                        <a href="#">
+                            <asp:Image runat="server" style="margin-bottom:1px;" ImageUrl="~/Images/btn_go.jpg" />
+                        </a>
+                    </div>	
 			        <div class="headerTextField"><input name="textfield23" type="text" class="search_field" id="textfield23" /></div>	
 			        <div class="headerLinks"><a href="#">Contact Us</a></div>	
 			        <div class="headerLinksSeparator">|</div>	
@@ -29,7 +33,9 @@
 			        <div class="headerLinks"><a href="#">Trolley</a></div>	
 			        <div class="headerLinksSeparator">|</div>	
 			        <div class="headerLinks"><a href="#">Wish List</a></div>	
-			        <div style="float:right;"><img src="images/icon_shopping.jpg" alt=""/></div>
+			        <div style="float:right;">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/icon_shopping.jpg" />
+                    </div>
 			        <div class="clearFloat"></div>
 		        </div>
 		        <div style="padding-top:50px; ">
@@ -37,8 +43,11 @@
 			        <div class="floatRight"><a href="#"><div class="navBar" style="width:108px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Services</div></a></div>
 			        <div class="floatRight"><a href="#"><div class="navBar" style="width:111px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Company</div></a></div>
 			        <div class="floatRight"><a href="#"><div class="navBar" style="width:110px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Solutions</div></a></div>
-			        <div class="floatRight"><a href="#"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Products</div></a></div>
-			        <div class="floatRight"><a href="#"><div class="navBar" style="width:108px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Home</div></a></div>
+			        <div class="floatRight">
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Products/ProductsHome.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Products</div></asp:HyperLink></div>
+			        <div class="floatRight">
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx"><div class="navBar" style="width:108px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Home</div></asp:HyperLink>
+                    </div>
 			        <div class="clearFloat"></div>
 		        </div>
 	        </div>
