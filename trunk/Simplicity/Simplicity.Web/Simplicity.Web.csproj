@@ -142,9 +142,11 @@
     <Content Include="Images\watch_demo1.jpg" />
     <Content Include="Images\watch_demo_hns.jpg" />
     <Content Include="Images\welcome_01.jpg" />
+    <Content Include="Products\ProductsHome.aspx" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
     <Content Include="Scripts\jquery.cycle.all.min.js" />
     <Content Include="Scripts\jquery.cycle.min.js" />
+    <Content Include="Styles\products.css" />
     <Content Include="Styles\simplicity_css.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -168,6 +170,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\ProductsHome.aspx.cs">
+      <DependentUpon>ProductsHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\ProductsHome.aspx.designer.cs">
+      <DependentUpon>ProductsHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
