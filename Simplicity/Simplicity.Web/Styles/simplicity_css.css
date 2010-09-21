@@ -692,3 +692,11 @@ a.moreDetails:hover
     border-left:1px dotted #cccccc;
     width:120px;
 }
+.browserlist
+{
+    padding: 5px;
+    float: left;
+    text-align: center;
+    width: 130px;
+    height:160px;
+}
