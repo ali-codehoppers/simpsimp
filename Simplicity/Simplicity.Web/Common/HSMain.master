@@ -1,22 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true"
-    CodeBehind="Default.aspx.cs" Inherits="Simplicity.Web.Default" %>
-
-<script runat="server">
-
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-</script>
+﻿<%@ Master Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="HSMain.master.cs" Inherits="Simplicity.Web.Common.HSMain" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
-    <script type="text/javascript" src="Scripts/jquery.cycle.all.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.slideShow').cycle({
-                fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-            });
-        });
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="contentTop">
@@ -48,7 +31,7 @@
                 </div>
                 <div id="nsecnavbar">
                     <div id="homeicon" class="floatLeft">
-                        <img src="images/icon_home_hns.jpg" alt="" width="38" height="30" /><br />
+                        <img src="Images/icon_home_hns.jpg" alt="" width="38" height="30" /><br />
                         <a href="#" class="icon_link">Home</a>
                     </div>
                     <div id="siteicon" class="floatLeft">
@@ -73,32 +56,7 @@
                 </div>
             </div>
             <div class="text">
-                <p>
-                    Simplicity for business offers a suits of business software which require nothing
-                    more than a web browser or mobile phone to access.</p>
-                <p>
-                    This Simplicity Software as a Service (SaaS) suits is packed with 14 specialist
-                    applications to help clients with a typica; turnover of 1m-20m to co-ordinate their
-                    whole business.</p>
-                <p>
-                    Simplicity for business offers a suits of business software which require nothing
-                    more than a web browser or mobile phone to access.</p>
-                <p>
-                    This Simplicity Software as a Service (SaaS) suits is packed with 14 specialist
-                    applications to help clients with a typica; turnover of 1m-20m to co-ordinate their
-                    whole business.Simplicity for business offers a suits of business software which
-                    require nothing more than a web browser or mobile phone to access.</p>
-                <p>
-                    This Simplicity Software as a Service (SaaS) suits is packed with 14 specialist
-                    applications to help clients with a typica; turnover of 1m-20m to co-ordinate their
-                    whole business.This Simplicity Software as a Service (SaaS) suits is packed with
-                    14 specialist applications to help clients with a typica; turnover of 1m-20m to
-                    co-ordinate their whole business.Simplicity for business offers a suits of business
-                    software which require nothing more than a web browser or mobile phone to access.</p>
-                <p>
-                    This Simplicity Software as a Service (SaaS) suits is packed with 14 specialist
-                    applications to help clients with a typica; turnover of 1m-20m to co-ordinate their
-                    whole business.</p>
+                <asp:ContentPlaceHolder ID="TextContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>                
             </div>
         </div>
         <div id="product">
