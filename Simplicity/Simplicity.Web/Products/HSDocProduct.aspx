@@ -3,16 +3,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TextContentPlaceHolder" runat="server">
     <p>
-        Products - Simplicity H&S Live - H&S documentation - easy creation, filling and
-        logging of all those vital health & safety files.
+        Products - Simplicity H&amp;S Live - H&amp;S documentation - easy creation, filling and
+        logging of all those vital health &amp; safety files.
     </p>
     <ul>
         <li>Record insurance details</li>
-        <li>Create & fill COSHH documents</li>
-        <li>Create & fill method statments</li>
-        <li>Create & fill risk assessments</li>
-        <li>Create & fill PPE sheets</li>
-        <li>Create & fill permits to work</li>
+        <li>Create &amp; fill COSHH documents</li>
+        <li>Create &amp; fill method statments</li>
+        <li>Create &amp; fill risk assessments</li>
+        <li>Create &amp; fill PPE sheets</li>
+        <li>Create &amp; fill permits to work</li>
         <li>PAT tests</li>
         <li>Office compliance</li>
         <li>Record construction industry compliance</li>

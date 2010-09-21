@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TextContentPlaceHolder" runat="server">
     <p>
-        Products - Simplicity H&S Live - Site Safety - helps you ensure that all sites comply
+        Products - Simplicity H&amp;S Live - Site Safety - helps you ensure that all sites comply
         with health and safety, be they your offices or project locations.</p>
     <ul>
         <li>Flag awaiting compliance documents and inspections</li>
@@ -17,6 +17,6 @@
         <li>Maintain first aiders</li>
         <li>Maintain fire officers</li>
         <li>Maintain fire drill information</li>
-        <li>Log 'no access' & notify customer</li>
+        <li>Log 'no access' &amp; notify customer</li>
     </ul>
 </asp:Content>
