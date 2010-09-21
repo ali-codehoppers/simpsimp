@@ -142,7 +142,11 @@
     <Content Include="Images\watch_demo1.jpg" />
     <Content Include="Images\watch_demo_hns.jpg" />
     <Content Include="Images\welcome_01.jpg" />
+    <Content Include="Products\HSDocProduct.aspx" />
+    <Content Include="Products\HSHarwareProduct.aspx" />
+    <Content Include="Products\HSPriceProduct.aspx" />
     <Content Include="Products\HSProduct.aspx" />
+    <Content Include="Products\HSSaftyProduct.aspx" />
     <Content Include="Products\ProductsHome.aspx" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
     <Content Include="Scripts\jquery.cycle.all.min.js" />
@@ -186,12 +190,40 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Products\HSDocProduct.aspx.cs">
+      <DependentUpon>HSDocProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HSDocProduct.aspx.designer.cs">
+      <DependentUpon>HSDocProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\HSHarwareProduct.aspx.cs">
+      <DependentUpon>HSHarwareProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HSHarwareProduct.aspx.designer.cs">
+      <DependentUpon>HSHarwareProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\HSPriceProduct.aspx.cs">
+      <DependentUpon>HSPriceProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HSPriceProduct.aspx.designer.cs">
+      <DependentUpon>HSPriceProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Products\HSProduct.aspx.cs">
       <DependentUpon>HSProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Products\HSProduct.aspx.designer.cs">
       <DependentUpon>HSProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\HSSaftyProduct.aspx.cs">
+      <DependentUpon>HSSaftyProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HSSaftyProduct.aspx.designer.cs">
+      <DependentUpon>HSSaftyProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products\ProductsHome.aspx.cs">
       <DependentUpon>ProductsHome.aspx</DependentUpon>
