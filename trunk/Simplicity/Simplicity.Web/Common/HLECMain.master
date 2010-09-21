@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="HLECMain.master.cs" Inherits="Simplicity.Web.Common.HLECMain" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+<div id="contentTop">
+        <div class="floatLeft leftNavBarHNS">
+            <div>
+                <a href="index.html" id="watch_hns"></a>
+            </div>
+            <div>
+                <a href="Technology.html" id="buy_hns"></a>
+            </div>
+            <div>
+                <a href="features.html" id="try_hns"></a>
+            </div>
+            <div>
+                <a href="download.html" id="call_hns"></a>
+            </div>
+        </div>
+        <div id="rightpart" class="floatRight">
+            <div id="subdirectory" class="bottom_border">
+                <a href="#" class="login">Products</a> &gt;&gt; <a href="#" class="login">Handy LEC</a>
+            </div>
+            <div id="secnavbar" class="floatLeft">
+                <div id="icon1" class="floatLeft">
+                <h2>
+                    <span class="stylecolor">Simplicity</span>
+                    <br />
+                    Handy LEC</h2>
+                </div>
+                <div id="nsecnavbar">
+                    <div id="homeicon" class="floatLeft">
+                        <asp:Image ID="Image1" ImageUrl="../Images/icon_home_hns.jpg" width="38" height="30" runat="server"/><br />
+                        <a href="../Products/EASProduct.aspx" class="icon_link">Home</a>
+                    </div>
+                    <div id="priceicon" class="floatLeft">
+                        <asp:Image ID="Image4" ImageUrl="../images/icon_price.jpg" alt="" class="imgdim" runat="server"/><br />
+                        <a href="../Products/HSPriceProduct.aspx" class="icon_link">Prices/Editions</a>
+                    </div>
+                    <div id="hardicon" class="floatLeft">
+                        <asp:Image ID="Image5" ImageUrl="../images/icon_clientsystem_requirement.jpg" class="imgdim" runat="server"/><br />
+                        <a href="../Products/HSHarwareProduct.aspx" class="icon_link">Hardware Specs</a>
+                    </div>
+                    <div>
+                        <asp:Image ID="Image6" ImageUrl="../images/subheading_bar.jpg" height="21" runat="server"/>
+                    </div>
+                </div>
+            </div>
+            <div class="text">
+                <asp:ContentPlaceHolder ID="TextContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>                
+            </div>
+        </div>
+        <div id="product">
+            <div>
+                <div class="rightproduct""><a href="#">
+                    <asp:Image ID="Image7" ImageUrl="../images/icon_img_1.jpg" width="124" height="97" border="0" runat="server"/></a></div>
+                <div class="leftproduct"><a href="#">
+                    <asp:Image ID="Image8" ImageUrl="../images/icon_img_2.jpg" width="124" height="97" border="0" runat="server"/></a></div>
+           </div>
+            <div>
+                 <div class="rightproduct"><a href="#">
+                    <asp:Image ID="Image9" ImageUrl="../images/icon_img_3.jpg" width="109" height="97" border="0" runat="server"/></a></div>
+                <div class="leftproduct"><a href="#">
+                    <asp:Image ID="Image10" ImageUrl="../images/icon_img_4.jpg" width="110" height="97" border="0" runat="server"/></a></div>
+            </div>
+            <div>
+                <div class="rightprodbottom"><a href="#">
+                    <asp:Image ID="Image11" ImageUrl="../images/icon_img_5.jpg" width="124" height="97" border="0" runat="server"/></a></div>
+                <div class="leftprodbottom"><a href="#">
+                    <asp:Image ID="Image12" ImageUrl="../images/icon_img_6.jpg" width="124" height="97" border="0" runat="server"/></a></div>
+           </div>
+        </div>
+        <div class="clearFloat">
+        </div>
+    </div>
+</asp:Content>
