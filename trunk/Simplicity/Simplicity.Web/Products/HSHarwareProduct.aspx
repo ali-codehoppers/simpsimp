@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TextContentPlaceHolder" runat="server">
     <p>
-        Products - Simplicity H&S live - I.T Checklist
+        Products - Simplicity H&amp;S live - I.T Checklist
     </p>
     <p>
         Click on the options below to view the Browsers and Information needed to avail
