@@ -50,6 +50,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Common\LeftMenu.master" />
+    <Content Include="Common\Main.Master" />
     <Content Include="Default.aspx" />
     <Content Include="Images\01.jpg" />
     <Content Include="Images\02.jpg" />
@@ -142,12 +144,20 @@
     <Content Include="Images\watch_demo1.jpg" />
     <Content Include="Images\watch_demo_hns.jpg" />
     <Content Include="Images\welcome_01.jpg" />
-    <Content Include="Products\HSDocProduct.aspx" />
-    <Content Include="Products\HSHarwareProduct.aspx" />
-    <Content Include="Products\HSPriceProduct.aspx" />
-    <Content Include="Products\HSProduct.aspx" />
-    <Content Include="Products\HSSaftyProduct.aspx" />
-    <Content Include="Products\ProductsHome.aspx" />
+    <Content Include="Products\EAS\Details.aspx" />
+    <Content Include="Products\EAS\Home.aspx" />
+    <Content Include="Products\HandyGas\Details.aspx" />
+    <Content Include="Products\HandyGas\Home.aspx" />
+    <Content Include="Products\HandyLEC\Details.aspx" />
+    <Content Include="Products\HandyLEC\Home.aspx" />
+    <Content Include="Products\HandyServe\Details.aspx" />
+    <Content Include="Products\HandyServe\Home.aspx" />
+    <Content Include="Products\HardwareSpecifications.aspx" />
+    <Content Include="Products\Home.aspx" />
+    <Content Include="Products\HS\Details.aspx" />
+    <Content Include="Products\HS\Documentation.aspx" />
+    <Content Include="Products\HS\Home.aspx" />
+    <Content Include="Products\HS\SiteSafety.aspx" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
     <Content Include="Scripts\jquery.cycle.all.min.js" />
     <Content Include="Scripts\jquery.cycle.min.js" />
@@ -162,13 +172,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\HSMain.master.cs">
-      <DependentUpon>HSMain.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Common\HSMain.master.designer.cs">
-      <DependentUpon>HSMain.master</DependentUpon>
-    </Compile>
     <Compile Include="Common\LeftMenu.master.cs">
       <DependentUpon>LeftMenu.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -183,6 +186,13 @@
     <Compile Include="Common\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="Common\Products.master.cs">
+      <DependentUpon>Products.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Products.master.designer.cs">
+      <DependentUpon>Products.master</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -190,59 +200,110 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Products\HSDocProduct.aspx.cs">
-      <DependentUpon>HSDocProduct.aspx</DependentUpon>
+    <Compile Include="Products\EAS\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Products\HSDocProduct.aspx.designer.cs">
-      <DependentUpon>HSDocProduct.aspx</DependentUpon>
+    <Compile Include="Products\EAS\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Products\HSHarwareProduct.aspx.cs">
-      <DependentUpon>HSHarwareProduct.aspx</DependentUpon>
+    <Compile Include="Products\EAS\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Products\HSHarwareProduct.aspx.designer.cs">
-      <DependentUpon>HSHarwareProduct.aspx</DependentUpon>
+    <Compile Include="Products\EAS\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Products\HSPriceProduct.aspx.cs">
-      <DependentUpon>HSPriceProduct.aspx</DependentUpon>
+    <Compile Include="Products\HandyGas\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Products\HSPriceProduct.aspx.designer.cs">
-      <DependentUpon>HSPriceProduct.aspx</DependentUpon>
+    <Compile Include="Products\HandyGas\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Products\HSProduct.aspx.cs">
-      <DependentUpon>HSProduct.aspx</DependentUpon>
+    <Compile Include="Products\HandyGas\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Products\HSProduct.aspx.designer.cs">
-      <DependentUpon>HSProduct.aspx</DependentUpon>
+    <Compile Include="Products\HandyGas\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Products\HSSaftyProduct.aspx.cs">
-      <DependentUpon>HSSaftyProduct.aspx</DependentUpon>
+    <Compile Include="Products\HandyLEC\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Products\HSSaftyProduct.aspx.designer.cs">
-      <DependentUpon>HSSaftyProduct.aspx</DependentUpon>
+    <Compile Include="Products\HandyLEC\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Products\ProductsHome.aspx.cs">
-      <DependentUpon>ProductsHome.aspx</DependentUpon>
+    <Compile Include="Products\HandyLEC\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Products\ProductsHome.aspx.designer.cs">
-      <DependentUpon>ProductsHome.aspx</DependentUpon>
+    <Compile Include="Products\HandyLEC\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\HandyServe\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HandyServe\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\HandyServe\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HandyServe\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\HardwareSpecifications.aspx.cs">
+      <DependentUpon>HardwareSpecifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HardwareSpecifications.aspx.designer.cs">
+      <DependentUpon>HardwareSpecifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\HS\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HS\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\HS\Documentation.aspx.cs">
+      <DependentUpon>Documentation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HS\Documentation.aspx.designer.cs">
+      <DependentUpon>Documentation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\HS\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HS\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\HS\SiteSafety.aspx.cs">
+      <DependentUpon>SiteSafety.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\HS\SiteSafety.aspx.designer.cs">
+      <DependentUpon>SiteSafety.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Common\Main.Master" />
+    <Content Include="Common\Products.master" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Common\HSMain.master" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Common\LeftMenu.master" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
