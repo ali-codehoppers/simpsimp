@@ -165,6 +165,13 @@
     <Compile Include="Common\HSMain.master.designer.cs">
       <DependentUpon>HSMain.master</DependentUpon>
     </Compile>
+    <Compile Include="Common\LeftMenu.master.cs">
+      <DependentUpon>LeftMenu.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\LeftMenu.master.designer.cs">
+      <DependentUpon>LeftMenu.master</DependentUpon>
+    </Compile>
     <Compile Include="Common\Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -200,6 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\HSMain.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\LeftMenu.master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

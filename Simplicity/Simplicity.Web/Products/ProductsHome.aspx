@@ -1,15 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="ProductsHome.aspx.cs" Inherits="Simplicity.Web.Products.ProductsHome" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/LeftMenu.Master" AutoEventWireup="true" CodeBehind="ProductsHome.aspx.cs" Inherits="Simplicity.Web.Products.ProductsHome" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
     <link href="../Styles/products.css" rel="stylesheet" type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
-    <div id="contentTop">
-		<div class="floatLeft leftNavBar">
-			<div> <a href="index.html" id="watch"> </a> </div>
-			<div> <a href="Technology.html" id="buy"> </a> </div>
-			<div> <a href="features.html" id="try"> </a> </div>
-			<div> <a href="download.html" id="call"> </a> </div>
-		</div>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    
 		<div class="products" style="width:650px">	
             <div id="ourProducts"><h2><span style="color:#cccccc;">OUR</span> PRODUCTS</h2></div>
 		    <div><asp:Image runat="server" ImageUrl="~/Images/subheading_bar.jpg" ID="Image1"/></div>		
@@ -53,7 +47,6 @@
                     </asp:HyperLink>
                 </div>
             </div>	
-		</div>
-		<div class="clearFloat"></div>
-	</div>
+	    </div>
+	
 </asp:Content>
