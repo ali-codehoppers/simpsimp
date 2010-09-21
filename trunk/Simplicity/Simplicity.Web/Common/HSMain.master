@@ -31,27 +31,27 @@
                 </div>
                 <div id="nsecnavbar">
                     <div id="homeicon" class="floatLeft">
-                        <img src="Images/icon_home_hns.jpg" alt="" width="38" height="30" /><br />
-                        <a href="#" class="icon_link">Home</a>
+                        <asp:Image ImageUrl="../Images/icon_home_hns.jpg" width="38" height="30" runat="server"/><br />
+                        <a href="../Products/HSProduct.aspx" class="icon_link">Home</a>
                     </div>
                     <div id="siteicon" class="floatLeft">
-                        <img src="images/icon_safety.jpg" alt="" class="imgdim" /><br />
-                        <a href="#" class="icon_link">Site Safety</a>
+                        <asp:Image ImageUrl="../images/icon_safety.jpg" alt="" class="imgdim" runat="server"/><br />
+                        <a href="../Products/HSSaftyProduct.aspx" class="icon_link">Site Safety</a>
                     </div>
                     <div id="docicon" class="floatLeft">
-                        <img src="images/icon_documentation.jpg" alt="" class="imgdim" /><br />
-                        <a href="#" class="icon_link">Documentation</a>
+                        <asp:Image ImageUrl="../images/icon_documentation.jpg" alt="" class="imgdim" runat="server"/><br />
+                        <a href="../Products/HSDocProduct.aspx" class="icon_link">Documentation</a>
                     </div>
                     <div id="priceicon" class="floatLeft">
-                        <img src="images/icon_price.jpg" alt="" class="imgdim" /><br />
-                        <a href="#" class="icon_link">Prices/Editions</a>
+                        <asp:Image ImageUrl="../images/icon_price.jpg" alt="" class="imgdim" runat="server"/><br />
+                        <a href="../Products/HSPriceProduct.aspx" class="icon_link">Prices/Editions</a>
                     </div>
                     <div id="hardicon" class="floatLeft">
-                        <img src="images/icon_clientsystem_requirement.jpg" alt="" class="imgdim"/><br />
-                        <a href="#" class="icon_link">Hardware Specs</a>
+                        <asp:Image ImageUrl="../images/icon_clientsystem_requirement.jpg" class="imgdim" runat="server"/><br />
+                        <a href="../Products/HSHarwareProduct.aspx" class="icon_link">Hardware Specs</a>
                     </div>
                     <div>
-                        <img src="images/subheading_bar.jpg" alt="" height="21" />
+                        <asp:Image ImageUrl="../images/subheading_bar.jpg" height="21" runat="server"/>
                     </div>
                 </div>
             </div>
@@ -62,21 +62,21 @@
         <div id="product">
             <div>
                 <div class="rightproduct""><a href="#">
-                    <img src="images/icon_img_1.jpg" alt="" width="124" height="97" border="0" /></a></div>
+                    <asp:Image ImageUrl="../images/icon_img_1.jpg" width="124" height="97" border="0" runat="server"/></a></div>
                 <div class="leftproduct"><a href="#">
-                    <img src="images/icon_img_2.jpg" alt="" width="124" height="97" border="0" /></a></div>
+                    <asp:Image ImageUrl="../images/icon_img_2.jpg" width="124" height="97" border="0" runat="server"/></a></div>
            </div>
             <div>
                  <div class="rightproduct"><a href="#">
-                    <img src="images/icon_img_3.jpg" alt="" width="109" height="97" border="0" /></a></div>
+                    <asp:Image ImageUrl="../images/icon_img_3.jpg" width="109" height="97" border="0" runat="server"/></a></div>
                 <div class="leftproduct"><a href="#">
-                    <img src="images/icon_img_4.jpg" alt="" width="110" height="97" border="0" /></a></div>
+                    <asp:Image ImageUrl="../images/icon_img_4.jpg" width="110" height="97" border="0" runat="server"/></a></div>
             </div>
             <div>
                 <div class="rightprodbottom"><a href="#">
-                    <img src="images/icon_img_5.jpg" alt="" width="124" height="97" border="0" /></a></div>
+                    <asp:Image ImageUrl="../images/icon_img_5.jpg" width="124" height="97" border="0" runat="server"/></a></div>
                 <div class="leftprodbottom"><a href="#">
-                    <img src="images/icon_img_6.jpg" alt="" width="124" height="97" border="0" /></a></div>
+                    <asp:Image ImageUrl="../images/icon_img_6.jpg" width="124" height="97" border="0" runat="server"/></a></div>
            </div>
         </div>
         <div class="clearFloat">
