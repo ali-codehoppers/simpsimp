@@ -731,3 +731,17 @@ a.moreDetails:hover
     width: 130px;
     height:160px;
 }
+#textstyle
+{
+    line-height: 15px;
+}
+.servicetext
+{
+    padding-top: 80px;
+    padding-right: 10px;
+    text-align: justify;
+}
+#ourServices
+{
+    padding-top: 20px;
+}
