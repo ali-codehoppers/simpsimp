@@ -40,7 +40,7 @@
 			        <div class="clearFloat"></div>
 		        </div>
 		        <div style="padding-top:28px; ">
-			        <div class="floatRight"><a href="#"><div class="navBar" style="width:105px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Community</div></a></div>
+			        <div class="floatRight"><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Community/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Community</div></asp:HyperLink></div>
 			        <div class="floatRight"><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Services/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Services</div></asp:HyperLink></div>
 			        <div class="floatRight"><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Company/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Company</div></asp:HyperLink></div>
 			        <div class="floatRight"><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Solutions/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Solutions</div></asp:HyperLink></div>
@@ -61,13 +61,13 @@
 		    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
 		    <a href="../Products/Home.aspx" class="bold_13_white">Products</a>
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
-		    <a href="#" class="bold_13_white">Solutions</a>
+		    <a href="../Solutions/Home.aspx" class="bold_13_white">Solutions</a>
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
-		    <a href="#" class="bold_13_white">Company</a>
+		    <a href="../Company/Home.aspx" class="bold_13_white">Company</a>
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
-		    <a href="#" class="bold_13_white">Services</a>
+		    <a href="../Services/Home.aspx" class="bold_13_white">Services</a>
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
-		    <a href="#" class="bold_13_white">Community</a>
+		    <a href="../Community/Home.aspx" class="bold_13_white">Community</a>
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
 		    <a href="#" class="bold_13_white">Contact Us</a>
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
