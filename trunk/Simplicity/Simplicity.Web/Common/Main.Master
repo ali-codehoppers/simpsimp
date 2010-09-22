@@ -8,6 +8,7 @@
     <title>Simplicity</title>
     <link href='<%=Page.ResolveClientUrl("~/Styles/simplicity_css.css")%>' rel="stylesheet" type="text/css" />
     <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery-1.4.2.min.js")%>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/SimplicityCommon.js")%>'></script>
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>
 </head>

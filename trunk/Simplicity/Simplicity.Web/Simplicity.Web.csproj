@@ -52,6 +52,12 @@
   <ItemGroup>
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
+    <Content Include="Company\AboutUs.aspx" />
+    <Content Include="Company\Careers.aspx" />
+    <Content Include="Company\Home.aspx" />
+    <Content Include="Company\News.aspx" />
+    <Content Include="Company\OurClients.aspx" />
+    <Content Include="Contact.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Images\01.jpg" />
     <Content Include="Images\02.jpg" />
@@ -69,8 +75,10 @@
     <Content Include="Images\call_back.jpg" />
     <Content Include="Images\call_back1.jpg" />
     <Content Include="Images\call_back_hns.jpg" />
+    <Content Include="Images\chrome.jpg" />
     <Content Include="Images\dotted.jpg" />
     <Content Include="Images\finance_accnt.jpg" />
+    <Content Include="Images\firefox.jpg" />
     <Content Include="Images\footer_r.jpg" />
     <Content Include="Images\health_safety.jpg" />
     <Content Include="Images\icon_back.jpg" />
@@ -92,6 +100,7 @@
     <Content Include="Images\icon_price.jpg" />
     <Content Include="Images\icon_safety.jpg" />
     <Content Include="Images\icon_shopping.jpg" />
+    <Content Include="Images\ie7.jpg" />
     <Content Include="Images\img_1.jpg" />
     <Content Include="Images\img_2.jpg" />
     <Content Include="Images\img_3.jpg" />
@@ -114,7 +123,9 @@
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\mobile_apps.jpg" />
     <Content Include="Images\moreDetails.jpg" />
+    <Content Include="Images\moreDetailsProducts.jpg" />
     <Content Include="Images\moreDetails_hover.jpg" />
+    <Content Include="Images\opera.jpg" />
     <Content Include="Images\operations.jpg" />
     <Content Include="Images\products_img_1.jpg" />
     <Content Include="Images\products_img_2.jpg" />
@@ -133,6 +144,7 @@
     <Content Include="Images\quot2.jpg" />
     <Content Include="Images\resource_mngmnt.jpg" />
     <Content Include="Images\rightBannerTop.jpg" />
+    <Content Include="Images\safari_icon.png" />
     <Content Include="Images\sales_marketing.jpg" />
     <Content Include="Images\sign_up_free.jpg" />
     <Content Include="Images\subheading_bar.jpg" />
@@ -161,6 +173,8 @@
     <Content Include="Scripts\jquery-1.4.2.min.js" />
     <Content Include="Scripts\jquery.cycle.all.min.js" />
     <Content Include="Scripts\jquery.cycle.min.js" />
+    <Content Include="Scripts\SimplicityCommon.js" />
+    <Content Include="Solutions\Home.aspx" />
     <Content Include="Styles\products.css" />
     <Content Include="Styles\simplicity_css.css" />
     <Content Include="Web.config" />
@@ -192,6 +206,48 @@
     </Compile>
     <Compile Include="Common\Products.master.designer.cs">
       <DependentUpon>Products.master</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Careers.aspx.cs">
+      <DependentUpon>Careers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\Careers.aspx.designer.cs">
+      <DependentUpon>Careers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\OurClients.aspx.cs">
+      <DependentUpon>OurClients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\OurClients.aspx.designer.cs">
+      <DependentUpon>OurClients.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -299,6 +355,13 @@
       <DependentUpon>SiteSafety.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Solutions\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\Products.master" />
