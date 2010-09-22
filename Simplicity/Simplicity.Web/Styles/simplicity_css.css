@@ -749,11 +749,15 @@ a.moreDetails:hover
 }
 .servicetext
 {
-    padding-top: 80px;
+    padding-top: 100px;
     padding-right: 10px;
     text-align: justify;
 }
 #ourServices
+{
+    padding-top: 20px;
+}
+#ourCommunity
 {
     padding-top: 20px;
 }
