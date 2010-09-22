@@ -271,7 +271,7 @@ A.icon_link:hover {
 	color: #333333;
 	text-decoration: none;
 }
-#watch_hns{
+#watch_hns,#watch_serve,#buy_hns,#buy_serve,#try_hns,#try_serve,#call_hns,#call_serve,#watch_lec,#buy_lec,#try_lec,#call_lec,#watch_gas,#buy_gas,#try_gas,#call_gas,#watch_eas,#buy_eas,#try_eas,#call_eas{
     font: bold 11px "Trebuchet MS",Arial, Verdana, Helvetica, sans-serif;
 	color: #ffffff;
 	text-decoration: none;
@@ -284,87 +284,71 @@ A.icon_link:hover {
 	vertical-align: middle;
 	text-align: left;
 	text-indent:54px;	
-    background: url(../Images/watch_demo_hns.jpg) top left no-repeat;
-
+}
+#watch_hns:hover,#watch_serve:hover,#buy_hns:hover,#buy_serve:hover,#try_hns:hover,#try_serve:hover,#call_hns:hover,#call_serve:hover,#watch_lec:hover,#buy_lec:hover,#try_lec:hover,#call_lec:hover,#watch_gas:hover,#buy_gas:hover,#try_gas:hover,#call_gas:hover,#watch_eas:hover,#buy_eas:hover,#try_eas:hover,#call_eas:hover{
+	background-position: bottom left;
+}
+#watch_hns
+{    background: url(../Images/watch_demo_hns.jpg) top left no-repeat;
 }
 #watch_serve
-{
-    font: bold 11px "Trebuchet MS",Arial, Verdana, Helvetica, sans-serif;
-	color: #ffffff;
-	text-decoration: none;
-	padding:0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
-	height: 54px;
-	width: 277px;
-	overflow: hidden;
-	display: block;
-	vertical-align: middle;
-	text-align: left;
-	text-indent:54px;	
-    background: url(../Images/left_nav_server.jpg) top left no-repeat;
+{   background: url(../Images/handyserver_watch_demo.jpg) top left no-repeat;
+}
+#watch_lec
+{   background: url(../Images/lec_watch.jpg) top left no-repeat;
+}
+#watch_gas
+{   background: url(../Images/gas_watch.jpg) top left no-repeat;
+}
+#watch_eas
+{   background: url(../Images/eas_watch.jpg) top left no-repeat;
 }   
-#watch_hns:hover{
-	background-position: bottom left;
+#buy_hns
+{
+    background: url(../Images/buy_sol_hns.jpg) top left no-repeat;
 }
-#watch_serve:hover{
-	background-position: bottom left;
+#buy_serve{
+	background: url(../Images/handyserver_buy.jpg) top left no-repeat;
 }
-#buy_hns{
-    font: bold 11px "Trebuchet MS",Arial, Verdana, Helvetica, sans-serif;
-	color: #ffffff;
-	text-decoration: none;
-	padding:0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
-	height: 54px;
-	width: 277px;
-	overflow: hidden;
-	background: url(../Images/buy_sol_hns.jpg) top left no-repeat;
-	display: block;
-	vertical-align: middle;
-	text-align: left;
-	text-indent:54px;	
+#buy_lec{
+	background: url(../Images/lec_buy.jpg) top left no-repeat;
 }
-
-#buy_hns:hover{
-	background-position: bottom left;
+#buy_gas{
+	background: url(../Images/gas_buy.jpg) top left no-repeat;
+}
+#buy_eas{
+	background: url(../Images/eas_buy.jpg) top left no-repeat;
 }
 #try_hns{
-    font: bold 11px "Trebuchet MS",Arial, Verdana, Helvetica, sans-serif;
-	color: #ffffff;
-	text-decoration: none;
-	padding:0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
-	height: 54px;
-	width: 277px;
-	overflow: hidden;
-	background: url(../Images/try_sol_hns.jpg) top left no-repeat;
-	display: block;
-	vertical-align: middle;
-	text-align: left;
-	text-indent:54px;	
+    background: url(../Images/try_sol_hns.jpg) top left no-repeat;  
 }
-
-#try_hns:hover{
-	background-position: bottom left;
+#try_serve{
+	background: url(../Images/handyserver_try.jpg) top left no-repeat;
 }
-#call_hns{
-    font: bold 11px "Trebuchet MS",Arial, Verdana, Helvetica, sans-serif;
-	color: #ffffff;
-	text-decoration: none;
-	padding:0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
-	height: 54px;
-	width: 277px;
-	overflow: hidden;
-	background: url(../Images/call_back_hns.jpg) top left no-repeat;
-	display: block;
-	vertical-align: middle;
-	text-align: left;
-	text-indent:54px;	
+#try_lec{
+	background: url(../Images/lec_try.jpg) top left no-repeat;
 }
-
-#call_hns:hover{
-	background-position: bottom left;
+#try_gas{
+	background: url(../Images/gas_try.jpg) top left no-repeat;
+}
+#try_eas{
+	background: url(../Images/eas_try.jpg) top left no-repeat;
+}
+#call_hns
+{
+    background: url(../Images/call_back_hns.jpg) top left no-repeat;
+}
+#call_serve{
+	background: url(../Images/handyserver_call.jpg) top left no-repeat;
+}
+#call_lec{
+	background: url(../Images/lec_call.jpg) top left no-repeat;
+}
+#call_gas{
+	background: url(../Images/gas_call.jpg) top left no-repeat;
+}
+#call_eas{
+	background: url(../Images/eas_call.jpg) top left no-repeat;
 }
 .leftnav_hns_bg {
 	background: url(../Images/left_nav_hns.jpg) 0 0 no-repeat;
