@@ -761,3 +761,8 @@ a.moreDetails:hover
 {
     padding-top: 20px;
 }
+.linktext
+{
+    height: 300px;
+    overflow: scroll;
+}
