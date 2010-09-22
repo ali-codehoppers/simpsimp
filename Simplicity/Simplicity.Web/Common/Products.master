@@ -1,12 +1,6 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="Products.master.cs" Inherits="Simplicity.Web.Common.Products" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
-    <script type="text/javascript">
-        function populateContents(url, div) {
-            $.post(url, function (data){
-                $('#' + div).html(data);
-            });
-        }
-    </script>
+    
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
