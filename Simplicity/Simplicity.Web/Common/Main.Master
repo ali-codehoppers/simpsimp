@@ -44,7 +44,7 @@
 			        <div class="floatRight"><a href="#"><div class="navBar" style="width:111px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Company</div></a></div>
 			        <div class="floatRight"><a href="#"><div class="navBar" style="width:110px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Solutions</div></a></div>
 			        <div class="floatRight">
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Products/ProductsHome.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Products</div></asp:HyperLink></div>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Products/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Products</div></asp:HyperLink></div>
 			        <div class="floatRight">
                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx"><div class="navBar" style="width:108px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Home</div></asp:HyperLink>
                     </div>
@@ -56,9 +56,9 @@
             </asp:ContentPlaceHolder>
             <div id="footer">
 		    Copyright©2010 Simplicity. All Rights Reserved.<br>
-		    <a href="#" class="bold_13_white">Home&nbsp;</a>
+		    <a href="../Default.aspx" class="bold_13_white">Home&nbsp;</a>
 		    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
-		    <a href="#" class="bold_13_white">Products</a>
+		    <a href="../Products/Home.aspx" class="bold_13_white">Products</a>
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
 		    <a href="#" class="bold_13_white">Solutions</a>
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
