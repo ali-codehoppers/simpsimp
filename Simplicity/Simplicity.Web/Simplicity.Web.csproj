@@ -52,6 +52,7 @@
   <ItemGroup>
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
+    <Content Include="Community\Home.aspx" />
     <Content Include="Company\AboutUs.aspx" />
     <Content Include="Company\Careers.aspx" />
     <Content Include="Company\Home.aspx" />
@@ -61,6 +62,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Images\01.jpg" />
     <Content Include="Images\02.jpg" />
+    <Content Include="Images\astadia.png" />
     <Content Include="Images\bg_repeat.jpg" />
     <Content Include="Images\bg_rotate_banner.jpg" />
     <Content Include="Images\btn_clickhere.jpg" />
@@ -77,9 +79,21 @@
     <Content Include="Images\call_back_hns.jpg" />
     <Content Include="Images\chrome.jpg" />
     <Content Include="Images\dotted.jpg" />
+    <Content Include="Images\eas_buy.jpg" />
+    <Content Include="Images\eas_call.jpg" />
+    <Content Include="Images\eas_try.jpg" />
+    <Content Include="Images\eas_watch.jpg" />
     <Content Include="Images\finance_accnt.jpg" />
     <Content Include="Images\firefox.jpg" />
     <Content Include="Images\footer_r.jpg" />
+    <Content Include="Images\gas_buy.jpg" />
+    <Content Include="Images\gas_call.jpg" />
+    <Content Include="Images\gas_try.jpg" />
+    <Content Include="Images\gas_watch.jpg" />
+    <Content Include="Images\handyserver_buy.jpg" />
+    <Content Include="Images\handyserver_call.jpg" />
+    <Content Include="Images\handyserver_try.jpg" />
+    <Content Include="Images\handyserver_watch_demo.jpg" />
     <Content Include="Images\health_safety.jpg" />
     <Content Include="Images\icon_back.jpg" />
     <Content Include="Images\icon_chcklist.jpg" />
@@ -108,6 +122,10 @@
     <Content Include="Images\img_5.jpg" />
     <Content Include="Images\img_6.jpg" />
     <Content Include="Images\img_7.jpg" />
+    <Content Include="Images\lec_buy.jpg" />
+    <Content Include="Images\lec_call.jpg" />
+    <Content Include="Images\lec_try.jpg" />
+    <Content Include="Images\lec_watch.jpg" />
     <Content Include="Images\left_nav.jpg" />
     <Content Include="Images\left_nav_gas.jpg" />
     <Content Include="Images\left_nav_hns.jpg" />
@@ -145,7 +163,13 @@
     <Content Include="Images\resource_mngmnt.jpg" />
     <Content Include="Images\rightBannerTop.jpg" />
     <Content Include="Images\safari_icon.png" />
+    <Content Include="Images\sageLogo80.gif" />
+    <Content Include="Images\Salesforce.jpg" />
     <Content Include="Images\sales_marketing.jpg" />
+    <Content Include="Images\services_buy.jpg" />
+    <Content Include="Images\services_call.jpg" />
+    <Content Include="Images\services_try.jpg" />
+    <Content Include="Images\services_watch.jpg" />
     <Content Include="Images\sign_up_free.jpg" />
     <Content Include="Images\subheading_bar.jpg" />
     <Content Include="Images\top_bg_r.jpg" />
@@ -211,6 +235,13 @@
     </Compile>
     <Compile Include="Common\Products.master.designer.cs">
       <DependentUpon>Products.master</DependentUpon>
+    </Compile>
+    <Compile Include="Community\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Community\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Company\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>

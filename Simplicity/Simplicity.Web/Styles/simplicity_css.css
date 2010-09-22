@@ -731,6 +731,18 @@ a.moreDetails:hover
     width: 130px;
     height:160px;
 }
+.menuLabel {
+	padding: 5px 10px;
+	cursor: pointer;
+	position: relative;
+	background-color:#CCCCCC;
+	margin:1px;
+}
+.menuDetail {
+	padding: 5px 10px 15px;
+	background-color:#F4F4F8;
+	height: 200px;
+}
 #textstyle
 {
     line-height: 15px;
