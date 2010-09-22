@@ -6,16 +6,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftNavPlaceHolder" runat="server">
 <div class="leftNavBarHServe">
     <div>
-        <a href="index.html" id="watch_hns"></a>
+        <a href="index.html" id="watch_serve"></a>
     </div>
     <div>
-        <a href="Technology.html" id="buy_hns"></a>
+        <a href="Technology.html" id="buy_serve"></a>
     </div>
     <div>
-        <a href="features.html" id="try_hns"></a>
+        <a href="features.html" id="try_serve"></a>
     </div>
     <div>
-        <a href="download.html" id="call_hns"></a>
+        <a href="download.html" id="call_serve"></a>
     </div>
 </div>
 </asp:Content>
