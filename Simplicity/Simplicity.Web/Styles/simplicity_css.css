@@ -280,14 +280,33 @@ A.icon_link:hover {
 	height: 54px;
 	width: 277px;
 	overflow: hidden;
-	background: url(../Images/watch_demo_hns.jpg) top left no-repeat;
 	display: block;
 	vertical-align: middle;
 	text-align: left;
 	text-indent:54px;	
-}
+    background: url(../Images/watch_demo_hns.jpg) top left no-repeat;
 
+}
+#watch_serve
+{
+    font: bold 11px "Trebuchet MS",Arial, Verdana, Helvetica, sans-serif;
+	color: #ffffff;
+	text-decoration: none;
+	padding:0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	height: 54px;
+	width: 277px;
+	overflow: hidden;
+	display: block;
+	vertical-align: middle;
+	text-align: left;
+	text-indent:54px;	
+    background: url(../Images/left_nav_server.jpg) top left no-repeat;
+}   
 #watch_hns:hover{
+	background-position: bottom left;
+}
+#watch_serve:hover{
 	background-position: bottom left;
 }
 #buy_hns{
@@ -465,8 +484,36 @@ div.navBarHover
 	height:290px;
 	padding-top:55px;
 }
-#contentTop div.leftNavBarHNS {
+div.leftNavBarHServe {
+	background: url(../Images/left_nav_server.jpg) 0 0 no-repeat;
+	text-decoration: none;
+	width:333px;
+	height:265px;
+	padding-top:55px;
+}
+div.leftNavBarHS {
 	background: url(../Images/left_nav_hns.jpg) 0 0 no-repeat;
+	text-decoration: none;
+	width:333px;
+	height:265px;
+	padding-top:55px;
+}
+div.leftNavBarLEC {
+	background: url(../Images/left_nav_LEC.jpg) 0 0 no-repeat;
+	text-decoration: none;
+	width:333px;
+	height:265px;
+	padding-top:55px;
+}
+div.leftNavBarEAS {
+	background: url(../Images/left_nav_LEC.jpg) 0 0 no-repeat;
+	text-decoration: none;
+	width:333px;
+	height:265px;
+	padding-top:55px;
+}
+div.leftNavBarGas {
+	background: url(../Images/left_nav_gas.jpg) 0 0 no-repeat;
 	text-decoration: none;
 	width:333px;
 	height:265px;
