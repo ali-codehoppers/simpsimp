@@ -174,6 +174,11 @@
     <Content Include="Scripts\jquery.cycle.all.min.js" />
     <Content Include="Scripts\jquery.cycle.min.js" />
     <Content Include="Scripts\SimplicityCommon.js" />
+    <Content Include="Services\Consultancy.aspx" />
+    <Content Include="Services\Development.aspx" />
+    <Content Include="Services\Home.aspx" />
+    <Content Include="Services\ProjectManagement.aspx" />
+    <Content Include="Services\Training.aspx" />
     <Content Include="Solutions\Home.aspx" />
     <Content Include="Styles\products.css" />
     <Content Include="Styles\simplicity_css.css" />
@@ -355,6 +360,41 @@
       <DependentUpon>SiteSafety.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Consultancy.aspx.cs">
+      <DependentUpon>Consultancy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\Consultancy.aspx.designer.cs">
+      <DependentUpon>Consultancy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Development.aspx.cs">
+      <DependentUpon>Development.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\Development.aspx.designer.cs">
+      <DependentUpon>Development.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ProjectManagement.aspx.cs">
+      <DependentUpon>ProjectManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\ProjectManagement.aspx.designer.cs">
+      <DependentUpon>ProjectManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Training.aspx.cs">
+      <DependentUpon>Training.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\Training.aspx.designer.cs">
+      <DependentUpon>Training.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Solutions\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

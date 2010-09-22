@@ -22,11 +22,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
-<<<<<<< .mine
-            <div id="subdirectory" class="bottom_border">
-                <a href="#" class="login">Products</a> &gt;&gt; <a href="#" class="login">Simplicity
-                    H&amp;S Live</a>
-=======
+
     <div id="subdirectory" class="bottom_border">
         <a href="#" class="login">Products</a> &gt;&gt; <a href="#" class="login">Simplicity
             H&amp;S Live</a>
@@ -44,7 +40,6 @@
                     <asp:Image ID="Image1" ImageUrl="~/Images/icon_home_hns.jpg" Width="38" Height="30"
                         runat="server" /><br />
                     Home</a>
->>>>>>> .r22
             </div>
             <div id="siteicon" class="floatLeft">
                 <a href="javascript:populateContents('SiteSafety.aspx','contentsDiv')" class="icon_link">
