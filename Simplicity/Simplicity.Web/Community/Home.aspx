@@ -54,7 +54,7 @@
                         Links </a>
                 </div>
                 <div id="priceicon" class="floatRight">
-                    <a href="javascript:populateContents('News.aspx','contentsDiv')" class="icon_link">
+                    <a href="javascript:populateContents('../Company/News.aspx','contentsDiv')" class="icon_link">
                         <asp:Image ID="Image4" ImageUrl="~/Images/icon_price.jpg" alt="" class="imgdim" runat="server" /><br />
                         News</a>
                 </div>
