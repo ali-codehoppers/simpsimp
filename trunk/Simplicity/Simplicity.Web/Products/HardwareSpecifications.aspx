@@ -1,9 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HardwareSpecifications.aspx.cs" Inherits="Simplicity.Web.Products.HardwareSpecifications" %>
     
     <p>
-        Products - Simplicity H&amp;S live - I.T Checklist
-    </p>
-    <p>
         Click on the options below to view the Browsers and Information needed to avail
         of any of the Simplicity Products</p>
     <div class="browserlist">

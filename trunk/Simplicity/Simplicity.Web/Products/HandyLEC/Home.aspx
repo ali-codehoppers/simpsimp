@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftNavPlaceHolder" runat="server">
-<div>
+    <div class="leftNavBarLEC">
+    <div>
         <a href="index.html" id="watch_hns"></a>
     </div>
     <div>
@@ -14,18 +15,18 @@
     <div>
         <a href="download.html" id="call_hns"></a>
     </div>
-
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
 <div id="subdirectory" class="bottom_border">
-                <a href="#" class="login">Products</a> &gt;&gt; <a href="#" class="login">Handy LEC</a>
+                <a href="../Home.aspx" class="login">Products</a> &gt;&gt; <a href="Home.aspx" class="login">HandyLEC</a>
             </div>
             <div id="secnavbar" class="floatLeft">
                 <div id="icon1" class="floatLeft">
                 <h2>
                     <span class="stylecolor">Simplicity</span>
                     <br />
-                    Handy LEC</h2>
+                    HandyLEC</h2>
                 </div>
                 <div id="nsecnavbar">
                     <div id="hardicon" class="floatRight">

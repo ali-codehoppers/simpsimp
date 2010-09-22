@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SiteSafety.aspx.cs" Inherits="Simplicity.Web.Products.HS.SiteSafety" %>
 
 <p>
-Products - Simplicity H&S Live - Site Safety - helps you ensure that all sites comply with health and safety, be they your offices or project locations.</p>
+Helps you ensure that all sites comply with health and safety, be they your offices or project locations.</p>
 <ul>
 <li>Flag awaiting compliance documents and inspections</li>
 <li>Issue permits and authorisation for each job</li>
@@ -14,5 +14,5 @@ Products - Simplicity H&S Live - Site Safety - helps you ensure that all sites c
 <li>Maintain first aiders</li>
 <li>Maintain fire officers</li>
 <li>Maintain fire drill information</li>
-<li>Log 'no access' & notify customer</li>
+<li>Log 'no access' &amp; notify customer</li>
 </ul>
