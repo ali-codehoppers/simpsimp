@@ -54,39 +54,39 @@
                 your profits and the performance of your business.</p>
             <div id="links">
                 <div id="salesMarketing" style="padding-left: 0px">
-                    <a href="SaleM/Home.aspx" class="moreDetails">
+                    <a href="SaleM/Home.aspx" class="solutionMoreDetails">
                         <div>
                             <asp:Image ID="Image7" runat="server" ImageUrl="~/Images/sales_marketing.jpg" Width="190px" /></div>
                     </a>
                 </div>
                 <div id="operations">
-                    <a href="Operation/Home.aspx" class="moreDetails">
+                    <a href="Operation/Home.aspx" class="solutionMoreDetails">
                         <div>
                             <asp:Image ID="Image8" runat="server" ImageUrl="~/Images/operations.jpg" Width="190px" /></div>
                     </a>
                 </div>
                 <div id="healthNSafety">
-                    <asp:HyperLink CssClass="moreDetails" NavigateUrl="~/Products/HS/Home.aspx" runat="server">
+                    <a class="solutionMoreDetails" href="../Products/HS/Home.aspx">
                         <div>
                             <asp:Image ID="Image9" runat="server" ImageUrl="~/Images/health_safety.jpg" Width="190px" /></div>
-                    </asp:HyperLink>
+                    </a>
                 </div>
                 <div class="clearFloat">
                 </div>
                 <div id="resourceMgmt" style="padding-left: 0px">
-                    <a href="RM/Home.aspx" class="moreDetails">
+                    <a href="RM/Home.aspx" class="solutionMoreDetails">
                         <div>
                             <asp:Image ID="Image10" runat="server" ImageUrl="~/Images/resource_mngmnt.jpg" Width="190px" /></div>
                     </a>
                 </div>
                 <div id="financeNAcnts">
-                    <a href="FinanceAccount/Home.aspx" class="moreDetails">
+                    <a href="FinanceAccount/Home.aspx" class="solutionMoreDetails">
                         <div>
                             <asp:Image ID="Image11" runat="server" ImageUrl="~/Images/finance_accnt.jpg" Width="190px" /></div>
                     </a>
                 </div>
                 <div id="mobileApps">
-                    <a href="Mobile/Home.aspx" class="moreDetails">
+                    <a href="Mobile/Home.aspx" class="solutionMoreDetails">
                         <div>
                             <asp:Image ID="Image12" runat="server" ImageUrl="~/Images/mobile_apps.jpg" Width="190px" /></div>
                     </a>

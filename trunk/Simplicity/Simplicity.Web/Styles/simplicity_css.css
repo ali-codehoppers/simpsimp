@@ -57,7 +57,7 @@ table.navbar td a:link, table.navbar td a:visited , table.navbar td a:active{
 	padding:0px 0px 0px 0px;
 	border-bottom: 4px #a8b7c6 solid;
 }
-table.navbar td a:hover {
+div.navbar{
 	color:#0066FF;
 	border-bottom: 4px #006fd3 solid;
 }
@@ -578,16 +578,25 @@ div.leftNavBarGas {
 
 a.moreDetails
 {
-	/*background: url(../Images/moreDetails.jpg) top left no-repeat; 
+	background: url(../Images/moreDetails.jpg) top left no-repeat; 
 	height:153px; 
-	width:200px;*/
+	width:250px;
 	overflow: hidden;
 	display: block;
 	vertical-align: middle;
 	text-align: left;	
 }
-
-a.moreDetails:hover
+a.solutionMoreDetails
+{
+	background: url(../Images/moreDetails3.jpg) top left no-repeat; 
+	height:131px; 
+	width:190px;
+	overflow: hidden;
+	display: block;
+	vertical-align: middle;
+	text-align: left;	
+}
+a.moreDetails:hover,a.solutionMoreDetails:hover
 {
 	background-position:bottom left;
 }
@@ -761,4 +770,12 @@ a.moreDetails:hover
 {
     height: 300px;
     overflow: scroll;
+}
+.companytext
+{
+    padding-top: 30px;
+    padding-right: 10px;
+    text-align: justify;
+    float: right;
+    width: 640px;
 }
