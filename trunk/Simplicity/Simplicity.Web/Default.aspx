@@ -42,7 +42,7 @@
 				<div class="floatLeft">
 					<div style="padding-top:1px;">When we needed urgent software solutions in the past we always needed to license complex,</div>
 					<div style="padding-top:1px;">expensive and inflexible software. Simplicity Health &amp; Safety Live and EAS have changed all that. All</div>
-					<div class="floatLeft" style="padding-top:1px;">we need is a web browser and 110/user a month.</div>
+					<div class="floatLeft" style="padding-top:1px;">we need is a web browser and £110/user a month.</div>
 					<div class="floatLeft" style="padding-left:5px"><img src="images/quot2.jpg" alt=""/></div>
 					<div class="clearFloat"></div>
 					<div style="color:#d4efff;">Jordan Reay Westgate Maintenance Ltd</div>
@@ -56,33 +56,33 @@
 		<div><img src="images/subheading_bar.jpg" alt="" width="565" height="21" /></div>
 		<div id="links">
 			<div id="salesMarketing">
-				<a href="" class="moreDetails">
+				<a href="Solutions/SaleM/Home.aspx" class="moreDetails">
 					<img src="images/sales_marketing.jpg" alt=""/>
 				</a>
 			</div>
 			<div id="operations">
-				<a href="" class="moreDetails">
+				<a href="Solutions/Operation/Home.aspx" class="moreDetails">
 					<div><img src="images/operations.jpg" alt=""/></div>
 				</a>
 			</div>
 			<div id="healthNSafety">
-				<a href="" class="moreDetails">
+				<a href="Products/HS/Home.aspx" class="moreDetails">
 					<div><img src="images/health_safety.jpg" alt=""/></div>
 				</a>			
 			</div>
 			<div class="clearFloat"></div>
 			<div id="resourceMgmt">
-				<a href="" class="moreDetails">
+				<a href="Solutions/RM/Home.aspx" class="moreDetails">
 					<div><img src="images/resource_mngmnt.jpg" alt=""/></div>
 				</a>
 			</div>
 			<div id="financeNAcnts">
-				<a href="" class="moreDetails">
+				<a href="Solutions/FinanceAccount/Home.aspx" class="moreDetails">
 					<div><img src="images/finance_accnt.jpg" alt=""/></div>
 				</a>
 			</div>
 			<div id="mobileApps">
-				<a href="" class="moreDetails">
+				<a href="Solutions/Mobile/Home.aspx" class="moreDetails">
 					<div><img src="images/mobile_apps.jpg" alt=""/></div>
 				</a>
 			</div>
