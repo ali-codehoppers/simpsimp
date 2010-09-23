@@ -52,7 +52,10 @@
   <ItemGroup>
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
+    <Content Include="Community\Events.aspx" />
     <Content Include="Community\Home.aspx" />
+    <Content Include="Community\Links.aspx" />
+    <Content Include="Community\Partners.aspx" />
     <Content Include="Company\AboutUs.aspx" />
     <Content Include="Company\Careers.aspx" />
     <Content Include="Company\Home.aspx" />
@@ -203,7 +206,32 @@
     <Content Include="Services\Home.aspx" />
     <Content Include="Services\ProjectManagement.aspx" />
     <Content Include="Services\Training.aspx" />
+    <Content Include="Solutions\FinanceAccount\AccountMgt.aspx" />
+    <Content Include="Solutions\FinanceAccount\BL.aspx" />
+    <Content Include="Solutions\FinanceAccount\Detail.aspx" />
+    <Content Include="Solutions\FinanceAccount\Home.aspx" />
+    <Content Include="Solutions\FinanceAccount\Payroll.aspx" />
+    <Content Include="Solutions\FinanceAccount\Purchasing.aspx" />
     <Content Include="Solutions\Home.aspx" />
+    <Content Include="Solutions\Mobile\Detail.aspx" />
+    <Content Include="Solutions\Mobile\Home.aspx" />
+    <Content Include="Solutions\Operation\Detail.aspx" />
+    <Content Include="Solutions\Operation\Home.aspx" />
+    <Content Include="Solutions\Operation\Project.aspx" />
+    <Content Include="Solutions\Operation\Supply.aspx" />
+    <Content Include="Solutions\Operation\Work.aspx" />
+    <Content Include="Solutions\RM\AM.aspx" />
+    <Content Include="Solutions\RM\CM.aspx" />
+    <Content Include="Solutions\RM\Detail.aspx" />
+    <Content Include="Solutions\RM\Diary.aspx" />
+    <Content Include="Solutions\RM\Home.aspx" />
+    <Content Include="Solutions\RM\PM.aspx" />
+    <Content Include="Solutions\SaleM\Analysis.aspx" />
+    <Content Include="Solutions\SaleM\Detail.aspx" />
+    <Content Include="Solutions\SaleM\Estimate.aspx" />
+    <Content Include="Solutions\SaleM\Home.aspx" />
+    <Content Include="Solutions\SaleM\Market.aspx" />
+    <Content Include="Solutions\SaleM\NBusiness.aspx" />
     <Content Include="Styles\products.css" />
     <Content Include="Styles\simplicity_css.css" />
     <Content Include="Web.config" />
@@ -236,12 +264,33 @@
     <Compile Include="Common\Products.master.designer.cs">
       <DependentUpon>Products.master</DependentUpon>
     </Compile>
+    <Compile Include="Community\Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Community\Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Community\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Community\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Community\Links.aspx.cs">
+      <DependentUpon>Links.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Community\Links.aspx.designer.cs">
+      <DependentUpon>Links.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Community\Partners.aspx.cs">
+      <DependentUpon>Partners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Community\Partners.aspx.designer.cs">
+      <DependentUpon>Partners.aspx</DependentUpon>
     </Compile>
     <Compile Include="Company\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
@@ -426,12 +475,187 @@
     <Compile Include="Services\Training.aspx.designer.cs">
       <DependentUpon>Training.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Solutions\FinanceAccount\AccountMgt.aspx.cs">
+      <DependentUpon>AccountMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\AccountMgt.aspx.designer.cs">
+      <DependentUpon>AccountMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\BL.aspx.cs">
+      <DependentUpon>BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\BL.aspx.designer.cs">
+      <DependentUpon>BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\Payroll.aspx.cs">
+      <DependentUpon>Payroll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\Payroll.aspx.designer.cs">
+      <DependentUpon>Payroll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\Purchasing.aspx.cs">
+      <DependentUpon>Purchasing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\FinanceAccount\Purchasing.aspx.designer.cs">
+      <DependentUpon>Purchasing.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Solutions\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Solutions\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\Mobile\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\Mobile\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\Mobile\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\Mobile\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\Operation\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\Operation\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\Operation\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\Operation\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\Operation\Project.aspx.cs">
+      <DependentUpon>Project.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\Operation\Project.aspx.designer.cs">
+      <DependentUpon>Project.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\Operation\Supply.aspx.cs">
+      <DependentUpon>Supply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\Operation\Supply.aspx.designer.cs">
+      <DependentUpon>Supply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\Operation\Work.aspx.cs">
+      <DependentUpon>Work.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\Operation\Work.aspx.designer.cs">
+      <DependentUpon>Work.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\RM\AM.aspx.cs">
+      <DependentUpon>AM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\RM\AM.aspx.designer.cs">
+      <DependentUpon>AM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\RM\CM.aspx.cs">
+      <DependentUpon>CM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\RM\CM.aspx.designer.cs">
+      <DependentUpon>CM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\RM\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\RM\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\RM\Diary.aspx.cs">
+      <DependentUpon>Diary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\RM\Diary.aspx.designer.cs">
+      <DependentUpon>Diary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\RM\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\RM\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\RM\PM.aspx.cs">
+      <DependentUpon>PM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\RM\PM.aspx.designer.cs">
+      <DependentUpon>PM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\SaleM\Analysis.aspx.cs">
+      <DependentUpon>Analysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\SaleM\Analysis.aspx.designer.cs">
+      <DependentUpon>Analysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\SaleM\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\SaleM\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\SaleM\Estimate.aspx.cs">
+      <DependentUpon>Estimate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\SaleM\Estimate.aspx.designer.cs">
+      <DependentUpon>Estimate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\SaleM\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\SaleM\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\SaleM\Market.aspx.cs">
+      <DependentUpon>Market.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\SaleM\Market.aspx.designer.cs">
+      <DependentUpon>Market.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\SaleM\NBusiness.aspx.cs">
+      <DependentUpon>NBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\SaleM\NBusiness.aspx.designer.cs">
+      <DependentUpon>NBusiness.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

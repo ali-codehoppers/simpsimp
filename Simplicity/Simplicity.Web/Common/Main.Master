@@ -39,15 +39,15 @@
                     </div>
 			        <div class="clearFloat"></div>
 		        </div>
-		        <div style="padding-top:28px; ">
-			        <div class="floatRight"><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Community/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Community</div></asp:HyperLink></div>
+		        <div style="padding-top:28px;">
+			        <div class="floatRight"><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Community/Home.aspx"><div class="navBar" style="width:105px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Community</div></asp:HyperLink></div>
 			        <div class="floatRight"><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Services/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Services</div></asp:HyperLink></div>
-			        <div class="floatRight"><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Company/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Company</div></asp:HyperLink></div>
-			        <div class="floatRight"><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Solutions/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Solutions</div></asp:HyperLink></div>
+			        <div class="floatRight"><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Company/Home.aspx"><div class="navBar" style="width:111px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Company</div></asp:HyperLink></div>
+			        <div class="floatRight"><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Solutions/Home.aspx"><div class="navBar" style="width:110px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Solutions</div></asp:HyperLink></div>
 			        <div class="floatRight">
                         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Products/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Products</div></asp:HyperLink></div>
 			        <div class="floatRight">
-                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx"><div class="navBar" style="width:108px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Home</div></asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx"><div class="navBar" style="width:107px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Home</div></asp:HyperLink>
                     </div>
 			        <div class="clearFloat"></div>
 		        </div>
