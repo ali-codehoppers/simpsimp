@@ -578,9 +578,9 @@ div.leftNavBarGas {
 
 a.moreDetails
 {
-	background: url(../Images/moreDetails.jpg) top left no-repeat; 
+	/*background: url(../Images/moreDetails.jpg) top left no-repeat; 
 	height:153px; 
-	width:221px;	
+	width:200px;*/
 	overflow: hidden;
 	display: block;
 	vertical-align: middle;
