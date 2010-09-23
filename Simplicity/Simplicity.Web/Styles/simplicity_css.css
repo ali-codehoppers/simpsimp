@@ -617,7 +617,7 @@ a.moreDetails:hover
 }
 #icon1
 {
-    width: 244px;
+    width: 215px;
     padding-top: 15px;
 }
 #rightpart
@@ -639,33 +639,33 @@ a.moreDetails:hover
 }
 #homeicon
 {
-    width: 64px;
+    width: 60px;
     text-align: center;
     padding-bottom: 8px;
 }
 #siteicon
 {
-    width: 64px;
+    width: 60px;
     text-align: center;
     padding-bottom: 8px;
 }
 #docicon
 {
-    width: 90px;
+    width: 85px;
     text-align: center;
     padding-bottom: 8px;
 }
 
 #priceicon
 {
-    width: 89px;
+    width: 85px;
     text-align: center;
     padding-bottom: 8px;
 }
 
 #hardicon
 {
-    width: 89px;
+    width: 85px;
     text-align: center;
     padding-bottom: 8px;
 }
@@ -753,11 +753,7 @@ a.moreDetails:hover
     padding-right: 10px;
     text-align: justify;
 }
-#ourServices
-{
-    padding-top: 20px;
-}
-#ourCommunity
+#ourServices,#ourCommunity,#ourSolution
 {
     padding-top: 20px;
 }
