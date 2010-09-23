@@ -43,42 +43,42 @@
         <p>We have created leading resource management solutions for clients across multiple industries.</p>
         <p>Please click on an appropriate industtry to see how our solutions can help you increase your profits and the performance of your business.</p>
         <div id="links">
-			<div id="salesMarketing">
+			<div id="salesMarketing" style="padding-left:0px">
 				<a href="" class="moreDetails">
-                    <div><asp:Image ID="Image7" runat="server" ImageUrl="~/Images/sales_marketing.jpg"/></div>					
+                    <div><asp:Image ID="Image7" runat="server" ImageUrl="~/Images/sales_marketing.jpg" Width="190px"/></div>					
 				</a>
 			</div>
 			<div id="operations">
 				<a href="" class="moreDetails">
                     <div>
-                        <asp:Image ID="Image8" runat="server" ImageUrl="~/Images/operations.jpg" /></div>
+                        <asp:Image ID="Image8" runat="server" ImageUrl="~/Images/operations.jpg" Width="190px"/></div>
 				</a>
 			</div>
 			<div id="healthNSafety">
 				<a href="" class="moreDetails">
                     <div>
-                        <asp:Image ID="Image9" runat="server" ImageUrl="~/Images/health_safety.jpg" /></div>
+                        <asp:Image ID="Image9" runat="server" ImageUrl="~/Images/health_safety.jpg" Width="190px"/></div>
 					
 				</a>			
 			</div>
 			<div class="clearFloat"></div>
-			<div id="resourceMgmt">
-				<a href="" class="moreDetails">
+			<div id="resourceMgmt" style="padding-left:0px">
+				<a href="" class="moreDetails" >
                     <div>
-                        <asp:Image ID="Image10" runat="server" ImageUrl="~/Images/resource_mngmnt.jpg" /></div>					
+                        <asp:Image ID="Image10" runat="server" ImageUrl="~/Images/resource_mngmnt.jpg" Width="190px"/></div>					
 				</a>
 			</div>
 			<div id="financeNAcnts">
 				<a href="" class="moreDetails">
                     <div>
-                        <asp:Image ID="Image11" runat="server" ImageUrl="~/Images/finance_accnt.jpg" /></div>
+                        <asp:Image ID="Image11" runat="server" ImageUrl="~/Images/finance_accnt.jpg" Width="190px"/></div>
 					
 				</a>
 			</div>
 			<div id="mobileApps">
 				<a href="" class="moreDetails">
                     <div>
-                        <asp:Image ID="Image12" runat="server" ImageUrl="~/Images/mobile_apps.jpg" /></div>
+                        <asp:Image ID="Image12" runat="server" ImageUrl="~/Images/mobile_apps.jpg" Width="190px"/></div>
 					
 				</a>
 			</div>
