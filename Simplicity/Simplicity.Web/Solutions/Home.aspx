@@ -60,7 +60,7 @@
                     </a>
                 </div>
                 <div id="operations">
-                    <a href="" class="moreDetails">
+                    <a href="Operation/Home.aspx" class="moreDetails">
                         <div>
                             <asp:Image ID="Image8" runat="server" ImageUrl="~/Images/operations.jpg" Width="190px" /></div>
                     </a>
