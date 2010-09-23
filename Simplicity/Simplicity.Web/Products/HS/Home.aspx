@@ -24,7 +24,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
 
     <div id="subdirectory" class="bottom_border">
-        <a href="#" class="login">Products</a> &gt;&gt; <a href="#" class="login">Simplicity
+        <a href="../Home.aspx" class="login">Products</a> &gt;&gt; <a href="Home.aspx" class="login">Simplicity
             H&amp;S Live</a>
     </div>
     <div id="secnavbar" class="floatLeft">

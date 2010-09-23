@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Details.aspx.cs" Inherits="Simplicity.Web.Products.HS.Details" %>
 
 <p>
-    Products - Simplicity H&amp;S live - guides you through the sequential processess, provides
+    Guides you through the sequential processess, provides
     practical templates and an extendable library of documents and content to publish
     H&S folders in an easy to read format.
 </p>
