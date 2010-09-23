@@ -23,7 +23,7 @@
                         </a>
                     </div>	
 			        <div class="headerTextField"><input name="textfield23" type="text" class="search_field" id="textfield23" /></div>	
-			        <div class="headerLinks"><a href="#">Contact Us</a></div>	
+			        <div class="headerLinks"><a href="../Contact.aspx">Contact Us</a></div>	
 			        <div class="headerLinksSeparator">|</div>	
 			        <div class="headerLinks"><a href="#">Simplicity Support</a></div>	
 			        <div class="headerLinksSeparator">|</div>	
@@ -69,7 +69,7 @@
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
 		    <a href="../Community/Home.aspx" class="bold_13_white">Community</a>
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
-		    <a href="#" class="bold_13_white">Contact Us</a>
+		    <a href="../Contact.aspx" class="bold_13_white">Contact Us</a>
 		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
 		    <a href="#" class="bold_13_white">FAQs</a>
 	</div>
