@@ -35,34 +35,35 @@
                 H&amp;S Live</h2>
         </div>
         <div id="nsecnavbar">
-            <div id="homeicon" class="floatLeft">
-                <a href="javascript:populateContents('Details.aspx','contentsDiv')" class="icon_link">
-                    <asp:Image ID="Image1" ImageUrl="~/Images/icon_home_hns.jpg" Width="38" Height="30"
-                        runat="server" /><br />
-                    Home</a>
-            </div>
-            <div id="siteicon" class="floatLeft">
-                <a href="javascript:populateContents('SiteSafety.aspx','contentsDiv')" class="icon_link">
-                    <asp:Image ID="Image2" ImageUrl="~/Images/icon_safety.jpg" alt="" class="imgdim"
-                        runat="server" /><br />
-                    Site Safety </a>
-            </div>
-            <div id="docicon" class="floatLeft">
-                <a href="javascript:populateContents('Documentation.aspx','contentsDiv')" class="icon_link">
-                    <asp:Image ID="Image3" ImageUrl="~/Images/icon_documentation.jpg" alt="" class="imgdim"
-                        runat="server" /><br />
-                    Documentation </a>
-            </div>
-            <div id="priceicon" class="floatLeft">
-                <asp:Image ID="Image4" ImageUrl="~/Images/icon_price.jpg" alt="" class="imgdim" runat="server" /><br />
-                <a href="../Products/HSPriceProduct.aspx" class="icon_link">Prices/Editions</a>
-            </div>
-            <div id="hardicon" class="floatLeft">
+            <div id="hardicon" class="floatRight">
                 <a href="javascript:populateContents('../HardwareSpecifications.aspx','contentsDiv')"
                     class="icon_link">
                     <asp:Image ID="Image5" ImageUrl="~/Images/icon_clientsystem_requirement.jpg" class="imgdim"
                         runat="server" /><br />
                     Hardware Specs </a>
+            </div>
+            <div id="priceicon" class="floatRight">
+                <asp:Image ID="Image4" ImageUrl="~/Images/icon_price.jpg" alt="" class="imgdim" runat="server" /><br />
+                <a href="../Products/HSPriceProduct.aspx" class="icon_link">Prices/Editions</a>
+            </div><div id="docicon" class="floatRight">
+                <a href="javascript:populateContents('Documentation.aspx','contentsDiv')" class="icon_link">
+                    <asp:Image ID="Image3" ImageUrl="~/Images/icon_documentation.jpg" alt="" class="imgdim"
+                        runat="server" /><br />
+                    Documentation </a>
+            </div><div id="siteicon" class="floatRight">
+                <a href="javascript:populateContents('SiteSafety.aspx','contentsDiv')" class="icon_link">
+                    <asp:Image ID="Image2" ImageUrl="~/Images/icon_safety.jpg" alt="" class="imgdim"
+                        runat="server" /><br />
+                    Site Safety </a>
+            </div>
+            
+            
+            
+            <div id="homeicon" class="floatRight">
+                <a href="javascript:populateContents('Details.aspx','contentsDiv')" class="icon_link">
+                    <asp:Image ID="Image1" ImageUrl="~/Images/icon_home_hns.jpg" Width="38" Height="30"
+                        runat="server" /><br />
+                    Home</a>
             </div>
             <div>
                 <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
