@@ -74,19 +74,19 @@
                 <div class="clearFloat">
                 </div>
                 <div id="resourceMgmt" style="padding-left: 0px">
-                    <a href="" class="moreDetails">
+                    <a href="RM/Home.aspx" class="moreDetails">
                         <div>
                             <asp:Image ID="Image10" runat="server" ImageUrl="~/Images/resource_mngmnt.jpg" Width="190px" /></div>
                     </a>
                 </div>
                 <div id="financeNAcnts">
-                    <a href="" class="moreDetails">
+                    <a href="FinanceAccount/Home.aspx" class="moreDetails">
                         <div>
                             <asp:Image ID="Image11" runat="server" ImageUrl="~/Images/finance_accnt.jpg" Width="190px" /></div>
                     </a>
                 </div>
                 <div id="mobileApps">
-                    <a href="" class="moreDetails">
+                    <a href="Mobile/Home.aspx" class="moreDetails">
                         <div>
                             <asp:Image ID="Image12" runat="server" ImageUrl="~/Images/mobile_apps.jpg" Width="190px" /></div>
                     </a>
