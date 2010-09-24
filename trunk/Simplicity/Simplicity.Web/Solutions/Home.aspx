@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="servicetext">
+        <div class="solutiontext">
             <p>
                 We have created leading resource management solutions for clients across multiple
                 industries.</p>

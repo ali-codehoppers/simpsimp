@@ -22,9 +22,13 @@
                     $("#" + currentDiv).next(".menuDetail").slideToggle(1000);
                     currentDiv = $(this).attr("id");
                 }
+                else {
+                    $(".menuDetail").hide();
+                    currentDiv = null;
+                }
             });
-            $("#sfDiv").next(".menuDetail").show();
-            currentDiv = "sfDiv";
+            //$("#sfDiv").next(".menuDetail").show();
+            //currentDiv = "sfDiv";
         }
 
         $(document).ready(function () {
@@ -41,35 +45,12 @@
                 </h2>
             </div>
             <div id="nsecnavbar">
-                <div id="siteicon" class="floatRight">
-                    <a href="javascript:populateContents('Events.aspx','contentsDiv')" class="icon_link">
-                        <asp:Image ID="Image2" ImageUrl="~/Images/icon_safety.jpg" alt="" class="imgdim"
-                            runat="server" /><br />
-                        Events </a>
-                </div>
-                <div id="docicon" class="floatRight">
-                    <a href="javascript:populateContents('Links.aspx','contentsDiv')" class="icon_link">
-                        <asp:Image ID="Image3" ImageUrl="~/Images/icon_documentation.jpg" alt="" class="imgdim"
-                            runat="server" /><br />
-                        Links </a>
-                </div>
-                <div id="priceicon" class="floatRight">
-                    <a href="javascript:populateContents('../Company/News.aspx','contentsDiv')" class="icon_link">
-                        <asp:Image ID="Image4" ImageUrl="~/Images/icon_price.jpg" alt="" class="imgdim" runat="server" /><br />
-                        News</a>
-                </div>
-                <div id="hardicon" class="floatRight">
-                    <a href="javascript:populateContents('Partners.aspx','contentsDiv')" class="icon_link">
-                        <asp:Image ID="Image5" ImageUrl="~/Images/icon_clientsystem_requirement.jpg" class="imgdim"
-                            runat="server" /><br />
-                        Partners </a>
-                </div>
                 <div>
                     <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
                 </div>
             </div>
         </div>
-        <div id="contentsDiv" class="servicetext">
+        <div id="contentsDiv" class="communitytext">
             <p>
                 Get the latest information and extend your knowledge with news, tutorials and downloads.
                 Stay on top of trends and new techniques visit exciting portals, exchange and events.</p>
@@ -126,8 +107,113 @@
                     Simplicity is fully integrated with Stage, allowing companies to manage the detailed
                     end to end business processes within Simplicity and the financials within Sage Accounts
                     and Payroll.</p>
-                    <p>To find out more visits their website:</p>
-                    <a href="http://www.sage.com/">www.sage.com</a>
+                <p>
+                    To find out more visits their website:</p>
+                <a href="http://www.sage.com/">www.sage.com</a>
+            </div>
+            <div id="tag">
+                <br />
+                <a href="#news" style="font-weight: bolder;">News</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#links" style="font-weight: bolder;">Links</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#events" style="font-weight: bolder;">Events</a>
+                <br />
+            </div>
+            <div id="news">
+                <br />
+                <a href="#tag">back to top</a>
+                <br />
+                <p>
+                    For read the latest news from Simplicity For Business please click on the month
+                    and then story headline you are interested in.</p>
+                <p>
+                    <a href="#Jantop">Jan 2010</a></p>
+                <p id="Jantop">
+                    <a>Press release VAT increase</a> <a>Press release Snow hits economy</a> <a>Press release
+                        - Estimating in todays's harsh economic environment</a></p>
+            </div>
+            <div id="links">
+                <br />
+                <a href="#tag">back to top</a>
+                <br />
+                <div class="linktext">
+                    <p>
+                        A directory of some of the websites relevant to the business community.</p>
+                    <p>
+                        <a href="#atop">A</a>&nbsp;&nbsp;&nbsp; <a href="#btop">B</a>&nbsp;&nbsp;&nbsp;
+                        <a href="#ctop">C</a>&nbsp;&nbsp;&nbsp; <a href="#dtop">D</a>
+                        <h2 id="atop">
+                            Links - A</h2>
+                        <p>
+                            Goverment Department and Agencies<br />
+                            Adjudicators Office<br />
+                            <a href="http://www.adjudicatorsoffice.gov.uk/">www.adjudicatorsoffice.gov.uk/</a></p>
+                    </p>
+                    <p>
+                        <h2 id="btop">
+                            Links - B</h2>
+                        <p>
+                            Business Link<br />
+                            <a href="http://www.businesslink.gov.uk/bdotg/action/home?domain=www.businesslink.gov.uk&target=http://www.businesslink.gov.uk/">
+                                www.businesslink.gov.uk/</a></p>
+                    </p>
+                    <p>
+                        <h2 id="ctop">
+                            Links - C</h2>
+                        <p>
+                            Central Office for information<br />
+                            <a href="http://www.coi.gov.uk/">www.coi.gov.uk/</a></p>
+                        <p>
+                            Companies House<br />
+                            <a href="http://www.companieshouse.gov.uk/">www.companieshouse.gov.uk/</a></p>
+                    </p>
+                    <p>
+                        <h2 id="dtop">
+                            Links - D</h2>
+                        <p>
+                            Department for Business, Innovation and Skills<br />
+                            <a href="http://www.bis.gov.uk/">www.bis.gov.uk/</a></p>
+                        <p>
+                            Department for Work &amp; Pensions<br />
+                            <a href="http://www.dwp.gov.uk/">www.dwp.gov.uk/</a></p>
+                        <p>
+                            Department of Health<br />
+                            <a href="http://www.dh.gov.uk/">www.dh.gov.uk/</a></p>
+                        <p>
+                            Directgov<br />
+                            <a href="http://www.direct.gov.uk/">www.direct.gov.uk/</a></p>
+                    </p>
+                </div>
+            </div>
+            <div id="events">
+                <br />
+                <a href="#tag">back to top</a>
+                <br />
+                <p>
+                    <h3>
+                        January 25,2010</h3>
+                    <p>
+                        Professional Edition Administration Essentials - Virtual. For more information visit:<br />
+                        <a href="http://www.salesforce.com/uk/events/">www.salesforce.com/uk/events</a></p>
+                </p>
+                <p>
+                    <h3>
+                        Febuary 8,2010</h3>
+                    <p>
+                        Administration Essentials - Virtual. For more information visit:<br />
+                        <a href="http://www.salesforce.com/uk/events/">www.salesforce.com/uk/events</a></p>
+                    <h3>
+                        Febuary 23-24,2010</h3>
+                    <p>
+                        Technology for Marketing and Advertising - Earls Court 2, London. For more information
+                        visit:<br />
+                        <a href="http://www.t-f-m.co.uk/">www.t-f-m.co.uk</a></p>
+                </p>
+                <h3>
+                    Febuary 23,2010</h3>
+                <p>
+                    IT Showcase Live - Manchester. For more information visit:<br />
+                    <a href="http://www.itshowcase.co.uk/Events/">www.itshowcase.co.uk/Events</a></p>
+                </p>
             </div>
         </div>
     </div>
