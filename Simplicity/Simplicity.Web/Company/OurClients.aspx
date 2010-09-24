@@ -1,9 +1,28 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OurClients.aspx.cs" Inherits="Simplicity.Web.Company.OurClients" %>
-
-<p>
-    Our clients come from many different industry sectors and many through referral.
-    We think this is testimony to the quality of our solutions and the importance we
-    place on creating a rewarding working relationship with them.</p>
-<p>
-    But you don't have to take our word for it, read what some of our clients have to
-    say about us below in testimonials.</p>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Companys.master" AutoEventWireup="true" CodeBehind="OurClients.aspx.cs" Inherits="Simplicity.Web.Company.OurClients" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+   <div style="float: left; width: 650px">
+        <div id="secnavbar" class="floatLeft">
+            <div id="icon1" class="floatLeft">
+                <h2 id="ourSolution">
+                    <span style="color: #cccccc;">OUR</span> CLIENTS</h2>
+            </div>
+            <div id="nsecnavbar">
+                
+                <div>
+                    <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
+                </div>
+            </div>
+        </div>
+        <div class="solutiontext">
+            <p>
+                Our clients come from many different industry sectors and many through referral.
+                We think this is testimony to the quality of our solutions and the importance we
+                place on creating a rewarding working relationship with them.</p>
+            <p>
+                But you don't have to take our word for it, read what some of our clients have to
+                say about us below in testimonials.</p>
+        </div>
+    </div>
+</asp:Content>
