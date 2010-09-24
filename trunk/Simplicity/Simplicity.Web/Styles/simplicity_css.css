@@ -637,7 +637,7 @@ a.moreDetails
 {
 	background: url(../Images/moreDetails.jpg) top left no-repeat; 
 	height:153px; 
-	width:250px;
+	width:220px;
 	overflow: hidden;
 	display: block;
 	vertical-align: middle;
@@ -832,8 +832,11 @@ a.moreDetails:hover,a.solutionMoreDetails:hover
     text-align: justify;
     float: right;
     width: 640px;
-    height: 400px;
-    overflow: scroll;
+}
+.servicetext
+{
+    height:400px;
+    overflow:auto;    
 }
 .solutiontext
 {
@@ -851,6 +854,5 @@ a.moreDetails:hover,a.solutionMoreDetails:hover
     text-align: justify;
     float: left;
     width: 640px;
-    height:400px;
-    overflow:scroll; 
+
 }

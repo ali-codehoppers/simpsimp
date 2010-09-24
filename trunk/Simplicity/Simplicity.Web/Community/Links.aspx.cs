@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Simplicity.Web.Community
 {
-    public partial class News : System.Web.UI.Page
+    public partial class Links : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
