@@ -129,11 +129,17 @@
     <Content Include="Images\lec_call.jpg" />
     <Content Include="Images\lec_try.jpg" />
     <Content Include="Images\lec_watch.jpg" />
+    <Content Include="Images\left_eas.jpg" />
+    <Content Include="Images\left_handy_gas.jpg" />
+    <Content Include="Images\left_handy_lec.jpg" />
+    <Content Include="Images\left_handy_serve.jpg" />
+    <Content Include="Images\left_hns.jpg" />
     <Content Include="Images\left_nav.jpg" />
     <Content Include="Images\left_nav_gas.jpg" />
     <Content Include="Images\left_nav_hns.jpg" />
     <Content Include="Images\left_nav_LEC.jpg" />
     <Content Include="Images\left_nav_server.jpg" />
+    <Content Include="Images\left_pro_services.jpg" />
     <Content Include="Images\lock_icon.jpg" />
     <Content Include="Images\login_btm_line.jpg" />
     <Content Include="Images\login_btn_disable.jpg" />
@@ -174,6 +180,8 @@
     <Content Include="Images\services_try.jpg" />
     <Content Include="Images\services_watch.jpg" />
     <Content Include="Images\sign_up_free.jpg" />
+    <Content Include="Images\simple_nav_bg.jpg" />
+    <Content Include="Images\simple_subnav_bg.jpg" />
     <Content Include="Images\subheading_bar.jpg" />
     <Content Include="Images\top_bg_r.jpg" />
     <Content Include="Images\try_sol.jpg" />
@@ -232,6 +240,7 @@
     <Content Include="Solutions\SaleM\Home.aspx" />
     <Content Include="Solutions\SaleM\Market.aspx" />
     <Content Include="Solutions\SaleM\NBusiness.aspx" />
+    <Content Include="Solutions\test.aspx" />
     <Content Include="Styles\products.css" />
     <Content Include="Styles\simplicity_css.css" />
     <Content Include="Web.config" />
@@ -263,6 +272,13 @@
     </Compile>
     <Compile Include="Common\Products.master.designer.cs">
       <DependentUpon>Products.master</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Solutions.master.cs">
+      <DependentUpon>Solutions.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Solutions.master.designer.cs">
+      <DependentUpon>Solutions.master</DependentUpon>
     </Compile>
     <Compile Include="Community\Events.aspx.cs">
       <DependentUpon>Events.aspx</DependentUpon>
@@ -657,11 +673,20 @@
     <Compile Include="Solutions\SaleM\NBusiness.aspx.designer.cs">
       <DependentUpon>NBusiness.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Solutions\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\Products.master" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Common\Solutions.master" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

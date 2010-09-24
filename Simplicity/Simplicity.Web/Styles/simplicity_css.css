@@ -503,6 +503,64 @@ div.leftNavBarGas {
 	height:265px;
 	padding-top:55px;
 }
+#contentTop div.leftNavItem
+{
+    background: url(../Images/simple_nav_bg.jpg) 0 0 no-repeat;
+    width:255px;
+    height:30px;
+    padding-left: 40px;
+    padding-top:8px;
+    color:White;    
+}
+
+#contentTop div.leftNavItem A:active,
+#contentTop div.leftNavItem A:link,
+#contentTop div.leftNavItem A:visited
+{
+	color: White;
+	text-decoration: none;
+	font-size:12pt;
+	
+}
+
+#contentTop div.leftNavItem A:hover {
+	color: Navy;
+}
+
+#contentTop div.leftNavSubItem
+{
+    background: url(../Images/simple_subnav_bg.jpg) 0 0 no-repeat;
+    width:200px;
+    height:25px;
+    padding-left: 40px;
+    padding-top:3px;
+    color:White;    
+    margin-left:75px;
+}
+
+#contentTop div.leftNavSubItem A:active,
+#contentTop div.leftNavSubItem A:link,
+#contentTop div.leftNavSubItem A:visited
+{
+	color: White;
+	text-decoration: none;
+	font-size:10pt;	
+}
+
+#contentTop div.leftNavSubItem A:hover {
+	color: Navy;
+}
+
+
+
+#contentTop div.leftNavBarSimple {
+	text-decoration: none;
+	width:308px;
+	height:290px;
+	padding-top:50px;
+	padding-left:25px;
+}
+
 #contentTop div.rightBannerTop
 {
 	text-decoration: none;

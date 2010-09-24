@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="contentTop">
         <div class="floatLeft">
-            <asp:ContentPlaceHolder ID="LeftNavPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="LeftNavPlaceHolder" runat="server"></asp:ContentPlaceHolder>            
         </div>
         <div id="rightpart" class="floatRight">
             <asp:ContentPlaceHolder ID="ContentsPlaceHolder" runat="server"></asp:ContentPlaceHolder>
@@ -20,15 +20,15 @@
            </div>
             <div>
                  <div class="rightproduct"><a href="../HandyGas/Home.aspx">
-                    <asp:Image ID="Image9" ImageUrl="../images/icon_img_3.jpg" width="109" height="97" border="0" runat="server"/></a></div>
+                    <asp:Image ID="Image9" ImageUrl="~/Images/icon_img_3.jpg" width="109" height="97" border="0" runat="server"/></a></div>
                 <div class="leftproduct"><a href="../HS/Home.aspx">
-                    <asp:Image ID="Image10" ImageUrl="../images/icon_img_4.jpg" width="110" height="97" border="0" runat="server"/></a></div>
+                    <asp:Image ID="Image10" ImageUrl="~/Images/icon_img_4.jpg" width="110" height="97" border="0" runat="server"/></a></div>
             </div>
             <div>
                 <div class="rightprodbottom"><a href="../EAS/Home.aspx">
-                    <asp:Image ID="Image11" ImageUrl="../images/icon_img_5.jpg" width="124" height="97" border="0" runat="server"/></a></div>
+                    <asp:Image ID="Image11" ImageUrl="~/Images/icon_img_5.jpg" width="124" height="97" border="0" runat="server"/></a></div>
                 <div class="leftprodbottom"><a href="#">
-                    <asp:Image ID="Image12" ImageUrl="../images/icon_img_6.jpg" width="124" height="97" border="0" runat="server"/></a></div>
+                    <asp:Image ID="Image12" ImageUrl="~/Images/icon_img_6.jpg" width="124" height="97" border="0" runat="server"/></a></div>
            </div>
         </div>
         <div class="clearFloat">

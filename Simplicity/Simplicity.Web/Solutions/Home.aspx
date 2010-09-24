@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/LeftMenu.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Solutions.master" AutoEventWireup="true"
     CodeBehind="Home.aspx.cs" Inherits="Simplicity.Web.Solutions.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
@@ -11,35 +11,7 @@
                     <span style="color: #cccccc;">OUR</span> SOLUTIONS</h2>
             </div>
             <div id="nsecnavbar">
-                <div id="hardicon" class="floatRight">
-                    <a href="../Contact.aspx" class="icon_link">
-                        <asp:Image ID="Image5" ImageUrl="~/Images/icon_clientsystem_requirement.jpg" class="imgdim"
-                            runat="server" /><br />
-                        Contact </a>
-                </div>
-                <div id="priceicon" class="floatRight">
-                    <a href="javascript:populateContents('News.aspx','contentsDiv')" class="icon_link">
-                        <asp:Image ID="Image4" ImageUrl="~/Images/icon_price.jpg" alt="" class="imgdim" runat="server" /><br />
-                        News</a>
-                </div>
-                <div id="docicon" class="floatRight">
-                    <a href="javascript:populateContents('Careers.aspx','contentsDiv')" class="icon_link">
-                        <asp:Image ID="Image3" ImageUrl="~/Images/icon_documentation.jpg" alt="" class="imgdim"
-                            runat="server" /><br />
-                        Careers </a>
-                </div>
-                <div id="siteicon" class="floatRight">
-                    <a href="javascript:populateContents('OurClients.aspx','contentsDiv')" class="icon_link">
-                        <asp:Image ID="Image2" ImageUrl="~/Images/icon_safety.jpg" alt="" class="imgdim"
-                            runat="server" /><br />
-                        Our Clients </a>
-                </div>
-                <div id="homeicon" class="floatRight">
-                    <a href="javascript:populateAboutUsContents()" class="icon_link">
-                        <asp:Image ID="Image1" ImageUrl="~/Images/icon_home_hns.jpg" Width="38" Height="30"
-                            runat="server" /><br />
-                        About Us</a>
-                </div>
+                
                 <div>
                     <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
                 </div>
