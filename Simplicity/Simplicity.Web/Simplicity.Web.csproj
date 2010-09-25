@@ -61,6 +61,7 @@
     <Content Include="Company\OurClients.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
     <Content Include="Images\01.jpg" />
     <Content Include="Images\02.jpg" />
     <Content Include="Images\astadia.png" />
