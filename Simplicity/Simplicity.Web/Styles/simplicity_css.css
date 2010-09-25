@@ -835,8 +835,8 @@ a.moreDetails:hover,a.solutionMoreDetails:hover
 }
 .servicetext
 {
-    height:400px;
-    overflow:auto;    
+    /*height:400px;
+    overflow:auto;    */
 }
 .solutiontext
 {

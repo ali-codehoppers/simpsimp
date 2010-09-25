@@ -1,5 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Training.aspx.cs" Inherits="Simplicity.Web.Services.Training" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Training.aspx.cs" Inherits="Simplicity.Web.Services.Training" MasterPageFile="~/Common/Services.master"%>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="HeadingContentPlaceHolder" runat="server">
+    <h2 id="ourServices">
+        Training
+    </h2>
+</asp:Content>
 
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
 <p>
     Our commitment to our customers means that we strive to exceed expectations every
     step of the way.</p>
@@ -21,3 +29,4 @@
     which is why we pride ourselves on providing expert support. With no voicemail but
     real people to talk to, our customer service team is highly trained and capable
     of handling the most complex and in-depth issues.</p>
+</asp:Content>

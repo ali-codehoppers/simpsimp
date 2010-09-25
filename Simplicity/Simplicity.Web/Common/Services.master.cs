@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Simplicity.Web.Solutions
+namespace Simplicity.Web.Common
 {
-    public partial class test : System.Web.UI.Page
+    public partial class Services : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
