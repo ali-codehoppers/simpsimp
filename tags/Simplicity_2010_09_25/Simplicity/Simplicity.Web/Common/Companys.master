@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="Companys.master.cs" Inherits="Simplicity.Web.Common.Companys" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="HeadContentPlaceHolder"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+   <div id="contentTop">
+   <div class="floatLeft leftNavBarSimple">
+            <div class="leftNavItem"> 
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Company/OurClients.aspx">Our Clients</asp:HyperLink> 
+            </div>
+            <div class="leftNavItem"> 
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Company/Career.aspx">Careers</asp:HyperLink> 
+            </div>
+			<div class="leftNavItem">
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Company/News.aspx">News</asp:HyperLink> 
+            </div>
+			<div class="leftNavItem">
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink> 
+            </div>
+		</div>
+        <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder"></asp:ContentPlaceHolder>
+		<div class="clearFloat"></div>
+	</div>
+</asp:Content>
+

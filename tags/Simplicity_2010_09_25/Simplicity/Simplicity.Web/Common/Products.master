@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="Products.master.cs" Inherits="Simplicity.Web.Common.Products" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+    
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+    <div id="contentTop">
+        <div class="floatLeft">
+            <asp:ContentPlaceHolder ID="LeftNavPlaceHolder" runat="server"></asp:ContentPlaceHolder>            
+        </div>
+        <div id="rightpart" class="floatRight">
+            <asp:ContentPlaceHolder ID="ContentsPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <div id="product">
+            <div>
+                <div class="rightproduct""><a href="../HandyServe/Home.aspx">
+                    <asp:Image ID="Image7" ImageUrl="../images/icon_img_1.jpg" width="124" height="97" border="0" runat="server"/></a></div>
+                <div class="leftproduct"><a href="../HandyLEC/Home.aspx">
+                    <asp:Image ID="Image8" ImageUrl="../images/icon_img_2.jpg" width="124" height="97" border="0" runat="server"/></a></div>
+           </div>
+            <div>
+                 <div class="rightproduct"><a href="../HandyGas/Home.aspx">
+                    <asp:Image ID="Image9" ImageUrl="~/Images/icon_img_3.jpg" width="109" height="97" border="0" runat="server"/></a></div>
+                <div class="leftproduct"><a href="../HS/Home.aspx">
+                    <asp:Image ID="Image10" ImageUrl="~/Images/icon_img_4.jpg" width="110" height="97" border="0" runat="server"/></a></div>
+            </div>
+            <div>
+                <div class="rightprodbottom"><a href="../EAS/Home.aspx">
+                    <asp:Image ID="Image11" ImageUrl="~/Images/icon_img_5.jpg" width="124" height="97" border="0" runat="server"/></a></div>
+                <div class="leftprodbottom"><a href="#">
+                    <asp:Image ID="Image12" ImageUrl="~/Images/icon_img_6.jpg" width="124" height="97" border="0" runat="server"/></a></div>
+           </div>
+        </div>
+        <div class="clearFloat">
+        </div>
+    </div>
+</asp:Content>

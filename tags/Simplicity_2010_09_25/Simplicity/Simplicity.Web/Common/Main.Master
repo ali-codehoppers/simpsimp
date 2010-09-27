@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Simplicity.Web.Common.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Simplicity, Simplicity4Business, Simplicity For Business, Health & Safety, Health & Safety Documents, HS Live, HandsLive, H&S Live, H&S, H&S Document Generation, Simplicity EAS, Ultra Nova Coding, Ultranova Coding, Simplicity Software, data management software, business management software, erp software, enterprise resource planning software, enterprise resource planning solution, business management solutions, record keeping software, job management software, knowledge management system, knowledge management solution, resourcing management software, facilities management solutions, construction industry software, manufacturing software, remote working, mobile workforce, estimating software, job costing software, contractor software, accounting software, supply chain management, compliance software, CIS compliance, virtual filing system, Sage developer, ecommerce awards, e-commerce awards" />
+    <meta name="description" content="Simplicity - award winning business management software that improves business performance and profitability." />
+    <meta http-equiv="Expires" content="never" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="distribution" content="global" />
+    <meta name="robots" content="index,follow" />
+    <title>Simplicity4Business</title>
+    <link href='<%=Page.ResolveClientUrl("~/Styles/simplicity_css.css")%>' rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery-1.4.2.min.js")%>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/SimplicityCommon.js")%>'></script>
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+	        <div id="header">
+		        <div>
+			        <div class="headerLinksButton">
+                        <a href="#">
+                            <asp:Image runat="server" style="margin-bottom:1px;" ImageUrl="~/Images/btn_go.jpg" />
+                        </a>
+                    </div>	
+			        <div class="headerTextField"><input name="textfield23" type="text" class="search_field" id="textfield23" /></div>	
+			        <div class="headerLinks"><a href="../Contact.aspx">Contact Us</a></div>	
+			        <div class="headerLinksSeparator">|</div>	
+			        <div class="headerLinks"><a href="#">Simplicity Support</a></div>	
+			        <div class="headerLinksSeparator">|</div>	
+			        <div class="headerLinks"><a href="#">FAQs</a></div>	
+			        <div class="headerLinksSeparator">|</div>	
+			        <div class="headerLinks"><a href="#">Sign Up/Login</a></div>	
+			        <div class="headerLinksSeparator">|</div>	
+			        <div class="headerLinks"><a href="#">Trolley</a></div>	
+			        <div class="headerLinksSeparator">|</div>	
+			        <div class="headerLinks"><a href="#">Wish List</a></div>	
+			        <div style="float:right;">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/icon_shopping.jpg" />
+                    </div>
+			        <div class="clearFloat"></div>
+		        </div>
+		        <div style="padding-top:28px;">
+			        <div class="floatRight"><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Community/Home.aspx"><div class="navBar" style="width:105px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Community</div></asp:HyperLink></div>
+			        <div class="floatRight"><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Services/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Services</div></asp:HyperLink></div>
+			        <div class="floatRight"><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Company/Home.aspx"><div class="navBar" style="width:111px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Company</div></asp:HyperLink></div>
+			        <div class="floatRight"><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Solutions/Home.aspx"><div class="navBar" style="width:110px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Solutions</div></asp:HyperLink></div>
+			        <div class="floatRight">
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Products/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Products</div></asp:HyperLink></div>
+			        <div class="floatRight">
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx"><div class="navBar" style="width:107px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Home</div></asp:HyperLink>
+                    </div>
+			        <div class="clearFloat"></div>
+		        </div>
+	        </div>
+            <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
+            
+            </asp:ContentPlaceHolder>
+            <div id="footer">
+		    Copyright©2010 Simplicity. All Rights Reserved.<br>
+		    <a href="../Default.aspx" class="bold_13_white">Home&nbsp;</a>
+		    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		    <a href="../Products/Home.aspx" class="bold_13_white">Products</a>
+		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		    <a href="../Solutions/Home.aspx" class="bold_13_white">Solutions</a>
+		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		    <a href="../Company/Home.aspx" class="bold_13_white">Company</a>
+		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		    <a href="../Services/Home.aspx" class="bold_13_white">Services</a>
+		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		    <a href="../Community/Home.aspx" class="bold_13_white">Community</a>
+		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		    <a href="../Contact.aspx" class="bold_13_white">Contact Us</a>
+		    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		    <a href="#" class="bold_13_white">FAQs</a>
+	</div>
+    </div>
+    </form>
+</body>
+</html>
