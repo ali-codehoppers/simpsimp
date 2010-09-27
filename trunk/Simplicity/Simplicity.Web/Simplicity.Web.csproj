@@ -694,6 +694,12 @@
   <ItemGroup>
     <Content Include="Common\Services.master" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Simplicity.Data\Simplicity.Data.csproj">
+      <Project>{DA278DCC-0126-472F-B027-D391BFD610E1}</Project>
+      <Name>Simplicity.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
