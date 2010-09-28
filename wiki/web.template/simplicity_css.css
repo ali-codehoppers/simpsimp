@@ -558,3 +558,89 @@ a.moreDetails:hover
 	padding-top:30px;
 	padding-bottom:23px;
 }
+
+div.myPersonalInfoTab
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(images/login_btn_disable.jpg) bottom left no-repeat;
+	float:left;
+}
+
+div.myPersonalInfoTabOnMouseOver
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(images/login_btn_highlight.jpg) bottom left no-repeat;
+	cursor:pointer;
+	float:left;
+}
+
+div.myProductsTab
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(images/login_btn_disable.jpg) bottom left no-repeat;
+	float:left;
+}
+
+div.myProductsTabOnMouseOver
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(images/login_btn_highlight.jpg) bottom left no-repeat;
+	cursor:pointer;
+	float:left;
+}
+
+div.myAccountTabs
+{
+	margin-top:10px; 
+	padding-left:50px;
+	width:850px;
+}
+
+#myAccountMyPersonalInfoTab
+{	
+	display:none;
+	padding-left:30px;
+	background: url(images/login_lft_line.jpg) 0 0 no-repeat;
+}
+
+#myAccountMyPersonalInfoTab div.row
+{
+	padding-top:5px;
+}
+
+#myAccountMyPersonalInfoTab div.col1
+{
+	float:left;
+	width:196px;
+}
+
+#myAccountMyPersonalInfoTab div.col2
+{
+}
+
+#myAccountMyProductsTab
+{	
+	display:none;
+	padding-left:30px;
+	background: url(images/login_lft_line.jpg) 0 0 no-repeat;
+}

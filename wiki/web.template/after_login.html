@@ -4,7 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Simplicity</title>
 <link href="simplicity_css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+
+<!-- include Cycle plugin -->
+<script type="text/javascript" src="jquery.cycle.all.min.js"></script>
+
 <script language=javascript type='text/javascript'>
+
+var selectedTab = 1;
+
 function showHideElementById(status, elementId){
 	var element = document.getElementById(elementId);
 	if(element != null){
@@ -20,264 +28,141 @@ function showHideElementById(status, elementId){
 }
 
 </script> 
-</head>
 
 <body>
-<table width="990" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" style="border-left:2px solid #384e64;border-right:2px solid #384e64;">
-  <tr>
-    <td align="right" valign="top" class="bg_r">
-      <table width="970" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="257" align="left" valign="top">&nbsp;</td>
-        <td width="713" align="right"><table border="0" cellpadding="2" cellspacing="0">
-          <tr>
-            <td width="35" align="center" valign="top"><img src="images/icon_shopping.jpg" alt="" width="32" height="27" /></td>
-            <td align="right" valign="bottom"><a href="#">Wish List</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Trolley</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">My Account</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">FAQs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Simplicity Support</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Contact Us</a>&nbsp;&nbsp;</td>
-            <td width="122" align="left" valign="bottom">              <input name="textfield23" type="text" class="search_field" id="textfield23" /></td>
-            <td width="32" align="left" valign="bottom"><a href="#"><img src="images/btn_go.jpg" style="margin-bottom:1px;" alt="" width="25" height="24" border="0" /></a></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td height="97" align="left" valign="top">&nbsp;</td>
-        <td align="right" valign="bottom"><table width="648" height="73" border="0" cellpadding="0" cellspacing="0" class="navbar">
-          <tr>
-            <td width="107" align="center" valign="bottom"><a href="#">Home</a></td>
-            <td width="109" align="center" valign="bottom"><a href="#">Products</a></td>
-            <td width="110" align="center" valign="bottom"><a href="#">Solutions</a></td>
-            <td width="111" align="center" valign="bottom"><a href="#">Company</a></td>
-            <td width="108" align="center" valign="bottom"><a href="#">Services</a></td>
-            <td width="103" align="center" valign="bottom"><a href="#">Community</a></td>
-          </tr>
-        </table></td>
-      </tr>
-    </table></td>
-  </tr>
-  
-  <tr>
-    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td colspan="2" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="4">
-          
-          
-          <tr>
-            <td colspan="2">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="5%" height="26">&nbsp;</td>
-            <td width="95%"><h2><span style="color:#cccccc;">MY</span> ACCOUNT</h2></td>
-          </tr>
-          <tr>
-            <td colspan="2" align="left" valign="top"><img src="images/subheading_bar.jpg" alt="" width="565" height="21" /></td>
-          </tr>
-          
-          
-        </table></td>
-      </tr>
-      
-      <tr>
-        <td width="5%" height="39">&nbsp;</td>
-        <td width="95%" valign="bottom"><table border="0" cellspacing="0" cellpadding="0" class="loginbtn">
-          <tr>
-            <td width="150" align="center" valign="middle" class="login_highlight"><a href="#" onclick="showHideElementById(1, 'login');showHideElementById(0, 's_products')" target="_self" >My Personal Info </a></td>
-            <td width="3" style="border-bottom:1px solid #e5e5e5;">&nbsp;</td>
-            <td width="150" align="center" valign="middle"><a href="#" onclick="showHideElementById(0, 'login');showHideElementById(1, 's_products');" target="_self" >My Products</a></td>
-            <td width="3" style="border-bottom:1px solid #e5e5e5;">&nbsp;</td>
-            <td width="500" align="center" valign="middle" style="border-bottom:1px solid #e5e5e5;">&nbsp;</td>
-            
-            <td width="150" align="center" valign="middle" style="background: url(images/login_btm_line.jpg) bottom left no-repeat;">&nbsp;</td>
-          </tr>
-        </table></td>
-        </tr>
-      <tr>
-        <td height="306">&nbsp;</td>
-        <td valign="top" style="background: url(images/login_lft_line.jpg) 0 0 no-repeat;"><form id="form1" name="form1" method="post" action="">
-          <table width="858" border="0" cellspacing="0" cellpadding="1" id="login">
-            <tr>
-              <td width="27" height="40">&nbsp;</td>
-              <td width="196"><h2>My Personal Info</h2></td>
-              <td width="629">&nbsp;</td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Email</td>
-              <td><input name="textfield" type="text" class="login_field_big" id="textfield" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Confirm Email</td>
-              <td><input name="textfield2" type="text" class=" login_field_big" id="textfield2" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Password</td>
-              <td><input name="textfield3" type="password" class=" login_field_big" id="textfield3" value="" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Confirm Password</td>
-              <td><input name="textfield4" type="password" class=" login_field_big" id="textfield4" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Forgot Password Question</td>
-              <td>                <select name="select" id="select" class=" login_field_big" style="width:500px;">
-                <option>Choose a Question</option>
-                </select>              </td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Forgot Password Answer</td>
-              <td><input name="textfield5" type="text" class=" login_field_big" id="textfield5" /></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td colspan="2" valign="top" class="dotted_line"></td>
-              </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>First Name</td>
-              <td><input name="textfield6" type="text" class=" login_field_big" id="textfield6" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Surname</td>
-              <td><input name="textfield7" type="text" class=" login_field_big" id="textfield7" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Company Name</td>
-              <td><input name="textfield8" type="text" class=" login_field_big" id="textfield8" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Job Title</td>
-              <td><input name="textfield9" type="text" class=" login_field_big" id="textfield9" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td colspan="2" class="dotted_line">&nbsp;</td>
-              </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>AddressNo.</td>
-              <td><input name="textfield10" type="text" class=" login_field_big" id="textfield10" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Address Line 1</td>
-              <td><input name="textfield11" type="text" class=" login_field_big" id="textfield11" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Address Line 2</td>
-              <td><input name="textfield12" type="text" class=" login_field_big" id="textfield12" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Address Line 3</td>
-              <td><input name="textfield13" type="text" class=" login_field_big" id="textfield13" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Address Line 4</td>
-              <td><input name="textfield14" type="text" class=" login_field_big" id="textfield14" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Address Line 5</td>
-              <td><input name="textfield15" type="text" class=" login_field_big" id="textfield15" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Post Code</td>
-              <td><input name="textfield16" type="text" class=" login_field_big" id="textfield16" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Town</td>
-              <td><input name="textfield17" type="text" class=" login_field_big" id="textfield17" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Country</td>
-              <td><input name="textfield18" type="text" class=" login_field_big" id="textfield18" /></td>
-            </tr>
-            
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Telephone 1</td>
-              <td><input name="textfield19" type="text" class=" login_field_big" id="textfield19" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Telephone 2</td>
-              <td><input name="textfield20" type="text" class=" login_field_big" id="textfield20" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Fax</td>
-              <td><input name="textfield21" type="text" class=" login_field_big" id="textfield21" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td>Mobile</td>
-              <td><input name="textfield22" type="text" class=" login_field_big" id="textfield22" /></td>
-            </tr>
-            <tr>
-              <td height="27">&nbsp;</td>
-              <td colspan="2"><label>
-                <input type="checkbox" name="checkbox" id="checkbox" />
-              Please indicate if you would like to receives further updates for   products</label></td>
-              </tr>
-            <tr>
-              <td height="59">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td><a href="#"><img src="images/btn_continue.jpg" alt="" width="107" height="37" border="0" /></a>&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/btn_reset.jpg" alt="" width="107" height="37" border="0" /></a></td>
-            </tr>
-          </table>
-                
-        </form>
-          <table width="786" border="0" cellpadding="1" cellspacing="0" id="s_products" style="display:none;">
-          <tr>
-            <td width="4" height="40">&nbsp;</td>
-            <td width="778"><h2>My Products</h2></td>
-          </tr>
-          <tr>
-            <td height="40">&nbsp;</td>
-            <td align="center"><table width="650" border="0" cellspacing="0" cellpadding="2" class="product_bar">
-              <tr>
-                <td align="center" style="	border-bottom:1px dotted #cccccc;"><img src="images/products_img_1.jpg" alt="" width="199" height="157" /><br />
-                  <a href="#"> </a></td>
-                <td align="center" class="left_border" style="	border-bottom:1px dotted #cccccc;"><img src="images/products_img_2.jpg" alt="" width="199" height="157" /><br />
-                  <a href="#"> </a></td>
-                <td align="center" class="left_border" style="	border-bottom:1px dotted #cccccc;"><img src="images/products_img_3.jpg" alt="" width="199" height="157" /><br />
-                  <a href="#"> </a></td>
-              </tr>
-              <tr>
-                <td align="center"><img src="images/products_img_4.jpg" alt="" width="199" height="157" /><br />
-                  <a href="#"> </a></td>
-                <td align="center" class="left_border"><img src="images/products_img_5.jpg" alt="" width="199" height="157" /><br />
-                  <a href="#"> </a></td>
-                <td align="center" class="left_border"><img src="images/products_img_6.jpg" alt="" width="199" height="157" /><br />
-                  <a href="#"> </a></td>
-              </tr>
-            </table></td>
-          </tr>
-        </table>        </td>
-        </tr>
-      <tr>
-        <td colspan="2">&nbsp;</td>
-      </tr>
-      
-    </table></td>
-  </tr>
-  <tr>
-    <td align="center" valign="middle" class="footer_r">Copyright©2010 Simplicity. All Rights Reserved.<br />
-    <a href="#" class="bold_13_white">Home&nbsp;</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="bold_13_white">Products</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="bold_13_white">Solutions</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="bold_13_white">Company</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="bold_13_white">Services</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="bold_13_white">Community</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="bold_13_white">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="bold_13_white">FAQs</a></td>
-  </tr>
-</table>
-<table width="990" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
-</table>
+<div id="container">
+	<div id="header">
+		<div>
+			<div class="headerLinksButton"><a href="#"><img src="images/btn_go.jpg" style="margin-bottom:1px;" alt="" width="25" height="24" border="0" /></a></div>	
+			<div class="headerTextField"><input name="textfield23" type="text" class="search_field" id="textfield23" /></div>	
+			<div class="headerLinks"><a href="#">Contact Us</a></div>	
+			<div class="headerLinksSeparator">|</div>	
+			<div class="headerLinks"><a href="#">Simplicity Support</a></div>	
+			<div class="headerLinksSeparator">|</div>	
+			<div class="headerLinks"><a href="#">FAQs</a></div>	
+			<div class="headerLinksSeparator">|</div>	
+			<div class="headerLinks"><a href="#">Sign Up/Login</a></div>	
+			<div class="headerLinksSeparator">|</div>	
+			<div class="headerLinks"><a href="#">Trolley</a></div>	
+			<div class="headerLinksSeparator">|</div>	
+			<div class="headerLinks"><a href="#">Wish List</a></div>	
+			<div style="float:right;"><img src="images/icon_shopping.jpg" alt=""/></div>
+			<div class="clearFloat"></div>
+		</div>
+		<div style="padding-top:50px; ">
+			<div class="floatRight"><a href="#"><div class="navBar" style="width:105px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Community</div></a></div>
+			<div class="floatRight"><a href="#"><div class="navBar" style="width:108px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Services</div></a></div>
+			<div class="floatRight"><a href="#"><div class="navBar" style="width:111px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Company</div></a></div>
+			<div class="floatRight"><a href="#"><div class="navBar" style="width:110px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Solutions</div></a></div>
+			<div class="floatRight"><a href="#"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Products</div></a></div>
+			<div class="floatRight"><a href="#"><div class="navBar" style="width:108px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Home</div></a></div>
+			<div class="clearFloat"></div>
+		</div>
+	</div>
+	<div>
+		<div>
+			<div style="margin-top:30px; margin-left:50px; margin-bottom:10px;"><h2><span style="color:#cccccc;">MY</span> ACCOUNT</h2></div>
+			<div><img src="images/subheading_bar.jpg" alt="" width="565" height="21" /></div>
+		</div>
+		<div class="myAccountTabs">
+			<div id='tabPersonalInfo' class="myPersonalInfoTabOnMouseOver"><div style="padding-top:10px">My Personal Info</div></div>
+			<div class="floatLeft" style="height:35px; width:5px; border-bottom:1px solid #e5e5e5;">&nbsp;</div>
+			<div id="tabProducts" class="myProductsTab"><div style="padding-top:10px">My Products</div></div>
+			<div class="floatLeft" style="height:35px; width:150px; border-bottom:1px solid #e5e5e5;">&nbsp;</div>
+			<div class="floatLeft" style="width:117px; height:36px; background: url(images/login_btm_line.jpg) bottom left no-repeat;">&nbsp;</div>
+			<div class="clearFloat"></div>
+			<div id="myAccountMyPersonalInfoTab">
+				<div class="row">
+					<div class="col1">Email</div>
+					<div class="col2"><input name="textfield" type="text" class="login_field_big" id="textfield" /></div>				
+				</div>				
+				<div class="row">
+					<div class="col1">Confirm Email</div>
+					<div class="col2"><input name="textfield" type="text" class="login_field_big" id="textfield" /></div>				
+				</div>				
+			</div>
+			<div id="myAccountMyProductsTab">
+				asd
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		Copyright©2010 Simplicity. All Rights Reserved.<br>
+		<a href="#" class="bold_13_white">Home&nbsp;</a>
+		&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		<a href="#" class="bold_13_white">Products</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		<a href="#" class="bold_13_white">Solutions</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		<a href="#" class="bold_13_white">Company</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		<a href="#" class="bold_13_white">Services</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		<a href="#" class="bold_13_white">Community</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		<a href="#" class="bold_13_white">Contact Us</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 
+		<a href="#" class="bold_13_white">FAQs</a>
+	</div>
+</div>
 </body>
+
+<script type="text/javascript">
+	$(document).ready(function() { 
+		$('#myAccountMyPersonalInfoTab').show();
+		$('#tabPersonalInfo').click(function(){
+			selectedTab = 1;			
+			$('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
+			$('#tabPersonalInfo').removeClass('myPersonalInfoTab');
+			$('#tabProducts').removeClass('myProductsTabOnMouseOver');
+			$('#tabProducts').addClass('myProductsTab');	
+			$('#myAccountMyPersonalInfoTab').show();			
+			$('#myAccountMyProductsTab').hide();			
+		});
+		$('#tabPersonalInfo').mouseover(function(){
+			$('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
+			$('#tabPersonalInfo').removeClass('myPersonalInfoTab');
+		});
+		$('#tabPersonalInfo').mouseout(function(){
+			if(selectedTab === 1) 
+			{
+				$('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
+				$('#tabPersonalInfo').removeClass('myPersonalInfoTab');
+			}
+			else
+			{
+				$('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
+				$('#tabPersonalInfo').addClass('myPersonalInfoTab');
+			}
+		});
+		$('#tabProducts').click(function(){
+			selectedTab = 2;			
+			$('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
+			$('#tabPersonalInfo').addClass('myPersonalInfoTab');
+			$('#tabProducts').addClass('myProductsTabOnMouseOver');
+			$('#tabProducts').removeClass('myProductsTab');		
+			$('#myAccountMyPersonalInfoTab').hide();			
+			$('#myAccountMyProductsTab').show();			
+		});		
+		$('#tabProducts').mouseover(function(){
+			$('#tabProducts').addClass('myProductsTabOnMouseOver');
+			$('#tabProducts').removeClass('myProductsTab');
+		});
+		$('#tabProducts').mouseout(function(){
+			if(selectedTab === 2) 
+			{
+				$('#tabProducts').addClass('myProductsTabOnMouseOver');
+				$('#tabProducts').removeClass('myProductsTab');
+			}
+			else
+			{
+				$('#tabProducts').removeClass('myProductsTabOnMouseOver');
+				$('#tabProducts').addClass('myProductsTab');
+			}
+		});
+    });
+</script>
 </html>
+
+
+
