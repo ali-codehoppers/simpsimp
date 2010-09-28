@@ -37,7 +37,7 @@
         width: 30px; float: right;">
         &nbsp;
     </div>
-    <div style="padding-left: 15px; padding-top: 45px; width: 60%;">
+    <div style="padding-left: 15px; padding-top: 45px; width: 60%; padding-bottom:50px;">
         <div>
             <div style="border-bottom: 1px solid #e7e7e7; width: 75%; float: left;">
             </div>
@@ -49,7 +49,7 @@
             height: 280px">
             &nbsp;</div>
         <div style="padding-left: 30px;">
-            <form id="form1" name="form1" method="post">
+            <form id="form1" name="form1" method="post" action="CustomerLogin.aspx">
             <div class="floatRight" style="padding-top: 50px;">
                 <img src="images/lock_icon.jpg" alt="" width="180" height="136" /></div>
             <div style="padding-top: 50px;">
