@@ -239,17 +239,17 @@ table.product_bar td a:link, table.product_bar td a:visited , table.product_bar 
 table.product_bar td a:hover {
 	background: url(../Images/02.jpg) bottom left no-repeat;
 }
-table.loginbtn td a{
+div.loginbtn td a{
    display: block;
    width: 150px;
    line-height:35px;
    text-decoration: none;
 }
-table.loginbtn td a:link, table.loginbtn td a:visited , table.loginbtn td a:active{
+div.loginbtn div a:link, div.loginbtn div a:visited , div.loginbtn div a:active{
 	height: 36px;
 	background: url(../Images/login_btn_disable.jpg) bottom left no-repeat;
 }
-table.loginbtn td a:hover {
+div.loginbtn td a:hover {
 	color: #015d8c;
 	background: url(../Images/login_btn_highlight.jpg) bottom left no-repeat;
 }
@@ -855,4 +855,17 @@ a.moreDetails:hover,a.solutionMoreDetails:hover
     float: left;
     width: 640px;
 
+}
+.headstyle
+{
+     padding-left:55px;
+     padding-top:35px; 
+     padding-bottom:10px;
+}
+.loginImg
+{
+    background-image: images/btn_login.jpg;
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 40px;
 }
