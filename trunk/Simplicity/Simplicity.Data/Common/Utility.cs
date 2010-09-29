@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Security.Cryptography;
 
-namespace Simplicity.Web.App_Code
+namespace Simplicity.Data.Common
 {
-    public class Utility 
+    public class Utility
     {
         // Create an md5 sum string of this string
         static public string GetMd5Sum(string str)

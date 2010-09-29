@@ -25,7 +25,8 @@ namespace Simplicity.Web
             foreach (var n in users)
             {
 
-                if ((n.ReminderQuestionID == listForgotPasswordQuestion.SelectedIndex) && (n.ReminderAnswer.Equals(Utility.GetMd5Sum(txtForgotPasswordAnswer.Text))))
+                if ((n.ReminderQuestionID == listForgotPasswordQuestion.SelectedIndex) && (n.ReminderAnswer.Equals(
+                    Simplicity.Data.Common.Utility.GetMd5Sum(txtForgotPasswordAnswer.Text))))
                 {
 
                 }
