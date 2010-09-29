@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Utility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimplicityDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
