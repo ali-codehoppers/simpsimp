@@ -9,12 +9,12 @@
             <h2>
                 <span style="color: #cccccc;">CUSTOMER</span> LOGIN</h2>
         </div>
-        <div style="padding-left: 8px;">
+        <div class="loginhead">
             <img src="images/subheading_bar.jpg" alt="" width="565" height="21" />
         </div>
     </div>
-    <div class="floatRight" style="width: 34%;">
-        <div class="floatRight" style="padding-right: 30px; padding-bottom: 10px;">
+    <div class="loginNewMember">
+        <div class="loginimgdiv">
             <img src="images/icon_member.jpg" alt="" width="23" height="25" /></div>
         <div>
             <h2>
@@ -33,20 +33,17 @@
                     <img src="images/sign_up_free.jpg" alt="" width="225" height="24" border="0" /></a></p>
         </div>
     </div>
-    <div style="background: url(images/login_sep_bar.jpg) 0 0 no-repeat; height: 290px;
-        width: 30px; float: right;">
+    <div class="loginSeprate">
         &nbsp;
     </div>
-    <div style="padding-left: 15px; padding-top: 45px; width: 60%; padding-bottom:50px;">
+    <div class="logindiv">
         <div>
-            <div style="border-bottom: 1px solid #e7e7e7; width: 75%; float: left;">
+            <div class="logintopborder1">
             </div>
-            <div style="background: url(images/login_btm_line.jpg) bottom left no-repeat; float: left;
-                width: 25%; padding-top: 1px;">
+            <div class="logintopborder2">
             </div>
         </div>
-        <div style="background: url(images/login_lft_line.jpg) 0 0 no-repeat; float: left;
-            height: 280px">
+        <div class="loginleftbar">
             &nbsp;</div>
         <div style="padding-left: 30px;">
             <form id="form1" name="form1" method="post" action="CustomerLogin.aspx">
@@ -58,13 +55,18 @@
                         Username:</h3>
                 </div>
                 <div>
-                    
                     <asp:TextBox runat="server" ID="username" CssClass="login_field"></asp:TextBox>
-
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="username"
-                        ErrorMessage="User ID is required."> *
-                    </asp:RequiredFieldValidator>
-
+                    <div class="ErrorMsg">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="username"
+                            ErrorMessage="* Username is required." Display="Dynamic"> 
+                        </asp:RequiredFieldValidator>
+                    </div>
+                    <div class="ErrorMsg">
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="username"
+                            ErrorMessage="* Enter Email Address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                            Display="Dynamic">
+                        </asp:RegularExpressionValidator>
+                    </div>
                 </div>
             </div>
             <div style="padding-top: 2px;">
@@ -73,25 +75,31 @@
                         Password:</h3>
                 </div>
                 <div>
-                    
-                    <asp:TextBox runat="server" ID="password" CssClass="login_field"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="password"
-                        ErrorMessage="Password is required."> *
-                    </asp:RequiredFieldValidator>
+                    <asp:TextBox runat="server" ID="password" CssClass="login_field" TextMode="Password"></asp:TextBox>
+                    <div class="ErrorMsg">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Password is required."
+                            ControlToValidate="password"> 
+                        </asp:RequiredFieldValidator>
                     </div>
+                    <div class="ErrorMsg">
+                       <asp:Label ID="Label1" runat="server" Text="Label" Visible="false"></asp:Label>
+                    </div>
+                    
+                </div>
             </div>
             <div style="padding-left: 120px;">
                 <div style="padding-top: 10px; padding-bottom: 10px;">
-                    <label>
-                        <input type="checkbox" name=" " id="dfd" />
-                        Remember me</label></div>
+                    <asp:CheckBox ID="CheckBox1" runat="server" Text="Remember me" 
+                        oncheckedchanged="RememberCheckedChanged" />
+                </div>
                 <div>
-                    <a href="#" class="login">Forgot your password?</a></div>
+                    <asp:HyperLink NavigateUrl="Forget.aspx" CssClass="login" runat="server">Forgot your password?</asp:HyperLink>
+                </div>
                 <div style="padding-bottom: 20px;">
                     Do not have an account?<a href="#" class="login"> Sign up for free!</a></div>
-                <asp:ImageButton ImageUrl="images/btn_login.jpg" runat="server" OnClick="SubmitButton"/>
+                <asp:ImageButton ImageUrl="images/btn_login.jpg" runat="server" OnClick="LoginButtonClick" />
             </div>
             </form>
         </div>
-    </div>
+ </div>
 </asp:Content>

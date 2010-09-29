@@ -869,3 +869,148 @@ a.moreDetails:hover,a.solutionMoreDetails:hover
     width: 90px;
     height: 40px;
 }
+.ErrorMsg
+{
+    padding-left:120px;
+    color: #800000;
+}
+.forgetErrorMsg
+{
+
+    color: #800000;
+}
+div.myPersonalInfoTab
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(../Images/login_btn_disable.jpg) bottom left no-repeat;
+	float:left;
+}
+
+div.myPersonalInfoTabOnMouseOver
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(../Images/login_btn_highlight.jpg) bottom left no-repeat;
+	cursor:pointer;
+	float:left;
+}
+
+div.myProductsTab
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(../Images/login_btn_disable.jpg) bottom left no-repeat;
+	float:left;
+}
+
+div.myProductsTabOnMouseOver
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(../Images/login_btn_highlight.jpg) bottom left no-repeat;
+	cursor:pointer;
+	float:left;
+}
+
+div.myAccountTabs
+{
+	margin-top:10px; 
+	padding-left:50px;
+	width:850px;
+}
+
+#myAccountMyPersonalInfoTab
+{	
+	display:none;
+	padding-left:30px;
+	background: url(../images/login_lft_line.jpg) 0 0 no-repeat;
+}
+
+#myAccountMyPersonalInfoTab div.row
+{
+	padding-top:5px;
+}
+
+#myAccountMyPersonalInfoTab div.col1
+{
+	float:left;
+	width:196px;
+}
+
+#myAccountMyPersonalInfoTab div.col2
+{
+}
+
+#myAccountMyProductsTab
+{	
+	display:none;
+	padding-left:30px;
+	background: url(../images/login_lft_line.jpg) 0 0 no-repeat;
+}
+.loginNewMember
+{
+    float:right;
+    width: 34%;    
+}
+.loginimgdiv
+{
+    float:right;
+    padding-right: 30px; 
+    padding-bottom: 10px;
+}
+.loginhead
+{
+    padding-left: 8px;    
+}
+.loginSeprate
+{
+    background: url(../images/login_sep_bar.jpg) 0 0 no-repeat;
+    height: 290px;
+    width: 30px; 
+    float: right;    
+}
+.logindiv
+{
+    padding-left: 15px;
+    padding-top: 45px; 
+    width: 60%; 
+    padding-bottom: 50px;    
+    
+}
+.logintopborder1
+{
+    border-bottom: 1px solid #e7e7e7;
+    width: 75%;
+    float: left;
+}
+.logintopborder2
+{
+    background: url(../images/login_btm_line.jpg) bottom left no-repeat;
+    float: left;
+    width: 25%;
+    padding-top: 1px;    
+}
+.loginleftbar
+{
+    background: url(../images/login_lft_line.jpg) 0 0 no-repeat; 
+    float: left;
+    height: 280px; 
+    width: 10px;   
+}

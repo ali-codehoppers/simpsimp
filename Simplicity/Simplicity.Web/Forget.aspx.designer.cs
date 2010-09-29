@@ -10,7 +10,7 @@
 namespace Simplicity.Web {
     
     
-    public partial class CustomerLogin {
+    public partial class Forget {
         
         /// <summary>
         /// username control.
@@ -40,13 +40,22 @@ namespace Simplicity.Web {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
-        /// password control.
+        /// lblForgotPasswordQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
+        protected global::System.Web.UI.WebControls.Label lblForgotPasswordQuestion;
+        
+        /// <summary>
+        /// listForgotPasswordQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList listForgotPasswordQuestion;
         
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -67,12 +76,30 @@ namespace Simplicity.Web {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// txtForgotPasswordAnswer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtForgotPasswordAnswer;
+        
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
+        /// ImageButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
     }
 }
