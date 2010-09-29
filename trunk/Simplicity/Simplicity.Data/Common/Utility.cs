@@ -1,6 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data;
+using System.Configuration;
 using System.Linq;
+using System.Web;
+using System.Xml.Linq;
 using System.Text;
 using System.Security.Cryptography;
 
@@ -34,5 +37,76 @@ namespace Simplicity.Data.Common
             // And return it
             return sb.ToString();
         }
+
+        private static int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+
+        /// <summary>
+        /// Generates a random string with the given length
+        /// </summary>
+        /// <param name="size">Size of the string</param>
+        /// <param name="lowerCase">If true, generate lowercase string</param>
+        /// <returns>Random string</returns>
+        public static string RandomString(int size, bool lowerCase)
+        {
+            StringBuilder builder = new StringBuilder();
+            Random random = new Random();
+            char ch;
+            for (int i = 0; i < size; i++)
+            {
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                builder.Append(ch);
+            }
+            if (lowerCase)
+                return builder.ToString().ToLower();
+            return builder.ToString();
+        }
+
+        public static string GetCardType(string cardType)
+        {
+            if (cardType == "001") return "Visa";
+            if (cardType == "002") return "MasterCard";
+            else if (cardType == "003")
+                return "American Express";
+            else if (cardType == "004")
+                return "Discover";
+            else if (cardType == "005")
+                return "Diners Club ";
+            else if (cardType == "007")
+                return " JCB ";
+            else if (cardType == "024")
+                return " Maestro/Solo ";
+            return null;
+        }
+
+        public static void AutoLoginIntoHS()
+        {
+            string url = ConfigurationSettings.AppSettings[WebConstants.Config.HS_URL];
+            if (HttpContext.Current.Session[WebConstants.Session.USER_ID] != null)
+            {
+                User customer = DatabaseUtility.GetLoggedInCustomer();
+                if (customer != null)
+                {
+                    url += "/111AF690-0002-40D7-A26C-01D35380CE51/CreateSession.aspx?userEmail=" + customer.Email + "&clientIP=" + HttpContext.Current.Request.UserHostAddress
+                        + "&key=CC17DEC2-5727-4FA8-937A-C4D3107BBE8B";
+                    /*HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                        Response.Redirect(ConfigurationSettings.AppSettings[WebConstants.Config.HS_URL] + "/UserHome.aspx");*/
+                }
+                else
+                {
+                    url += "/Register/AddCompany.aspx";
+                }
+            }
+            else
+            {
+                url += "/Register/AddCompany.aspx";
+            }
+            HttpContext.Current.Response.Redirect(url);
+        }
     }
+
 }

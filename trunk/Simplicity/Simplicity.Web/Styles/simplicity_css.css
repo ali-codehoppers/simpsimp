@@ -990,7 +990,7 @@ div.myAccountTabs
 {
     padding-left: 15px;
     padding-top: 45px; 
-    width: 60%; 
+    width: 100%; 
     padding-bottom: 50px;    
     
 }
@@ -1013,4 +1013,29 @@ div.myAccountTabs
     float: left;
     height: 280px; 
     width: 10px;   
+}
+.ForgetUserName
+{
+    float:left;
+    padding-right:132px;    
+    padding-bottom:20px;
+}
+.ForgetQuestion
+{
+    float:left;
+    padding-right:20px;    
+    padding-bottom:20px;
+}
+.ForgetAnswer
+{
+    float:left;
+    padding-right:32px;    
+    padding-bottom:20px;
+}
+
+.myaccountinfoContinue
+{
+    padding-left:200px;
+    padding-bottom:10px;
+    
 }
