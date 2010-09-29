@@ -36,7 +36,7 @@
 			        <div class="headerLinksSeparator">|</div>	
 			        <div class="headerLinks"><a href="#">FAQs</a></div>	
 			        <div class="headerLinksSeparator">|</div>	
-			        <div class="headerLinks"><a href="#">Sign Up/Login</a></div>	
+			        <div class="headerLinks"><a href="../CustomerLogin.aspx">Sign Up/Login</a></div>	
 			        <div class="headerLinksSeparator">|</div>	
 			        <div class="headerLinks"><a href="#">Trolley</a></div>	
 			        <div class="headerLinksSeparator">|</div>	

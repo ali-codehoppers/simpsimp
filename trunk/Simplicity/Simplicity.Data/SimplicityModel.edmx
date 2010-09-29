@@ -1,0 +1,1723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SimplicityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SimplicityModelStoreContainer">
+          <EntitySet Name="CallUserProducts" EntityType="SimplicityModel.Store.CallUserProducts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CallUsers" EntityType="SimplicityModel.Store.CallUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmailQueue" EntityType="SimplicityModel.Store.EmailQueue" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmailTemplates" EntityType="SimplicityModel.Store.EmailTemplates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExchangeRates" EntityType="SimplicityModel.Store.ExchangeRates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductDetails" EntityType="SimplicityModel.Store.ProductDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Products" EntityType="SimplicityModel.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductVersions" EntityType="SimplicityModel.Store.ProductVersions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductVideos" EntityType="SimplicityModel.Store.ProductVideos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Settings" EntityType="SimplicityModel.Store.Settings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TransactionDetails" EntityType="SimplicityModel.Store.TransactionDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Transactions" EntityType="SimplicityModel.Store.Transactions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserAddresses" EntityType="SimplicityModel.Store.UserAddresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="SimplicityModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WishList" EntityType="SimplicityModel.Store.WishList" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_un_call_me_products_un_call_me_page" Association="SimplicityModel.Store.FK_un_call_me_products_un_call_me_page">
+            <End Role="CallUsers" EntitySet="CallUsers" />
+            <End Role="CallUserProducts" EntitySet="CallUserProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_product_details_un_products" Association="SimplicityModel.Store.FK_un_product_details_un_products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductDetails" EntitySet="ProductDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_product_versions_un_products" Association="SimplicityModel.Store.FK_un_product_versions_un_products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductVersions" EntitySet="ProductVersions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_product_videos_un_products" Association="SimplicityModel.Store.FK_un_product_videos_un_products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductVideos" EntitySet="ProductVideos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_transaction_details_un_product_details" Association="SimplicityModel.Store.FK_un_transaction_details_un_product_details">
+            <End Role="ProductDetails" EntitySet="ProductDetails" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_transaction_details_un_product_versions" Association="SimplicityModel.Store.FK_un_transaction_details_un_product_versions">
+            <End Role="ProductVersions" EntitySet="ProductVersions" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_transaction_details_un_products" Association="SimplicityModel.Store.FK_un_transaction_details_un_products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_transaction_details_un_transactions" Association="SimplicityModel.Store.FK_un_transaction_details_un_transactions">
+            <End Role="Transactions" EntitySet="Transactions" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_transactions_un_entity_details_core" Association="SimplicityModel.Store.FK_un_transactions_un_entity_details_core">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAddresses_Users" Association="SimplicityModel.Store.FK_UserAddresses_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserAddresses" EntitySet="UserAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_ProductDetails" Association="SimplicityModel.Store.FK_WishList_ProductDetails">
+            <End Role="ProductDetails" EntitySet="ProductDetails" />
+            <End Role="WishList" EntitySet="WishList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Products" Association="SimplicityModel.Store.FK_WishList_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="WishList" EntitySet="WishList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_ProductVersions" Association="SimplicityModel.Store.FK_WishList_ProductVersions">
+            <End Role="ProductVersions" EntitySet="ProductVersions" />
+            <End Role="WishList" EntitySet="WishList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Users" Association="SimplicityModel.Store.FK_WishList_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WishList" EntitySet="WishList" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CallUserProducts">
+          <Key>
+            <PropertyRef Name="CallMeID" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="CallMeID" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CallUsers">
+          <Key>
+            <PropertyRef Name="CallMeID" />
+          </Key>
+          <Property Name="CallMeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Forename" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="Surname" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="Telephone" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="CellNumber" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="60" />
+          <Property Name="CompanyWebsite" Type="varchar" MaxLength="60" />
+          <Property Name="AddressFull" Type="varchar" MaxLength="255" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="9" />
+          <Property Name="Comments" Type="varchar" MaxLength="1000" />
+          <Property Name="ViewDemo" Type="bit" Nullable="false" />
+          <Property Name="ReceiveEmails" Type="bit" />
+          <Property Name="CreationDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="EmailQueue">
+          <Key>
+            <PropertyRef Name="QueueID" />
+          </Key>
+          <Property Name="QueueID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LogTime" Type="datetime" Nullable="false" />
+          <Property Name="NumOfTries" Type="tinyint" Nullable="false" />
+          <Property Name="FromName" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="FromAddress" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="ToNames" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="ToAddresses" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Subject" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Body" Type="varchar(max)" Nullable="false" />
+          <Property Name="SentTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EmailTemplates">
+          <Key>
+            <PropertyRef Name="EmailTemplateID" />
+          </Key>
+          <Property Name="EmailTemplateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Subject" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="HTML" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExchangeRates">
+          <Key>
+            <PropertyRef Name="CountryCode" />
+            <PropertyRef Name="RateTime" />
+          </Key>
+          <Property Name="CountryCode" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="RateTime" Type="datetime" Nullable="false" />
+          <Property Name="ExchangeRate" Type="float" Nullable="false" />
+          <Property Name="HTMLCurrencyCode" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ProductDetails">
+          <Key>
+            <PropertyRef Name="ProductDetailID" />
+          </Key>
+          <Property Name="ProductDetailID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="ProductDetail" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Mandatory" Type="bit" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+          <Property Name="ShortName" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="TermsURL" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ProductVersions">
+          <Key>
+            <PropertyRef Name="VersionID" />
+          </Key>
+          <Property Name="VersionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MinUsers" Type="tinyint" Nullable="false" />
+          <Property Name="MinMonths" Type="tinyint" />
+          <Property Name="Discount" Type="float" />
+        </EntityType>
+        <EntityType Name="ProductVideos">
+          <Key>
+            <PropertyRef Name="VideoID" />
+          </Key>
+          <Property Name="VideoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Text" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Image" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="URL" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="SettingID" />
+          </Key>
+          <Property Name="SettingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SettingGroup" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SettingKey" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SettingValue" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TransactionDetails">
+          <Key>
+            <PropertyRef Name="TransactionDetailID" />
+          </Key>
+          <Property Name="TransactionDetailID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="VersionID" Type="int" />
+          <Property Name="VersionName" Type="varchar" MaxLength="50" />
+          <Property Name="ProductDetailID" Type="int" />
+          <Property Name="ProductDetailName" Type="varchar" MaxLength="100" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Duration" Type="int" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transactions">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="GatewayID" Type="varchar" MaxLength="50" />
+          <Property Name="CreationTime" Type="datetime" Nullable="false" />
+          <Property Name="CompletionTime" Type="datetime" />
+          <Property Name="TransactionUID" Type="char" Nullable="false" MaxLength="36" />
+          <Property Name="GWDecision" Type="varchar" MaxLength="100" />
+          <Property Name="GWReasonCode" Type="int" />
+          <Property Name="CountryCode" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="ExchangeRate" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAddresses">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="SameAsCustomer" Type="bit" Nullable="false" />
+          <Property Name="SameAsBilling" Type="bit" Nullable="false" />
+          <Property Name="MultiAddressType" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="AddressName" Type="varchar" MaxLength="255" />
+          <Property Name="AddressNo" Type="varchar" MaxLength="32" />
+          <Property Name="AddressLine1" Type="varchar" MaxLength="60" />
+          <Property Name="AddressLine2" Type="varchar" MaxLength="60" />
+          <Property Name="AddressLine3" Type="varchar" MaxLength="60" />
+          <Property Name="AddressLine4" Type="varchar" MaxLength="60" />
+          <Property Name="AddressLine5" Type="varchar" MaxLength="60" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="9" />
+          <Property Name="AddressFull" Type="varchar(max)" />
+          <Property Name="Telephone1" Type="varchar" MaxLength="30" />
+          <Property Name="Telephone2" Type="varchar" MaxLength="30" />
+          <Property Name="Fax" Type="varchar" MaxLength="30" />
+          <Property Name="Mobile" Type="varchar" MaxLength="30" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastAmendedBy" Type="int" />
+          <Property Name="LastAmendmentDate" Type="datetime" />
+          <Property Name="Town" Type="varchar" MaxLength="60" />
+          <Property Name="County" Type="varchar" MaxLength="60" />
+          <Property Name="Country" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserUID" Type="char" Nullable="false" MaxLength="36" />
+          <Property Name="VerificationCode" Type="char" MaxLength="36" />
+          <Property Name="ReceiveEmails" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="OnHold" Type="bit" Nullable="false" />
+          <Property Name="Approved" Type="int" />
+          <Property Name="PaymentType" Type="int" />
+          <Property Name="FullName" Type="varchar" MaxLength="60" />
+          <Property Name="Title" Type="varchar" MaxLength="7" />
+          <Property Name="Initials" Type="varchar" MaxLength="3" />
+          <Property Name="Forename" Type="varchar" MaxLength="60" />
+          <Property Name="Surname" Type="varchar" MaxLength="60" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" MaxLength="60" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="ReminderQuestionID" Type="tinyint" />
+          <Property Name="ReminderQuestion" Type="varchar" MaxLength="50" />
+          <Property Name="ReminderAnswer" Type="varchar" MaxLength="50" />
+          <Property Name="Details" Type="varchar" MaxLength="200" />
+          <Property Name="Verified" Type="bit" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="LoginAttempts" Type="int" />
+          <Property Name="Locked" Type="bit" Nullable="false" />
+          <Property Name="LockedReason" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastAmendedBy" Type="int" />
+          <Property Name="LastAmendmentDate" Type="datetime" />
+          <Property Name="Type" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WishList">
+          <Key>
+            <PropertyRef Name="WishListID" />
+          </Key>
+          <Property Name="WishListID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="VersionID" Type="int" />
+          <Property Name="ProductDetailID" Type="int" />
+          <Property Name="Duration" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_un_call_me_products_un_call_me_page">
+          <End Role="CallUsers" Type="SimplicityModel.Store.CallUsers" Multiplicity="1" />
+          <End Role="CallUserProducts" Type="SimplicityModel.Store.CallUserProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CallUsers">
+              <PropertyRef Name="CallMeID" />
+            </Principal>
+            <Dependent Role="CallUserProducts">
+              <PropertyRef Name="CallMeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_product_details_un_products">
+          <End Role="Products" Type="SimplicityModel.Store.Products" Multiplicity="1" />
+          <End Role="ProductDetails" Type="SimplicityModel.Store.ProductDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductDetails">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_product_versions_un_products">
+          <End Role="Products" Type="SimplicityModel.Store.Products" Multiplicity="1" />
+          <End Role="ProductVersions" Type="SimplicityModel.Store.ProductVersions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductVersions">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_product_videos_un_products">
+          <End Role="Products" Type="SimplicityModel.Store.Products" Multiplicity="1" />
+          <End Role="ProductVideos" Type="SimplicityModel.Store.ProductVideos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductVideos">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_transaction_details_un_product_details">
+          <End Role="ProductDetails" Type="SimplicityModel.Store.ProductDetails" Multiplicity="0..1" />
+          <End Role="TransactionDetails" Type="SimplicityModel.Store.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductDetails">
+              <PropertyRef Name="ProductDetailID" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="ProductDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_transaction_details_un_product_versions">
+          <End Role="ProductVersions" Type="SimplicityModel.Store.ProductVersions" Multiplicity="0..1" />
+          <End Role="TransactionDetails" Type="SimplicityModel.Store.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductVersions">
+              <PropertyRef Name="VersionID" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="VersionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_transaction_details_un_products">
+          <End Role="Products" Type="SimplicityModel.Store.Products" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="SimplicityModel.Store.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_transaction_details_un_transactions">
+          <End Role="Transactions" Type="SimplicityModel.Store.Transactions" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="SimplicityModel.Store.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transactions">
+              <PropertyRef Name="TransactionID" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="TransactionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_transactions_un_entity_details_core">
+          <End Role="Users" Type="SimplicityModel.Store.Users" Multiplicity="1" />
+          <End Role="Transactions" Type="SimplicityModel.Store.Transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAddresses_Users">
+          <End Role="Users" Type="SimplicityModel.Store.Users" Multiplicity="1" />
+          <End Role="UserAddresses" Type="SimplicityModel.Store.UserAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserAddresses">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_ProductDetails">
+          <End Role="ProductDetails" Type="SimplicityModel.Store.ProductDetails" Multiplicity="0..1" />
+          <End Role="WishList" Type="SimplicityModel.Store.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductDetails">
+              <PropertyRef Name="ProductDetailID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="ProductDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Products">
+          <End Role="Products" Type="SimplicityModel.Store.Products" Multiplicity="1" />
+          <End Role="WishList" Type="SimplicityModel.Store.WishList" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="WishListID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_ProductVersions">
+          <End Role="ProductVersions" Type="SimplicityModel.Store.ProductVersions" Multiplicity="0..1" />
+          <End Role="WishList" Type="SimplicityModel.Store.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductVersions">
+              <PropertyRef Name="VersionID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="VersionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Users">
+          <End Role="Users" Type="SimplicityModel.Store.Users" Multiplicity="1" />
+          <End Role="WishList" Type="SimplicityModel.Store.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="AddressDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_address_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddressInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="flg_deleted" Type="bit" Mode="In" />
+          <Parameter Name="entity_id" Type="int" Mode="In" />
+          <Parameter Name="flg_same_as_customer" Type="bit" Mode="In" />
+          <Parameter Name="flg_same_as_billing" Type="bit" Mode="In" />
+          <Parameter Name="multi_add_type" Type="varchar" Mode="In" />
+          <Parameter Name="address_name" Type="varchar" Mode="In" />
+          <Parameter Name="address_no" Type="varchar" Mode="In" />
+          <Parameter Name="address_line1" Type="varchar" Mode="In" />
+          <Parameter Name="address_line2" Type="varchar" Mode="In" />
+          <Parameter Name="address_line3" Type="varchar" Mode="In" />
+          <Parameter Name="address_line4" Type="varchar" Mode="In" />
+          <Parameter Name="address_line5" Type="varchar" Mode="In" />
+          <Parameter Name="address_post_code" Type="varchar" Mode="In" />
+          <Parameter Name="address_full" Type="varchar(max)" Mode="In" />
+          <Parameter Name="telephone1" Type="varchar" Mode="In" />
+          <Parameter Name="telephone2" Type="varchar" Mode="In" />
+          <Parameter Name="fax" Type="varchar" Mode="In" />
+          <Parameter Name="cell_number" Type="varchar" Mode="In" />
+          <Parameter Name="created_by" Type="int" Mode="In" />
+          <Parameter Name="date_created" Type="datetime" Mode="In" />
+          <Parameter Name="last_amended_by" Type="int" Mode="In" />
+          <Parameter Name="date_last_amended" Type="datetime" Mode="In" />
+          <Parameter Name="town" Type="varchar" Mode="In" />
+          <Parameter Name="county" Type="varchar" Mode="In" />
+          <Parameter Name="country" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="AddressSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="entity_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddressUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="flg_deleted" Type="bit" Mode="In" />
+          <Parameter Name="entity_id" Type="int" Mode="In" />
+          <Parameter Name="flg_same_as_customer" Type="bit" Mode="In" />
+          <Parameter Name="flg_same_as_billing" Type="bit" Mode="In" />
+          <Parameter Name="multi_add_type" Type="varchar" Mode="In" />
+          <Parameter Name="address_name" Type="varchar" Mode="In" />
+          <Parameter Name="address_no" Type="varchar" Mode="In" />
+          <Parameter Name="address_line1" Type="varchar" Mode="In" />
+          <Parameter Name="address_line2" Type="varchar" Mode="In" />
+          <Parameter Name="address_line3" Type="varchar" Mode="In" />
+          <Parameter Name="address_line4" Type="varchar" Mode="In" />
+          <Parameter Name="address_line5" Type="varchar" Mode="In" />
+          <Parameter Name="address_post_code" Type="varchar" Mode="In" />
+          <Parameter Name="address_full" Type="varchar(max)" Mode="In" />
+          <Parameter Name="telephone1" Type="varchar" Mode="In" />
+          <Parameter Name="telephone2" Type="varchar" Mode="In" />
+          <Parameter Name="fax" Type="varchar" Mode="In" />
+          <Parameter Name="cell_number" Type="varchar" Mode="In" />
+          <Parameter Name="created_by" Type="int" Mode="In" />
+          <Parameter Name="date_created" Type="datetime" Mode="In" />
+          <Parameter Name="last_amended_by" Type="int" Mode="In" />
+          <Parameter Name="date_last_amended" Type="datetime" Mode="In" />
+          <Parameter Name="town" Type="varchar" Mode="In" />
+          <Parameter Name="county" Type="varchar" Mode="In" />
+          <Parameter Name="country" Type="varchar" Mode="In" />
+          <Parameter Name="Original_address_id" Type="int" Mode="In" />
+          <Parameter Name="address_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CallMeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_call_me_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CallMeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name_forename" Type="varchar" Mode="In" />
+          <Parameter Name="name_surname" Type="varchar" Mode="In" />
+          <Parameter Name="telephone" Type="varchar" Mode="In" />
+          <Parameter Name="cell_number" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="company_name" Type="varchar" Mode="In" />
+          <Parameter Name="company_website" Type="varchar" Mode="In" />
+          <Parameter Name="postal_adress" Type="varchar" Mode="In" />
+          <Parameter Name="postal_code" Type="varchar" Mode="In" />
+          <Parameter Name="comments" Type="varchar" Mode="In" />
+          <Parameter Name="flg_view_demo" Type="bit" Mode="In" />
+          <Parameter Name="flg_receive_mails" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="CallMeProductDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_call_me_id" Type="int" Mode="In" />
+          <Parameter Name="Original_product_name" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CallMeProductInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="call_me_id" Type="int" Mode="In" />
+          <Parameter Name="product_name" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CallMeProductSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CallMeProductUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="call_me_id" Type="int" Mode="In" />
+          <Parameter Name="product_name" Type="varchar" Mode="In" />
+          <Parameter Name="Original_call_me_id" Type="int" Mode="In" />
+          <Parameter Name="Original_product_name" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CallMeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="flg_view_demo" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="CallMeUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name_forename" Type="varchar" Mode="In" />
+          <Parameter Name="name_surname" Type="varchar" Mode="In" />
+          <Parameter Name="telephone" Type="varchar" Mode="In" />
+          <Parameter Name="cell_number" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="company_name" Type="varchar" Mode="In" />
+          <Parameter Name="company_website" Type="varchar" Mode="In" />
+          <Parameter Name="postal_adress" Type="varchar" Mode="In" />
+          <Parameter Name="postal_code" Type="varchar" Mode="In" />
+          <Parameter Name="comments" Type="varchar" Mode="In" />
+          <Parameter Name="flg_view_demo" Type="bit" Mode="In" />
+          <Parameter Name="Original_call_me_id" Type="int" Mode="In" />
+          <Parameter Name="call_me_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CustomerDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_entity_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CustomerInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="flg_deleted" Type="bit" Mode="In" />
+          <Parameter Name="flg_entity_on_hold" Type="bit" Mode="In" />
+          <Parameter Name="flg_receive_mails" Type="bit" Mode="In" />
+          <Parameter Name="entity_approved_status" Type="int" Mode="In" />
+          <Parameter Name="entity_pymt_type" Type="int" Mode="In" />
+          <Parameter Name="name_long" Type="varchar" Mode="In" />
+          <Parameter Name="name_title" Type="varchar" Mode="In" />
+          <Parameter Name="name_initials" Type="varchar" Mode="In" />
+          <Parameter Name="name_forename" Type="varchar" Mode="In" />
+          <Parameter Name="name_surname" Type="varchar" Mode="In" />
+          <Parameter Name="name_job_title" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="logon_enable" Type="varchar" Mode="In" />
+          <Parameter Name="enable_reminder_question_id" Type="tinyint" Mode="In" />
+          <Parameter Name="enable_reminder_custom_question" Type="varchar" Mode="In" />
+          <Parameter Name="enable_reminder_question_answer" Type="varchar" Mode="In" />
+          <Parameter Name="entity_details" Type="varchar" Mode="In" />
+          <Parameter Name="flg_verified" Type="bit" Mode="In" />
+          <Parameter Name="flg_enabled" Type="bit" Mode="In" />
+          <Parameter Name="login_attempts" Type="int" Mode="In" />
+          <Parameter Name="flg_locked" Type="bit" Mode="In" />
+          <Parameter Name="locked_reason" Type="varchar" Mode="In" />
+          <Parameter Name="created_by" Type="int" Mode="In" />
+          <Parameter Name="date_created" Type="datetime" Mode="In" />
+          <Parameter Name="last_amended_by" Type="int" Mode="In" />
+          <Parameter Name="date_last_amended" Type="datetime" Mode="In" />
+          <Parameter Name="entity_type" Type="text" Mode="In" />
+        </Function>
+        <Function Name="CustomerSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CustomerSelectByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CustomerSelectById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="entity_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CustomerSelectByUID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="uid" Type="char" Mode="In" />
+        </Function>
+        <Function Name="CustomerUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="flg_deleted" Type="bit" Mode="In" />
+          <Parameter Name="flg_entity_on_hold" Type="bit" Mode="In" />
+          <Parameter Name="entity_approved_status" Type="int" Mode="In" />
+          <Parameter Name="entity_pymt_type" Type="int" Mode="In" />
+          <Parameter Name="name_long" Type="varchar" Mode="In" />
+          <Parameter Name="name_title" Type="varchar" Mode="In" />
+          <Parameter Name="name_initials" Type="varchar" Mode="In" />
+          <Parameter Name="name_forename" Type="varchar" Mode="In" />
+          <Parameter Name="name_surname" Type="varchar" Mode="In" />
+          <Parameter Name="name_job_title" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="logon_enable" Type="varchar" Mode="In" />
+          <Parameter Name="enable_reminder_question_id" Type="tinyint" Mode="In" />
+          <Parameter Name="enable_reminder_custom_question" Type="varchar" Mode="In" />
+          <Parameter Name="enable_reminder_question_answer" Type="varchar" Mode="In" />
+          <Parameter Name="entity_details" Type="varchar" Mode="In" />
+          <Parameter Name="flg_verified" Type="bit" Mode="In" />
+          <Parameter Name="flg_enabled" Type="bit" Mode="In" />
+          <Parameter Name="login_attempts" Type="int" Mode="In" />
+          <Parameter Name="flg_locked" Type="bit" Mode="In" />
+          <Parameter Name="locked_reason" Type="varchar" Mode="In" />
+          <Parameter Name="created_by" Type="int" Mode="In" />
+          <Parameter Name="date_created" Type="datetime" Mode="In" />
+          <Parameter Name="last_amended_by" Type="int" Mode="In" />
+          <Parameter Name="date_last_amended" Type="datetime" Mode="In" />
+          <Parameter Name="entity_type" Type="text" Mode="In" />
+          <Parameter Name="Original_entity_id" Type="int" Mode="In" />
+          <Parameter Name="entity_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CustomerUpdatePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="logon_enable" Type="varchar" Mode="In" />
+          <Parameter Name="Original_entity_id" Type="int" Mode="In" />
+          <Parameter Name="entity_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="EmailQueueDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_queue_id" Type="int" Mode="In" />
+          <Parameter Name="Original_log_time" Type="datetime" Mode="In" />
+          <Parameter Name="Original_num_of_tries" Type="tinyint" Mode="In" />
+          <Parameter Name="Original_from_name" Type="varchar" Mode="In" />
+          <Parameter Name="Original_from_address" Type="varchar" Mode="In" />
+          <Parameter Name="Original_to_names" Type="varchar" Mode="In" />
+          <Parameter Name="Original_to_addresses" Type="varchar" Mode="In" />
+          <Parameter Name="Original_subject" Type="varchar" Mode="In" />
+          <Parameter Name="IsNull_sent_time" Type="int" Mode="In" />
+          <Parameter Name="Original_sent_time" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="EmailQueueInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="log_time" Type="datetime" Mode="In" />
+          <Parameter Name="num_of_tries" Type="tinyint" Mode="In" />
+          <Parameter Name="from_name" Type="varchar" Mode="In" />
+          <Parameter Name="from_address" Type="varchar" Mode="In" />
+          <Parameter Name="to_names" Type="varchar" Mode="In" />
+          <Parameter Name="to_addresses" Type="varchar" Mode="In" />
+          <Parameter Name="subject" Type="varchar" Mode="In" />
+          <Parameter Name="body" Type="varchar(max)" Mode="In" />
+          <Parameter Name="sent_time" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="EmailQueueSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EmailQueueUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="log_time" Type="datetime" Mode="In" />
+          <Parameter Name="num_of_tries" Type="tinyint" Mode="In" />
+          <Parameter Name="from_name" Type="varchar" Mode="In" />
+          <Parameter Name="from_address" Type="varchar" Mode="In" />
+          <Parameter Name="to_names" Type="varchar" Mode="In" />
+          <Parameter Name="to_addresses" Type="varchar" Mode="In" />
+          <Parameter Name="subject" Type="varchar" Mode="In" />
+          <Parameter Name="body" Type="varchar(max)" Mode="In" />
+          <Parameter Name="sent_time" Type="datetime" Mode="In" />
+          <Parameter Name="Original_queue_id" Type="int" Mode="In" />
+          <Parameter Name="Original_log_time" Type="datetime" Mode="In" />
+          <Parameter Name="Original_num_of_tries" Type="tinyint" Mode="In" />
+          <Parameter Name="Original_from_name" Type="varchar" Mode="In" />
+          <Parameter Name="Original_from_address" Type="varchar" Mode="In" />
+          <Parameter Name="Original_to_names" Type="varchar" Mode="In" />
+          <Parameter Name="Original_to_addresses" Type="varchar" Mode="In" />
+          <Parameter Name="Original_subject" Type="varchar" Mode="In" />
+          <Parameter Name="IsNull_sent_time" Type="int" Mode="In" />
+          <Parameter Name="Original_sent_time" Type="datetime" Mode="In" />
+          <Parameter Name="queue_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="EmailQueueUpdateNumOfTries" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EmailTemplateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_email_template_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="EmailTemplateInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="subject" Type="varchar" Mode="In" />
+          <Parameter Name="html" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="EmailTemplateSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="EmailTemplateUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="subject" Type="varchar" Mode="In" />
+          <Parameter Name="html" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Original_email_template_id" Type="int" Mode="In" />
+          <Parameter Name="email_template_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ExchangeRateSelectByCountryCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="countryCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="GetVersionPrice" ReturnType="float" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="version_id" Type="int" Mode="In" />
+          <Parameter Name="discount" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ProductDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_product_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductDetailDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_product_detail_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductDetailInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="product_detail" Type="varchar" Mode="In" />
+          <Parameter Name="mandatory" Type="bit" Mode="In" />
+          <Parameter Name="sort_order" Type="int" Mode="In" />
+          <Parameter Name="price" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ProductDetailSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductDetailSelectById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_detail_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductDetailUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="product_detail" Type="varchar" Mode="In" />
+          <Parameter Name="mandatory" Type="bit" Mode="In" />
+          <Parameter Name="sort_order" Type="int" Mode="In" />
+          <Parameter Name="price" Type="float" Mode="In" />
+          <Parameter Name="Original_product_detail_id" Type="int" Mode="In" />
+          <Parameter Name="product_detail_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="short_name" Type="varchar" Mode="In" />
+          <Parameter Name="terms_url" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ProductSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ProductSelectById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="short_name" Type="varchar" Mode="In" />
+          <Parameter Name="terms_url" Type="varchar" Mode="In" />
+          <Parameter Name="Original_product_id" Type="int" Mode="In" />
+          <Parameter Name="product_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductVersionDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_version_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductVersionInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="min_users" Type="tinyint" Mode="In" />
+          <Parameter Name="min_months" Type="tinyint" Mode="In" />
+          <Parameter Name="discount" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ProductVersionSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductVersionSelectById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="version_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductVersionUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="min_users" Type="tinyint" Mode="In" />
+          <Parameter Name="min_months" Type="tinyint" Mode="In" />
+          <Parameter Name="discount" Type="float" Mode="In" />
+          <Parameter Name="Original_version_id" Type="int" Mode="In" />
+          <Parameter Name="version_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductVideoDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_video_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductVideoInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="text" Type="varchar" Mode="In" />
+          <Parameter Name="image" Type="varchar" Mode="In" />
+          <Parameter Name="url" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ProductVideoSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductVideoSelectById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="video_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductVideoUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="text" Type="varchar" Mode="In" />
+          <Parameter Name="image" Type="varchar" Mode="In" />
+          <Parameter Name="url" Type="varchar" Mode="In" />
+          <Parameter Name="Original_video_id" Type="int" Mode="In" />
+          <Parameter Name="video_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SettingDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_setting_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SettingInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="setting_group" Type="varchar" Mode="In" />
+          <Parameter Name="setting_key" Type="varchar" Mode="In" />
+          <Parameter Name="setting_value" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SettingSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="setting_group" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SettingUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="setting_group" Type="varchar" Mode="In" />
+          <Parameter Name="setting_key" Type="varchar" Mode="In" />
+          <Parameter Name="setting_value" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Original_setting_id" Type="int" Mode="In" />
+          <Parameter Name="setting_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TestSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TransactionDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_transaction_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TransactionDetailDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_transaction_detail_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TransactionDetailInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="transaction_id" Type="int" Mode="In" />
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="product_name" Type="varchar" Mode="In" />
+          <Parameter Name="version_id" Type="int" Mode="In" />
+          <Parameter Name="version_name" Type="varchar" Mode="In" />
+          <Parameter Name="product_detail_id" Type="int" Mode="In" />
+          <Parameter Name="product_detail_name" Type="varchar" Mode="In" />
+          <Parameter Name="quantity" Type="int" Mode="In" />
+          <Parameter Name="duration" Type="int" Mode="In" />
+          <Parameter Name="price" Type="float" Mode="In" />
+        </Function>
+        <Function Name="TransactionDetailSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="transaction_uid" Type="char" Mode="In" />
+        </Function>
+        <Function Name="TransactionDetailUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="transaction_id" Type="int" Mode="In" />
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="product_name" Type="varchar" Mode="In" />
+          <Parameter Name="version_id" Type="int" Mode="In" />
+          <Parameter Name="version_name" Type="varchar" Mode="In" />
+          <Parameter Name="product_detail_id" Type="int" Mode="In" />
+          <Parameter Name="product_detail_name" Type="varchar" Mode="In" />
+          <Parameter Name="quantity" Type="int" Mode="In" />
+          <Parameter Name="duration" Type="int" Mode="In" />
+          <Parameter Name="price" Type="float" Mode="In" />
+          <Parameter Name="Original_transaction_detail_id" Type="int" Mode="In" />
+          <Parameter Name="transaction_detail_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TransactionInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="int" Mode="In" />
+          <Parameter Name="country_code" Type="char" Mode="In" />
+          <Parameter Name="exchange_rate" Type="float" Mode="In" />
+        </Function>
+        <Function Name="TransactionSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TransactionUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gateway_id" Type="varchar" Mode="In" />
+          <Parameter Name="gw_decision" Type="varchar" Mode="In" />
+          <Parameter Name="gw_reason_code" Type="int" Mode="In" />
+          <Parameter Name="transaction_unid" Type="char" Mode="In" />
+        </Function>
+        <Function Name="VerifyCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="entity_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="WishListDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Original_wish_list_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="WishListForUserByProductId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="int" Mode="In" />
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="product_detail_id" Type="int" Mode="In" />
+          <Parameter Name="version_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="WishListInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="int" Mode="In" />
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="version_id" Type="int" Mode="In" />
+          <Parameter Name="product_detail_id" Type="int" Mode="In" />
+          <Parameter Name="quantity" Type="int" Mode="In" />
+          <Parameter Name="duration" Type="int" Mode="In" />
+        </Function>
+        <Function Name="WishListSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="WishListSelectById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="wish_list_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="WishListUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="int" Mode="In" />
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="version_id" Type="int" Mode="In" />
+          <Parameter Name="product_detail_id" Type="int" Mode="In" />
+          <Parameter Name="quantity" Type="int" Mode="In" />
+          <Parameter Name="duration" Type="int" Mode="In" />
+          <Parameter Name="Original_wish_list_id" Type="int" Mode="In" />
+          <Parameter Name="wish_list_id" Type="int" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SimplicityModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SimplicityEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CallUserProducts" EntityType="SimplicityModel.CallUserProduct" />
+          <EntitySet Name="CallUsers" EntityType="SimplicityModel.CallUser" />
+          <EntitySet Name="EmailQueues" EntityType="SimplicityModel.EmailQueue" />
+          <EntitySet Name="EmailTemplates" EntityType="SimplicityModel.EmailTemplate" />
+          <EntitySet Name="ExchangeRates" EntityType="SimplicityModel.ExchangeRate" />
+          <EntitySet Name="ProductDetails" EntityType="SimplicityModel.ProductDetail" />
+          <EntitySet Name="Products" EntityType="SimplicityModel.Product" />
+          <EntitySet Name="ProductVersions" EntityType="SimplicityModel.ProductVersion" />
+          <EntitySet Name="ProductVideos" EntityType="SimplicityModel.ProductVideo" />
+          <EntitySet Name="Settings" EntityType="SimplicityModel.Setting" />
+          <EntitySet Name="TransactionDetails" EntityType="SimplicityModel.TransactionDetail" />
+          <EntitySet Name="Transactions" EntityType="SimplicityModel.Transaction" />
+          <EntitySet Name="UserAddresses" EntityType="SimplicityModel.UserAddress" />
+          <EntitySet Name="Users" EntityType="SimplicityModel.User" />
+          <EntitySet Name="WishLists" EntityType="SimplicityModel.WishList" />
+          <AssociationSet Name="FK_un_call_me_products_un_call_me_page" Association="SimplicityModel.FK_un_call_me_products_un_call_me_page">
+            <End Role="CallUsers" EntitySet="CallUsers" />
+            <End Role="CallUserProducts" EntitySet="CallUserProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_product_details_un_products" Association="SimplicityModel.FK_un_product_details_un_products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductDetails" EntitySet="ProductDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_transaction_details_un_product_details" Association="SimplicityModel.FK_un_transaction_details_un_product_details">
+            <End Role="ProductDetails" EntitySet="ProductDetails" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_ProductDetails" Association="SimplicityModel.FK_WishList_ProductDetails">
+            <End Role="ProductDetails" EntitySet="ProductDetails" />
+            <End Role="WishList" EntitySet="WishLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_product_versions_un_products" Association="SimplicityModel.FK_un_product_versions_un_products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductVersions" EntitySet="ProductVersions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_product_videos_un_products" Association="SimplicityModel.FK_un_product_videos_un_products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductVideos" EntitySet="ProductVideos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_transaction_details_un_products" Association="SimplicityModel.FK_un_transaction_details_un_products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Products" Association="SimplicityModel.FK_WishList_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="WishList" EntitySet="WishLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_transaction_details_un_product_versions" Association="SimplicityModel.FK_un_transaction_details_un_product_versions">
+            <End Role="ProductVersions" EntitySet="ProductVersions" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_ProductVersions" Association="SimplicityModel.FK_WishList_ProductVersions">
+            <End Role="ProductVersions" EntitySet="ProductVersions" />
+            <End Role="WishList" EntitySet="WishLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_transaction_details_un_transactions" Association="SimplicityModel.FK_un_transaction_details_un_transactions">
+            <End Role="Transactions" EntitySet="Transactions" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_un_transactions_un_entity_details_core" Association="SimplicityModel.FK_un_transactions_un_entity_details_core">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAddresses_Users" Association="SimplicityModel.FK_UserAddresses_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserAddresses" EntitySet="UserAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Users" Association="SimplicityModel.FK_WishList_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WishList" EntitySet="WishLists" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CallUserProduct">
+          <Key>
+            <PropertyRef Name="CallMeID" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="CallMeID" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="CallUser" Relationship="SimplicityModel.FK_un_call_me_products_un_call_me_page" FromRole="CallUserProducts" ToRole="CallUsers" />
+        </EntityType>
+        <EntityType Name="CallUser">
+          <Key>
+            <PropertyRef Name="CallMeID" />
+          </Key>
+          <Property Name="CallMeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Forename" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="CellNumber" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="CompanyWebsite" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="AddressFull" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="Comments" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="ViewDemo" Type="Boolean" Nullable="false" />
+          <Property Name="ReceiveEmails" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" />
+          <NavigationProperty Name="CallUserProducts" Relationship="SimplicityModel.FK_un_call_me_products_un_call_me_page" FromRole="CallUsers" ToRole="CallUserProducts" />
+        </EntityType>
+        <EntityType Name="EmailQueue">
+          <Key>
+            <PropertyRef Name="QueueID" />
+          </Key>
+          <Property Name="QueueID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogTime" Type="DateTime" Nullable="false" />
+          <Property Name="NumOfTries" Type="Byte" Nullable="false" />
+          <Property Name="FromName" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="FromAddress" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="ToNames" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="ToAddresses" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Subject" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="SentTime" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="EmailTemplate">
+          <Key>
+            <PropertyRef Name="EmailTemplateID" />
+          </Key>
+          <Property Name="EmailTemplateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Subject" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="HTML" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ExchangeRate">
+          <Key>
+            <PropertyRef Name="CountryCode" />
+            <PropertyRef Name="RateTime" />
+          </Key>
+          <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="RateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ExchangeRate1" Type="Double" Nullable="false" />
+          <Property Name="HTMLCurrencyCode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ProductDetail">
+          <Key>
+            <PropertyRef Name="ProductDetailID" />
+          </Key>
+          <Property Name="ProductDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductDetail1" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Mandatory" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="SimplicityModel.FK_un_product_details_un_products" FromRole="ProductDetails" ToRole="Products" />
+          <NavigationProperty Name="TransactionDetails" Relationship="SimplicityModel.FK_un_transaction_details_un_product_details" FromRole="ProductDetails" ToRole="TransactionDetails" />
+          <NavigationProperty Name="WishLists" Relationship="SimplicityModel.FK_WishList_ProductDetails" FromRole="ProductDetails" ToRole="WishList" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ShortName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TermsURL" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ProductDetails" Relationship="SimplicityModel.FK_un_product_details_un_products" FromRole="Products" ToRole="ProductDetails" />
+          <NavigationProperty Name="ProductVersions" Relationship="SimplicityModel.FK_un_product_versions_un_products" FromRole="Products" ToRole="ProductVersions" />
+          <NavigationProperty Name="ProductVideos" Relationship="SimplicityModel.FK_un_product_videos_un_products" FromRole="Products" ToRole="ProductVideos" />
+          <NavigationProperty Name="TransactionDetails" Relationship="SimplicityModel.FK_un_transaction_details_un_products" FromRole="Products" ToRole="TransactionDetails" />
+          <NavigationProperty Name="WishList" Relationship="SimplicityModel.FK_WishList_Products" FromRole="Products" ToRole="WishList" />
+        </EntityType>
+        <EntityType Name="ProductVersion">
+          <Key>
+            <PropertyRef Name="VersionID" />
+          </Key>
+          <Property Name="VersionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MinUsers" Type="Byte" Nullable="false" />
+          <Property Name="MinMonths" Type="Byte" />
+          <Property Name="Discount" Type="Double" />
+          <NavigationProperty Name="Product" Relationship="SimplicityModel.FK_un_product_versions_un_products" FromRole="ProductVersions" ToRole="Products" />
+          <NavigationProperty Name="TransactionDetails" Relationship="SimplicityModel.FK_un_transaction_details_un_product_versions" FromRole="ProductVersions" ToRole="TransactionDetails" />
+          <NavigationProperty Name="WishLists" Relationship="SimplicityModel.FK_WishList_ProductVersions" FromRole="ProductVersions" ToRole="WishList" />
+        </EntityType>
+        <EntityType Name="ProductVideo">
+          <Key>
+            <PropertyRef Name="VideoID" />
+          </Key>
+          <Property Name="VideoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Image" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="URL" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Product" Relationship="SimplicityModel.FK_un_product_videos_un_products" FromRole="ProductVideos" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="SettingID" />
+          </Key>
+          <Property Name="SettingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SettingGroup" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SettingKey" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SettingValue" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TransactionDetail">
+          <Key>
+            <PropertyRef Name="TransactionDetailID" />
+          </Key>
+          <Property Name="TransactionDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VersionID" Type="Int32" />
+          <Property Name="VersionName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProductDetailID" Type="Int32" />
+          <Property Name="ProductDetailName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Duration" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <NavigationProperty Name="ProductDetail" Relationship="SimplicityModel.FK_un_transaction_details_un_product_details" FromRole="TransactionDetails" ToRole="ProductDetails" />
+          <NavigationProperty Name="Product" Relationship="SimplicityModel.FK_un_transaction_details_un_products" FromRole="TransactionDetails" ToRole="Products" />
+          <NavigationProperty Name="ProductVersion" Relationship="SimplicityModel.FK_un_transaction_details_un_product_versions" FromRole="TransactionDetails" ToRole="ProductVersions" />
+          <NavigationProperty Name="Transaction" Relationship="SimplicityModel.FK_un_transaction_details_un_transactions" FromRole="TransactionDetails" ToRole="Transactions" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="GatewayID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreationTime" Type="DateTime" Nullable="false" />
+          <Property Name="CompletionTime" Type="DateTime" />
+          <Property Name="TransactionUID" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="true" />
+          <Property Name="GWDecision" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="GWReasonCode" Type="Int32" />
+          <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="ExchangeRate" Type="Double" Nullable="false" />
+          <NavigationProperty Name="TransactionDetails" Relationship="SimplicityModel.FK_un_transaction_details_un_transactions" FromRole="Transactions" ToRole="TransactionDetails" />
+          <NavigationProperty Name="User" Relationship="SimplicityModel.FK_un_transactions_un_entity_details_core" FromRole="Transactions" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="UserAddress">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="SameAsCustomer" Type="Boolean" Nullable="false" />
+          <Property Name="SameAsBilling" Type="Boolean" Nullable="false" />
+          <Property Name="MultiAddressType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AddressName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="AddressNo" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="AddressLine3" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="AddressLine4" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="AddressLine5" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="AddressFull" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone1" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone2" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Mobile" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastAmendedBy" Type="Int32" />
+          <Property Name="LastAmendmentDate" Type="DateTime" />
+          <Property Name="Town" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="County" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="User" Relationship="SimplicityModel.FK_UserAddresses_Users" FromRole="UserAddresses" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserUID" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="true" />
+          <Property Name="VerificationCode" Type="String" MaxLength="36" Unicode="false" FixedLength="true" />
+          <Property Name="ReceiveEmails" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="OnHold" Type="Boolean" Nullable="false" />
+          <Property Name="Approved" Type="Int32" />
+          <Property Name="PaymentType" Type="Int32" />
+          <Property Name="FullName" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Title" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="Initials" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="Forename" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Surname" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="JobTitle" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ReminderQuestionID" Type="Byte" />
+          <Property Name="ReminderQuestion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ReminderAnswer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Details" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Verified" Type="Boolean" Nullable="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="LoginAttempts" Type="Int32" />
+          <Property Name="Locked" Type="Boolean" Nullable="false" />
+          <Property Name="LockedReason" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastAmendedBy" Type="Int32" />
+          <Property Name="LastAmendmentDate" Type="DateTime" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Transactions" Relationship="SimplicityModel.FK_un_transactions_un_entity_details_core" FromRole="Users" ToRole="Transactions" />
+          <NavigationProperty Name="UserAddresses" Relationship="SimplicityModel.FK_UserAddresses_Users" FromRole="Users" ToRole="UserAddresses" />
+          <NavigationProperty Name="WishLists" Relationship="SimplicityModel.FK_WishList_Users" FromRole="Users" ToRole="WishList" />
+        </EntityType>
+        <EntityType Name="WishList">
+          <Key>
+            <PropertyRef Name="WishListID" />
+          </Key>
+          <Property Name="WishListID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="VersionID" Type="Int32" />
+          <Property Name="ProductDetailID" Type="Int32" />
+          <Property Name="Duration" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProductDetail" Relationship="SimplicityModel.FK_WishList_ProductDetails" FromRole="WishList" ToRole="ProductDetails" />
+          <NavigationProperty Name="Product" Relationship="SimplicityModel.FK_WishList_Products" FromRole="WishList" ToRole="Products" />
+          <NavigationProperty Name="ProductVersion" Relationship="SimplicityModel.FK_WishList_ProductVersions" FromRole="WishList" ToRole="ProductVersions" />
+          <NavigationProperty Name="User" Relationship="SimplicityModel.FK_WishList_Users" FromRole="WishList" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_un_call_me_products_un_call_me_page">
+          <End Role="CallUsers" Type="SimplicityModel.CallUser" Multiplicity="1" />
+          <End Role="CallUserProducts" Type="SimplicityModel.CallUserProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CallUsers">
+              <PropertyRef Name="CallMeID" />
+            </Principal>
+            <Dependent Role="CallUserProducts">
+              <PropertyRef Name="CallMeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_product_details_un_products">
+          <End Role="Products" Type="SimplicityModel.Product" Multiplicity="1" />
+          <End Role="ProductDetails" Type="SimplicityModel.ProductDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductDetails">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_transaction_details_un_product_details">
+          <End Role="ProductDetails" Type="SimplicityModel.ProductDetail" Multiplicity="0..1" />
+          <End Role="TransactionDetails" Type="SimplicityModel.TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductDetails">
+              <PropertyRef Name="ProductDetailID" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="ProductDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_ProductDetails">
+          <End Role="ProductDetails" Type="SimplicityModel.ProductDetail" Multiplicity="0..1" />
+          <End Role="WishList" Type="SimplicityModel.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductDetails">
+              <PropertyRef Name="ProductDetailID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="ProductDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_product_versions_un_products">
+          <End Role="Products" Type="SimplicityModel.Product" Multiplicity="1" />
+          <End Role="ProductVersions" Type="SimplicityModel.ProductVersion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductVersions">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_product_videos_un_products">
+          <End Role="Products" Type="SimplicityModel.Product" Multiplicity="1" />
+          <End Role="ProductVideos" Type="SimplicityModel.ProductVideo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductVideos">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_transaction_details_un_products">
+          <End Role="Products" Type="SimplicityModel.Product" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="SimplicityModel.TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Products">
+          <End Role="Products" Type="SimplicityModel.Product" Multiplicity="1" />
+          <End Role="WishList" Type="SimplicityModel.WishList" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="WishListID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_transaction_details_un_product_versions">
+          <End Role="ProductVersions" Type="SimplicityModel.ProductVersion" Multiplicity="0..1" />
+          <End Role="TransactionDetails" Type="SimplicityModel.TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductVersions">
+              <PropertyRef Name="VersionID" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="VersionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_ProductVersions">
+          <End Role="ProductVersions" Type="SimplicityModel.ProductVersion" Multiplicity="0..1" />
+          <End Role="WishList" Type="SimplicityModel.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductVersions">
+              <PropertyRef Name="VersionID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="VersionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_transaction_details_un_transactions">
+          <End Role="Transactions" Type="SimplicityModel.Transaction" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="SimplicityModel.TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transactions">
+              <PropertyRef Name="TransactionID" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="TransactionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_un_transactions_un_entity_details_core">
+          <End Role="Users" Type="SimplicityModel.User" Multiplicity="1" />
+          <End Role="Transactions" Type="SimplicityModel.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAddresses_Users">
+          <End Role="Users" Type="SimplicityModel.User" Multiplicity="1" />
+          <End Role="UserAddresses" Type="SimplicityModel.UserAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserAddresses">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Users">
+          <End Role="Users" Type="SimplicityModel.User" Multiplicity="1" />
+          <End Role="WishList" Type="SimplicityModel.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SimplicityModelStoreContainer" CdmEntityContainer="SimplicityEntities">
+          <EntitySetMapping Name="CallUserProducts"><EntityTypeMapping TypeName="SimplicityModel.CallUserProduct"><MappingFragment StoreEntitySet="CallUserProducts">
+            <ScalarProperty Name="CallMeID" ColumnName="CallMeID" />
+            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CallUsers"><EntityTypeMapping TypeName="SimplicityModel.CallUser"><MappingFragment StoreEntitySet="CallUsers">
+            <ScalarProperty Name="CallMeID" ColumnName="CallMeID" />
+            <ScalarProperty Name="Forename" ColumnName="Forename" />
+            <ScalarProperty Name="Surname" ColumnName="Surname" />
+            <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+            <ScalarProperty Name="CellNumber" ColumnName="CellNumber" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+            <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+            <ScalarProperty Name="AddressFull" ColumnName="AddressFull" />
+            <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+            <ScalarProperty Name="Comments" ColumnName="Comments" />
+            <ScalarProperty Name="ViewDemo" ColumnName="ViewDemo" />
+            <ScalarProperty Name="ReceiveEmails" ColumnName="ReceiveEmails" />
+            <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="EmailQueues"><EntityTypeMapping TypeName="SimplicityModel.EmailQueue"><MappingFragment StoreEntitySet="EmailQueue">
+            <ScalarProperty Name="QueueID" ColumnName="QueueID" />
+            <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+            <ScalarProperty Name="NumOfTries" ColumnName="NumOfTries" />
+            <ScalarProperty Name="FromName" ColumnName="FromName" />
+            <ScalarProperty Name="FromAddress" ColumnName="FromAddress" />
+            <ScalarProperty Name="ToNames" ColumnName="ToNames" />
+            <ScalarProperty Name="ToAddresses" ColumnName="ToAddresses" />
+            <ScalarProperty Name="Subject" ColumnName="Subject" />
+            <ScalarProperty Name="Body" ColumnName="Body" />
+            <ScalarProperty Name="SentTime" ColumnName="SentTime" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="EmailTemplates"><EntityTypeMapping TypeName="SimplicityModel.EmailTemplate"><MappingFragment StoreEntitySet="EmailTemplates">
+            <ScalarProperty Name="EmailTemplateID" ColumnName="EmailTemplateID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Subject" ColumnName="Subject" />
+            <ScalarProperty Name="HTML" ColumnName="HTML" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ExchangeRates"><EntityTypeMapping TypeName="SimplicityModel.ExchangeRate"><MappingFragment StoreEntitySet="ExchangeRates">
+            <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+            <ScalarProperty Name="RateTime" ColumnName="RateTime" />
+            <ScalarProperty Name="ExchangeRate1" ColumnName="ExchangeRate" />
+            <ScalarProperty Name="HTMLCurrencyCode" ColumnName="HTMLCurrencyCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProductDetails"><EntityTypeMapping TypeName="SimplicityModel.ProductDetail"><MappingFragment StoreEntitySet="ProductDetails">
+            <ScalarProperty Name="ProductDetailID" ColumnName="ProductDetailID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="ProductDetail1" ColumnName="ProductDetail" />
+            <ScalarProperty Name="Mandatory" ColumnName="Mandatory" />
+            <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Products"><EntityTypeMapping TypeName="SimplicityModel.Product"><MappingFragment StoreEntitySet="Products">
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+            <ScalarProperty Name="TermsURL" ColumnName="TermsURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProductVersions"><EntityTypeMapping TypeName="SimplicityModel.ProductVersion"><MappingFragment StoreEntitySet="ProductVersions">
+            <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="MinUsers" ColumnName="MinUsers" />
+            <ScalarProperty Name="MinMonths" ColumnName="MinMonths" />
+            <ScalarProperty Name="Discount" ColumnName="Discount" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProductVideos"><EntityTypeMapping TypeName="SimplicityModel.ProductVideo"><MappingFragment StoreEntitySet="ProductVideos">
+            <ScalarProperty Name="VideoID" ColumnName="VideoID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="Text" ColumnName="Text" />
+            <ScalarProperty Name="Image" ColumnName="Image" />
+            <ScalarProperty Name="URL" ColumnName="URL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Settings"><EntityTypeMapping TypeName="SimplicityModel.Setting"><MappingFragment StoreEntitySet="Settings">
+            <ScalarProperty Name="SettingID" ColumnName="SettingID" />
+            <ScalarProperty Name="SettingGroup" ColumnName="SettingGroup" />
+            <ScalarProperty Name="SettingKey" ColumnName="SettingKey" />
+            <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TransactionDetails"><EntityTypeMapping TypeName="SimplicityModel.TransactionDetail"><MappingFragment StoreEntitySet="TransactionDetails">
+            <ScalarProperty Name="TransactionDetailID" ColumnName="TransactionDetailID" />
+            <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+            <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+            <ScalarProperty Name="VersionName" ColumnName="VersionName" />
+            <ScalarProperty Name="ProductDetailID" ColumnName="ProductDetailID" />
+            <ScalarProperty Name="ProductDetailName" ColumnName="ProductDetailName" />
+            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+            <ScalarProperty Name="Duration" ColumnName="Duration" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Transactions"><EntityTypeMapping TypeName="SimplicityModel.Transaction"><MappingFragment StoreEntitySet="Transactions">
+            <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="GatewayID" ColumnName="GatewayID" />
+            <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+            <ScalarProperty Name="CompletionTime" ColumnName="CompletionTime" />
+            <ScalarProperty Name="TransactionUID" ColumnName="TransactionUID" />
+            <ScalarProperty Name="GWDecision" ColumnName="GWDecision" />
+            <ScalarProperty Name="GWReasonCode" ColumnName="GWReasonCode" />
+            <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+            <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UserAddresses"><EntityTypeMapping TypeName="SimplicityModel.UserAddress"><MappingFragment StoreEntitySet="UserAddresses">
+            <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+            <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="SameAsCustomer" ColumnName="SameAsCustomer" />
+            <ScalarProperty Name="SameAsBilling" ColumnName="SameAsBilling" />
+            <ScalarProperty Name="MultiAddressType" ColumnName="MultiAddressType" />
+            <ScalarProperty Name="AddressName" ColumnName="AddressName" />
+            <ScalarProperty Name="AddressNo" ColumnName="AddressNo" />
+            <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+            <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+            <ScalarProperty Name="AddressLine3" ColumnName="AddressLine3" />
+            <ScalarProperty Name="AddressLine4" ColumnName="AddressLine4" />
+            <ScalarProperty Name="AddressLine5" ColumnName="AddressLine5" />
+            <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+            <ScalarProperty Name="AddressFull" ColumnName="AddressFull" />
+            <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+            <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+            <ScalarProperty Name="Fax" ColumnName="Fax" />
+            <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+            <ScalarProperty Name="LastAmendedBy" ColumnName="LastAmendedBy" />
+            <ScalarProperty Name="LastAmendmentDate" ColumnName="LastAmendmentDate" />
+            <ScalarProperty Name="Town" ColumnName="Town" />
+            <ScalarProperty Name="County" ColumnName="County" />
+            <ScalarProperty Name="Country" ColumnName="Country" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="SimplicityModel.User"><MappingFragment StoreEntitySet="Users">
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="UserUID" ColumnName="UserUID" />
+            <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+            <ScalarProperty Name="ReceiveEmails" ColumnName="ReceiveEmails" />
+            <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+            <ScalarProperty Name="OnHold" ColumnName="OnHold" />
+            <ScalarProperty Name="Approved" ColumnName="Approved" />
+            <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+            <ScalarProperty Name="FullName" ColumnName="FullName" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="Initials" ColumnName="Initials" />
+            <ScalarProperty Name="Forename" ColumnName="Forename" />
+            <ScalarProperty Name="Surname" ColumnName="Surname" />
+            <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="ReminderQuestionID" ColumnName="ReminderQuestionID" />
+            <ScalarProperty Name="ReminderQuestion" ColumnName="ReminderQuestion" />
+            <ScalarProperty Name="ReminderAnswer" ColumnName="ReminderAnswer" />
+            <ScalarProperty Name="Details" ColumnName="Details" />
+            <ScalarProperty Name="Verified" ColumnName="Verified" />
+            <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+            <ScalarProperty Name="LoginAttempts" ColumnName="LoginAttempts" />
+            <ScalarProperty Name="Locked" ColumnName="Locked" />
+            <ScalarProperty Name="LockedReason" ColumnName="LockedReason" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+            <ScalarProperty Name="LastAmendedBy" ColumnName="LastAmendedBy" />
+            <ScalarProperty Name="LastAmendmentDate" ColumnName="LastAmendmentDate" />
+            <ScalarProperty Name="Type" ColumnName="Type" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="WishLists"><EntityTypeMapping TypeName="SimplicityModel.WishList"><MappingFragment StoreEntitySet="WishList">
+            <ScalarProperty Name="WishListID" ColumnName="WishListID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+            <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+            <ScalarProperty Name="ProductDetailID" ColumnName="ProductDetailID" />
+            <ScalarProperty Name="Duration" ColumnName="Duration" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SimplicityModel">
+        <EntityTypeShape EntityType="SimplicityModel.CallUserProduct" Width="1.5" PointX="10" PointY="10" Height="1.4279589843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.CallUser" Width="1.5" PointX="7.75" PointY="9" Height="3.4001269531249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.EmailQueue" Width="1.5" PointX="5.75" PointY="0.75" Height="2.5783902994791656" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.EmailTemplate" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5923063151041657" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.ExchangeRate" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.ProductDetail" Width="1.5" PointX="3" PointY="3.75" Height="2.4140429687499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.Product" Width="1.5" PointX="0.75" PointY="6.5" Height="2.5783902994791683" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.ProductVersion" Width="1.5" PointX="3" PointY="6.875" Height="2.4140429687499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.ProductVideo" Width="1.5" PointX="3" PointY="10" Height="1.9210009765624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.Setting" Width="1.5" PointX="7.75" PointY="0.75" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.TransactionDetail" Width="1.5" PointX="5.25" PointY="4.75" Height="3.4001269531250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.Transaction" Width="1.5" PointX="3" PointY="15" Height="2.9070849609375031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.UserAddress" Width="1.5" PointX="3" PointY="18.75" Height="5.3722949218750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.User" Width="1.5" PointX="0.75" PointY="13.25" Height="6.3583789062500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.WishList" Width="1.5" PointX="8.25" PointY="5.125" Height="2.7427376302083388" IsExpanded="true" />
+        <AssociationConnector Association="SimplicityModel.FK_un_call_me_products_un_call_me_page" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.25" PointY="10.7139794921875" />
+          <ConnectorPoint PointX="9.3072891666666653" PointY="10.7139794921875" />
+          <ConnectorPoint PointX="9.4739558333333331" PointY="10.7139794921875" />
+          <ConnectorPoint PointX="10" PointY="10.7139794921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_un_product_details_un_products" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="6.5" />
+          <ConnectorPoint PointX="1.5" PointY="4.957021484375" />
+          <ConnectorPoint PointX="3" PointY="4.957021484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_product_details" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="5.457021484375" />
+          <ConnectorPoint PointX="5.25" PointY="5.457021484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_WishList_ProductDetails" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="4.21875" />
+          <ConnectorPoint PointX="9" PointY="4.21875" />
+          <ConnectorPoint PointX="9" PointY="5.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_un_product_versions_un_products" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.9766951497395837" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="7.9766951497395828" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="7.9766951497395837" />
+          <ConnectorPoint PointX="3" PointY="7.9766951497395837" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_un_product_videos_un_products" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="9.0783902994791674" />
+          <ConnectorPoint PointX="1.5" PointY="10.96050048828125" />
+          <ConnectorPoint PointX="3" PointY="10.96050048828125" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_products" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.65625" />
+          <ConnectorPoint PointX="5.25" PointY="6.65625" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_WishList_Products" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.3164725748697919" />
+          <ConnectorPoint PointX="2.75" PointY="7.3164725748697919" />
+          <ConnectorPoint PointX="2.75" PointY="9.53904296875" />
+          <ConnectorPoint PointX="5" PointY="9.53904296875" />
+          <ConnectorPoint PointX="5" PointY="8.4001269531250031" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="8.4001269531250031" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="8.4001269531250031" />
+          <ConnectorPoint PointX="9" PointY="8.4001269531250031" />
+          <ConnectorPoint PointX="9" PointY="7.8677376302083388" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_product_versions" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="7.5125634765625016" />
+          <ConnectorPoint PointX="5.25" PointY="7.5125634765625016" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_WishList_ProductVersions" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="8.6688134765625016" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="8.6688134765625016" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="8.6688134765625016" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="8.6688134765625016" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="8.6688134765625016" />
+          <ConnectorPoint PointX="9.3072891666666653" PointY="8.6688134765625016" />
+          <ConnectorPoint PointX="9.4739558333333331" PointY="8.6688134765625016" />
+          <ConnectorPoint PointX="9.53125" PointY="8.6688134765625016" />
+          <ConnectorPoint PointX="9.53125" PointY="7.8677376302083388" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_transactions" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.453542480468752" />
+          <ConnectorPoint PointX="6" PointY="16.453542480468752" />
+          <ConnectorPoint PointX="6" PointY="8.1501269531250031" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_un_transactions_un_entity_details_core" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="16.453542480468752" />
+          <ConnectorPoint PointX="3" PointY="16.453542480468752" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_UserAddresses_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="19.179189453125" />
+          <ConnectorPoint PointX="3" PointY="19.179189453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_WishList_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="14.09375" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="14.09375" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="14.09375" />
+          <ConnectorPoint PointX="9.3906225" PointY="14.09375" />
+          <ConnectorPoint PointX="9.3906225" PointY="7.8677376302083388" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
