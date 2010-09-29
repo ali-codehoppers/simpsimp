@@ -51,7 +51,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="A_Login.aspx" />
+    <Content Include="AfterLogin.aspx" />
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
     <Content Include="Community\Events.aspx" />
@@ -65,7 +65,7 @@
     <Content Include="CustomerLogin.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="Forget.aspx" />
+    <Content Include="ForgetPassword.aspx" />
     <Content Include="Images\01.jpg" />
     <Content Include="Images\02.jpg" />
     <Content Include="Images\astadia.png" />
@@ -194,7 +194,6 @@
     <Content Include="Images\watch_demo1.jpg" />
     <Content Include="Images\watch_demo_hns.jpg" />
     <Content Include="Images\welcome_01.jpg" />
-    <Content Include="Login.aspx" />
     <Content Include="Products\EAS\Details.aspx" />
     <Content Include="Products\EAS\Home.aspx" />
     <Content Include="Products\HandyGas\Details.aspx" />
@@ -255,12 +254,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="A_Login.aspx.cs">
-      <DependentUpon>A_Login.aspx</DependentUpon>
+    <Compile Include="AfterLogin.aspx.cs">
+      <DependentUpon>AfterLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="A_Login.aspx.designer.cs">
-      <DependentUpon>A_Login.aspx</DependentUpon>
+    <Compile Include="AfterLogin.aspx.designer.cs">
+      <DependentUpon>AfterLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\Community.master.cs">
       <DependentUpon>Community.master</DependentUpon>
@@ -381,19 +380,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Forget.aspx.cs">
-      <DependentUpon>Forget.aspx</DependentUpon>
+    <Compile Include="ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Forget.aspx.designer.cs">
-      <DependentUpon>Forget.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products\EAS\Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true"
-    CodeBehind="Forget.aspx.cs" Inherits="Simplicity.Web.Forget" %>
+    CodeBehind="ForgetPassword.aspx.cs" Inherits="Simplicity.Web.Forget" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
@@ -13,29 +13,6 @@
             <img src="images/subheading_bar.jpg" alt="" width="565" height="21" />
         </div>
     </div>
-    <div class="loginNewMember">
-        <div class="loginimgdiv">
-            <img src="images/icon_member.jpg" alt="" width="23" height="25" /></div>
-        <div>
-            <h2>
-                <span style="color: #cccccc;">Not a </span>member</h2>
-        </div>
-        <img src="images/login_not_member.jpg" alt="" width="332" height="21" />
-        <div>
-            <p>
-                Then join the network now and get free access to:</p>
-            <span style="color: #777777;">Personal portfolio tracking<br />
-                Investor network<br />
-                Compete in the Global Investor Challenge<br />
-                And much more</span>
-            <p>
-                <a href="#">
-                    <img src="images/sign_up_free.jpg" alt="" width="225" height="24" border="0" /></a></p>
-        </div>
-    </div>
-    <div class="loginSeprate">
-        &nbsp;
-    </div>
     <div class="logindiv">
         <div>
             <div class="logintopborder1">
@@ -48,13 +25,11 @@
         <div style="padding-left: 30px;">
             <form id="form1" name="form1" method="post" action="CustomerLogin.aspx">
             <div style="padding-top: 50px;">
-                <div class="floatLeft">
-                    <h3>
+                <div>
+                    <h3 class="ForgetUserName">
                         Username:</h3>
                 </div>
                 <div>
-                    <br />
-                    <br />
                     <asp:TextBox runat="server" ID="username" CssClass="login_field"></asp:TextBox>
                     <div class="forgetErrorMsg">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="username"
@@ -69,10 +44,10 @@
                     </div>
                 </div>
                 <br />
-                <div class="floatLeft">
-                    <h3>
+                <div>
+                    <h3 class="ForgetQuestion">
                         <asp:Label ID="lblForgotPasswordQuestion" runat="server" Text="Forgot Password Question:"></asp:Label></h3>
-                    <br />
+
                 </div>
                 <div>
                     <asp:DropDownList ID="listForgotPasswordQuestion" runat="server">
@@ -109,15 +84,13 @@
                             ErrorMessage="* Select Forget Password Question" ControlToValidate="listForgotPasswordQuestion"
                             Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
-                    <br />
                 </div>
+                <br />
                 <div class="floatLeft">
-                    <h3>
+                    <h3 class="ForgetAnswer">
                         <asp:Label ID="Label1" runat="server" Text="Forgot Password Answer:"></asp:Label></h3>
                 </div>
                 <div>
-                    <br />
-                    <br />
                     <asp:TextBox ID="txtForgotPasswordAnswer" CssClass="login_field" runat="server"></asp:TextBox>
                     <div class="forgetErrorMsg">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Enter Forget Password Answer"
@@ -126,8 +99,6 @@
                 </div>
             </div>
             <div style="padding-left: 120px;">
-                <div style="padding-bottom: 20px;">
-                    Do not have an account?<a href="#" class="login"> Sign up for free!</a></div>
                 <asp:ImageButton ID="ImageButton1" ImageUrl="images/btn_Submit.jpg" 
                     runat="server" onclick="ForgetButtonClick" />
             </div>
