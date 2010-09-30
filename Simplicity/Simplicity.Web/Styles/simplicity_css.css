@@ -1039,3 +1039,12 @@ div.myAccountTabs
     padding-bottom:10px;
     
 }
+.error,
+.notice, 
+.success    { padding: .5em; margin-bottom: 0.5em; border: 2px solid #ddd; margin-left:3em;margin-right:3em;margin-top:0.5em;}
+.error      { background: #FBE3E4; color: #D12F19; border-color: #FBC2C4; }
+.notice     { background: #FFF6BF; color: #817134; border-color: #FFD324; }
+.success    { background: #E6EFC2; color: #529214; border-color: #C6D880; }
+.error span    { color: #D12F19; font-weight:bold;}
+.notice span  { color: #817134; }
+.success span  { color: #529214;font-weight:bold; }

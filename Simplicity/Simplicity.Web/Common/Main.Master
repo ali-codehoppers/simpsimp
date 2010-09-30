@@ -59,6 +59,24 @@
 			        <div class="clearFloat"></div>
 		        </div>
 	        </div>
+            <asp:Panel ID="errorPanel" runat="server" CssClass="error" Visible="false">
+                <div style="float:left">
+                    <asp:Image ImageUrl="~/Images/error.png" runat="server" />
+                </div>   
+                <div style="float:left;margin-left:5px;margin-top:5px;">
+                    <asp:Label runat="server" ID="errorMessage"></asp:Label>
+                </div>
+                <div style="clear:both"></div>
+            </asp:Panel>
+            <asp:Panel ID="successPanel" runat="server" CssClass="success" Visible="false">
+                <div style="float:left">
+                    <asp:Image ID="Image2" ImageUrl="~/Images/success.png" runat="server" />
+                </div>   
+                <div style="float:left;margin-left:5px;margin-top:5px;">
+                    <asp:Label runat="server" ID="successMessage"></asp:Label>
+                </div>
+                <div style="clear:both"></div>
+            </asp:Panel>
             <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
             
             </asp:ContentPlaceHolder>

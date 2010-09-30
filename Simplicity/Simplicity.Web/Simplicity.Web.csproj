@@ -51,7 +51,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AfterLogin.aspx" />
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
     <Content Include="Community\Events.aspx" />
@@ -65,7 +64,6 @@
     <Content Include="CustomerLogin.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="ForgetPassword.aspx" />
     <Content Include="Images\01.jpg" />
     <Content Include="Images\02.jpg" />
     <Content Include="Images\astadia.png" />
@@ -245,6 +243,8 @@
     <Content Include="Solutions\SaleM\NBusiness.aspx" />
     <Content Include="Styles\products.css" />
     <Content Include="Styles\simplicity_css.css" />
+    <Content Include="TestPages\AddTrollery_TEST.aspx" />
+    <Content Include="Trolley.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -254,13 +254,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AfterLogin.aspx.cs">
-      <DependentUpon>AfterLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AfterLogin.aspx.designer.cs">
-      <DependentUpon>AfterLogin.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="BusinessObjects\PaymentDetails.cs" />
+    <Compile Include="BusinessObjects\Product.cs" />
+    <Compile Include="BusinessObjects\ShoppingItem.cs" />
+    <Compile Include="BusinessObjects\ShoppingTrolley.cs" />
     <Compile Include="Common\Community.master.cs">
       <DependentUpon>Community.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -379,13 +376,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ForgetPassword.aspx.cs">
-      <DependentUpon>ForgetPassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ForgetPassword.aspx.designer.cs">
-      <DependentUpon>ForgetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products\EAS\Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>
@@ -703,6 +693,25 @@
     <Compile Include="Solutions\SaleM\NBusiness.aspx.designer.cs">
       <DependentUpon>NBusiness.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TestPages\AddTrollery_TEST.aspx.cs">
+      <DependentUpon>AddTrollery_TEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPages\AddTrollery_TEST.aspx.designer.cs">
+      <DependentUpon>AddTrollery_TEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Trolley.aspx.cs">
+      <DependentUpon>Trolley.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trolley.aspx.designer.cs">
+      <DependentUpon>Trolley.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\GenericPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities\Utility.cs" />
+    <Compile Include="Utilities\WebConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\Products.master" />
