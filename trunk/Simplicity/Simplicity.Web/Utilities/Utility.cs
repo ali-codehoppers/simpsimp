@@ -1,16 +1,17 @@
 ﻿using System;
-using System.Data;
-using System.Configuration;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Xml.Linq;
-using System.Text;
 using System.Security.Cryptography;
+using System.Text;
+using System.Configuration;
+using Simplicity.Data;
 
-namespace Simplicity.Data.Common
+namespace Simplicity.Web.Utilities
 {
     public class Utility
     {
+
         // Create an md5 sum string of this string
         static public string GetMd5Sum(string str)
         {
@@ -87,7 +88,7 @@ namespace Simplicity.Data.Common
             string url = ConfigurationSettings.AppSettings[WebConstants.Config.HS_URL];
             if (HttpContext.Current.Session[WebConstants.Session.USER_ID] != null)
             {
-                User customer = DatabaseUtility.GetLoggedInCustomer();
+                User customer = null;//DatabaseUtility.GetLoggedInCustomer();
                 if (customer != null)
                 {
                     url += "/111AF690-0002-40D7-A26C-01D35380CE51/CreateSession.aspx?userEmail=" + customer.Email + "&clientIP=" + HttpContext.Current.Request.UserHostAddress
