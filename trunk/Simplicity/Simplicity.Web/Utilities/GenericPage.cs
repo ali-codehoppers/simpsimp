@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
+using Simplicity.Data;
 
 
 /// <summary>
@@ -50,34 +51,36 @@ namespace Simplicity.Web.Utilities
                 label.Text = message;
             }
         }
-        /*protected Nullable<int> LoggedIsUser
+        protected Simplicity.Data.User LoggedIsUser
         {
             get
             {
-                if (Session[WebConstants.Session.USER_ID] != null)
+                if(User.Identity.IsAuthenticated)
                 {
-                    return (int)Session[WebConstants.Session.USER_ID];
+                    SimplicityEntities dbEntities = new SimplicityEntities();
+                    return (from u in dbEntities.Users where u.UserUID == User.Identity.Name select u).FirstOrDefault();
                 }
                 return null;
             }
         }
-
-        protected int LoggedInUserId
-        {
-            get
-            {
-                if (Session[WebConstants.Session.USER_ID] != null)
-                {
-                    return (int)Session[WebConstants.Session.USER_ID];
-                }
-                return 0;
-            }
-        }
-
+        
         protected void RedirectToLogin()
         {
             Session[WebConstants.Session.RETURN_URL] = Request.AppRelativeCurrentExecutionFilePath;
-            Response.Redirect("~/pages/Login.aspx?" + WebConstants.Request.NEED_LOGIN + "=true");
-        }*/
+            Response.Redirect("~/Login.aspx?" + WebConstants.Request.NEED_LOGIN + "=true");
+        }
+
+        private SimplicityEntities dbContenxt = null;
+        protected SimplicityEntities DatabaseContext
+        {
+            get
+            {
+                if (dbContenxt == null)
+                {
+                    dbContenxt = new SimplicityEntities();
+                }
+                return dbContenxt;
+            }
+        }
     } 
 }
