@@ -11,7 +11,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
 using Simplicity.Data;
-
+using Simplicity.Web.BusinessObjects;
 
 /// <summary>
 /// Summary description for GenericPage
@@ -30,37 +30,39 @@ namespace Simplicity.Web.Utilities
         {
             SetMessage("error", "", false);
             SetMessage("success", "", false);
+            if (User.Identity.IsAuthenticated)
+            {
+                loggedInUser = (from u in DatabaseContext.Users where u.UserUID == User.Identity.Name select u).FirstOrDefault();
+            }
             base.OnLoad(e);
         }
 
         protected void SetSuccessMessage(string message)
         {
+            SetMessage("error", "", false);
             SetMessage("success", message, true);
         }
         protected void SetErrorMessage(string message)
         {
+            SetMessage("success", "", false);
             SetMessage("error", message, true);
         }
         private void SetMessage(string type, string message, bool visible)
         {
-            Panel panel = (Panel)this.Page.Master.FindControl(type + "Panel");
-            Label label = (Label)this.Page.Master.FindControl(type + "Message");
+            Panel panel = (Panel)FindControl(this.Page.Master, type + "Panel");
+            Label label = (Label)FindControl(this.Page.Master,type + "Message");
             if (panel != null && label != null)
             {
                 panel.Visible = visible;
                 label.Text = message;
             }
         }
+        private Simplicity.Data.User loggedInUser;
         protected Simplicity.Data.User LoggedIsUser
         {
             get
             {
-                if(User.Identity.IsAuthenticated)
-                {
-                    SimplicityEntities dbEntities = new SimplicityEntities();
-                    return (from u in dbEntities.Users where u.UserUID == User.Identity.Name select u).FirstOrDefault();
-                }
-                return null;
+                return loggedInUser;
             }
         }
         
@@ -81,6 +83,25 @@ namespace Simplicity.Web.Utilities
                 }
                 return dbContenxt;
             }
+        }
+
+        protected Control FindControl(Control root, string controlId)
+        {
+            if (root.ID == controlId)
+                return root;
+
+            foreach (Control control in root.Controls)
+            {
+                Control foundControl = FindControl(control, controlId);
+                if (foundControl != null)
+                    return foundControl;
+            }
+ 
+            return null;            
+        }
+        protected string GetCurrencyHTMLCode()
+        {
+            return ShoppingCart.GetCurrentCurrency().HTMLCurrencyCode;
         }
     } 
 }
