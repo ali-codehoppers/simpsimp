@@ -28,7 +28,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_product_versions_un_products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "Versions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Version), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_product_videos_un_products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "Videos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Video), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_transaction_details_un_products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "TransactionDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.TransactionDetail), true)]
-[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_WishList_Products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "WishList", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.WishList), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_WishList_Products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "WishList", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.WishList), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_transaction_details_un_product_versions", "Versions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Version), "TransactionDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.TransactionDetail), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_transaction_details_un_transactions", "Transactions", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Transaction), "TransactionDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.TransactionDetail), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_transactions_un_entity_details_core", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "Transactions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Transaction), true)]
@@ -2803,33 +2803,17 @@ namespace Simplicity.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_WishList_Products", "WishList")]
-        public WishList WishList
+        public EntityCollection<WishList> WishLists
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<WishList>("SimplicityModel.FK_WishList_Products", "WishList").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<WishList>("SimplicityModel.FK_WishList_Products", "WishList").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<WishList> WishListReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<WishList>("SimplicityModel.FK_WishList_Products", "WishList");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<WishList>("SimplicityModel.FK_WishList_Products", "WishList");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<WishList>("SimplicityModel.FK_WishList_Products", "WishList", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<WishList>("SimplicityModel.FK_WishList_Products", "WishList", value);
                 }
             }
         }
