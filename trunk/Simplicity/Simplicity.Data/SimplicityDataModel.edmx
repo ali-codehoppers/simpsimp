@@ -476,13 +476,13 @@
         </Association>
         <Association Name="FK_WishList_Products">
           <End Role="Products" Type="SimplicityModel.Store.Products" Multiplicity="1" />
-          <End Role="WishList" Type="SimplicityModel.Store.WishList" Multiplicity="0..1" />
+          <End Role="WishList" Type="SimplicityModel.Store.WishList" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
               <PropertyRef Name="ProductID" />
             </Principal>
             <Dependent Role="WishList">
-              <PropertyRef Name="WishListID" />
+              <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -733,7 +733,7 @@
           <NavigationProperty Name="Versions" Relationship="SimplicityModel.FK_un_product_versions_un_products" FromRole="Products" ToRole="Versions" />
           <NavigationProperty Name="Videos" Relationship="SimplicityModel.FK_un_product_videos_un_products" FromRole="Products" ToRole="Videos" />
           <NavigationProperty Name="TransactionDetails" Relationship="SimplicityModel.FK_un_transaction_details_un_products" FromRole="Products" ToRole="TransactionDetails" />
-          <NavigationProperty Name="WishList" Relationship="SimplicityModel.FK_WishList_Products" FromRole="Products" ToRole="WishList" />
+          <NavigationProperty Name="WishLists" Relationship="SimplicityModel.FK_WishList_Products" FromRole="Products" ToRole="WishList" />
         </EntityType>
         <EntityType Name="Setting">
           <Key>
@@ -982,13 +982,13 @@
         </Association>
         <Association Name="FK_WishList_Products">
           <End Role="Products" Type="SimplicityModel.Product" Multiplicity="1" />
-          <End Role="WishList" Type="SimplicityModel.WishList" Multiplicity="0..1" />
+          <End Role="WishList" Type="SimplicityModel.WishList" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
               <PropertyRef Name="ProductID" />
             </Principal>
             <Dependent Role="WishList">
-              <PropertyRef Name="WishListID" />
+              <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
