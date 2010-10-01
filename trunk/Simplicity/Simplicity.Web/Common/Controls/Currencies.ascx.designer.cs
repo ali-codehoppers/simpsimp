@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Simplicity.Web {
+namespace Simplicity.Web.Common.Controls {
     
     
-    public partial class Trolley {
+    public partial class Currencies {
         
         /// <summary>
-        /// CurrenciesControl control.
+        /// Sterling control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Simplicity.Web.Common.Controls.Currencies CurrenciesControl;
+        protected global::System.Web.UI.WebControls.ImageButton Sterling;
         
         /// <summary>
-        /// rptItems control.
+        /// Euro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptItems;
+        protected global::System.Web.UI.WebControls.ImageButton Euro;
         
         /// <summary>
-        /// btnContinueShopping control.
+        /// Dollar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnContinueShopping;
-        
-        /// <summary>
-        /// btnCheckout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnCheckout;
+        protected global::System.Web.UI.WebControls.ImageButton Dollar;
     }
 }

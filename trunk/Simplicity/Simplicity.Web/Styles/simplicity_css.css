@@ -456,9 +456,9 @@ div.navBarHover
 	padding-left:45px;
 }
 
-#contentTop
+#contentMain
 {
-
+	height: 400px;    
 }
 
 #contentTop div.leftNavBar {

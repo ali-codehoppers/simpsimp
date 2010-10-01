@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 using Simplicity.Web.BusinessObjects;
 using Simplicity.Data;
@@ -18,7 +19,10 @@ namespace Simplicity.Web.TestPages
             Product p = ProductBO.GetProduct(1);
             //Simplicity.Data.Version v = ProductBO.GetVersion(1);
             //ProductDetail pd = ProductBO.GetProductDetail(3);
-            ShoppingCart.AddProductDetail(p, 3, 1);
+            ShoppingCart.AddProductDetail(p, 3, 2);
+            FormsAuthentication.SetAuthCookie("0F296D30-48E6-4FB9-ADBD-A670A6147A1A", false);
+            int debug = 0;
+            Response.Redirect("~/Trolley.aspx");
         }
     }
 }

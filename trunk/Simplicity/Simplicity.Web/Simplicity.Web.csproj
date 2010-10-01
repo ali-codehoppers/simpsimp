@@ -51,6 +51,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Common\Controls\Currencies.ascx" />
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
     <Content Include="Community\Events.aspx" />
@@ -252,6 +253,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WishListPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\PaymentDetails.cs" />
@@ -271,6 +273,13 @@
     </Compile>
     <Compile Include="Common\Companys.master.designer.cs">
       <DependentUpon>Companys.master</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\Currencies.ascx.cs">
+      <DependentUpon>Currencies.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\Currencies.ascx.designer.cs">
+      <DependentUpon>Currencies.ascx</DependentUpon>
     </Compile>
     <Compile Include="Common\LeftMenu.master.cs">
       <DependentUpon>LeftMenu.master</DependentUpon>
@@ -712,6 +721,13 @@
     </Compile>
     <Compile Include="Utilities\Utility.cs" />
     <Compile Include="Utilities\WebConstants.cs" />
+    <Compile Include="WishListPage.aspx.cs">
+      <DependentUpon>WishListPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WishListPage.aspx.designer.cs">
+      <DependentUpon>WishListPage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\Products.master" />
