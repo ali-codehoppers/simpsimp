@@ -10,7 +10,7 @@
 namespace Simplicity.Web.Common {
     
     
-    public partial class LeftMenu {
+    public partial class WatchProductLeftMenu {
         
         /// <summary>
         /// HeadContentPlaceHolder control.
@@ -22,75 +22,66 @@ namespace Simplicity.Web.Common {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContentPlaceHolder;
         
         /// <summary>
-        /// HeadingPlaceHolder control.
+        /// ContentsPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadingPlaceHolder;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentsPlaceHolder;
         
         /// <summary>
-        /// errorPanel control.
+        /// Image7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel errorPanel;
+        protected global::System.Web.UI.WebControls.Image Image7;
         
         /// <summary>
-        /// Image1 control.
+        /// Image8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Image Image8;
         
         /// <summary>
-        /// errorMessage control.
+        /// Image9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorMessage;
+        protected global::System.Web.UI.WebControls.Image Image9;
         
         /// <summary>
-        /// successPanel control.
+        /// Image10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel successPanel;
+        protected global::System.Web.UI.WebControls.Image Image10;
         
         /// <summary>
-        /// Image2 control.
+        /// Image11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
+        protected global::System.Web.UI.WebControls.Image Image11;
         
         /// <summary>
-        /// successMessage control.
+        /// Image12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label successMessage;
-        
-        /// <summary>
-        /// ContentPlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.Image Image12;
     }
 }

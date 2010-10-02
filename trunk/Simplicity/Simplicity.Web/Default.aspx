@@ -12,10 +12,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="contentTop">
 		<div class="floatLeft leftNavBar">
-			<div> <a href="index.html" id="watch"> </a> </div>
-			<div> <a href="Technology.html" id="buy"> </a> </div>
+			<div> <a href="WatchDemo.aspx" id="watch"> </a> </div>
+			<div> <a href="BuyProduct.aspx" id="buy"> </a> </div>
 			<div> <a href="features.html" id="try"> </a> </div>
-			<div> <a href="download.html" id="call"> </a> </div>
+			<div> <a href="CallMeBack.aspx" id="call"> </a> </div>
 		</div>
 		<div class="floatRight">
 			<div class="rightBannerTop"></div>

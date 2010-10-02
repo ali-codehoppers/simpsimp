@@ -51,6 +51,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BuyProduct.aspx" />
+    <Content Include="CallMeBack.aspx" />
+    <Content Include="Common\Controls\CallMeUserControl.ascx" />
     <Content Include="Common\Controls\Currencies.ascx" />
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
@@ -61,10 +64,13 @@
     <Content Include="Company\Home.aspx" />
     <Content Include="Company\News.aspx" />
     <Content Include="Company\OurClients.aspx" />
+    <Content Include="ConfirmMail.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="CustomerLogin.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="DemoMovie.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="ForgetPassword.aspx" />
     <Content Include="Images\01.jpg" />
     <Content Include="Images\02.jpg" />
     <Content Include="Images\astadia.png" />
@@ -83,11 +89,13 @@
     <Content Include="Images\call_back1.jpg" />
     <Content Include="Images\call_back_hns.jpg" />
     <Content Include="Images\chrome.jpg" />
+    <Content Include="Images\Dollar.gif" />
     <Content Include="Images\dotted.jpg" />
     <Content Include="Images\eas_buy.jpg" />
     <Content Include="Images\eas_call.jpg" />
     <Content Include="Images\eas_try.jpg" />
     <Content Include="Images\eas_watch.jpg" />
+    <Content Include="Images\Euro.gif" />
     <Content Include="Images\finance_accnt.jpg" />
     <Content Include="Images\firefox.jpg" />
     <Content Include="Images\footer_r.jpg" />
@@ -184,7 +192,9 @@
     <Content Include="Images\sign_up_free.jpg" />
     <Content Include="Images\simple_nav_bg.jpg" />
     <Content Include="Images\simple_subnav_bg.jpg" />
+    <Content Include="Images\Sterling.gif" />
     <Content Include="Images\subheading_bar.jpg" />
+    <Content Include="Images\Ticks.gif" />
     <Content Include="Images\top_bg_r.jpg" />
     <Content Include="Images\try_sol.jpg" />
     <Content Include="Images\try_sol1.jpg" />
@@ -193,6 +203,9 @@
     <Content Include="Images\watch_demo1.jpg" />
     <Content Include="Images\watch_demo_hns.jpg" />
     <Content Include="Images\welcome_01.jpg" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Oops.aspx" />
+    <Content Include="ProductPrices.aspx" />
     <Content Include="Products\EAS\Details.aspx" />
     <Content Include="Products\EAS\Home.aspx" />
     <Content Include="Products\HandyGas\Details.aspx" />
@@ -207,7 +220,32 @@
     <Content Include="Products\HS\Documentation.aspx" />
     <Content Include="Products\HS\Home.aspx" />
     <Content Include="Products\HS\SiteSafety.aspx" />
+    <Content Include="Scripts\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\images\ui-bg_flat_75_292F8D_40x100.png" />
+    <Content Include="Scripts\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\images\ui-bg_glass_55_e0dcf9_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_65_556ed8_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_75_292F8D_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_75_556ed8_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_highlight-soft_75_0015fa_1x100.png" />
+    <Content Include="Scripts\images\ui-bg_highlight-soft_75_0064fa_1x100.png" />
+    <Content Include="Scripts\images\ui-bg_highlight-soft_75_292F8D_1x100.png" />
+    <Content Include="Scripts\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Scripts\images\ui-icons_0064fa_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.7.2.custom.css" />
+    <Content Include="Scripts\jquery-ui-1.7.2.custom.min.js" />
     <Content Include="Scripts\jquery.cycle.all.min.js" />
     <Content Include="Scripts\jquery.cycle.min.js" />
     <Content Include="Scripts\SimplicityCommon.js" />
@@ -216,6 +254,7 @@
     <Content Include="Services\Home.aspx" />
     <Content Include="Services\ProjectManagement.aspx" />
     <Content Include="Services\Training.aspx" />
+    <Content Include="SignUp.aspx" />
     <Content Include="Solutions\FinanceAccount\AccountMgt.aspx" />
     <Content Include="Solutions\FinanceAccount\BL.aspx" />
     <Content Include="Solutions\FinanceAccount\Detail.aspx" />
@@ -246,6 +285,8 @@
     <Content Include="Styles\simplicity_css.css" />
     <Content Include="TestPages\AddTrollery_TEST.aspx" />
     <Content Include="Trolley.aspx" />
+    <Content Include="ViewDemo.aspx" />
+    <Content Include="WatchDemo.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -260,6 +301,20 @@
     <Compile Include="BusinessObjects\Product.cs" />
     <Compile Include="BusinessObjects\ShoppingItem.cs" />
     <Compile Include="BusinessObjects\ShoppingTrolley.cs" />
+    <Compile Include="BuyProduct.aspx.cs">
+      <DependentUpon>BuyProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuyProduct.aspx.designer.cs">
+      <DependentUpon>BuyProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallMeBack.aspx.cs">
+      <DependentUpon>CallMeBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallMeBack.aspx.designer.cs">
+      <DependentUpon>CallMeBack.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Common\Community.master.cs">
       <DependentUpon>Community.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -273,6 +328,13 @@
     </Compile>
     <Compile Include="Common\Companys.master.designer.cs">
       <DependentUpon>Companys.master</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\CallMeUserControl.ascx.cs">
+      <DependentUpon>CallMeUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CallMeUserControl.ascx.designer.cs">
+      <DependentUpon>CallMeUserControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Common\Controls\Currencies.ascx.cs">
       <DependentUpon>Currencies.ascx</DependentUpon>
@@ -315,6 +377,13 @@
     </Compile>
     <Compile Include="Common\Solutions.master.designer.cs">
       <DependentUpon>Solutions.master</DependentUpon>
+    </Compile>
+    <Compile Include="Common\WatchProductLeftMenu.master.cs">
+      <DependentUpon>WatchProductLeftMenu.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\WatchProductLeftMenu.master.designer.cs">
+      <DependentUpon>WatchProductLeftMenu.master</DependentUpon>
     </Compile>
     <Compile Include="Community\Events.aspx.cs">
       <DependentUpon>Events.aspx</DependentUpon>
@@ -365,6 +434,13 @@
     <Compile Include="Company\OurClients.aspx.designer.cs">
       <DependentUpon>OurClients.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmMail.aspx.cs">
+      <DependentUpon>ConfirmMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmMail.aspx.designer.cs">
+      <DependentUpon>ConfirmMail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -385,6 +461,41 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DemoMovie.aspx.cs">
+      <DependentUpon>DemoMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DemoMovie.aspx.designer.cs">
+      <DependentUpon>DemoMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Oops.aspx.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Oops.aspx.designer.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPrices.aspx.cs">
+      <DependentUpon>ProductPrices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductPrices.aspx.designer.cs">
+      <DependentUpon>ProductPrices.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products\EAS\Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>
@@ -519,6 +630,13 @@
     </Compile>
     <Compile Include="Services\Training.aspx.designer.cs">
       <DependentUpon>Training.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Solutions\FinanceAccount\AccountMgt.aspx.cs">
       <DependentUpon>AccountMgt.aspx</DependentUpon>
@@ -716,11 +834,29 @@
     <Compile Include="Trolley.aspx.designer.cs">
       <DependentUpon>Trolley.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\DatabaseUtility.cs" />
+    <Compile Include="Utilities\EmailTemplateFactory.cs" />
+    <Compile Include="Utilities\EmailUtility.cs" />
+    <Compile Include="Utilities\Enums.cs" />
     <Compile Include="Utilities\GenericPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Utilities\Utility.cs" />
     <Compile Include="Utilities\WebConstants.cs" />
+    <Compile Include="ViewDemo.aspx.cs">
+      <DependentUpon>ViewDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDemo.aspx.designer.cs">
+      <DependentUpon>ViewDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WatchDemo.aspx.cs">
+      <DependentUpon>WatchDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WatchDemo.aspx.designer.cs">
+      <DependentUpon>WatchDemo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WishListPage.aspx.cs">
       <DependentUpon>WishListPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -750,7 +886,9 @@
       <Name>Simplicity.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Common\WatchProductLeftMenu.master" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
