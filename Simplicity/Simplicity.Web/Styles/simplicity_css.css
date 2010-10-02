@@ -215,6 +215,20 @@ table.probar td a:hover {
 	height: 20px;
 	width:300px;
 }
+.callme_field_big {
+	font: normal 12px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	color: #555555;
+	border:1px solid #cccccc;
+	height: 20px;
+	width:300px;
+}
+.callme_textfield_big {
+	font: normal 12px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	color: #555555;
+	border:1px solid #cccccc;
+	height: 100px;
+	width:300px;
+}
 .left_border {
 	border-left:1px dotted #cccccc;
 
@@ -614,7 +628,6 @@ div.leftNavBarGas {
 
 #ourSolutions
 {
-	
 	padding-left:50px;
 }
 #ourProducts
@@ -874,7 +887,7 @@ a.moreDetails:hover,a.solutionMoreDetails:hover
     padding-left:120px;
     color: #800000;
 }
-.forgetErrorMsg
+.forgetErrorMsg,.CallMeErrorMsg
 {
 
     color: #800000;
@@ -984,15 +997,14 @@ div.myAccountTabs
     background: url(../images/login_sep_bar.jpg) 0 0 no-repeat;
     height: 290px;
     width: 30px; 
-    float: right;    
+    float:right;  
 }
 .logindiv
 {
     padding-left: 15px;
     padding-top: 45px; 
-    width: 100%; 
+    width: 60%; 
     padding-bottom: 50px;    
-    
 }
 .logintopborder1
 {
@@ -1048,3 +1060,44 @@ div.myAccountTabs
 .error span    { color: #D12F19; font-weight:bold;}
 .notice span  { color: #817134; }
 .success span  { color: #529214;font-weight:bold; }
+#CallMe,#CallMeProduct,#callMeBack
+{	
+	padding-left:75px;
+}
+#CallMe div.row,#callMeBack div.row
+{
+	padding-top:5px;
+}
+
+#CallMe div.col1,#CallMeProduct div.col1,#callMeBack div.col1
+{
+	float:left;
+	width:220px;
+}
+#CallMe div.col1
+{
+    float:left;
+    padding-left:5px;
+
+}
+
+#CallMeProduct div.col2
+{
+    float:left;
+    padding-left:5px;
+    width:20px;
+}
+#CallMeProduct div.row
+{
+    margin-bottom: 5px;
+}
+#PrdouctHome .moreDetails
+{
+    float: left;
+    width:200px;
+    height:213px;
+   overflow: hidden;
+	display: block;
+	vertical-align: middle;
+	text-align: left;
+}

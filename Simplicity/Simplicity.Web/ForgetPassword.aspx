@@ -33,7 +33,7 @@
                     <asp:TextBox runat="server" ID="username" CssClass="login_field"></asp:TextBox>
                     <div class="forgetErrorMsg">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="username"
-                            ErrorMessage="* Username is required." Display="Dynamic"> 
+                            ErrorMessage="* Username is required" Display="Dynamic"> 
                         </asp:RequiredFieldValidator>
                     </div>
                     <div class="forgetErrorMsg">

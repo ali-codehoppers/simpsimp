@@ -5,21 +5,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="contentTop">
 		<div class="floatLeft leftNavBar">
-			<div> <a href="index.html" id="watch"> </a> </div>
-			<div> <a href="Technology.html" id="buy"> </a> </div>
+			<div> <a href="../WatchDemo.aspx" id="watch"> </a> </div>
+			<div> <a href="../BuyProduct.aspx" id="buy"> </a> </div>
 			<div> <a href="features.html" id="try"> </a> </div>
-			<div> <a href="download.html" id="call"> </a> </div>
+			<div> <a href="../CallMeBack.aspx" id="call"> </a> </div>
 		</div>
 		<div class="floatRight" style="width: 650px;">
             <div id="secnavbar" class="floatLeft">
                 <div id="icon1" class="floatLeft">
                     <asp:ContentPlaceHolder ID="HeadingPlaceHolder" runat="server"></asp:ContentPlaceHolder>
-                </div>
-                
-                <div id="nsecnavbar">
-                    <div>
-                        <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
-                    </div>
                 </div>
             </div>
             
@@ -46,7 +40,9 @@
             <div id="contentsDiv" class="servicetext">
                <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
             </div>
+            
         </div>
-		<div class="clearFloat"></div>
+        <div class="clearFloat"></div>
 	</div>
+    
 </asp:Content>

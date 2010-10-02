@@ -36,7 +36,11 @@
 			        <div class="headerLinksSeparator">|</div>	
 			        <div class="headerLinks"><a href="#">FAQs</a></div>	
 			        <div class="headerLinksSeparator">|</div>	
-			        <div class="headerLinks"><a href="../CustomerLogin.aspx">Sign Up/Login</a></div>	
+			        <div class="headerLinks">
+                    
+                            <asp:HyperLink id="LoginLink" NavigateUrl="../CustomerLogin.aspx" runat="server">Sign Up/Login</asp:HyperLink>
+                            <asp:HyperLink id="LogoutLink" NavigateUrl="../Logout.aspx" runat="server">Logout</asp:HyperLink>
+                    </div>	
 			        <div class="headerLinksSeparator">|</div>	
 			        <div class="headerLinks"><a href="#">Trolley</a></div>	
 			        <div class="headerLinksSeparator">|</div>	
@@ -59,7 +63,25 @@
 			        <div class="clearFloat"></div>
 		        </div>
 	        </div>
+            <asp:Panel ID="errorPanel" runat="server" CssClass="error" Visible="false" style="margin-top:75px;margin-left:0px;">
+                <div style="float:left">
+                    <asp:Image ID="Image2" ImageUrl="~/Images/error.png" runat="server" />
+                </div>   
+                <div style="float:left;margin-left:5px;margin-top:5px;">
+                    <asp:Label runat="server" ID="errorMessage"></asp:Label>
+                </div>
+                <div style="clear:both"></div>
+            </asp:Panel>
             
+            <asp:Panel ID="successPanel" runat="server" CssClass="success" Visible="false" style="margin-top:75px;margin-left:0px;">
+                <div style="float:left">
+                    <asp:Image ID="Image3" ImageUrl="~/Images/success.png" runat="server" />
+                </div>   
+                <div style="float:left;margin-left:5px;margin-top:5px;">
+                    <asp:Label runat="server" ID="successMessage"></asp:Label>
+                </div>
+                <div style="clear:both"></div>
+            </asp:Panel>
             <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
             
             </asp:ContentPlaceHolder>

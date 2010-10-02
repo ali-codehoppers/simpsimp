@@ -87,16 +87,20 @@ namespace Simplicity.Web.Utilities
 
         protected Control FindControl(Control root, string controlId)
         {
-            if (root.ID == controlId)
-                return root;
 
-            foreach (Control control in root.Controls)
+            if (root != null)
             {
-                Control foundControl = FindControl(control, controlId);
-                if (foundControl != null)
-                    return foundControl;
+                if (root.ID == controlId)
+                {
+                    return root;
+                }
+                foreach (Control control in root.Controls)
+                {
+                    Control foundControl = FindControl(control, controlId);
+                    if (foundControl != null)
+                        return foundControl;
+                }
             }
- 
             return null;            
         }
         protected string GetCurrencyHTMLCode()

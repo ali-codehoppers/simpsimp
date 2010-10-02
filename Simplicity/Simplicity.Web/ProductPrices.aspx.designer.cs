@@ -7,90 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Simplicity.Web.Common {
+namespace Simplicity.Web {
     
     
-    public partial class LeftMenu {
+    public partial class ProductPrices {
         
         /// <summary>
-        /// HeadContentPlaceHolder control.
+        /// hlBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.HyperLink hlBack;
         
         /// <summary>
-        /// HeadingPlaceHolder control.
+        /// Sterling control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadingPlaceHolder;
+        protected global::System.Web.UI.WebControls.ImageButton Sterling;
         
         /// <summary>
-        /// errorPanel control.
+        /// Euro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel errorPanel;
+        protected global::System.Web.UI.WebControls.ImageButton Euro;
         
         /// <summary>
-        /// Image1 control.
+        /// Dollar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.ImageButton Dollar;
         
         /// <summary>
-        /// errorMessage control.
+        /// rptMandatory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorMessage;
+        protected global::System.Web.UI.WebControls.Repeater rptMandatory;
         
         /// <summary>
-        /// successPanel control.
+        /// rptOptional control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel successPanel;
+        protected global::System.Web.UI.WebControls.Repeater rptOptional;
         
         /// <summary>
-        /// Image2 control.
+        /// hlMore control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
-        
-        /// <summary>
-        /// successMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label successMessage;
-        
-        /// <summary>
-        /// ContentPlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.HyperLink hlMore;
     }
 }

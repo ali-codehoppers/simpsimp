@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Simplicity.Web
+namespace Simplicity.Web.Common
 {
-    public partial class A_Login : System.Web.UI.Page
+    public partial class WatchProductLeftMenu : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

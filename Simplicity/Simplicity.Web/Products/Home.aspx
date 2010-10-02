@@ -5,7 +5,8 @@
     <link href="../Styles/products.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-    <div class="products" style="width: 650px">
+    <div class="clearFloat"></div>
+        
         <div id="ourProducts">
             <h2>
                 <span style="color: #cccccc;">OUR</span> PRODUCTS</h2>
@@ -40,7 +41,8 @@
                 applications to help clients with a typica; turnover of 1m-20m to co-ordinate their
                 whole business.</p>
         </div>
-        <div class="links">
+        
+        <div id="PrdouctHome">
             <div class="topLeft">
                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Products/HandyServe/Home.aspx"
                     CssClass="moreDetails">
@@ -77,5 +79,6 @@
                 </asp:HyperLink>
             </div>
         </div>
+        
     </div>
 </asp:Content>

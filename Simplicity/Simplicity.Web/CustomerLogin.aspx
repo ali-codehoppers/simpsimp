@@ -10,17 +10,17 @@
                 <span style="color: #cccccc;">CUSTOMER</span> LOGIN</h2>
         </div>
         <div class="loginhead">
-            <img src="images/subheading_bar.jpg" alt="" width="565" height="21" />
+            <img src="../images/subheading_bar.jpg" alt="" width="565" height="21" />
         </div>
     </div>
     <div class="loginNewMember">
         <div class="loginimgdiv">
-            <img src="images/icon_member.jpg" alt="" width="23" height="25" /></div>
+            <img src="../images/icon_member.jpg" alt="" width="23" height="25" /></div>
         <div>
             <h2>
                 <span style="color: #cccccc;">Not a </span>member</h2>
         </div>
-        <img src="images/login_not_member.jpg" alt="" width="332" height="21" />
+        <img src="../images/login_not_member.jpg" alt="" width="332" height="21" />
         <div>
             <p>
                 Then join the network now and get free access to:</p>
@@ -29,8 +29,8 @@
                 Compete in the Global Investor Challenge<br />
                 And much more</span>
             <p>
-                <a href="#">
-                    <img src="images/sign_up_free.jpg" alt="" width="225" height="24" border="0" /></a></p>
+                <a href="SignUp.aspx">
+                    <img src="../images/sign_up_free.jpg" alt="" width="225" height="24" border="0" /></a></p>
         </div>
     </div>
     <div class="loginSeprate">
@@ -48,7 +48,7 @@
         <div style="padding-left: 30px;">
             <form id="form1" name="form1" method="post" action="CustomerLogin.aspx">
             <div class="floatRight" style="padding-top: 50px;">
-                <img src="images/lock_icon.jpg" alt="" width="180" height="136" /></div>
+                <img src="../images/lock_icon.jpg" alt="" width="180" height="136" /></div>
             <div style="padding-top: 50px;">
                 <div class="floatLeft" style="padding-right: 50px;">
                     <h3>
@@ -82,24 +82,22 @@
                         </asp:RequiredFieldValidator>
                     </div>
                     <div class="ErrorMsg">
-                       <asp:Label ID="Label1" runat="server" Text="Label" Visible="false"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Label" Visible="false"></asp:Label>
                     </div>
-                    
                 </div>
             </div>
             <div style="padding-left: 120px;">
-                <div style="padding-top: 10px; padding-bottom: 10px;">
-                    <asp:CheckBox ID="CheckBox1" runat="server" Text="Remember me" 
-                        oncheckedchanged="RememberCheckedChanged" />
-                </div>
+
                 <div>
-                    <asp:HyperLink NavigateUrl="Forget.aspx" CssClass="login" runat="server">Forgot your password?</asp:HyperLink>
+                    <asp:HyperLink NavigateUrl="ForgetPassword.aspx" CssClass="login" runat="server">Forgot your password?</asp:HyperLink>
                 </div>
                 <div style="padding-bottom: 20px;">
-                    Do not have an account?<a href="#" class="login"> Sign up for free!</a></div>
-                <asp:ImageButton ImageUrl="images/btn_login.jpg" runat="server" OnClick="LoginButtonClick" />
+                    Do not have an account?<a href="SignUp.aspx" class="login"> Sign up for free!</a></div>
+                <asp:ImageButton ImageUrl="../images/btn_login.jpg" runat="server" OnClick="LoginButtonClick" />
             </div>
             </form>
         </div>
- </div>
+    </div>
+    <div class="clearFloat">
+    </div>
 </asp:Content>

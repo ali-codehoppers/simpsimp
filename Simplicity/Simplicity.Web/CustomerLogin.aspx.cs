@@ -5,66 +5,61 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Simplicity.Data;
+using Simplicity.Web.Utilities;
 
+using System.Web.Security;
 namespace Simplicity.Web
 {
-    public partial class CustomerLogin : System.Web.UI.Page
+    public partial class CustomerLogin : GenericPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if ((LoggedIsUser != null) || (User.Identity.IsAuthenticated))
             {
-                if (Request.Cookies["myCookie"] != null)
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                if (Request[WebConstants.Request.NEED_LOGIN] != null)
                 {
-                    HttpCookie cookie = Request.Cookies.Get("myCookie");
-                    username.Text = cookie.Values["username"];
-                    password.Text = cookie.Values["password"];
-                    var check = new UserClass(); ;
-                    Boolean result = check.checkUser(username.Text, password.Text);
-                    if (result)
-                    {
-                        Response.Redirect("Login.aspx");
-                    }
-                    else
-                    {
-                        Label1.Visible = true;
-                        Label1.Text = "Username or Password is Incorrect";
-                    }
+                    SetErrorMessage("Please login to continue");
+                }
+                else if (Request[WebConstants.Request.FROM_PAGE] != null)
+                {
+                    SetSuccessMessage("An email has been sent to you for your login details");
                 }
             }
+
         }
 
         protected void LoginButtonClick(object sender, ImageClickEventArgs e)
         {
-            var check = new UserClass(); 
-            Boolean result=check.checkUser(username.Text, password.Text);
-            if (result)
+            String Collectpassword = Utility.GetMd5Sum(password.Text);
+            var query = from c in DatabaseContext.Users where ((c.Email == username.Text) && (c.Password == Collectpassword) && (c.Verified == true)) select c;
+            if (query.Any())
             {
-                Response.Redirect("Login.aspx");
+                FormsAuthentication.SetAuthCookie(query.FirstOrDefault().UserUID, false);
+                Session[WebConstants.Session.USER_ID] = query.FirstOrDefault().UserID;
+                if (Session[WebConstants.Session.RETURN_URL] != null)
+                {
+                    Response.Redirect((string)Session[WebConstants.Session.RETURN_URL]);
+                }
+                else
+                {
+                    Response.Redirect("Default.aspx");
+                }
+
             }
-            else {
-                Label1.Visible = true;
-                Label1.Text="Username or Password is Incorrect";
+            else
+            {
+                SetErrorMessage(WebConstants.Messages.Error.CANNOT_LOGIN);
             }
         }
 
         protected void RememberCheckedChanged(object sender, EventArgs e)
         {
-            HttpCookie myCookie = new HttpCookie("myCookie");
-            if (CheckBox1.Checked)
-            {
-                myCookie.Values.Add("username", username.Text);
-                myCookie.Values.Add("password", password.Text);
-                myCookie.Expires = DateTime.Now.AddDays(15);
-            }
-            else
-            {
-                myCookie.Values.Add("username", string.Empty);
-                myCookie.Values.Add("password", string.Empty);
-                myCookie.Expires = DateTime.Now.AddMinutes(5);
-            }
-            Response.Cookies.Add(myCookie);
+
         }
-        
+
     }
 }

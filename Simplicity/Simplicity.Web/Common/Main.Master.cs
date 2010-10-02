@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
+
 
 namespace Simplicity.Web.Common
 {
@@ -11,7 +13,15 @@ namespace Simplicity.Web.Common
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Page.User.Identity.IsAuthenticated)
+            {
+                LoginLink.Visible = false;
+                LogoutLink.Visible = true;
+            }
+            else {
+                LoginLink.Visible = true;
+                LogoutLink.Visible = false;
+            }
         }
     }
 }
