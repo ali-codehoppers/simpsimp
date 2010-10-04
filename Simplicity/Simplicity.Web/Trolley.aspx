@@ -28,8 +28,8 @@
     </div>
     <div>
         <asp:ImageButton ID="btnContinueShopping" runat="server" 
-            onclick="btnContinueShopping_Click" />
-        <asp:ImageButton ID="btnCheckout" runat="server" onclick="btnCheckout_Click" 
+            onclick="btnContinueShopping_Click" ImageUrl="~/Images/btn_continue.jpg"/>
+        <asp:ImageButton ID="btnCheckout" runat="server" onclick="btnCheckout_Click" ImageUrl="~/Images/btn_submit.jpg"
             style="width: 14px" />        
     </div>
     </div>

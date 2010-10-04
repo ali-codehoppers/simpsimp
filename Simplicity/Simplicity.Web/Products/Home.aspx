@@ -5,9 +5,9 @@
     <link href="../Styles/products.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-    <div class="clearFloat"></div>
-        
-        <div id="ourProducts">
+
+       
+        <div id="ourProducts" style="margin-top:-40px;">
             <h2>
                 <span style="color: #cccccc;">OUR</span> PRODUCTS</h2>
         </div>
@@ -80,5 +80,5 @@
             </div>
         </div>
         
-    </div>
+   
 </asp:Content>

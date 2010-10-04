@@ -51,6 +51,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AccountAddress.aspx" />
     <Content Include="BuyProduct.aspx" />
     <Content Include="CallMeBack.aspx" />
     <Content Include="Common\Controls\CallMeUserControl.ascx" />
@@ -64,6 +65,7 @@
     <Content Include="Company\Home.aspx" />
     <Content Include="Company\News.aspx" />
     <Content Include="Company\OurClients.aspx" />
+    <Content Include="ConfirmCheckout.aspx" />
     <Content Include="ConfirmMail.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="CustomerLogin.aspx" />
@@ -205,6 +207,7 @@
     <Content Include="Images\welcome_01.jpg" />
     <Content Include="Logout.aspx" />
     <Content Include="Oops.aspx" />
+    <Content Include="PaymentDetail.aspx" />
     <Content Include="ProductPrices.aspx" />
     <Content Include="Products\EAS\Details.aspx" />
     <Content Include="Products\EAS\Home.aspx" />
@@ -297,6 +300,13 @@
     <Content Include="WishListPage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountAddress.aspx.cs">
+      <DependentUpon>AccountAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountAddress.aspx.designer.cs">
+      <DependentUpon>AccountAddress.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\PaymentDetails.cs" />
     <Compile Include="BusinessObjects\Product.cs" />
     <Compile Include="BusinessObjects\ShoppingItem.cs" />
@@ -434,6 +444,13 @@
     <Compile Include="Company\OurClients.aspx.designer.cs">
       <DependentUpon>OurClients.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmCheckout.aspx.cs">
+      <DependentUpon>ConfirmCheckout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmCheckout.aspx.designer.cs">
+      <DependentUpon>ConfirmCheckout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConfirmMail.aspx.cs">
       <DependentUpon>ConfirmMail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -489,6 +506,13 @@
     </Compile>
     <Compile Include="Oops.aspx.designer.cs">
       <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentDetail.aspx.cs">
+      <DependentUpon>PaymentDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaymentDetail.aspx.designer.cs">
+      <DependentUpon>PaymentDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductPrices.aspx.cs">
       <DependentUpon>ProductPrices.aspx</DependentUpon>
@@ -834,6 +858,10 @@
     <Compile Include="Trolley.aspx.designer.cs">
       <DependentUpon>Trolley.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\AuthenticatedPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities\CyberSourceCS.cs" />
     <Compile Include="Utilities\DatabaseUtility.cs" />
     <Compile Include="Utilities\EmailTemplateFactory.cs" />
     <Compile Include="Utilities\EmailUtility.cs" />
@@ -841,6 +869,7 @@
     <Compile Include="Utilities\GenericPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Utilities\SessionFactory.cs" />
     <Compile Include="Utilities\Utility.cs" />
     <Compile Include="Utilities\WebConstants.cs" />
     <Compile Include="ViewDemo.aspx.cs">
