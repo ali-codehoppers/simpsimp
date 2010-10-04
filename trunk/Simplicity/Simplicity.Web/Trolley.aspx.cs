@@ -151,7 +151,7 @@ namespace Simplicity.Web
             else
             {
                 //chckec for authentication on the respective page so it is redirected there
-                Response.Redirect("~/pages/AccountAddress.aspx");
+                Response.Redirect("~/AccountAddress.aspx");
             }
         }
 

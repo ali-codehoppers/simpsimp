@@ -124,38 +124,6 @@ namespace Simplicity.Web
             double finalPrice = ((double)price) * ShoppingCart.GetCurrentCurrency().ExchangeRate1;
             return String.Format("{0:N2}", finalPrice);
         }
-        protected void rptOptional_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (product != null)
-            {
-                if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
-                {
-                    Repeater rptHeader = (Repeater)e.Item.FindControl("rptVersions");
-                    Product productDetails = (Product)e.Item.DataItem;
-                    if (rptHeader != null)
-                    {
-                        List<Version> versions = new List<Version>();
-                        foreach (Version versionDS in product.Versions)
-                        {
-                            Version version = new Version();
-                            version.VersionId = versionDS.VersionId;
-                            version.ProductDetailId = productDetails.ProductDetails;
-                            if (versionDS.IsdiscountNull())
-                            {
-                                version.Price = productDetails.price;
-                            }
-                            else
-                            {
-                                version.Price = productDetails.price - productDetails.price * versionDS.discount / 100;
-                            }
-                            version.Price *= ShoppingCart.GetCurrentCurrency().exchange_rate;
-                            versions.Add(version);
-                        }
-                        rptHeader.DataSource = versions;
-                        rptHeader.DataBind();
-                    }
-                }
-            }
-        }
+        
     }
 }
