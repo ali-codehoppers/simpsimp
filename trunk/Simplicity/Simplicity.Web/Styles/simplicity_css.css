@@ -986,8 +986,8 @@ div.myAccountTabs
 }
 .loginNewMember
 {
-    float:right;
-    width: 34%;    
+    float:left;
+    width: 350px;       
 }
 .loginimgdiv
 {
@@ -1003,35 +1003,39 @@ div.myAccountTabs
 {
     background: url(../images/login_sep_bar.jpg) 0 0 no-repeat;
     height: 290px;
-    width: 30px; 
-    float:right;  
+    width: 20px; 
+    float:left; 
+    margin-left:0px;
+    
 }
 .logindiv
 {
-    padding-left: 15px;
-    padding-top: 45px; 
-    width: 60%; 
-    padding-bottom: 50px;    
+    padding-left: 10px;
+    padding-top: 30px; 
+    width: 600px; 
+    padding-bottom: 50px; 
+    float:left;   
 }
 .logintopborder1
 {
-    border-bottom: 1px solid #e7e7e7;
-    width: 75%;
-    float: left;
+    float:left;
+    width: 400px;
+    border-top: 1px solid #e7e7e7;
 }
 .logintopborder2
 {
-    background: url(../images/login_btm_line.jpg) bottom left no-repeat;
-    float: left;
-    width: 25%;
+    background: url(../images/login_btm_line.jpg) 0 0 no-repeat;
     padding-top: 1px;    
+    float:left;
+    width:117px;
+    height:1px;
 }
 .loginleftbar
 {
     background: url(../images/login_lft_line.jpg) 0 0 no-repeat; 
     float: left;
     height: 280px; 
-    width: 10px;   
+    width: 1px;   
 }
 .ForgetUserName
 {
@@ -1195,4 +1199,11 @@ A.PaymentAddresscurrent:hover {
 {
 	float:left;
 	width:196px;
+}
+
+.errorField 
+{
+	border: 1px solid red;
+	border-right: 2px solid red;
+	border-bottom: 2px solid red;	
 }
