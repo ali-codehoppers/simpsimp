@@ -18,91 +18,99 @@
         </div>
         <div id="contentsDiv" class="servicetext">
             <h2>
-                Simplicity EAS will help manage costs and time on all your operations and project.
+                Simplicity EAS will help manage costs and time on all your <br />operations and project.
                 It allows you to:</h2>
             <ul>
-                <li>Enquire/ Order/ Job Ticket Works Orders and Bills of Materials to complete projects
+                <li class="list">Enquire/ Order/ Job Ticket Works Orders and Bills of Materials to complete projects
                     and orders</li>
-                <li>Handle variations and retentions effectively, so that they are not rejected</li>
-                <li>Schedule operatives, plant, machinery and materials to control costs and deliver
+                <li class="list">Handle variations and retentions effectively, so that they are not rejected</li>
+                <li class="list">Schedule operatives, plant, machinery and materials to control costs and deliver
                     on time</li>
-                <li>Display Time sheets and Expense Managment to control costs</li>
-                <li>Analyse all the other business processes, from beginning to end</li>
+                <li class="list">Display Time sheets and Expense Managment to control costs</li>
+                <li class="list">Analyse all the other business processes, from beginning to end</li>
             </ul>
             <p>
                 To find out more about what Simplicity EAS has to offer and how they can help your
                 business click on the below</p>
             <div id="tag">
-                <a href="#workmgt" style="font-weight: bolder;">Work Mgt </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#supplymgt" style="font-weight: bolder;">Supply Mgt </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#projectmgt" style="font-weight: bolder;">Project Mgt</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#hardware" style="font-weight: bolder;">Hardware Specs</a>
+                <ul>
+                <li class="secondlist"><a href="#workmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Work Mgt </a></li>
+                <li class="secondlist"><a href="#supplymgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Supply Mgt </a></li>
+                <li class="secondlist"><a href="#projectmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Project Mgt</a></li>
+                <li class="secondlist"><a href="#hardware" style="font-weight: bolder;font-size:13px;color: #0066FF;">Hardware Specs</a></li>
+                </ul>
             </div>
             <div id="workmgt">
-                <br />
-                <a href="#tag">back to top</a>
-                <br />
-                <br />
+                <div  style="width:95%;">
+                    <a href="#tag" style="float:right;"><img src="../../Images/top.jpg"/></a>
+                    <div class="dotted_line" style="padding-top:15px;">
+                    </div>
+                    
+                </div>
                 <h2>
-                    'Save time and make managment of jobs from "quote" to "work-in-progress" easy'</h2>
+                    'Save time and make managment of jobs from "quote" to <br />"work-in-progress" easy'</h2>
                 <ul>
-                    <li>Convert successful tenders to work in progress</li>
-                    <li>Allocate to job manager</li>
-                    <li>Alert to compliance needs against each job and store completed documentation</li>
-                    <li>Alert for contract status and store documents against job</li>
-                    <li>Issue permits and authorisation for each job</li></ul>
+                    <li class="list">Convert successful tenders to work in progress</li>
+                    <li class="list">Allocate to job manager</li>
+                    <li class="list">Alert to compliance needs against each job and store completed documentation</li>
+                    <li class="list">Alert for contract status and store documents against job</li>
+                    <li class="list">Issue permits and authorisation for each job</li></ul>
             </div>
             <div id="supplymgt">
-                <br />
-                <a href="#tag">back to top</a>
-                <br />
-                <br />
+                <div  style="width:95%;">
+                    <a href="#tag" style="float:right;"><img src="../../Images/top.jpg"/></a>
+                    <div class="dotted_line" style="padding-top:15px;">
+                    </div>
+                    
+                </div>
                 <h2>
                     Track orders suppliers so every penny is accounted for</h2>
                 <ul>
-                    <li>Start, amend and update order checklists</li>
-                    <li>Receive delivery notes</li>
-                    <li>Receive purchase invoices</li>
-                    <li>Approve and reject suppliers</li>
-                    <li>Plan and order materials</li>
-                    <li>Email Project Orders</li>
-                    <li>Manage ordering of resources</li></ul>
+                    <li class="list">Start, amend and update order checklists</li>
+                    <li class="list">Receive delivery notes</li>
+                    <li class="list">Receive purchase invoices</li>
+                    <li class="list">Approve and reject suppliers</li>
+                    <li class="list">Plan and order materials</li>
+                    <li class="list">Email Project Orders</li>
+                    <li class="list">Manage ordering of resources</li></ul>
             </div>
             <div id="projectmgt">
-                <br />
-                <a href="#tag">back to top</a>
-                <br />
-                <br />
+                <div  style="width:95%;">
+                    <a href="#tag" style="float:right;"><img src="../../Images/top.jpg"/></a>
+                    <div class="dotted_line" style="padding-top:15px;">
+                    </div>
+                </div>
                 <h2>
                     Enables project managers to control costs &amp; resources</h2>
                 <ul>
-                    <li>Update job status</li>
-                    <li>Create invoice records for certified works</li>
-                    <li>Assign to technicians</li>
-                    <li>Email or fax job tickets to technicians with appointment and materials information</li>
-                    <li>User quotations and variations</li>
-                    <li>Schedule/allocate resources and staff</li>
-                    <li>Attach folders of information including photos, designs, etc</li>
-                    <li>Review and check status' on every element of a project/job</li>
-                    <li>Manage cost implications of over run</li>
-                    <li>Use quotations and variations</li>
-                    <li>Log details of variation requests</li>
-                    <li>Send variation order for authorisation</li>
-                    <li>Issue requests for resources</li>
-                    <li>Check staff have the qualifications needed for tasks</li>
-                    <li>Record accidents</li>
-                    <li>Log awaiting other trades &amp; notify customer</li>
-                    <li>Log 'No Access' &amp; notify customer</li>
-                    <li>Create &amp; log documents for suite inductions &amp; invite attendants</li>
-                    <li>Manage the delivery of purchases</li>
-                    <li>Story log-in and log-out on timesheets</li>
-                    <li>Manage ordering of resources</li></ul>
+                    <li class="list">Update job status</li>
+                    <li class="list">Create invoice records for certified works</li>
+                    <li class="list">Assign to technicians</li>
+                    <li class="list">Email or fax job tickets to technicians with appointment and materials information</li>
+                    <li class="list">User quotations and variations</li>
+                    <li class="list">Schedule/allocate resources and staff</li>
+                    <li class="list">Attach folders of information including photos, designs, etc</li>
+                    <li class="list">Review and check status' on every element of a project/job</li>
+                    <li class="list">Manage cost implications of over run</li>
+                    <li class="list">Use quotations and variations</li>
+                    <li class="list">Log details of variation requests</li>
+                    <li class="list">Send variation order for authorisation</li>
+                    <li class="list">Issue requests for resources</li>
+                    <li class="list">Check staff have the qualifications needed for tasks</li>
+                    <li class="list">Record accidents</li>
+                    <li class="list">Log awaiting other trades &amp; notify customer</li>
+                    <li class="list">Log 'No Access' &amp; notify customer</li>
+                    <li class="list">Create &amp; log documents for suite inductions &amp; invite attendants</li>
+                    <li class="list">Manage the delivery of purchases</li>
+                    <li class="list">Story log-in and log-out on timesheets</li>
+                    <li class="list">Manage ordering of resources</li></ul>
             </div>
             <div id="hardware">
-                <br />
-                <a href="#tag">back to top</a>
-                <br />
-                <br />
+                <div  style="width:95%;">
+                    <a href="#tag" style="float:right;"><img src="../../Images/top.jpg"/></a>
+                    <div class="dotted_line" style="padding-top:15px;">
+                    </div>
+                </div>
                 <p>
                     Click on the options below to view the Browsers and Information needed to avail
                     of any of the Simplicity Products</p>
@@ -136,7 +144,7 @@
                     <a href="http://download.cnet.com/Google-Chrome/3000-2356_4-10881381.html" target="_blank">
                         Download version 2.0.172.43</a>
                 </div>
-                <div class="browserlist">
+                <div class="browserlistright">
                     <div>
                         <img src="../../Images/safari_icon.png" width="66px" height="68px" />
                     </div>
@@ -146,7 +154,7 @@
                         <a href="http://www.apple.com/safari/download/" target="_blank">Download version 4.0.3</a>
                     </div>
                 </div>
-                <div class="browserlist">
+                <div class="browserlistdown">
                     <div>
                         <img src="../../Images/opera.jpg" width="66px" height="68px" /></div>
                     <div>

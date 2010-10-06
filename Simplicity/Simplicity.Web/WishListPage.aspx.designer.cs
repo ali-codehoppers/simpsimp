@@ -22,6 +22,15 @@ namespace Simplicity.Web {
         protected global::Simplicity.Web.Common.Controls.Currencies CurrenciesControl;
         
         /// <summary>
+        /// Image6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image6;
+        
+        /// <summary>
         /// rpt control.
         /// </summary>
         /// <remarks>
@@ -31,21 +40,21 @@ namespace Simplicity.Web {
         protected global::System.Web.UI.WebControls.Repeater rpt;
         
         /// <summary>
-        /// imbBtnContinue control.
+        /// ImageButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbBtnContinue;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
         
         /// <summary>
-        /// imbBtnCheckout control.
+        /// ImageButton2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbBtnCheckout;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton2;
     }
 }

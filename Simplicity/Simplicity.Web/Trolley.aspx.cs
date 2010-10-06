@@ -139,7 +139,7 @@ namespace Simplicity.Web
 
         protected void btnContinueShopping_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/BuyProduct.aspx");
         }
 
         protected void btnCheckout_Click(object sender, ImageClickEventArgs e)

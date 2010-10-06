@@ -67,17 +67,17 @@
             that impact profit. The suite includes:
         </p>
         <ul>
-            <li>Enquiries &amp; projects (Click Sales &amp; Marketing below)</li>
-            <li>Invoices (Click Finance &amp; Accounts below)</li>
-            <li>Diary (Click Resource mgt below)</li>
-            <li>Payroll (Click Finance &amp; Accounts below)</li>
-            <li>Training (Click Service above)</li>
-            <li>Suppliers (Click Operations below)</li>
-            <li>Petty cash (Click Finance &amp; Accounts below)</li>
-            <li>Construction Industry Scheme</li>
-            <li>Contractors</li>
-            <li>Vehicle Managment (Click Operations below)</li>
-            <li>Asset Management (Click Operations below)</li>
+            <li class="list">Enquiries &amp; projects (Click Sales &amp; Marketing below)</li>
+            <li class="list">Invoices (Click Finance &amp; Accounts below)</li>
+            <li class="list">Diary (Click Resource mgt below)</li>
+            <li class="list">Payroll (Click Finance &amp; Accounts below)</li>
+            <li class="list">Training (Click Service above)</li>
+            <li class="list">Suppliers (Click Operations below)</li>
+            <li class="list">Petty cash (Click Finance &amp; Accounts below)</li>
+            <li class="list">Construction Industry Scheme</li>
+            <li class="list">Contractors</li>
+            <li class="list">Vehicle Managment (Click Operations below)</li>
+            <li class="list">Asset Management (Click Operations below)</li>
         </ul>
     </div>
 </asp:Content>

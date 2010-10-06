@@ -1,39 +1,41 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/LeftMenu.Master" AutoEventWireup="true"
     CodeBehind="ProductPrices.aspx.cs" Inherits="Simplicity.Web.ProductPrices" %>
 
+<%@ Register Src="Common/Controls/Currencies.ascx" TagName="Currencies" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
-    <div class="hlRow" style="margin-bottom:10px;">
-                <asp:HyperLink ID="hlBack" runat="server" NavigateUrl="#" Visible="false">Back to Product</asp:HyperLink>
-        </div>
-<div class="header">
-			<div class="heading">Prices/Editions</div>
-			<div class="headingImages">
-				<asp:ImageButton ID="Sterling" runat="server" 
-                    onmouseover="this.src='../images/Sterling_rollover.gif'" onmouseout="this.src='../images/Sterling.gif'"
-                    ImageUrl="~/images/Sterling.gif" onclick="Sterling_Click" />
-                &nbsp;    
-                <asp:ImageButton ID="Euro" runat="server" 
-                    onmouseover="this.src='../images/Euro_rollover.gif'" onmouseout="this.src='../images/Euro.gif'"
-                    ImageUrl="~/images/Euro.gif" onclick="Euro_Click" />
-                &nbsp;    
-                <asp:ImageButton ID="Dollar" runat="server" 
-                    onmouseover="this.src='../images/Dollar_rollover.gif'" onmouseout="this.src='../images/Dollar.gif'"
-                    ImageUrl="~/images/Dollar.gif" onclick="Dollar_Click" />
-			    
-			</div>	
-			<div class="noFloat"></div>
-		</div>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    
+    <div style="float: right; padding-right: 25px;">
+        <uc1:Currencies ID="CurrenciesControl" runat="server" />
+    </div>
+    <div>
+        <h2>
+            PRICES/EDITIONS</h2>
+    </div>
+    <div>
+        <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
+    </div>
+    <div class="hlRow" style="margin-bottom: 10px;">
+        <asp:HyperLink ID="hlBack" runat="server" NavigateUrl="#" Visible="false"><span style="font:bolder;font-size:14px;">Back to Product</span></asp:HyperLink>
+    </div>
     <asp:Repeater ID="rptMandatory" runat="server" OnItemDataBound="rptMandatory_ItemDataBound">
         <HeaderTemplate>
-            <div class="row">
-                <div class="col1">
+            <div class="row" style="background-image: url(../images/curve_medium_big.jpg);">
+                <div class="floatLeft">
+                    <img src="../Images/curve_left_big.jpg" /></div>
+                <div class="floatRight">
+                    <img src="../Images/curve_right_big.jpg" /></div>
+                <div class="col1" style="float: left; padding-top:10px; padding-right:110px;">
                     <asp:Image ID="Image1" ImageUrl="<%#GetProductImage()%>" AlternateText="test" runat="server" /></div>
+
                 <asp:Repeater ID="rptVersions" runat="server">
                     <ItemTemplate>
-                        <div class="col2">
-                            <asp:Image ID="Image2" runat="server" ImageUrl='<%#"~/images/" + DataBinder.Eval(Container.DataItem, "name") + ".jpg"%>' />
+                        <div class="floatLeft" style="padding-top:15px; padding-left:15px;">
+                    <img src="../Images/curve_big_partition.jpg" /></div>
+                        <div class="col2" style="float: left;padding-top:40px; width:130px;">
+                            <div style="float: left;"><asp:Image ID="Image2" runat="server" ImageUrl='<%#"~/images/icon_" + DataBinder.Eval(Container.DataItem, "name") + ".jpg"%>' /></div>
+                            <div style="float: left; padding-top:15px;"><span style="font-size:16px;color: #252D88;"><%#DataBinder.Eval(Container.DataItem, "name")%></span></div>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
@@ -42,16 +44,20 @@
             </div>
         </HeaderTemplate>
         <ItemTemplate>
-            <div class="row">
-                <div class="col1">
-                    <span>
-                        <%# DataBinder.Eval(Container.DataItem, "ProductDetail")%>
+            <div class="row" style="background-image: url(../images/curve_medium_small.jpg);">
+                <div class="floatLeft">
+                    <img src="../Images/curve_left_small.jpg" /></div>
+                <div class="floatRight">
+                    <img src="../Images/curve_right_small.jpg" /></div>
+                <div class="col1" style="float: left;width:285px;padding-left:15px;padding-top:7px; ">
+                    <span style=" text-align:justify;color:#3E3C95;font-weight:bolder; ">
+                        <%# DataBinder.Eval(Container.DataItem, "ProductDetail1")%>
                     </span>
                 </div>
                 <asp:Repeater ID="rptVersions" runat="server">
                     <ItemTemplate>
-                        <div class="col2">
-                            <asp:Image ID="Image1" ImageUrl='~/images/Ticks.gif' AlternateText="test" runat="server" />
+                        <div class="col2" style="float: left; width:150px; padding-top:10px;">
+                            <asp:Image ID="Image1" ImageUrl='~/images/tick_bullet.jpg' style="padding-left:60px;" AlternateText="test" runat="server" />
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
@@ -60,56 +66,73 @@
             </div>
         </ItemTemplate>
         <FooterTemplate>
-            <div class="row">
-                    <div class="col1"><span>Pricing structure per user per month</span></div>      
-                    
-                    <asp:Repeater ID="rptVersions" runat="server" >
-                        <ItemTemplate>
-                        <div class="colfooter">
-                            <%# ShoppingCart.GetCurrentCurrency().html_currency_code%><%# GetVersionPrice(DataBinder.Eval(Container.DataItem, "price"))%><br />
-                            <a href='<%#GetVersionBuyNowURL(DataBinder.Eval(Container.DataItem, "version_id"))%>'>
-                                <img alt="Buy Now" src="../images/Buy_Now.gif" onmouseover="this.src='../images/Buy_now_rollover.gif'" onmouseout="this.src='../images/Buy_now.gif'" />                                                                                           
+            <div class="row" style="background-image: url(../images/curve_medium_big.jpg);">
+                <div class="floatLeft">
+                    <img src="../Images/curve_left_big.jpg" /></div>
+                <div class="floatRight">
+                    <img src="../Images/curve_right_big.jpg" /></div>
+                <div class="col1" style="float: left; padding-right:30px;padding-top:35px;">
+                    <span style="font-size:16px;color:#6a6a6a;">Pricing structure per user per month</span></div>
+                <asp:Repeater ID="rptVersions" runat="server">
+                    <ItemTemplate>
+                        <div class="colfooter" style="float: left; padding-top:35px;">
+                            <div style="float:left;">
+                            <div style="padding:5px;"><span style="font-size:22px;color:#6a6a6a; padding-left:40px;font-family:Lucida Sans;"><%# GetCurrencyHTMLCode()%><%# GetVersionPrice(DataBinder.Eval(Container.DataItem, "price"))%></span><br />
+                            </div>
+                            <a style="padding-left:45px;" href='<%#GetVersionBuyNowURL(DataBinder.Eval(Container.DataItem, "versionID"))%>'>
+                                <img alt="Buy Now" src="../images/btn_buynow.jpg" />
                             </a>
-                            <br />                            
-                            <%if(Request[WebConstants.Request.PRODUCT_ID] == "2"){%>
-                            <span style="font-size:10pt;color:Gray">Try it now for</span>
-                            <a href='RedirectToHS.aspx' style="font-size:10pt;color:Red">FREE</a>
+                            
+                            <br />
+                            <%if (Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID] == "2")
+                              {%>
+                            <span style="font-size: 10pt; color: Gray; padding-left:40px;">Try it now for</span> <a href='RedirectToHS.aspx'
+                                style="font-family:Lucida Sans;font-size: 12pt; color: #f29107">FREE</a>
                             <%}%>
+                            </div>
                         </div>
-                        </ItemTemplate>            
-                    </asp:Repeater>
-                    <div style="clear:both"></div>
-                </div>           
+                    </ItemTemplate>
+                </asp:Repeater>
+                <div style="clear: both">
+                </div>
+            </div>
         </FooterTemplate>
     </asp:Repeater>
-    <asp:Repeater ID="rptOptional" runat="server" 
-            onitemdatabound="rptOptional_ItemDataBound" >
-            <HeaderTemplate><div class="headingRow">Add Ons</div>
-            </HeaderTemplate>
-            <ItemTemplate>
-                <div class="row">
-                    <div class="col1" style="margin-top:4px;"><span><%# DataBinder.Eval(Container.DataItem, "product_detail")%></span>
-                    </div>
-                    <asp:Repeater ID="rptVersions" runat="server" >
-                        <ItemTemplate>
-                            <div class="col2">                            
-                                <div class="price"><%# GetCurrentCurrency()%><%# DataBinder.Eval(Container.DataItem, "Price", "{0:N2}")%></div>    
-                                <div class="buynow">
-                                    <a href='<%#GetProductDetailBuyNowURL(DataBinder.Eval(Container.DataItem, "VersionId"),DataBinder.Eval(Container.DataItem, "ProductDetailId"),DataBinder.Eval(Container.DataItem, "Price"))%>'>
-                                        <img alt="Buy Now" src="../images/Buy_now_addon.gif" onmouseover="this.src='../images/Buy_now_addon_rollover.gif'" onmouseout="this.src='../images/Buy_now_addon.gif'" />  
-                                        
-                                    </a>                                
-                                </div>
-                                <div style="clear:both"></div>
-                            </div>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                    <div style="clear:both"></div>
+    <asp:Repeater ID="rptOptional" runat="server" OnItemDataBound="rptOptional_ItemDataBound">
+        <HeaderTemplate>
+            <div class="headingRow">
+                <h2 style="padding-top:10px; padding-bottom:5px;padding-left:5px;">Add Ons</h2></div>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <div class="row" style="background-image: url(../images/curve_medium_small.jpg);">
+                <div class="floatLeft">
+                    <img src="../Images/curve_left_small.jpg" /></div>
+                <div class="floatRight">
+                    <img src="../Images/curve_right_small.jpg" /></div>
+                <div class="col1" style="float: left;width:265px;padding-left:15px;padding-top:7px; ">
+                    <span style=" text-align:justify;color:#3E3C95;font-weight:bolder; ">
+                        <%# DataBinder.Eval(Container.DataItem, "productdetail1")%></span>
                 </div>
-            </ItemTemplate>
-        </asp:Repeater>
-        
+                <asp:Repeater ID="rptVersions" runat="server">
+                    <ItemTemplate>
+                        <div class="col2" style="float: left">
+                            <div class="price" style="padding-left:10px;padding-top:10px;">
+                                <div style="width:60px; float:left;" ><span style="font-size:14px;color:#3E3C95;font-weight:bold;"><%# GetCurrencyHTMLCode()%><%# DataBinder.Eval(Container.DataItem, "Price", "{0:N2}")%></span></div>
+                                <div style="float:left"><a href='<%#GetProductDetailBuyNowURL(DataBinder.Eval(Container.DataItem, "VersionId"),DataBinder.Eval(Container.DataItem, "ProductDetailId"),DataBinder.Eval(Container.DataItem, "Price"))%>'>
+                                    <img alt="Buy Now" src="../images/btn_buynow.jpg" />
+                                </a></div>
+                            </div>
+                            <div style="clear: both">
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <div style="clear: both">
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater>
     <div class="hlRow" style="margin-top: 10px;">
-        <asp:HyperLink ID="hlMore" runat="server" NavigateUrl="#" Visible="false">More Add Ons ...</asp:HyperLink>
+        <asp:HyperLink ID="hlMore" runat="server" NavigateUrl="#" Visible="false"><span style="font:bolder;font-size:14px;">More Add Ons ...</span></asp:HyperLink>
     </div>
 </asp:Content>

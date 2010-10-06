@@ -15,15 +15,24 @@
         function onPageLoad() {
             //hide the all of the element with class menuDetail
             $(".menuDetail").hide();
+            $("#simpDivImg").attr('src', "../Images/icon_plus.jpg");
+            $("#pionDivImg").attr('src', "../Images/icon_plus.jpg");
+            $("#adapDivImg").attr('src', "../Images/icon_plus.jpg");
+            $("#partDivImg").attr('src', "../Images/icon_plus.jpg");
             //toggle the componenet with class menuDetail
             $(".menuLabel").click(function () {
                 if (currentDiv != $(this).attr("id")) {
+                    //$(this).next(".minus").show();
+                    //$(this).next(".plus").hide();
+                    $("#" + $(this).attr("id") + "Img").attr('src', "../Images/icon_minus.jpg");
                     $(this).next(".menuDetail").slideToggle(1000);
                     $("#" + currentDiv).next(".menuDetail").slideToggle(1000);
                     currentDiv = $(this).attr("id");
                 }
                 else {
                     $(".menuDetail").hide();
+                    $("#" + $(this).attr("id") + "Img").attr('src', "../Images/icon_plus.jpg");
+                    //$(".plus").show();
                     currentDiv = null;
                 }
             });
@@ -62,10 +71,14 @@
             best customer service imaginable.</p>
         <p>
             We follow four simple principles to help us.</p>
-        <div class="menuLabel" id="simpDiv">
-            <h2>
-                Simplicity</h2>
+        
+        <div class="menuLabel" id="simpDiv"> 
+            <div style="float:left;width:3%;"><img id="Img1" src="../Images/curve_left_c.jpg"/></div>
+            <div class="menuback"><img id="simpDivImg" alt="plus" class="plus"/>
+            <h2>Simplicity</h2></div> 
+            <div style="float:right;"><img id="Img3"  src="../Images/curve_right_c.jpg"/></div>
         </div>
+        
         <div class="menuDetail">
             <p>
                 When developing our systems we focus on providing the best user experience possible.
@@ -79,8 +92,13 @@
                 clients and also improve their business efficiency.</p>
         </div>
         <div class="menuLabel" id="pionDiv">
+            <div style="float:left;width:3%;"><img id="Img2" src="../Images/curve_left_c.jpg"/></div>
+            <div class="menuback"><img id="pionDivImg" alt="plus" class="plus" />
+            
             <h2>
-                Pioneering</h2>
+                Pioneering</h2></div> 
+            <div style="float:right;"><img id="Img5"  src="../Images/curve_right_c.jpg"/></div>
+            
         </div>
         <div class="menuDetail">
             <p>
@@ -98,8 +116,11 @@
                 and Wireless technology, DTIs eCommerce Award) and meet our clients' requirments.</p>
         </div>
         <div class="menuLabel" id="adapDiv">
-            <h2>
-                Adaptability</h2>
+            <div style="float:left;width:3%;"><img id="Img4" src="../Images/curve_left_c.jpg"/></div>
+            <div class="menuback"><img id="adapDivImg" alt="plus" class="plus" />
+            <h2>Adaptability</h2> </div>
+            <div style="float:right;"><img id="Img7"  src="../Images/curve_right_c.jpg"/></div>
+            
         </div>
         <div class="menuDetail">
             <h3>
@@ -119,8 +140,12 @@
                 of clients from every business sector.</p>
         </div>
         <div class="menuLabel" id="partDiv">
+        <div style="float:left;width:3%;"><img id="Img6" src="../Images/curve_left_c.jpg"/></div>
+            <div class="menuback"><img id="partDivImg" alt="plus" class="plus" />
             <h2>
-                Partnering</h2>
+                Partnering</h2></div>
+            <div style="float:right;"><img id="Img9"  src="../Images/curve_right_c.jpg"/></div>
+            
         </div>
         <div class="menuDetail">
             <h2>

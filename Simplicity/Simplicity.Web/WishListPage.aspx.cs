@@ -21,16 +21,17 @@ namespace Simplicity.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (LoggedIsUser == null)
+            {
+                Response.Redirect("CustomerLogin.aspx");
+            }
             if (!IsPostBack)
             {
                 BindRepeater();
             }
         }
 
-        protected void CurrencyControl_Click(object sender, EventArgs e)
-        {
-            BindRepeater();
-        }
+        
         private void BindRepeater()
         {
             if (LoggedIsUser != null)
@@ -67,11 +68,43 @@ namespace Simplicity.Web
                 BindRepeater();                
             }
         }
+        protected void tbQuantity_OnTextChanged(object sender, EventArgs e)
+        {
+            TextBox tbQuantity = ((TextBox)(sender));
+            int qty = int.Parse(tbQuantity.Text);
+            RepeaterItem repeaterItem = ((RepeaterItem)(tbQuantity.NamingContainer));
+            if (GetWishList()[repeaterItem.ItemIndex].VersionEntity != null
+                && qty < GetWishList()[repeaterItem.ItemIndex].VersionEntity.MinUsers)
+            {
+                tbQuantity.Text = GetWishList()[repeaterItem.ItemIndex].VersionEntity.MinUsers.ToString();
+                SetErrorMessage("Number of licenses must be atleast " + GetWishList()[repeaterItem.ItemIndex].VersionEntity.MinUsers + ". Changes have not been comitted to the Trolley");
+            }
+            else
+            {
+                Label lblTotalPrice = (Label)repeaterItem.FindControl("totalPrice");
+                GetWishList()[repeaterItem.ItemIndex].Quantity = Convert.ToInt32(tbQuantity.Text);
+                lblTotalPrice.Text = String.Format("{0:N2}", GetWishList()[repeaterItem.ItemIndex].Total);
+            }
+        }
         protected void imbBtnContinue_Click(object sender, ImageClickEventArgs e)
         {
+            Response.Redirect("~/BuyProduct.aspx");
         }
         protected void imbBtnCheckout_Click(object sender, ImageClickEventArgs e)
         {
+            if (GetWishList().Count == 0)
+            {
+                SetErrorMessage("Please select alteast one item before checking out");
+            }
+            else
+            {
+                //chckec for authentication on the respective page so it is redirected there
+                Response.Redirect("~/AccountAddress.aspx");
+            }
+        }
+        protected void CurrencyControl_Click(object sender, EventArgs e)
+        {
+            BindRepeater();
         }
     }
 }

@@ -1,42 +1,105 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/LeftMenu.master" AutoEventWireup="true" CodeBehind="WishListPage.aspx.cs" Inherits="Simplicity.Web.WishListPage" %>
-<%@ Register src="Common/Controls/Currencies.ascx" tagname="Currencies" tagprefix="uc1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Main.master" AutoEventWireup="true"
+    CodeBehind="WishListPage.aspx.cs" Inherits="Simplicity.Web.WishListPage" %>
+
+<%@ Register Src="Common/Controls/Currencies.ascx" TagName="Currencies" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="HeadingPlaceHolder" runat="server">
-    <h2>Wish List</h2>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-    <div id="contentMain">
-        <uc1:Currencies ID="CurrenciesControl" runat="server" />
-        <asp:Repeater ID="rpt" runat="server" onitemcommand="rptItems_ItemCommand">        			
+<asp:Content ID="Content3" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+    <div style="width: 100%; border: 1px solid black;">
+        <div id="heading1" style="float: left;">
+            <h2>
+                WISH LIST</h2>
+        </div>
+        <div style="float: right; padding-top: 5px;">
+            <uc1:Currencies ID="CurrenciesControl" runat="server" />
+        </div>
+        <div class="clearFloat">
+        </div>
+    </div>
+    <div>
+        <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
+    </div>
+    <div id="contentMain" style="width: 94%; padding-left: 30px;">
+        <asp:Repeater ID="rpt" runat="server" OnItemCommand="rptItems_ItemCommand">
+            <HeaderTemplate>
+                <div class="trolleyActionBar" style="width: 100%;">
+                    <div class="floatLeft" style="background-image: url(../images/curve_medium_small.jpg);
+                        width: 100%">
+                        <div class="floatLeft">
+                            <img src="../Images/curve_left_small.jpg" /></div>
+                        <div class="floatRight">
+                            <img src="../Images/curve_right_small.jpg" /></div>
+                        <div class="trolleyActionsHeaders trolleyActionsHeader1">
+                            Actions</div>
+                        <div class="trolleyActionsHeaders trolleyActionsHeader2">
+                            Description</div>
+                        <div class="trolleyActionsHeaders trolleyActionsHeader3">
+                            No. of License(s)</div>
+                        <div class="trolleyActionsHeaders trolleyActionsHeader4">
+                            Price</div>
+                        <div class="trolleyActionsHeaders trolleyActionsHeader5">
+                            Total</div>
+                    </div>
+                    <div class="noFloat">
+                    </div>
+                </div>
+            </HeaderTemplate>
             <ItemTemplate>
-		        <div>			
-			        <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Save" CommandArgument='<%#DataBinder.Eval(Container, "DataItem.WishListItemId")%>'>Add to Trolley</asp:LinkButton>
-			        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Remove" CommandArgument='<%#DataBinder.Eval(Container, "DataItem.WishListItemId")%>'>Remove</asp:LinkButton>
-				
-			        <%# DataBinder.Eval(Container, "DataItem.ProductEntity.Name")%> [<%# DataBinder.Eval(Container, "DataItem.DurationString")%>]
-			        <%# DataBinder.Eval(Container, "DataItem.VersionEntity.Name")%>	
-			        <%# DataBinder.Eval(Container, "DataItem.ProductDetailEntity.ProductDetail1")%>
-			        <%# DataBinder.Eval(Container, "DataItem.Quantity")%>
-                    <%# GetCurrencyHTMLCode()%><%# DataBinder.Eval(Container, "DataItem.Price", "{0:N2}")%>
-                    <%# GetCurrencyHTMLCode()%><%# DataBinder.Eval(Container, "DataItem.Total", "{0:N2}")%>
-		        </div>		
-		    </ItemTemplate>
-		</asp:Repeater>
-		
-		<div class="noFloat">
-			<div class="floatRight">
-    		    <asp:ImageButton ID="imbBtnContinue" runat="server" 
-                    ImageUrl="~/images/Continue_shopping.gif" 
-                    onmouseover="this.src='../images/Continue_shopping_rollover.gif'" 
-                    onmouseout="this.src='../images/Continue_shopping.gif'" 
-                    onclick="imbBtnContinue_Click"/>
-			&nbsp;<asp:ImageButton ID="imbBtnCheckout" runat="server" 
-                    ImageUrl="~/images/Checkout.gif" 
-                    onmouseover="this.src='../images/Checkout_rollover.gif'" 
-                    onmouseout="this.src='../images/Checkout.gif'" onclick="imbBtnCheckout_Click"/>
-			</div>
-			<div class="noFloat"></div>
-		</div>
+                <div class="floatLeft" style="width: 100%; background-image: url(../images/curve_medium_big.jpg)">
+                    <div class="floatLeft">
+                        <img src="../Images/curve_left_big.jpg" /></div>
+                    <div class="floatRight">
+                        <img src="../Images/curve_right_big.jpg" /></div>
+                    <div class="trolleyActionsCol1">
+                        <div class="trolleycell">
+                            <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Save" CommandArgument='<%#DataBinder.Eval(Container, "DataItem.WishListItemId")%>'><span style="font-size:14px; font-weight:bold; color: #5858A4;">Add to Trolley</span></asp:LinkButton>
+                            <br />
+                            <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Remove" CommandArgument='<%#DataBinder.Eval(Container, "DataItem.WishListItemId")%>'><span style="font-size:14px;font-weight:bold;color: #5858A4;">Remove</span></asp:LinkButton></div>
+                    </div>
+                    <div class="trolleyActionsCol2">
+                        <div class="floatLeft">
+                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# "~/images/s_" + DataBinder.Eval(Container, "DataItem.ProductEntity.shortname") + ".jpg" %>'
+                                AlternateText='<%# DataBinder.Eval(Container, "DataItem.ProductEntity.Name") %>' /></div>
+                        <div class="floatLeft" style="padding-top: 10px; font-weight: bold;">
+                            <%# DataBinder.Eval(Container, "DataItem.ProductEntity.Name")%>[<%# DataBinder.Eval(Container, "DataItem.DurationString")%>]</div>
+                        <div class="trolleyCell">
+                            <%# DataBinder.Eval(Container, "DataItem.VersionEntity.Name")%></div>
+                        <div class="trolleyCell">
+                            <%# DataBinder.Eval(Container, "DataItem.ProductDetailEntity.ProductDetail1")%></div>
+                        <div class="trolleyCell">
+                            <%# DataBinder.Eval(Container, "DataItem.Quantity")%></div>
+                    </div>
+                </div>
+                <div class="trolleyActionsCol3">
+                    <div class="trolleyCell">
+                        <asp:TextBox ID="tbQuantity" runat="server" Width="25px" CssClass="qtystyle" Text='<%# DataBinder.Eval(Container, "DataItem.Quantity")%>'
+                            AutoPostBack="True" OnTextChanged="tbQuantity_OnTextChanged" EnableViewState="False"></asp:TextBox></span>
+                    </div>
+                </div>
+                <div class="trolleyActionsCol4">
+                    <div class="trolleyCell">
+                        <span style="font-size: 14px; font-weight: bold;">
+                            <%# GetCurrencyHTMLCode()%><asp:Label ID='unitPrice' runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Price", "{0:N2}")%>'></asp:Label></span>
+                    </div>
+                </div>
+                <div class="trolleyActionsCol5">
+                    <div class="trolleyCell">
+                        <span style="font-size: 14px; font-weight: bold;">
+                            <%# GetCurrencyHTMLCode()%><asp:Label ID='totalPrice' runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Total","{0:N2}")%>'></asp:Label></span>
+                    </div>
+                </div>
+                <div class="noFloat">
+                </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+        <div class="floatRight">
+            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/btn_continue_shopping.jpg"
+                OnClick="imbBtnContinue_Click" />
+            &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/btn_checkout.jpg"
+                OnClick="imbBtnCheckout_Click" />
+        </div>
+        <div class="clearFloat">
+        </div>
     </div>
 </asp:Content>

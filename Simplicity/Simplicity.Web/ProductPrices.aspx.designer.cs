@@ -13,6 +13,24 @@ namespace Simplicity.Web {
     public partial class ProductPrices {
         
         /// <summary>
+        /// CurrenciesControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Simplicity.Web.Common.Controls.Currencies CurrenciesControl;
+        
+        /// <summary>
+        /// Image6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image6;
+        
+        /// <summary>
         /// hlBack control.
         /// </summary>
         /// <remarks>
@@ -20,33 +38,6 @@ namespace Simplicity.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlBack;
-        
-        /// <summary>
-        /// Sterling control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Sterling;
-        
-        /// <summary>
-        /// Euro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Euro;
-        
-        /// <summary>
-        /// Dollar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Dollar;
         
         /// <summary>
         /// rptMandatory control.

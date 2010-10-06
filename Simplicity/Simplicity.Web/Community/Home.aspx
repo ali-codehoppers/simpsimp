@@ -15,15 +15,20 @@
         function onPageLoad() {
             //hide the all of the element with class menuDetail
             $(".menuDetail").hide();
+            $("#sfDivImg").attr('src', "../Images/icon_plus.jpg");
+            $("#arbiDivImg").attr('src', "../Images/icon_plus.jpg");
+            $("#sageDivImg").attr('src', "../Images/icon_plus.jpg");
             //toggle the componenet with class menuDetail
             $(".menuLabel").click(function () {
                 if (currentDiv != $(this).attr("id")) {
+                    $("#" + $(this).attr("id") + "Img").attr('src', "../Images/icon_minus.jpg");
                     $(this).next(".menuDetail").slideToggle(1000);
                     $("#" + currentDiv).next(".menuDetail").slideToggle(1000);
                     currentDiv = $(this).attr("id");
                 }
                 else {
                     $(".menuDetail").hide();
+                    $("#" + $(this).attr("id") + "Img").attr('src', "../Images/icon_plus.jpg");
                     currentDiv = null;
                 }
             });
@@ -71,7 +76,11 @@
                 we need a partner with expertise in cloud computing and software as a Service (SaaS)
                 technologies. Hence our close relationship with Astadia was born.</p>
             <div class="menuLabel" id="sfDiv">
-                <asp:Image ID="Image1" runat="server" Height="40px" ImageUrl="~/Images/Salesforce.jpg" />
+                <div style="float:left;width:3%;"><img id="Img10" src="../Images/curve_left_c.jpg"/></div>
+                 <div class="menuback"><img id="sfDivImg" alt="plus" class="plus" />
+            <img ID="Image1" height="35" src="../Images/Salesforce.jpg" /></div>
+            <div style="float:right;"><img id="Img9"  src="../Images/curve_right_c.jpg"/></div>
+                
             </div>
             <div class="menuDetail">
                 <p>
@@ -82,7 +91,10 @@
                 <a href="http://www.salesforce.com/uk/">www.salesforce.com/uk/</a>
             </div>
             <div class="menuLabel" id="arbiDiv">
-                <asp:Image ID="Image7" runat="server" Height="40px" ImageUrl="~/Images/astadia.png" />
+                <div style="float:left;width:3%;"><img id="Img5" src="../Images/curve_left_c.jpg"/></div>
+                <div class="menuback"><img id="arbiDivImg" alt="plus" class="plus" />
+                <img ID="Img3" height="35" src="../Images/astadia.png" /></div>
+                <div style="float:right;"><img id="Img4"  src="../Images/curve_right_c.jpg"/></div>
             </div>
             <div class="menuDetail">
                 <p>
@@ -96,7 +108,11 @@
                 <a href="http://www.astadia.com/">www.astadia.com/</a>
             </div>
             <div class="menuLabel" id="sageDiv">
-                <asp:Image ID="Image8" runat="server" Height="40px" ImageUrl="~/Images/sageLogo80.gif" />
+            <div style="float:left;width:3%;"><img id="Img1" src="../Images/curve_left_c.jpg"/></div>
+                <div class="menuback"><img id="sageDivImg" alt="plus" class="plus" />
+                <img ID="Img6" height="35" src="../Images/sageLogo80.gif" /></div>
+                <div style="float:right;"><img id="Img7"  src="../Images/curve_right_c.jpg"/></div>
+
             </div>
             <div class="menuDetail">
                 <p>

@@ -9,10 +9,10 @@
     This practical tool allows you to:-
 </p>
 <ul>
-    <li>Publish the Health & Safety folder required onsite</li>
-    <li>Document the safe way of working for the job - The Method Statment</li>
-    <li>Analyse the risk for each specific task - The Risk Assessments</li>
-    <li>Add new or changed risk content onsite</li>
-    <li>Maintain Sign-In Sheets</li>
-    <li>Record permit to work - Hot Works </li>
+    <li class="list">Publish the Health & Safety folder required onsite</li>
+    <li class="list">Document the safe way of working for the job - The Method Statment</li>
+    <li class="list">Analyse the risk for each specific task - The Risk Assessments</li>
+    <li class="list">Add new or changed risk content onsite</li>
+    <li class="list">Maintain Sign-In Sheets</li>
+    <li class="list">Record permit to work - Hot Works </li>
 </ul>

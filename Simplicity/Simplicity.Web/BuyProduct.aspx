@@ -4,7 +4,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-
+    <div id="icon1"><h2><span style="color: #cccccc;"><%=GetBuyOrTry()%></span> A Solution</h2></div>
+    <div>
+        <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
+    </div>
     <asp:Repeater ID="rptProducts" runat="server" DataSourceID="EntityDataSource1">
         <HeaderTemplate>
             <div class="row">
@@ -12,7 +15,7 @@
         <ItemTemplate>
             <div class='col<%#GetColNumber(DataBinder.Eval(Container, "ItemIndex", ""))%>' style="float: left;">
                 <a href="ProductPrices.aspx?productId=<%# DataBinder.Eval(Container, "DataItem.productID")%>">
-                    <asp:Image ID="imgBtnLogout" runat="server" ImageUrl='<%# "~/Images/products_img_"+DataBinder.Eval(Container, "DataItem.productID") + ".jpg" %>' /></a>
+                    <asp:Image ID="imgBtnLogout" runat="server" ImageUrl='<%# "~/Images/buy_products_img_"+DataBinder.Eval(Container, "DataItem.productID") + ".jpg" %>' /></a>
             </div>
         </ItemTemplate>
         <SeparatorTemplate>
