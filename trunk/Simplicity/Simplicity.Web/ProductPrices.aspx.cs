@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Simplicity.Data;
 using Simplicity.Web.Utilities;
 using Simplicity.Web.BusinessObjects;
+using System.Configuration;
 
 namespace Simplicity.Web
 {
@@ -38,7 +39,47 @@ namespace Simplicity.Web
         private ProductBO product = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request[WebConstants.Request.PRODUCT_ID] != null)
+            {
+                if (IsPostBack == false)
+                {
+                    BindData();
+                    if (product != null)
+                    {
+                        if (Request[WebConstants.Request.PRODUCT_DETAIL_ID] != null)
+                        {
+                            int productDetailId = int.Parse(Request[WebConstants.Request.PRODUCT_DETAIL_ID]);
+                            int versionId = int.Parse(Request[WebConstants.Request.VERSION_ID]);
+                            ShoppingCart.AddProductDetail(product.ProductEnity, productDetailId, versionId);
+                            if (ConfigurationSettings.AppSettings[WebConstants.Config.PAYMENT_OFFLINE].Equals("true"))
+                            {
+                                Response.Redirect("~/PaymentOffline.aspx");
+                            }
+                            else
+                            {
+                                Response.Redirect("~/Trolley.aspx");
+                            }
+                        }
+                        else if (Request[WebConstants.Request.VERSION_ID] != null)
+                        {
+                            int versionId = int.Parse(Request[WebConstants.Request.VERSION_ID]);
+                            ShoppingCart.AddProductVersion(product.ProductEnity, versionId);
+                            if (ConfigurationSettings.AppSettings[WebConstants.Config.PAYMENT_OFFLINE].Equals("true"))
+                            {
+                                Response.Redirect("~/PaymentOffline.aspx");
+                            }
+                            else
+                            {
+                                Response.Redirect("~/Trolley.aspx");
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Response.Redirect("~/BuyProduct.aspx");
+            }
         }
         private void BindData()
         {
@@ -71,7 +112,7 @@ namespace Simplicity.Web
                         rptOptional.DataSource = product.OptionalDetails.GetRange(0, product.OptionalDetails.Count);
                     }
                     rptOptional.DataBind();
-                    hlMore.NavigateUrl = "~/pages/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
+                    hlMore.NavigateUrl = "~/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
                         + "&" + WebConstants.Request.MORE + "=true";
 
                 }
@@ -81,7 +122,7 @@ namespace Simplicity.Web
         {
             if (product != null)
             {
-                return "~/images/products_img_" + product.ProductEnity.ProductID + ".jpg";
+                return "~/images/s_" + product.ProductEnity.ShortName + ".jpg";
             }
             return "";
         }
@@ -124,6 +165,38 @@ namespace Simplicity.Web
             double finalPrice = ((double)price) * ShoppingCart.GetCurrentCurrency().ExchangeRate1;
             return String.Format("{0:N2}", finalPrice);
         }
-        
+        protected void rptOptional_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (product != null)
+            {
+                if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
+                {
+                    Repeater rptHeader = (Repeater)e.Item.FindControl("rptVersions");
+                    ProductDetail productDetails = (ProductDetail)e.Item.DataItem;
+                    if (rptHeader != null)
+                    {
+                        List<Version> versions = new List<Version>();
+                        foreach (var versionDS in product.Versions)
+                        {
+                            Version version = new Version();
+                            version.VersionId = versionDS.VersionID;
+                            version.ProductDetailId = productDetails.ProductDetailID;
+                            if (versionDS.Discount==null)
+                            {
+                                version.Price = productDetails.Price;
+                            }
+                            else
+                            {
+                                version.Price = (double)(productDetails.Price - productDetails.Price * versionDS.Discount / 100);
+                            }
+                            version.Price *= ShoppingCart.GetCurrentCurrency().ExchangeRate1;
+                            versions.Add(version);
+                        }
+                        rptHeader.DataSource = versions;
+                        rptHeader.DataBind();
+                    }
+                }
+            }
+        }
     }
 }

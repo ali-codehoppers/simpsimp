@@ -14,7 +14,7 @@
 		<div class="floatLeft leftNavBar">
 			<div> <a href="WatchDemo.aspx" id="watch"> </a> </div>
 			<div> <a href="BuyProduct.aspx" id="buy"> </a> </div>
-			<div> <a href="features.html" id="try"> </a> </div>
+			<div> <a href="BuyProduct.aspx?try=try" id="try"> </a> </div>
 			<div> <a href="CallMeBack.aspx" id="call"> </a> </div>
 		</div>
 		<div class="floatRight">

@@ -51,6 +51,7 @@
                     </div>
                     <div class="dotted_line" style="margin-top: 10px; width: 100%">
                     </div>
+                    </div>
                 </ItemTemplate>
             </asp:Repeater>
         </div>
@@ -75,5 +76,5 @@
                 AlternateText="Confirm Payment" OnClick="btnCheckout_Click"/>
         </div>
     </div>
-</div>
+
 </asp:Content>

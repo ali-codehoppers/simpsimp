@@ -31,7 +31,7 @@
             <a href="http://www.google.com" target="_blank">Google</a><br />
             <a href="http://download.cnet.com/Google-Chrome/3000-2356_4-10881381.html" target="_blank">Download version 2.0.172.43</a>
     </div>
-    <div class="browserlist">
+    <div class="browserlistright">
         <div>
             <img src="../../Images/safari_icon.png" width="66px" height="68px" />        </div>
         <div>
@@ -40,7 +40,7 @@
             <a href="http://www.apple.com/safari/download/" target="_blank">Download version 4.0.3</a>
         </div>
     </div>
-    <div class="browserlist">
+    <div class="browserlistdown">
         <div>
             <img src="../../Images/opera.jpg" width="66px" height="68px" /></div>
         <div>

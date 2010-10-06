@@ -12,8 +12,9 @@ namespace Simplicity.Data
             get 
             {
                 if (this.Product != null)
-                {                    
-                    var totalPrice = this.Product.ProductDetails.Sum(price => price.Price);
+                {   
+                    var query = from c in this.Product.ProductDetails where c.Mandatory == true select c;                  
+                    var totalPrice = query.Sum(price => price.Price);
                     totalPrice = totalPrice - totalPrice * this.Discount.Value / 100;
                     return totalPrice;
                 }

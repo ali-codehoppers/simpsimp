@@ -4,8 +4,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    
     <div class="floatRight" style="width: 650px">
-        <div id="ourProducts">
+        <div id="icon1"  style="margin-top: -40px;">
             <h2>
                 <span style="color: #cccccc;">CONTACT</span> US</h2>
         </div>
