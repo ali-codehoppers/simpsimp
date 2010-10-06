@@ -442,7 +442,12 @@
 		<div class="noFloat" style=" padding-left:200px; padding-bottom:10px; padding-top:10px;">
 			<div">
 			<asp:ImageButton ID="btnCheckout" runat="server" 
-                    ImageUrl="~/Images/btn_continue.jpg" AlternateText="Continue" />				
+                    ImageUrl="~/Images/btn_continue.jpg" AlternateText="Continue" OnClick="btnContinue_Click" OnClientClick="showDialog();" />				
 			</div>
 		</div>
+
+        <% insertSignature3(); %>
+		
+		<% insertSubscriptionSignature(); %>
+
 </asp:Content>

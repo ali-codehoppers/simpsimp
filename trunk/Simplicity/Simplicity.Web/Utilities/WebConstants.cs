@@ -49,6 +49,7 @@ namespace Simplicity.Web.Utilities
             public static string MORE = "more";
             public static string FROM_PAGE = "fromPage";
             public static string TRANSACTION_ID = "transactionId";
+            public static string TRANSACTION_UID = "transactionUId";
             public static string INVALID_FIELDS = "invalidFields";
             public static string MISSING_FIELDS = "missingFields";
             public static string REASON_CODE = "reasonCode";

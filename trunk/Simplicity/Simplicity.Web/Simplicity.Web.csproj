@@ -208,6 +208,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="Oops.aspx" />
     <Content Include="PaymentDetail.aspx" />
+    <Content Include="PaymentResponse.aspx" />
     <Content Include="ProductPrices.aspx" />
     <Content Include="Products\EAS\Details.aspx" />
     <Content Include="Products\EAS\Home.aspx" />
@@ -513,6 +514,13 @@
     </Compile>
     <Compile Include="PaymentDetail.aspx.designer.cs">
       <DependentUpon>PaymentDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentResponse.aspx.cs">
+      <DependentUpon>PaymentResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaymentResponse.aspx.designer.cs">
+      <DependentUpon>PaymentResponse.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductPrices.aspx.cs">
       <DependentUpon>ProductPrices.aspx</DependentUpon>
