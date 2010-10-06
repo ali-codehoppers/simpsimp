@@ -1336,7 +1336,6 @@ div.trolleyActionsCol5
 {
     font-weight: bold;
     color: #003366;
-=======
 }
 
 .errorField 
@@ -1344,5 +1343,4 @@ div.trolleyActionsCol5
 	border: 1px solid red;
 	border-right: 2px solid red;
 	border-bottom: 2px solid red;	
->>>>>>> .r82
 }

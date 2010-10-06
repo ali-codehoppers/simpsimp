@@ -63,11 +63,8 @@
 			        <div class="clearFloat"></div>
 		        </div>
 	        </div>
-<<<<<<< .mine
-            <asp:Panel ID="errorPanel" runat="server" CssClass="error" Visible="false" style="margin-left:0px;margin-right:0px">
-=======
-            <asp:Panel ID="errorPanel" runat="server" CssClass="error" Visible="false" style="margin-left:auto; margin-right:auto; margin-top: 5px;">
->>>>>>> .r82
+            <asp:Panel ID="errorPanel" runat="server" CssClass="error" Visible="false" style="margin-left:0px;margin-right:auto; margin-top: 5px;">
+
                 <div style="float:left">
                     <asp:Image ID="Image2" ImageUrl="~/Images/error.png" runat="server" />
                 </div>   
@@ -77,11 +74,8 @@
                 <div style="clear:both"></div>
             </asp:Panel>
             
-<<<<<<< .mine
-            <asp:Panel ID="successPanel" runat="server" CssClass="success" Visible="false" style="margin-left:0px;margin-right:0px">
-=======
-            <asp:Panel ID="successPanel" runat="server" CssClass="success" Visible="false" style="margin-left:auto; margin-right:auto; margin-top: 5px;">
->>>>>>> .r82
+
+            <asp:Panel ID="successPanel" runat="server" CssClass="success" Visible="false" style="margin-left:0px;margin-right:auto; margin-top: 5px;">
                 <div style="float:left">
                     <asp:Image ID="Image3" ImageUrl="~/Images/success.png" runat="server" />
                 </div>   
