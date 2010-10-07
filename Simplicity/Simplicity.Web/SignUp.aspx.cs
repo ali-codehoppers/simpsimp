@@ -22,7 +22,7 @@ namespace Simplicity.Web
                 firstname.Text = query.Forename;
                 surname.Text = query.Surname;
                 jobtitle.Text = query.JobTitle;
-                companyname.Text = query.Company.Name;
+                companyname.Text = query.Company == null ? "" : query.Company.Name;
                 var address= (from c in query.Addresses where c.MultiAddressType=="PERSONAL" select c).FirstOrDefault();
                 addressno.Text = address.AddressNo;
                 addressline1.Text = address.AddressLine1;
@@ -206,10 +206,50 @@ namespace Simplicity.Web
                     query.Surname = surname.Text;
                     query.Forename = firstname.Text;
                     query.JobTitle = jobtitle.Text;
-                    if (GetEditCompanyID(query))
+                    if (query.Company == null)//it means i am an old user and i dont have any company attached yet
                     {
-                        query.CompanyID = companyID;
+                        Simplicity.Data.Company company = new Simplicity.Data.Company();
+                        company.Name = companyname.Text;
+
+                        Address companyAddr = new Address
+                        {
+                            Deleted = false,
+                            AddressFull = GetFullAddress(),
+                            AddressNo = addressno.Text,
+                            AddressLine1 = addressline1.Text,
+                            AddressLine2 = addressline2.Text,
+                            AddressLine3 = addressline3.Text,
+                            AddressLine4 = addressline4.Text,
+                            AddressLine5 = addressline5.Text,
+                            PostalCode = postalcode.Text,
+                            Telephone1 = telephone1.Text,
+                            Telephone2 = telephone2.Text,
+                            Fax = fax.Text,
+                            Mobile = mobile.Text,
+                            Town = town.Text,
+                            County = County.Text,
+                            Country = country.Text,
+                            UserId = query.UserID,
+                            SameAsCustomer = false,
+                            SameAsBilling = false,
+                            MultiAddressType = Enum.GetName(typeof(Enums.ADDRESS_TYPE), Enums.ADDRESS_TYPE.COMPANY),
+                            CreationDate = DateTime.Now,
+                            LastAmendmentDate = DateTime.Now,
+                            AddressName = null,
+                            CreatedBy = LoggedIsUser.UserID,
+                            LastAmendedBy = null
+                        };
+                        DatabaseContext.AddToAddresses(companyAddr);
+                        company.Address = companyAddr;
+                        DatabaseContext.AddToCompanies(company);
+                        DatabaseContext.SaveChanges();
+                        query.Company = company;
                     }
+                    else if (!GetEditCompanyID(query))
+                    {
+                        return;
+                    }
+                    query.Company.Name = companyname.Text;
                     query.LastAmendmentDate = DateTime.Now;
                     var address = (from c in query.Addresses where c.MultiAddressType == "PERSONAL" select c).FirstOrDefault();
 
@@ -255,20 +295,13 @@ namespace Simplicity.Web
         }
         private bool GetEditCompanyID(User user)
         {
-            var query = (from c in DatabaseContext.Companies where c.Name == companyname.Text && c.CompanyID ==user.CompanyID select c).FirstOrDefault();
+            var query = (from c in DatabaseContext.Companies where c.Name == companyname.Text && c.CompanyID != user.CompanyID select c).FirstOrDefault();
             if (query != null)
             {
+                SetErrorMessage("Company already exist. Please Contact " + query.Users.FirstOrDefault().Email);
                 return false;
             }
-            else
-            {
-
-                Simplicity.Data.Company company = new Simplicity.Data.Company { Name = companyname.Text };
-                DatabaseContext.AddToCompanies(company);
-                DatabaseContext.SaveChanges();
-                companyID = company.CompanyID;
-                return true;
-            }
+            return true;
         }
         private string GetFullName()
         {

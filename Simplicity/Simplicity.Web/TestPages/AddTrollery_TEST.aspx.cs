@@ -22,7 +22,7 @@ namespace Simplicity.Web.TestPages
             //ProductDetail pd = ProductBO.GetProductDetail(3);
             ShoppingCart.AddProductDetail(p, 3, 2);
           //  ShoppingCart.AddProductDetail(p1, 2, 1);
-            FormsAuthentication.SetAuthCookie("0F296D30-48E6-4FB9-ADBD-A670A6147A1A", false);
+            //FormsAuthentication.SetAuthCookie("0F296D30-48E6-4FB9-ADBD-A670A6147A1A", false);
             int debug = 0;
             Response.Redirect("~/Trolley.aspx");
         }

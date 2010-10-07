@@ -10,6 +10,7 @@
           <EntitySet Name="CallUserProducts" EntityType="SimplicityModel.Store.CallUserProducts" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CallUsers" EntityType="SimplicityModel.Store.CallUsers" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Companies" EntityType="SimplicityModel.Store.Companies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CompanyProducts" EntityType="SimplicityModel.Store.CompanyProducts" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="EmailQueue" EntityType="SimplicityModel.Store.EmailQueue" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="EmailTemplates" EntityType="SimplicityModel.Store.EmailTemplates" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ExchangeRates" EntityType="SimplicityModel.Store.ExchangeRates" store:Type="Tables" Schema="dbo" />
@@ -20,6 +21,7 @@
           <EntitySet Name="Settings" EntityType="SimplicityModel.Store.Settings" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TransactionDetails" EntityType="SimplicityModel.Store.TransactionDetails" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Transactions" EntityType="SimplicityModel.Store.Transactions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserProducts" EntityType="SimplicityModel.Store.UserProducts" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Users" EntityType="SimplicityModel.Store.Users" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Versions" EntityType="SimplicityModel.Store.Versions" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Videos" EntityType="SimplicityModel.Store.Videos" store:Type="Tables" Schema="dbo" />
@@ -27,6 +29,22 @@
           <AssociationSet Name="FK_Companies_Addresses" Association="SimplicityModel.Store.FK_Companies_Addresses">
             <End Role="Addresses" EntitySet="Addresses" />
             <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyProducts_Companies" Association="SimplicityModel.Store.FK_CompanyProducts_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="CompanyProducts" EntitySet="CompanyProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyProducts_ProductDetails" Association="SimplicityModel.Store.FK_CompanyProducts_ProductDetails">
+            <End Role="ProductDetails" EntitySet="ProductDetails" />
+            <End Role="CompanyProducts" EntitySet="CompanyProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyProducts_Products" Association="SimplicityModel.Store.FK_CompanyProducts_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="CompanyProducts" EntitySet="CompanyProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyProducts_Versions" Association="SimplicityModel.Store.FK_CompanyProducts_Versions">
+            <End Role="Versions" EntitySet="Versions" />
+            <End Role="CompanyProducts" EntitySet="CompanyProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_Modules_Modules" Association="SimplicityModel.Store.FK_Modules_Modules">
             <End Role="Modules" EntitySet="Modules" />
@@ -83,6 +101,14 @@
           <AssociationSet Name="FK_UserAddresses_Users" Association="SimplicityModel.Store.FK_UserAddresses_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Addresses" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProducts_Products" Association="SimplicityModel.Store.FK_UserProducts_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="UserProducts" EntitySet="UserProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProducts_Users" Association="SimplicityModel.Store.FK_UserProducts_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserProducts" EntitySet="UserProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_Companies" Association="SimplicityModel.Store.FK_Users_Companies">
             <End Role="Companies" EntitySet="Companies" />
@@ -167,9 +193,22 @@
           <Key>
             <PropertyRef Name="CompanyID" />
           </Key>
-          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="AddressID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CompanyProducts">
+          <Key>
+            <PropertyRef Name="CompanyProductID" />
+          </Key>
+          <Property Name="CompanyProductID" Type="int" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="VersionID" Type="int" Nullable="false" />
+          <Property Name="ProductDetailID" Type="int" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="NumOfLicenses" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EmailQueue">
           <Key>
@@ -289,6 +328,17 @@
           <Property Name="CountryCode" Type="char" Nullable="false" MaxLength="3" />
           <Property Name="ExchangeRate" Type="float" Nullable="false" />
         </EntityType>
+        <EntityType Name="UserProducts">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="IsTrial" Type="bit" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserID" />
@@ -367,6 +417,54 @@
             </Principal>
             <Dependent Role="Companies">
               <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyProducts_Companies">
+          <End Role="Companies" Type="SimplicityModel.Store.Companies" Multiplicity="1" />
+          <End Role="CompanyProducts" Type="SimplicityModel.Store.CompanyProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="CompanyProducts">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyProducts_ProductDetails">
+          <End Role="ProductDetails" Type="SimplicityModel.Store.ProductDetails" Multiplicity="0..1" />
+          <End Role="CompanyProducts" Type="SimplicityModel.Store.CompanyProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductDetails">
+              <PropertyRef Name="ProductDetailID" />
+            </Principal>
+            <Dependent Role="CompanyProducts">
+              <PropertyRef Name="ProductDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyProducts_Products">
+          <End Role="Products" Type="SimplicityModel.Store.Products" Multiplicity="1" />
+          <End Role="CompanyProducts" Type="SimplicityModel.Store.CompanyProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="CompanyProducts">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyProducts_Versions">
+          <End Role="Versions" Type="SimplicityModel.Store.Versions" Multiplicity="1" />
+          <End Role="CompanyProducts" Type="SimplicityModel.Store.CompanyProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Versions">
+              <PropertyRef Name="VersionID" />
+            </Principal>
+            <Dependent Role="CompanyProducts">
+              <PropertyRef Name="VersionID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -535,6 +633,30 @@
             </Principal>
             <Dependent Role="Addresses">
               <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProducts_Products">
+          <End Role="Products" Type="SimplicityModel.Store.Products" Multiplicity="1" />
+          <End Role="UserProducts" Type="SimplicityModel.Store.UserProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="UserProducts">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProducts_Users">
+          <End Role="Users" Type="SimplicityModel.Store.Users" Multiplicity="1" />
+          <End Role="UserProducts" Type="SimplicityModel.Store.UserProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserProducts">
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1190,6 +1312,32 @@
             <End Role="Company" EntitySet="Companies" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
+          <EntitySet Name="CompanyProducts" EntityType="SimplicityModel.CompanyProduct" />
+          <EntitySet Name="UserProducts" EntityType="SimplicityModel.UserProduct" />
+          <AssociationSet Name="FK_CompanyProducts_Companies" Association="SimplicityModel.FK_CompanyProducts_Companies">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="CompanyProduct" EntitySet="CompanyProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyProducts_ProductDetails" Association="SimplicityModel.FK_CompanyProducts_ProductDetails">
+            <End Role="ProductDetail" EntitySet="ProductDetails" />
+            <End Role="CompanyProduct" EntitySet="CompanyProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyProducts_Products" Association="SimplicityModel.FK_CompanyProducts_Products">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="CompanyProduct" EntitySet="CompanyProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyProducts_Versions" Association="SimplicityModel.FK_CompanyProducts_Versions">
+            <End Role="Version" EntitySet="Versions" />
+            <End Role="CompanyProduct" EntitySet="CompanyProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProducts_Products" Association="SimplicityModel.FK_UserProducts_Products">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="UserProduct" EntitySet="UserProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProducts_Users" Association="SimplicityModel.FK_UserProducts_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserProduct" EntitySet="UserProducts" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Address">
           <Key>
@@ -1313,6 +1461,7 @@
           <NavigationProperty Name="Product" Relationship="SimplicityModel.FK_un_product_details_un_products" FromRole="ProductDetails" ToRole="Products" />
           <NavigationProperty Name="TransactionDetails" Relationship="SimplicityModel.FK_un_transaction_details_un_product_details" FromRole="ProductDetails" ToRole="TransactionDetails" />
           <NavigationProperty Name="WishLists" Relationship="SimplicityModel.FK_WishList_ProductDetails" FromRole="ProductDetails" ToRole="WishList" />
+          <NavigationProperty Name="CompanyProducts" Relationship="SimplicityModel.FK_CompanyProducts_ProductDetails" FromRole="ProductDetail" ToRole="CompanyProduct" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -1330,6 +1479,8 @@
           <NavigationProperty Name="TransactionDetails" Relationship="SimplicityModel.FK_un_transaction_details_un_products" FromRole="Products" ToRole="TransactionDetails" />
           <NavigationProperty Name="WishLists" Relationship="SimplicityModel.FK_WishList_Products" FromRole="Products" ToRole="WishList" />
           <NavigationProperty Name="Sessions" Relationship="SimplicityModel.FK_Sessions_Products" FromRole="Product" ToRole="Session" />
+          <NavigationProperty Name="CompanyProducts" Relationship="SimplicityModel.FK_CompanyProducts_Products" FromRole="Product" ToRole="CompanyProduct" />
+          <NavigationProperty Name="UserProducts" Relationship="SimplicityModel.FK_UserProducts_Products" FromRole="Product" ToRole="UserProduct" />
         </EntityType>
         <EntityType Name="Setting">
           <Key>
@@ -1417,6 +1568,7 @@
           <NavigationProperty Name="Sessions" Relationship="SimplicityModel.FK_Sessions_Users" FromRole="User" ToRole="Session" />
           <Property Type="Int32" Name="CompanyID" />
           <NavigationProperty Name="Company" Relationship="SimplicityModel.FK_Users_Companies" FromRole="User" ToRole="Company" />
+          <NavigationProperty Name="UserProducts" Relationship="SimplicityModel.FK_UserProducts_Users" FromRole="User" ToRole="UserProduct" />
         </EntityType>
         <EntityType Name="Version">
           <Key>
@@ -1431,6 +1583,7 @@
           <NavigationProperty Name="Product" Relationship="SimplicityModel.FK_un_product_versions_un_products" FromRole="Versions" ToRole="Products" />
           <NavigationProperty Name="TransactionDetails" Relationship="SimplicityModel.FK_un_transaction_details_un_product_versions" FromRole="Versions" ToRole="TransactionDetails" />
           <NavigationProperty Name="WishLists" Relationship="SimplicityModel.FK_WishList_ProductVersions" FromRole="Versions" ToRole="WishList" />
+          <NavigationProperty Name="CompanyProducts" Relationship="SimplicityModel.FK_CompanyProducts_Versions" FromRole="Version" ToRole="CompanyProduct" />
         </EntityType>
         <EntityType Name="Video">
           <Key>
@@ -1699,6 +1852,7 @@
           <Property Type="Int32" Name="AddressID" Nullable="false" />
           <NavigationProperty Name="Address" Relationship="SimplicityModel.FK_Companies_Addresses" FromRole="Company" ToRole="Address" />
           <NavigationProperty Name="Users" Relationship="SimplicityModel.FK_Users_Companies" FromRole="Company" ToRole="User" />
+          <NavigationProperty Name="CompanyProducts" Relationship="SimplicityModel.FK_CompanyProducts_Companies" FromRole="Company" ToRole="CompanyProduct" />
         </EntityType>
         <Association Name="FK_Companies_Addresses">
           <End Type="SimplicityModel.Address" Role="Address" Multiplicity="1" />
@@ -1721,6 +1875,108 @@
             </Principal>
             <Dependent Role="User">
               <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CompanyProduct">
+          <Key>
+            <PropertyRef Name="CompanyProductID" />
+          </Key>
+          <Property Type="Int32" Name="CompanyProductID" Nullable="false" />
+          <Property Type="Int32" Name="CompanyID" Nullable="false" />
+          <Property Type="Int32" Name="ProductID" Nullable="false" />
+          <Property Type="Int32" Name="VersionID" Nullable="false" />
+          <Property Type="Int32" Name="ProductDetailID" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" />
+          <Property Type="DateTime" Name="EndDate" Nullable="false" />
+          <Property Type="Int32" Name="NumOfLicenses" Nullable="false" />
+          <NavigationProperty Name="Company" Relationship="SimplicityModel.FK_CompanyProducts_Companies" FromRole="CompanyProduct" ToRole="Company" />
+          <NavigationProperty Name="ProductDetail" Relationship="SimplicityModel.FK_CompanyProducts_ProductDetails" FromRole="CompanyProduct" ToRole="ProductDetail" />
+          <NavigationProperty Name="Product" Relationship="SimplicityModel.FK_CompanyProducts_Products" FromRole="CompanyProduct" ToRole="Product" />
+          <NavigationProperty Name="Version" Relationship="SimplicityModel.FK_CompanyProducts_Versions" FromRole="CompanyProduct" ToRole="Version" />
+        </EntityType>
+        <EntityType Name="UserProduct">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="ProductID" Nullable="false" />
+          <Property Type="Boolean" Name="IsTrial" Nullable="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" />
+          <Property Type="DateTime" Name="EndDate" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="SimplicityModel.FK_UserProducts_Products" FromRole="UserProduct" ToRole="Product" />
+          <NavigationProperty Name="User" Relationship="SimplicityModel.FK_UserProducts_Users" FromRole="UserProduct" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_CompanyProducts_Companies">
+          <End Type="SimplicityModel.Company" Role="Company" Multiplicity="1" />
+          <End Type="SimplicityModel.CompanyProduct" Role="CompanyProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="CompanyProduct">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyProducts_ProductDetails">
+          <End Type="SimplicityModel.ProductDetail" Role="ProductDetail" Multiplicity="0..1" />
+          <End Type="SimplicityModel.CompanyProduct" Role="CompanyProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductDetail">
+              <PropertyRef Name="ProductDetailID" />
+            </Principal>
+            <Dependent Role="CompanyProduct">
+              <PropertyRef Name="ProductDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyProducts_Products">
+          <End Type="SimplicityModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="SimplicityModel.CompanyProduct" Role="CompanyProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="CompanyProduct">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyProducts_Versions">
+          <End Type="SimplicityModel.Version" Role="Version" Multiplicity="1" />
+          <End Type="SimplicityModel.CompanyProduct" Role="CompanyProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Version">
+              <PropertyRef Name="VersionID" />
+            </Principal>
+            <Dependent Role="CompanyProduct">
+              <PropertyRef Name="VersionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProducts_Products">
+          <End Type="SimplicityModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="SimplicityModel.UserProduct" Role="UserProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="UserProduct">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProducts_Users">
+          <End Type="SimplicityModel.User" Role="User" Multiplicity="1" />
+          <End Type="SimplicityModel.UserProduct" Role="UserProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserProduct">
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1935,6 +2191,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CompanyProducts">
+            <EntityTypeMapping TypeName="SimplicityModel.CompanyProduct">
+              <MappingFragment StoreEntitySet="CompanyProducts">
+                <ScalarProperty Name="NumOfLicenses" ColumnName="NumOfLicenses" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="ProductDetailID" ColumnName="ProductDetailID" />
+                <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyProductID" ColumnName="CompanyProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProducts">
+            <EntityTypeMapping TypeName="SimplicityModel.UserProduct">
+              <MappingFragment StoreEntitySet="UserProducts">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="IsTrial" ColumnName="IsTrial" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1973,7 +2254,7 @@
         <EntityTypeShape EntityType="SimplicityModel.Video" Width="1.5" PointX="3" PointY="13.125" Height="1.9210009765625031" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.WishList" Width="1.5" PointX="8.25" PointY="8.25" Height="2.7427376302083388" IsExpanded="true" />
         <AssociationConnector Association="SimplicityModel.FK_UserAddresses_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.875" PointY="25.191630859375" />
+          <ConnectorPoint PointX="1.875" PointY="25.383932291666667" />
           <ConnectorPoint PointX="1.875" PointY="29.875" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_call_me_products_un_call_me_page" ManuallyRouted="false">
@@ -1992,57 +2273,66 @@
           <ConnectorPoint PointX="3" PointY="5.1535953776041659" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_product_details_un_products" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="8.671748046874999" />
-          <ConnectorPoint PointX="3" PointY="8.671748046874999" />
+          <ConnectorPoint PointX="2.25" PointY="8.906123046874999" />
+          <ConnectorPoint PointX="2.6041666666666665" PointY="8.906123046874999" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="8.906123046874999" />
+          <ConnectorPoint PointX="3" PointY="8.906123046874999" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_product_details" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="8.81224609375" />
-          <ConnectorPoint PointX="4.666666666666667" PointY="8.81224609375" />
-          <ConnectorPoint PointX="4.833333333333333" PointY="8.81224609375" />
-          <ConnectorPoint PointX="5.25" PointY="8.81224609375" />
+          <ConnectorPoint PointX="4.5" PointY="8.843623046874999" />
+          <ConnectorPoint PointX="5.25" PointY="8.843623046874999" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_WishList_ProductDetails" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="7.8458968098958328" />
-          <ConnectorPoint PointX="4.666666666666667" PointY="7.8458968098958319" />
-          <ConnectorPoint PointX="4.833333333333333" PointY="7.8458968098958328" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="7.8458968098958319" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="7.8458968098958328" />
           <ConnectorPoint PointX="7.416666666666667" PointY="7.8458968098958319" />
           <ConnectorPoint PointX="7.583333333333333" PointY="7.8458968098958328" />
           <ConnectorPoint PointX="9.53125" PointY="7.8458968098958328" />
           <ConnectorPoint PointX="9.53125" PointY="8.25" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_product_versions_un_products" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="10.7256982421875" />
-          <ConnectorPoint PointX="3" PointY="10.7256982421875" />
+          <ConnectorPoint PointX="2.25" PointY="10.917999674479166" />
+          <ConnectorPoint PointX="3" PointY="10.917999674479166" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_product_videos_un_products" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="11.451396484375" />
-          <ConnectorPoint PointX="1.5" PointY="14.2112939453125" />
-          <ConnectorPoint PointX="1.8229191666666667" PointY="14.2112939453125" />
-          <ConnectorPoint PointX="1.9895858333333332" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="1.2773446875" PointY="11.835999348958334" />
+          <ConnectorPoint PointX="1.2773446875" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="1.4528014322916667" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="1.6194680989583332" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="1.7115915104166668" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="1.8782581770833333" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="14.2112939453125" />
           <ConnectorPoint PointX="3" PointY="14.2112939453125" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_products" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="9.81224609375" />
-          <ConnectorPoint PointX="4.666666666666667" PointY="9.81224609375" />
-          <ConnectorPoint PointX="4.833333333333333" PointY="9.81224609375" />
-          <ConnectorPoint PointX="5.25" PointY="9.81224609375" />
+          <ConnectorPoint PointX="2.25" PointY="9.43737679687499" />
+          <ConnectorPoint PointX="2.75" PointY="9.43737679687499" />
+          <ConnectorPoint PointX="2.75" PointY="6.6250000000000018" />
+          <ConnectorPoint PointX="6" PointY="6.6250000000000018" />
+          <ConnectorPoint PointX="6" PointY="8" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_WishList_Products" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="9.906125546875" />
-          <ConnectorPoint PointX="4.75" PointY="9.906125546875" />
-          <ConnectorPoint PointX="4.75" PointY="6.625" />
-          <ConnectorPoint PointX="7.5" PointY="6.625" />
+          <ConnectorPoint PointX="2.25" PointY="10.177688235677078" />
+          <ConnectorPoint PointX="2.6875" PointY="10.177688235677078" />
+          <ConnectorPoint PointX="2.6875" PointY="6.6250000000000018" />
+          <ConnectorPoint PointX="7.5" PointY="6.6250000000000018" />
           <ConnectorPoint PointX="7.5" PointY="8" />
           <ConnectorPoint PointX="8.859373" PointY="8" />
           <ConnectorPoint PointX="8.859373" PointY="8.25" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_product_versions" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="10.700063476562502" />
-          <ConnectorPoint PointX="5.25" PointY="10.700063476562502" />
+          <ConnectorPoint PointX="4.5" PointY="10.951650390625" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="10.951650390625" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="10.951650390625" />
+          <ConnectorPoint PointX="5.25" PointY="10.951650390625" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_transactions" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="20.788198242187498" />
-          <ConnectorPoint PointX="5.59375" PointY="20.788198242187498" />
+          <ConnectorPoint PointX="4.5" PointY="22.357646484374996" />
+          <ConnectorPoint PointX="5.0260441666666669" PointY="22.357646484374996" />
+          <ConnectorPoint PointX="5.1927108333333329" PointY="22.357646484374996" />
+          <ConnectorPoint PointX="5.59375" PointY="22.357646484374996" />
           <ConnectorPoint PointX="5.59375" PointY="11.90330078125" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transactions_un_entity_details_core" ManuallyRouted="false">
@@ -2050,41 +2340,136 @@
           <ConnectorPoint PointX="3" PointY="20.788198242187498" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_WishList_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="23.534570499581783" />
-          <ConnectorPoint PointX="9.20312625" PointY="23.534570499581783" />
-          <ConnectorPoint PointX="9.20312625" PointY="11.384095052083332" />
+          <ConnectorPoint PointX="2.25" PointY="23.426200290012918" />
+          <ConnectorPoint PointX="5.0260441666666669" PointY="23.426200290012918" />
+          <ConnectorPoint PointX="5.1927108333333329" PointY="23.426200290012918" />
+          <ConnectorPoint PointX="8.4414028125000016" PointY="23.426200290012918" />
+          <ConnectorPoint PointX="8.4414028125000016" PointY="11.384095052083332" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_WishList_ProductVersions" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="12.357646484375" />
-          <ConnectorPoint PointX="5.510416666666667" PointY="12.357646484375" />
-          <ConnectorPoint PointX="5.677083333333333" PointY="12.357646484375" />
-          <ConnectorPoint PointX="8.5937475" PointY="12.357646484375" />
-          <ConnectorPoint PointX="8.5937475" PointY="11.384095052083332" />
+          <ConnectorPoint PointX="4.5" PointY="12.453797200520834" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="12.453797200520834" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="12.453797200520834" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="12.453797200520834" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="12.453797200520834" />
+          <ConnectorPoint PointX="8.3580694791666676" PointY="12.453797200520834" />
+          <ConnectorPoint PointX="8.5247361458333355" PointY="12.453797200520834" />
+          <ConnectorPoint PointX="9.1269539062500016" PointY="12.453797200520834" />
+          <ConnectorPoint PointX="9.1269539062500016" PointY="11.384095052083332" />
         </AssociationConnector>
         <EntityTypeShape EntityType="SimplicityModel.Session" Width="1.5" PointX="6" PointY="14.125" Height="2.9417936197916674" />
         <AssociationConnector Association="SimplicityModel.FK_Sessions_Products" >
-          <ConnectorPoint PointX="1.9062525" PointY="11.451396484375" />
-          <ConnectorPoint PointX="1.9062525" PointY="16.213440755208332" />
+          <ConnectorPoint PointX="1.79492484375" PointY="11.835999348958334" />
+          <ConnectorPoint PointX="1.79492484375" PointY="16.213440755208332" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="16.213440755208332" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="16.213440755208332" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="16.213440755208332" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="16.213440755208332" />
+          <ConnectorPoint PointX="5.229166666666667" PointY="16.213440755208332" />
+          <ConnectorPoint PointX="5.395833333333333" PointY="16.213440755208332" />
           <ConnectorPoint PointX="5.510416666666667" PointY="16.213440755208332" />
           <ConnectorPoint PointX="5.677083333333333" PointY="16.213440755208332" />
           <ConnectorPoint PointX="6" PointY="16.213440755208332" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_Sessions_Users" >
-          <ConnectorPoint PointX="2.25" PointY="18.15625" />
-          <ConnectorPoint PointX="5.510416666666667" PointY="18.15625" />
-          <ConnectorPoint PointX="5.677083333333333" PointY="18.15625" />
-          <ConnectorPoint PointX="6.75" PointY="18.15625" />
-          <ConnectorPoint PointX="6.75" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="1.0136723437500002" PointY="17.25" />
+          <ConnectorPoint PointX="1.0136723437500002" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="1.4528014322916667" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="1.6194680989583332" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="5.229166666666667" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="5.395833333333333" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="16.671369687499993" />
+          <ConnectorPoint PointX="6" PointY="16.671369687499993" />
         </AssociationConnector>
         <EntityTypeShape EntityType="SimplicityModel.Company" Width="1.5" PointX="3.75" PointY="32.125" Height="1.7879850260416674" />
         <AssociationConnector Association="SimplicityModel.FK_Companies_Addresses" >
-          <ConnectorPoint PointX="3" PointY="33.115143229166669" />
-          <ConnectorPoint PointX="3.75" PointY="33.115143229166669" />
+          <ConnectorPoint PointX="3" PointY="33.211293945312505" />
+          <ConnectorPoint PointX="3.75" PointY="33.211293945312505" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_Users_Companies" >
           <ConnectorPoint PointX="4.90625" PointY="32.125" />
-          <ConnectorPoint PointX="4.90625" PointY="24.394353179478383" />
-          <ConnectorPoint PointX="2.25" PointY="24.394353179478383" />
+          <ConnectorPoint PointX="4.90625" PointY="24.436318790839785" />
+          <ConnectorPoint PointX="2.25" PointY="24.436318790839785" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SimplicityModel.CompanyProduct" Width="1.5" PointX="6" PointY="18.875" Height="3.326396484374996" />
+        <EntityTypeShape EntityType="SimplicityModel.UserProduct" Width="1.5" PointX="9" PointY="15.625" Height="2.3648893229166674" />
+        <AssociationConnector Association="SimplicityModel.FK_CompanyProducts_Companies" >
+          <ConnectorPoint PointX="5.1093775" PointY="32.125" />
+          <ConnectorPoint PointX="5.1093775" PointY="18.96875" />
+          <ConnectorPoint PointX="5.229166666666667" PointY="18.96875" />
+          <ConnectorPoint PointX="5.395833333333333" PointY="18.96875" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="18.96875" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="18.96875" />
+          <ConnectorPoint PointX="6" PointY="18.96875" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_CompanyProducts_ProductDetails" >
+          <ConnectorPoint PointX="4.5" PointY="9.8167936197916656" />
+          <ConnectorPoint PointX="4.875" PointY="10.191793619791666" />
+          <ConnectorPoint PointX="4.875" PointY="20.616325242187493" />
+          <ConnectorPoint PointX="5.0260441666666669" PointY="20.616325242187493" />
+          <ConnectorPoint PointX="5.1927108333333329" PointY="20.616325242187493" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="20.616325242187493" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="20.616325242187493" />
+          <ConnectorPoint PointX="6" PointY="20.616325242187493" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_CompanyProducts_Products" >
+          <ConnectorPoint PointX="2.2499999999999996" PointY="11.835999348958334" />
+          <ConnectorPoint PointX="2.625" PointY="12.210999348958334" />
+          <ConnectorPoint PointX="2.625" PointY="18.5" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="18.5" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="18.5" />
+          <ConnectorPoint PointX="5.229166666666667" PointY="18.5" />
+          <ConnectorPoint PointX="5.395833333333333" PointY="18.5" />
+          <ConnectorPoint PointX="5.6261528461538468" PointY="18.5" />
+          <ConnectorPoint PointX="6.0011528461538459" PointY="18.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_CompanyProducts_Versions" >
+          <ConnectorPoint PointX="4.5" PointY="12.879484927483976" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="13.195559362385096" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="13.313410492582854" />
+          <ConnectorPoint PointX="5.3125" PointY="13.691984927483976" />
+          <ConnectorPoint PointX="5.3125" PointY="19.792537621093746" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="19.792537621093746" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="19.792537621093746" />
+          <ConnectorPoint PointX="6" PointY="19.792537621093746" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_UserProducts_Products" >
+          <ConnectorPoint PointX="1.536134765625" PointY="11.835999348958334" />
+          <ConnectorPoint PointX="1.536134765625" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="5.229166666666667" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="5.395833333333333" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="5.75" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="5.75" PointY="17.316793619791667" />
+          <ConnectorPoint PointX="8.3580694791666676" PointY="17.316793619791667" />
+          <ConnectorPoint PointX="8.5247361458333355" PointY="17.316793619791667" />
+          <ConnectorPoint PointX="8.625" PointY="17.316793619791667" />
+          <ConnectorPoint PointX="8.625" PointY="16.807444661458334" />
+          <ConnectorPoint PointX="9" PointY="16.807444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_UserProducts_Users" >
+          <ConnectorPoint PointX="2.25" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="5.229166666666667" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="5.395833333333333" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="8.3580694791666676" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="8.5247361458333355" PointY="17.715841471354167" />
+          <ConnectorPoint PointX="9" PointY="17.715841471354167" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
