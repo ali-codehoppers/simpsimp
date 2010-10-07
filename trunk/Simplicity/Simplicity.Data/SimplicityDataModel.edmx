@@ -4,18 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SimplicityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="SimplicityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="SimplicityModelStoreContainer">
           <EntitySet Name="Addresses" EntityType="SimplicityModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CallUserProducts" EntityType="SimplicityModel.Store.CallUserProducts" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CallUsers" EntityType="SimplicityModel.Store.CallUsers" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Company" EntityType="SimplicityModel.Store.Company" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Companies" EntityType="SimplicityModel.Store.Companies" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="EmailQueue" EntityType="SimplicityModel.Store.EmailQueue" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="EmailTemplates" EntityType="SimplicityModel.Store.EmailTemplates" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ExchangeRates" EntityType="SimplicityModel.Store.ExchangeRates" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Modules" EntityType="SimplicityModel.Store.Modules" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ProductDetails" EntityType="SimplicityModel.Store.ProductDetails" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Products" EntityType="SimplicityModel.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sessions" EntityType="SimplicityModel.Store.Sessions" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Settings" EntityType="SimplicityModel.Store.Settings" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TransactionDetails" EntityType="SimplicityModel.Store.TransactionDetails" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Transactions" EntityType="SimplicityModel.Store.Transactions" store:Type="Tables" Schema="dbo" />
@@ -23,20 +24,9 @@
           <EntitySet Name="Versions" EntityType="SimplicityModel.Store.Versions" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Videos" EntityType="SimplicityModel.Store.Videos" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="WishList" EntityType="SimplicityModel.Store.WishList" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="v_sales_telephone_enquiries" EntityType="SimplicityModel.Store.v_sales_telephone_enquiries" store:Type="Views" store:Schema="dbo" store:Name="v_sales_telephone_enquiries">
-            <DefiningQuery>SELECT 
-      [v_sales_telephone_enquiries].[name_long] AS [name_long], 
-      [v_sales_telephone_enquiries].[email] AS [email], 
-      [v_sales_telephone_enquiries].[fax] AS [fax], 
-      [v_sales_telephone_enquiries].[date_created] AS [date_created], 
-      [v_sales_telephone_enquiries].[address_full] AS [address_full], 
-      [v_sales_telephone_enquiries].[telephone1] AS [telephone1], 
-      [v_sales_telephone_enquiries].[telephone2] AS [telephone2]
-      FROM [dbo].[v_sales_telephone_enquiries] AS [v_sales_telephone_enquiries]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK_Company_Addresses" Association="SimplicityModel.Store.FK_Company_Addresses">
+          <AssociationSet Name="FK_Companies_Addresses" Association="SimplicityModel.Store.FK_Companies_Addresses">
             <End Role="Addresses" EntitySet="Addresses" />
-            <End Role="Company" EntitySet="Company" />
+            <End Role="Companies" EntitySet="Companies" />
           </AssociationSet>
           <AssociationSet Name="FK_Modules_Modules" Association="SimplicityModel.Store.FK_Modules_Modules">
             <End Role="Modules" EntitySet="Modules" />
@@ -45,6 +35,14 @@
           <AssociationSet Name="FK_Modules_Products" Association="SimplicityModel.Store.FK_Modules_Products">
             <End Role="Products" EntitySet="Products" />
             <End Role="Modules" EntitySet="Modules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sessions_Products" Association="SimplicityModel.Store.FK_Sessions_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Sessions" EntitySet="Sessions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sessions_Users" Association="SimplicityModel.Store.FK_Sessions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Sessions" EntitySet="Sessions" />
           </AssociationSet>
           <AssociationSet Name="FK_un_call_me_products_un_call_me_page" Association="SimplicityModel.Store.FK_un_call_me_products_un_call_me_page">
             <End Role="CallUsers" EntitySet="CallUsers" />
@@ -86,8 +84,8 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Addresses" EntitySet="Addresses" />
           </AssociationSet>
-          <AssociationSet Name="FK_Users_Company" Association="SimplicityModel.Store.FK_Users_Company">
-            <End Role="Company" EntitySet="Company" />
+          <AssociationSet Name="FK_Users_Companies" Association="SimplicityModel.Store.FK_Users_Companies">
+            <End Role="Companies" EntitySet="Companies" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
           <AssociationSet Name="FK_WishList_ProductDetails" Association="SimplicityModel.Store.FK_WishList_ProductDetails">
@@ -165,13 +163,13 @@
           <Property Name="ReceiveEmails" Type="bit" />
           <Property Name="CreationDate" Type="smalldatetime" />
         </EntityType>
-        <EntityType Name="Company">
+        <EntityType Name="Companies">
           <Key>
-            <PropertyRef Name="Company_ID" />
+            <PropertyRef Name="CompanyID" />
           </Key>
-          <Property Name="Company_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Company_Name" Type="varchar" MaxLength="50" />
-          <Property Name="Address_ID" Type="int" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="AddressID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EmailQueue">
           <Key>
@@ -237,6 +235,19 @@
           <Property Name="Description" Type="varchar" MaxLength="100" />
           <Property Name="ShortName" Type="varchar" Nullable="false" MaxLength="20" />
           <Property Name="TermsURL" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Sessions">
+          <Key>
+            <PropertyRef Name="SessionID" />
+          </Key>
+          <Property Name="SessionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SessionUID" Type="varchar" Nullable="false" MaxLength="36" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="LastActivityTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="IP" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="Settings">
           <Key>
@@ -312,7 +323,7 @@
           <Property Name="LastAmendedBy" Type="int" />
           <Property Name="LastAmendmentDate" Type="datetime" />
           <Property Name="Type" Type="text" Nullable="false" />
-          <Property Name="Company_ID" Type="int" />
+          <Property Name="CompanyID" Type="int" />
         </EntityType>
         <EntityType Name="Versions">
           <Key>
@@ -347,32 +358,15 @@
           <Property Name="ProductDetailID" Type="int" />
           <Property Name="Duration" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Simplicity.dbo.v_sales_telephone_enquiries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="v_sales_telephone_enquiries">
-          <Key>
-            <PropertyRef Name="date_created" />
-          </Key>
-          <Property Name="name_long" Type="varchar" MaxLength="60" />
-          <Property Name="email" Type="varchar" MaxLength="60" />
-          <Property Name="fax" Type="varchar" MaxLength="30" />
-          <Property Name="date_created" Type="datetime" Nullable="false" />
-          <Property Name="address_full" Type="varchar(max)" />
-          <Property Name="telephone1" Type="varchar" MaxLength="30" />
-          <Property Name="telephone2" Type="varchar" MaxLength="30" />
-        </EntityType>
-        <Association Name="FK_Company_Addresses">
-          <End Role="Addresses" Type="SimplicityModel.Store.Addresses" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Company" Type="SimplicityModel.Store.Company" Multiplicity="*" />
+        <Association Name="FK_Companies_Addresses">
+          <End Role="Addresses" Type="SimplicityModel.Store.Addresses" Multiplicity="1" />
+          <End Role="Companies" Type="SimplicityModel.Store.Companies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Addresses">
               <PropertyRef Name="AddressID" />
             </Principal>
-            <Dependent Role="Company">
-              <PropertyRef Name="Address_ID" />
+            <Dependent Role="Companies">
+              <PropertyRef Name="AddressID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -397,6 +391,30 @@
             </Principal>
             <Dependent Role="Modules">
               <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sessions_Products">
+          <End Role="Products" Type="SimplicityModel.Store.Products" Multiplicity="0..1" />
+          <End Role="Sessions" Type="SimplicityModel.Store.Sessions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Sessions">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sessions_Users">
+          <End Role="Users" Type="SimplicityModel.Store.Users" Multiplicity="1" />
+          <End Role="Sessions" Type="SimplicityModel.Store.Sessions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Sessions">
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -520,17 +538,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Users_Company">
-          <End Role="Company" Type="SimplicityModel.Store.Company" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+        <Association Name="FK_Users_Companies">
+          <End Role="Companies" Type="SimplicityModel.Store.Companies" Multiplicity="0..1" />
           <End Role="Users" Type="SimplicityModel.Store.Users" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Company">
-              <PropertyRef Name="Company_ID" />
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
             </Principal>
             <Dependent Role="Users">
-              <PropertyRef Name="Company_ID" />
+              <PropertyRef Name="CompanyID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1071,8 +1087,7 @@
           <Parameter Name="Original_wish_list_id" Type="int" Mode="In" />
           <Parameter Name="wish_list_id" Type="int" Mode="In" />
         </Function>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SimplicityModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -1080,7 +1095,6 @@
           <EntitySet Name="Addresses" EntityType="SimplicityModel.Address" />
           <EntitySet Name="CallUserProducts" EntityType="SimplicityModel.CallUserProduct" />
           <EntitySet Name="CallUsers" EntityType="SimplicityModel.CallUser" />
-          <EntitySet Name="Company1" EntityType="SimplicityModel.Company1" />
           <EntitySet Name="EmailQueues" EntityType="SimplicityModel.EmailQueue" />
           <EntitySet Name="EmailTemplates" EntityType="SimplicityModel.EmailTemplate" />
           <EntitySet Name="ExchangeRates" EntityType="SimplicityModel.ExchangeRate" />
@@ -1094,11 +1108,6 @@
           <EntitySet Name="Versions" EntityType="SimplicityModel.Version" />
           <EntitySet Name="Videos" EntityType="SimplicityModel.Video" />
           <EntitySet Name="WishLists" EntityType="SimplicityModel.WishList" />
-          <EntitySet Name="v_sales_telephone_enquiries" EntityType="SimplicityModel.v_sales_telephone_enquiries" />
-          <AssociationSet Name="FK_Company_Addresses" Association="SimplicityModel.FK_Company_Addresses">
-            <End Role="Addresses" EntitySet="Addresses" />
-            <End Role="Company" EntitySet="Company1" />
-          </AssociationSet>
           <AssociationSet Name="FK_UserAddresses_Users" Association="SimplicityModel.FK_UserAddresses_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Addresses" EntitySet="Addresses" />
@@ -1106,10 +1115,6 @@
           <AssociationSet Name="FK_un_call_me_products_un_call_me_page" Association="SimplicityModel.FK_un_call_me_products_un_call_me_page">
             <End Role="CallUsers" EntitySet="CallUsers" />
             <End Role="CallUserProducts" EntitySet="CallUserProducts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Users_Company" Association="SimplicityModel.FK_Users_Company">
-            <End Role="Company" EntitySet="Company1" />
-            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
           <AssociationSet Name="FK_Modules_Modules" Association="SimplicityModel.FK_Modules_Modules">
             <End Role="Modules" EntitySet="Modules" />
@@ -1167,6 +1172,24 @@
             <End Role="Versions" EntitySet="Versions" />
             <End Role="WishList" EntitySet="WishLists" />
           </AssociationSet>
+          <EntitySet Name="Sessions" EntityType="SimplicityModel.Session" />
+          <AssociationSet Name="FK_Sessions_Products" Association="SimplicityModel.FK_Sessions_Products">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Session" EntitySet="Sessions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sessions_Users" Association="SimplicityModel.FK_Sessions_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Session" EntitySet="Sessions" />
+          </AssociationSet>
+          <EntitySet Name="Companies" EntityType="SimplicityModel.Company" />
+          <AssociationSet Name="FK_Companies_Addresses" Association="SimplicityModel.FK_Companies_Addresses">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="Company" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Companies" Association="SimplicityModel.FK_Users_Companies">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Address">
           <Key>
@@ -1198,8 +1221,8 @@
           <Property Name="Town" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
           <Property Name="County" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
           <Property Name="Country" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Companies" Relationship="SimplicityModel.FK_Company_Addresses" FromRole="Addresses" ToRole="Company" />
           <NavigationProperty Name="User" Relationship="SimplicityModel.FK_UserAddresses_Users" FromRole="Addresses" ToRole="Users" />
+          <NavigationProperty Name="Companies" Relationship="SimplicityModel.FK_Companies_Addresses" FromRole="Address" ToRole="Company" />
         </EntityType>
         <EntityType Name="CallUserProduct">
           <Key>
@@ -1229,16 +1252,6 @@
           <Property Name="ReceiveEmails" Type="Boolean" />
           <Property Name="CreationDate" Type="DateTime" />
           <NavigationProperty Name="CallUserProducts" Relationship="SimplicityModel.FK_un_call_me_products_un_call_me_page" FromRole="CallUsers" ToRole="CallUserProducts" />
-        </EntityType>
-        <EntityType Name="Company1">
-          <Key>
-            <PropertyRef Name="Company_ID" />
-          </Key>
-          <Property Name="Company_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Company_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Address_ID" Type="Int32" />
-          <NavigationProperty Name="Address" Relationship="SimplicityModel.FK_Company_Addresses" FromRole="Company" ToRole="Addresses" />
-          <NavigationProperty Name="Users" Relationship="SimplicityModel.FK_Users_Company" FromRole="Company" ToRole="Users" />
         </EntityType>
         <EntityType Name="EmailQueue">
           <Key>
@@ -1316,6 +1329,7 @@
           <NavigationProperty Name="Videos" Relationship="SimplicityModel.FK_un_product_videos_un_products" FromRole="Products" ToRole="Videos" />
           <NavigationProperty Name="TransactionDetails" Relationship="SimplicityModel.FK_un_transaction_details_un_products" FromRole="Products" ToRole="TransactionDetails" />
           <NavigationProperty Name="WishLists" Relationship="SimplicityModel.FK_WishList_Products" FromRole="Products" ToRole="WishList" />
+          <NavigationProperty Name="Sessions" Relationship="SimplicityModel.FK_Sessions_Products" FromRole="Product" ToRole="Session" />
         </EntityType>
         <EntityType Name="Setting">
           <Key>
@@ -1397,11 +1411,12 @@
           <Property Name="LastAmendedBy" Type="Int32" />
           <Property Name="LastAmendmentDate" Type="DateTime" />
           <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="Company_ID" Type="Int32" />
           <NavigationProperty Name="Addresses" Relationship="SimplicityModel.FK_UserAddresses_Users" FromRole="Users" ToRole="Addresses" />
-          <NavigationProperty Name="Company" Relationship="SimplicityModel.FK_Users_Company" FromRole="Users" ToRole="Company" />
           <NavigationProperty Name="Transactions" Relationship="SimplicityModel.FK_un_transactions_un_entity_details_core" FromRole="Users" ToRole="Transactions" />
           <NavigationProperty Name="WishLists" Relationship="SimplicityModel.FK_WishList_Users" FromRole="Users" ToRole="WishList" />
+          <NavigationProperty Name="Sessions" Relationship="SimplicityModel.FK_Sessions_Users" FromRole="User" ToRole="Session" />
+          <Property Type="Int32" Name="CompanyID" />
+          <NavigationProperty Name="Company" Relationship="SimplicityModel.FK_Users_Companies" FromRole="User" ToRole="Company" />
         </EntityType>
         <EntityType Name="Version">
           <Key>
@@ -1444,32 +1459,6 @@
           <NavigationProperty Name="User" Relationship="SimplicityModel.FK_WishList_Users" FromRole="WishList" ToRole="Users" />
           <NavigationProperty Name="Version" Relationship="SimplicityModel.FK_WishList_ProductVersions" FromRole="WishList" ToRole="Versions" />
         </EntityType>
-        <EntityType Name="v_sales_telephone_enquiries">
-          <Key>
-            <PropertyRef Name="date_created" />
-          </Key>
-          <Property Name="name_long" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
-          <Property Name="email" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
-          <Property Name="fax" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
-          <Property Name="date_created" Type="DateTime" Nullable="false" />
-          <Property Name="address_full" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="telephone1" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
-          <Property Name="telephone2" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
-        </EntityType>
-        <Association Name="FK_Company_Addresses">
-          <End Role="Addresses" Type="SimplicityModel.Address" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Company" Type="SimplicityModel.Company1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Addresses">
-              <PropertyRef Name="AddressID" />
-            </Principal>
-            <Dependent Role="Company">
-              <PropertyRef Name="Address_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_UserAddresses_Users">
           <End Role="Users" Type="SimplicityModel.User" Multiplicity="1" />
           <End Role="Addresses" Type="SimplicityModel.Address" Multiplicity="*" />
@@ -1491,20 +1480,6 @@
             </Principal>
             <Dependent Role="CallUserProducts">
               <PropertyRef Name="CallMeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Users_Company">
-          <End Role="Company" Type="SimplicityModel.Company1" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Users" Type="SimplicityModel.User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Company">
-              <PropertyRef Name="Company_ID" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="Company_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1676,6 +1651,79 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="SessionID" />
+          </Key>
+          <Property Type="Int32" Name="SessionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SessionUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="ProductID" />
+          <Property Type="DateTime" Name="StartTime" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityTime" Nullable="false" />
+          <Property Type="DateTime" Name="EndTime" Nullable="false" />
+          <Property Type="String" Name="IP" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="SimplicityModel.FK_Sessions_Products" FromRole="Session" ToRole="Product" />
+          <NavigationProperty Name="User" Relationship="SimplicityModel.FK_Sessions_Users" FromRole="Session" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Sessions_Products">
+          <End Type="SimplicityModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="SimplicityModel.Session" Role="Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Session">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sessions_Users">
+          <End Type="SimplicityModel.User" Role="User" Multiplicity="1" />
+          <End Type="SimplicityModel.Session" Role="Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Session">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Type="Int32" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="AddressID" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="SimplicityModel.FK_Companies_Addresses" FromRole="Company" ToRole="Address" />
+          <NavigationProperty Name="Users" Relationship="SimplicityModel.FK_Users_Companies" FromRole="Company" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Companies_Addresses">
+          <End Type="SimplicityModel.Address" Role="Address" Multiplicity="1" />
+          <End Type="SimplicityModel.Company" Role="Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Companies">
+          <End Type="SimplicityModel.Company" Role="Company" Multiplicity="0..1" />
+          <End Type="SimplicityModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1729,11 +1777,6 @@
             <ScalarProperty Name="ViewDemo" ColumnName="ViewDemo" />
             <ScalarProperty Name="ReceiveEmails" ColumnName="ReceiveEmails" />
             <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Company1"><EntityTypeMapping TypeName="SimplicityModel.Company1"><MappingFragment StoreEntitySet="Company">
-            <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
-            <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
-            <ScalarProperty Name="Address_ID" ColumnName="Address_ID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="EmailQueues"><EntityTypeMapping TypeName="SimplicityModel.EmailQueue"><MappingFragment StoreEntitySet="EmailQueue">
             <ScalarProperty Name="QueueID" ColumnName="QueueID" />
@@ -1813,7 +1856,8 @@
             <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="SimplicityModel.User"><MappingFragment StoreEntitySet="Users">
-            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="UserUID" ColumnName="UserUID" />
             <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
             <ScalarProperty Name="ReceiveEmails" ColumnName="ReceiveEmails" />
@@ -1843,7 +1887,6 @@
             <ScalarProperty Name="LastAmendedBy" ColumnName="LastAmendedBy" />
             <ScalarProperty Name="LastAmendmentDate" ColumnName="LastAmendmentDate" />
             <ScalarProperty Name="Type" ColumnName="Type" />
-            <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Versions"><EntityTypeMapping TypeName="SimplicityModel.Version"><MappingFragment StoreEntitySet="Versions">
             <ScalarProperty Name="VersionID" ColumnName="VersionID" />
@@ -1869,15 +1912,29 @@
             <ScalarProperty Name="ProductDetailID" ColumnName="ProductDetailID" />
             <ScalarProperty Name="Duration" ColumnName="Duration" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="v_sales_telephone_enquiries"><EntityTypeMapping TypeName="SimplicityModel.v_sales_telephone_enquiries"><MappingFragment StoreEntitySet="v_sales_telephone_enquiries">
-            <ScalarProperty Name="name_long" ColumnName="name_long" />
-            <ScalarProperty Name="email" ColumnName="email" />
-            <ScalarProperty Name="fax" ColumnName="fax" />
-            <ScalarProperty Name="date_created" ColumnName="date_created" />
-            <ScalarProperty Name="address_full" ColumnName="address_full" />
-            <ScalarProperty Name="telephone1" ColumnName="telephone1" />
-            <ScalarProperty Name="telephone2" ColumnName="telephone2" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Sessions">
+            <EntityTypeMapping TypeName="SimplicityModel.Session">
+              <MappingFragment StoreEntitySet="Sessions">
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="LastActivityTime" ColumnName="LastActivityTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SessionUID" ColumnName="SessionUID" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="SimplicityModel.Company">
+              <MappingFragment StoreEntitySet="Companies">
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1898,11 +1955,10 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="SimplicityDataModel">
+      <Diagram Name="SimplicityDataModel" ZoomLevel="91">
         <EntityTypeShape EntityType="SimplicityModel.Address" Width="1.5" PointX="1.5" PointY="29.875" Height="5.5366422526041674" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.CallUserProduct" Width="1.5" PointX="8" PointY="2" Height="1.4279589843749996" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.CallUser" Width="1.5" PointX="5.75" PointY="1" Height="3.400126953125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SimplicityModel.Company1" Width="1.5" PointX="1.5" PointY="26.75" Height="1.7566536458333317" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.EmailQueue" Width="1.5" PointX="7.75" PointY="4.75" Height="2.5783902994791656" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.EmailTemplate" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5923063151041665" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.ExchangeRate" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5923063151041674" IsExpanded="true" />
@@ -1912,106 +1968,123 @@
         <EntityTypeShape EntityType="SimplicityModel.Setting" Width="1.5" PointX="9.75" PointY="4.75" Height="1.5923063151041674" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.TransactionDetail" Width="1.5" PointX="5.25" PointY="8" Height="3.4001269531250031" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.Transaction" Width="1.5" PointX="3" PointY="19.125" Height="2.907084960937496" IsExpanded="true" />
-        <EntityTypeShape EntityType="SimplicityModel.User" Width="1.5" PointX="0.75" PointY="17.25" Height="6.6870735677083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.User" Width="1.5" PointX="0.75" PointY="17.25" Height="7.941630859375" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.Version" Width="1.5" PointX="3" PointY="10" Height="2.4140429687500031" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.Video" Width="1.5" PointX="3" PointY="13.125" Height="1.9210009765625031" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.WishList" Width="1.5" PointX="8.25" PointY="8.25" Height="2.7427376302083388" IsExpanded="true" />
-        <EntityTypeShape EntityType="SimplicityModel.v_sales_telephone_enquiries" Width="1.5" PointX="10.75" PointY="0.75" Height="2.0853483072916674" IsExpanded="true" />
-        <AssociationConnector Association="SimplicityModel.FK_Company_Addresses" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="29.875" />
-          <ConnectorPoint PointX="2.25" PointY="28.506653645833332" />
-        </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_UserAddresses_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.1249995" PointY="23.937073567708339" />
-          <ConnectorPoint PointX="1.1249995" PointY="32.643321126302084" />
-          <ConnectorPoint PointX="1.5" PointY="32.643321126302084" />
+          <ConnectorPoint PointX="1.875" PointY="25.191630859375" />
+          <ConnectorPoint PointX="1.875" PointY="29.875" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_call_me_products_un_call_me_page" ManuallyRouted="false">
           <ConnectorPoint PointX="7.25" PointY="2.7139794921875" />
           <ConnectorPoint PointX="8" PointY="2.7139794921875" />
         </AssociationConnector>
-        <AssociationConnector Association="SimplicityModel.FK_Users_Company" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.875" PointY="26.75" />
-          <ConnectorPoint PointX="1.875" PointY="23.937073567708339" />
-        </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_Modules_Modules" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.5319230769230767" PointY="6.1246956380208317" />
-          <ConnectorPoint PointX="3.5319230769230767" PointY="6.3746956380208317" />
-          <ConnectorPoint PointX="3.9784615384615383" PointY="6.3746956380208317" />
-          <ConnectorPoint PointX="3.9784615384615383" PointY="6.1246956380208317" />
+          <ConnectorPoint PointX="3.5319230769230767" PointY="6.4321907552083326" />
+          <ConnectorPoint PointX="3.5319230769230767" PointY="6.6821907552083317" />
+          <ConnectorPoint PointX="3.9784615384615383" PointY="6.6821907552083317" />
+          <ConnectorPoint PointX="3.9784615384615383" PointY="6.4321907552083326" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_Modules_Products" ManuallyRouted="false">
           <ConnectorPoint PointX="1.5" PointY="8.125" />
-          <ConnectorPoint PointX="1.5" PointY="4.9998478190104159" />
-          <ConnectorPoint PointX="3" PointY="4.9998478190104159" />
+          <ConnectorPoint PointX="1.5" PointY="5.1535953776041659" />
+          <ConnectorPoint PointX="3" PointY="5.1535953776041659" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_product_details_un_products" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="8.707021484375" />
-          <ConnectorPoint PointX="3" PointY="8.707021484375" />
+          <ConnectorPoint PointX="2.25" PointY="8.671748046874999" />
+          <ConnectorPoint PointX="3" PointY="8.671748046874999" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_product_details" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="8.644521484375" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="8.644521484375" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="8.644521484375" />
-          <ConnectorPoint PointX="5.25" PointY="8.644521484375" />
+          <ConnectorPoint PointX="4.5" PointY="8.81224609375" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="8.81224609375" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="8.81224609375" />
+          <ConnectorPoint PointX="5.25" PointY="8.81224609375" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_WishList_ProductDetails" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="7.6641951497395828" />
-          <ConnectorPoint PointX="9.53125" PointY="7.6641951497395828" />
+          <ConnectorPoint PointX="4.5" PointY="7.8458968098958328" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="7.8458968098958319" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="7.8458968098958328" />
+          <ConnectorPoint PointX="7.416666666666667" PointY="7.8458968098958319" />
+          <ConnectorPoint PointX="7.583333333333333" PointY="7.8458968098958328" />
+          <ConnectorPoint PointX="9.53125" PointY="7.8458968098958328" />
           <ConnectorPoint PointX="9.53125" PointY="8.25" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_product_versions_un_products" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="10.433868815104168" />
-          <ConnectorPoint PointX="2.4166666666666665" PointY="10.433868815104168" />
-          <ConnectorPoint PointX="2.5833333333333335" PointY="10.433868815104168" />
-          <ConnectorPoint PointX="3" PointY="10.433868815104168" />
+          <ConnectorPoint PointX="2.25" PointY="10.7256982421875" />
+          <ConnectorPoint PointX="3" PointY="10.7256982421875" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_product_videos_un_products" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="10.867737630208335" />
-          <ConnectorPoint PointX="1.5" PointY="14.085500488281252" />
-          <ConnectorPoint PointX="3" PointY="14.085500488281252" />
+          <ConnectorPoint PointX="1.5" PointY="11.451396484375" />
+          <ConnectorPoint PointX="1.5" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="3" PointY="14.2112939453125" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_products" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="9.644521484375" />
-          <ConnectorPoint PointX="2.4166666666666665" PointY="9.644521484375" />
-          <ConnectorPoint PointX="2.5833333333333335" PointY="9.644521484375" />
-          <ConnectorPoint PointX="5.25" PointY="9.644521484375" />
+          <ConnectorPoint PointX="2.25" PointY="9.81224609375" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="9.81224609375" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="9.81224609375" />
+          <ConnectorPoint PointX="5.25" PointY="9.81224609375" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_WishList_Products" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.9062519999999998" PointY="10.867737630208335" />
-          <ConnectorPoint PointX="1.9062519999999998" PointY="11.117737630208335" />
-          <ConnectorPoint PointX="2.5" PointY="11.117737630208335" />
-          <ConnectorPoint PointX="2.5" PointY="9.49636881510417" />
-          <ConnectorPoint PointX="5" PointY="9.49636881510417" />
-          <ConnectorPoint PointX="5" PointY="7.875" />
-          <ConnectorPoint PointX="7.875" PointY="7.875" />
-          <ConnectorPoint PointX="7.875" PointY="9.62136881510417" />
-          <ConnectorPoint PointX="8.25" PointY="9.62136881510417" />
+          <ConnectorPoint PointX="2.25" PointY="9.906125546875" />
+          <ConnectorPoint PointX="4.75" PointY="9.906125546875" />
+          <ConnectorPoint PointX="4.75" PointY="6.625" />
+          <ConnectorPoint PointX="7.5" PointY="6.625" />
+          <ConnectorPoint PointX="7.5" PointY="8" />
+          <ConnectorPoint PointX="8.859373" PointY="8" />
+          <ConnectorPoint PointX="8.859373" PointY="8.25" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_product_versions" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="10.700063476562502" />
           <ConnectorPoint PointX="5.25" PointY="10.700063476562502" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_transactions" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="20.578542480468748" />
-          <ConnectorPoint PointX="6" PointY="20.578542480468748" />
-          <ConnectorPoint PointX="6" PointY="11.400126953125003" />
+          <ConnectorPoint PointX="4.5" PointY="20.788198242187498" />
+          <ConnectorPoint PointX="5.59375" PointY="20.788198242187498" />
+          <ConnectorPoint PointX="5.59375" PointY="11.90330078125" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transactions_un_entity_details_core" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="20.578542480468748" />
-          <ConnectorPoint PointX="3" PointY="20.578542480468748" />
+          <ConnectorPoint PointX="2.25" PointY="20.788198242187498" />
+          <ConnectorPoint PointX="3" PointY="20.788198242187498" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_WishList_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="23.015829264322917" />
-          <ConnectorPoint PointX="9" PointY="23.015829264322917" />
-          <ConnectorPoint PointX="9" PointY="10.992737630208339" />
+          <ConnectorPoint PointX="2.25" PointY="23.534570499581783" />
+          <ConnectorPoint PointX="9.20312625" PointY="23.534570499581783" />
+          <ConnectorPoint PointX="9.20312625" PointY="11.384095052083332" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_WishList_ProductVersions" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="11.938334960937503" />
-          <ConnectorPoint PointX="5.916666666666667" PointY="11.938334960937503" />
-          <ConnectorPoint PointX="6.083333333333333" PointY="11.938334960937503" />
-          <ConnectorPoint PointX="8.5937475" PointY="11.938334960937503" />
-          <ConnectorPoint PointX="8.5937475" PointY="10.992737630208339" />
+          <ConnectorPoint PointX="4.5" PointY="12.357646484375" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="12.357646484375" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="12.357646484375" />
+          <ConnectorPoint PointX="8.5937475" PointY="12.357646484375" />
+          <ConnectorPoint PointX="8.5937475" PointY="11.384095052083332" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SimplicityModel.Session" Width="1.5" PointX="6" PointY="14.125" Height="2.9417936197916674" />
+        <AssociationConnector Association="SimplicityModel.FK_Sessions_Products" >
+          <ConnectorPoint PointX="1.9062525" PointY="11.451396484375" />
+          <ConnectorPoint PointX="1.9062525" PointY="16.213440755208332" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="16.213440755208332" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="16.213440755208332" />
+          <ConnectorPoint PointX="6" PointY="16.213440755208332" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_Sessions_Users" >
+          <ConnectorPoint PointX="2.25" PointY="18.15625" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="18.15625" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="18.15625" />
+          <ConnectorPoint PointX="6.75" PointY="18.15625" />
+          <ConnectorPoint PointX="6.75" PointY="17.066793619791667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SimplicityModel.Company" Width="1.5" PointX="3.75" PointY="32.125" Height="1.7879850260416674" />
+        <AssociationConnector Association="SimplicityModel.FK_Companies_Addresses" >
+          <ConnectorPoint PointX="3" PointY="33.115143229166669" />
+          <ConnectorPoint PointX="3.75" PointY="33.115143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimplicityModel.FK_Users_Companies" >
+          <ConnectorPoint PointX="4.90625" PointY="32.125" />
+          <ConnectorPoint PointX="4.90625" PointY="24.394353179478383" />
+          <ConnectorPoint PointX="2.25" PointY="24.394353179478383" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
