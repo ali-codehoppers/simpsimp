@@ -37,9 +37,28 @@ namespace Simplicity.Web
                     Request.Form.Get("card_expirationMonth"), Request.Form.Get("card_expirationYear"), Utility.GetCardType(Request.Form.Get("card_cardType")),
                     lblAmountText.Text, LoggedIsUser.Email);
 
+                    if (LoggedIsUser.Company != null)
+                    {
+                        foreach (TransactionDetail detail in transaction.TransactionDetails)
+                        {
+                            CompanyProduct companyProduct = new CompanyProduct();
+                            companyProduct.Company = LoggedIsUser.Company;
+                            companyProduct.ProductID = detail.ProductID;
+                            companyProduct.VersionID = detail.VersionID.Value;
+                            if (detail.ProductDetailID > 0)
+                                companyProduct.ProductDetailID = detail.ProductDetailID.Value;
+                            companyProduct.NumOfLicenses = detail.Quantity;
+                            companyProduct.StartDate = DateTime.Now;
+                            companyProduct.EndDate = DateTime.Now.AddMonths(detail.Duration);
+                            DatabaseContext.AddToCompanyProducts(companyProduct);
+                        }
+                        DatabaseContext.SaveChanges();
+                    }
+
+
                     ShoppingCart.ClearTrolley();
                     productsLogin.Visible = true;
-                    //add to user products
+                    //add to user products                    
                 }
                 else
                 {

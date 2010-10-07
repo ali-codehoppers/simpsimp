@@ -38,6 +38,12 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Sessions_Users", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "Session", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Session), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Companies_Addresses", "Address", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Address), "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Company), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Users_Companies", "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Company), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.User), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_CompanyProducts_Companies", "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Company), "CompanyProduct", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.CompanyProduct), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_CompanyProducts_ProductDetails", "ProductDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.ProductDetail), "CompanyProduct", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.CompanyProduct), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_CompanyProducts_Products", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "CompanyProduct", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.CompanyProduct), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_CompanyProducts_Versions", "Version", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Version), "CompanyProduct", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.CompanyProduct), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_UserProducts_Products", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "UserProduct", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.UserProduct), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_UserProducts_Users", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "UserProduct", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.UserProduct), true)]
 
 #endregion
 
@@ -376,6 +382,38 @@ namespace Simplicity.Data
             }
         }
         private ObjectSet<Company> _Companies;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<CompanyProduct> CompanyProducts
+        {
+            get
+            {
+                if ((_CompanyProducts == null))
+                {
+                    _CompanyProducts = base.CreateObjectSet<CompanyProduct>("CompanyProducts");
+                }
+                return _CompanyProducts;
+            }
+        }
+        private ObjectSet<CompanyProduct> _CompanyProducts;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<UserProduct> UserProducts
+        {
+            get
+            {
+                if ((_UserProducts == null))
+                {
+                    _UserProducts = base.CreateObjectSet<UserProduct>("UserProducts");
+                }
+                return _UserProducts;
+            }
+        }
+        private ObjectSet<UserProduct> _UserProducts;
 
         #endregion
         #region AddTo Methods
@@ -522,6 +560,22 @@ namespace Simplicity.Data
         public void AddToCompanies(Company company)
         {
             base.AddObject("Companies", company);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the CompanyProducts EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCompanyProducts(CompanyProduct companyProduct)
+        {
+            base.AddObject("CompanyProducts", companyProduct);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the UserProducts EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToUserProducts(UserProduct userProduct)
+        {
+            base.AddObject("UserProducts", userProduct);
         }
 
         #endregion
@@ -1957,6 +2011,418 @@ namespace Simplicity.Data
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_CompanyProducts_Companies", "CompanyProduct")]
+        public EntityCollection<CompanyProduct> CompanyProducts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CompanyProduct>("SimplicityModel.FK_CompanyProducts_Companies", "CompanyProduct");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CompanyProduct>("SimplicityModel.FK_CompanyProducts_Companies", "CompanyProduct", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="SimplicityModel", Name="CompanyProduct")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class CompanyProduct : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new CompanyProduct object.
+        /// </summary>
+        /// <param name="companyProductID">Initial value of the CompanyProductID property.</param>
+        /// <param name="companyID">Initial value of the CompanyID property.</param>
+        /// <param name="productID">Initial value of the ProductID property.</param>
+        /// <param name="versionID">Initial value of the VersionID property.</param>
+        /// <param name="startDate">Initial value of the StartDate property.</param>
+        /// <param name="endDate">Initial value of the EndDate property.</param>
+        /// <param name="numOfLicenses">Initial value of the NumOfLicenses property.</param>
+        public static CompanyProduct CreateCompanyProduct(global::System.Int32 companyProductID, global::System.Int32 companyID, global::System.Int32 productID, global::System.Int32 versionID, global::System.DateTime startDate, global::System.DateTime endDate, global::System.Int32 numOfLicenses)
+        {
+            CompanyProduct companyProduct = new CompanyProduct();
+            companyProduct.CompanyProductID = companyProductID;
+            companyProduct.CompanyID = companyID;
+            companyProduct.ProductID = productID;
+            companyProduct.VersionID = versionID;
+            companyProduct.StartDate = startDate;
+            companyProduct.EndDate = endDate;
+            companyProduct.NumOfLicenses = numOfLicenses;
+            return companyProduct;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CompanyProductID
+        {
+            get
+            {
+                return _CompanyProductID;
+            }
+            set
+            {
+                if (_CompanyProductID != value)
+                {
+                    OnCompanyProductIDChanging(value);
+                    ReportPropertyChanging("CompanyProductID");
+                    _CompanyProductID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("CompanyProductID");
+                    OnCompanyProductIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _CompanyProductID;
+        partial void OnCompanyProductIDChanging(global::System.Int32 value);
+        partial void OnCompanyProductIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CompanyID
+        {
+            get
+            {
+                return _CompanyID;
+            }
+            set
+            {
+                OnCompanyIDChanging(value);
+                ReportPropertyChanging("CompanyID");
+                _CompanyID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CompanyID");
+                OnCompanyIDChanged();
+            }
+        }
+        private global::System.Int32 _CompanyID;
+        partial void OnCompanyIDChanging(global::System.Int32 value);
+        partial void OnCompanyIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ProductID
+        {
+            get
+            {
+                return _ProductID;
+            }
+            set
+            {
+                OnProductIDChanging(value);
+                ReportPropertyChanging("ProductID");
+                _ProductID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ProductID");
+                OnProductIDChanged();
+            }
+        }
+        private global::System.Int32 _ProductID;
+        partial void OnProductIDChanging(global::System.Int32 value);
+        partial void OnProductIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 VersionID
+        {
+            get
+            {
+                return _VersionID;
+            }
+            set
+            {
+                OnVersionIDChanging(value);
+                ReportPropertyChanging("VersionID");
+                _VersionID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("VersionID");
+                OnVersionIDChanged();
+            }
+        }
+        private global::System.Int32 _VersionID;
+        partial void OnVersionIDChanging(global::System.Int32 value);
+        partial void OnVersionIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> ProductDetailID
+        {
+            get
+            {
+                return _ProductDetailID;
+            }
+            set
+            {
+                OnProductDetailIDChanging(value);
+                ReportPropertyChanging("ProductDetailID");
+                _ProductDetailID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ProductDetailID");
+                OnProductDetailIDChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _ProductDetailID;
+        partial void OnProductDetailIDChanging(Nullable<global::System.Int32> value);
+        partial void OnProductDetailIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime StartDate
+        {
+            get
+            {
+                return _StartDate;
+            }
+            set
+            {
+                OnStartDateChanging(value);
+                ReportPropertyChanging("StartDate");
+                _StartDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StartDate");
+                OnStartDateChanged();
+            }
+        }
+        private global::System.DateTime _StartDate;
+        partial void OnStartDateChanging(global::System.DateTime value);
+        partial void OnStartDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime EndDate
+        {
+            get
+            {
+                return _EndDate;
+            }
+            set
+            {
+                OnEndDateChanging(value);
+                ReportPropertyChanging("EndDate");
+                _EndDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EndDate");
+                OnEndDateChanged();
+            }
+        }
+        private global::System.DateTime _EndDate;
+        partial void OnEndDateChanging(global::System.DateTime value);
+        partial void OnEndDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 NumOfLicenses
+        {
+            get
+            {
+                return _NumOfLicenses;
+            }
+            set
+            {
+                OnNumOfLicensesChanging(value);
+                ReportPropertyChanging("NumOfLicenses");
+                _NumOfLicenses = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NumOfLicenses");
+                OnNumOfLicensesChanged();
+            }
+        }
+        private global::System.Int32 _NumOfLicenses;
+        partial void OnNumOfLicensesChanging(global::System.Int32 value);
+        partial void OnNumOfLicensesChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_CompanyProducts_Companies", "Company")]
+        public Company Company
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company>("SimplicityModel.FK_CompanyProducts_Companies", "Company").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company>("SimplicityModel.FK_CompanyProducts_Companies", "Company").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Company> CompanyReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company>("SimplicityModel.FK_CompanyProducts_Companies", "Company");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Company>("SimplicityModel.FK_CompanyProducts_Companies", "Company", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_CompanyProducts_ProductDetails", "ProductDetail")]
+        public ProductDetail ProductDetail
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductDetail>("SimplicityModel.FK_CompanyProducts_ProductDetails", "ProductDetail").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductDetail>("SimplicityModel.FK_CompanyProducts_ProductDetails", "ProductDetail").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ProductDetail> ProductDetailReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductDetail>("SimplicityModel.FK_CompanyProducts_ProductDetails", "ProductDetail");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ProductDetail>("SimplicityModel.FK_CompanyProducts_ProductDetails", "ProductDetail", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_CompanyProducts_Products", "Product")]
+        public Product Product
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_CompanyProducts_Products", "Product").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_CompanyProducts_Products", "Product").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Product> ProductReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_CompanyProducts_Products", "Product");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("SimplicityModel.FK_CompanyProducts_Products", "Product", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_CompanyProducts_Versions", "Version")]
+        public Version Version
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Version>("SimplicityModel.FK_CompanyProducts_Versions", "Version").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Version>("SimplicityModel.FK_CompanyProducts_Versions", "Version").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Version> VersionReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Version>("SimplicityModel.FK_CompanyProducts_Versions", "Version");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Version>("SimplicityModel.FK_CompanyProducts_Versions", "Version", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -3083,6 +3549,50 @@ namespace Simplicity.Data
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_CompanyProducts_Products", "CompanyProduct")]
+        public EntityCollection<CompanyProduct> CompanyProducts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CompanyProduct>("SimplicityModel.FK_CompanyProducts_Products", "CompanyProduct");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CompanyProduct>("SimplicityModel.FK_CompanyProducts_Products", "CompanyProduct", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Products", "UserProduct")]
+        public EntityCollection<UserProduct> UserProducts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Products", "UserProduct");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Products", "UserProduct", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -3350,6 +3860,28 @@ namespace Simplicity.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<WishList>("SimplicityModel.FK_WishList_ProductDetails", "WishList", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_CompanyProducts_ProductDetails", "CompanyProduct")]
+        public EntityCollection<CompanyProduct> CompanyProducts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CompanyProduct>("SimplicityModel.FK_CompanyProducts_ProductDetails", "CompanyProduct");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CompanyProduct>("SimplicityModel.FK_CompanyProducts_ProductDetails", "CompanyProduct", value);
                 }
             }
         }
@@ -5528,6 +6060,269 @@ namespace Simplicity.Data
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Users", "UserProduct")]
+        public EntityCollection<UserProduct> UserProducts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Users", "UserProduct");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Users", "UserProduct", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="SimplicityModel", Name="UserProduct")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class UserProduct : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new UserProduct object.
+        /// </summary>
+        /// <param name="userID">Initial value of the UserID property.</param>
+        /// <param name="productID">Initial value of the ProductID property.</param>
+        /// <param name="isTrial">Initial value of the IsTrial property.</param>
+        /// <param name="startDate">Initial value of the StartDate property.</param>
+        /// <param name="endDate">Initial value of the EndDate property.</param>
+        public static UserProduct CreateUserProduct(global::System.Int32 userID, global::System.Int32 productID, global::System.Boolean isTrial, global::System.DateTime startDate, global::System.DateTime endDate)
+        {
+            UserProduct userProduct = new UserProduct();
+            userProduct.UserID = userID;
+            userProduct.ProductID = productID;
+            userProduct.IsTrial = isTrial;
+            userProduct.StartDate = startDate;
+            userProduct.EndDate = endDate;
+            return userProduct;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 UserID
+        {
+            get
+            {
+                return _UserID;
+            }
+            set
+            {
+                if (_UserID != value)
+                {
+                    OnUserIDChanging(value);
+                    ReportPropertyChanging("UserID");
+                    _UserID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("UserID");
+                    OnUserIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _UserID;
+        partial void OnUserIDChanging(global::System.Int32 value);
+        partial void OnUserIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ProductID
+        {
+            get
+            {
+                return _ProductID;
+            }
+            set
+            {
+                if (_ProductID != value)
+                {
+                    OnProductIDChanging(value);
+                    ReportPropertyChanging("ProductID");
+                    _ProductID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ProductID");
+                    OnProductIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ProductID;
+        partial void OnProductIDChanging(global::System.Int32 value);
+        partial void OnProductIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsTrial
+        {
+            get
+            {
+                return _IsTrial;
+            }
+            set
+            {
+                OnIsTrialChanging(value);
+                ReportPropertyChanging("IsTrial");
+                _IsTrial = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsTrial");
+                OnIsTrialChanged();
+            }
+        }
+        private global::System.Boolean _IsTrial;
+        partial void OnIsTrialChanging(global::System.Boolean value);
+        partial void OnIsTrialChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime StartDate
+        {
+            get
+            {
+                return _StartDate;
+            }
+            set
+            {
+                OnStartDateChanging(value);
+                ReportPropertyChanging("StartDate");
+                _StartDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StartDate");
+                OnStartDateChanged();
+            }
+        }
+        private global::System.DateTime _StartDate;
+        partial void OnStartDateChanging(global::System.DateTime value);
+        partial void OnStartDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime EndDate
+        {
+            get
+            {
+                return _EndDate;
+            }
+            set
+            {
+                OnEndDateChanging(value);
+                ReportPropertyChanging("EndDate");
+                _EndDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EndDate");
+                OnEndDateChanged();
+            }
+        }
+        private global::System.DateTime _EndDate;
+        partial void OnEndDateChanging(global::System.DateTime value);
+        partial void OnEndDateChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Products", "Product")]
+        public Product Product
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Product").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Product").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Product> ProductReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Product");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Product", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Users", "User")]
+        public User User
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "User").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "User").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User> UserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "User", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -5791,6 +6586,28 @@ namespace Simplicity.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<WishList>("SimplicityModel.FK_WishList_ProductVersions", "WishList", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_CompanyProducts_Versions", "CompanyProduct")]
+        public EntityCollection<CompanyProduct> CompanyProducts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CompanyProduct>("SimplicityModel.FK_CompanyProducts_Versions", "CompanyProduct");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CompanyProduct>("SimplicityModel.FK_CompanyProducts_Versions", "CompanyProduct", value);
                 }
             }
         }

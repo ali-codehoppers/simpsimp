@@ -220,7 +220,7 @@ namespace Simplicity.Web
                         detail.VersionID = shoppingItem.VersionEntity.VersionID;
                         detail.VersionName = shoppingItem.VersionEntity.Name;
                     }
-                    if (shoppingItem.ProductEntity != null)
+                    if (shoppingItem.ProductDetailEntity != null)
                     {
                         detail.ProductDetailID = shoppingItem.ProductDetailEntity.ProductDetailID;
                         detail.ProductDetailName = shoppingItem.ProductDetailEntity.ProductDetail1;
