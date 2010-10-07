@@ -18,8 +18,10 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Company_Addresses", "Addresses", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Address), "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Company1), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_UserAddresses_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "Addresses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Address), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_call_me_products_un_call_me_page", "CallUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.CallUser), "CallUserProducts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.CallUserProduct), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Users_Company", "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Company1), "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.User), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Modules_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Module), "Modules1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Module), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Modules_Products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Module), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_product_details_un_products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "ProductDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.ProductDetail), true)]
@@ -132,6 +134,22 @@ namespace Simplicity.Data
             }
         }
         private ObjectSet<CallUser> _CallUsers;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Company1> Company1
+        {
+            get
+            {
+                if ((_Company1 == null))
+                {
+                    _Company1 = base.CreateObjectSet<Company1>("Company1");
+                }
+                return _Company1;
+            }
+        }
+        private ObjectSet<Company1> _Company1;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -340,6 +358,22 @@ namespace Simplicity.Data
             }
         }
         private ObjectSet<WishList> _WishLists;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<v_sales_telephone_enquiries> v_sales_telephone_enquiries
+        {
+            get
+            {
+                if ((_v_sales_telephone_enquiries == null))
+                {
+                    _v_sales_telephone_enquiries = base.CreateObjectSet<v_sales_telephone_enquiries>("v_sales_telephone_enquiries");
+                }
+                return _v_sales_telephone_enquiries;
+            }
+        }
+        private ObjectSet<v_sales_telephone_enquiries> _v_sales_telephone_enquiries;
 
         #endregion
         #region AddTo Methods
@@ -366,6 +400,14 @@ namespace Simplicity.Data
         public void AddToCallUsers(CallUser callUser)
         {
             base.AddObject("CallUsers", callUser);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Company1 EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCompany1(Company1 company1)
+        {
+            base.AddObject("Company1", company1);
         }
     
         /// <summary>
@@ -470,6 +512,14 @@ namespace Simplicity.Data
         public void AddToWishLists(WishList wishList)
         {
             base.AddObject("WishLists", wishList);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the v_sales_telephone_enquiries EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTov_sales_telephone_enquiries(v_sales_telephone_enquiries v_sales_telephone_enquiries)
+        {
+            base.AddObject("v_sales_telephone_enquiries", v_sales_telephone_enquiries);
         }
 
         #endregion
@@ -1153,6 +1203,28 @@ namespace Simplicity.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Company_Addresses", "Company")]
+        public EntityCollection<Company1> Companies
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Company1>("SimplicityModel.FK_Company_Addresses", "Company");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Company1>("SimplicityModel.FK_Company_Addresses", "Company", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserAddresses_Users", "Users")]
         public User User
         {
@@ -1710,6 +1782,172 @@ namespace Simplicity.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CallUser>("SimplicityModel.FK_un_call_me_products_un_call_me_page", "CallUsers", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="SimplicityModel", Name="Company1")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Company1 : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Company1 object.
+        /// </summary>
+        /// <param name="company_ID">Initial value of the Company_ID property.</param>
+        public static Company1 CreateCompany1(global::System.Int32 company_ID)
+        {
+            Company1 company1 = new Company1();
+            company1.Company_ID = company_ID;
+            return company1;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Company_ID
+        {
+            get
+            {
+                return _Company_ID;
+            }
+            set
+            {
+                if (_Company_ID != value)
+                {
+                    OnCompany_IDChanging(value);
+                    ReportPropertyChanging("Company_ID");
+                    _Company_ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Company_ID");
+                    OnCompany_IDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Company_ID;
+        partial void OnCompany_IDChanging(global::System.Int32 value);
+        partial void OnCompany_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Company_Name
+        {
+            get
+            {
+                return _Company_Name;
+            }
+            set
+            {
+                OnCompany_NameChanging(value);
+                ReportPropertyChanging("Company_Name");
+                _Company_Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Company_Name");
+                OnCompany_NameChanged();
+            }
+        }
+        private global::System.String _Company_Name;
+        partial void OnCompany_NameChanging(global::System.String value);
+        partial void OnCompany_NameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Address_ID
+        {
+            get
+            {
+                return _Address_ID;
+            }
+            set
+            {
+                OnAddress_IDChanging(value);
+                ReportPropertyChanging("Address_ID");
+                _Address_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Address_ID");
+                OnAddress_IDChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Address_ID;
+        partial void OnAddress_IDChanging(Nullable<global::System.Int32> value);
+        partial void OnAddress_IDChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Company_Addresses", "Addresses")]
+        public Address Address
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("SimplicityModel.FK_Company_Addresses", "Addresses").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("SimplicityModel.FK_Company_Addresses", "Addresses").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Address> AddressReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("SimplicityModel.FK_Company_Addresses", "Addresses");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Address>("SimplicityModel.FK_Company_Addresses", "Addresses", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Users_Company", "Users")]
+        public EntityCollection<User> Users
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("SimplicityModel.FK_Users_Company", "Users");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("SimplicityModel.FK_Users_Company", "Users", value);
                 }
             }
         }
@@ -4794,6 +5032,30 @@ namespace Simplicity.Data
         private global::System.String _Type;
         partial void OnTypeChanging(global::System.String value);
         partial void OnTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Company_ID
+        {
+            get
+            {
+                return _Company_ID;
+            }
+            set
+            {
+                OnCompany_IDChanging(value);
+                ReportPropertyChanging("Company_ID");
+                _Company_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Company_ID");
+                OnCompany_IDChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Company_ID;
+        partial void OnCompany_IDChanging(Nullable<global::System.Int32> value);
+        partial void OnCompany_IDChanged();
 
         #endregion
     
@@ -4817,6 +5079,44 @@ namespace Simplicity.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Address>("SimplicityModel.FK_UserAddresses_Users", "Addresses", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Users_Company", "Company")]
+        public Company1 Company
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company1>("SimplicityModel.FK_Users_Company", "Company").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company1>("SimplicityModel.FK_Users_Company", "Company").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Company1> CompanyReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company1>("SimplicityModel.FK_Users_Company", "Company");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Company1>("SimplicityModel.FK_Users_Company", "Company", value);
                 }
             }
         }
@@ -4866,6 +5166,205 @@ namespace Simplicity.Data
         }
 
         #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="SimplicityModel", Name="v_sales_telephone_enquiries")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class v_sales_telephone_enquiries : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new v_sales_telephone_enquiries object.
+        /// </summary>
+        /// <param name="date_created">Initial value of the date_created property.</param>
+        public static v_sales_telephone_enquiries Createv_sales_telephone_enquiries(global::System.DateTime date_created)
+        {
+            v_sales_telephone_enquiries v_sales_telephone_enquiries = new v_sales_telephone_enquiries();
+            v_sales_telephone_enquiries.date_created = date_created;
+            return v_sales_telephone_enquiries;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String name_long
+        {
+            get
+            {
+                return _name_long;
+            }
+            set
+            {
+                Onname_longChanging(value);
+                ReportPropertyChanging("name_long");
+                _name_long = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("name_long");
+                Onname_longChanged();
+            }
+        }
+        private global::System.String _name_long;
+        partial void Onname_longChanging(global::System.String value);
+        partial void Onname_longChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String email
+        {
+            get
+            {
+                return _email;
+            }
+            set
+            {
+                OnemailChanging(value);
+                ReportPropertyChanging("email");
+                _email = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("email");
+                OnemailChanged();
+            }
+        }
+        private global::System.String _email;
+        partial void OnemailChanging(global::System.String value);
+        partial void OnemailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String fax
+        {
+            get
+            {
+                return _fax;
+            }
+            set
+            {
+                OnfaxChanging(value);
+                ReportPropertyChanging("fax");
+                _fax = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("fax");
+                OnfaxChanged();
+            }
+        }
+        private global::System.String _fax;
+        partial void OnfaxChanging(global::System.String value);
+        partial void OnfaxChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime date_created
+        {
+            get
+            {
+                return _date_created;
+            }
+            set
+            {
+                if (_date_created != value)
+                {
+                    Ondate_createdChanging(value);
+                    ReportPropertyChanging("date_created");
+                    _date_created = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("date_created");
+                    Ondate_createdChanged();
+                }
+            }
+        }
+        private global::System.DateTime _date_created;
+        partial void Ondate_createdChanging(global::System.DateTime value);
+        partial void Ondate_createdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String address_full
+        {
+            get
+            {
+                return _address_full;
+            }
+            set
+            {
+                Onaddress_fullChanging(value);
+                ReportPropertyChanging("address_full");
+                _address_full = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("address_full");
+                Onaddress_fullChanged();
+            }
+        }
+        private global::System.String _address_full;
+        partial void Onaddress_fullChanging(global::System.String value);
+        partial void Onaddress_fullChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String telephone1
+        {
+            get
+            {
+                return _telephone1;
+            }
+            set
+            {
+                Ontelephone1Changing(value);
+                ReportPropertyChanging("telephone1");
+                _telephone1 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("telephone1");
+                Ontelephone1Changed();
+            }
+        }
+        private global::System.String _telephone1;
+        partial void Ontelephone1Changing(global::System.String value);
+        partial void Ontelephone1Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String telephone2
+        {
+            get
+            {
+                return _telephone2;
+            }
+            set
+            {
+                Ontelephone2Changing(value);
+                ReportPropertyChanging("telephone2");
+                _telephone2 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("telephone2");
+                Ontelephone2Changed();
+            }
+        }
+        private global::System.String _telephone2;
+        partial void Ontelephone2Changing(global::System.String value);
+        partial void Ontelephone2Changed();
+
+        #endregion
+    
     }
     
     /// <summary>
