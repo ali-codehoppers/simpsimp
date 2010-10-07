@@ -18,10 +18,8 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Company_Addresses", "Addresses", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Address), "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Company1), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_UserAddresses_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "Addresses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Address), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_call_me_products_un_call_me_page", "CallUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.CallUser), "CallUserProducts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.CallUserProduct), true)]
-[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Users_Company", "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Company1), "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.User), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Modules_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Module), "Modules1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Module), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Modules_Products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Module), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_product_details_un_products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "ProductDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.ProductDetail), true)]
@@ -36,6 +34,10 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_transactions_un_entity_details_core", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "Transactions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Transaction), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_WishList_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "WishList", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.WishList), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_WishList_ProductVersions", "Versions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Version), "WishList", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.WishList), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Sessions_Products", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Product), "Session", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Session), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Sessions_Users", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "Session", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Session), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Companies_Addresses", "Address", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Address), "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Company), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Users_Companies", "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Company), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.User), true)]
 
 #endregion
 
@@ -134,22 +136,6 @@ namespace Simplicity.Data
             }
         }
         private ObjectSet<CallUser> _CallUsers;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Company1> Company1
-        {
-            get
-            {
-                if ((_Company1 == null))
-                {
-                    _Company1 = base.CreateObjectSet<Company1>("Company1");
-                }
-                return _Company1;
-            }
-        }
-        private ObjectSet<Company1> _Company1;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -362,18 +348,34 @@ namespace Simplicity.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<v_sales_telephone_enquiries> v_sales_telephone_enquiries
+        public ObjectSet<Session> Sessions
         {
             get
             {
-                if ((_v_sales_telephone_enquiries == null))
+                if ((_Sessions == null))
                 {
-                    _v_sales_telephone_enquiries = base.CreateObjectSet<v_sales_telephone_enquiries>("v_sales_telephone_enquiries");
+                    _Sessions = base.CreateObjectSet<Session>("Sessions");
                 }
-                return _v_sales_telephone_enquiries;
+                return _Sessions;
             }
         }
-        private ObjectSet<v_sales_telephone_enquiries> _v_sales_telephone_enquiries;
+        private ObjectSet<Session> _Sessions;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Company> Companies
+        {
+            get
+            {
+                if ((_Companies == null))
+                {
+                    _Companies = base.CreateObjectSet<Company>("Companies");
+                }
+                return _Companies;
+            }
+        }
+        private ObjectSet<Company> _Companies;
 
         #endregion
         #region AddTo Methods
@@ -400,14 +402,6 @@ namespace Simplicity.Data
         public void AddToCallUsers(CallUser callUser)
         {
             base.AddObject("CallUsers", callUser);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Company1 EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToCompany1(Company1 company1)
-        {
-            base.AddObject("Company1", company1);
         }
     
         /// <summary>
@@ -515,11 +509,19 @@ namespace Simplicity.Data
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the v_sales_telephone_enquiries EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Sessions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTov_sales_telephone_enquiries(v_sales_telephone_enquiries v_sales_telephone_enquiries)
+        public void AddToSessions(Session session)
         {
-            base.AddObject("v_sales_telephone_enquiries", v_sales_telephone_enquiries);
+            base.AddObject("Sessions", session);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Companies EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCompanies(Company company)
+        {
+            base.AddObject("Companies", company);
         }
 
         #endregion
@@ -1203,28 +1205,6 @@ namespace Simplicity.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Company_Addresses", "Company")]
-        public EntityCollection<Company1> Companies
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Company1>("SimplicityModel.FK_Company_Addresses", "Company");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Company1>("SimplicityModel.FK_Company_Addresses", "Company", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserAddresses_Users", "Users")]
         public User User
         {
@@ -1253,6 +1233,28 @@ namespace Simplicity.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SimplicityModel.FK_UserAddresses_Users", "Users", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Companies_Addresses", "Company")]
+        public EntityCollection<Company> Companies
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Company>("SimplicityModel.FK_Companies_Addresses", "Company");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Company>("SimplicityModel.FK_Companies_Addresses", "Company", value);
                 }
             }
         }
@@ -1792,22 +1794,26 @@ namespace Simplicity.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="SimplicityModel", Name="Company1")]
+    [EdmEntityTypeAttribute(NamespaceName="SimplicityModel", Name="Company")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Company1 : EntityObject
+    public partial class Company : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new Company1 object.
+        /// Create a new Company object.
         /// </summary>
-        /// <param name="company_ID">Initial value of the Company_ID property.</param>
-        public static Company1 CreateCompany1(global::System.Int32 company_ID)
+        /// <param name="companyID">Initial value of the CompanyID property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="addressID">Initial value of the AddressID property.</param>
+        public static Company CreateCompany(global::System.Int32 companyID, global::System.String name, global::System.Int32 addressID)
         {
-            Company1 company1 = new Company1();
-            company1.Company_ID = company_ID;
-            return company1;
+            Company company = new Company();
+            company.CompanyID = companyID;
+            company.Name = name;
+            company.AddressID = addressID;
+            return company;
         }
 
         #endregion
@@ -1818,75 +1824,75 @@ namespace Simplicity.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 Company_ID
+        public global::System.Int32 CompanyID
         {
             get
             {
-                return _Company_ID;
+                return _CompanyID;
             }
             set
             {
-                if (_Company_ID != value)
+                if (_CompanyID != value)
                 {
-                    OnCompany_IDChanging(value);
-                    ReportPropertyChanging("Company_ID");
-                    _Company_ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("Company_ID");
-                    OnCompany_IDChanged();
+                    OnCompanyIDChanging(value);
+                    ReportPropertyChanging("CompanyID");
+                    _CompanyID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("CompanyID");
+                    OnCompanyIDChanged();
                 }
             }
         }
-        private global::System.Int32 _Company_ID;
-        partial void OnCompany_IDChanging(global::System.Int32 value);
-        partial void OnCompany_IDChanged();
+        private global::System.Int32 _CompanyID;
+        partial void OnCompanyIDChanging(global::System.Int32 value);
+        partial void OnCompanyIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String Company_Name
+        public global::System.String Name
         {
             get
             {
-                return _Company_Name;
+                return _Name;
             }
             set
             {
-                OnCompany_NameChanging(value);
-                ReportPropertyChanging("Company_Name");
-                _Company_Name = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Company_Name");
-                OnCompany_NameChanged();
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
             }
         }
-        private global::System.String _Company_Name;
-        partial void OnCompany_NameChanging(global::System.String value);
-        partial void OnCompany_NameChanged();
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> Address_ID
+        public global::System.Int32 AddressID
         {
             get
             {
-                return _Address_ID;
+                return _AddressID;
             }
             set
             {
-                OnAddress_IDChanging(value);
-                ReportPropertyChanging("Address_ID");
-                _Address_ID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Address_ID");
-                OnAddress_IDChanged();
+                OnAddressIDChanging(value);
+                ReportPropertyChanging("AddressID");
+                _AddressID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AddressID");
+                OnAddressIDChanged();
             }
         }
-        private Nullable<global::System.Int32> _Address_ID;
-        partial void OnAddress_IDChanging(Nullable<global::System.Int32> value);
-        partial void OnAddress_IDChanged();
+        private global::System.Int32 _AddressID;
+        partial void OnAddressIDChanging(global::System.Int32 value);
+        partial void OnAddressIDChanged();
 
         #endregion
     
@@ -1898,16 +1904,16 @@ namespace Simplicity.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Company_Addresses", "Addresses")]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Companies_Addresses", "Address")]
         public Address Address
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("SimplicityModel.FK_Company_Addresses", "Addresses").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("SimplicityModel.FK_Companies_Addresses", "Address").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("SimplicityModel.FK_Company_Addresses", "Addresses").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("SimplicityModel.FK_Companies_Addresses", "Address").Value = value;
             }
         }
         /// <summary>
@@ -1919,13 +1925,13 @@ namespace Simplicity.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("SimplicityModel.FK_Company_Addresses", "Addresses");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("SimplicityModel.FK_Companies_Addresses", "Address");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Address>("SimplicityModel.FK_Company_Addresses", "Addresses", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Address>("SimplicityModel.FK_Companies_Addresses", "Address", value);
                 }
             }
         }
@@ -1936,18 +1942,18 @@ namespace Simplicity.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Users_Company", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Users_Companies", "User")]
         public EntityCollection<User> Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("SimplicityModel.FK_Users_Company", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("SimplicityModel.FK_Users_Companies", "User");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("SimplicityModel.FK_Users_Company", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("SimplicityModel.FK_Users_Companies", "User", value);
                 }
             }
         }
@@ -3055,6 +3061,28 @@ namespace Simplicity.Data
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Sessions_Products", "Session")]
+        public EntityCollection<Session> Sessions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Session>("SimplicityModel.FK_Sessions_Products", "Session");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Session>("SimplicityModel.FK_Sessions_Products", "Session", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -3322,6 +3350,320 @@ namespace Simplicity.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<WishList>("SimplicityModel.FK_WishList_ProductDetails", "WishList", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="SimplicityModel", Name="Session")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Session : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Session object.
+        /// </summary>
+        /// <param name="sessionID">Initial value of the SessionID property.</param>
+        /// <param name="sessionUID">Initial value of the SessionUID property.</param>
+        /// <param name="userID">Initial value of the UserID property.</param>
+        /// <param name="startTime">Initial value of the StartTime property.</param>
+        /// <param name="lastActivityTime">Initial value of the LastActivityTime property.</param>
+        /// <param name="endTime">Initial value of the EndTime property.</param>
+        /// <param name="iP">Initial value of the IP property.</param>
+        public static Session CreateSession(global::System.Int32 sessionID, global::System.String sessionUID, global::System.Int32 userID, global::System.DateTime startTime, global::System.DateTime lastActivityTime, global::System.DateTime endTime, global::System.String iP)
+        {
+            Session session = new Session();
+            session.SessionID = sessionID;
+            session.SessionUID = sessionUID;
+            session.UserID = userID;
+            session.StartTime = startTime;
+            session.LastActivityTime = lastActivityTime;
+            session.EndTime = endTime;
+            session.IP = iP;
+            return session;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 SessionID
+        {
+            get
+            {
+                return _SessionID;
+            }
+            set
+            {
+                if (_SessionID != value)
+                {
+                    OnSessionIDChanging(value);
+                    ReportPropertyChanging("SessionID");
+                    _SessionID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("SessionID");
+                    OnSessionIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _SessionID;
+        partial void OnSessionIDChanging(global::System.Int32 value);
+        partial void OnSessionIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String SessionUID
+        {
+            get
+            {
+                return _SessionUID;
+            }
+            set
+            {
+                OnSessionUIDChanging(value);
+                ReportPropertyChanging("SessionUID");
+                _SessionUID = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("SessionUID");
+                OnSessionUIDChanged();
+            }
+        }
+        private global::System.String _SessionUID;
+        partial void OnSessionUIDChanging(global::System.String value);
+        partial void OnSessionUIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 UserID
+        {
+            get
+            {
+                return _UserID;
+            }
+            set
+            {
+                OnUserIDChanging(value);
+                ReportPropertyChanging("UserID");
+                _UserID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UserID");
+                OnUserIDChanged();
+            }
+        }
+        private global::System.Int32 _UserID;
+        partial void OnUserIDChanging(global::System.Int32 value);
+        partial void OnUserIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> ProductID
+        {
+            get
+            {
+                return _ProductID;
+            }
+            set
+            {
+                OnProductIDChanging(value);
+                ReportPropertyChanging("ProductID");
+                _ProductID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ProductID");
+                OnProductIDChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _ProductID;
+        partial void OnProductIDChanging(Nullable<global::System.Int32> value);
+        partial void OnProductIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime StartTime
+        {
+            get
+            {
+                return _StartTime;
+            }
+            set
+            {
+                OnStartTimeChanging(value);
+                ReportPropertyChanging("StartTime");
+                _StartTime = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StartTime");
+                OnStartTimeChanged();
+            }
+        }
+        private global::System.DateTime _StartTime;
+        partial void OnStartTimeChanging(global::System.DateTime value);
+        partial void OnStartTimeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastActivityTime
+        {
+            get
+            {
+                return _LastActivityTime;
+            }
+            set
+            {
+                OnLastActivityTimeChanging(value);
+                ReportPropertyChanging("LastActivityTime");
+                _LastActivityTime = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LastActivityTime");
+                OnLastActivityTimeChanged();
+            }
+        }
+        private global::System.DateTime _LastActivityTime;
+        partial void OnLastActivityTimeChanging(global::System.DateTime value);
+        partial void OnLastActivityTimeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime EndTime
+        {
+            get
+            {
+                return _EndTime;
+            }
+            set
+            {
+                OnEndTimeChanging(value);
+                ReportPropertyChanging("EndTime");
+                _EndTime = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EndTime");
+                OnEndTimeChanged();
+            }
+        }
+        private global::System.DateTime _EndTime;
+        partial void OnEndTimeChanging(global::System.DateTime value);
+        partial void OnEndTimeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String IP
+        {
+            get
+            {
+                return _IP;
+            }
+            set
+            {
+                OnIPChanging(value);
+                ReportPropertyChanging("IP");
+                _IP = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("IP");
+                OnIPChanged();
+            }
+        }
+        private global::System.String _IP;
+        partial void OnIPChanging(global::System.String value);
+        partial void OnIPChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Sessions_Products", "Product")]
+        public Product Product
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_Sessions_Products", "Product").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_Sessions_Products", "Product").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Product> ProductReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_Sessions_Products", "Product");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("SimplicityModel.FK_Sessions_Products", "Product", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Sessions_Users", "User")]
+        public User User
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_Sessions_Users", "User").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_Sessions_Users", "User").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User> UserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_Sessions_Users", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SimplicityModel.FK_Sessions_Users", "User", value);
                 }
             }
         }
@@ -5038,24 +5380,24 @@ namespace Simplicity.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> Company_ID
+        public Nullable<global::System.Int32> CompanyID
         {
             get
             {
-                return _Company_ID;
+                return _CompanyID;
             }
             set
             {
-                OnCompany_IDChanging(value);
-                ReportPropertyChanging("Company_ID");
-                _Company_ID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Company_ID");
-                OnCompany_IDChanged();
+                OnCompanyIDChanging(value);
+                ReportPropertyChanging("CompanyID");
+                _CompanyID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CompanyID");
+                OnCompanyIDChanged();
             }
         }
-        private Nullable<global::System.Int32> _Company_ID;
-        partial void OnCompany_IDChanging(Nullable<global::System.Int32> value);
-        partial void OnCompany_IDChanged();
+        private Nullable<global::System.Int32> _CompanyID;
+        partial void OnCompanyIDChanging(Nullable<global::System.Int32> value);
+        partial void OnCompanyIDChanged();
 
         #endregion
     
@@ -5079,44 +5421,6 @@ namespace Simplicity.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Address>("SimplicityModel.FK_UserAddresses_Users", "Addresses", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Users_Company", "Company")]
-        public Company1 Company
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company1>("SimplicityModel.FK_Users_Company", "Company").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company1>("SimplicityModel.FK_Users_Company", "Company").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Company1> CompanyReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company1>("SimplicityModel.FK_Users_Company", "Company");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Company1>("SimplicityModel.FK_Users_Company", "Company", value);
                 }
             }
         }
@@ -5164,207 +5468,68 @@ namespace Simplicity.Data
                 }
             }
         }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="SimplicityModel", Name="v_sales_telephone_enquiries")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class v_sales_telephone_enquiries : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new v_sales_telephone_enquiries object.
-        /// </summary>
-        /// <param name="date_created">Initial value of the date_created property.</param>
-        public static v_sales_telephone_enquiries Createv_sales_telephone_enquiries(global::System.DateTime date_created)
-        {
-            v_sales_telephone_enquiries v_sales_telephone_enquiries = new v_sales_telephone_enquiries();
-            v_sales_telephone_enquiries.date_created = date_created;
-            return v_sales_telephone_enquiries;
-        }
-
-        #endregion
-        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        public global::System.String name_long
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Sessions_Users", "Session")]
+        public EntityCollection<Session> Sessions
         {
             get
             {
-                return _name_long;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Session>("SimplicityModel.FK_Sessions_Users", "Session");
             }
             set
             {
-                Onname_longChanging(value);
-                ReportPropertyChanging("name_long");
-                _name_long = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("name_long");
-                Onname_longChanged();
-            }
-        }
-        private global::System.String _name_long;
-        partial void Onname_longChanging(global::System.String value);
-        partial void Onname_longChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String email
-        {
-            get
-            {
-                return _email;
-            }
-            set
-            {
-                OnemailChanging(value);
-                ReportPropertyChanging("email");
-                _email = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("email");
-                OnemailChanged();
-            }
-        }
-        private global::System.String _email;
-        partial void OnemailChanging(global::System.String value);
-        partial void OnemailChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String fax
-        {
-            get
-            {
-                return _fax;
-            }
-            set
-            {
-                OnfaxChanging(value);
-                ReportPropertyChanging("fax");
-                _fax = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("fax");
-                OnfaxChanged();
-            }
-        }
-        private global::System.String _fax;
-        partial void OnfaxChanging(global::System.String value);
-        partial void OnfaxChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime date_created
-        {
-            get
-            {
-                return _date_created;
-            }
-            set
-            {
-                if (_date_created != value)
+                if ((value != null))
                 {
-                    Ondate_createdChanging(value);
-                    ReportPropertyChanging("date_created");
-                    _date_created = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("date_created");
-                    Ondate_createdChanged();
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Session>("SimplicityModel.FK_Sessions_Users", "Session", value);
                 }
             }
         }
-        private global::System.DateTime _date_created;
-        partial void Ondate_createdChanging(global::System.DateTime value);
-        partial void Ondate_createdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        public global::System.String address_full
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_Users_Companies", "Company")]
+        public Company Company
         {
             get
             {
-                return _address_full;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company>("SimplicityModel.FK_Users_Companies", "Company").Value;
             }
             set
             {
-                Onaddress_fullChanging(value);
-                ReportPropertyChanging("address_full");
-                _address_full = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("address_full");
-                Onaddress_fullChanged();
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company>("SimplicityModel.FK_Users_Companies", "Company").Value = value;
             }
         }
-        private global::System.String _address_full;
-        partial void Onaddress_fullChanging(global::System.String value);
-        partial void Onaddress_fullChanged();
-    
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public global::System.String telephone1
+        public EntityReference<Company> CompanyReference
         {
             get
             {
-                return _telephone1;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Company>("SimplicityModel.FK_Users_Companies", "Company");
             }
             set
             {
-                Ontelephone1Changing(value);
-                ReportPropertyChanging("telephone1");
-                _telephone1 = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("telephone1");
-                Ontelephone1Changed();
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Company>("SimplicityModel.FK_Users_Companies", "Company", value);
+                }
             }
         }
-        private global::System.String _telephone1;
-        partial void Ontelephone1Changing(global::System.String value);
-        partial void Ontelephone1Changed();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String telephone2
-        {
-            get
-            {
-                return _telephone2;
-            }
-            set
-            {
-                Ontelephone2Changing(value);
-                ReportPropertyChanging("telephone2");
-                _telephone2 = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("telephone2");
-                Ontelephone2Changed();
-            }
-        }
-        private global::System.String _telephone2;
-        partial void Ontelephone2Changing(global::System.String value);
-        partial void Ontelephone2Changed();
 
         #endregion
-    
     }
     
     /// <summary>

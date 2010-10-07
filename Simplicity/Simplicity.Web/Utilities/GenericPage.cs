@@ -32,7 +32,15 @@ namespace Simplicity.Web.Utilities
             SetMessage("success", "", false);
             if (User.Identity.IsAuthenticated)
             {
-                loggedInUser = (from u in DatabaseContext.Users where u.UserUID == User.Identity.Name select u).FirstOrDefault();
+                Data.Session session = (from s in DatabaseContext.Sessions where s.SessionUID == User.Identity.Name select s).FirstOrDefault();
+                if (session != null && session.User != null)
+                {
+                    loggedInUser = session.User;
+                    session.LastActivityTime = DateTime.Now;
+                    session.EndTime = DateTime.Now.AddMinutes(30);
+                    session.IP = Request.UserHostAddress;
+                    DatabaseContext.SaveChanges();
+                }
             }
             base.OnLoad(e);
         }

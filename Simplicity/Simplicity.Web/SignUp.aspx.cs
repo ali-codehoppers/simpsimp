@@ -11,7 +11,7 @@ namespace Simplicity.Web
 {
     public partial class SignUp : GenericPage
     {
-        private int CompanyID;
+        private int companyID;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (LoggedIsUser != null && !IsPostBack)
@@ -22,7 +22,7 @@ namespace Simplicity.Web
                 firstname.Text = query.Forename;
                 surname.Text = query.Surname;
                 jobtitle.Text = query.JobTitle;
-                companyname.Text = query.Company.Company_Name;
+                companyname.Text = query.Company.Name;
                 var address= (from c in query.Addresses where c.MultiAddressType=="PERSONAL" select c).FirstOrDefault();
                 addressno.Text = address.AddressNo;
                 addressline1.Text = address.AddressLine1;
@@ -100,7 +100,7 @@ namespace Simplicity.Web
                             Approved = 0,
                             PaymentType = 0,
                             LoginAttempts = 0,
-                            Company_ID = CompanyID
+                            CompanyID = companyID
                         };
                         var address = new Address
                         {
@@ -184,7 +184,7 @@ namespace Simplicity.Web
                 */
                         DatabaseContext.Users.AddObject(user);
                         DatabaseContext.SaveChanges();
-                        user.Company.Address_ID = address1.AddressID;
+                        user.Company.AddressID = address1.AddressID;
                         DatabaseContext.SaveChanges();
                         /******/
                         EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
@@ -208,7 +208,7 @@ namespace Simplicity.Web
                     query.JobTitle = jobtitle.Text;
                     if (GetEditCompanyID(query))
                     {
-                        query.Company_ID = CompanyID;
+                        query.CompanyID = companyID;
                     }
                     query.LastAmendmentDate = DateTime.Now;
                     var address = (from c in query.Addresses where c.MultiAddressType == "PERSONAL" select c).FirstOrDefault();
@@ -237,7 +237,7 @@ namespace Simplicity.Web
         }
         private bool GetCompanyID()
         {
-            var query = (from c in DatabaseContext.Company1 where c.Company_Name == companyname.Text select c).FirstOrDefault();
+            var query = (from c in DatabaseContext.Companies where c.Name == companyname.Text select c).FirstOrDefault();
             if (query != null)
             {
                 SetErrorMessage("Company already exist. Please Contact " + query.Users.FirstOrDefault().Email);
@@ -246,16 +246,16 @@ namespace Simplicity.Web
             else
             {
 
-                var Company = new Company1 { Company_Name = companyname.Text };
-                DatabaseContext.AddToCompany1(Company);
+                Simplicity.Data.Company company = new Simplicity.Data.Company { Name = companyname.Text };
+                DatabaseContext.AddToCompanies(company);
                 DatabaseContext.SaveChanges();
-                CompanyID = Company.Company_ID;
+                companyID = company.CompanyID;
                 return true;
             }
         }
         private bool GetEditCompanyID(User user)
         {
-            var query = (from c in DatabaseContext.Company1 where c.Company_Name == companyname.Text && c.Company_ID==user.Company_ID select c).FirstOrDefault();
+            var query = (from c in DatabaseContext.Companies where c.Name == companyname.Text && c.CompanyID ==user.CompanyID select c).FirstOrDefault();
             if (query != null)
             {
                 return false;
@@ -263,10 +263,10 @@ namespace Simplicity.Web
             else
             {
 
-                var Company = new Company1 { Company_Name = companyname.Text };
-                DatabaseContext.AddToCompany1(Company);
+                Simplicity.Data.Company company = new Simplicity.Data.Company { Name = companyname.Text };
+                DatabaseContext.AddToCompanies(company);
                 DatabaseContext.SaveChanges();
-                CompanyID = Company.Company_ID;
+                companyID = company.CompanyID;
                 return true;
             }
         }

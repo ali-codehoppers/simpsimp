@@ -35,11 +35,23 @@ namespace Simplicity.Web
         protected void LoginButtonClick(object sender, ImageClickEventArgs e)
         {
             String Collectpassword = Utility.GetMd5Sum(password.Text);
-            var query = from c in DatabaseContext.Users where ((c.Email == username.Text) && (c.Password == Collectpassword) && (c.Verified == true)) select c;
-            if (query.Any())
+            Simplicity.Data.User user = (from u in DatabaseContext.Users
+                                         where u.Email == username.Text
+                                         && u.Password == Collectpassword 
+                                         && u.Verified == true select u).FirstOrDefault();
+            if (user != null)
             {
-                FormsAuthentication.SetAuthCookie(query.FirstOrDefault().UserUID, false);
-                Session[WebConstants.Session.USER_ID] = query.FirstOrDefault().UserID;
+                Simplicity.Data.Session session = new Data.Session();
+                session.SessionUID = System.Guid.NewGuid().ToString();
+                session.User = user;
+                session.StartTime = DateTime.Now;
+                session.LastActivityTime = DateTime.Now;
+                session.EndTime = DateTime.Now.AddMinutes(30);
+                session.IP = Request.UserHostAddress;
+                DatabaseContext.AddToSessions(session);
+                DatabaseContext.SaveChanges();
+                FormsAuthentication.SetAuthCookie(session.SessionUID, false);
+                Session[WebConstants.Session.USER_ID] = user.UserID;
                 if (Session[WebConstants.Session.RETURN_URL] != null)
                 {
                     Response.Redirect((string)Session[WebConstants.Session.RETURN_URL]);
