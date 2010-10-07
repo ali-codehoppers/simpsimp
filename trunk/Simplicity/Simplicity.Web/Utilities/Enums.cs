@@ -11,7 +11,8 @@ namespace Simplicity.Web.Utilities
         {
             PERSONAL,
             BILLING,
-            SHIPPING
+            SHIPPING,
+            COMPANY
         }
 
         public enum ENTITY_TYPE

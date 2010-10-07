@@ -303,7 +303,7 @@
     <Content Include="Styles\simplicity_css.css" />
     <Content Include="TestPages\AddTrollery_TEST.aspx" />
     <Content Include="Trolley.aspx" />
-    <Content Include="UserAccount.aspx" />
+    <Content Include="ChangePassword.aspx" />
     <Content Include="ViewDemo.aspx" />
     <Content Include="WatchDemo.aspx" />
     <Content Include="Web.config" />
@@ -741,12 +741,12 @@
     <Compile Include="Trolley.aspx.designer.cs">
       <DependentUpon>Trolley.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserAccount.aspx.cs">
-      <DependentUpon>UserAccount.aspx</DependentUpon>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserAccount.aspx.designer.cs">
-      <DependentUpon>UserAccount.aspx</DependentUpon>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AuthenticatedPage.cs">
       <SubType>ASPXCodeBehind</SubType>
