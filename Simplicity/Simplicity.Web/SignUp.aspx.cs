@@ -11,19 +11,17 @@ namespace Simplicity.Web
 {
     public partial class SignUp : GenericPage
     {
-        private int companyID;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (LoggedIsUser != null && !IsPostBack)
             {
                 UserAccountPanel.Visible = false;
                 checkbox.Visible = false;
-                var query = (from c in DatabaseContext.Users where c.UserID == LoggedIsUser.UserID select c).FirstOrDefault();
-                firstname.Text = query.Forename;
-                surname.Text = query.Surname;
-                jobtitle.Text = query.JobTitle;
-                companyname.Text = query.Company == null ? "" : query.Company.Name;
-                var address= (from c in query.Addresses where c.MultiAddressType=="PERSONAL" select c).FirstOrDefault();
+                firstname.Text = LoggedIsUser.Forename;
+                surname.Text = LoggedIsUser.Surname;
+                jobtitle.Text = LoggedIsUser.JobTitle;
+                companyname.Text = LoggedIsUser.Company == null ? "" : LoggedIsUser.Company.Name;
+                Address address = (from addr in LoggedIsUser.Addresses where addr.MultiAddressType == "PERSONAL" select addr).FirstOrDefault();
                 addressno.Text = address.AddressNo;
                 addressline1.Text = address.AddressLine1;
                 addressline2.Text = address.AddressLine2;
@@ -59,254 +57,166 @@ namespace Simplicity.Web
                 SetErrorMessage("Email address already resgistered with Simplicity");
                 return false;
             }
-            /*UserTableAdapters.un_co_user_detailsTableAdapter userTA = new UserTableAdapters.un_co_user_detailsTableAdapter();
-            if (userTA.GetUserByLogonName(txtEmail.Text, null).GetEnumerator().MoveNext())
-            {
-                SetErrorMessage("Email address already resgistered with Health&Safety");
-                return false;
-            }*/
             return true;
         }
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
-            if (LoggedIsUser == null)
+            if (LoggedIsUser == null)//means its sign-up process
             {
-                if (ValidateFields() && GetCompanyID())
+                if (ValidateFields() && !companyNameAlreadyExists())
                 {
-                    //try
+                    User user = new User
                     {
+                        ReceiveEmails = checkbox.Checked,
+                        FullName = GetFullName(),
+                        Surname = surname.Text,
+                        Forename = firstname.Text,
+                        JobTitle = jobtitle.Text,
+                        Email = emailfield.Text,
+                        Password = Utility.GetMd5Sum(passwordfield.Text),
+                        ReminderQuestionID = byte.Parse(listForgotPasswordQuestion.SelectedValue),
+                        ReminderQuestion = listForgotPasswordQuestion.SelectedItem.Text,
+                        ReminderAnswer = Utility.GetMd5Sum(txtForgotPasswordAnswer.Text),
+                        CreationDate = DateTime.Now,
+                        LastAmendmentDate = DateTime.Now,
+                        Type = Enum.GetName(typeof(Enums.ENTITY_TYPE), Enums.ENTITY_TYPE.USER),
+                        Deleted = false,
+                        OnHold = false,
+                        Verified = false,
+                        Enabled = false,
+                        UserUID = Guid.NewGuid().ToString(),
+                        VerificationCode = Guid.NewGuid().ToString(),
+                        Approved = 0,
+                        PaymentType = 0,
+                        LoginAttempts = 0
+                    };
 
-                        var user = new User
-                        {
-                            ReceiveEmails = checkbox.Checked,
-                            FullName = GetFullName(),
-                            Surname = surname.Text,
-                            Forename = firstname.Text,
-                            JobTitle = jobtitle.Text,
-                            Email = emailfield.Text,
-                            Password = Utility.GetMd5Sum(passwordfield.Text),
-                            ReminderQuestionID = byte.Parse(listForgotPasswordQuestion.SelectedValue),
-                            ReminderQuestion = listForgotPasswordQuestion.SelectedItem.Text,
-                            ReminderAnswer = Utility.GetMd5Sum(txtForgotPasswordAnswer.Text),
-                            CreationDate = DateTime.Now,
-                            LastAmendmentDate = DateTime.Now,
-                            Type = Enum.GetName(typeof(Enums.ENTITY_TYPE), Enums.ENTITY_TYPE.USER),
-                            Deleted = false,
-                            OnHold = false,
-                            Verified = false,
-                            Enabled = false,
-                            UserUID = Guid.NewGuid().ToString(),
-                            VerificationCode = Guid.NewGuid().ToString(),
-                            Approved = 0,
-                            PaymentType = 0,
-                            LoginAttempts = 0,
-                            CompanyID = companyID
-                        };
-                        var address = new Address
-                        {
-                            Deleted = false,
-                            AddressFull = GetFullAddress(),
-                            AddressNo = addressno.Text,
-                            AddressLine1 = addressline1.Text,
-                            AddressLine2 = addressline2.Text,
-                            AddressLine3 = addressline3.Text,
-                            AddressLine4 = addressline4.Text,
-                            AddressLine5 = addressline5.Text,
-                            PostalCode = postalcode.Text,
-                            Telephone1 = telephone1.Text,
-                            Telephone2 = telephone2.Text,
-                            Fax = fax.Text,
-                            Mobile = mobile.Text,
-                            Town = town.Text,
-                            County = County.Text,
-                            Country = country.Text,
-                            UserId = user.UserID,
-                            SameAsCustomer = false,
-                            SameAsBilling = false,
-                            MultiAddressType = Enum.GetName(typeof(Enums.ADDRESS_TYPE), Enums.ADDRESS_TYPE.PERSONAL),
-                            CreationDate = DateTime.Now,
-                            LastAmendmentDate = DateTime.Now,
-                            AddressName = null,
-                            CreatedBy = null,
-                            LastAmendedBy = null
-                        };
-                        var address1 = new Address
-                        {
-                            Deleted = false,
-                            AddressFull = GetFullAddress(),
-                            AddressNo = addressno.Text,
-                            AddressLine1 = addressline1.Text,
-                            AddressLine2 = addressline2.Text,
-                            AddressLine3 = addressline3.Text,
-                            AddressLine4 = addressline4.Text,
-                            AddressLine5 = addressline5.Text,
-                            PostalCode = postalcode.Text,
-                            Telephone1 = telephone1.Text,
-                            Telephone2 = telephone2.Text,
-                            Fax = fax.Text,
-                            Mobile = mobile.Text,
-                            Town = town.Text,
-                            County = County.Text,
-                            Country = country.Text,
-                            UserId = user.UserID,
-                            SameAsCustomer = false,
-                            SameAsBilling = false,
-                            MultiAddressType = Enum.GetName(typeof(Enums.ADDRESS_TYPE), Enums.ADDRESS_TYPE.COMPANY),
-                            CreationDate = DateTime.Now,
-                            LastAmendmentDate = DateTime.Now,
-                            AddressName = null,
-                            CreatedBy = null,
-                            LastAmendedBy = null
-                        };
-                        user.Addresses.Add(address);
-                        user.Addresses.Add(address1);
+                    Address address = fillAddress(user, Enums.ADDRESS_TYPE.PERSONAL);
+                    Address companyAddress = fillAddress(user, Enums.ADDRESS_TYPE.COMPANY);
+                    user.Addresses.Add(address);
+                    user.Addresses.Add(companyAddress);
 
-                        //insert record in HS
-                        /******/
-                        /*
-                HSCompanyTableAdapters.HSCompanyTableAdapter companyTA = new HSCompanyTableAdapters.HSCompanyTableAdapter();
-                IEnumerator ieCo = companyTA.InsertAndReturn(false, txtCompanyName.Text, txtCompanyName.Text, txtJobTitle.Text, "", txtFirstName.Text, txtSurname.Text, txtAddressNo.Text, txtAddressLine1.Text,
-                    txtAddressLine2.Text, txtAddressLine3.Text, txtAddressLine4.Text, txtAddressLine5.Text, txtPostCode.Text, GetFullAddress(), txtTele1.Text, txtTele2.Text, txtFax.Text, txtEmail.Text, "Added from Shopping Cart",
-                    null, null, null, null, DateTime.Now, null, DateTime.Now, true, "Fire Warden", "First Aider", false, "Supervisor", false, 1, null, null, null, null, true).GetEnumerator();
-                if (ieCo.MoveNext())
-                {
-                    HSCompany.HSCompanyEntityRow company = (HSCompany.HSCompanyEntityRow)ieCo.Current;
-
-                    DepartmentTableAdapters.DepartmentSelectCommandTableAdapter deptTA = new DepartmentTableAdapters.DepartmentSelectCommandTableAdapter();
-                    deptTA.Insert(company.co_id, false, txtCompanyName.Text, txtCompanyName.Text, txtJobTitle.Text, "", txtFirstName.Text, txtSurname.Text, txtAddressNo.Text, txtAddressLine1.Text,
-                    txtAddressLine2.Text, txtAddressLine3.Text, txtAddressLine4.Text, txtAddressLine5.Text, txtPostCode.Text, GetFullAddress(), txtTele1.Text, txtTele2.Text, txtFax.Text, txtEmail.Text,
-                    "Added from Shopping Cart", null, DateTime.Now, null, DateTime.Now);
-
-                    UserTableAdapters.un_co_user_detailsTableAdapter userTA = new UserTableAdapters.un_co_user_detailsTableAdapter();
-                    userTA.Insert(false, company.co_id, 1, txtFirstName.Text, txtEmail.Text, Utility.GetMd5Sum(txtPassword.Text), listForgotPasswordQuestion.SelectedItem.Text,
-                        txtTele1.Text, "", txtTele2.Text, txtEmail.Text, txtCompanyName.Text, txtCountry.Text, null, DateTime.Now, null, DateTime.Now, "User");
-                }
-                */
-                        DatabaseContext.Users.AddObject(user);
-                        DatabaseContext.SaveChanges();
-                        user.Company.AddressID = address1.AddressID;
-                        DatabaseContext.SaveChanges();
-                        /******/
-                        EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
-                        Response.Redirect("~/ConfirmMail.aspx");
-                        //}
-
-                    }
-                    /*catch
-                    {
-                        SetErrorMessage("Unable to process your transaction, please contact the administrator");
-                    }*/
-                }
-            }
-            else
-            {
-                    var query = (from c in DatabaseContext.Users where c.UserID == LoggedIsUser.UserID select c).FirstOrDefault();
-
-                    query.FullName = GetFullName();
-                    query.Surname = surname.Text;
-                    query.Forename = firstname.Text;
-                    query.JobTitle = jobtitle.Text;
-                    if (query.Company == null)//it means i am an old user and i dont have any company attached yet
-                    {
-                        Simplicity.Data.Company company = new Simplicity.Data.Company();
-                        company.Name = companyname.Text;
-
-                        Address companyAddr = new Address
-                        {
-                            Deleted = false,
-                            AddressFull = GetFullAddress(),
-                            AddressNo = addressno.Text,
-                            AddressLine1 = addressline1.Text,
-                            AddressLine2 = addressline2.Text,
-                            AddressLine3 = addressline3.Text,
-                            AddressLine4 = addressline4.Text,
-                            AddressLine5 = addressline5.Text,
-                            PostalCode = postalcode.Text,
-                            Telephone1 = telephone1.Text,
-                            Telephone2 = telephone2.Text,
-                            Fax = fax.Text,
-                            Mobile = mobile.Text,
-                            Town = town.Text,
-                            County = County.Text,
-                            Country = country.Text,
-                            UserId = query.UserID,
-                            SameAsCustomer = false,
-                            SameAsBilling = false,
-                            MultiAddressType = Enum.GetName(typeof(Enums.ADDRESS_TYPE), Enums.ADDRESS_TYPE.COMPANY),
-                            CreationDate = DateTime.Now,
-                            LastAmendmentDate = DateTime.Now,
-                            AddressName = null,
-                            CreatedBy = LoggedIsUser.UserID,
-                            LastAmendedBy = null
-                        };
-                        DatabaseContext.AddToAddresses(companyAddr);
-                        company.Address = companyAddr;
-                        DatabaseContext.AddToCompanies(company);
-                        DatabaseContext.SaveChanges();
-                        query.Company = company;
-                    }
-                    else if (!GetEditCompanyID(query))
-                    {
-                        return;
-                    }
-                    query.Company.Name = companyname.Text;
-                    query.LastAmendmentDate = DateTime.Now;
-                    var address = (from c in query.Addresses where c.MultiAddressType == "PERSONAL" select c).FirstOrDefault();
-
-                    address.AddressFull = GetFullAddress();
-                    address.AddressNo = addressno.Text;
-                    address.AddressLine1 = addressline1.Text;
-                    address.AddressLine2 = addressline2.Text;
-                    address.AddressLine3 = addressline3.Text;
-                    address.AddressLine4 = addressline4.Text;
-                    address.AddressLine5 = addressline5.Text;
-                    address.PostalCode = postalcode.Text;
-                    address.Telephone1 = telephone1.Text;
-                    address.Telephone2 = telephone2.Text;
-                    address.Fax = fax.Text;
-                    address.Mobile = mobile.Text;
-                    address.Town = town.Text;
-                    address.County = County.Text;
-                    address.Country = country.Text;
-                    address.LastAmendmentDate = DateTime.Now;
-                    address.AddressName = null;
-                    address.LastAmendedBy = null;
+                    Simplicity.Data.Company company = new Simplicity.Data.Company();
+                    company.Name = companyname.Text;
+                    company.Address = companyAddress;
+                    DatabaseContext.AddToCompanies(company);
                     DatabaseContext.SaveChanges();
 
-            }
-        }
-        private bool GetCompanyID()
-        {
-            var query = (from c in DatabaseContext.Companies where c.Name == companyname.Text select c).FirstOrDefault();
-            if (query != null)
-            {
-                SetErrorMessage("Company already exist. Please Contact " + query.Users.FirstOrDefault().Email);
-                return false;
+                    user.CompanyID = company.CompanyID;
+                    DatabaseContext.SaveChanges();
+
+                    //call health and safety stored procedure over here to insert company there as well
+                    EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
+                    Response.Redirect("~/ConfirmMail.aspx");
+                }
             }
             else
             {
+                if (companyNameAlreadyExists())
+                {
+                    return;
+                }
+                User user = (from c in DatabaseContext.Users where c.UserID == LoggedIsUser.UserID select c).FirstOrDefault();
 
-                Simplicity.Data.Company company = new Simplicity.Data.Company { Name = companyname.Text };
-                DatabaseContext.AddToCompanies(company);
+                user.FullName = GetFullName();
+                user.Surname = surname.Text;
+                user.Forename = firstname.Text;
+                user.JobTitle = jobtitle.Text;
+                if (user.Company == null)//it means i am an old user and i dont have any company attached yet
+                {
+                    Simplicity.Data.Company company = new Simplicity.Data.Company();
+                    company.Name = companyname.Text;
+                    Address companyAddr = fillAddress(user, Enums.ADDRESS_TYPE.COMPANY);
+                    company.Address = companyAddr;
+                    user.Company = company;
+                }
+                user.Company.Name = companyname.Text;
+                user.LastAmendmentDate = DateTime.Now;
+
+                foreach (Address address in user.Addresses)
+                {
+                    if (address.MultiAddressType == "PERSONAL")
+                    {
+                        address.AddressFull = GetFullAddress();
+                        address.AddressNo = addressno.Text;
+                        address.AddressLine1 = addressline1.Text;
+                        address.AddressLine2 = addressline2.Text;
+                        address.AddressLine3 = addressline3.Text;
+                        address.AddressLine4 = addressline4.Text;
+                        address.AddressLine5 = addressline5.Text;
+                        address.PostalCode = postalcode.Text;
+                        address.Telephone1 = telephone1.Text;
+                        address.Telephone2 = telephone2.Text;
+                        address.Fax = fax.Text;
+                        address.Mobile = mobile.Text;
+                        address.Town = town.Text;
+                        address.County = County.Text;
+                        address.Country = country.Text;
+                        address.LastAmendmentDate = DateTime.Now;
+                        address.AddressName = null;
+                        address.LastAmendedBy = null;
+                    }
+                }
                 DatabaseContext.SaveChanges();
-                companyID = company.CompanyID;
+            }
+        }
+
+        private Address fillAddress(User user, Enums.ADDRESS_TYPE addrType)
+        {
+            Address addr = new Address
+            {
+                Deleted = false,
+                AddressFull = GetFullAddress(),
+                AddressNo = addressno.Text,
+                AddressLine1 = addressline1.Text,
+                AddressLine2 = addressline2.Text,
+                AddressLine3 = addressline3.Text,
+                AddressLine4 = addressline4.Text,
+                AddressLine5 = addressline5.Text,
+                PostalCode = postalcode.Text,
+                Telephone1 = telephone1.Text,
+                Telephone2 = telephone2.Text,
+                Fax = fax.Text,
+                Mobile = mobile.Text,
+                Town = town.Text,
+                County = County.Text,
+                Country = country.Text,
+                UserId = user.UserID,
+                SameAsCustomer = false,
+                SameAsBilling = false,
+                MultiAddressType = Enum.GetName(typeof(Enums.ADDRESS_TYPE), addrType),
+                CreationDate = DateTime.Now,
+                LastAmendmentDate = DateTime.Now,
+                AddressName = null,
+                CreatedBy = user.UserID,
+                LastAmendedBy = null
+            };
+            return addr;
+        }
+
+        private bool companyNameAlreadyExists()
+        {
+            Simplicity.Data.Company company = null;
+            if(LoggedIsUser != null && LoggedIsUser.Company != null)
+                company = (from c in DatabaseContext.Companies where c.Name == companyname.Text && c.CompanyID != LoggedIsUser.CompanyID select c).FirstOrDefault();
+            else
+                company = (from c in DatabaseContext.Companies where c.Name == companyname.Text select c).FirstOrDefault();
+            if (company != null)
+            {
+                if (company.Users != null && company.Users.Count > 0)
+                    SetErrorMessage("Company already exist. Please Contact " + company.Users.FirstOrDefault().Email);
+                else
+                    SetErrorMessage("Company already exist");
                 return true;
             }
+            else return false;
         }
-        private bool GetEditCompanyID(User user)
-        {
-            var query = (from c in DatabaseContext.Companies where c.Name == companyname.Text && c.CompanyID != user.CompanyID select c).FirstOrDefault();
-            if (query != null)
-            {
-                SetErrorMessage("Company already exist. Please Contact " + query.Users.FirstOrDefault().Email);
-                return false;
-            }
-            return true;
-        }
+
         private string GetFullName()
         {
             return surname.Text + ", " + firstname.Text;
         }
+
         private string GetFullAddress()
         {
             string fullAddress = "";
