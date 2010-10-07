@@ -198,5 +198,14 @@ namespace Simplicity.Web
                 }
             }
         }
+        protected override void OnInit(EventArgs e)
+        {
+            this.CurrenciesControl.CurrencyClick += new EventHandler(CurrencyControl_Click);
+            base.OnInit(e);
+        }
+        protected void CurrencyControl_Click(object sender, EventArgs e)
+        {
+            BindData();
+        }
     }
 }

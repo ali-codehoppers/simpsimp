@@ -1229,7 +1229,7 @@ A.PaymentAddresscurrent:hover {
 {
 	float:left;
 	width:196px;
-<<<<<<< .mine
+
 }
 .plus
 {
@@ -1266,7 +1266,7 @@ div.trolleyActionsHeader1 {
 }
 
 div.trolleyActionsHeader2 {
-	width:430px;
+	width:400px;
 	float:left;
 }
 
@@ -1300,14 +1300,14 @@ div.trolleyActionsCol1
 div.trolleyActionsCol2 
 {
     padding-top:10px;
-	width:430px;
+	width:400px;
 	float:left;
 
 }
 div.trolleyActionsCol3 
 {
     padding-top:40px;
-	width:125px;
+	width:120px;
 	float:left;
 	text-align:center;
 }
@@ -1315,8 +1315,8 @@ div.trolleyActionsCol3
 div.trolleyActionsCol4 
 {
     padding-top:40px;
-    margin-left:30px;
-	width:80px;
+    margin-left:40px;
+	width:75px;
 	float:left;
 	
 }
@@ -1324,6 +1324,7 @@ div.trolleyActionsCol4
 div.trolleyActionsCol5 
 {
     padding-top:40px;
+    margin-left:10px;
 	float:left;
 }
 .qtystyle
@@ -1343,4 +1344,30 @@ div.trolleyActionsCol5
 	border: 1px solid red;
 	border-right: 2px solid red;
 	border-bottom: 2px solid red;	
+}
+div.myChangeTabs
+{
+	margin-top:10px; 
+	padding-left:80px;
+	width:850px;
+}
+div.myChangeTabs div.row
+{
+	padding-top:5px;
+}
+
+div.myChangeTabs div.col1
+{
+	float:left;
+	width:196px;
+}
+
+div.myChangeTabs div.col2
+{
+}
+.myChangeinfoContinue
+{
+    padding-left: 275px;
+    padding-top: 20px;
+    padding-bottom: 20px; 
 }

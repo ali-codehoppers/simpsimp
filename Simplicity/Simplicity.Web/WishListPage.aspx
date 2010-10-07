@@ -5,16 +5,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
-    <div style="width: 100%; border: 1px solid black;">
-        <div id="heading1" style="float: left;">
-            <h2>
-                WISH LIST</h2>
-        </div>
-        <div style="float: right; padding-top: 5px;">
-            <uc1:Currencies ID="CurrenciesControl" runat="server" />
-        </div>
-        <div class="clearFloat">
-        </div>
+    <div id="icon1" class="floatLeft" style="padding-left:30px; width:80%">
+        <h2>
+            WISH LIST</h2>
+    </div>
+    <div class="floatRight" style="padding-right: 30px; padding-top: 10px;">
+        <uc1:Currencies ID="CurrenciesControl" runat="server" />
     </div>
     <div>
         <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
@@ -61,35 +57,34 @@
                             <asp:Image ID="Image1" runat="server" ImageUrl='<%# "~/images/s_" + DataBinder.Eval(Container, "DataItem.ProductEntity.shortname") + ".jpg" %>'
                                 AlternateText='<%# DataBinder.Eval(Container, "DataItem.ProductEntity.Name") %>' /></div>
                         <div class="floatLeft" style="padding-top: 10px; font-weight: bold;">
-                            <%# DataBinder.Eval(Container, "DataItem.ProductEntity.Name")%>[<%# DataBinder.Eval(Container, "DataItem.DurationString")%>]</div>
+                            <div class="trolleyCell">
+                                <%# DataBinder.Eval(Container, "DataItem.ProductEntity.Name")%>[<%# DataBinder.Eval(Container, "DataItem.DurationString")%>]</div>
+                            <div class="trolleyCell">
+                                <%# DataBinder.Eval(Container, "DataItem.VersionEntity.Name")%></div>
+                            <div class="trolleyCell">
+                                <%# DataBinder.Eval(Container, "DataItem.ProductDetailEntity.ProductDetail1")%></div>
+                        </div>
+                    </div>
+                    <div class="trolleyActionsCol3">
                         <div class="trolleyCell">
-                            <%# DataBinder.Eval(Container, "DataItem.VersionEntity.Name")%></div>
+                            <asp:TextBox ID="tbQuantity" runat="server" Width="25px" CssClass="qtystyle" Text='<%# DataBinder.Eval(Container, "DataItem.Quantity")%>'
+                                AutoPostBack="True" OnTextChanged="tbQuantity_OnTextChanged" EnableViewState="False"></asp:TextBox></span>
+                        </div>
+                    </div>
+                    <div class="trolleyActionsCol4">
                         <div class="trolleyCell">
-                            <%# DataBinder.Eval(Container, "DataItem.ProductDetailEntity.ProductDetail1")%></div>
+                            <span style="font-size: 14px; font-weight: bold;">
+                                <%# GetCurrencyHTMLCode()%><asp:Label ID='unitPrice' runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Price", "{0:N2}")%>'></asp:Label></span>
+                        </div>
+                    </div>
+                    <div class="trolleyActionsCol5">
                         <div class="trolleyCell">
-                            <%# DataBinder.Eval(Container, "DataItem.Quantity")%></div>
+                            <span style="font-size: 14px; font-weight: bold;">
+                                <%# GetCurrencyHTMLCode()%><asp:Label ID='totalPrice' runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Total","{0:N2}")%>'></asp:Label></span>
+                        </div>
                     </div>
-                </div>
-                <div class="trolleyActionsCol3">
-                    <div class="trolleyCell">
-                        <asp:TextBox ID="tbQuantity" runat="server" Width="25px" CssClass="qtystyle" Text='<%# DataBinder.Eval(Container, "DataItem.Quantity")%>'
-                            AutoPostBack="True" OnTextChanged="tbQuantity_OnTextChanged" EnableViewState="False"></asp:TextBox></span>
+                    <div class="noFloat">
                     </div>
-                </div>
-                <div class="trolleyActionsCol4">
-                    <div class="trolleyCell">
-                        <span style="font-size: 14px; font-weight: bold;">
-                            <%# GetCurrencyHTMLCode()%><asp:Label ID='unitPrice' runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Price", "{0:N2}")%>'></asp:Label></span>
-                    </div>
-                </div>
-                <div class="trolleyActionsCol5">
-                    <div class="trolleyCell">
-                        <span style="font-size: 14px; font-weight: bold;">
-                            <%# GetCurrencyHTMLCode()%><asp:Label ID='totalPrice' runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Total","{0:N2}")%>'></asp:Label></span>
-                    </div>
-                </div>
-                <div class="noFloat">
-                </div>
                 </div>
             </ItemTemplate>
         </asp:Repeater>
