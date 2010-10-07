@@ -78,6 +78,7 @@
     <Content Include="Images\astadia.png" />
     <Content Include="Images\bg_repeat.jpg" />
     <Content Include="Images\bg_rotate_banner.jpg" />
+    <Content Include="Images\btn_buynow.jpg" />
     <Content Include="Images\btn_cancel.jpg" />
     <Content Include="Images\btn_checkout.jpg" />
     <Content Include="Images\btn_clickhere.jpg" />
@@ -111,13 +112,13 @@
     <Content Include="Images\curve_right_big.jpg" />
     <Content Include="Images\curve_right_c.jpg" />
     <Content Include="Images\curve_right_small.jpg" />
-    <Content Include="Images\Dollar.gif" />
+    <Content Include="Images\Dollar.jpg" />
     <Content Include="Images\dotted.jpg" />
     <Content Include="Images\eas_buy.jpg" />
     <Content Include="Images\eas_call.jpg" />
     <Content Include="Images\eas_try.jpg" />
     <Content Include="Images\eas_watch.jpg" />
-    <Content Include="Images\Euro.gif" />
+    <Content Include="Images\Euro.jpg" />
     <Content Include="Images\finance_accnt.jpg" />
     <Content Include="Images\firefox.jpg" />
     <Content Include="Images\footer_r.jpg" />
@@ -220,7 +221,7 @@
     <Content Include="Images\sign_up_free.jpg" />
     <Content Include="Images\simple_nav_bg.jpg" />
     <Content Include="Images\simple_subnav_bg.jpg" />
-    <Content Include="Images\Sterling.gif" />
+    <Content Include="Images\Sterling.jpg" />
     <Content Include="Images\subheading_bar.jpg" />
     <Content Include="Images\s_Eas.jpg" />
     <Content Include="Images\s_handygas.jpg" />
@@ -228,6 +229,7 @@
     <Content Include="Images\s_handyserve.jpg" />
     <Content Include="Images\s_hs.jpg" />
     <Content Include="Images\Ticks.gif" />
+    <Content Include="Images\tick_bullet.jpg" />
     <Content Include="Images\top.jpg" />
     <Content Include="Images\top_bg_r.jpg" />
     <Content Include="Images\try_sol.jpg" />
@@ -301,6 +303,7 @@
     <Content Include="Styles\simplicity_css.css" />
     <Content Include="TestPages\AddTrollery_TEST.aspx" />
     <Content Include="Trolley.aspx" />
+    <Content Include="UserAccount.aspx" />
     <Content Include="ViewDemo.aspx" />
     <Content Include="WatchDemo.aspx" />
     <Content Include="Web.config" />
@@ -737,6 +740,13 @@
     </Compile>
     <Compile Include="Trolley.aspx.designer.cs">
       <DependentUpon>Trolley.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount.aspx.cs">
+      <DependentUpon>UserAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount.aspx.designer.cs">
+      <DependentUpon>UserAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AuthenticatedPage.cs">
       <SubType>ASPXCodeBehind</SubType>

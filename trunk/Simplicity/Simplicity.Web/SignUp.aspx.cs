@@ -13,7 +13,30 @@ namespace Simplicity.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (LoggedIsUser != null && !IsPostBack)
+            {
+                UserAccountPanel.Visible = false;
+                checkbox.Visible = false;
+                var query = (from c in DatabaseContext.Users where c.UserID == LoggedIsUser.UserID select c).FirstOrDefault();
+                firstname.Text = query.Forename;
+                surname.Text = query.Surname;
+                jobtitle.Text = query.JobTitle;
+                var address= (from c in query.Addresses where c.MultiAddressType=="PERSONAL" select c).FirstOrDefault();
+                addressno.Text = address.AddressNo;
+                addressline1.Text = address.AddressLine1;
+                addressline2.Text = address.AddressLine2;
+                addressline3.Text = address.AddressLine3;
+                addressline4.Text = address.AddressLine4;
+                addressline5.Text = address.AddressLine5;
+                postalcode.Text = address.PostalCode;
+                town.Text = address.Town;
+                County.Text = address.County;
+                country.Text = address.Country;
+                telephone1.Text = address.Telephone1;
+                telephone2.Text = address.Telephone2;
+                fax.Text = address.Fax;
+                mobile.Text = mobile.Text;
+            }
         }
         private bool ValidateFields()
         {
@@ -44,38 +67,68 @@ namespace Simplicity.Web
         }
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
-            if (ValidateFields())
+            if (LoggedIsUser == null)
             {
-                //try
+                if (ValidateFields())
                 {
-                    
-                    var user = new User {ReceiveEmails=checkbox.Checked,FullName=GetFullName(), Surname=surname.Text, Forename=firstname.Text, JobTitle=jobtitle.Text, Email=emailfield.Text,
-                        Password=Utility.GetMd5Sum(passwordfield.Text),ReminderQuestionID=byte.Parse(listForgotPasswordQuestion.SelectedValue),ReminderQuestion=listForgotPasswordQuestion.SelectedItem.Text,ReminderAnswer=Utility.GetMd5Sum(txtForgotPasswordAnswer.Text), 
-                        CreationDate=DateTime.Now, LastAmendmentDate=DateTime.Now, Type = Enum.GetName(typeof(Enums.ENTITY_TYPE),  Enums.ENTITY_TYPE.USER), Deleted=false,OnHold=false,Verified=false, Enabled=false,UserUID=Guid.NewGuid().ToString(),VerificationCode=Guid.NewGuid().ToString(),
-                    Approved=0,PaymentType=0,LoginAttempts=0};
-                    var address=new Address{Deleted=false,
-                        AddressFull = GetFullAddress(),
-                        AddressNo = addressno.Text,
-                        AddressLine1 = addressline1.Text,
-                        AddressLine2 = addressline2.Text,
-                        AddressLine3 = addressline3.Text,
-                        AddressLine4 = addressline4.Text,
-                        AddressLine5 = addressline5.Text,
-                        PostalCode=postalcode.Text,
-                        Telephone1=telephone1.Text,
-                        Telephone2=telephone2.Text,
-                        Fax=fax.Text,
-                        Mobile=mobile.Text,
-                        Town=town.Text,
-                        County=County.Text,
-                        Country=country.Text,
-                        UserId=user.UserID,
-                        SameAsCustomer=false,
-                        SameAsBilling=false,
-                        MultiAddressType = Enum.GetName(typeof(Enums.ADDRESS_TYPE), Enums.ADDRESS_TYPE.PERSONAL),
-                        CreationDate=DateTime.Now,LastAmendmentDate=DateTime.Now,AddressName=null,CreatedBy=null,LastAmendedBy=null};
+                    //try
+                    {
+
+                        var user = new User
+                        {
+                            ReceiveEmails = checkbox.Checked,
+                            FullName = GetFullName(),
+                            Surname = surname.Text,
+                            Forename = firstname.Text,
+                            JobTitle = jobtitle.Text,
+                            Email = emailfield.Text,
+                            Password = Utility.GetMd5Sum(passwordfield.Text),
+                            ReminderQuestionID = byte.Parse(listForgotPasswordQuestion.SelectedValue),
+                            ReminderQuestion = listForgotPasswordQuestion.SelectedItem.Text,
+                            ReminderAnswer = Utility.GetMd5Sum(txtForgotPasswordAnswer.Text),
+                            CreationDate = DateTime.Now,
+                            LastAmendmentDate = DateTime.Now,
+                            Type = Enum.GetName(typeof(Enums.ENTITY_TYPE), Enums.ENTITY_TYPE.USER),
+                            Deleted = false,
+                            OnHold = false,
+                            Verified = false,
+                            Enabled = false,
+                            UserUID = Guid.NewGuid().ToString(),
+                            VerificationCode = Guid.NewGuid().ToString(),
+                            Approved = 0,
+                            PaymentType = 0,
+                            LoginAttempts = 0
+                        };
+                        var address = new Address
+                        {
+                            Deleted = false,
+                            AddressFull = GetFullAddress(),
+                            AddressNo = addressno.Text,
+                            AddressLine1 = addressline1.Text,
+                            AddressLine2 = addressline2.Text,
+                            AddressLine3 = addressline3.Text,
+                            AddressLine4 = addressline4.Text,
+                            AddressLine5 = addressline5.Text,
+                            PostalCode = postalcode.Text,
+                            Telephone1 = telephone1.Text,
+                            Telephone2 = telephone2.Text,
+                            Fax = fax.Text,
+                            Mobile = mobile.Text,
+                            Town = town.Text,
+                            County = County.Text,
+                            Country = country.Text,
+                            UserId = user.UserID,
+                            SameAsCustomer = false,
+                            SameAsBilling = false,
+                            MultiAddressType = Enum.GetName(typeof(Enums.ADDRESS_TYPE), Enums.ADDRESS_TYPE.PERSONAL),
+                            CreationDate = DateTime.Now,
+                            LastAmendmentDate = DateTime.Now,
+                            AddressName = null,
+                            CreatedBy = null,
+                            LastAmendedBy = null
+                        };
                         user.Addresses.Add(address);
-                        
+
                         //insert record in HS
                         /******/
                         /*
@@ -97,18 +150,49 @@ namespace Simplicity.Web
                         txtTele1.Text, "", txtTele2.Text, txtEmail.Text, txtCompanyName.Text, txtCountry.Text, null, DateTime.Now, null, DateTime.Now, "User");
                 }
                 */
-                    DatabaseContext.Users.AddObject(user);
-                    DatabaseContext.SaveChanges();
+                        DatabaseContext.Users.AddObject(user);
+                        DatabaseContext.SaveChanges();
                         /******/
                         EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
                         Response.Redirect("~/ConfirmMail.aspx");
-                    //}
-                        
+                        //}
+
+                    }
+                    /*catch
+                    {
+                        SetErrorMessage("Unable to process your transaction, please contact the administrator");
+                    }*/
                 }
-                /*catch
-                {
-                    SetErrorMessage("Unable to process your transaction, please contact the administrator");
-                }*/
+            }
+            else {
+                 var query = (from c in DatabaseContext.Users where c.UserID == LoggedIsUser.UserID select c).FirstOrDefault();
+                
+                    query.FullName = GetFullName();
+                    query.Surname = surname.Text;
+                    query.Forename = firstname.Text;
+                    query.JobTitle = jobtitle.Text;
+                    query.LastAmendmentDate = DateTime.Now;
+                    var address= (from c in query.Addresses where c.MultiAddressType=="PERSONAL" select c).FirstOrDefault();
+                
+                    address.AddressFull = GetFullAddress();
+                    address.AddressNo = addressno.Text;
+                    address.AddressLine1 = addressline1.Text;
+                    address.AddressLine2 = addressline2.Text;
+                    address.AddressLine3 = addressline3.Text;
+                    address.AddressLine4 = addressline4.Text;
+                    address.AddressLine5 = addressline5.Text;
+                    address.PostalCode = postalcode.Text;
+                    address.Telephone1 = telephone1.Text;
+                    address.Telephone2 = telephone2.Text;
+                    address.Fax = fax.Text;
+                    address.Mobile = mobile.Text;
+                    address.Town = town.Text;
+                    address.County = County.Text;
+                    address.Country = country.Text;
+                    address.LastAmendmentDate = DateTime.Now;
+                    address.AddressName = null;
+                    address.LastAmendedBy = null;
+                    DatabaseContext.SaveChanges();
             }
         }
         private string GetFullName()

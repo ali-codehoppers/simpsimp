@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="Simplicity.Web.SignUp" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true"
+    CodeBehind="SignUp.aspx.cs" Inherits="Simplicity.Web.SignUp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
     <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.cycle.all.min.js")%>'></script>
     <script language="javascript" type='text/javascript'>
@@ -47,118 +49,120 @@
             <div class="floatLeft" style="width: 117px; height: 36px; background: url(Images/login_btm_line.jpg) bottom left no-repeat;">
                 &nbsp;</div>
             <div id="myAccountMyPersonalInfoTab" class="clearFloat">
-                <div class="row">
-                    
-                    <div class="col1">
-                        Email</div>
-                    <div class="col2">
-                        <div class="forgetErrorMsg">
-                            <asp:TextBox runat="server" CssClass="login_field_big" ID="emailfield"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="emailfield"
-                                ErrorMessage="* Email Required" Display="Dynamic"> 
-                            </asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailfield"
-                                ErrorMessage="* Enter Email Address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                Display="Dynamic">
-                            </asp:RegularExpressionValidator>
+                <asp:Panel ID="UserAccountPanel" runat="server">
+                    <div id="Emailrow" class="row">
+                        <div class="col1">
+                            <asp:Label ID="EmailLabel" runat="server">Email</asp:Label></div>
+                        <div class="col2">
+                            <div class="forgetErrorMsg">
+                                <asp:TextBox runat="server" CssClass="login_field_big" ID="emailfield"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="emailfield"
+                                    ErrorMessage="* Email Required" Display="Dynamic"> 
+                                </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailfield"
+                                    ErrorMessage="* Enter Email Address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                    Display="Dynamic">
+                                </asp:RegularExpressionValidator>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col1">
-                        Confirm Email</div>
-                    <div class="col2">
-                        <div class="forgetErrorMsg">
-                            <asp:TextBox runat="server" CssClass="login_field_big" ID="confirmemailfield"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="confirmemailfield"
-                                ErrorMessage="* Email Required" Display="Dynamic"> 
-                            </asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="confirmemailfield"
-                                ErrorMessage="* Enter Email Address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                Display="Dynamic">
-                            </asp:RegularExpressionValidator>
+                    <div class="row">
+                        <div class="col1">
+                            <asp:Label ID="ConfirmEmailLabel" runat="server">Confirm Email</asp:Label></div>
+                        <div class="col2">
+                            <div class="forgetErrorMsg">
+                                <asp:TextBox runat="server" CssClass="login_field_big" ID="confirmemailfield"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="confirmemailfield"
+                                    ErrorMessage="* Email Required" Display="Dynamic"> 
+                                </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="confirmemailfield"
+                                    ErrorMessage="* Enter Email Address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                    Display="Dynamic">
+                                </asp:RegularExpressionValidator>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col1">
-                        Password</div>
-                    <div class="col2">
-                        <div class="forgetErrorMsg">
-                            <asp:TextBox TextMode="password" CssClass="login_field_big" ID="passwordfield" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="passwordfield"
-                                ErrorMessage="* Password Required" Display="Dynamic"> 
-                            </asp:RequiredFieldValidator>
+                    <div class="row">
+                        <div class="col1">
+                            Password</div>
+                        <div class="col2">
+                            <div class="forgetErrorMsg">
+                                <asp:TextBox TextMode="password" CssClass="login_field_big" ID="passwordfield" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="passwordfield"
+                                    ErrorMessage="* Password Required" Display="Dynamic"> 
+                                </asp:RequiredFieldValidator>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col1">
-                        Confirm Password</div>
-                    <div class="col2">
-                        <div class="forgetErrorMsg">
-                            <asp:TextBox TextMode="password" CssClass="login_field_big" ID="confirmpasswordfield" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="confirmpasswordfield"
-                                ErrorMessage="* Password Required" Display="Dynamic"> 
-                            </asp:RequiredFieldValidator>
+                    <div class="row">
+                        <div class="col1">
+                            Confirm Password</div>
+                        <div class="col2">
+                            <div class="forgetErrorMsg">
+                                <asp:TextBox TextMode="password" CssClass="login_field_big" ID="confirmpasswordfield"
+                                    runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="confirmpasswordfield"
+                                    ErrorMessage="* Password Required" Display="Dynamic"> 
+                                </asp:RequiredFieldValidator>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col1">
-                        <asp:Label ID="lblForgotPasswordQuestion" runat="server" Text="Forgot Password Question"></asp:Label>
-                    </div>
-                    <div class="col2">
-                        <div class="forgetErrorMsg">
-                            <asp:DropDownList ID="listForgotPasswordQuestion" runat="server">
-                                <asp:ListItem Text="--- Choose a question ---" Value="#"></asp:ListItem>
-                                <asp:ListItem Text="What was your childhood nickname?" Value="1"></asp:ListItem>
-                                <asp:ListItem Text="In what city did you meet your spouse/significant other?" Value="2"></asp:ListItem>
-                                <asp:ListItem Text="What is the name of your favorite childhood friend?" Value="3"></asp:ListItem>
-                                <asp:ListItem Text="What is your oldest sibling’s birthday month and year? (e.g., January 1900)"
-                                    Value="4"></asp:ListItem>
-                                <asp:ListItem Text="What is the middle name of your youngest child?" Value="5"></asp:ListItem>
-                                <asp:ListItem Text="What is your oldest sibling's middle name?" Value="6"></asp:ListItem>
-                                <asp:ListItem Text="What school did you attend in fifth year?" Value="7"></asp:ListItem>
-                                <asp:ListItem Text="What was your childhood phone number including area code? (e.g., 000-000-0000)"
-                                    Value="8"></asp:ListItem>
-                                <asp:ListItem Text="What was the name of your first pet?" Value="9"></asp:ListItem>
-                                <asp:ListItem Text="In what city or town did your mother and father meet?" Value="10"></asp:ListItem>
-                                <asp:ListItem Text="Where were you when you had your first kiss?" Value="11"></asp:ListItem>
-                                <asp:ListItem Text="What is the first name of the boy or girl that you first kissed?"
-                                    Value="12"></asp:ListItem>
-                                <asp:ListItem Text="What was the last name of your third grade teacher?" Value="13"></asp:ListItem>
-                                <asp:ListItem Text="In what city does your nearest sibling live?" Value="14"></asp:ListItem>
-                                <asp:ListItem Text="What is your youngest brother’s birthday month and year? (e.g., January 1900)"
-                                    Value="15"></asp:ListItem>
-                                <asp:ListItem Text="What is your maternal grandmother's maiden name?" Value="16"></asp:ListItem>
-                                <asp:ListItem Text="In what city or town was your first job?" Value="17"></asp:ListItem>
-                                <asp:ListItem Text="What is the name of the place your wedding reception was held?"
-                                    Value="18"></asp:ListItem>
-                                <asp:ListItem Text="What is the name of a college you applied to but didn't attend?"
-                                    Value="19"></asp:ListItem>
-                                <asp:ListItem Text="Where were you when you first heard about 9/11?" Value="20"></asp:ListItem>
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" InitialValue="#" runat="server"
-                                ErrorMessage="* Select Question" ControlToValidate="listForgotPasswordQuestion"
-                                Display="Dynamic"></asp:RequiredFieldValidator>
+                    <div class="row">
+                        <div class="col1">
+                            <asp:Label ID="lblForgotPasswordQuestion" runat="server" Text="Forgot Password Question"></asp:Label>
+                        </div>
+                        <div class="col2">
+                            <div class="forgetErrorMsg">
+                                <asp:DropDownList ID="listForgotPasswordQuestion" runat="server">
+                                    <asp:ListItem Text="--- Choose a question ---" Value="#"></asp:ListItem>
+                                    <asp:ListItem Text="What was your childhood nickname?" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="In what city did you meet your spouse/significant other?" Value="2"></asp:ListItem>
+                                    <asp:ListItem Text="What is the name of your favorite childhood friend?" Value="3"></asp:ListItem>
+                                    <asp:ListItem Text="What is your oldest sibling’s birthday month and year? (e.g., January 1900)"
+                                        Value="4"></asp:ListItem>
+                                    <asp:ListItem Text="What is the middle name of your youngest child?" Value="5"></asp:ListItem>
+                                    <asp:ListItem Text="What is your oldest sibling's middle name?" Value="6"></asp:ListItem>
+                                    <asp:ListItem Text="What school did you attend in fifth year?" Value="7"></asp:ListItem>
+                                    <asp:ListItem Text="What was your childhood phone number including area code? (e.g., 000-000-0000)"
+                                        Value="8"></asp:ListItem>
+                                    <asp:ListItem Text="What was the name of your first pet?" Value="9"></asp:ListItem>
+                                    <asp:ListItem Text="In what city or town did your mother and father meet?" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="Where were you when you had your first kiss?" Value="11"></asp:ListItem>
+                                    <asp:ListItem Text="What is the first name of the boy or girl that you first kissed?"
+                                        Value="12"></asp:ListItem>
+                                    <asp:ListItem Text="What was the last name of your third grade teacher?" Value="13"></asp:ListItem>
+                                    <asp:ListItem Text="In what city does your nearest sibling live?" Value="14"></asp:ListItem>
+                                    <asp:ListItem Text="What is your youngest brother’s birthday month and year? (e.g., January 1900)"
+                                        Value="15"></asp:ListItem>
+                                    <asp:ListItem Text="What is your maternal grandmother's maiden name?" Value="16"></asp:ListItem>
+                                    <asp:ListItem Text="In what city or town was your first job?" Value="17"></asp:ListItem>
+                                    <asp:ListItem Text="What is the name of the place your wedding reception was held?"
+                                        Value="18"></asp:ListItem>
+                                    <asp:ListItem Text="What is the name of a college you applied to but didn't attend?"
+                                        Value="19"></asp:ListItem>
+                                    <asp:ListItem Text="Where were you when you first heard about 9/11?" Value="20"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" InitialValue="#" runat="server"
+                                    ErrorMessage="* Select Question" ControlToValidate="listForgotPasswordQuestion"
+                                    Display="Dynamic"></asp:RequiredFieldValidator>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col1">
-                        <asp:Label ID="Label1" runat="server" Text="Forgot Password Answer"></asp:Label>
-                    </div>
-                    <div class="col2">
-                        <div class="forgetErrorMsg">
-                            <asp:TextBox ID="txtForgotPasswordAnswer" CssClass="login_field_big" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Enter Forget Password Answer"
-                                ControlToValidate="txtForgotPasswordAnswer" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <div class="row">
+                        <div class="col1">
+                            <asp:Label ID="Label1" runat="server" Text="Forgot Password Answer"></asp:Label>
+                        </div>
+                        <div class="col2">
+                            <div class="forgetErrorMsg">
+                                <asp:TextBox ID="txtForgotPasswordAnswer" CssClass="login_field_big" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Enter Forget Password Answer"
+                                    ControlToValidate="txtForgotPasswordAnswer" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="dotted_line" style="margin-top: 10px;">
-                </div>
+                    <div class="dotted_line" style="margin-top: 10px;">
+                    </div>
+                </asp:Panel>
                 <div class="row">
                     <div class="col1">
                         <asp:Label ID="Label2" runat="server" Text="First Name"></asp:Label>
@@ -322,14 +326,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <asp:CheckBox runat="server" ID="checkbox" Text="Please indicate if you would like to receives further updates for products" Checked="true"/>   
+                    <asp:CheckBox runat="server" ID="checkbox" Text="Please indicate if you would like to receives further updates for products"
+                        Checked="true" />
                 </div>
                 <div class="clearFloat">
                 </div>
                 <div class="myaccountinfoContinue">
-                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="../images/btn_continue.jpg" width="107" height="37" OnClick="btnSave_Click"/>
-                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="../images/btn_reset.jpg" width="107" 
-                        height="37"  OnClientClick="document.location.href=document.location.href;"/>   
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="../images/btn_continue.jpg"
+                        Width="107" Height="37" OnClick="btnSave_Click" />
+                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="../images/btn_reset.jpg"
+                        Width="107" Height="37" OnClientClick="document.location.href=document.location.href;" />
                 </div>
             </div>
             <div id="myAccountMyProductsTab" class="clearFloat">
