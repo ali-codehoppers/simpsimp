@@ -28,7 +28,7 @@ namespace Simplicity.Web
                 txtExpiryYear.Items.Add(i.ToString());
             for (int i = 2000; i <= year; i++)
                 txtStartYear.Items.Add(i.ToString());
-            if (Request[WebConstants.Request.TRANSACTION_UID] != null)
+            if (Request[WebConstants.Request.TRANSACTION_UID] != null && !IsPostBack)
             {
                 PaymentDetails paymentDetails = SessionFactory.GetPaymentDetails(Request[WebConstants.Request.TRANSACTION_UID]);
                 if (paymentDetails != null)

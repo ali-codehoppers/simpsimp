@@ -26,12 +26,12 @@
                 </div>
                 <div class="floatLeft">
                     <asp:TextBox runat="server" ID="username" CssClass="login_field"></asp:TextBox>
-                    <div class="ErrorMsg">
+                    <div class="ErrorMsg" style="padding:0px;">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="username"
                             ErrorMessage="* Username is required." Display="Dynamic"> 
                         </asp:RequiredFieldValidator>
                     </div>
-                    <div class="ErrorMsg">
+                    <div class="ErrorMsg" style="padding:0px;">
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="username"
                             ErrorMessage="* Enter Email Address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                             Display="Dynamic">
@@ -40,18 +40,18 @@
                 </div>
                 <div class="clearFloat"></div>
             </div>
-            <div style="padding-top: 2px;">
+            <div>
                 <div class="floatLeft" style="width:100px;">
                     <h3>Password:</h3>
                 </div>
                 <div class="floatLeft">
                     <asp:TextBox runat="server" ID="password" CssClass="login_field" TextMode="Password"></asp:TextBox>
-                    <div class="ErrorMsg">
+                    <div class="ErrorMsg" style="padding:0px;">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Password is required."
                             ControlToValidate="password"> 
                         </asp:RequiredFieldValidator>
                     </div>
-                    <div class="ErrorMsg">
+                    <div class="ErrorMsg" style="padding:0px;">
                         <asp:Label ID="Label1" runat="server" Text="Label" Visible="false"></asp:Label>
                     </div>
                 </div>
