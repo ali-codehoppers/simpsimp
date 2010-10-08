@@ -7,54 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Simplicity.Web.Products.HandyGas {
+namespace Simplicity.Web.Common.Controls {
     
     
-    public partial class Home {
+    public partial class PriceEdition {
         
         /// <summary>
-        /// Image5 control.
+        /// CurrenciesControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image5;
+        protected global::Simplicity.Web.Common.Controls.Currencies CurrenciesControl;
         
         /// <summary>
-        /// HyperLink1 control.
+        /// hlBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.HyperLink hlBack;
         
         /// <summary>
-        /// Image4 control.
+        /// rptMandatory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image4;
+        protected global::System.Web.UI.WebControls.Repeater rptMandatory;
         
         /// <summary>
-        /// Image1 control.
+        /// rptOptional control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Repeater rptOptional;
         
         /// <summary>
-        /// Image6 control.
+        /// hlMore control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image6;
+        protected global::System.Web.UI.WebControls.HyperLink hlMore;
     }
 }

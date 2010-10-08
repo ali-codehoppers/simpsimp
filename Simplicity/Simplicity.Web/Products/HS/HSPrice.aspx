@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Products.master" AutoEventWireup="true"
-    CodeBehind="Home.aspx.cs" Inherits="Simplicity.Web.Products.HS.Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Products.master" AutoEventWireup="true" CodeBehind="HSPrice.aspx.cs" Inherits="Simplicity.Web.Products.HS.HSPrice" %>
+<%@ Register Src="~/Common/Controls/PriceEdition.ascx" TagName="ProductPrices" TagPrefix="uc2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
     <link href='<%=Page.ResolveClientUrl("~/Styles/products.css")%>' rel="stylesheet"
@@ -42,8 +42,9 @@
                     Hardware Specs </a>
             </div>
             <div id="priceicon" class="floatRight">
-                <asp:HyperLink NavigateUrl="~/Products/HS/HSPrice.aspx?productid=2" CssClass="icon_link" runat="server">
+                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Products/HS/HSPrice.aspx?productid=2" CssClass="icon_link" runat="server">
                     <asp:Image ID="Image4" ImageUrl="~/Images/icon_price.jpg"  CssClass="imgdim" runat="server" /><br />
+                    
                     Prices/Editions</asp:HyperLink>
             </div>
             <div id="docicon" class="floatRight">
@@ -70,21 +71,9 @@
         </div>
     </div>
     <div class="text" id="contentsDiv">
-        <p>
-            Guides you through the sequential processess, provides practical templates and an
-            extendable library of documents and content to publish H&amp;S folders in an easy
-            to read format.
-        </p>
-        <p>
-            This practical tool allows you to:-
-        </p>
-        <ul>
-            <li class="list">Publish the Health &amp; Safety folder required onsite</li>
-            <li class="list">Document the safe way of working for the job - The Method Statment</li>
-            <li class="list">Analyse the risk for each specific task - The Risk Assessments</li>
-            <li class="list">Add new or changed risk content onsite</li>
-            <li class="list">Maintain Sign-In Sheets</li>
-            <li class="list">Record permit to work - Hot Works </li>
-        </ul>
+        
+        <uc2:ProductPrices ID="ProductPrices1" runat="server"></uc2:ProductPrices>
+        
     </div>
+
 </asp:Content>

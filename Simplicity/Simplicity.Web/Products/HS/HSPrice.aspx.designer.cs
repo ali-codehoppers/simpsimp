@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Simplicity.Web.Products.HandyGas {
+namespace Simplicity.Web.Products.HS {
     
     
-    public partial class Home {
+    public partial class HSPrice {
         
         /// <summary>
         /// Image5 control.
@@ -40,6 +40,24 @@ namespace Simplicity.Web.Products.HandyGas {
         protected global::System.Web.UI.WebControls.Image Image4;
         
         /// <summary>
+        /// Image3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image3;
+        
+        /// <summary>
+        /// Image2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image2;
+        
+        /// <summary>
         /// Image1 control.
         /// </summary>
         /// <remarks>
@@ -56,5 +74,14 @@ namespace Simplicity.Web.Products.HandyGas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image6;
+        
+        /// <summary>
+        /// ProductPrices1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Simplicity.Web.Common.Controls.PriceEdition ProductPrices1;
     }
 }

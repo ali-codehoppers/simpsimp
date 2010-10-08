@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Simplicity.Data;
 using Simplicity.Web.Utilities;
 using Simplicity.Web.BusinessObjects;
 using System.Configuration;
+using Simplicity.Data;
 
-namespace Simplicity.Web
+namespace Simplicity.Web.Common.Controls
 {
     public class Version
     {
@@ -34,34 +34,13 @@ namespace Simplicity.Web
             set { price = value; }
         }
     }
-    public partial class ProductPrices : GenericPage
+    public partial class PriceEdition : System.Web.UI.UserControl
     {
         private ProductBO product = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request[WebConstants.Request.PRODUCT_ID] != null)
             {
-                if (int.Parse(Request[WebConstants.Request.PRODUCT_ID]) == 1)
-                {
-                    Response.Redirect("Products/EAS/EASPrice.aspx?productid="+1);
-                }
-                else if (int.Parse(Request[WebConstants.Request.PRODUCT_ID]) == 2)
-                {
-                    Response.Redirect("Products/HS/HSPrice.aspx?productid=2");
-                }
-                else if (int.Parse(Request[WebConstants.Request.PRODUCT_ID]) == 3)
-                {
-                    Response.Redirect("Products/HandyGas/HandyGasPrice.aspx?productid=" + 3);
-                }
-                else if (int.Parse(Request[WebConstants.Request.PRODUCT_ID]) == 4)
-                {
-                    Response.Redirect("Products/HandyServe/HandyServePrice.aspx?productid=4");
-                }
-                else if (int.Parse(Request[WebConstants.Request.PRODUCT_ID]) == 5)
-                {
-                    Response.Redirect("Products/HandyLEC/HandyLECPrice.aspx?productid=5");
-                }
-
                 if (IsPostBack == false)
                 {
                     BindData();
@@ -105,7 +84,7 @@ namespace Simplicity.Web
         private void BindData()
         {
             int productId = int.Parse(Request[WebConstants.Request.PRODUCT_ID]);
-            product= new ProductBO(ProductBO.GetProduct(productId));
+            product = new ProductBO(ProductBO.GetProduct(productId));
             if (product != null)
             {
                 if (Request[WebConstants.Request.MORE] != null)
@@ -202,7 +181,7 @@ namespace Simplicity.Web
                             Version version = new Version();
                             version.VersionId = versionDS.VersionID;
                             version.ProductDetailId = productDetails.ProductDetailID;
-                            if (versionDS.Discount==null)
+                            if (versionDS.Discount == null)
                             {
                                 version.Price = productDetails.Price;
                             }
@@ -227,6 +206,10 @@ namespace Simplicity.Web
         protected void CurrencyControl_Click(object sender, EventArgs e)
         {
             BindData();
+        }
+        protected string GetCurrencyHTMLCode()
+        {
+            return ShoppingCart.GetCurrentCurrency().HTMLCurrencyCode;
         }
     }
 }
