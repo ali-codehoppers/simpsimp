@@ -15,9 +15,7 @@ using Simplicity.Data;
 namespace Simplicity.Web
 {
     public partial class PaymentDetail : AuthenticatedPage
-    {
-        private static NameValueCollection AppSettings = System.Configuration.ConfigurationManager.AppSettings;
-
+    {       
         protected void Page_Load(object sender, EventArgs e)
         {
             lblCCMsg.Text = GetCurrencyHTMLCode() + String.Format("{0:N2}", ShoppingCart.GetTotalAmount())

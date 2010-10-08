@@ -12,6 +12,7 @@ using System.Xml.Linq;
 
 using Simplicity.Data;
 using Simplicity.Web.BusinessObjects;
+using System.Collections.Specialized;
 
 /// <summary>
 /// Summary description for GenericPage
@@ -20,6 +21,7 @@ namespace Simplicity.Web.Utilities
 {
     public class GenericPage : System.Web.UI.Page
     {
+        public static NameValueCollection AppSettings = System.Configuration.ConfigurationManager.AppSettings;
         public GenericPage()
         {
             //
