@@ -80,8 +80,7 @@
                             <br />
                             <%if (Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID] == "2")
                               {%>
-                            <span style="font-size: 10pt; color: Gray; padding-left:40px;">Try it now for</span> <a href='RedirectToHS.aspx'
-                                style="font-family:Lucida Sans;font-size: 12pt; color: #f29107">FREE</a>
+                            <span style="font-size: 10pt; color: Gray; padding-left:40px;">Try it now for</span> <a href="../../RedirectToProductTrial.aspx?productId=<%#Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID]%>" style="font-family:Lucida Sans;font-size: 12pt; color: #f29107">FREE</a>
                             <%}%>
                             </div>
                         </div>

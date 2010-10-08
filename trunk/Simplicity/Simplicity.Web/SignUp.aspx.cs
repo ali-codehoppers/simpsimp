@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Simplicity.Web.Utilities;
 using Simplicity.Data;
+using System.Data.SqlClient;
 
 namespace Simplicity.Web
 {
@@ -106,6 +107,7 @@ namespace Simplicity.Web
                     DatabaseContext.SaveChanges();
 
                     //call health and safety stored procedure over here to insert company there as well
+                    addCompanyToHS(user);
                     EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
                     Response.Redirect("~/ConfirmMail.aspx");
                 }
@@ -116,6 +118,7 @@ namespace Simplicity.Web
                 {
                     return;
                 }
+                bool newCompanyAdded = false;
                 User user = (from c in DatabaseContext.Users where c.UserID == LoggedIsUser.UserID select c).FirstOrDefault();
 
                 user.FullName = GetFullName();
@@ -129,6 +132,7 @@ namespace Simplicity.Web
                     Address companyAddr = fillAddress(user, Enums.ADDRESS_TYPE.COMPANY);
                     company.Address = companyAddr;
                     user.Company = company;
+                    newCompanyAdded = true;
                 }
                 user.Company.Name = companyname.Text;
                 user.LastAmendmentDate = DateTime.Now;
@@ -158,6 +162,41 @@ namespace Simplicity.Web
                     }
                 }
                 DatabaseContext.SaveChanges();
+                if(newCompanyAdded) addCompanyToHS(user);
+            }
+        }
+
+        private void addCompanyToHS(User user)
+        {
+            SqlConnection conn = new SqlConnection(AppSettings["HSDB"]);
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(AppSettings["InsertHSCompanyProcedure"], conn);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@co_name_short", user.Company.Name.Length > 16 ? user.Company.Name.Substring(0, 16) : user.Company.Name);
+                command.Parameters.AddWithValue("@co_name_long", user.Company.Name.Length > 60 ? user.Company.Name.Substring(0, 60) : user.Company.Name);
+                command.Parameters.AddWithValue("@contact_forename", user.Forename);
+                command.Parameters.AddWithValue("@contact_surname", user.Surname);
+                command.Parameters.AddWithValue("@address_no", user.Company.Address.AddressNo);
+                command.Parameters.AddWithValue("@address_line1", user.Company.Address.AddressLine1);
+                command.Parameters.AddWithValue("@address_line2", user.Company.Address.AddressLine2);
+                command.Parameters.AddWithValue("@address_line3", user.Company.Address.AddressLine3);
+                command.Parameters.AddWithValue("@address_line4", user.Company.Address.AddressLine4);
+                command.Parameters.AddWithValue("@address_line5", user.Company.Address.AddressLine5);
+                command.Parameters.AddWithValue("@address_post_code", user.Company.Address.PostalCode);
+                command.Parameters.AddWithValue("@address_full", user.Company.Address.AddressFull);
+                command.Parameters.AddWithValue("@tel_1", user.Company.Address.Telephone1);
+                command.Parameters.AddWithValue("@tel_2", user.Company.Address.Telephone2);
+                command.Parameters.AddWithValue("@tel_fax", user.Company.Address.Fax);
+                command.Parameters.AddWithValue("@created_by", user.UserID);
+                command.Parameters.AddWithValue("@date_created", DateTime.Now);
+                command.Parameters.AddWithValue("@simplicity_company_id", user.Company.CompanyID);
+                command.ExecuteReader();
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
             }
         }
 
