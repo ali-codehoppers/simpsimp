@@ -9,10 +9,10 @@
             <a href="../../WatchDemo.aspx?product_id=3" id="watch_gas"></a>
         </div>
         <div>
-            <a href="../../ProductPrices.aspx?productId=3" id="buy_gas"></a>
+            <a href="HandyGasPrice.aspx?productid=3" id="buy_gas"></a>
         </div>
         <div>
-            <a href="../../ProductPrices.aspx?productId=3&try=try" id="try_gas"></a>
+            <a href="HandyGasPrice.aspx?productid=3&try=try" id="try_gas"></a>
         </div>
         <div>
             <a href="../../CallMeBack.aspx" id="call_gas"></a>
@@ -40,9 +40,9 @@
                     Hardware Specs</a>
             </div>
             <div id="priceicon" class="floatRight">
-                <a href="../Products/HSPriceProduct.aspx" class="icon_link">
+                 <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Products/HandyGas/HandyGasPrice.aspx?productid=3" CssClass="icon_link" runat="server">
                     <asp:Image ID="Image4" ImageUrl="~/Images/icon_price.jpg" alt="" class="imgdim" runat="server" /><br />
-                    Prices/Editions</a>
+                    Prices/Editions</asp:HyperLink>
             </div>
             <div id="homeicon" class="floatRight">
                 <a href="javascript:populateContents('Details.aspx','contentsDiv')" class="icon_link">

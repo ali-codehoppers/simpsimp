@@ -10,7 +10,7 @@
 namespace Simplicity.Web.Products.HandyGas {
     
     
-    public partial class Home {
+    public partial class HandyGasPrice {
         
         /// <summary>
         /// Image5 control.

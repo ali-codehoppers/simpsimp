@@ -1,6 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Products.master" AutoEventWireup="true"
-    CodeBehind="Home.aspx.cs" Inherits="Simplicity.Web.Products.HandyLEC.Home" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Products.master" AutoEventWireup="true" CodeBehind="HandyLECPrice.aspx.cs" Inherits="Simplicity.Web.Products.HandyLEC.HandyLECPrice" %>
+<%@ Register src="../../Common/Controls/PriceEdition.ascx" tagname="PriceEdition" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftNavPlaceHolder" runat="server">
@@ -20,7 +19,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
-    <div id="subdirectory" class="bottom_border">
+   <div id="subdirectory" class="bottom_border">
         <a href="../Home.aspx" class="login">Products</a> &gt;&gt; <a href="Home.aspx" class="login">
             HandyLEC</a>
     </div>
@@ -56,18 +55,8 @@
         </div>
     </div>
     <div class="text" id="contentsDiv">
-        <p>
-            Simplicity HandyLEC empowers your team of engineers by letting them manage visits,
-            inspections and PAT testing on a Smartphone. The engineers use practical screens
-            on the phone to:-</p>
-        <ul>
-            <li class="list">Know where they are going with all the information to complete the call</li>
-            <li class="list">Survey and record results</li>
-            <li class="list">Confirm PAT certification</li>
-            <li class="list">Book parts and next appointment for variations</li>
-            <li class="list">Upload staus in real-time to head-office</li></ul>
-        <p>
-            Simplicity HandyServe runs on MS Windows Mobile powered smartphones added to the
-            agreement with your current service provider.</p>
+
+        <uc1:PriceEdition ID="PriceEdition1" runat="server" />
+
     </div>
 </asp:Content>
