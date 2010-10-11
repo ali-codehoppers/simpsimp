@@ -41,6 +41,7 @@ namespace Simplicity.Web.Utilities
                     session.LastActivityTime = DateTime.Now;
                     session.EndTime = DateTime.Now.AddMinutes(30);
                     session.IP = Request.UserHostAddress;
+                    session.ProductID = null;
                     DatabaseContext.SaveChanges();
                 }
             }

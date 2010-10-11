@@ -172,7 +172,7 @@ namespace Simplicity.Web
             try
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand(AppSettings["InsertHSCompanyProcedure"], conn);
+                SqlCommand command = new SqlCommand(AppSettings["CopyDataToHSProcedure"], conn);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@co_name_short", user.Company.Name.Length > 16 ? user.Company.Name.Substring(0, 16) : user.Company.Name);
                 command.Parameters.AddWithValue("@co_name_long", user.Company.Name.Length > 60 ? user.Company.Name.Substring(0, 60) : user.Company.Name);
@@ -192,6 +192,9 @@ namespace Simplicity.Web
                 command.Parameters.AddWithValue("@created_by", user.UserID);
                 command.Parameters.AddWithValue("@date_created", DateTime.Now);
                 command.Parameters.AddWithValue("@simplicity_company_id", user.Company.CompanyID);
+                command.Parameters.AddWithValue("@simplicity_user_id", user.UserID);
+                command.Parameters.AddWithValue("@user_email", user.Email);
+                command.Parameters.AddWithValue("@user_password", user.Password);
                 command.ExecuteReader();
             }
             finally
