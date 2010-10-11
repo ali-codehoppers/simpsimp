@@ -8,7 +8,7 @@ using Simplicity.Web.Utilities;
 
 namespace Simplicity.Web
 {
-    public partial class RedirectToProductTrial : GenericPage
+    public partial class RedirectToProductTrial : AuthenticatedPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
