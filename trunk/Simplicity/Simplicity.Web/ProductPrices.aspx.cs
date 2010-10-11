@@ -41,27 +41,6 @@ namespace Simplicity.Web
         {
             if (Request[WebConstants.Request.PRODUCT_ID] != null)
             {
-                if (int.Parse(Request[WebConstants.Request.PRODUCT_ID]) == 1)
-                {
-                    Response.Redirect("Products/EAS/EASPrice.aspx?productid="+1);
-                }
-                else if (int.Parse(Request[WebConstants.Request.PRODUCT_ID]) == 2)
-                {
-                    Response.Redirect("Products/HS/HSPrice.aspx?productid=2");
-                }
-                else if (int.Parse(Request[WebConstants.Request.PRODUCT_ID]) == 3)
-                {
-                    Response.Redirect("Products/HandyGas/HandyGasPrice.aspx?productid=" + 3);
-                }
-                else if (int.Parse(Request[WebConstants.Request.PRODUCT_ID]) == 4)
-                {
-                    Response.Redirect("Products/HandyServe/HandyServePrice.aspx?productid=4");
-                }
-                else if (int.Parse(Request[WebConstants.Request.PRODUCT_ID]) == 5)
-                {
-                    Response.Redirect("Products/HandyLEC/HandyLECPrice.aspx?productid=5");
-                }
-
                 if (IsPostBack == false)
                 {
                     BindData();
@@ -72,7 +51,7 @@ namespace Simplicity.Web
                             int productDetailId = int.Parse(Request[WebConstants.Request.PRODUCT_DETAIL_ID]);
                             int versionId = int.Parse(Request[WebConstants.Request.VERSION_ID]);
                             ShoppingCart.AddProductDetail(product.ProductEnity, productDetailId, versionId);
-                            if (ConfigurationSettings.AppSettings[WebConstants.Config.PAYMENT_OFFLINE].Equals("true"))
+                            if (AppSettings[WebConstants.Config.PAYMENT_OFFLINE].Equals("true"))
                             {
                                 Response.Redirect("~/PaymentOffline.aspx");
                             }
@@ -85,7 +64,7 @@ namespace Simplicity.Web
                         {
                             int versionId = int.Parse(Request[WebConstants.Request.VERSION_ID]);
                             ShoppingCart.AddProductVersion(product.ProductEnity, versionId);
-                            if (ConfigurationSettings.AppSettings[WebConstants.Config.PAYMENT_OFFLINE].Equals("true"))
+                            if (AppSettings[WebConstants.Config.PAYMENT_OFFLINE].Equals("true"))
                             {
                                 Response.Redirect("~/PaymentOffline.aspx");
                             }

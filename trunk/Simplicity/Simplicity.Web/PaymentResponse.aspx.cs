@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Simplicity.Web.Utilities;
 using Simplicity.Data;
 using Simplicity.Web.BusinessObjects;
+using System.Data.SqlClient;
 
 namespace Simplicity.Web
 {
@@ -37,6 +38,7 @@ namespace Simplicity.Web
                     Request.Form.Get("card_expirationMonth"), Request.Form.Get("card_expirationYear"), Utility.GetCardType(Request.Form.Get("card_cardType")),
                     lblAmountText.Text, LoggedIsUser.Email);
 
+                    bool healthAndSafetyPurchased = false;
                     if (LoggedIsUser.Company != null)
                     {
                         foreach (TransactionDetail detail in transaction.TransactionDetails)
@@ -51,8 +53,28 @@ namespace Simplicity.Web
                             companyProduct.StartDate = DateTime.Now;
                             companyProduct.EndDate = DateTime.Now.AddMonths(detail.Duration);
                             DatabaseContext.AddToCompanyProducts(companyProduct);
+
+                            if (detail.ProductID == 2) healthAndSafetyPurchased = true;
                         }
                         DatabaseContext.SaveChanges();
+                        //we need to mark Health And Safety as purchased if its already in trial mode
+                        if (healthAndSafetyPurchased)
+                        {
+                            SqlConnection conn = new SqlConnection(AppSettings["HSDB"]);
+                            try
+                            {
+                                conn.Open();
+                                SqlCommand command = new SqlCommand(AppSettings["MarkHSPurchasedProcedure"], conn);
+                                command.CommandType = System.Data.CommandType.StoredProcedure;
+                                command.Parameters.AddWithValue("@simplicity_company_id", LoggedIsUser.Company.CompanyID);
+                                command.Parameters.AddWithValue("@flg_trial", false);
+                                command.ExecuteReader();
+                            }
+                            finally
+                            {
+                                if (conn != null) conn.Close();
+                            }
+                        }
                     }
 
 

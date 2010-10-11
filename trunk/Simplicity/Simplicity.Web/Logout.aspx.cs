@@ -13,6 +13,16 @@ namespace Simplicity.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             FormsAuthentication.SignOut();
+            if (User.Identity.IsAuthenticated)
+            {
+                Simplicity.Data.SimplicityEntities DatabaseContext = new Data.SimplicityEntities();
+                Data.Session session = (from s in DatabaseContext.Sessions where s.SessionUID == User.Identity.Name select s).FirstOrDefault();
+                if (session != null)
+                {
+                    DatabaseContext.Detach(session);
+                    DatabaseContext.SaveChanges();
+                }
+            }
             Response.Redirect("Default.aspx");
         }
     }

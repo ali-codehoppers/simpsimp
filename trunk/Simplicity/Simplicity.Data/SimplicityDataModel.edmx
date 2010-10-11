@@ -201,7 +201,7 @@
           <Key>
             <PropertyRef Name="CompanyProductID" />
           </Key>
-          <Property Name="CompanyProductID" Type="int" Nullable="false" />
+          <Property Name="CompanyProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CompanyID" Type="int" Nullable="false" />
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="VersionID" Type="int" Nullable="false" />

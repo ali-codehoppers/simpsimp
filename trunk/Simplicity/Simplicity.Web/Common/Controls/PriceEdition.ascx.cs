@@ -94,7 +94,7 @@ namespace Simplicity.Web.Common.Controls
                         rptOptional.DataSource = product.OptionalDetails.GetRange(0, product.OptionalDetails.Count > WebConstants.DEFAULT_ADDONS ? WebConstants.DEFAULT_ADDONS : product.OptionalDetails.Count);
                         rptOptional.DataBind();
                     }
-                    hlBack.NavigateUrl = "~/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
+                    hlBack.NavigateUrl = "/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
                     hlBack.Visible = true;
                 }
                 else
@@ -112,7 +112,7 @@ namespace Simplicity.Web.Common.Controls
                         rptOptional.DataSource = product.OptionalDetails.GetRange(0, product.OptionalDetails.Count);
                     }
                     rptOptional.DataBind();
-                    hlMore.NavigateUrl = "~/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
+                    hlMore.NavigateUrl = "/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
                         + "&" + WebConstants.Request.MORE + "=true";
 
                 }
@@ -143,7 +143,7 @@ namespace Simplicity.Web.Common.Controls
         {
             if (product != null)
             {
-                return "ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId;
+                return "/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId;
             }
             return "#";
         }
@@ -152,7 +152,7 @@ namespace Simplicity.Web.Common.Controls
         {
             if (product != null)
             {
-                return "ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID
+                return "/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID
                     + "&" + WebConstants.Request.VERSION_ID + "=" + versionId
                     + "&" + WebConstants.Request.PRODUCT_DETAIL_ID + "=" + productDetailId;
 
