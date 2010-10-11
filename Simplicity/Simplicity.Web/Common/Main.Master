@@ -42,7 +42,7 @@
                             <asp:HyperLink id="LogoutLink" NavigateUrl="../SignUp.aspx" runat="server">My Account</asp:HyperLink>
                     </div>	
 			        <div class="headerLinksSeparator">|</div>	
-			        <div class="headerLinks"><a href="../Trolley.aspx">Trolley</a></div>	
+			        <div class="headerLinks"><a href="../../Trolley.aspx">Trolley</a></div>	
 			        <div class="headerLinksSeparator">|</div>	
 			        <div class="headerLinks"><a href="../WishListPage.aspx">Wish List</a></div>	
 			        <div style="float:right;">

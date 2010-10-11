@@ -94,8 +94,31 @@ namespace Simplicity.Web.Common.Controls
                         rptOptional.DataSource = product.OptionalDetails.GetRange(0, product.OptionalDetails.Count > WebConstants.DEFAULT_ADDONS ? WebConstants.DEFAULT_ADDONS : product.OptionalDetails.Count);
                         rptOptional.DataBind();
                     }
-                    hlBack.NavigateUrl = "/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
-                    hlBack.Visible = true;
+                    if (Request[WebConstants.Request.PRODUCT_ID]=="1")
+                    {
+                        hlBack.NavigateUrl = "/Products/EAS/EASPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
+                        hlBack.Visible = true;
+                    }
+                    else if (Request[WebConstants.Request.PRODUCT_ID]=="2")
+                    {
+                        hlBack.NavigateUrl = "/Products/HS/HSPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
+                        hlBack.Visible = true;
+                    }
+                    else if (Request[WebConstants.Request.PRODUCT_ID] == "3")
+                    {
+                        hlBack.NavigateUrl = "/Products/HandyGas/HandyGasPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
+                        hlBack.Visible = true;
+                    }
+                    else if (Request[WebConstants.Request.PRODUCT_ID] == "4")
+                    {
+                        hlBack.NavigateUrl = "/Products/HandyServe/HandyServePrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
+                        hlBack.Visible = true;
+                    }
+                    else if (Request[WebConstants.Request.PRODUCT_ID] == "5")
+                    {
+                        hlBack.NavigateUrl = "/Products/HandyLEC/HandyLECPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
+                        hlBack.Visible = true;
+                    }
                 }
                 else
                 {
@@ -112,9 +135,33 @@ namespace Simplicity.Web.Common.Controls
                         rptOptional.DataSource = product.OptionalDetails.GetRange(0, product.OptionalDetails.Count);
                     }
                     rptOptional.DataBind();
-                    hlMore.NavigateUrl = "/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
-                        + "&" + WebConstants.Request.MORE + "=true";
+                    if (Request[WebConstants.Request.PRODUCT_ID] == "1")
+                    {
+                        hlMore.NavigateUrl = "/Products/EAS/EASPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
+                            + "&" + WebConstants.Request.MORE + "=true";
+                    }
+                    else if (Request[WebConstants.Request.PRODUCT_ID] == "2")
+                    {
+                        hlMore.NavigateUrl = "/Products/HS/HSPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
+                            + "&" + WebConstants.Request.MORE + "=true";
+                    }
+                    else if (Request[WebConstants.Request.PRODUCT_ID] == "3")
+                    {
+                        hlMore.NavigateUrl = "/Products/HandyGas/HandyGasPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
+                            + "&" + WebConstants.Request.MORE + "=true";
+                    }
+                    else if (Request[WebConstants.Request.PRODUCT_ID] == "4")
+                    {
+                        hlMore.NavigateUrl = "/Products/HandyServe/HandyServePrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
+                            + "&" + WebConstants.Request.MORE + "=true";
 
+                    }
+                    else if (Request[WebConstants.Request.PRODUCT_ID] == "5")
+                    {
+                        hlMore.NavigateUrl = "/Products/HandyLEC/HandyLECPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
+                            + "&" + WebConstants.Request.MORE + "=true";
+
+                    }
                 }
             }
         }
@@ -143,7 +190,28 @@ namespace Simplicity.Web.Common.Controls
         {
             if (product != null)
             {
-                return "/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId;
+                if (Request[WebConstants.Request.PRODUCT_ID] == "1")
+                {
+                    return "/Products/EAS/EASPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId;
+                }
+                else if (Request[WebConstants.Request.PRODUCT_ID] == "2")
+                {
+                    return "/Products/HS/HSPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId;
+                }
+                else if (Request[WebConstants.Request.PRODUCT_ID] == "3")
+                {
+                    return "/Products/HandyGas/HandyGasPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId;
+                }
+                else if (Request[WebConstants.Request.PRODUCT_ID] == "4")
+                {
+                    return "/Products/HandyServe/HandyServePrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId;
+
+                }
+                else if (Request[WebConstants.Request.PRODUCT_ID] == "5")
+                {
+                    return "/Products/HandyLEC/HandyLECPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId;
+                }
+                
             }
             return "#";
         }
@@ -152,9 +220,42 @@ namespace Simplicity.Web.Common.Controls
         {
             if (product != null)
             {
-                return "/ProductPrices.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID
+                if (Request[WebConstants.Request.PRODUCT_ID] == "1")
+                {
+                    return "/Products/EAS/EASPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID
                     + "&" + WebConstants.Request.VERSION_ID + "=" + versionId
                     + "&" + WebConstants.Request.PRODUCT_DETAIL_ID + "=" + productDetailId;
+                    
+                }
+                else if (Request[WebConstants.Request.PRODUCT_ID] == "2")
+                {
+                    return "/Products/HS/HSPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID
+                    + "&" + WebConstants.Request.VERSION_ID + "=" + versionId
+                    + "&" + WebConstants.Request.PRODUCT_DETAIL_ID + "=" + productDetailId;
+                   
+                }
+                else if (Request[WebConstants.Request.PRODUCT_ID] == "3")
+                {
+                    return "/Products/HandyGas/HandyGasPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID
+                    + "&" + WebConstants.Request.VERSION_ID + "=" + versionId
+                    + "&" + WebConstants.Request.PRODUCT_DETAIL_ID + "=" + productDetailId;
+                    
+                }
+                else if (Request[WebConstants.Request.PRODUCT_ID] == "4")
+                {
+                    return "/Products/HandyServe/HandyServePrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID
+                    + "&" + WebConstants.Request.VERSION_ID + "=" + versionId
+                    + "&" + WebConstants.Request.PRODUCT_DETAIL_ID + "=" + productDetailId;
+                    
+
+                }
+                else if (Request[WebConstants.Request.PRODUCT_ID] == "5")
+                {
+                    return "/Products/HandyLEC/HandyLECPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID
+                    + "&" + WebConstants.Request.VERSION_ID + "=" + versionId
+                    + "&" + WebConstants.Request.PRODUCT_DETAIL_ID + "=" + productDetailId;
+                   
+                }
 
             }
             return "#";

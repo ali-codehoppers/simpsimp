@@ -170,12 +170,12 @@ namespace Simplicity.Web
 
         protected void ShippingCheck_CheckedChanged(object sender, EventArgs e)
         {
-            if (BillingCheck.Checked)
+            if (ShippingCheck.Checked)
             {
-                EnableBillingFields(false);
+                EnableShippingFields(false);
             }
             else {
-                EnableBillingFields(true);
+                EnableShippingFields(true);
             
             }
         }

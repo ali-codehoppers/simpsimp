@@ -14,8 +14,9 @@
         </HeaderTemplate>
         <ItemTemplate>
             <div class='col<%#GetColNumber(DataBinder.Eval(Container, "ItemIndex", ""))%>' style="float: left;">
-                <a href="ProductPrices.aspx?productId=<%# DataBinder.Eval(Container, "DataItem.productID")%>">
-                    <asp:Image ID="imgBtnLogout" runat="server" ImageUrl='<%# "~/Images/buy_products_img_"+DataBinder.Eval(Container, "DataItem.productID") + ".jpg" %>' /></a>
+                <asp:HyperLink runat="server" ID="productLink" NavigateUrl='<%#GetHyperLink(DataBinder.Eval(Container, "DataItem.productID"))%>'>
+                    <asp:Image ID="imgBtnLogout" runat="server" ImageUrl='<%# "~/Images/buy_products_img_"+DataBinder.Eval(Container, "DataItem.productID") + ".jpg" %>' />
+                </asp:HyperLink>
             </div>
         </ItemTemplate>
         <SeparatorTemplate>

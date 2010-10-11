@@ -130,7 +130,7 @@
             <div style="padding-top:10px; padding-bottom:5px;">
                 <asp:CheckBox id="ShippingCheck" runat="server" checked="true" 
                     Text="Shipping address is the same as the address of the Account" 
-                    oncheckedchanged="ShippingCheck_CheckedChanged"/>
+                    oncheckedchanged="ShippingCheck_CheckedChanged" AutoPostBack="true"/>
 
             </div>
         </div>

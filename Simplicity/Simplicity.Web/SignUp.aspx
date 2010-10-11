@@ -339,13 +339,24 @@
                 </div>
             </div>
             <div id="myAccountMyProductsTab" class="clearFloat">
-                <div class="links">
-                    <div class="topLeft">
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Products/HandyServe/Home.aspx"
-                            CssClass="AccountmoreDetails">
-                            <asp:Image runat="server" ID="Image7" ImageUrl="~/Images/products_img_1.jpg" />
-                        </asp:HyperLink>
-                    </div>
+                <div>
+                <asp:Repeater ID="CompanyProductRepeater" runat="server">
+                    <ItemTemplate>
+                    <a href="RedirectToProduct.aspx?productId=<%# DataBinder.Eval(Container.DataItem, "ProductID")%>">
+                    <img src='../Images/Buy_products_img_<%# DataBinder.Eval(Container.DataItem, "ProductID")%>.jpg' />  
+                    </a>
+                     </ItemTemplate>
+                </asp:Repeater>
+                </div>
+                <div>
+                <h2>Trial Products</h2>
+                <asp:Repeater ID="UserProductRepeater" runat="server">
+                    <ItemTemplate>
+                    <a href="RedirectToProduct.aspx?productId=<%# DataBinder.Eval(Container.DataItem, "ProductID")%>">
+                    <img src='../Images/Buy_products_img_<%# DataBinder.Eval(Container.DataItem, "ProductID")%>.jpg' />  
+                    </a>
+                     </ItemTemplate>
+                </asp:Repeater>
                 </div>
             </div>
         </div>

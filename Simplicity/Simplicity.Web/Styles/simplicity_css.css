@@ -1373,8 +1373,56 @@ div.myChangeTabs div.col2
 }
 .forgetfield
 {
-font: normal 12px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font: normal 12px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 	color: #555555;
 	border:1px solid #cccccc;
 	height: 20px;    
+}
+
+#receipt div.row
+{
+    
+	padding-top:5px;
+}
+
+#receipt div.col1
+{
+    float: left;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 16px;
+    color: #003366;
+    width: 200px;
+}
+
+#receipt div.col2
+{
+    font-size: 12px;
+    color: #000066;
+}
+.receiptnavbar
+{
+    height: 33px;
+    text-align: center;
+    color: #000000;
+    border-bottom: 4px #006fd3 solid;
+    font-weight: bolder;
+    font-size: 14px;
+    vertical-align: middle;
+    border-width: 1px 1px 4px 1px;
+    border-color: #C0C0C0 #C0C0C0 #006fd3 #C0C0C0;
+}
+.receiptnavbarHover
+{
+    height: 33px;
+    border-bottom: 4px #006fd3 solid;
+    text-align: center;
+    color: #003366;
+    cursor: hand;
+    font-weight: bolder;
+    font-size: 14px;
+    vertical-align: middle;
+    border-style: solid;
+    border-width: 1px 1px 4px 1px;
+    border-color: #006fd3;
 }
