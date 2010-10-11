@@ -15,22 +15,22 @@
     </div>
     <div class="logindiv">
         <div>
+            <div class="loginleftbar">
+                &nbsp;</div>
             <div class="logintopborder1">
             </div>
             <div class="logintopborder2">
             </div>
         </div>
-        <div class="loginleftbar">
-            &nbsp;</div>
         <div style="padding-left: 30px;">
             <form id="form1" name="form1" method="post" action="CustomerLogin.aspx">
             <div style="padding-top: 50px;">
-                <div>
+                <div class="floatLeft" style="width: 40%;">
                     <h3 class="ForgetUserName">
                         Username:</h3>
                 </div>
-                <div>
-                    <asp:TextBox runat="server" ID="username" CssClass="login_field"></asp:TextBox>
+                <div class="floatLeft">
+                    <asp:TextBox runat="server" ID="username" CssClass="login_field_big"></asp:TextBox>
                     <div class="forgetErrorMsg">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="username"
                             ErrorMessage="* Username is required" Display="Dynamic"> 
@@ -43,14 +43,14 @@
                         </asp:RegularExpressionValidator>
                     </div>
                 </div>
-                <br />
-                <div>
+            </div>
+            <div class="floatLeft">
+                <div class="floatLeft" style="width:40%">
                     <h3 class="ForgetQuestion">
                         <asp:Label ID="lblForgotPasswordQuestion" runat="server" Text="Forgot Password Question:"></asp:Label></h3>
-
                 </div>
-                <div>
-                    <asp:DropDownList ID="listForgotPasswordQuestion" runat="server">
+                <div class="floatLeft" style="width:60%">
+                    <asp:DropDownList ID="listForgotPasswordQuestion" runat="server" CssClass="forgetfield">
                         <asp:ListItem Text="--- Choose a question ---" Value="#"></asp:ListItem>
                         <asp:ListItem Text="What was your childhood nickname?" Value="1"></asp:ListItem>
                         <asp:ListItem Text="In what city did you meet your spouse/significant other?" Value="2"></asp:ListItem>
@@ -85,24 +85,28 @@
                             Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                 </div>
-                <br />
-                <div class="floatLeft">
+            </div>
+            <div>
+                <div class="floatLeft" style="width:40%">
                     <h3 class="ForgetAnswer">
                         <asp:Label ID="Label1" runat="server" Text="Forgot Password Answer:"></asp:Label></h3>
                 </div>
                 <div>
-                    <asp:TextBox ID="txtForgotPasswordAnswer" CssClass="login_field" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtForgotPasswordAnswer" CssClass="login_field_big" runat="server"></asp:TextBox>
                     <div class="forgetErrorMsg">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Enter Forget Password Answer"
                             ControlToValidate="txtForgotPasswordAnswer" CssClass="errorMessage"></asp:RequiredFieldValidator>
                     </div>
                 </div>
             </div>
-            <div style="padding-left: 120px;">
-                <asp:ImageButton ID="ImageButton1" ImageUrl="images/btn_Submit.jpg" 
-                    runat="server" onclick="ForgetButtonClick" />
-            </div>
-            </form>
+        <div style="padding-left: 230px;">
+            <asp:ImageButton ID="ImageButton1" ImageUrl="images/btn_Submit.jpg" runat="server"
+                OnClick="ForgetButtonClick" />
         </div>
+        </form>
     </div>
+    </div>
+    <div class="clearFloat">
+    </div>
+    
 </asp:Content>

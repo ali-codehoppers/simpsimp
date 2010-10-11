@@ -1371,3 +1371,10 @@ div.myChangeTabs div.col2
     padding-top: 20px;
     padding-bottom: 20px; 
 }
+.forgetfield
+{
+font: normal 12px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	color: #555555;
+	border:1px solid #cccccc;
+	height: 20px;    
+}
