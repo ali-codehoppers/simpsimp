@@ -37,7 +37,26 @@ namespace Simplicity.Web
                 telephone2.Text = address.Telephone2;
                 fax.Text = address.Fax;
                 mobile.Text = mobile.Text;
+                if (LoggedIsUser.Company != null)
+                {
+                    int id = LoggedIsUser.Company.CompanyID;
+                    BindCompanyProduct(id);
+                    BindUserProduct();
+                }
             }
+        }
+        
+        private void BindCompanyProduct(int CompanyID)
+        {
+            
+            CompanyProductRepeater.DataSource = ((from CompanyProductTable in DatabaseContext.CompanyProducts where CompanyProductTable.CompanyID == CompanyID && CompanyProductTable.EndDate >= DateTime.Now select CompanyProductTable.Product).Distinct()).ToList();
+            CompanyProductRepeater.DataBind();
+        }
+        private void BindUserProduct()
+        {
+            UserProductRepeater.DataSource = ((from UserProductTable in DatabaseContext.UserProducts where UserProductTable.UserID == LoggedIsUser.UserID && UserProductTable.EndDate >= DateTime.Now select UserProductTable.Product).Distinct()).ToList();
+            UserProductRepeater.DataBind();
+        
         }
         private bool ValidateFields()
         {

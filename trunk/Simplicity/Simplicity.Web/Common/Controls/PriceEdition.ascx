@@ -73,10 +73,11 @@
                             <div style="float:left;">
                             <div style="padding:5px;"><span style="font-size:22px;color:#6a6a6a; padding-left:40px;font-family:Lucida Sans;"><%# GetCurrencyHTMLCode()%><%# GetVersionPrice(DataBinder.Eval(Container.DataItem, "price"))%></span><br />
                             </div>
-                            <a style="padding-left:45px;" href='<%#GetVersionBuyNowURL(DataBinder.Eval(Container.DataItem, "versionID"))%>'>
+                            <div style="padding-left:45px; height:20px;">
+                            <a  href='<%#GetVersionBuyNowURL(DataBinder.Eval(Container.DataItem, "versionID"))%>'>
                                 <img alt="Buy Now" src="../../images/btn_buynow.jpg" />
                             </a>
-                            
+                            </div>
                             <br />
                             <%if (Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID] == "2")
                               {%>

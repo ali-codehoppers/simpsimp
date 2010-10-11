@@ -36,5 +36,30 @@ namespace Simplicity.Web
             }
             return "";
         }
+        protected string GetHyperLink(object index)
+        {
+            int indexInt = int.Parse(index.ToString());
+            if (indexInt == 1)
+            {
+                return "/Products/EAS/EASPrice.aspx?productId=" + indexInt;
+            }
+            else if (indexInt == 2)
+            {
+                return "/Products/HS/HSPrice.aspx?productId=" + indexInt;
+            }else if (indexInt == 3)
+            {
+                return "/Products/HandyGas/HandyGasPrice.aspx?productId=" + indexInt;
+            }else if (indexInt == 4)
+            {
+                return "/Products/HandyServe/HandyServePrice.aspx?productId=" + indexInt;
+            }
+            else if (indexInt == 5)
+            {
+                return "/Products/HandyLEC/HandyLECPrice.aspx?productId=" + indexInt;
+            }
+            else {
+                return "#";
+            }
+        }
     }
 }
