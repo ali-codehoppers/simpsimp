@@ -185,7 +185,18 @@ namespace Simplicity.Web.Common.Controls
                 }
             }
         }
+        protected string GetMinUsers(object MinUsers)
+        {
+            if (product != null)
+            {
+                if (int.Parse(MinUsers.ToString()) > 1)
+                {
+                    return "("+MinUsers.ToString()+" and over user)";
+                }
 
+            }
+            return "";
+        }
         protected string GetVersionBuyNowURL(object versionId)
         {
             if (product != null)

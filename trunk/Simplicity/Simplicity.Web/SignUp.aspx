@@ -40,10 +40,18 @@
             </div>
             <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
                 &nbsp;</div>
-            <div id="tabProducts" class="myProductsTab">
-                <div style="padding-top: 10px">
-                    My Products</div>
-            </div>
+            <asp:Panel ID="MyProductPanel" runat="server">
+                <div id="tabProducts" class="myProductsTab">
+                    <div style="padding-top: 10px">
+                        My Products</div>
+                </div>
+                <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
+                    &nbsp;</div>
+                <div id="tabPassword" class="myProductsTab">
+                    <div style="padding-top: 10px">
+                        Change Password</div>
+                </div>
+            </asp:Panel>
             <div class="floatLeft" style="height: 35px; width: 150px; border-bottom: 1px solid #e5e5e5;">
                 &nbsp;</div>
             <div class="floatLeft" style="width: 117px; height: 36px; background: url(Images/login_btm_line.jpg) bottom left no-repeat;">
@@ -338,40 +346,121 @@
                         Width="107" Height="37" OnClientClick="document.location.href=document.location.href;" />
                 </div>
             </div>
-            <div id="myAccountMyProductsTab" class="clearFloat">
-                <div>
-                <asp:Repeater ID="CompanyProductRepeater" runat="server">
-                    <ItemTemplate>
-                    <a href="RedirectToProduct.aspx?productId=<%# DataBinder.Eval(Container.DataItem, "ProductID")%>">
-                    <img src='../Images/Buy_products_img_<%# DataBinder.Eval(Container.DataItem, "ProductID")%>.jpg' />  
-                    </a>
-                     </ItemTemplate>
-                </asp:Repeater>
+            <asp:Panel runat="server" ID="LoginAccount">
+                <div id="myAccountMyProductsTab" class="clearFloat">
+                    <div style="padding: 10px;">
+                        <asp:Repeater ID="CompanyProductRepeater" runat="server">
+                            <ItemTemplate>
+                                <div style="float: left; padding-bottom: 10px; padding-right: 10px;">
+                                    <a href="RedirectToProduct.aspx?productId=<%# DataBinder.Eval(Container.DataItem, "ProductID")%>">
+                                        <img src='../Images/Buy_products_img_<%# DataBinder.Eval(Container.DataItem, "ProductID")%>.jpg' />
+                                    </a>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <div class="clearFloat">
+                        </div>
+                    </div>
+                    <div style="padding: 10px;">
+                        <asp:Repeater ID="UserProductRepeater" runat="server">
+                            <HeaderTemplate>
+                                <div style="padding: 5px;">
+                                    <h2>
+                                        Trial Products</h2>
+                                </div>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <div style="float: left; padding-bottom: 10px; padding-right: 10px;">
+                                    <a href="RedirectToProduct.aspx?productId=<%# DataBinder.Eval(Container.DataItem, "ProductID")%>">
+                                        <img src='../Images/Buy_products_img_<%# DataBinder.Eval(Container.DataItem, "ProductID")%>.jpg' />
+                                    </a>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <div class="clearFloat">
+                        </div>
+                    </div>
                 </div>
-                <div>
-                <h2>Trial Products</h2>
-                <asp:Repeater ID="UserProductRepeater" runat="server">
-                    <ItemTemplate>
-                    <a href="RedirectToProduct.aspx?productId=<%# DataBinder.Eval(Container.DataItem, "ProductID")%>">
-                    <img src='../Images/Buy_products_img_<%# DataBinder.Eval(Container.DataItem, "ProductID")%>.jpg' />  
-                    </a>
-                     </ItemTemplate>
-                </asp:Repeater>
+            </asp:Panel>
+            <asp:Panel runat="server" ID="ChangePasswordPanel">
+                <div id="MyPasswordTab" class="clearFloat">
+                    <div class="myChangeTabs">
+                        <div class="row">
+                            <div class="col1">
+                                Old Password</div>
+                            <div class="col2">
+                                <div class="forgetErrorMsg">
+                                    <asp:TextBox TextMode="password" CssClass="login_field_big" ID="oldpassword" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator111" runat="server" ControlToValidate="oldpassword"
+                                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                                    </asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col1">
+                                Confirm Old Password</div>
+                            <div class="col2">
+                                <div class="forgetErrorMsg">
+                                    <asp:TextBox TextMode="password" CssClass="login_field_big" ID="confirmoldPassowrd"
+                                        runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator112" runat="server" ControlToValidate="confirmoldPassowrd"
+                                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                                    </asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col1">
+                                New Password</div>
+                            <div class="col2">
+                                <div class="forgetErrorMsg">
+                                    <asp:TextBox TextMode="password" CssClass="login_field_big" ID="newpasswordfield"
+                                        runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator113" runat="server" ControlToValidate="newpasswordfield"
+                                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                                    </asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col1">
+                                New Confirm Password</div>
+                            <div class="col2">
+                                <div class="forgetErrorMsg">
+                                    <asp:TextBox TextMode="password" CssClass="login_field_big" ID="newconfirmpasswordfield"
+                                        runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator114" runat="server" ControlToValidate="newconfirmpasswordfield"
+                                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                                    </asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myChangeinfoContinue">
+                        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="../images/btn_submit.jpg"
+                            Width="107" Height="37" OnClick="ChangebtnSave_Click" />
+                    </div>
                 </div>
-            </div>
+            </asp:Panel>
         </div>
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#myAccountMyPersonalInfoTab').show();
+            $('#myAccountMyProductsTab').hide();
+            $('#MyPasswordTab').hide();
             $('#tabPersonalInfo').click(function () {
                 selectedTab = 1;
                 $('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
                 $('#tabPersonalInfo').removeClass('myPersonalInfoTab');
                 $('#tabProducts').removeClass('myProductsTabOnMouseOver');
                 $('#tabProducts').addClass('myProductsTab');
+                $('#tabPassword').removeClass('myProductsTabOnMouseOver');
+                $('#tabPassword').addClass('myProductsTab');
                 $('#myAccountMyPersonalInfoTab').show();
                 $('#myAccountMyProductsTab').hide();
+                $('#MyPasswordTab').hide();
             });
             $('#tabPersonalInfo').mouseover(function () {
                 $('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
@@ -393,7 +482,10 @@
                 $('#tabPersonalInfo').addClass('myPersonalInfoTab');
                 $('#tabProducts').addClass('myProductsTabOnMouseOver');
                 $('#tabProducts').removeClass('myProductsTab');
+                $('#tabPassword').removeClass('myProductsTabOnMouseOver');
+                $('#tabPassword').addClass('myProductsTab');
                 $('#myAccountMyPersonalInfoTab').hide();
+                $('#MyPasswordTab').hide();
                 $('#myAccountMyProductsTab').show();
             });
             $('#tabProducts').mouseover(function () {
@@ -408,6 +500,32 @@
                 else {
                     $('#tabProducts').removeClass('myProductsTabOnMouseOver');
                     $('#tabProducts').addClass('myProductsTab');
+                }
+            });
+            $('#tabPassword').click(function () {
+                selectedTab = 3;
+                $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
+                $('#tabPersonalInfo').addClass('myPersonalInfoTab');
+                $('#tabProducts').removeClass('myProductsTabOnMouseOver');
+                $('#tabProducts').addClass('myPersonalInfoTab');
+                $('#tabPassword').addClass('myPersonalInfoTabOnMouseOver');
+                $('#tabPassword').removeClass('myPersonalInfoTab');
+                $('#myAccountMyPersonalInfoTab').hide();
+                $('#MyPasswordTab').show();
+                $('#myAccountMyProductsTab').hide();
+            });
+            $('#tabPassword').mouseover(function () {
+                $('#tabPassword').addClass('myProductsTabOnMouseOver');
+                $('#tabPassword').removeClass('myProductsTab');
+            });
+            $('#tabPassword').mouseout(function () {
+                if (selectedTab === 3) {
+                    $('#tabPassword').addClass('myProductsTabOnMouseOver');
+                    $('#tabPassword').removeClass('myProductsTab');
+                }
+                else {
+                    $('#tabPassword').removeClass('myProductsTabOnMouseOver');
+                    $('#tabPassword').addClass('myProductsTab');
                 }
             });
         });

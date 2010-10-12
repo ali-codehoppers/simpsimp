@@ -74,7 +74,8 @@
     <Content Include="DemoMovie.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="ForgetPassword.aspx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="ForgotPasswordNextPage.aspx" />
     <Content Include="Images\01.jpg" />
     <Content Include="Images\02.jpg" />
     <Content Include="Images\astadia.png" />
@@ -505,12 +506,19 @@
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ForgetPassword.aspx.cs">
-      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ForgetPassword.aspx.designer.cs">
-      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPasswordNextPage.aspx.cs">
+      <DependentUpon>ForgotPasswordNextPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPasswordNextPage.aspx.designer.cs">
+      <DependentUpon>ForgotPasswordNextPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>

@@ -73,9 +73,8 @@
                     </div>
                     <div style="padding-left: 200px; padding-top: 10px;">
                         <a href="JavaScript:window.print();">
-                            <div class="receiptnavbar" style="width: 105px;" onmouseover="this.className='receiptnavbarHover'"
-                                onmouseout="this.className='receiptnavbar'">
-                                Print</div>
+                            <div class="receiptnavbar" style="width: 105px;">
+                                <asp:Image runat="server" ImageUrl="~/Images/btn_print.jpg"/></div>
                         </a>
                     </div>
             </div>
