@@ -29,7 +29,8 @@
                     <img src="../../Images/curve_big_partition.jpg" /></div>
                         <div class="col2" style="float: left;padding-top:40px; width:130px;">
                             <div style="float: left;"><asp:Image ID="Image2" runat="server" ImageUrl='<%#"~/images/icon_" + DataBinder.Eval(Container.DataItem, "name") + ".jpg"%>' /></div>
-                            <div style="float: left; padding-top:15px;"><span style="font-size:14px;color: #252D88;"><%#DataBinder.Eval(Container.DataItem, "name")%></span></div>
+                            <div style="float: left; padding-top:15px; padding-right:15px; padding-bottom:15px; "><span style="font-size:14px;color: #252D88;"><%#DataBinder.Eval(Container.DataItem, "name")%></span></div>
+                            <div style="padding-left:15px;"><span><%#GetMinUsers(DataBinder.Eval(Container.DataItem, "MinUsers"))%></span> </div>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>

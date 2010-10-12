@@ -52,6 +52,7 @@ namespace Simplicity.Web
                 DatabaseContext.SaveChanges();
                 FormsAuthentication.SetAuthCookie(session.SessionUID, false);
                 Session[WebConstants.Session.USER_ID] = user.UserID;
+                Session["userName"] = user.Email;
                 if (Session[WebConstants.Session.RETURN_URL] != null)
                 {
                     Response.Redirect((string)Session[WebConstants.Session.RETURN_URL]);

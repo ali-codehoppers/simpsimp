@@ -17,10 +17,16 @@ namespace Simplicity.Web.Common
             {
                 LoginLink.Visible = false;
                 LogoutLink.Visible = true;
+                MyAccountLink.Visible = true;
+                String b = "User logged In as "+ (String)Session["userName"];
+                usernameLabel.Text = b;
             }
             else {
                 LoginLink.Visible = true;
                 LogoutLink.Visible = false;
+                MyAccountLink.Visible = false;
+                
+                
             }
         }
     }

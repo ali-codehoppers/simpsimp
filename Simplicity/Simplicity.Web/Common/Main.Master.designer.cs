@@ -40,13 +40,13 @@ namespace Simplicity.Web.Common {
         protected global::System.Web.UI.WebControls.HyperLink LoginLink;
         
         /// <summary>
-        /// LogoutLink control.
+        /// MyAccountLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink LogoutLink;
+        protected global::System.Web.UI.WebControls.HyperLink MyAccountLink;
         
         /// <summary>
         /// Image1 control.
@@ -110,6 +110,24 @@ namespace Simplicity.Web.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        
+        /// <summary>
+        /// usernameLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label usernameLabel;
+        
+        /// <summary>
+        /// LogoutLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink LogoutLink;
         
         /// <summary>
         /// errorPanel control.

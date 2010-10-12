@@ -59,11 +59,11 @@
             </div>
             <div style="padding-left: 100px;">
                 <div>
-                    <asp:HyperLink ID="HyperLink1" NavigateUrl="ForgetPassword.aspx" CssClass="login" runat="server">Forgot your password?</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" NavigateUrl="~/ForgotPassword.aspx" CssClass="login" runat="server">Forgot your password?</asp:HyperLink>
                 </div>
                 <div style="padding-bottom: 20px;">
                     Do not have an account?<a href="SignUp.aspx" class="login"> Sign up for free!</a></div>
-                <asp:ImageButton ID="ImageButton1" ImageUrl="../images/btn_login.jpg" runat="server" OnClick="LoginButtonClick" />
+                <asp:ImageButton ID="ImageButton1" ImageUrl="~/Images/btn_login.jpg" runat="server" OnClick="LoginButtonClick" />
             </div>            
             </div>
             <div class="floatRight" style="padding-left: 20px; padding-top: 50px; "><img src="../images/lock_icon.jpg" alt="" width="180" height="136" /></div>            

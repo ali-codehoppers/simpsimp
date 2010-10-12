@@ -1009,6 +1009,12 @@ div.myAccountTabs
 	padding-left:30px;
 	background: url(../images/login_lft_line.jpg) 0 0 no-repeat;
 }
+#MyPasswordTab
+{	
+	display:none;
+	padding-left:30px;
+	background: url(../images/login_lft_line.jpg) 0 0 no-repeat;
+}
 .loginNewMember
 {
     float:left;
