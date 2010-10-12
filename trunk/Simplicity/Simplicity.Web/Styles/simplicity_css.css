@@ -1432,3 +1432,25 @@ div.myChangeTabs div.col2
     border-width: 1px 1px 4px 1px;
     border-color: #006fd3;
 }
+.forgotPasswordDiv
+{
+    padding-left: 10px;
+    padding-top: 30px; 
+    width: 900px; 
+    padding-bottom: 50px; 
+    float:left;   
+}
+.forgotPasswordborder1
+{
+    float:left;
+    width: 600px;
+    border-top: 1px solid #e7e7e7;
+}
+.forgotPasswordborder2
+{
+    background: url(../images/login_btm_line.jpg) 0 0 no-repeat;
+    padding-top: 1px;    
+    float:left;
+    width:117px;
+    height:1px;
+}
