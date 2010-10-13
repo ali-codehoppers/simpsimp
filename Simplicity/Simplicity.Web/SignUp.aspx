@@ -71,6 +71,7 @@
                                     ErrorMessage="* Enter Email Address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                                     Display="Dynamic">
                                 </asp:RegularExpressionValidator>
+                                <asp:Label runat="server" ID="emailLength" Visible="false"></asp:Label>
                             </div>
                         </div>
                     </div>
@@ -180,6 +181,10 @@
                             <asp:TextBox ID="firstname" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="* Enter First Name"
                                 ControlToValidate="firstname" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="firstname"
+                                ErrorMessage="* First Name have atleast 5 Characters" ValidationExpression="[A-za-z]{5,60}"
+                                Display="Dynamic">
+                            </asp:RegularExpressionValidator>
                         </div>
                     </div>
                 </div>
@@ -192,6 +197,10 @@
                             <asp:TextBox ID="surname" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="* Enter Surname"
                                 ControlToValidate="surname" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="surname"
+                                ErrorMessage="* Surname must have atleast 5 Characters" ValidationExpression="[A-za-z]{5,60}"
+                                Display="Dynamic">
+                                </asp:RegularExpressionValidator>
                         </div>
                     </div>
                 </div>
@@ -230,7 +239,12 @@
                         <asp:Label ID="Label7" runat="server" Text="Address Line 1"></asp:Label>
                     </div>
                     <div class="col2">
-                        <asp:TextBox ID="addressline1" CssClass="login_field_big" runat="server"></asp:TextBox>
+                        <div class="forgetErrorMsg">
+                            <asp:TextBox ID="addressline1" CssClass="login_field_big" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="addressline1"
+                                ErrorMessage="* Address Line 1 Required" Display="Dynamic"> 
+                            </asp:RequiredFieldValidator>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -306,7 +320,13 @@
                         <asp:Label ID="Label15" runat="server" Text="Telephone 1"></asp:Label>
                     </div>
                     <div class="col2">
-                        <asp:TextBox ID="telephone1" CssClass="login_field_big" runat="server"></asp:TextBox>
+                        <div class="forgetErrorMsg">
+                            <asp:TextBox ID="telephone1" CssClass="login_field_big" runat="server"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="telephone1"
+                                ErrorMessage="* Telephone 1 must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
+                                Display="Dynamic">
+                            </asp:RegularExpressionValidator>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -314,7 +334,13 @@
                         <asp:Label ID="Label16" runat="server" Text="Telephone 2"></asp:Label>
                     </div>
                     <div class="col2">
-                        <asp:TextBox ID="telephone2" CssClass="login_field_big" runat="server"></asp:TextBox>
+                        <div class="forgetErrorMsg">
+                            <asp:TextBox ID="telephone2" CssClass="login_field_big" runat="server"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="telephone2"
+                                ErrorMessage="* Telephone 2 must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
+                                Display="Dynamic">
+                            </asp:RegularExpressionValidator>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -322,7 +348,13 @@
                         <asp:Label ID="Label18" runat="server" Text="Fax"></asp:Label>
                     </div>
                     <div class="col2">
-                        <asp:TextBox ID="fax" CssClass="login_field_big" runat="server"></asp:TextBox>
+                        <div class="forgetErrorMsg">
+                            <asp:TextBox ID="fax" CssClass="login_field_big" runat="server"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="fax"
+                                ErrorMessage="* Fax must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
+                                Display="Dynamic">
+                            </asp:RegularExpressionValidator>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -330,7 +362,13 @@
                         <asp:Label ID="Label17" runat="server" Text="Mobile"></asp:Label>
                     </div>
                     <div class="col2">
-                        <asp:TextBox ID="mobile" CssClass="login_field_big" runat="server"></asp:TextBox>
+                        <div class="forgetErrorMsg">
+                            <asp:TextBox ID="mobile" CssClass="login_field_big" runat="server"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="mobile"
+                                ErrorMessage="* Mobile must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
+                                Display="Dynamic">
+                            </asp:RegularExpressionValidator>
+                        </div>
                     </div>
                 </div>
                 <div class="row">

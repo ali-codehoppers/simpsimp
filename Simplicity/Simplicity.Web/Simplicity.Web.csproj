@@ -73,6 +73,7 @@
     <Content Include="Default.aspx" />
     <Content Include="DemoMovie.aspx" />
     <Content Include="Error.aspx" />
+    <Content Include="FAQ.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="ForgotPasswordNextPage.aspx" />
@@ -89,6 +90,7 @@
     <Content Include="Images\btn_continue_shopping.jpg" />
     <Content Include="Images\btn_go.jpg" />
     <Content Include="Images\btn_login.jpg" />
+    <Content Include="Images\btn_print.jpg" />
     <Content Include="Images\btn_reset.jpg" />
     <Content Include="Images\btn_submit.jpg" />
     <Content Include="Images\bullet_b.jpg" />
@@ -121,6 +123,7 @@
     <Content Include="Images\eas_call.jpg" />
     <Content Include="Images\eas_try.jpg" />
     <Content Include="Images\eas_watch.jpg" />
+    <Content Include="Images\error.png" />
     <Content Include="Images\Euro.jpg" />
     <Content Include="Images\finance_accnt.jpg" />
     <Content Include="Images\firefox.jpg" />
@@ -196,6 +199,7 @@
     <Content Include="Images\moreDetails_hover.jpg" />
     <Content Include="Images\opera.jpg" />
     <Content Include="Images\operations.jpg" />
+    <Content Include="Images\preloader_animated_02.gif" />
     <Content Include="Images\products_img_1.jpg" />
     <Content Include="Images\products_img_2.jpg" />
     <Content Include="Images\products_img_3.jpg" />
@@ -226,6 +230,7 @@
     <Content Include="Images\simple_subnav_bg.jpg" />
     <Content Include="Images\Sterling.jpg" />
     <Content Include="Images\subheading_bar.jpg" />
+    <Content Include="Images\success.png" />
     <Content Include="Images\s_Eas.jpg" />
     <Content Include="Images\s_handygas.jpg" />
     <Content Include="Images\s_handyLEC.jpg" />
@@ -288,6 +293,7 @@
     <Content Include="Solutions\SaleM\Home.aspx" />
     <Content Include="Styles\products.css" />
     <Content Include="Styles\simplicity_css.css" />
+    <Content Include="Support.aspx" />
     <Content Include="TestPages\AddTrollery_TEST.aspx" />
     <Content Include="Trolley.aspx" />
     <Content Include="ChangePassword.aspx" />
@@ -505,6 +511,13 @@
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
@@ -786,6 +799,13 @@
     </Compile>
     <Compile Include="Solutions\SaleM\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Support.aspx.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Support.aspx.designer.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
     </Compile>
     <Compile Include="TestPages\AddTrollery_TEST.aspx.cs">
       <DependentUpon>AddTrollery_TEST.aspx</DependentUpon>
