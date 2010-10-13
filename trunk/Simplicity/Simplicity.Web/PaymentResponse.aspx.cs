@@ -118,7 +118,7 @@ namespace Simplicity.Web
                     }
                     else
                     {
-                        Response.Redirect("~/pages/PaymentDetail.aspx?" + WebConstants.Request.TRANSACTION_UID + "=" + transactionUId
+                        Response.Redirect("~/PaymentDetail.aspx?" + WebConstants.Request.TRANSACTION_UID + "=" + transactionUId
                             + "&" + WebConstants.Request.REASON_CODE + "=" + Request.Form.Get("reasonCode"));         
                     }
                 }

@@ -80,6 +80,11 @@ namespace Simplicity.Web
         }
         private bool ValidateFields()
         {
+            if (emailfield.Text.Length < 8)
+            {
+                SetErrorMessage("Email must have atleast 8 characters");
+                return false;
+            }
             if (emailfield.Text.ToLower().Equals(confirmemailfield.Text.ToLower()) == false)
             {
                 SetErrorMessage("Email Addresses do not match");
