@@ -57,13 +57,17 @@ namespace Simplicity.Web
                 ChangePasswordPanel.Visible = true;
                 if (UserProduct.Count == 0 )
                 { 
-                    UserProductPanelMessage.Visible=true;
+
                     UserProductRepeaterPanel.Visible = false;
                 }
                 if (UserCompanyProduct.Count == 0)
                 {
-                    CompanyProductPanel.Visible = true;
+
                     CompanyProductRepeaterPanel.Visible = false;
+                }
+                if (UserProduct.Count == 0 &&UserCompanyProduct.Count == 0)
+                {
+                    SecondMyProductPanel.Visible = false;
                 }
             }
             else if (LoggedIsUser != null)
@@ -73,13 +77,17 @@ namespace Simplicity.Web
                 MyProductPanel.Visible = true;
                 if (UserProduct.Count == 0)
                 {
-                    UserProductPanelMessage.Visible = true;
+
                     UserProductRepeaterPanel.Visible = false;
                 }
                 if (UserCompanyProduct.Count == 0)
                 {
-                    CompanyProductPanel.Visible = true;
+
                     CompanyProductRepeaterPanel.Visible = false;
+                }
+                if (UserProduct.Count == 0 && UserCompanyProduct.Count == 0)
+                {
+                    SecondMyProductPanel.Visible = false;
                 }
             }
             else {

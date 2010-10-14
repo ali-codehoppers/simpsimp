@@ -41,12 +41,15 @@
             <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
                 &nbsp;</div>
             <asp:Panel ID="MyProductPanel" runat="server">
+                <asp:Panel ID="SecondMyProductPanel" runat="server">
+            
                 <div id="tabProducts" class="myProductsTab">
                     <div style="padding-top: 10px">
                         My Products</div>
                 </div>
                 <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
                     &nbsp;</div>
+                </asp:Panel>
                 <div id="tabPassword" class="myProductsTab">
                     <div style="padding-top: 10px">
                         Change Password</div>
@@ -185,7 +188,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="* Enter First Name"
                                 ControlToValidate="firstname" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="firstname"
-                                ErrorMessage="* First Name have atleast 5 Characters" ValidationExpression="[A-za-z]{5,60}"
+                                ErrorMessage="* First Name have atleast 3 Characters" ValidationExpression="[A-za-z]{3,60}"
                                 Display="Dynamic">
                             </asp:RegularExpressionValidator>
                         </div>
@@ -201,7 +204,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="* Enter Surname"
                                 ControlToValidate="surname" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="surname"
-                                ErrorMessage="* Surname must have atleast 5 Characters" ValidationExpression="[A-za-z]{5,60}"
+                                ErrorMessage="* Surname must have atleast 3 Characters" ValidationExpression="[A-za-z]{3,60}"
                                 Display="Dynamic">
                             </asp:RegularExpressionValidator>
                         </div>
@@ -402,9 +405,6 @@
                                 </ItemTemplate>
                             </asp:Repeater>
                         </asp:Panel>
-                        <asp:Panel ID="CompanyProductPanel" runat="server" Visible="false">
-                            <asp:Label ID="Label20" runat="server" Text="You do not have any company product"></asp:Label>
-                        </asp:Panel>
                     </div>
                     
                 <div class="clearFloat"></div>
@@ -426,9 +426,6 @@
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
-                    </asp:Panel>
-                    <asp:Panel ID="UserProductPanelMessage" runat="server" Visible="false">
-                        <asp:Label ID="Label21" runat="server" Text="You do not have any trial product"></asp:Label>
                     </asp:Panel>
                     </div>
                     
