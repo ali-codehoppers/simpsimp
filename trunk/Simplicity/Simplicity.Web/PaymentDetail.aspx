@@ -27,16 +27,13 @@
                 loadingImg.src = '<%=this.ResolveClientUrl("~/images/preloader_animated_02.gif")%>';
                 loadingImg.style.position = 'absolute';
                 if (loadingImg.height < document.body.clientHeight) {
-                    //loadingImg.style.top = Math.floor((document.body.clientHeight - loadingImg.height-300.0) / 2) + "px";
-                    loadingImg.style.top = Math.floor((screen.height - loadingImg.height)) + "px";
+                    loadingImg.style.top = Math.floor((document.body.clientHeight - loadingImg.height) / 2) + "px";
                 }
                 else {
                     loadingImg.style.top = 0;
                 }
                 if (loadingImg.width < document.body.clientWidth) {
-                    //loadingImg.style.left = Math.floor((document.body.clientWidth - loadingImg.width -300.0) / 2) + "px";
-                    loadingImg.style.left = Math.floor((screen.width - loadingImg.width) / 2) + "px";
-
+                    loadingImg.style.left = Math.floor((document.body.clientWidth - loadingImg.width) / 2) + "px";
                 }
                 else {
                     loadingImg.style.left = 0;
