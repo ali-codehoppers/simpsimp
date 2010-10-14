@@ -80,7 +80,7 @@ namespace Simplicity.Web.Common.Controls
                     EmailUtility.SendViewDemoEmailToAdmin(emailContents);
                     Response.Redirect("~/WatchDemo.aspx");
                 }
-               
+                else
                 {
                     SetSuccessMessage("Your request has been submited.");
                     EmailUtility.SendCallMeEmailToAdmin(emailContents);

@@ -65,11 +65,14 @@
                             <div class="forgetErrorMsg">
                                 <asp:TextBox runat="server" CssClass="login_field_big" ID="emailfield"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="emailfield"
-                                    ErrorMessage="* Email Required" Display="Dynamic"> 
+                                    ErrorMessage="* Email required" Display="Dynamic"> 
                                 </asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailfield"
-                                    ErrorMessage="* Enter Email Address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                    ErrorMessage="* Enter email." ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                                     Display="Dynamic">
+                                </asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="emailfield"
+                                    ErrorMessage=" Must be 8 characters" ValidationExpression=".{8,60}" Display="Dynamic">
                                 </asp:RegularExpressionValidator>
                                 <asp:Label runat="server" ID="emailLength" Visible="false"></asp:Label>
                             </div>
@@ -200,7 +203,7 @@
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="surname"
                                 ErrorMessage="* Surname must have atleast 5 Characters" ValidationExpression="[A-za-z]{5,60}"
                                 Display="Dynamic">
-                                </asp:RegularExpressionValidator>
+                            </asp:RegularExpressionValidator>
                         </div>
                     </div>
                 </div>
@@ -384,22 +387,30 @@
                         Width="107" Height="37" OnClientClick="document.location.href=document.location.href;" />
                 </div>
             </div>
+            
             <asp:Panel runat="server" ID="LoginAccount">
                 <div id="myAccountMyProductsTab" class="clearFloat">
                     <div style="padding: 10px;">
-                        <asp:Repeater ID="CompanyProductRepeater" runat="server">
-                            <ItemTemplate>
-                                <div style="float: left; padding-bottom: 10px; padding-right: 10px;">
-                                    <a href="RedirectToProduct.aspx?productId=<%# DataBinder.Eval(Container.DataItem, "ProductID")%>">
-                                        <img src='../Images/Buy_products_img_<%# DataBinder.Eval(Container.DataItem, "ProductID")%>.jpg' />
-                                    </a>
-                                </div>
-                            </ItemTemplate>
-                        </asp:Repeater>
-                        <div class="clearFloat">
-                        </div>
+                        <asp:Panel runat="server" ID="CompanyProductRepeaterPanel">
+                            <asp:Repeater ID="CompanyProductRepeater" runat="server">
+                                <ItemTemplate>
+                                    <div style="float: left; padding-bottom: 10px; padding-right: 10px;">
+                                        <a href="RedirectToProduct.aspx?productId=<%# DataBinder.Eval(Container.DataItem, "ProductID")%>">
+                                            <img src='../Images/Buy_products_img_<%# DataBinder.Eval(Container.DataItem, "ProductID")%>.jpg' />
+                                        </a>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </asp:Panel>
+                        <asp:Panel ID="CompanyProductPanel" runat="server" Visible="false">
+                            <asp:Label ID="Label20" runat="server" Text="You do not have any company product"></asp:Label>
+                        </asp:Panel>
                     </div>
-                    <div style="padding: 10px;">
+                    
+                <div class="clearFloat"></div>
+
+                <div style="padding: 10px;">
+                    <asp:Panel runat="server" ID="UserProductRepeaterPanel">
                         <asp:Repeater ID="UserProductRepeater" runat="server">
                             <HeaderTemplate>
                                 <div style="padding: 5px;">
@@ -415,9 +426,14 @@
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
-                        <div class="clearFloat">
-                        </div>
+                    </asp:Panel>
+                    <asp:Panel ID="UserProductPanelMessage" runat="server" Visible="false">
+                        <asp:Label ID="Label21" runat="server" Text="You do not have any trial product"></asp:Label>
+                    </asp:Panel>
                     </div>
+                    
+                <div class="clearFloat">
+                </div>
                 </div>
             </asp:Panel>
             <asp:Panel runat="server" ID="ChangePasswordPanel">

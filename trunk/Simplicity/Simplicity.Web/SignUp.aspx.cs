@@ -12,16 +12,14 @@ namespace Simplicity.Web
 {
     public partial class SignUp : GenericPage
     {
+        List<Product> UserCompanyProduct ;
+        List<Product> UserProduct ;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             if (LoggedIsUser != null && !IsPostBack)
             {
-                Panel panel = (Panel)FindControl(this.Page.Master, "ChangePasswordPanel");
-                if (panel != null)
-                {
-                    panel.Visible = true;
-                }
+
                 UserAccountPanel.Visible = false;
                 checkbox.Visible = false;
                 firstname.Text = LoggedIsUser.Forename;
@@ -43,21 +41,46 @@ namespace Simplicity.Web
                 telephone2.Text = address.Telephone2;
                 fax.Text = address.Fax;
                 mobile.Text = mobile.Text;
+                
                 if (LoggedIsUser.Company != null)
                 {
                     int id = LoggedIsUser.Company.CompanyID;
-                    BindCompanyProduct(id);
-                    BindUserProduct();
+                    UserCompanyProduct = BindCompanyProduct(id);
+                    CompanyProductRepeater.DataSource = UserCompanyProduct;
+                    CompanyProductRepeater.DataBind();
+                    UserProduct=BindUserProduct();
+                    UserProductRepeater.DataSource = UserProduct;
+                    UserProductRepeater.DataBind();
                 }
                 LoginAccount.Visible = true;
                 MyProductPanel.Visible = true;
                 ChangePasswordPanel.Visible = true;
+                if (UserProduct.Count == 0 )
+                { 
+                    UserProductPanelMessage.Visible=true;
+                    UserProductRepeaterPanel.Visible = false;
+                }
+                if (UserCompanyProduct.Count == 0)
+                {
+                    CompanyProductPanel.Visible = true;
+                    CompanyProductRepeaterPanel.Visible = false;
+                }
             }
             else if (LoggedIsUser != null)
             {
                 ChangePasswordPanel.Visible = true;
                 LoginAccount.Visible = true;
                 MyProductPanel.Visible = true;
+                if (UserProduct.Count == 0)
+                {
+                    UserProductPanelMessage.Visible = true;
+                    UserProductRepeaterPanel.Visible = false;
+                }
+                if (UserCompanyProduct.Count == 0)
+                {
+                    CompanyProductPanel.Visible = true;
+                    CompanyProductRepeaterPanel.Visible = false;
+                }
             }
             else {
                 ChangePasswordPanel.Visible = false;
@@ -66,17 +89,13 @@ namespace Simplicity.Web
             }
         }
         
-        private void BindCompanyProduct(int CompanyID)
+        private List<Product> BindCompanyProduct(int CompanyID)
         {
-            
-            CompanyProductRepeater.DataSource = ((from CompanyProductTable in DatabaseContext.CompanyProducts where CompanyProductTable.CompanyID == CompanyID && CompanyProductTable.EndDate >= DateTime.Now select CompanyProductTable.Product).Distinct()).ToList();
-            CompanyProductRepeater.DataBind();
+            return ((from CompanyProductTable in DatabaseContext.CompanyProducts where CompanyProductTable.CompanyID == CompanyID && CompanyProductTable.EndDate >= DateTime.Now select CompanyProductTable.Product).Distinct()).ToList();    
         }
-        private void BindUserProduct()
+        private List<Product> BindUserProduct()
         {
-            UserProductRepeater.DataSource = ((from UserProductTable in DatabaseContext.UserProducts where UserProductTable.UserID == LoggedIsUser.UserID && UserProductTable.EndDate >= DateTime.Now select UserProductTable.Product).Distinct()).ToList();
-            UserProductRepeater.DataBind();
-        
+             return ((from UserProductTable in DatabaseContext.UserProducts where UserProductTable.UserID == LoggedIsUser.UserID && UserProductTable.EndDate >= DateTime.Now select UserProductTable.Product).Distinct()).ToList();
         }
         private bool ValidateFields()
         {
@@ -320,7 +339,7 @@ namespace Simplicity.Web
             if (ChangeValidateFields())
             {
                 var user = (from c in DatabaseContext.Users where c.Email == LoggedIsUser.Email select c).FirstOrDefault();
-                user.Password = Utility.GetMd5Sum(passwordfield.Text);
+                user.Password = Utility.GetMd5Sum(newpasswordfield.Text);
                 DatabaseContext.SaveChanges();
             }
         }
@@ -331,7 +350,7 @@ namespace Simplicity.Web
                 SetErrorMessage("Old Password do not match");
                 return false;
             }
-            if (passwordfield.Text.Equals(confirmpasswordfield.Text) == false)
+            if (newpasswordfield.Text.Equals(newconfirmpasswordfield.Text) == false)
             {
                 SetErrorMessage("New Passwords do not match");
                 return false;

@@ -32,15 +32,15 @@
                 <div class="headerTextField">
                     <input name="textfield23" type="text" class="search_field" id="textfield23" /></div>
                 <div class="headerLinks">
-                    <a href="../Contact.aspx">Contact Us</a></div>
+                    <a href="../../Contact.aspx">Contact Us</a></div>
                 <div class="headerLinksSeparator">
                     |</div>
                 <div class="headerLinks">
-                    <a href="../Support.aspx">Simplicity Support</a></div>
+                    <a href="../../Support.aspx">Simplicity Support</a></div>
                 <div class="headerLinksSeparator">
                     |</div>
                 <div class="headerLinks">
-                    <a href="../FAQ.aspx">FAQs</a></div>
+                    <a href="../../FAQ.aspx">FAQs</a></div>
                 <div class="headerLinksSeparator">
                     |</div>
                 <div class="headerLinks">
@@ -115,8 +115,8 @@
             <a href="../Company/Home.aspx" class="bold_13_white">Company</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="../Services/Home.aspx" class="bold_13_white">Services</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="../Community/Home.aspx" class="bold_13_white">Community</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="../Contact.aspx" class="bold_13_white">Contact Us</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" class="bold_13_white">FAQs</a>
+            <a href="../../Contact.aspx" class="bold_13_white">Contact Us</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="../../FAQ.aspx" class="bold_13_white">FAQs</a>
         </div>
     </div>
     </form>

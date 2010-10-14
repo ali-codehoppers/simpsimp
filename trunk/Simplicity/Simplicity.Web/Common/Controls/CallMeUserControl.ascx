@@ -36,13 +36,15 @@
             First Name
         </div>
         <div class="col2">
-            <asp:TextBox ID="txtFirstName" CssClass="callme_field_big" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rf10" runat="server" ErrorMessage="* Enter First Name"
-                ControlToValidate="txtFirstName" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="txtFirstName"
-                ErrorMessage="* First Name have atleast 5 Characters" ValidationExpression="[A-za-z]{5,60}"
-                Display="Dynamic">
-            </asp:RegularExpressionValidator>
+            <div class="forgetErrorMsg">
+                <asp:TextBox ID="txtFirstName" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rf10" runat="server" ErrorMessage="* Enter First Name"
+                    ControlToValidate="txtFirstName" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="txtFirstName"
+                    ErrorMessage="* First Name have atleast 5 Characters" ValidationExpression="[A-za-z]{5,60}"
+                    Display="Dynamic">
+                </asp:RegularExpressionValidator>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -50,59 +52,71 @@
             Surname
         </div>
         <div class="col2">
-            <asp:TextBox ID="txtSurName" CssClass="callme_field_big" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rf11" runat="server" ErrorMessage="* Enter Surname"
-                ControlToValidate="txtSurName" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtSurName"
-                ErrorMessage="* Surname have atleast 5 Characters" ValidationExpression="[A-za-z]{5,60}"
-                Display="Dynamic">
-            </asp:RegularExpressionValidator>
+            <div class="forgetErrorMsg">
+                <asp:TextBox ID="txtSurName" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rf11" runat="server" ErrorMessage="* Enter Surname"
+                    ControlToValidate="txtSurName" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtSurName"
+                    ErrorMessage="* Surname have atleast 5 Characters" ValidationExpression="[A-za-z]{5,60}"
+                    Display="Dynamic">
+                </asp:RegularExpressionValidator>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col1">
             Telephone</div>
         <div class="col2">
-            <asp:TextBox ID="txtTelephone" CssClass="callme_field_big" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rf12" runat="server" ErrorMessage="* Enter Telephone"
-                ControlToValidate="txtTelephone" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="txtTelephone"
-                ErrorMessage="* Telephone must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
-                Display="Dynamic">
-            </asp:RegularExpressionValidator>
+            <div class="forgetErrorMsg">
+                <asp:TextBox ID="txtTelephone" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rf12" runat="server" ErrorMessage="* Enter Telephone"
+                    ControlToValidate="txtTelephone" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="txtTelephone"
+                    ErrorMessage="* Telephone must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
+                    Display="Dynamic">
+                </asp:RegularExpressionValidator>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col1">
             Mobile</div>
         <div class="col2">
-            <asp:TextBox ID="txtMobile" CssClass="callme_field_big" runat="server"></asp:TextBox>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="txtMobile"
-                ErrorMessage="* Mobile must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
-                Display="Dynamic">
-            </asp:RegularExpressionValidator>
+            <div class="forgetErrorMsg">
+                <asp:TextBox ID="txtMobile" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="txtMobile"
+                    ErrorMessage="* Mobile must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
+                    Display="Dynamic">
+                </asp:RegularExpressionValidator>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col1">
             Email</div>
         <div class="col2">
-            <asp:TextBox ID="txtEmail" CssClass="callme_field_big" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rf1" runat="server" ErrorMessage="* Enter Email"
-                ControlToValidate="txtEmail" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Enter Email Address"
-                ControlToValidate="txtEmail" CssClass="CallMeErrorMsg" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+            <div class="forgetErrorMsg">
+                <asp:TextBox ID="txtEmail" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rf1" runat="server" ErrorMessage="* Enter Email"
+                    ControlToValidate="txtEmail" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Enter Email "
+                    ControlToValidate="txtEmail" CssClass="CallMeErrorMsg" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ErrorMessage="with atleast 8 characters"
+                    ControlToValidate="txtEmail" CssClass="CallMeErrorMsg" ValidationExpression=".{8,60}"></asp:RegularExpressionValidator>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col1">
             Confirm Email</div>
         <div class="col2">
-            <asp:TextBox ID="txtConfirmEmail" CssClass="callme_field_big" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rf2" runat="server" ErrorMessage="* Enter Confirm Email"
-                ControlToValidate="txtConfirmEmail" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="* Enter Email Address"
-                ControlToValidate="txtConfirmEmail" CssClass="CallMeErrorMsg" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+            <div class="forgetErrorMsg">
+                <asp:TextBox ID="txtConfirmEmail" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rf2" runat="server" ErrorMessage="* Enter Confirm Email"
+                    ControlToValidate="txtConfirmEmail" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="* Enter Email Address"
+                    ControlToValidate="txtConfirmEmail" CssClass="CallMeErrorMsg" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+            </div>
         </div>
     </div>
 </div>
