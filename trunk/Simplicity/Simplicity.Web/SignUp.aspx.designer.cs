@@ -22,6 +22,15 @@ namespace Simplicity.Web {
         protected global::System.Web.UI.WebControls.Panel MyProductPanel;
         
         /// <summary>
+        /// SecondMyProductPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel SecondMyProductPanel;
+        
+        /// <summary>
         /// UserAccountPanel control.
         /// </summary>
         /// <remarks>
@@ -688,24 +697,6 @@ namespace Simplicity.Web {
         protected global::System.Web.UI.WebControls.Repeater CompanyProductRepeater;
         
         /// <summary>
-        /// CompanyProductPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel CompanyProductPanel;
-        
-        /// <summary>
-        /// Label20 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label20;
-        
-        /// <summary>
         /// UserProductRepeaterPanel control.
         /// </summary>
         /// <remarks>
@@ -722,24 +713,6 @@ namespace Simplicity.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater UserProductRepeater;
-        
-        /// <summary>
-        /// UserProductPanelMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel UserProductPanelMessage;
-        
-        /// <summary>
-        /// Label21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
         
         /// <summary>
         /// ChangePasswordPanel control.
