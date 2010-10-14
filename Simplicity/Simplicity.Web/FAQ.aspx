@@ -2,18 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
-        <div id="secnavbar" class="floatLeft" style="padding-left:80px;height:200px;">
-            <div id="icon1" class="floatLeft">
-                <h2 id="ourSolution">
-                    <span style="color: #cccccc;">SIMPLICITY</span> FAQ</h2>
-            </div>
-            <div id="nsecnavbar">
-                
-                <div>
-                    <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
-                </div>
-            </div>
-        </div>
-        <div class="clearFloat"></div>
-
+    <div id="faqsHeader">
+        <h2><span style="color: #cccccc;">SIMPLICITY</span> FAQs</h2>
+    </div>
+    <div>
+        <asp:Image ID="Image1" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
+    </div>
+        
+    <div style="padding-left:50px; height:200px;">
+        Frequently asked questions content goes here
+    </div>
+       
 </asp:Content>

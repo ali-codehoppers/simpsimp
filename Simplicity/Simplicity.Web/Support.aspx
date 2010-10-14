@@ -3,18 +3,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
-    <div id="icon1" class="floatLeft" style="width:100%; padding-left:80px;">
-        <h2>
-            <span style="color: #cccccc;">SIMPLICITY</span> SUPPORT</h2>
-        <div class="floatLeft">
-            <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
-        </div>
+<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">  
+
+    <div id="supportHeader">
+        <h2><span style="color: #cccccc;">SIMPLICITY</span> SUPPORT</h2>
     </div>
-    <div class="floatLeft" style="padding-left:80px;">
-        <asp:HyperLink runat="server" ID="SupportLink" NavigateUrl="http://www.gotoassist.com/ph/ultranovacoding/"
-            Target="_blank">Support</asp:HyperLink>
+    <div>
+        <asp:Image ID="Image1" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
     </div>
-    <div class="clearFloat">
+        
+    <div style="padding-left:50px; height:200px;">
+        For support <asp:HyperLink style="color:Blue" runat="server" ID="HyperLink1" NavigateUrl="http://www.gotoassist.com/ph/ultranovacoding/"
+            Target="_blank">click here</asp:HyperLink>
     </div>
+       
 </asp:Content>
