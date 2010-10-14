@@ -41,9 +41,6 @@
                 <asp:Label ID="lblAddressLine1" runat="server" Text="Address Line 1"></asp:Label></div>
             <div class="col2">
                 <asp:TextBox ID="txtBillingAddressLine1" CssClass="login_field_big" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtBillingAddressLine1"
-                    ErrorMessage="* Address Line 1 Required" Display="Dynamic"> 
-                </asp:RequiredFieldValidator>
             </div>
         </div>
         <div class="row">
@@ -162,9 +159,6 @@
                 <asp:Label ID="Label2" runat="server" Text="Address Line 1"></asp:Label></div>
             <div class="col2">
                 <asp:TextBox ID="txtShippingAddressLine1" CssClass="login_field_big" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtShippingAddressLine1"
-                    ErrorMessage="* Address Line 1 Required" Display="Dynamic"> 
-                </asp:RequiredFieldValidator>
             </div>
         </div>
         <div class="row">

@@ -23,6 +23,7 @@ namespace Simplicity.Web
                     DatabaseContext.SaveChanges();
                 }
             }
+            Session.Clear();
             Response.Redirect("Default.aspx");
         }
     }
