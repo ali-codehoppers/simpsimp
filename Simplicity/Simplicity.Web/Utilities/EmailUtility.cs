@@ -180,10 +180,27 @@ namespace Simplicity.Web.Utilities
             SendEmail(message);
         }
 
-        public static void SendPaymentEmail(string firstName, string lastName, string cardNumber, string expiryMonth, string expiryYear, string cardType, string amountText, string userEmail)
+        public static void SendPaymentEmailtoClient(string firstName, string lastName, string cardNumber, string expiryMonth, string expiryYear, string cardType, string amountText, string userEmail)
         {
             MailMessage message = new MailMessage();
             message.To.Add(new MailAddress(userEmail));
+            message.Subject = "Simplicity Payment Receipt";
+            message.IsBodyHtml = true;
+            message.Body = "<b>Card holder's name:</b>" + firstName + "&nbsp;" + lastName + "<br/>";
+            message.Body += "<b>Card Number:</b>" + cardNumber + "<br/>";
+            message.Body += "<b>Card Expiry:</b>" + expiryMonth + "/" + expiryYear + "<br/>";
+            message.Body += "<b>Cart Type:</b>" + cardType + "<br/>";
+            message.Body += "<b>Amount Charged:</b>" + amountText + "<br/>";
+            SendEmail(message);
+        }
+        public static void SendPaymentEmailtoAdmin(string firstName, string lastName, string cardNumber, string expiryMonth, string expiryYear, string cardType, string amountText, string userEmail)
+        {
+            MailMessage message = new MailMessage();
+            string[] adminEmailAddresses = ConfigurationSettings.AppSettings[WebConstants.Config.ADMIN_EMAIL_ADDRESSES].Split(',');
+            foreach (string adminEmailAddress in adminEmailAddresses)
+            {
+                message.To.Add(new MailAddress(adminEmailAddress));
+            }
             message.Subject = "Simplicity Payment Receipt";
             message.IsBodyHtml = true;
             message.Body = "<b>Card holder's name:</b>" + firstName + "&nbsp;" + lastName + "<br/>";

@@ -34,9 +34,13 @@ namespace Simplicity.Web
 
                     DatabaseContext.SaveChanges();
 
-                    EmailUtility.SendPaymentEmail(Request.Form.Get("billTo_firstName"), Request.Form.Get("billTo_lastName"), Request.Form.Get("card_accountNumber"),
+                    EmailUtility.SendPaymentEmailtoClient(Request.Form.Get("billTo_firstName"), Request.Form.Get("billTo_lastName"), Request.Form.Get("card_accountNumber"),
                     Request.Form.Get("card_expirationMonth"), Request.Form.Get("card_expirationYear"), Utility.GetCardType(Request.Form.Get("card_cardType")),
                     lblAmountText.Text, LoggedIsUser.Email);
+                    EmailUtility.SendPaymentEmailtoAdmin(Request.Form.Get("billTo_firstName"), Request.Form.Get("billTo_lastName"), Request.Form.Get("card_accountNumber"),
+                    Request.Form.Get("card_expirationMonth"), Request.Form.Get("card_expirationYear"), Utility.GetCardType(Request.Form.Get("card_cardType")),
+                    lblAmountText.Text, LoggedIsUser.Email);
+
 
                     bool healthAndSafetyPurchased = false;
                     if (LoggedIsUser.Company != null)

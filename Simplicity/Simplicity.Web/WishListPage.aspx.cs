@@ -23,7 +23,8 @@ namespace Simplicity.Web
         {
             if (LoggedIsUser == null)
             {
-                Response.Redirect("CustomerLogin.aspx");
+                RedirectToLogin();
+                
             }
             if (!IsPostBack)
             {
