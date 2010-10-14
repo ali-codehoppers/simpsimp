@@ -13,12 +13,12 @@ namespace Simplicity.Web {
     public partial class FAQ {
         
         /// <summary>
-        /// Image6 control.
+        /// Image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image6;
+        protected global::System.Web.UI.WebControls.Image Image1;
     }
 }

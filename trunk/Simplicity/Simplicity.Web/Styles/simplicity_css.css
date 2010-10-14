@@ -1454,3 +1454,16 @@ div.myChangeTabs div.col2
     width:117px;
     height:1px;
 }
+#faqsHeader
+{
+    padding-left: 50px;
+    padding-bottom:5px;
+    padding-top:15px;
+}
+
+#supportHeader
+{
+    padding-left: 50px;
+    padding-bottom:5px;
+    padding-top:15px;
+}
