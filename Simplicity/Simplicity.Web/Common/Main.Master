@@ -76,8 +76,8 @@
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx"><div class="navBar" style="width:107px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Home</div></asp:HyperLink>
                 </div>
                 <div style="margin-left: 20px; margin-top: 20px; width:300px;">
-                    <asp:Label runat="server" ID="usernameLabel" style="font-size:8pt;font-weight:bold;" cssClass="stylecolor"></asp:Label>
-                    <asp:HyperLink ID="LogoutLink" NavigateUrl="~/Logout.aspx" runat="server" style="color: #145b86;margin-left:20px;">Logout</asp:HyperLink>
+                    <asp:Label runat="server" ID="usernameLabel" style="font-size:8pt;font-weight:bold; color:#5ac4ea" ></asp:Label>
+                    <asp:HyperLink ID="LogoutLink" NavigateUrl="~/Logout.aspx" runat="server" style="color: #145b86;margin-left:5px;">Logout</asp:HyperLink>
                 </div>
                 <div class="clearFloat">
                 </div>

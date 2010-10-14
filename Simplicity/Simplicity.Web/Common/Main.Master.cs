@@ -13,12 +13,12 @@ namespace Simplicity.Web.Common
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.User.Identity.IsAuthenticated)
+            if (Session["userName"] != null)
             {
                 LoginLink.Visible = false;
                 LogoutLink.Visible = true;
                 MyAccountLink.Visible = true;
-                String b = "User logged In as "+ (String)Session["userName"];
+                String b = "You are logged in as "+ (String)Session["userName"];
                 usernameLabel.Text = b;
             }
             else {
