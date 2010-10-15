@@ -55,6 +55,7 @@
     <Content Include="BuyProduct.aspx" />
     <Content Include="CallMeBack.aspx" />
     <Content Include="Common\Controls\CallMeUserControl.ascx" />
+    <Content Include="Common\Controls\ChangePasswordControl.ascx" />
     <Content Include="Common\Controls\Currencies.ascx" />
     <Content Include="Common\Controls\PriceEdition.ascx" />
     <Content Include="Common\LeftMenu.master" />
@@ -357,6 +358,13 @@
     </Compile>
     <Compile Include="Common\Controls\CallMeUserControl.ascx.designer.cs">
       <DependentUpon>CallMeUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\ChangePasswordControl.ascx.cs">
+      <DependentUpon>ChangePasswordControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\ChangePasswordControl.ascx.designer.cs">
+      <DependentUpon>ChangePasswordControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Common\Controls\Currencies.ascx.cs">
       <DependentUpon>Currencies.ascx</DependentUpon>

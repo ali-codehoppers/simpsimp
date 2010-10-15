@@ -19,7 +19,7 @@ namespace Simplicity.Web
             
             if (LoggedIsUser != null && !IsPostBack)
             {
-
+                
                 UserAccountPanel.Visible = false;
                 checkbox.Visible = false;
                 firstname.Text = LoggedIsUser.Forename;
@@ -42,6 +42,8 @@ namespace Simplicity.Web
                 fax.Text = address.Fax;
                 mobile.Text = mobile.Text;
                 
+                
+
                 if (LoggedIsUser.Company != null)
                 {
                     int id = LoggedIsUser.Company.CompanyID;
@@ -57,15 +59,13 @@ namespace Simplicity.Web
                 ChangePasswordPanel.Visible = true;
                 if (UserProduct.Count == 0 )
                 { 
-
                     UserProductRepeaterPanel.Visible = false;
                 }
                 if (UserCompanyProduct.Count == 0)
                 {
-
                     CompanyProductRepeaterPanel.Visible = false;
                 }
-                if (UserProduct.Count == 0 &&UserCompanyProduct.Count == 0)
+                if (UserProduct.Count == 0 && UserCompanyProduct.Count == 0)
                 {
                     SecondMyProductPanel.Visible = false;
                 }
@@ -75,17 +75,15 @@ namespace Simplicity.Web
                 ChangePasswordPanel.Visible = true;
                 LoginAccount.Visible = true;
                 MyProductPanel.Visible = true;
-                if (UserProduct.Count == 0)
+                if (IsUserProduct== 0 )
                 {
-
                     UserProductRepeaterPanel.Visible = false;
                 }
-                if (UserCompanyProduct.Count == 0)
+                if (IsUserCompanyProduct == 0 )
                 {
-
                     CompanyProductRepeaterPanel.Visible = false;
                 }
-                if (UserProduct.Count == 0 && UserCompanyProduct.Count == 0)
+                if (IsUserProduct == 0 && IsUserCompanyProduct == 0)
                 {
                     SecondMyProductPanel.Visible = false;
                 }
@@ -96,7 +94,42 @@ namespace Simplicity.Web
                 MyProductPanel.Visible = false;
             }
         }
-        
+        private bool ChangeValidateFields()
+        {
+            if (oldpassword.Text.Equals(confirmoldPassowrd.Text) == false)
+            {
+                SetErrorMessage("Old Password do not match");
+                return false;
+            }
+            if (newpasswordfield.Text.Equals(newconfirmpasswordfield.Text) == false)
+            {
+                SetErrorMessage("New Passwords do not match");
+                return false;
+            }
+            String password = Utility.GetMd5Sum(oldpassword.Text);
+
+            var query = from c in DatabaseContext.Users where (c.Email == LoggedIsUser.Email) && (c.Password == password) select c;
+            if (query.Any())
+            {
+                return true;
+            }
+            else
+            {
+                SetErrorMessage("Old Password is not correct");
+                return false;
+            }
+
+        }
+        protected void ChangebtnSave_Click(object sender, ImageClickEventArgs e)
+        {
+            if (ChangeValidateFields())
+            {
+                var user = (from c in DatabaseContext.Users where c.Email == LoggedIsUser.Email select c).FirstOrDefault();
+                user.Password = Utility.GetMd5Sum(newpasswordfield.Text);
+                DatabaseContext.SaveChanges();
+            }
+        }
+ 
         private List<Product> BindCompanyProduct(int CompanyID)
         {
             return ((from CompanyProductTable in DatabaseContext.CompanyProducts where CompanyProductTable.CompanyID == CompanyID && CompanyProductTable.EndDate >= DateTime.Now select CompanyProductTable.Product).Distinct()).ToList();    
@@ -167,7 +200,7 @@ namespace Simplicity.Web
                     Address companyAddress = fillAddress(user, Enums.ADDRESS_TYPE.COMPANY);
                     user.Addresses.Add(address);
                     user.Addresses.Add(companyAddress);
-
+                    
                     Simplicity.Data.Company company = new Simplicity.Data.Company();
                     company.Name = companyname.Text;
                     company.Address = companyAddress;
@@ -342,39 +375,6 @@ namespace Simplicity.Web
             fullAddress += postalcode.Text;
             return fullAddress;
         }
-        protected void ChangebtnSave_Click(object sender, ImageClickEventArgs e)
-        {
-            if (ChangeValidateFields())
-            {
-                var user = (from c in DatabaseContext.Users where c.Email == LoggedIsUser.Email select c).FirstOrDefault();
-                user.Password = Utility.GetMd5Sum(newpasswordfield.Text);
-                DatabaseContext.SaveChanges();
-            }
-        }
-        private bool ChangeValidateFields()
-        {
-            if (oldpassword.Text.Equals(confirmoldPassowrd.Text) == false)
-            {
-                SetErrorMessage("Old Password do not match");
-                return false;
-            }
-            if (newpasswordfield.Text.Equals(newconfirmpasswordfield.Text) == false)
-            {
-                SetErrorMessage("New Passwords do not match");
-                return false;
-            }
-            String password = Utility.GetMd5Sum(oldpassword.Text);
-            var query = from c in DatabaseContext.Users where (c.Email == LoggedIsUser.Email) && (c.Password == password) select c;
-            if (query.Any())
-            {
-                return true;
-            }
-            else
-            {
-                SetErrorMessage("Old Password is not correct");
-                return false;
-            }
 
-        }
     }
 }

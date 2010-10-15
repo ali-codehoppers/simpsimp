@@ -20,7 +20,7 @@
                 <div class="forgetErrorMsg">
                     <asp:TextBox TextMode="password" CssClass="login_field_big" ID="oldpassword" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="oldpassword"
-                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                        ErrorMessage="* Password required" Display="Dynamic"> 
                     </asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <asp:TextBox TextMode="password" CssClass="login_field_big" ID="confirmoldPassowrd"
                         runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="confirmoldPassowrd"
-                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                        ErrorMessage="* Password required" Display="Dynamic"> 
                     </asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 <div class="forgetErrorMsg">
                     <asp:TextBox TextMode="password" CssClass="login_field_big" ID="passwordfield" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="passwordfield"
-                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                        ErrorMessage="* Password required" Display="Dynamic"> 
                     </asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                     <asp:TextBox TextMode="password" CssClass="login_field_big" ID="confirmpasswordfield"
                         runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="confirmpasswordfield"
-                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                        ErrorMessage="* Password required" Display="Dynamic"> 
                     </asp:RequiredFieldValidator>
                 </div>
             </div>

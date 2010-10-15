@@ -32,7 +32,9 @@
             </div>
             <div>
                 <img src="images/subheading_bar.jpg" alt="" width="565" height="21" /></div>
-        </div>
+        </div>        
+        
+        <asp:TextBox runat="server" ClientIDMode="Static" Visible="false" AutoPostBack="true" ID="SelectTabName"></asp:TextBox>
         <div class="myAccountTabs">
             <div id='tabPersonalInfo' class="myPersonalInfoTabOnMouseOver">
                 <div style="padding-top: 10px">
@@ -42,13 +44,12 @@
                 &nbsp;</div>
             <asp:Panel ID="MyProductPanel" runat="server">
                 <asp:Panel ID="SecondMyProductPanel" runat="server">
-            
-                <div id="tabProducts" class="myProductsTab">
-                    <div style="padding-top: 10px">
-                        My Products</div>
-                </div>
-                <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
-                    &nbsp;</div>
+                    <div id="tabProducts" class="myProductsTab">
+                        <div style="padding-top: 10px">
+                            My Products</div>
+                    </div>
+                    <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
+                        &nbsp;</div>
                 </asp:Panel>
                 <div id="tabPassword" class="myProductsTab">
                     <div style="padding-top: 10px">
@@ -68,14 +69,14 @@
                             <div class="forgetErrorMsg">
                                 <asp:TextBox runat="server" CssClass="login_field_big" ID="emailfield"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="emailfield"
-                                    ErrorMessage="* Email required" Display="Dynamic"> 
+                                    ErrorMessage="* Email required" Display="Dynamic" ValidationGroup="PersonalInfoGroup"> 
                                 </asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailfield"
-                                    ErrorMessage="* Enter email." ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                    Display="Dynamic">
+                                    ErrorMessage="* Enter Email." ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                    Display="Dynamic" ValidationGroup="PersonalInfoGroup">
                                 </asp:RegularExpressionValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="emailfield"
-                                    ErrorMessage=" Must be 8 characters" ValidationExpression=".{8,60}" Display="Dynamic">
+                                    ErrorMessage=" Must be 8 characters" ValidationExpression=".{8,60}" Display="Dynamic" ValidationGroup="PersonalInfoGroup">
                                 </asp:RegularExpressionValidator>
                                 <asp:Label runat="server" ID="emailLength" Visible="false"></asp:Label>
                             </div>
@@ -88,11 +89,11 @@
                             <div class="forgetErrorMsg">
                                 <asp:TextBox runat="server" CssClass="login_field_big" ID="confirmemailfield"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="confirmemailfield"
-                                    ErrorMessage="* Email Required" Display="Dynamic"> 
+                                    ErrorMessage="* Email required" Display="Dynamic" ValidationGroup="PersonalInfoGroup"> 
                                 </asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="confirmemailfield"
-                                    ErrorMessage="* Enter Email Address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                    Display="Dynamic">
+                                    ErrorMessage="* Enter Email." ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                    Display="Dynamic" ValidationGroup="PersonalInfoGroup">
                                 </asp:RegularExpressionValidator>
                             </div>
                         </div>
@@ -104,7 +105,7 @@
                             <div class="forgetErrorMsg">
                                 <asp:TextBox TextMode="password" CssClass="login_field_big" ID="passwordfield" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="passwordfield"
-                                    ErrorMessage="* Password Required" Display="Dynamic"> 
+                                    ErrorMessage="* Password required" Display="Dynamic" ValidationGroup="PersonalInfoGroup"> 
                                 </asp:RequiredFieldValidator>
                             </div>
                         </div>
@@ -117,7 +118,7 @@
                                 <asp:TextBox TextMode="password" CssClass="login_field_big" ID="confirmpasswordfield"
                                     runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="confirmpasswordfield"
-                                    ErrorMessage="* Password Required" Display="Dynamic"> 
+                                    ErrorMessage="* Password required" Display="Dynamic" ValidationGroup="PersonalInfoGroup"> 
                                 </asp:RequiredFieldValidator>
                             </div>
                         </div>
@@ -159,7 +160,7 @@
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" InitialValue="#" runat="server"
                                     ErrorMessage="* Select Question" ControlToValidate="listForgotPasswordQuestion"
-                                    Display="Dynamic"></asp:RequiredFieldValidator>
+                                    Display="Dynamic" ValidationGroup="PersonalInfoGroup"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                     </div>
@@ -171,7 +172,7 @@
                             <div class="forgetErrorMsg">
                                 <asp:TextBox ID="txtForgotPasswordAnswer" CssClass="login_field_big" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Enter Forget Password Answer"
-                                    ControlToValidate="txtForgotPasswordAnswer" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    ControlToValidate="txtForgotPasswordAnswer" CssClass="errorMessage" Display="Dynamic" ValidationGroup="PersonalInfoGroup"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                     </div>
@@ -186,10 +187,10 @@
                         <div class="forgetErrorMsg">
                             <asp:TextBox ID="firstname" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="* Enter First Name"
-                                ControlToValidate="firstname" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
+                                ControlToValidate="firstname" CssClass="errorMessage" Display="Dynamic" ValidationGroup="PersonalInfoGroup"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="firstname"
-                                ErrorMessage="* First Name have atleast 3 Characters" ValidationExpression="[A-za-z]{3,60}"
-                                Display="Dynamic">
+                                ErrorMessage="* First Name have atleast 3 characters" ValidationExpression="[A-za-z]{3,60}"
+                                Display="Dynamic" ValidationGroup="PersonalInfoGroup">
                             </asp:RegularExpressionValidator>
                         </div>
                     </div>
@@ -202,10 +203,10 @@
                         <div class="forgetErrorMsg">
                             <asp:TextBox ID="surname" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="* Enter Surname"
-                                ControlToValidate="surname" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
+                                ControlToValidate="surname" CssClass="errorMessage" Display="Dynamic" ValidationGroup="PersonalInfoGroup"></asp:RequiredFieldValidator >
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="surname"
-                                ErrorMessage="* Surname must have atleast 3 Characters" ValidationExpression="[A-za-z]{3,60}"
-                                Display="Dynamic">
+                                ErrorMessage="* Surname must have atleast 3 characters" ValidationExpression="[A-za-z]{3,60}"
+                                Display="Dynamic" ValidationGroup="PersonalInfoGroup">
                             </asp:RegularExpressionValidator>
                         </div>
                     </div>
@@ -218,7 +219,7 @@
                         <div class="forgetErrorMsg">
                             <asp:TextBox ID="companyname" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="* Enter Company Name"
-                                ControlToValidate="companyname" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
+                                ControlToValidate="companyname" CssClass="errorMessage" Display="Dynamic" ValidationGroup="PersonalInfoGroup"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                 </div>
@@ -248,7 +249,7 @@
                         <div class="forgetErrorMsg">
                             <asp:TextBox ID="addressline1" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="addressline1"
-                                ErrorMessage="* Address Line 1 Required" Display="Dynamic"> 
+                                ErrorMessage="* Address Line 1 required" Display="Dynamic" ValidationGroup="PersonalInfoGroup"> 
                             </asp:RequiredFieldValidator>
                         </div>
                     </div>
@@ -293,7 +294,7 @@
                         <div class="forgetErrorMsg">
                             <asp:TextBox ID="postalcode" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="* Enter Postal Code"
-                                ControlToValidate="postalcode" CssClass="errorMessage" Display="Dynamic"></asp:RequiredFieldValidator>
+                                ControlToValidate="postalcode" CssClass="errorMessage" Display="Dynamic" ValidationGroup="PersonalInfoGroup"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                 </div>
@@ -330,7 +331,7 @@
                             <asp:TextBox ID="telephone1" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="telephone1"
                                 ErrorMessage="* Telephone 1 must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
-                                Display="Dynamic">
+                                Display="Dynamic" ValidationGroup="PersonalInfoGroup">
                             </asp:RegularExpressionValidator>
                         </div>
                     </div>
@@ -344,7 +345,7 @@
                             <asp:TextBox ID="telephone2" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="telephone2"
                                 ErrorMessage="* Telephone 2 must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
-                                Display="Dynamic">
+                                Display="Dynamic" ValidationGroup="PersonalInfoGroup">
                             </asp:RegularExpressionValidator>
                         </div>
                     </div>
@@ -358,7 +359,7 @@
                             <asp:TextBox ID="fax" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="fax"
                                 ErrorMessage="* Fax must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
-                                Display="Dynamic">
+                                Display="Dynamic" ValidationGroup="PersonalInfoGroup">
                             </asp:RegularExpressionValidator>
                         </div>
                     </div>
@@ -372,7 +373,7 @@
                             <asp:TextBox ID="mobile" CssClass="login_field_big" runat="server"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="mobile"
                                 ErrorMessage="* Mobile must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
-                                Display="Dynamic">
+                                Display="Dynamic" ValidationGroup="PersonalInfoGroup">
                             </asp:RegularExpressionValidator>
                         </div>
                     </div>
@@ -390,7 +391,6 @@
                         Width="107" Height="37" OnClientClick="document.location.href=document.location.href;" />
                 </div>
             </div>
-            
             <asp:Panel runat="server" ID="LoginAccount">
                 <div id="myAccountMyProductsTab" class="clearFloat">
                     <div style="padding: 10px;">
@@ -406,31 +406,29 @@
                             </asp:Repeater>
                         </asp:Panel>
                     </div>
-                    
-                <div class="clearFloat"></div>
-
-                <div style="padding: 10px;">
-                    <asp:Panel runat="server" ID="UserProductRepeaterPanel">
-                        <asp:Repeater ID="UserProductRepeater" runat="server">
-                            <HeaderTemplate>
-                                <div style="padding: 5px;">
-                                    <h2>
-                                        Trial Products</h2>
-                                </div>
-                            </HeaderTemplate>
-                            <ItemTemplate>
-                                <div style="float: left; padding-bottom: 10px; padding-right: 10px;">
-                                    <a href="RedirectToProduct.aspx?productId=<%# DataBinder.Eval(Container.DataItem, "ProductID")%>">
-                                        <img src='../Images/Buy_products_img_<%# DataBinder.Eval(Container.DataItem, "ProductID")%>.jpg' />
-                                    </a>
-                                </div>
-                            </ItemTemplate>
-                        </asp:Repeater>
-                    </asp:Panel>
+                    <div class="clearFloat">
                     </div>
-                    
-                <div class="clearFloat">
-                </div>
+                    <div style="padding: 10px;">
+                        <asp:Panel runat="server" ID="UserProductRepeaterPanel">
+                            <asp:Repeater ID="UserProductRepeater" runat="server">
+                                <HeaderTemplate>
+                                    <div style="padding: 5px;">
+                                        <h2>
+                                            Trial Products</h2>
+                                    </div>
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    <div style="float: left; padding-bottom: 10px; padding-right: 10px;">
+                                        <a href="RedirectToProduct.aspx?productId=<%# DataBinder.Eval(Container.DataItem, "ProductID")%>">
+                                            <img src='../Images/Buy_products_img_<%# DataBinder.Eval(Container.DataItem, "ProductID")%>.jpg' />
+                                        </a>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </asp:Panel>
+                    </div>
+                    <div class="clearFloat">
+                    </div>
                 </div>
             </asp:Panel>
             <asp:Panel runat="server" ID="ChangePasswordPanel">
@@ -443,7 +441,7 @@
                                 <div class="forgetErrorMsg">
                                     <asp:TextBox TextMode="password" CssClass="login_field_big" ID="oldpassword" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator111" runat="server" ControlToValidate="oldpassword"
-                                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                                        ErrorMessage="* Password required" Display="Dynamic" ValidationGroup="ChangePasswordGroup"> 
                                     </asp:RequiredFieldValidator>
                                 </div>
                             </div>
@@ -456,7 +454,7 @@
                                     <asp:TextBox TextMode="password" CssClass="login_field_big" ID="confirmoldPassowrd"
                                         runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator112" runat="server" ControlToValidate="confirmoldPassowrd"
-                                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                                        ErrorMessage="* Password required" Display="Dynamic" ValidationGroup="ChangePasswordGroup"> 
                                     </asp:RequiredFieldValidator>
                                 </div>
                             </div>
@@ -469,7 +467,7 @@
                                     <asp:TextBox TextMode="password" CssClass="login_field_big" ID="newpasswordfield"
                                         runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator113" runat="server" ControlToValidate="newpasswordfield"
-                                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                                        ErrorMessage="* Password required" Display="Dynamic" ValidationGroup="ChangePasswordGroup"> 
                                     </asp:RequiredFieldValidator>
                                 </div>
                             </div>
@@ -482,14 +480,14 @@
                                     <asp:TextBox TextMode="password" CssClass="login_field_big" ID="newconfirmpasswordfield"
                                         runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator114" runat="server" ControlToValidate="newconfirmpasswordfield"
-                                        ErrorMessage="* Password Required" Display="Dynamic"> 
+                                        ErrorMessage="* Password required" Display="Dynamic" ValidationGroup="ChangePasswordGroup"> 
                                     </asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="myChangeinfoContinue">
-                        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="../images/btn_submit.jpg"
+                        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/btn_submit.jpg"
                             Width="107" Height="37" OnClick="ChangebtnSave_Click" />
                     </div>
                 </div>
@@ -498,11 +496,25 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#myAccountMyPersonalInfoTab').show();
-            $('#myAccountMyProductsTab').hide();
-            $('#MyPasswordTab').hide();
+
+            if (selectedTab == 1) {
+                $('#myAccountMyPersonalInfoTab').show();
+                $('#myAccountMyProductsTab').hide();
+                $('#MyPasswordTab').hide();
+            }
+            if (selectedTab == 2) {
+                $('#myAccountMyPersonalInfoTab').hide();
+                $('#myAccountMyProductsTab').show();
+                $('#MyPasswordTab').hide();
+            }
+            if (selectedTab == 3) {
+                $('#myAccountMyPersonalInfoTab').hide();
+                $('#myAccountMyProductsTab').hide();
+                $('#MyPasswordTab').show();
+            }
             $('#tabPersonalInfo').click(function () {
                 selectedTab = 1;
+                //document.getElementById('SelectTabName').value = selectedTab;
                 $('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
                 $('#tabPersonalInfo').removeClass('myPersonalInfoTab');
                 $('#tabProducts').removeClass('myProductsTabOnMouseOver');
@@ -518,7 +530,7 @@
                 $('#tabPersonalInfo').removeClass('myPersonalInfoTab');
             });
             $('#tabPersonalInfo').mouseout(function () {
-                if (selectedTab === 1) {
+                if (selectedTab == 1) {
                     $('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
                     $('#tabPersonalInfo').removeClass('myPersonalInfoTab');
                 }
@@ -529,6 +541,7 @@
             });
             $('#tabProducts').click(function () {
                 selectedTab = 2;
+                //document.getElementById('SelectTabName').value = selectedTab;
                 $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
                 $('#tabPersonalInfo').addClass('myPersonalInfoTab');
                 $('#tabProducts').addClass('myProductsTabOnMouseOver');
@@ -544,7 +557,7 @@
                 $('#tabProducts').removeClass('myProductsTab');
             });
             $('#tabProducts').mouseout(function () {
-                if (selectedTab === 2) {
+                if (selectedTab == 2) {
                     $('#tabProducts').addClass('myProductsTabOnMouseOver');
                     $('#tabProducts').removeClass('myProductsTab');
                 }
@@ -555,6 +568,8 @@
             });
             $('#tabPassword').click(function () {
                 selectedTab = 3;
+                //document.getElementById('SelectTabName').value = selectedTab;
+                var flag = Page_ClientValidate('ChangePasswordGroup');
                 $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
                 $('#tabPersonalInfo').addClass('myPersonalInfoTab');
                 $('#tabProducts').removeClass('myProductsTabOnMouseOver');
@@ -570,7 +585,7 @@
                 $('#tabPassword').removeClass('myProductsTab');
             });
             $('#tabPassword').mouseout(function () {
-                if (selectedTab === 3) {
+                if (selectedTab == 3) {
                     $('#tabPassword').addClass('myProductsTabOnMouseOver');
                     $('#tabPassword').removeClass('myProductsTab');
                 }
@@ -579,6 +594,7 @@
                     $('#tabPassword').addClass('myProductsTab');
                 }
             });
+            
         });
     </script>
 </asp:Content>

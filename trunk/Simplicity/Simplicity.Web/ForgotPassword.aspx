@@ -35,7 +35,7 @@
                         </div>
                         <div class="forgetErrorMsg">
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="username"
-                                ErrorMessage="* Enter Email Address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                ErrorMessage="* Enter Email address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                                 Display="Dynamic">
                             </asp:RegularExpressionValidator>
                         </div>
