@@ -13,6 +13,7 @@ using System.Xml.Linq;
 using Simplicity.Data;
 using Simplicity.Web.BusinessObjects;
 using System.Collections.Specialized;
+using System.Collections.Generic;
 
 /// <summary>
 /// Summary description for GenericPage
@@ -38,6 +39,8 @@ namespace Simplicity.Web.Utilities
                 if (session != null && session.User != null)
                 {
                     loggedInUser = session.User;
+                    LoggedUserCompanyProduct =loggedInUser.Company.CompanyProducts.Count;
+                    LoggedUserProduct =loggedInUser.UserProducts.Count;
                     session.LastActivityTime = DateTime.Now;
                     session.EndTime = DateTime.Now.AddMinutes(30);
                     session.IP = Request.UserHostAddress;
@@ -76,7 +79,23 @@ namespace Simplicity.Web.Utilities
                 return loggedInUser;
             }
         }
-        
+        private int LoggedUserCompanyProduct;
+        protected int IsUserCompanyProduct
+        {
+            get
+            {
+                return LoggedUserCompanyProduct;
+            }
+        }
+        private int LoggedUserProduct;
+        protected int IsUserProduct
+        {
+            get
+            {
+                return LoggedUserProduct;
+            }
+        }
+
         protected void RedirectToLogin()
         {
             Session[WebConstants.Session.RETURN_URL] = Request.AppRelativeCurrentExecutionFilePath;

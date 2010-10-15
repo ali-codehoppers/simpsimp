@@ -13,6 +13,15 @@ namespace Simplicity.Web {
     public partial class SignUp {
         
         /// <summary>
+        /// SelectTabName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SelectTabName;
+        
+        /// <summary>
         /// MyProductPanel control.
         /// </summary>
         /// <remarks>

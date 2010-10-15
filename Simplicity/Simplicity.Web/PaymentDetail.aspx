@@ -83,10 +83,10 @@
                 <div class="forgetErrorMsg">
                     <asp:TextBox ID="txtCardNumber" MaxLength="16" CssClass="login_field_big" runat="server"></asp:TextBox>
                     <asp:RegularExpressionValidator ControlToValidate="txtCardNumber" Display="Dynamic"
-                        ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Card number is invalid"
+                        ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Card Number is invalid"
                         ValidationExpression="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"></asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic"
-                        ErrorMessage="* Enter card number" ControlToValidate="txtCardNumber"></asp:RequiredFieldValidator>
+                        ErrorMessage="* Enter Card Number" ControlToValidate="txtCardNumber"></asp:RequiredFieldValidator>
                 </div>
             </div>
         </div>
@@ -144,7 +144,7 @@
             <div class="col2">
                 <div class="forgetErrorMsg">
                     <asp:TextBox ID="txtSecurityCode" CssClass="login_field_small" MaxLength="3" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Enter security code"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Enter Security Code"
                         ControlToValidate="txtSecurityCode"></asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -157,7 +157,7 @@
             <div class="col2">
                 <div class="forgetErrorMsg">
                     <asp:TextBox ID="txtFirstName" MaxLength="30" runat="server" CssClass="login_field_big"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="* Enter first name"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="* Enter First Name"
                         ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -168,7 +168,7 @@
             <div class="col2">
                 <div class="forgetErrorMsg">
                     <asp:TextBox ID="txtLastName" MaxLength="30" runat="server" CssClass="login_field_big"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="* Enter last name"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="* Enter Last Name"
                         ControlToValidate="txtLastName"></asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -179,7 +179,7 @@
             <div class="col2">
                 <div class="forgetErrorMsg">
                     <asp:TextBox ID="txtTelephone" MaxLength="20" runat="server" CssClass="login_field_big"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="* Enter telephone"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="* Enter Telephone"
                         ControlToValidate="txtTelephone"></asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -198,7 +198,7 @@
             <div class="col2">
                 <div class="forgetErrorMsg">
                     <asp:TextBox ID="txtBillingStreet" MaxLength="100" Width="300px" runat="server" CssClass="login_field_big"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="* Enter street & number"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="* Enter Street & Number"
                         ControlToValidate="txtBillingStreet"></asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -209,7 +209,7 @@
             <div class="col2">
                 <div class="forgetErrorMsg">
                     <asp:TextBox ID="txtBillingTown" MaxLength="30" runat="server" CssClass="login_field_big"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="* Enter town"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="* Enter Town"
                         ControlToValidate="txtBillingTown"></asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -220,7 +220,7 @@
             <div class="col2">
                 <div class="forgetErrorMsg">
                     <asp:TextBox ID="txtBillingCounty" MaxLength="30" runat="server" CssClass="login_field_big"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ErrorMessage="* Enter county"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ErrorMessage="* Enter County"
                         ControlToValidate="txtBillingCounty"></asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -477,7 +477,7 @@
             <div class="col2">
                 <div class="forgetErrorMsg">
                     <asp:TextBox ID="txtBillingZipCode" MaxLength="10" runat="server" CssClass="login_field_small"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ErrorMessage="* Enter postcode/zip"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ErrorMessage="* Enter Postcode/Zip"
                         ControlToValidate="txtBillingZipCode"></asp:RequiredFieldValidator>
                 </div>
             </div>
