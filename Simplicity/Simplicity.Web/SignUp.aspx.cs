@@ -12,14 +12,15 @@ namespace Simplicity.Web
 {
     public partial class SignUp : GenericPage
     {
-        List<Product> UserCompanyProduct ;
-        List<Product> UserProduct ;
+        public int SelectedTabElement = 1;
+        List<Product> UserCompanyProduct;
+        List<Product> UserProduct;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (LoggedIsUser != null && !IsPostBack)
             {
-                
+
                 UserAccountPanel.Visible = false;
                 checkbox.Visible = false;
                 firstname.Text = LoggedIsUser.Forename;
@@ -41,8 +42,7 @@ namespace Simplicity.Web
                 telephone2.Text = address.Telephone2;
                 fax.Text = address.Fax;
                 mobile.Text = mobile.Text;
-                
-                
+
 
                 if (LoggedIsUser.Company != null)
                 {
@@ -50,15 +50,18 @@ namespace Simplicity.Web
                     UserCompanyProduct = BindCompanyProduct(id);
                     CompanyProductRepeater.DataSource = UserCompanyProduct;
                     CompanyProductRepeater.DataBind();
-                    UserProduct=BindUserProduct();
+                }
+                if (LoggedIsUser.UserProducts != null)
+                {
+                    UserProduct = BindUserProduct();
                     UserProductRepeater.DataSource = UserProduct;
                     UserProductRepeater.DataBind();
                 }
                 LoginAccount.Visible = true;
                 MyProductPanel.Visible = true;
                 ChangePasswordPanel.Visible = true;
-                if (UserProduct.Count == 0 )
-                { 
+                if (UserProduct.Count == 0)
+                {
                     UserProductRepeaterPanel.Visible = false;
                 }
                 if (UserCompanyProduct.Count == 0)
@@ -75,11 +78,11 @@ namespace Simplicity.Web
                 ChangePasswordPanel.Visible = true;
                 LoginAccount.Visible = true;
                 MyProductPanel.Visible = true;
-                if (IsUserProduct== 0 )
+                if (IsUserProduct == 0)
                 {
                     UserProductRepeaterPanel.Visible = false;
                 }
-                if (IsUserCompanyProduct == 0 )
+                if (IsUserCompanyProduct == 0)
                 {
                     CompanyProductRepeaterPanel.Visible = false;
                 }
@@ -88,7 +91,8 @@ namespace Simplicity.Web
                     SecondMyProductPanel.Visible = false;
                 }
             }
-            else {
+            else
+            {
                 ChangePasswordPanel.Visible = false;
                 LoginAccount.Visible = false;
                 MyProductPanel.Visible = false;
@@ -108,8 +112,8 @@ namespace Simplicity.Web
             }
             String password = Utility.GetMd5Sum(oldpassword.Text);
 
-            var query = from c in DatabaseContext.Users where (c.Email == LoggedIsUser.Email) && (c.Password == password) select c;
-            if (query.Any())
+            List<User> user = (from UserTable in DatabaseContext.Users where (UserTable.Email == LoggedIsUser.Email) && (UserTable.Password == password) select UserTable).ToList();
+            if (user.Any())
             {
                 return true;
             }
@@ -122,21 +126,23 @@ namespace Simplicity.Web
         }
         protected void ChangebtnSave_Click(object sender, ImageClickEventArgs e)
         {
+            SelectedTabElement = 3;
             if (ChangeValidateFields())
             {
-                var user = (from c in DatabaseContext.Users where c.Email == LoggedIsUser.Email select c).FirstOrDefault();
+                User user = (from UserTable in DatabaseContext.Users where UserTable.Email == LoggedIsUser.Email select UserTable).FirstOrDefault();
                 user.Password = Utility.GetMd5Sum(newpasswordfield.Text);
                 DatabaseContext.SaveChanges();
+                SetSuccessMessage("Password change successfully.");
             }
         }
- 
+
         private List<Product> BindCompanyProduct(int CompanyID)
         {
-            return ((from CompanyProductTable in DatabaseContext.CompanyProducts where CompanyProductTable.CompanyID == CompanyID && CompanyProductTable.EndDate >= DateTime.Now select CompanyProductTable.Product).Distinct()).ToList();    
+            return ((from CompanyProductTable in DatabaseContext.CompanyProducts where CompanyProductTable.CompanyID == CompanyID && CompanyProductTable.EndDate >= DateTime.Now select CompanyProductTable.Product).Distinct()).ToList();
         }
         private List<Product> BindUserProduct()
         {
-             return ((from UserProductTable in DatabaseContext.UserProducts where UserProductTable.UserID == LoggedIsUser.UserID && UserProductTable.EndDate >= DateTime.Now select UserProductTable.Product).Distinct()).ToList();
+            return ((from UserProductTable in DatabaseContext.UserProducts where UserProductTable.UserID == LoggedIsUser.UserID && UserProductTable.EndDate >= DateTime.Now select UserProductTable.Product).Distinct()).ToList();
         }
         private bool ValidateFields()
         {
@@ -155,9 +161,9 @@ namespace Simplicity.Web
                 SetErrorMessage("Passwords do not match");
                 return false;
             }
-            
-            var query = from c in DatabaseContext.Users where c.Email==emailfield.Text select c;
-            if (query.Any())
+
+            List<User> user = (from UserTable in DatabaseContext.Users where UserTable.Email == emailfield.Text select UserTable).ToList();
+            if (user.Any())
             {
                 SetErrorMessage("Email address already resgistered with Simplicity");
                 return false;
@@ -166,8 +172,10 @@ namespace Simplicity.Web
         }
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
+            SelectedTabElement = 1;
             if (LoggedIsUser == null)//means its sign-up process
             {
+
                 if (ValidateFields() && !companyNameAlreadyExists())
                 {
                     User user = new User
@@ -200,7 +208,7 @@ namespace Simplicity.Web
                     Address companyAddress = fillAddress(user, Enums.ADDRESS_TYPE.COMPANY);
                     user.Addresses.Add(address);
                     user.Addresses.Add(companyAddress);
-                    
+
                     Simplicity.Data.Company company = new Simplicity.Data.Company();
                     company.Name = companyname.Text;
                     company.Address = companyAddress;
@@ -266,7 +274,8 @@ namespace Simplicity.Web
                     }
                 }
                 DatabaseContext.SaveChanges();
-                if(newCompanyAdded) addCompanyToHS(user);
+                SetSuccessMessage("Save information successfully.");
+                if (newCompanyAdded) addCompanyToHS(user);
             }
         }
 
@@ -343,7 +352,7 @@ namespace Simplicity.Web
         private bool companyNameAlreadyExists()
         {
             Simplicity.Data.Company company = null;
-            if(LoggedIsUser != null && LoggedIsUser.Company != null)
+            if (LoggedIsUser != null && LoggedIsUser.Company != null)
                 company = (from c in DatabaseContext.Companies where c.Name == companyname.Text && c.CompanyID != LoggedIsUser.CompanyID select c).FirstOrDefault();
             else
                 company = (from c in DatabaseContext.Companies where c.Name == companyname.Text select c).FirstOrDefault();

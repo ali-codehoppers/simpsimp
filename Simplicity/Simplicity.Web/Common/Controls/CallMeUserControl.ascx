@@ -41,7 +41,7 @@
                 <asp:RequiredFieldValidator ID="rf10" runat="server" ErrorMessage="* Enter First Name"
                     ControlToValidate="txtFirstName" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="txtFirstName"
-                    ErrorMessage="* First Name have atleast 5 characters" ValidationExpression="[A-za-z]{5,60}"
+                    ErrorMessage="* First Name have atleast 3 characters" ValidationExpression="[A-za-z]{3,60}"
                     Display="Dynamic">
                 </asp:RegularExpressionValidator>
             </div>
@@ -57,7 +57,7 @@
                 <asp:RequiredFieldValidator ID="rf11" runat="server" ErrorMessage="* Enter Surname"
                     ControlToValidate="txtSurName" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtSurName"
-                    ErrorMessage="* Surname have atleast 5 characters" ValidationExpression="[A-za-z]{5,60}"
+                    ErrorMessage="* Surname have atleast 3 characters" ValidationExpression="[A-za-z]{3,60}"
                     Display="Dynamic">
                 </asp:RegularExpressionValidator>
             </div>

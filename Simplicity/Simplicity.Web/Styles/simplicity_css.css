@@ -6,6 +6,7 @@ body {
 	margin: 0px 0px 0px 0px;
 	line-height:20px;
 	background: #506f8e url(../Images/bg_repeat.jpg) repeat-x;
+	
 }
 body img
 {
@@ -140,8 +141,9 @@ A.login:hover {
 	text-indent:54px;	
 }
 
-#buy:hover{
-	background-position: bottom left;
+#buy:hover
+{
+    background-position: bottom left;
 }
 #try{
     font: bold 11px "Trebuchet MS",Arial, Verdana, Helvetica, sans-serif;
@@ -960,7 +962,17 @@ div.myProductsTab
 	background: url(../Images/login_btn_disable.jpg) bottom left no-repeat;
 	float:left;
 }
-
+div.myChangeTab
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(../Images/login_btn_disable.jpg) bottom left no-repeat;
+	float:left;
+}
 div.myProductsTabOnMouseOver
 {
 	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
@@ -973,7 +985,18 @@ div.myProductsTabOnMouseOver
 	cursor:pointer;
 	float:left;
 }
-
+div.myChangeTabOnMouseOver
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(../Images/login_btn_highlight.jpg) bottom left no-repeat;
+	cursor:pointer;
+	float:left;
+}
 div.myAccountTabs
 {
 	margin-top:10px; 
