@@ -55,7 +55,6 @@
     <Content Include="BuyProduct.aspx" />
     <Content Include="CallMeBack.aspx" />
     <Content Include="Common\Controls\CallMeUserControl.ascx" />
-    <Content Include="Common\Controls\ChangePasswordControl.ascx" />
     <Content Include="Common\Controls\Currencies.ascx" />
     <Content Include="Common\Controls\PriceEdition.ascx" />
     <Content Include="Common\LeftMenu.master" />
@@ -83,6 +82,7 @@
     <Content Include="Images\astadia.png" />
     <Content Include="Images\bg_repeat.jpg" />
     <Content Include="Images\bg_rotate_banner.jpg" />
+    <Content Include="Images\bottombar.jpg" />
     <Content Include="Images\btn_buynow.jpg" />
     <Content Include="Images\btn_cancel.jpg" />
     <Content Include="Images\btn_checkout.jpg" />
@@ -137,6 +137,7 @@
     <Content Include="Images\handyserver_call.jpg" />
     <Content Include="Images\handyserver_try.jpg" />
     <Content Include="Images\handyserver_watch_demo.jpg" />
+    <Content Include="Images\header.jpg" />
     <Content Include="Images\health_safety.jpg" />
     <Content Include="Images\icon_back.jpg" />
     <Content Include="Images\icon_chcklist.jpg" />
@@ -298,6 +299,7 @@
     <Content Include="TestPages\AddTrollery_TEST.aspx" />
     <Content Include="Trolley.aspx" />
     <Content Include="ChangePassword.aspx" />
+    <Content Include="UserProduct.aspx" />
     <Content Include="VerifyEmail.aspx" />
     <Content Include="ViewDemo.aspx" />
     <Content Include="WatchDemo.aspx" />
@@ -358,13 +360,6 @@
     </Compile>
     <Compile Include="Common\Controls\CallMeUserControl.ascx.designer.cs">
       <DependentUpon>CallMeUserControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Common\Controls\ChangePasswordControl.ascx.cs">
-      <DependentUpon>ChangePasswordControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Common\Controls\ChangePasswordControl.ascx.designer.cs">
-      <DependentUpon>ChangePasswordControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Common\Controls\Currencies.ascx.cs">
       <DependentUpon>Currencies.ascx</DependentUpon>
@@ -835,6 +830,13 @@
     </Compile>
     <Compile Include="ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProduct.aspx.cs">
+      <DependentUpon>UserProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProduct.aspx.designer.cs">
+      <DependentUpon>UserProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AuthenticatedPage.cs">
       <SubType>ASPXCodeBehind</SubType>

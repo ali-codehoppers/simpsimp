@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true"
     CodeBehind="SignUp.aspx.cs" Inherits="Simplicity.Web.SignUp" %>
-
+    
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
     <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.cycle.all.min.js")%>'></script>
     <script language="javascript" type='text/javascript'>
 
-        var selectedTab = 1;
+        var selectedTab = '<%=SelectedTabElement%>';
 
         function showHideElementById(status, elementId) {
             var element = document.getElementById(elementId);
@@ -39,9 +39,11 @@
             <div id='tabPersonalInfo' class="myPersonalInfoTabOnMouseOver">
                 <div style="padding-top: 10px">
                     My Personal Info</div>
+
             </div>
             <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
                 &nbsp;</div>
+                
             <asp:Panel ID="MyProductPanel" runat="server">
                 <asp:Panel ID="SecondMyProductPanel" runat="server">
                     <div id="tabProducts" class="myProductsTab">
@@ -51,7 +53,7 @@
                     <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
                         &nbsp;</div>
                 </asp:Panel>
-                <div id="tabPassword" class="myProductsTab">
+                <div id="tabPassword" class="myChangeTab">
                     <div style="padding-top: 10px">
                         Change Password</div>
                 </div>
@@ -492,38 +494,25 @@
                     </div>
                 </div>
             </asp:Panel>
+
         </div>
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
 
             if (selectedTab == 1) {
-                $('#myAccountMyPersonalInfoTab').show();
-                $('#myAccountMyProductsTab').hide();
-                $('#MyPasswordTab').hide();
+                infoTab();
             }
             if (selectedTab == 2) {
-                $('#myAccountMyPersonalInfoTab').hide();
-                $('#myAccountMyProductsTab').show();
-                $('#MyPasswordTab').hide();
+                productTab();
             }
             if (selectedTab == 3) {
-                $('#myAccountMyPersonalInfoTab').hide();
-                $('#myAccountMyProductsTab').hide();
-                $('#MyPasswordTab').show();
+                passwordTab();
             }
             $('#tabPersonalInfo').click(function () {
                 selectedTab = 1;
                 //document.getElementById('SelectTabName').value = selectedTab;
-                $('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
-                $('#tabPersonalInfo').removeClass('myPersonalInfoTab');
-                $('#tabProducts').removeClass('myProductsTabOnMouseOver');
-                $('#tabProducts').addClass('myProductsTab');
-                $('#tabPassword').removeClass('myProductsTabOnMouseOver');
-                $('#tabPassword').addClass('myProductsTab');
-                $('#myAccountMyPersonalInfoTab').show();
-                $('#myAccountMyProductsTab').hide();
-                $('#MyPasswordTab').hide();
+                infoTab();
             });
             $('#tabPersonalInfo').mouseover(function () {
                 $('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
@@ -542,15 +531,7 @@
             $('#tabProducts').click(function () {
                 selectedTab = 2;
                 //document.getElementById('SelectTabName').value = selectedTab;
-                $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
-                $('#tabPersonalInfo').addClass('myPersonalInfoTab');
-                $('#tabProducts').addClass('myProductsTabOnMouseOver');
-                $('#tabProducts').removeClass('myProductsTab');
-                $('#tabPassword').removeClass('myProductsTabOnMouseOver');
-                $('#tabPassword').addClass('myProductsTab');
-                $('#myAccountMyPersonalInfoTab').hide();
-                $('#MyPasswordTab').hide();
-                $('#myAccountMyProductsTab').show();
+                productTab();
             });
             $('#tabProducts').mouseover(function () {
                 $('#tabProducts').addClass('myProductsTabOnMouseOver');
@@ -569,32 +550,57 @@
             $('#tabPassword').click(function () {
                 selectedTab = 3;
                 //document.getElementById('SelectTabName').value = selectedTab;
-                var flag = Page_ClientValidate('ChangePasswordGroup');
-                $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
-                $('#tabPersonalInfo').addClass('myPersonalInfoTab');
-                $('#tabProducts').removeClass('myProductsTabOnMouseOver');
-                $('#tabProducts').addClass('myPersonalInfoTab');
-                $('#tabPassword').addClass('myPersonalInfoTabOnMouseOver');
-                $('#tabPassword').removeClass('myPersonalInfoTab');
-                $('#myAccountMyPersonalInfoTab').hide();
-                $('#MyPasswordTab').show();
-                $('#myAccountMyProductsTab').hide();
+                //var flag = Page_ClientValidate('ChangePasswordGroup');
+                passwordTab();
             });
             $('#tabPassword').mouseover(function () {
-                $('#tabPassword').addClass('myProductsTabOnMouseOver');
-                $('#tabPassword').removeClass('myProductsTab');
+                $('#tabPassword').addClass('myChangeTabOnMouseOver');
+                $('#tabPassword').removeClass('myChangeTab');
             });
             $('#tabPassword').mouseout(function () {
                 if (selectedTab == 3) {
-                    $('#tabPassword').addClass('myProductsTabOnMouseOver');
-                    $('#tabPassword').removeClass('myProductsTab');
+                    $('#tabPassword').addClass('myChangeTabOnMouseOver');
+                    $('#tabPassword').removeClass('myChangeTab');
                 }
                 else {
-                    $('#tabPassword').removeClass('myProductsTabOnMouseOver');
-                    $('#tabPassword').addClass('myProductsTab');
+                    $('#tabPassword').removeClass('myChangeTabOnMouseOver');
+                    $('#tabPassword').addClass('myChangeTab');
                 }
             });
-            
+            function infoTab() {
+                $('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
+                $('#tabPersonalInfo').removeClass('myPersonalInfoTab');
+                $('#tabProducts').removeClass('myProductsTabOnMouseOver');
+                $('#tabProducts').addClass('myProductsTab');
+                $('#tabPassword').removeClass('myChangeTabOnMouseOver');
+                $('#tabPassword').addClass('myChangeTab');
+                $('#myAccountMyPersonalInfoTab').show();
+                $('#myAccountMyProductsTab').hide();
+                $('#MyPasswordTab').hide();
+            }
+            function productTab() {
+                $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
+                $('#tabPersonalInfo').addClass('myPersonalInfoTab');
+                $('#tabProducts').addClass('myProductsTabOnMouseOver');
+                $('#tabProducts').removeClass('myProductsTab');
+                $('#tabPassword').removeClass('myChangeTabOnMouseOver');
+                $('#tabPassword').addClass('myChangeTab');
+                $('#myAccountMyPersonalInfoTab').hide();
+                $('#MyPasswordTab').hide();
+                $('#myAccountMyProductsTab').show();
+            }
+            function passwordTab() {
+                $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
+                $('#tabPersonalInfo').addClass('myPersonalInfoTab');
+                $('#tabProducts').removeClass('myProductsTabOnMouseOver');
+                $('#tabProducts').addClass('myProductsTab');
+                $('#tabPassword').addClass('myChangeTabOnMouseOver');
+                $('#tabPassword').removeClass('myChangeInfoTab');
+                $('#myAccountMyPersonalInfoTab').hide();
+                $('#MyPasswordTab').show();
+                $('#myAccountMyProductsTab').hide();
+            }
+
         });
     </script>
 </asp:Content>
