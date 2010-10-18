@@ -88,7 +88,13 @@ namespace Simplicity.Web.Utilities
             html = ReplaceAttributes(html);
             return html;
         }*/
-
+        private static string GetImagePath(string ImagePath)
+        {
+            string url = HttpContext.Current.Request.Url.ToString();
+            string[] paths = url.Split('/');
+            url = url.Replace(paths[paths.Length - 1], ImagePath);
+            return url;
+        }
 
         public static void SendAccountCreationEmail(User customer, string password)
         {
@@ -104,6 +110,8 @@ namespace Simplicity.Web.Utilities
                 EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
                 templateFactory.Paramters["##PASSWORD##"] = password;
                 templateFactory.Paramters.Add("##URL##", url);
+                templateFactory.Paramters.Add("##headerimage##",GetImagePath("/Image/header.jpg"));
+                templateFactory.Paramters.Add("##footerimage##",GetImagePath("/Image/bottombar.jpg"));
                 EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.ACTIVATION);
                 if (emailTemplate != null)
                 {
