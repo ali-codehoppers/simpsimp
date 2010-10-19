@@ -29,8 +29,8 @@
                 <li class="list">Handle variations and retentions effectively, so that they are not rejected</li>
                 <li class="list">Schedule operatives, plant, machinery and materials to control costs and deliver
                     on time</li>
-                <li class="list">Display Timr sheets and Expense Management to control costs</li>
-                <li class="list">Invoice quickly, accurately and effectively to get paid more quickly</li>
+                <li class="list">Display Time sheets and Expense Management to control costs</li>
+                <li class="list">Invoice quickly,accurately and effectively to receive payments more quickly</li>
                 <li class="list">Analyse all other business processes, from beginning to end</li>
             </ul>
             <p>
@@ -54,7 +54,7 @@
                     
                 </div>
                 <h2>
-                    Manage new business - never lose a business lead again!</h2>
+                    Manage new business - never loose a business lead again!</h2>
                 <ul>
                     <li class="list">Create &amp; allocate new leads</li>
                     <li class="list">Use diary to book sales activity (next call, appointments, comments...)</li>
@@ -129,7 +129,7 @@
                     </div>
                     <div>
                         <asp:Label ID="Label1" runat="server">Internet Explorer</asp:Label><br />
-                        <a href="http://www.microsoft.com" target="_blank">Microsoft Conporation</a><br />
+                        <a href="http://www.microsoft.com" target="_blank">Microsoft Corporation</a><br />
                         <a href="http://www.microsoft.com/windows/internet-explorer/thank-you.aspx" target="_blank">
                             Download version 8</a>
                     </div>
