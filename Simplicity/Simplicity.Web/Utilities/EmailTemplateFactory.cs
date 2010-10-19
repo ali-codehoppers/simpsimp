@@ -18,7 +18,10 @@ namespace Simplicity.Web.Utilities
         {
             Initialize(customer);
         }
-
+        public EmailTemplateFactory(CallUser customer)
+        {
+            Initialize(customer);
+        }
         private void Initialize()
         {
             Initialize(DatabaseUtility.GetLoggedInCustomer());
@@ -33,6 +36,16 @@ namespace Simplicity.Web.Utilities
                 parameters.Add("##CUSTOMER_NAME##", customer.Surname + ", " + customer.Forename);
                 parameters.Add("##USER_NAME##", customer.Email);
                 parameters.Add("##PASSWORD##", customer.Password);
+            }
+        }
+        private void Initialize(CallUser customer)
+        {
+            parameters = new Dictionary<string, string>();
+            parameters.Add("##IMAGE_URL##", GetImagesUrl());
+            if (customer != null)
+            {
+                parameters.Add("##CUSTOMER_NAME##", customer.Surname + ", " + customer.Forename);
+                parameters.Add("##USER_NAME##", customer.Email);
             }
         }
         public Dictionary<string, string> Paramters
@@ -58,7 +71,7 @@ namespace Simplicity.Web.Utilities
             url = "";
             for (int i = 0; i < paths.Length; i++)
             {
-                if (paths[i] == "pages")
+                if (i==2)
                 {
                     break;
                 }
