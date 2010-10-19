@@ -71,7 +71,7 @@ namespace Simplicity.Web.Utilities
             url = "";
             for (int i = 0; i < paths.Length; i++)
             {
-                if (i==2)
+                if (i==3)
                 {
                     break;
                 }
