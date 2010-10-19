@@ -88,13 +88,7 @@ namespace Simplicity.Web.Utilities
             html = ReplaceAttributes(html);
             return html;
         }*/
-        private static string GetImagePath(string ImagePath)
-        {
-            string url = HttpContext.Current.Request.Url.ToString();
-            string[] paths = url.Split('/');
-            url = url.Replace(paths[paths.Length - 1], ImagePath);
-            return url;
-        }
+
 
         public static void SendAccountCreationEmail(User customer, string password)
         {
@@ -110,8 +104,8 @@ namespace Simplicity.Web.Utilities
                 EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
                 templateFactory.Paramters["##PASSWORD##"] = password;
                 templateFactory.Paramters.Add("##URL##", url);
-                templateFactory.Paramters.Add("##headerimage##",GetImagePath("/Image/header.jpg"));
-                templateFactory.Paramters.Add("##footerimage##",GetImagePath("/Image/bottombar.jpg"));
+                string Imageurl = HttpContext.Current.Request.Url.ToString();
+                templateFactory.Paramters.Add("##ImageUrl##", Imageurl);
                 EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.ACTIVATION);
                 if (emailTemplate != null)
                 {
@@ -130,11 +124,11 @@ namespace Simplicity.Web.Utilities
             }
         }
 
-        public static void SendPasswordEmail(string emailAddress, string password)
+        public static void SendPasswordEmail(User customer, string emailAddress, string password)
         {
             MailMessage message = new MailMessage();
             message.To.Add(new MailAddress(emailAddress));
-            EmailTemplateFactory templateFactory = new EmailTemplateFactory();
+            EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
             templateFactory.Paramters.Add("##PASSWORD##", password);
             EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.PASSWORD);
             if (emailTemplate != null)
@@ -152,17 +146,17 @@ namespace Simplicity.Web.Utilities
             SendEmail(message);
         }
 
-        public static void SendCallMeEmailToAdmin(string contents)
+        public static void SendCallMeEmailToAdmin(CallUser customer,string contents, string request)
         {
-            SendCallMeEmailToAdmin(contents, "Simplicity Call Me Request");
+            SendCallMeEmailToAdmin(customer, contents, "Simplicity Call Me Request", request);
         }
 
-        public static void SendViewDemoEmailToAdmin(string contents)
+        public static void SendViewDemoEmailToAdmin(CallUser customer, string contents, string request)
         {
-            SendCallMeEmailToAdmin(contents, "Simplicity View Demo Request");
+            SendCallMeEmailToAdmin(customer, contents, "Simplicity View Demo Request", request);
         }
 
-        private static void SendCallMeEmailToAdmin(string contents, string subject)
+        private static void SendCallMeEmailToAdmin(CallUser customer,string contents, string subject, string request)
         {
             MailMessage message = new MailMessage();
             string[] adminEmailAddresses = ConfigurationSettings.AppSettings[WebConstants.Config.ADMIN_EMAIL_ADDRESSES].Split(',');
@@ -170,38 +164,85 @@ namespace Simplicity.Web.Utilities
             {
                 message.To.Add(new MailAddress(adminEmailAddress));
             }
-            message.Subject = subject;
+            EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
+            templateFactory.Paramters.Add("##REQUEST##", request);
+            templateFactory.Paramters.Add("##FIRSTNAME##",customer.Forename);
+            templateFactory.Paramters.Add("##SURNAME##",customer.Surname);
+            templateFactory.Paramters.Add("##USEREMAIL##",customer.Email);
+            templateFactory.Paramters.Add("##CONTENTS##",contents);
+            EmailTemplate emailTemplate;
+            if (request == "Call ME")
+            {
+                emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.CALLADMIN);
+            }
+            else{
+                emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.VIEWDEMOADMIN);
+            }
+            if (emailTemplate != null)
+            {
+                message.Body = emailTemplate.HTML;
+                message.Subject = emailTemplate.Subject;
+            }
+            else
+            {
+                message.Subject = subject;
+                message.Body = contents;
+            }
             message.IsBodyHtml = true;
-            message.Body = contents;
             SendEmail(message);
         }
 
-
-
-        public static void SendCallMeEmailToUser(string email)
+        public static void SendCallMeEmailToUser(CallUser customer,string email)
         {
             MailMessage message = new MailMessage();
             message.To.Add(new MailAddress(email));
-            message.Subject = "Simplicity Call Me Request";
+            EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
+            EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.CALLUSER);
+            if (emailTemplate != null)
+            {
+                message.Body = emailTemplate.HTML;
+                message.Subject = emailTemplate.Subject;
+            }
+            else
+            {
+                message.Subject = "Simplicity Call Me Request";
+                message.Body = "Thank you for submitting your request. We will call you back shortly.";
+            }
             message.IsBodyHtml = true;
-            message.Body = "Thank you for submitting your request. We will call you back shortly";
             SendEmail(message);
         }
 
-        public static void SendPaymentEmailtoClient(string firstName, string lastName, string cardNumber, string expiryMonth, string expiryYear, string cardType, string amountText, string userEmail)
+        public static void SendPaymentEmailtoClient(User customer,string firstName, string lastName, string cardNumber, string expiryMonth, string expiryYear, string cardType, string amountText, string userEmail)
         {
             MailMessage message = new MailMessage();
             message.To.Add(new MailAddress(userEmail));
-            message.Subject = "Simplicity Payment Receipt";
+            EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
+            templateFactory.Paramters.Add("##FIRSTNAME##", firstName);
+            templateFactory.Paramters.Add("##LASTNAME##", lastName);
+            templateFactory.Paramters.Add("##CARDNUMBER##", cardNumber);
+            templateFactory.Paramters.Add("##EXPIRYMONTH##", expiryMonth);
+            templateFactory.Paramters.Add("##EXPIRYYEAR##", expiryYear);
+            templateFactory.Paramters.Add("##CARDTYPE##", cardType);
+            templateFactory.Paramters.Add("##AMOUNTTEXT##", amountText);
+            EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.PAYMENT);
+            if (emailTemplate != null)
+            {
+                message.Body = emailTemplate.HTML;
+                message.Subject = emailTemplate.Subject;
+            }
+            else
+            {
+                message.Subject = "Simplicity Payment Receipt";
+                message.Body = "<b>Card holder's name:</b>" + firstName + "&nbsp;" + lastName + "<br/>";
+                message.Body += "<b>Card Number:</b>" + cardNumber + "<br/>";
+                message.Body += "<b>Card Expiry:</b>" + expiryMonth + "/" + expiryYear + "<br/>";
+                message.Body += "<b>Cart Type:</b>" + cardType + "<br/>";
+                message.Body += "<b>Amount Charged:</b>" + amountText + "<br/>";
+            }
             message.IsBodyHtml = true;
-            message.Body = "<b>Card holder's name:</b>" + firstName + "&nbsp;" + lastName + "<br/>";
-            message.Body += "<b>Card Number:</b>" + cardNumber + "<br/>";
-            message.Body += "<b>Card Expiry:</b>" + expiryMonth + "/" + expiryYear + "<br/>";
-            message.Body += "<b>Cart Type:</b>" + cardType + "<br/>";
-            message.Body += "<b>Amount Charged:</b>" + amountText + "<br/>";
             SendEmail(message);
         }
-        public static void SendPaymentEmailtoAdmin(string firstName, string lastName, string cardNumber, string expiryMonth, string expiryYear, string cardType, string amountText, string userEmail)
+        public static void SendPaymentEmailtoAdmin(User customer, string firstName, string lastName, string cardNumber, string expiryMonth, string expiryYear, string cardType, string amountText, string userEmail)
         {
             MailMessage message = new MailMessage();
             string[] adminEmailAddresses = ConfigurationSettings.AppSettings[WebConstants.Config.ADMIN_EMAIL_ADDRESSES].Split(',');
@@ -209,34 +250,50 @@ namespace Simplicity.Web.Utilities
             {
                 message.To.Add(new MailAddress(adminEmailAddress));
             }
-            message.Subject = "Simplicity Payment Receipt";
+            EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
+            templateFactory.Paramters.Add("##FIRSTNAME##", firstName);
+            templateFactory.Paramters.Add("##LASTNAME##", lastName);
+            templateFactory.Paramters.Add("##CARDNUMBER##", cardNumber);
+            templateFactory.Paramters.Add("##EXPIRYMONTH##", expiryMonth);
+            templateFactory.Paramters.Add("##EXPIRYYEAR##", expiryYear);
+            templateFactory.Paramters.Add("##CARDTYPE##", cardType);
+            templateFactory.Paramters.Add("##AMOUNTTEXT##", amountText);
+            EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.PAYMENT);
+            if (emailTemplate != null)
+            {
+                message.Body = emailTemplate.HTML;
+                message.Subject = "Copy of Customer "+emailTemplate.Subject;
+            }
+            else
+            {
+                message.Subject = "Copy of Customer Simplicity Payment Receipt";
+                message.Body = "<b>Card holder's name:</b>" + firstName + "&nbsp;" + lastName + "<br/>";
+                message.Body += "<b>Card Number:</b>" + cardNumber + "<br/>";
+                message.Body += "<b>Card Expiry:</b>" + expiryMonth + "/" + expiryYear + "<br/>";
+                message.Body += "<b>Cart Type:</b>" + cardType + "<br/>";
+                message.Body += "<b>Amount Charged:</b>" + amountText + "<br/>";
+            }
             message.IsBodyHtml = true;
-            message.Body = "<b>Card holder's name:</b>" + firstName + "&nbsp;" + lastName + "<br/>";
-            message.Body += "<b>Card Number:</b>" + cardNumber + "<br/>";
-            message.Body += "<b>Card Expiry:</b>" + expiryMonth + "/" + expiryYear + "<br/>";
-            message.Body += "<b>Cart Type:</b>" + cardType + "<br/>";
-            message.Body += "<b>Amount Charged:</b>" + amountText + "<br/>";
             SendEmail(message);
         }
-        public static void SendViewDemoEmailToUser(string email)
+        public static void SendViewDemoEmailToUser(CallUser customer,string email)
         {
             MailMessage message = new MailMessage();
             message.To.Add(new MailAddress(email));
-            message.IsBodyHtml = true;
-
-            var context = new SimplicityEntities();
-            var query = from c in context.Settings where c.SettingGroup == "ViewDemo" select c;
-            foreach (var n in query)
+            EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
+            EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.VIEWDEMO);
+            if (emailTemplate != null)
             {
-                if (n.SettingKey == "EmailSubject")
-                {
-                    message.Subject = n.SettingValue;
-                }
-                else if (n.SettingKey == "EmailContents")
-                {
-                    message.Body = n.SettingValue;
-                }
+                message.Body = emailTemplate.HTML;
+                message.Subject = emailTemplate.Subject;
             }
+            else
+            {
+                message.Subject = "Simplicity View Demo Request";
+                message.Body = "Thank you for Viewing Demo.";
+            }
+            message.IsBodyHtml = true;
+            
             SendEmail(message);
         }
     }

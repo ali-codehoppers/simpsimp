@@ -21,6 +21,11 @@ namespace Simplicity.Web.Utilities
         {
             public static string ACTIVATION = "ACTIVATION";
             public static string PASSWORD = "PASSWORD";
+            public static string PAYMENT = "PAYMENT";
+            public static string CALLUSER = "CALLUSER";
+            public static string VIEWDEMO = "VIEWDEMO";
+            public static string CALLADMIN = "CALLADMIN";
+            public static string VIEWDEMOADMIN = "VIEWDEMOADMIN";
         }
 
         public static class Session

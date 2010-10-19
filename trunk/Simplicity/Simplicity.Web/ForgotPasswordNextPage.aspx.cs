@@ -37,7 +37,7 @@ namespace Simplicity.Web
                 {
                     string password = Utility.RandomString(8, true);
                     user.Password = Utility.GetMd5Sum(password);
-                    EmailUtility.SendPasswordEmail(user.Email, password);
+                    EmailUtility.SendPasswordEmail(user, user.Email, password);
                     DatabaseContext.SaveChanges();
                     Session.Remove("FORGOT_PASSWORD_USER");
                     Response.Redirect("~/CustomerLogin.aspx?" + WebConstants.Request.FROM_PAGE + "=ForgotPassword");

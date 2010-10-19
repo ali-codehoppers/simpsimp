@@ -36,9 +36,9 @@ namespace Simplicity.Web.Common.Controls
             {
                 string emailContents = null;
                 var context = new SimplicityEntities();
-                var user = new CallUser{Forename=txtFirstName.Text,Surname=txtSurName.Text,CellNumber=txtMobile.Text,Telephone=txtTelephone.Text,Email=txtEmail.Text,CompanyName=txtCompanyName.Text,CompanyWebsite=txtCompanyWebsite.Text,
+                CallUser user = new CallUser{Forename=txtFirstName.Text,Surname=txtSurName.Text,CellNumber=txtMobile.Text,Telephone=txtTelephone.Text,Email=txtEmail.Text,CompanyName=txtCompanyName.Text,CompanyWebsite=txtCompanyWebsite.Text,
                    AddressFull=txtPostalAddress.Text,PostalCode= txtPostCode.Text,Comments=txtComments.Text,ViewDemo= viewDemo,ReceiveEmails=(Request[WebConstants.Request.RECEIVE_EMAILS] != "") ? true : false};
-                var product = new CallUserProduct();
+                CallUserProduct product = new CallUserProduct();
                 
                     if (cbHS.Checked)
                     {
@@ -76,15 +76,15 @@ namespace Simplicity.Web.Common.Controls
                 if (ViewDemo)
                 {
                     Session[WebConstants.Session.VIEW_DEMO] = true;
-                    EmailUtility.SendViewDemoEmailToUser(txtEmail.Text);
-                    EmailUtility.SendViewDemoEmailToAdmin(emailContents);
+                    EmailUtility.SendViewDemoEmailToUser(user,txtEmail.Text);
+                    EmailUtility.SendViewDemoEmailToAdmin(user,emailContents,"View Demo");
                     Response.Redirect("~/WatchDemo.aspx");
                 }
                 else
                 {
                     SetSuccessMessage("Your request has been submited.");
-                    EmailUtility.SendCallMeEmailToAdmin(emailContents);
-                    EmailUtility.SendCallMeEmailToUser(txtEmail.Text);
+                    EmailUtility.SendCallMeEmailToAdmin(user, emailContents, "Call ME");
+                    EmailUtility.SendCallMeEmailToUser(user,txtEmail.Text);
                     Response.Redirect("~/Default.aspx");
                 }
             }

@@ -298,8 +298,6 @@
     <Content Include="Support.aspx" />
     <Content Include="TestPages\AddTrollery_TEST.aspx" />
     <Content Include="Trolley.aspx" />
-    <Content Include="ChangePassword.aspx" />
-    <Content Include="UserProduct.aspx" />
     <Content Include="VerifyEmail.aspx" />
     <Content Include="ViewDemo.aspx" />
     <Content Include="WatchDemo.aspx" />
@@ -823,20 +821,6 @@
     </Compile>
     <Compile Include="Trolley.aspx.designer.cs">
       <DependentUpon>Trolley.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UserProduct.aspx.cs">
-      <DependentUpon>UserProduct.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserProduct.aspx.designer.cs">
-      <DependentUpon>UserProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AuthenticatedPage.cs">
       <SubType>ASPXCodeBehind</SubType>
