@@ -128,7 +128,7 @@
             <p>
                 Simplicity was first developed for a leading construction company that found existing
                 systems too inflexible to support their requirments. The initial system was to be
-                simple was to be simple to use whilst housing a database of over 42,000 schedules
+                simple to use whilst housing a database of over 42,000 schedules
                 and rates. Thus Simplicity was born.</p>
             <p>
                 Since that time we have never moved from our basic concept - to produce the best

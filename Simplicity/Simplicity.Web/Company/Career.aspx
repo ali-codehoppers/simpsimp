@@ -27,8 +27,8 @@
                 and this provides a simulating environment in which individuals can both further
                 their personal skills and contribute to the success of the business.</p>
             <p>
-                Training and personal development are great importance because by enhancing the
-                skills of each member of staff, Simplicity can better service the needs of its customers.
+                Training and personal development are of great importance because by enhancing the
+                skills of each member of staff, Simplicity can better serve the needs of its customers.
                 All of this allows our staff to feel valued as every opinion counts and everyone
                 contributes. We're looking for dynamic, motivated and creative people to join our
                 team. We want to hire the best people and support them well.</p>
@@ -53,9 +53,7 @@
             <p>
                 Unless otherwise stated, if applying for a job within the European Union, you must
                 ensure that you are already authorised to work there.</p>
-            <p>
-                If you are interested in applying job for this role, you will need a valid work
-                permit.<br />
+            <p>                
                 If you are interested in applying job for the advertised job role within Ultra Nova
                 Coding Ltd you will need a valid work permit.</p>
             <p>

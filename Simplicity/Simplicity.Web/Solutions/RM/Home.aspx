@@ -22,7 +22,7 @@
                 be linked to other departments to ensure more efficent business performance.</p>
             <p style="width:95%">
                 For example, site managers can use it to log staff time on timesheets which are
-                then automatically co-orinated by payroll. For seamless business the resources management
+                then automatically co-ordinated by payroll. For seamless business the resources management
                 tool is a must.</p>
             <p style="width:95%">
                 Also, unlike less sophisticated software with this software incorporates a postcode
@@ -47,7 +47,7 @@
                     
                 </div>
                 <h2>
-                    Note kew dates for your resources and staff</h2>
+                    Note key dates for your resources and staff</h2>
                 <ul>
                     <li class="list">Link projects to staff and business key performance indicators (KPIs)</li>
                     <li class="list">Diarise vehicle and asset maintenance, with alerts</li>
@@ -74,7 +74,7 @@
                     <li class="list">Diarise contact with clients including notes</li>
                     <li class="list">View contact history</li>
                     <li class="list">Book appointments, with alerts</li>
-                    <li class="list">Link contact details direst to e-marketing campaigns</li>
+                    <li class="list">Link contact details direct to e-marketing campaigns</li>
                     <li class="list">Attach an account to client</li>
                     <li class="list">Note payment terms</li>
                     <li class="list">Attach documents to clients record to store extra information</li>

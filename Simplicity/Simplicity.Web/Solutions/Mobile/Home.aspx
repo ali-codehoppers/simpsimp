@@ -62,7 +62,7 @@
                     <li class="list">Order parts and book follow-on visits</li>
                     <li class="list">Upload status in real-time to head-office</li></ul>
                 <p style="width:95%">
-                    Simplicity handyGas runs on MS Windows Mobile powered smartphones which can be added
+                    Simplicity HandyGas runs on MS Windows Mobile powered smartphones which can be added
                     to the agreement with your current service provider.</p>
             </div>
             <div id="handyserve">
