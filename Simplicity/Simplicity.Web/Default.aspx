@@ -66,7 +66,7 @@
 				</a>
 			</div>
 			<div id="healthNSafety">
-				<a href="Products/HS/Home.aspx" class="moreDetails">
+				<a href="Solutions/HS/Home.aspx" class="moreDetails">
 					<div><img src="images/health_safety.jpg" alt=""/></div>
 				</a>			
 			</div>

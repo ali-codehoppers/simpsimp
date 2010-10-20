@@ -1490,3 +1490,10 @@ div.myChangeTabs div.col2
     padding-bottom:5px;
     padding-top:15px;
 }
+div.leftNavBarContact{
+	background: url(../Images/contactus_left_nav.jpg) 0 0 no-repeat;
+	text-decoration: none;
+	width:333px;
+	height:265px;
+	padding-top:55px;
+}

@@ -388,7 +388,7 @@
                 </div>
                 <div class="myaccountinfoContinue">
                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="../images/btn_continue.jpg"
-                        Width="107" Height="37" OnClick="btnSave_Click" />
+                        Width="107" Height="37" OnClick="btnSave_Click" ValidationGroup="PersonalInfoGroup"/>
                     <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="../images/btn_reset.jpg"
                         Width="107" Height="37" OnClientClick="document.location.href=document.location.href;" />
                 </div>
@@ -490,7 +490,7 @@
                     </div>
                     <div class="myChangeinfoContinue">
                         <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/btn_submit.jpg"
-                            Width="107" Height="37" OnClick="ChangebtnSave_Click" />
+                            Width="107" Height="37" OnClick="ChangebtnSave_Click" ValidationGroup="ChangePasswordGroup"/>
                     </div>
                 </div>
             </asp:Panel>
@@ -550,8 +550,9 @@
             $('#tabPassword').click(function () {
                 selectedTab = 3;
                 //document.getElementById('SelectTabName').value = selectedTab;
-                //var flag = Page_ClientValidate('ChangePasswordGroup');
+                //
                 passwordTab();
+                //var flag = Page_ClientValidate('ChangePasswordGroup');
             });
             $('#tabPassword').mouseover(function () {
                 $('#tabPassword').addClass('myChangeTabOnMouseOver');

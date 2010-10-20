@@ -289,6 +289,7 @@
     <Content Include="SignUp.aspx" />
     <Content Include="Solutions\FinanceAccount\Home.aspx" />
     <Content Include="Solutions\Home.aspx" />
+    <Content Include="Solutions\HS\Home.aspx" />
     <Content Include="Solutions\Mobile\Home.aspx" />
     <Content Include="Solutions\Operation\Home.aspx" />
     <Content Include="Solutions\RM\Home.aspx" />
@@ -771,6 +772,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Solutions\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\HS\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solutions\HS\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Solutions\Mobile\Home.aspx.cs">
