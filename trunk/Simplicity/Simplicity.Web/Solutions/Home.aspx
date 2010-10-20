@@ -38,7 +38,7 @@
                     </a>
                 </div>
                 <div id="healthNSafety">
-                    <a class="solutionMoreDetails" href="../Products/HS/Home.aspx">
+                    <a class="solutionMoreDetails" href="HS/Home.aspx">
                         <div>
                             <asp:Image ID="Image9" runat="server" ImageUrl="~/Images/health_safety.jpg" Width="190px" /></div>
                     </a>

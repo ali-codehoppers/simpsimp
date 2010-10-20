@@ -123,7 +123,7 @@
                     </div>
                     <div>
                         <asp:Label ID="Label1" runat="server">Internet Explorer</asp:Label><br />
-                        <a href="http://www.microsoft.com" target="_blank">Microsoft Conporation</a><br />
+                        <a href="http://www.microsoft.com" target="_blank">Microsoft Corporation</a><br />
                         <a href="http://www.microsoft.com/windows/internet-explorer/thank-you.aspx" target="_blank">
                             Download version 8</a>
                     </div>
