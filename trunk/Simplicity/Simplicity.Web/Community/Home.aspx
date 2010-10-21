@@ -21,6 +21,9 @@
             //toggle the componenet with class menuDetail
             $(".menuLabel").click(function () {
                 if (currentDiv != $(this).attr("id")) {
+                    $("#sfDivImg").attr('src', "../Images/icon_plus.jpg");
+                    $("#arbiDivImg").attr('src', "../Images/icon_plus.jpg");
+                    $("#sageDivImg").attr('src', "../Images/icon_plus.jpg");
                     $("#" + $(this).attr("id") + "Img").attr('src', "../Images/icon_minus.jpg");
                     $(this).next(".menuDetail").slideToggle(1000);
                     $("#" + currentDiv).next(".menuDetail").slideToggle(1000);

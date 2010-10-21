@@ -10,13 +10,10 @@
 			<div> <a href="../BuyProduct.aspx?try=try" id="try"> </a> </div>
 			<div> <a href="../CallMeBack.aspx" id="call"> </a> </div>
 		</div>
+        <asp:ContentPlaceHolder ID="HeadingPlaceHolder" runat="server"></asp:ContentPlaceHolder>
 		<div class="floatRight" style="width: 650px;">
-            <div id="secnavbar" class="floatLeft">
-                <div id="icon1" class="floatLeft">
-                    <asp:ContentPlaceHolder ID="HeadingPlaceHolder" runat="server"></asp:ContentPlaceHolder>
-                </div>
-            </div>
-            
+        
+             
             <asp:Panel ID="errorPanel" runat="server" CssClass="error" Visible="false" style="margin-top:75px;margin-left:0px;">
                 <div style="float:left">
                     <asp:Image ID="Image1" ImageUrl="~/Images/error.png" runat="server" />
@@ -37,7 +34,8 @@
                 <div style="clear:both"></div>
             </asp:Panel>
             
-            <div id="contentsDiv" class="servicetext">
+            <div id="contentsDiv" class="producttext">
+
                <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
             </div>
             

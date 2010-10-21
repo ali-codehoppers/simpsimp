@@ -5,16 +5,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <div style="float: left; width: 650px">
-    
-        <div id="ourProducts" class="floatLeft">
-            
+            <div id="secnavbar" class="floatLeft">
             <div id="icon1" class="floatLeft">
-                <h2>
+                <h2 id="ourSolution">
                     <span style="color: #cccccc;">SALES</span> &amp; MARKETING</h2>
             </div>
             <div id="nsecnavbar">
                 <div>
-                    <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
+                    <asp:Image ID="Image1" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
                 </div>
             </div>
         </div>

@@ -61,14 +61,14 @@
                                 <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Remove" CommandArgument='<%#DataBinder.Eval(Container, "ItemIndex", "")%>'><span style="font-size:14px;font-weight:bold;color: #5858A4;">Remove</span></asp:LinkButton></div>
                                 
                         </div>
-                        <div class="trolleyActionsCol2">
-                            <div class="floatLeft">
+                        <div class="trolleyActionsCol2" >
+                            <div class="floatLeft" style="width:160px;">
                                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# "~/images/s_" + DataBinder.Eval(Container, "DataItem.ProductEntity.shortname") + ".jpg" %>'
                                     AlternateText='<%# DataBinder.Eval(Container, "DataItem.ProductEntity.Name") %>' /></div>
-                            <div class="floatLeft" style="padding-top:10px; font-weight:bold;">
+                            <div class="floatLeft" style="padding-top:10px;margin-left:5px; font-weight:bold; width:275px;">
                                 <div class="trolleyCell">
                                     <%# DataBinder.Eval(Container, "DataItem.ProductEntity.Name")%>[<%# DataBinder.Eval(Container, "DataItem.DurationString")%>]</div>
-                                <div class="trolleyCell">
+                                <div class="trolleyCell" >
                                     <%# DataBinder.Eval(Container, "DataItem.VersionEntity.Name")%></div>
                                 <div class="trolleyCell">
                                    <%# DataBinder.Eval(Container, "DataItem.ProductDetailEntity.ProductDetail1")%></div>

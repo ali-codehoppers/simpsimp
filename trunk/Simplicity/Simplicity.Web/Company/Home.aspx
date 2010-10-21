@@ -24,7 +24,13 @@
                 if (currentDiv != $(this).attr("id")) {
                     //$(this).next(".minus").show();
                     //$(this).next(".plus").hide();
+                    $("#simpDivImg").attr('src', "../Images/icon_plus.jpg");
+                    $("#pionDivImg").attr('src', "../Images/icon_plus.jpg");
+                    $("#adapDivImg").attr('src', "../Images/icon_plus.jpg");
+                    $("#partDivImg").attr('src', "../Images/icon_plus.jpg");
+            
                     $("#" + $(this).attr("id") + "Img").attr('src', "../Images/icon_minus.jpg");
+                    
                     $(this).next(".menuDetail").slideToggle(1000);
                     $("#" + currentDiv).next(".menuDetail").slideToggle(1000);
                     currentDiv = $(this).attr("id");
@@ -46,6 +52,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    <div class="floatRight" style="width:650px;">
     <div id="secnavbar" class="floatLeft">
         <div id="icon1" class="floatLeft">
             <h2 id="ourSolution">
@@ -167,5 +174,6 @@
             </p>
         </div>
   
+    </div>
     </div>
 </asp:Content>

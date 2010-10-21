@@ -44,8 +44,8 @@
                 <div class="headerLinksSeparator">
                     |</div>
                 <div class="headerLinks">
-                    <asp:HyperLink ID="LoginLink" NavigateUrl="../CustomerLogin.aspx" runat="server">Sign Up/Login</asp:HyperLink>
-                    <asp:HyperLink ID="MyAccountLink" NavigateUrl="../SignUp.aspx" runat="server">My Account</asp:HyperLink>
+                    <div class="floatNone"><asp:HyperLink ID="LoginLink" NavigateUrl="../CustomerLogin.aspx" runat="server">Sign Up/Login</asp:HyperLink></div>
+                    <div class="floatNone"><asp:HyperLink ID="MyAccountLink" NavigateUrl="../SignUp.aspx" runat="server">My Account</asp:HyperLink></div>
                 </div>
                 <div class="headerLinksSeparator">
                     |</div>
@@ -54,15 +54,15 @@
                 <div class="headerLinksSeparator">
                     |</div>
                 <div class="headerLinks">
-                    <a href="../WishListPage.aspx">Wish List</a></div>
+                    <asp:HyperLink NavigateUrl="../WishListPage.aspx" runat="server">Wish List</asp:HyperLink></div>
                 <div style="float: right;">
                     <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/icon_shopping.jpg" />
                 </div>
                 <div class="clearFloat">
                 </div>
             </div>
-            <div style="padding-top: 28px;">
-                <div class="floatRight">
+            <div style="padding-top: 28px; ">
+                <div class="floatRight" >
                     <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Community/Home.aspx"><div class="navBar" style="width:105px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Community</div></asp:HyperLink></div>
                 <div class="floatRight">
                     <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Services/Home.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Services</div></asp:HyperLink></div>
@@ -78,13 +78,12 @@
                 <div style="margin-left: 20px; margin-top: 20px; width:300px;">
                     <asp:Label runat="server" ID="usernameLabel" style="font-size:8pt;font-weight:bold; color:#5ac4ea" ></asp:Label>
                     <asp:HyperLink ID="LogoutLink" NavigateUrl="~/Logout.aspx" runat="server" style="color: #145b86;margin-left:5px;">Logout</asp:HyperLink>
-                </div>
-                <div class="clearFloat">
-                </div>
+                </div>             
             </div>
         </div>
+
         <asp:Panel ID="errorPanel" runat="server" CssClass="error" Visible="false" Style="margin-left: 0px;
-            margin-right: auto; margin-top: 5px;">
+            margin-right: auto; margin-top: 5px;" >
             <div style="float: left;margin-left: 5px; margin-top: 5px;">
                 <asp:Image ID="Image2" ImageUrl="~/Images/error.png" runat="server" />
             </div>
@@ -95,7 +94,7 @@
             </div>
         </asp:Panel>
         <asp:Panel ID="successPanel" runat="server" CssClass="success" Visible="false" Style="margin-left: 0px;
-            margin-right: auto; margin-top: 5px;">
+            margin-right: auto; margin-top: 5px; ">
             <div style="float: left;margin-left: 5px; margin-top: 5px;">
                 <asp:Image ID="Image3" ImageUrl="~/Images/success.png" runat="server" />
             </div>
@@ -105,7 +104,8 @@
             <div style="clear: both">
             </div>
         </asp:Panel>
-        <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
+        
+        <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server" >
         </asp:ContentPlaceHolder>
         <div id="footer">
             Copyright©2010 Simplicity. All Rights Reserved.<br>

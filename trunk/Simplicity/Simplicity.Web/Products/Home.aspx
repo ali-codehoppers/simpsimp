@@ -5,13 +5,13 @@
     <link href="../Styles/products.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-    <div id="ourProducts" style="margin-top: -40px;">
-        <h2>
-            <span style="color: #cccccc;">OUR</span> PRODUCTS</h2>
-    </div>
-    <div>
-        <asp:Image runat="server" ImageUrl="~/Images/subheading_bar.jpg" ID="Image1" /></div>
-    <div>
+        <div id="icon1">
+            <h2 id="ProductHeading">
+                <span style="color: #cccccc;">OUR</span> PRODUCTS</h2>
+        </div>
+        <div>
+            <asp:Image runat="server" ImageUrl="~/Images/subheading_bar.jpg" ID="Image1" /></div>
+        <div>
         <p style="width:95%">
             Simplicity for business offers a suits of business software which require nothing
             more than a web browser or mobile phone to access.</p>
@@ -71,7 +71,7 @@
             </asp:HyperLink>
         </div>
         <div class="bottomMiddle">
-            <asp:HyperLink ID="HyperLink6" runat="server" CssClass="moreDetails">
+            <asp:HyperLink ID="HyperLink6" runat="server" CssClass="moreDetails" NavigateUrl="~/PageConstruction.aspx">
                 <asp:Image runat="server" ID="Image6" ImageUrl="~/Images/products_img_6.jpg" />
             </asp:HyperLink>
         </div>
