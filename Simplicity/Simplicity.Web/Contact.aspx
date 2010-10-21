@@ -20,7 +20,7 @@
     </div>
     <div class="floatRight" style="width: 650px;">
         <div id="icon1">
-            <h2>
+            <h2 style="padding-top:20px;">
                 <span style="color: #cccccc;">CONTACT</span> US</h2>
         </div>
         <div>

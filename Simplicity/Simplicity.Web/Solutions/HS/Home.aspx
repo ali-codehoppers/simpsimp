@@ -19,7 +19,7 @@
         <div id="contentsDiv" class="servicetext">
             <p>
                 Guides you through the sequential processess, provides practical templates and an
-                extendable library of documents and content to publish H&amp;S folders in an easy
+                extendable library of <br/>documents and content to publish H&amp;S folders in an easy
                 to read format.
             </p>
             <p>

@@ -44,7 +44,7 @@
                     <img src="../../Images/curve_left_small.jpg" /></div>
                 <div class="floatRight">
                     <img src="../../Images/curve_right_small.jpg" /></div>
-                <div class="col1" style="float: left;width:285px;padding-left:15px;padding-top:7px; ">
+                <div class="col1" style="float: left;width:285px;padding-left:15px;padding-top:7px;">
                     <span style=" text-align:justify;color:#3E3C95;font-weight:bolder; ">
                         <%# DataBinder.Eval(Container.DataItem, "ProductDetail1")%>
                     </span>

@@ -250,6 +250,7 @@
     <Content Include="Images\welcome_01.jpg" />
     <Content Include="Logout.aspx" />
     <Content Include="Oops.aspx" />
+    <Content Include="PageConstruction.aspx" />
     <Content Include="PaymentDetail.aspx" />
     <Content Include="PaymentResponse.aspx" />
     <Content Include="ProductPrices.aspx" />
@@ -548,6 +549,13 @@
     </Compile>
     <Compile Include="Oops.aspx.designer.cs">
       <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageConstruction.aspx.cs">
+      <DependentUpon>PageConstruction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageConstruction.aspx.designer.cs">
+      <DependentUpon>PageConstruction.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaymentDetail.aspx.cs">
       <DependentUpon>PaymentDetail.aspx</DependentUpon>

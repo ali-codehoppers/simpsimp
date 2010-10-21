@@ -27,7 +27,7 @@
             <div>
                 <div class="rightprodbottom"><a href="../EAS/Home.aspx">
                     <asp:Image ID="Image11" ImageUrl="~/Images/icon_img_5.jpg" width="124" height="97" border="0" runat="server"/></a></div>
-                <div class="leftprodbottom"><a href="#">
+                <div class="leftprodbottom"><a href="../../PageConstruction.aspx">
                     <asp:Image ID="Image12" ImageUrl="~/Images/icon_img_6.jpg" width="124" height="97" border="0" runat="server"/></a></div>
            </div>
         </div>

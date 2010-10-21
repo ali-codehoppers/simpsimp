@@ -10,7 +10,9 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
-    <div id="contentTop">
+
+    <div id="contentTop" >
+        
 		<div class="floatLeft leftNavBar">
 			<div> <a href="WatchDemo.aspx" id="watch"> </a> </div>
 			<div> <a href="BuyProduct.aspx" id="buy"> </a> </div>
@@ -25,20 +27,29 @@
 				<a href="Products/HandyGas/Home.aspx"><img src="images/img_3.jpg" width="655" height="257" /></a>
 				<a href="Products/HandyLEC/Home.aspx"><img src="images/img_4.jpg" width="655" height="257" /></a>
 				<a href="Products/HandyServe/Home.aspx"><img src="images/img_5.jpg" width="655" height="257" /></a>
-				<a href="Products/EAS/Home.aspx"><img src="images/img_6.jpg" width="655" height="257" /></a>
-				<a href=""><img src="images/img_7.jpg" width="655" height="257" /></a>
+				<a href="Products/EAS/Home.aspx"><img src="images/img_6.jpg" width="655" height="256" /></a>
+				<a href="PageConstruction.aspx"><img src="images/img_7.jpg" width="655" height="257" /></a>
 			</div>
 		</div>
-		<div class="clearFloat"></div>
+		
+        <div class="clearFloat"></div>
+
 	</div>
 	<div id="contentMiddle">
-		<div class="textDiv">
+        <div class="floatRight" style="width:165px; margin-right:50px; margin-top:50px;">
+            <div id="manImage">
+                <div style="padding-top:42px; text-align:center">
+                    <a href="PageConstruction.aspx"><img src="Images/btn_case_study.jpg" />  </a>
+                </div>
+            </div>
+		</div>
+        <div class="textDiv">
 			<div style="border-top:1px solid #d4efff; ">
 				<p>Simplicity for Business is an award- winning software company which provides  business resource planning <br />
 				  solutions to help your company achieve maximum efficiency and profitability.</p>		
 			</div>
 			<div style="color:white">
-				<div class="floatLeft" style="padding-right:5px"><img src="images/quot1.jpg" alt="" /></div>
+                <div class="floatLeft" style="padding-right:5px"><img src="images/quot1.jpg" alt="" /></div>
 				<div class="floatLeft">
 					<div style="padding-top:1px;">When we needed urgent software solutions in the past we always needed to license complex,</div>
 					<div style="padding-top:1px;">expensive and inflexible software. Simplicity Health &amp; Safety Live and EAS have changed all that. All</div>

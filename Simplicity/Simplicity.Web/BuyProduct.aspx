@@ -4,7 +4,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-    <div id="icon1"><h2><span style="color: #cccccc;"><%=GetBuyOrTry()%></span> A Solution</h2></div>
+    <div id="icon1">
+        <h2>
+            <span style="color: #cccccc;">
+                <%=GetBuyOrTry()%></span> A Solution</h2>
+    </div>
     <div>
         <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
     </div>
@@ -24,14 +28,13 @@
         </SeparatorTemplate>
         <FooterTemplate>
             </div>
-            <div class="clearFloat"></div>
+            <div class="clearFloat">
+            </div>
         </FooterTemplate>
     </asp:Repeater>
-    <div class="noFloat" style="height: 20px;">
+    <div>
         <asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=SimplicityEntities"
             DefaultContainerName="SimplicityEntities" EnableFlattening="False" EntitySetName="Products">
         </asp:EntityDataSource>
     </div>
-
-
 </asp:Content>

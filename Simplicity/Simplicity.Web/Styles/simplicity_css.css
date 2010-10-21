@@ -408,6 +408,7 @@ div.headerLinks
 	padding-left:8px;
 }
 
+
 div.headerLinksSeparator
 {
 	float:right; 
@@ -429,7 +430,10 @@ div.headerLinksButton
 	padding-left:8px; 
 	margin-right:8px;
 }
-
+div.floatNone
+{
+	float:none;	
+}
 div.floatLeft
 {
 	float:left;
@@ -635,16 +639,7 @@ div.leftNavBarGas {
 	padding-top:20px;
 }
 
-#ourSolutions
-{
-	padding-left:50px;
-}
-#ourProducts
-{
-	padding-top:30px;
-	padding-left:0px;
-	padding-bottom:10px;    
-}
+
 #links
 {
 	padding-top:15px;
@@ -862,7 +857,7 @@ a.moreDetails:hover,a.solutionMoreDetails:hover
     line-height: 15px;
 }
 
-#ourServices,#ourCommunity,#ourSolution
+#ourServices,#ourCommunity,#ourSolution,#ProductHeading
 {
     padding-top: 20px;
 }
@@ -880,10 +875,10 @@ a.moreDetails:hover,a.solutionMoreDetails:hover
     float: right;
     width: 640px;
 }
-.servicetext
+.producttext
 {
-    /*height:400px;
-    overflow:auto;    */
+    text-align: justify;
+
 }
 .solutiontext
 {
@@ -1166,11 +1161,13 @@ div.myAccountTabs
 	display: block;
 	vertical-align: middle;
 	text-align: left;
+	margin:5px;
 }
 #PrdouctHome .moreDetails:hover
 {
     background-position:bottom left;
 }
+
 #PaymentAddresssubdirectory
 {
     width: 100%;
@@ -1322,21 +1319,21 @@ div.trolleycell
 div.trolleyActionsCol1
 {
     padding-top:35px;
-    width: 180px;
+    width: 140px;
     float: left;
 
 }
 div.trolleyActionsCol2 
 {
     padding-top:10px;
-	width:400px;
+	width:450px;
 	float:left;
 
 }
 div.trolleyActionsCol3 
 {
     padding-top:40px;
-	width:120px;
+	width:90px;
 	float:left;
 	text-align:center;
 }
@@ -1496,4 +1493,10 @@ div.leftNavBarContact{
 	width:333px;
 	height:265px;
 	padding-top:55px;
+}
+#manImage
+{
+	background-image: url('../Images/s_man.png');
+	width:165px;
+	height:196px;
 }

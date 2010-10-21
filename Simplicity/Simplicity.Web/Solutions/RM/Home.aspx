@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <div style="float: left; width: 650px">
         <div id="secnavbar" class="floatLeft">
-            <div id="icon1" class="floatLeft">
+            <div id="icon1" class="floatLeft" style="width:50%;">
                 <h2 id="ourSolution">
                     <span style="color: #cccccc;">RESOURCE</span> &amp; MANAGMENT</h2>
             </div>
