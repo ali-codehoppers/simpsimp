@@ -36,7 +36,7 @@
                 business click on the below</p>
             <div id="tag">
                 <ul>
-                <li class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#newbusiness; ">New Business</a></li>
+                <li class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#newbusiness">New Business</a></li>
                 <li  class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#market">Marketing</a></li>
                 <li  class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#estimate">Estimating</a></li>
                 <li  class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#analysis">Analysis</a></li>

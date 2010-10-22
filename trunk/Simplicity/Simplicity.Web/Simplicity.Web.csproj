@@ -85,6 +85,8 @@
     <Content Include="Images\bottombar.jpg" />
     <Content Include="Images\btn_buynow.jpg" />
     <Content Include="Images\btn_cancel.jpg" />
+    <Content Include="Images\btn_case_study.jpg" />
+    <Content Include="Images\btn_case_study2.jpg" />
     <Content Include="Images\btn_checkout.jpg" />
     <Content Include="Images\btn_clickhere.jpg" />
     <Content Include="Images\btn_continue.jpg" />
@@ -108,6 +110,7 @@
     <Content Include="Images\call_back1.jpg" />
     <Content Include="Images\call_back_hns.jpg" />
     <Content Include="Images\chrome.jpg" />
+    <Content Include="Images\contactus_left_nav.jpg" />
     <Content Include="Images\curve_big_partition.jpg" />
     <Content Include="Images\curve_left_big.jpg" />
     <Content Include="Images\curve_left_c.jpg" />
@@ -238,6 +241,7 @@
     <Content Include="Images\s_handyLEC.jpg" />
     <Content Include="Images\s_handyserve.jpg" />
     <Content Include="Images\s_hs.jpg" />
+    <Content Include="Images\s_man.png" />
     <Content Include="Images\tick_bullet.jpg" />
     <Content Include="Images\top.jpg" />
     <Content Include="Images\top_bg_r.jpg" />

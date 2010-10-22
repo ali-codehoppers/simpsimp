@@ -22,7 +22,7 @@
                 We have created leading resource management solutions for clients across multiple
                 industries.</p>
             <p>
-                Please click on an appropriate industtry to see how our solutions can help you increase
+                Please click on an appropiate industry to see how our solutions can help you increase
                 your profits and the performance of your business.</p>
             <div id="links">
                 <div id="salesMarketing" style="padding-left: 0px">
