@@ -28,7 +28,6 @@
                     $("#pionDivImg").attr('src', "../Images/icon_plus.jpg");
                     $("#adapDivImg").attr('src', "../Images/icon_plus.jpg");
                     $("#partDivImg").attr('src', "../Images/icon_plus.jpg");
-            
                     $("#" + $(this).attr("id") + "Img").attr('src', "../Images/icon_minus.jpg");
                     
                     $(this).next(".menuDetail").slideToggle(1000);
@@ -136,7 +135,7 @@
                 Simplicity was first developed for a leading construction company that found existing
                 systems too inflexible to support their requirments. The initial system was to be
                 simple to use whilst housing a database of over 42,000 schedules
-                and rates. Thus Simplicity was born.</p>
+                and rates. Thus Simplicity was created.</p>
             <p>
                 Since that time we have never moved from our basic concept - to produce the best
                 business process systems which offer applications that make information managment

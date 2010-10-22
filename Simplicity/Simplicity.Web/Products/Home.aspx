@@ -17,27 +17,16 @@
             more than a web browser or mobile phone to access.</p>
         <p style="width:95%">
             This Simplicity Software as a Service (SaaS) suits is packed with 14 specialist
-            applications to help clients with a typica; turnover of 1m-20m to co-ordinate their
+            applications to help clients with a typical turnover of £1m-£20m to co-ordinate their
             whole business.</p>
         <p style="width:95%">
-            Simplicity for business offers a suits of business software which require nothing
-            more than a web browser or mobile phone to access.</p>
+            It works across customer facing sales, marketing and project management departments, through to back-office operations and finance, for core activities over a wide range of industry sectors.</p>
         <p style="width:95%">
-            This Simplicity Software as a Service (SaaS) suits is packed with 14 specialist
-            applications to help clients with a typica; turnover of 1m-20m to co-ordinate their
-            whole business.Simplicity for business offers a suits of business software which
-            require nothing more than a web browser or mobile phone to access.</p>
+            Covering the critical business processes that impact profit and cash-in-bank, SimplicityEAS helps your people work effectively and optimise expensive resources. Managers have instant access to company-wide information and in-depth reporting, equipping them to plan better for the future.</p>
         <p style="width:95%">
-            This Simplicity Software as a Service (SaaS) suits is packed with 14 specialist
-            applications to help clients with a typica; turnover of 1m-20m to co-ordinate their
-            whole business.This Simplicity Software as a Service (SaaS) suits is packed with
-            14 specialist applications to help clients with a typica; turnover of 1m-20m to
-            co-ordinate their whole business.Simplicity for business offers a suits of business
-            software which require nothing more than a web browser or mobile phone to access.</p>
+            You will be amazed at how Simplicity can help your business to become smarter and more efficient.</p>
         <p style="width:95%">
-            This Simplicity Software as a Service (SaaS) suits is packed with 14 specialist
-            applications to help clients with a typica; turnover of 1m-20m to co-ordinate their
-            whole business.</p>
+            For more on the solutions which make up this impressive suite of software click on the links below.</p>
     </div>
     <div id="PrdouctHome">
         <div class="col">
