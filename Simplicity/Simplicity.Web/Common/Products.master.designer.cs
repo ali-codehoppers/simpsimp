@@ -46,7 +46,7 @@ namespace Simplicity.Web.Common {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image7;
+        protected global::System.Web.UI.WebControls.ImageButton Image7;
         
         /// <summary>
         /// Image8 control.
@@ -55,7 +55,7 @@ namespace Simplicity.Web.Common {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image8;
+        protected global::System.Web.UI.WebControls.ImageButton Image8;
         
         /// <summary>
         /// Image9 control.
@@ -64,7 +64,7 @@ namespace Simplicity.Web.Common {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image9;
+        protected global::System.Web.UI.WebControls.ImageButton Image9;
         
         /// <summary>
         /// Image10 control.
@@ -73,7 +73,7 @@ namespace Simplicity.Web.Common {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image10;
+        protected global::System.Web.UI.WebControls.ImageButton Image10;
         
         /// <summary>
         /// Image11 control.
@@ -82,7 +82,7 @@ namespace Simplicity.Web.Common {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image11;
+        protected global::System.Web.UI.WebControls.ImageButton Image11;
         
         /// <summary>
         /// Image12 control.
@@ -91,6 +91,6 @@ namespace Simplicity.Web.Common {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image12;
+        protected global::System.Web.UI.WebControls.ImageButton Image12;
     }
 }

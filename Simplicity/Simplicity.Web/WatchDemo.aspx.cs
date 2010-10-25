@@ -10,8 +10,10 @@ namespace Simplicity.Web
 {
     public partial class WatchDemo : GenericPage
     {
+        string videoURL = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Session[WebConstants.Session.VIEW_DEMO] == null && LoggedIsUser == null)
             {
                 Response.Redirect("~/ViewDemo.aspx");
@@ -30,10 +32,26 @@ namespace Simplicity.Web
             {
             
             }
+            if (Request[WebConstants.Request.VIDEO_ID] != null)
+            {
+                int videoid = int.Parse(Request[WebConstants.Request.VIDEO_ID]);
+                var WatchVideo = from c in DatabaseContext.Videos where c.VideoID == videoid select c;
+                if (WatchVideo.Any())
+                {
+                    videoURL = WatchVideo.FirstOrDefault().URL;
+                }
+            }
         }
-        protected string GetURL(object videoId)
+        protected string VideoURL
         {
-            return "javascript:open_train(\"" + videoId + "\");";
+            get
+            {
+                return videoURL;
+            }
+        }
+        protected object GetURL(object videoId)
+        {
+            return videoId;
         }
     }
 }

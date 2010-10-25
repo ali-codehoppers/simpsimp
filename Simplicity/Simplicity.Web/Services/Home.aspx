@@ -9,11 +9,12 @@
     </h2>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    <div style="text-align:justify; padding-right:20px;">
     <p>
         Our commitment to our customers means that we strive to exceed expectations every
         step of the way.</p>
     <p>
         We see ourselves as partners, working with your team to tailor Simplicity's business
-        managment solutions to your needs.</p>
-
+        management solutions to your needs.</p>
+    </div>
 </asp:Content>

@@ -57,13 +57,13 @@
     </div>
     <div class="text" id="contentsDiv">
         <p>
-            This suite of web-based software will automate your business processess so you can
-            reach optimun profit and business performance. Not, thanks to Simplicity you can
+            This suite of web-based software will automate your business processes so you can
+            reach optimum profit and business performance. Now, thanks to Simplicity you can
             move up to an enterprise application suite that requires nothing more than a web
             browser to use and is available on low-cost subscription.</p>
         <p>
             The completely managed service - often called Software as a Service (SaaS) - has
-            13 key tools on a shared, single database, which cover the critical business processess
+            13 key tools on a shared, single database, which cover the critical business processes
             that impact profit. The suite includes:
         </p>
         <ul>
@@ -76,7 +76,7 @@
             <li class="list">Petty cash (Click Finance &amp; Accounts below)</li>
             <li class="list">Construction Industry Scheme</li>
             <li class="list">Contractors</li>
-            <li class="list">Vehicle Managment (Click Operations below)</li>
+            <li class="list">Vehicle Management (Click Operations below)</li>
             <li class="list">Asset Management (Click Operations below)</li>
         </ul>
     </div>

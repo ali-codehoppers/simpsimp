@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="solutiontext">
+        <div class="solutiontext"  style="padding-right:20px;">
             <p>
                 Our clients come from many different industry sectors and many through referral.
                 We think this is testimony to the quality of our solutions and the importance we

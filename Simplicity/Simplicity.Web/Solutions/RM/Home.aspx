@@ -8,7 +8,7 @@
         <div id="secnavbar" class="floatLeft">
             <div id="icon1" class="floatLeft" style="width:50%;">
                 <h2 id="ourSolution">
-                    <span style="color: #cccccc;">RESOURCE</span> &amp; MANAGMENT</h2>
+                    <span style="color: #cccccc;">RESOURCE</span> &amp; MANAGEMENT</h2>
             </div>
             <div id="nsecnavbar">
                 <div>
@@ -18,8 +18,8 @@
         </div>
         <div id="contentsDiv" class="servicetext">
             <p style="width:95%">
-                The resource managment suite is more than just a diary. All entries within it can
-                be linked to other departments to ensure more efficent business performance.</p>
+                The resource management suite is more than just a diary. All entries within it can
+                be linked to other departments to ensure more efficient business performance.</p>
             <p style="width:95%">
                 For example, site managers can use it to log staff time on timesheets which are
                 then automatically co-ordinated by payroll. For seamless business the resources management

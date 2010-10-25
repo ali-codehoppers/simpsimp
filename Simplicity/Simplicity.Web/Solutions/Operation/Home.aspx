@@ -26,7 +26,7 @@
                 <li class="list">Handle variations and retentions effectively, so that they are not rejected</li>
                 <li class="list">Schedule operatives, plant, machinery and materials to control costs and deliver
                     on time</li>
-                <li class="list">Display Time sheets and Expense Managment to control costs</li>
+                <li class="list">Display Time sheets and Expense Management to control costs</li>
                 <li class="list">Analyse all the other business processes, from beginning to end</li>
             </ul>
             <p>
@@ -48,7 +48,7 @@
                     
                 </div>
                 <h2>
-                    'Save time and make managment of jobs from "quote" to <br />"work-in-progress" easy'</h2>
+                    'Save time and make management of jobs from "quote" to <br />"work-in-progress" easy'</h2>
                 <ul>
                     <li class="list">Convert successful tenders to work in progress</li>
                     <li class="list">Allocate to job manager</li>

@@ -71,7 +71,7 @@
     </div>
     <div class="text" id="contentsDiv">
         <p>
-            Guides you through the sequential processess, provides practical templates and an
+            Guides you through the sequential processes, provides practical templates and an
             extendable library of documents and content to publish H&amp;S folders in an easy
             to read format.
         </p>
@@ -80,7 +80,7 @@
         </p>
         <ul>
             <li class="list">Publish the Health &amp; Safety folder required onsite</li>
-            <li class="list">Document the safe way of working for the job - The Method Statment</li>
+            <li class="list">Document the safe way of working for the job - The Method Statement</li>
             <li class="list">Analyse the risk for each specific task - The Risk Assessments</li>
             <li class="list">Add new or changed risk content onsite</li>
             <li class="list">Maintain Sign-In Sheets</li>

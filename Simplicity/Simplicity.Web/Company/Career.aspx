@@ -15,13 +15,13 @@
                 </div>
             </div>
         </div>
-        <div class="solutiontext">
+        <div class="solutiontext"  style="padding-right:20px;">
             <p>
                 We are really proud of what we achieve at Simplicity for business. Our great team
                 of people are focused on providing excellent value products and services to meet
                 customers' needs, which is how we manage to produce award winning solutions.</p>
             <p>
-                Our people believe to be happy at work you need to be challeged and the challenge
+                Our people believe to be happy at work you need to be challenged and the challenge
                 should be fun. This is the idea company culture in which to create great software
                 solutions. Our people bring a wide range experience to this meet this challenge
                 and this provides a simulating environment in which individuals can both further
@@ -42,7 +42,7 @@
                 Important Information</h4>
             <p>
                 Ultra Nova Coding Ltd has a policy not to use Recruitment Agencies; please do not
-                apply for any position within this organisation we do not welcome seculative enquiries.</p>
+                apply for any position within this organisation we do not welcome speculative enquiries.</p>
             <p>
                 Agencies intending to ignore this clear statement should note we can and will seek
                 legal redress against any agency which infringes our legal rights. Please also note

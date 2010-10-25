@@ -18,7 +18,7 @@
             <a href="../CallMeBack.aspx" id="call"></a>
         </div>
     </div>
-    <div class="floatRight" style="width: 650px;">
+    <div class="floatRight" style="width: 630px; padding-right:20px" >
         <div id="icon1">
             <h2 style="padding-top:20px;">
                 <span style="color: #cccccc;">CONTACT</span> US</h2>

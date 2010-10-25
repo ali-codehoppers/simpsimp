@@ -30,7 +30,5 @@
 <param name="FlashVars" value="flvpFolderLocation=http://flvplayer.com/free-flv-player/flvplayer/&flvpVideoSource=<%=VideoURL%>&flvpWidth=640&flvpHeight=480&flvpInitVolume=50&flvpTurnOnCorners=true&flvpBgColor=292F8D"
 <embed src="http://flvplayer.com/free-flv-player/FlvPlayer.swf" flashvars="flvpFolderLocation=http://flvplayer.com/free-flv-player/flvplayer/&flvpVideoSource=<%=VideoURL%>&flvpWidth=640&flvpHeight=480&flvpInitVolume=50&flvpTurnOnCorners=true&flvpBgColor=292F8D" quality="high" bgcolor="292F8D" width="640" height="480" name="FlvPlayer" align="middle" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
 </object>
-            
-            
-                        
+                     
 </div>
