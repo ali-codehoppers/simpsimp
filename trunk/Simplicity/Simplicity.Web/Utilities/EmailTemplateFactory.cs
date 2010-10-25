@@ -35,7 +35,7 @@ namespace Simplicity.Web.Utilities
             {
                 parameters.Add("##CUSTOMER_NAME##", customer.Surname + ", " + customer.Forename);
                 parameters.Add("##USER_NAME##", customer.Email);
-                parameters.Add("##PASSWORD##", customer.Password);
+                //parameters.Add("##PASSWORD##", customer.Password);
             }
         }
         private void Initialize(CallUser customer)
