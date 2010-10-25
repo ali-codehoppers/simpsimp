@@ -120,7 +120,7 @@
                     <li class="list">Book parts and next appointment for variations</li>
                     <li class="list">Upload status in real-time to head-office</li></ul>
                 <p style="width:95%">
-                    Simplicity HandyServe runs on MS Windows Mobile powered smartphones added to the
+                    Simplicity HandyLEC runs on MS Windows Mobile powered smartphones added to the
                     agreement with your current service provider.</p>
             </div>
             <div id="hardwarespecs">
