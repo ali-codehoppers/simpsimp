@@ -102,7 +102,7 @@ namespace Simplicity.Web.Utilities
                 url += "?" + WebConstants.Request.USER_UID + "=" + customer.UserUID;
                 url += "&" + WebConstants.Request.VERIFICATION_CODE + "=" + Utility.GetMd5Sum(customer.VerificationCode);
                 EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
-                //templateFactory.Paramters.Add("##PASSWORD##", password);
+                templateFactory.Paramters.Add("##PASSWORD##", password);
                 templateFactory.Paramters.Add("##URL##", url);
                 string Imageurl = HttpContext.Current.Request.Url.ToString();
                 templateFactory.Paramters.Add("##ImageUrl##", Imageurl);
@@ -129,7 +129,7 @@ namespace Simplicity.Web.Utilities
             MailMessage message = new MailMessage();
             message.To.Add(new MailAddress(emailAddress));
             EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
-            //templateFactory.Paramters.Add("##PASSWORD##", password);
+            templateFactory.Paramters.Add("##PASSWORD##", password);
             EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.PASSWORD);
             if (emailTemplate != null)
             {
