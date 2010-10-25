@@ -35,7 +35,7 @@
         <p style="width:95%">
             You will be amazed at how Simplicity can help your business to become smarter and more efficient.</p>
         <p style="width:95%">
-            For more on the solutions which make up this impressive suite of software click on the links left.</p>
+            For more on the solutions which make up this impressive suite of software click on the Product links on left.</p>
     </div>
     
 </asp:Content>
