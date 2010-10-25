@@ -5,7 +5,7 @@ Helps you ensure that all sites comply with health and safety, be they your offi
 <ul>
 <li class="list">Flag awaiting compliance documents and inspections</li>
 <li class="list">Issue permits and authorisation for each job</li>
-<li class="list">Record and refrence staff qualifications</li>
+<li class="list">Record and reference staff qualifications</li>
 <li class="list">Record accidents</li>
 <li class="list">Log attendance</li>
 <li class="list">Ensure health and safety - In one click hold documents</li>

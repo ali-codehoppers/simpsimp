@@ -63,14 +63,14 @@
             </div>
         </div>
     </div>
-    <div id="contentsDiv" class="companytext">
+    <div id="contentsDiv" class="companytext" style="padding-right:20px;">
         <p>
             Simplicity for Business is an award winning software company, founded in 1987.</p>
         <p>
             We believe it is best to do one thing really well, therefore we concentrate most
             of our effort on Enterprise Application Development.</p>
         <p>
-            Our company philosphy is to produce sophisticated easy to use business software
+            Our company philosophy is to produce sophisticated easy to use business software
             which ensures out clients increase profits and business performance.</p>
         <p>
             We strive to produce this software at the lowest cost possible to you, with the
@@ -119,7 +119,7 @@
                 Range includes a suit of mobile apps.</p>
             <p>
                 Challenging existing systems allowed us to be award-winners (The Best use of Mobile
-                and Wireless technology, DTIs eCommerce Award) and meet our clients' requirments.</p>
+                and Wireless technology, DTIs eCommerce Award) and meet our clients' requirements.</p>
         </div>
         <div class="menuLabel" id="adapDiv">
             <div style="float:left;width:3%;"><img id="Img4" src="../Images/curve_left_c.jpg"/></div>
@@ -133,12 +133,12 @@
                 So our clients' businesses are the fittest survivors</h3>
             <p>
                 Simplicity was first developed for a leading construction company that found existing
-                systems too inflexible to support their requirments. The initial system was to be
+                systems too inflexible to support their requirements. The initial system was to be
                 simple to use whilst housing a database of over 42,000 schedules
                 and rates. Thus Simplicity was created.</p>
             <p>
                 Since that time we have never moved from our basic concept - to produce the best
-                business process systems which offer applications that make information managment
+                business process systems which offer applications that make information management
                 and resource planning simple.</p>
             <p>
                 However, to lead in our crowded market we continue to adapt - to advances in technology,
@@ -166,7 +166,7 @@
                 Occasionally we need other masters in their field to be truly successful in our
                 quest for greatness in ours. This is why we partner with other experts.</p>
             <p>
-                For example, when our R&amp;D team said 'clients will have a a more cost effective
+                For example, when our R&amp;D team said 'clients will have a more cost effective
                 and accessible enterprise application suite if it was available on the web' we knew
                 we need a partner with expertise in cloud computing and software as a Service (SaaS)
                 technologies. Hence our close relationship with Astadia was born.

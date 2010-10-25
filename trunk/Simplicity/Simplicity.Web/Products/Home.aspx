@@ -1,10 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/LeftMenu.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Products.master" AutoEventWireup="true"
     CodeBehind="Home.aspx.cs" Inherits="Simplicity.Web.Products.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
-    <link href="../Styles/products.css" rel="stylesheet" type="text/css" />
+    <link href='<%=Page.ResolveClientUrl("~/Styles/products.css")%>' rel="stylesheet"
+        type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="LeftNavPlaceHolder" runat="server">
+    <div class="leftNavBar">
+			<div> <a href="../WatchDemo.aspx" id="watch"> </a> </div>
+			<div> <a href="../BuyProduct.aspx" id="buy"> </a> </div>
+			<div> <a href="../BuyProduct.aspx?try=try" id="try"> </a> </div>
+			<div> <a href="../CallMeBack.aspx" id="call"> </a> </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
         <div id="icon1">
             <h2 id="ProductHeading">
                 <span style="color: #cccccc;">OUR</span> PRODUCTS</h2>
@@ -13,7 +22,7 @@
             <asp:Image runat="server" ImageUrl="~/Images/subheading_bar.jpg" ID="Image1" /></div>
         <div>
         <p style="width:95%">
-            Simplicity for business offers a suits of business software which require nothing
+            Simplicity for business offers a suit of business software which require nothing
             more than a web browser or mobile phone to access.</p>
         <p style="width:95%">
             This Simplicity Software as a Service (SaaS) suits is packed with 14 specialist
@@ -26,43 +35,7 @@
         <p style="width:95%">
             You will be amazed at how Simplicity can help your business to become smarter and more efficient.</p>
         <p style="width:95%">
-            For more on the solutions which make up this impressive suite of software click on the links below.</p>
+            For more on the solutions which make up this impressive suite of software click on the links left.</p>
     </div>
-    <div id="PrdouctHome">
-        <div class="col">
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Products/HandyServe/Home.aspx"
-                CssClass="moreDetails">
-                <asp:Image runat="server" ID="Image7" ImageUrl="~/Images/products_img_1.jpg" />
-            </asp:HyperLink>
-        </div>
-        <div class="col">
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Products/HandyLEC/Home.aspx"
-                CssClass="moreDetails">
-                <asp:Image runat="server" ID="Image2" ImageUrl="~/Images/products_img_2.jpg" />
-            </asp:HyperLink>
-        </div>
-        <div class="col">
-            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Products/HandyGas/Home.aspx"
-                CssClass="moreDetails">
-                <asp:Image runat="server" ID="Image3" ImageUrl="~/Images/products_img_3.jpg" />
-            </asp:HyperLink>
-        </div>
-        <div class="bottomLeft">
-            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Products/HS/Home.aspx"
-                CssClass="moreDetails">
-                <asp:Image runat="server" ID="Image4" ImageUrl="~/Images/products_img_4.jpg" />
-            </asp:HyperLink>
-        </div>
-        <div class="bottomMiddle">
-            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Products/EAS/Home.aspx"
-                CssClass="moreDetails">
-                <asp:Image runat="server" ID="Image5" ImageUrl="~/Images/products_img_5.jpg" />
-            </asp:HyperLink>
-        </div>
-        <div class="bottomMiddle">
-            <asp:HyperLink ID="HyperLink6" runat="server" CssClass="moreDetails" NavigateUrl="~/PageConstruction.aspx">
-                <asp:Image runat="server" ID="Image6" ImageUrl="~/Images/products_img_6.jpg" />
-            </asp:HyperLink>
-        </div>
-    </div>
+    
 </asp:Content>

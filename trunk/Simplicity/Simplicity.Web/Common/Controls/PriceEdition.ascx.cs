@@ -89,7 +89,7 @@ namespace Simplicity.Web.Common.Controls
             {
                 if (Request[WebConstants.Request.MORE] != null)
                 {
-                    if (product.OptionalDetails.Count > 0)
+                    if (product.OptionalDetails.Count > 5)
                     {
                         rptOptional.DataSource = product.OptionalDetails.GetRange(0, product.OptionalDetails.Count > WebConstants.DEFAULT_ADDONS ? WebConstants.DEFAULT_ADDONS : product.OptionalDetails.Count);
                         rptOptional.DataBind();
@@ -127,7 +127,7 @@ namespace Simplicity.Web.Common.Controls
                     //as we have to show the first five elements only.
                     if (product.OptionalDetails.Count > WebConstants.DEFAULT_ADDONS)
                     {
-                        rptOptional.DataSource = product.OptionalDetails.GetRange(0, 5);
+                        rptOptional.DataSource = product.OptionalDetails.GetRange(0, 4);
                         hlMore.Visible = true;
                     }
                     else if (product.OptionalDetails.Count > 0)

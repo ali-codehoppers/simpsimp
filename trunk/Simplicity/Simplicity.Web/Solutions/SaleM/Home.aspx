@@ -28,7 +28,7 @@
                 <li class="list">Schedule operatives, plant, machinery and materials to control costs and deliver
                     on time</li>
                 <li class="list">Display Time sheets and Expense Management to control costs</li>
-                <li class="list">Invoice quickly,accurately and effectively to receive payments more quickly</li>
+                <li class="list">Invoice quickly, accurately and effectively to receive payments more quickly</li>
                 <li class="list">Analyse all other business processes, from beginning to end</li>
             </ul>
             <p>
@@ -85,7 +85,7 @@
                     Win business with quotes that increase long-term profitability <br /> but still offer competitive
                     prices</h2>
                 <p>
-                    Simply put,for your Sales and Marketing departments the automated process within
+                    Simply put, for your Sales and Marketing departments the automated process within
                     Simplicity EAS allow you to:</p>
                 <ul>
                     <li class="list">Manage job costing &amp; quotations</li>

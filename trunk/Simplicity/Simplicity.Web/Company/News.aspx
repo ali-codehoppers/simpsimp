@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="solutiontext">
+        <div class="solutiontext"  style="padding-right:20px;">
         <p>
                 For read the latest news from Simplicity For Business please click on the month
                 and then story headline you are interested in.</p>
@@ -25,7 +25,7 @@
                 <a>Press release VAT increase</a>
                 <br />
                 <a>Press release Snow hits economy</a><br />
-                <a>Press release - Estimating in todays's harsh economic environment</a></p>
+                <a>Press release - Estimating in today's harsh economic environment</a></p>
 </div>
     </div>
 </asp:Content>

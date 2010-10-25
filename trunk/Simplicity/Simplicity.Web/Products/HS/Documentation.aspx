@@ -7,7 +7,7 @@
     <ul>
         <li class="list">Record insurance details</li>
         <li class="list">Create &amp; fill COSHH documents</li>
-        <li class="list">Create &amp; fill method statments</li>
+        <li class="list">Create &amp; fill method statements</li>
         <li class="list">Create &amp; fill risk assessments</li>
         <li class="list">Create &amp; fill PPE sheets</li>
         <li class="list">Create &amp; fill permits to work</li>

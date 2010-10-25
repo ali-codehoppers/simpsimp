@@ -10,7 +10,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-
+<div style="padding-right:20px;text-align:justify;">
 <p>
     Success in integrating software solutions is closely linked to properly understanding
     your company's objectives and the technical constraints. Consequently, every our
@@ -18,8 +18,8 @@
     project and guaranteeing its success.</p>
 <p>
     We make available to you a dedicated project leader so as to assure you of the quality
-    of the solution deployed: from the definition of requirments to the delivery of
+    of the solution deployed: from the definition of requirements to the delivery of
     reports. In short, we will manage your projects to ensure they are delivered on
     time measureable results.</p>
-
+    </div>
 </asp:Content>

@@ -102,7 +102,7 @@
                     
                 </div>
                 <h2>
-                    Real-time analysis so your managment accounts can plan for <br />today and the future</h2>
+                    Real-time analysis so your management accounts can plan for <br />today and the future</h2>
                 <ul>
                     <li class="list">Generate client update reports</li>
                     <li class="list">Generate management reports for internal analysis</li></ul>

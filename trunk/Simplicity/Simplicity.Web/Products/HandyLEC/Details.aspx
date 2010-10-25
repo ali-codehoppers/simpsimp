@@ -9,7 +9,7 @@
     <li class="list">Survey and record results</li>
     <li class="list">Confirm PAT certification</li>
     <li class="list">Book parts and next appointment for variations</li>
-    <li class="list">Upload staus in real-time to head-office</li></ul>
+    <li class="list">Upload status in real-time to head-office</li></ul>
 <p>
-    Simplicity HandyServe runs on MS Windows Mobile powered smartphones added to the
+    Simplicity HandyLEC runs on MS Windows Mobile powered smartphones added to the
     agreement with your current service provider.</p>

@@ -3,17 +3,18 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="HeadingContentPlaceHolder" runat="server">
     <h2 id="ourServices">
-        Training
+        <span style="color: #cccccc;">Training &amp;</span> Support
     </h2>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+<div style="padding-right:20px;text-align:justify;">
 <p>
     Our commitment to our customers means that we strive to exceed expectations every
     step of the way.</p>
 <p>
     We see ourselves as partners, working with your team to tailor Simplicity's business
-    managment solutions to your needs.</p>
+    management solutions to your needs.</p>
 <h2>
     Training</h2>
 <p>
@@ -29,4 +30,5 @@
     which is why we pride ourselves on providing expert support. With no voicemail but
     real people to talk to, our customer service team is highly trained and capable
     of handling the most complex and in-depth issues.</p>
+</div>
 </asp:Content>

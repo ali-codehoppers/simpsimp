@@ -121,7 +121,7 @@
                 <p>
                     The Sage Group plc is a leading supplier of business software and services to 6.1
                     million customers worldwide. This software ranges from accounts and payroll, to
-                    customer relationship managment, e-business and help for start-ups.</p>
+                    customer relationship management, e-business and help for start-ups.</p>
                 <p>
                     Simplicity is fully integrated with Sage, allowing companies to manage the detailed
                     end to end business processes within Simplicity and the financials within Sage Accounts

@@ -18,7 +18,7 @@
         </div>
         <div id="contentsDiv" class="servicetext">
             <p>
-                Guides you through the sequential processess, provides practical templates and an
+                Guides you through the sequential processes, provides practical templates and an
                 extendable library of <br/>documents and content to publish H&amp;S folders in an easy
                 to read format.
             </p>
@@ -27,7 +27,7 @@
             </p>
             <ul>
                 <li class="list">Publish the Health &amp; Safety folder required onsite</li>
-                <li class="list">Document the safe way of working for the job - The Method Statment</li>
+                <li class="list">Document the safe way of working for the job - The Method Statement</li>
                 <li class="list">Analyse the risk for each specific task - The Risk Assessments</li>
                 <li class="list">Add new or changed risk content onsite</li>
                 <li class="list">Maintain Sign-In Sheets</li>
@@ -58,7 +58,7 @@
                 <ul>
                     <li class="list">Flag awaiting compliance documents and inspections</li>
                     <li class="list">Issue permits and authorisation for each job</li>
-                    <li class="list">Record and refrence staff qualifications</li>
+                    <li class="list">Record and reference staff qualifications</li>
                     <li class="list">Record accidents</li>
                     <li class="list">Log attendance</li>
                     <li class="list">Ensure health and safety - In one click hold documents</li>
@@ -85,7 +85,7 @@
                 <ul>
                     <li class="list">Record insurance details</li>
                     <li class="list">Create &amp; fill COSHH documents</li>
-                    <li class="list">Create &amp; fill method statments</li>
+                    <li class="list">Create &amp; fill method statements</li>
                     <li class="list">Create &amp; fill risk assessments</li>
                     <li class="list">Create &amp; fill PPE sheets</li>
                     <li class="list">Create &amp; fill permits to work</li>
