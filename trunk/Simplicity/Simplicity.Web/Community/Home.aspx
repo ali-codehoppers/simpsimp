@@ -61,7 +61,7 @@
         <div id="contentsDiv" class="communitytext">
             <p>
                 Get the latest information and extend your knowledge with news, tutorials and downloads.
-                Stay on top of trends and new techniques visit exciting portals, exchange and events.</p>
+                Stay on top of trends and new techniques, visit exciting portals, exchange and events.</p>
             <p>
                 Experts need experts</p>
             <p>

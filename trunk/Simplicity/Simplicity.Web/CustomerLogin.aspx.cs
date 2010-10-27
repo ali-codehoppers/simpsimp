@@ -57,6 +57,10 @@ namespace Simplicity.Web
                 {
                     Response.Redirect((string)Session[WebConstants.Session.RETURN_URL]);
                 }
+                else if (Request["GOTO_URL"] != null)
+                {
+                    Response.Redirect((string)Request["GOTO_URL"]);
+                }
                 else
                 {
                     Response.Redirect("Default.aspx");

@@ -167,7 +167,7 @@
                 quest for greatness in ours. This is why we partner with other experts.</p>
             <p>
                 For example, when our R&amp;D team said 'clients will have a more cost effective
-                and accessible enterprise application suite if it was available on the web' we knew
+                and accessible enterprise application suite if it was available on the web,' we knew
                 we need a partner with expertise in cloud computing and software as a Service (SaaS)
                 technologies. Hence our close relationship with Astadia was born.
             </p>

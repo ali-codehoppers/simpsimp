@@ -108,7 +108,7 @@
                 <ul>
                     <li class="list">Incorporate postcode checker to optimise staff and resource allocation</li>
                     <li class="list">Use diary to book planned &amp; preventive maintenance</li>
-                    <li class="list">Track allocation of staff and resources by self-selecting data segments ie day,
+                    <li class="list">Track allocation of staff and resources by self-selecting data segments i.e day,
                         week, resource, job, postcode</li>
                     <li class="list">Diarise and alerts for H&amp;S inspections</li>
                     <li class="list">Diarise progress of job</li>

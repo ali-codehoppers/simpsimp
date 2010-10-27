@@ -18,15 +18,15 @@
         </div>
         <div id="contentsDiv" class="servicetext">
             <p>
-                SimplicityEAS will help manage costs and time on all your operations and project.
+                SimplicityEAS will help manage costs and time on all your operations and projects.
                 It allows you to:</p>
             <ul>
                 <li class="list">Time sheets and expense management to control costs</li>
-                <li class="list">Compatible with Sage other accounting packages</li>
+                <li class="list">Compatible with Sage and other accounting packages</li>
                 <li class="list">And all the other business processes from beginning to end</li></ul>
             <p>
-                To find out more about what SimplicityEAS has to offer and how they can help your
-                business click on the icon.</p>
+                To find out more about what SimplicityEAS has to offer and how
+it can help your business click on the icon.</p>
             <div id="tag">
                 <ul>
                 <li class="secondlist"><a href="#boughtledger" style="font-weight: bolder;font-size:13px;color: #0066FF;">Bought Ledger</a></li>
@@ -45,7 +45,7 @@
                 </div>
                 <p>
                     Allows your department to save time on routine tasks. Simplicity EAS will help manage
-                    costs and time <br />on all your operations and project.<br />
+                    costs and time <br />on all your operations and projects.<br />
                     It allows you to:</p>
                 <ul>
                     <li class="list">Open an account</li>
@@ -72,7 +72,7 @@
                 <h2>
                     Make sure all your orders and payments are accurate and <br />avoid wasting money</h2>
                 <ul>
-                    <li class="list">Create an requisition and confirm</li>
+                    <li class="list">Create a requisition and confirm</li>
                     <li class="list">Create and send Purchase order</li>
                     <li class="list">Log purchase status</li>
                     <li class="list">Receive delivery notes</li>

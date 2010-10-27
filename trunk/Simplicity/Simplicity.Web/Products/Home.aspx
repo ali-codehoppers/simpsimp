@@ -22,8 +22,9 @@
             <asp:Image runat="server" ImageUrl="~/Images/subheading_bar.jpg" ID="Image1" /></div>
         <div>
         <p style="width:95%">
-            Simplicity for business offers a suit of business software which require nothing
-            more than a web browser or mobile phone to access.</p>
+            Simplicity for business offers a suit of business software which
+requires nothing more than a web browser or mobile phone to
+access.</p>
         <p style="width:95%">
             This Simplicity Software as a Service (SaaS) suits is packed with 14 specialist
             applications to help clients with a typical turnover of £1m-£20m to co-ordinate their

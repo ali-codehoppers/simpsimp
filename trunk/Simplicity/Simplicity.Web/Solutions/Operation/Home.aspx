@@ -18,7 +18,7 @@
         </div>
         <div id="contentsDiv" class="servicetext">
             <h2>
-                Simplicity EAS will help manage costs and time on all your <br />operations and project.
+                Simplicity EAS will help manage costs and time on all your <br />operations and projects.
                 It allows you to:</h2>
             <ul>
                 <li class="list">Enquire/ Order/ Job Ticket Works Orders and Bills of Materials to complete projects
