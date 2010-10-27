@@ -1,30 +1,31 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Companys.master" AutoEventWireup="true" CodeBehind="Career.aspx.cs" Inherits="Simplicity.Web.Company.Career" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Companys.master" AutoEventWireup="true"
+    CodeBehind="Career.aspx.cs" Inherits="Simplicity.Web.Company.Career" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-   <div style="float: left; width: 650px">
+    <div style="float: left; width: 650px">
         <div id="secnavbar" class="floatLeft">
             <div id="icon1" class="floatLeft">
                 <h2 id="ourSolution">
                     CAREER</h2>
             </div>
             <div id="nsecnavbar">
-                
                 <div>
                     <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
                 </div>
             </div>
         </div>
-        <div class="solutiontext"  style="padding-right:20px;">
+        <div class="solutiontext" style="padding-right: 20px;">
             <p>
                 We are really proud of what we achieve at Simplicity for business. Our great team
                 of people are focused on providing excellent value products and services to meet
                 customers' needs, which is how we manage to produce award winning solutions.</p>
             <p>
-                Our people believe to be happy at work you need to be challenged and the challenge
-                should be fun. This is the idea company culture in which to create great software
-                solutions. Our people bring a wide range experience to this meet this challenge
-                and this provides a simulating environment in which individuals can both further
+                Our people believe that to be happy at work you need to be challenged and the challenge
+                should be fun. This is the ideal company culture in which to create great software
+                solutions. Our people bring a wide range of experience to this meet this
+                challenge and this provides a simulating environment in which individuals can both further
                 their personal skills and contribute to the success of the business.</p>
             <p>
                 Training and personal development are of great importance because by enhancing the
@@ -53,7 +54,7 @@
             <p>
                 Unless otherwise stated, if applying for a job within the European Union, you must
                 ensure that you are already authorised to work there.</p>
-            <p>                
+            <p>
                 If you are interested in applying job for the advertised job role within Ultra Nova
                 Coding Ltd you will need a valid work permit.</p>
             <p>

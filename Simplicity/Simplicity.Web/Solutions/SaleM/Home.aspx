@@ -57,7 +57,7 @@
                     <li class="list">Create &amp; allocate new leads</li>
                     <li class="list">Use diary to book sales activity (next call, appointments, comments...)</li>
                     <li class="list">Qualify &amp; prioritise leads</li>
-                    <li class="list">Covert success pitches to work in progress</li></ul>
+                    <li class="list">Convert success pitches to work in progress</li></ul>
             </div>
             <div id="market">
                 <div  style="width:95%;">
@@ -69,7 +69,7 @@
                 <h2>
                     Generate business - track your marketing campaigns</h2>
                 <ul>
-                    <li class="list">Import existing information - ie from bought lists</li>
+                    <li class="list">Import existing information - i.e from bought lists</li>
                     <li class="list">Create &amp; send mass email campaigns</li>
                     <li class="list">Manage and track email response</li>
                     <li class="list">Categorised search by client, location, region...</li></ul>
@@ -85,7 +85,7 @@
                     Win business with quotes that increase long-term profitability <br /> but still offer competitive
                     prices</h2>
                 <p>
-                    Simply put, for your Sales and Marketing departments the automated process within
+                    Simply put, for your Sales and Marketing departments, the automated process within
                     Simplicity EAS allow you to:</p>
                 <ul>
                     <li class="list">Manage job costing &amp; quotations</li>
@@ -106,7 +106,7 @@
                 <h2>
                     Achieve business objectives</h2>
                 <ul>
-                    <li class="list">Manage and analysis sales activity</li>
+                    <li class="list">Manage and analyse sales activity</li>
                     <li class="list">Track cost of sale (COS) from initial enquiry to winning the business</li>
                     <li class="list">Link all of the above to staff and business key performance indicators (KPIs)</li>
                     <li class="list">Generate management account reports for budget and forecast analysis</li></ul>

@@ -19,7 +19,8 @@ namespace Simplicity.Web
                 Data.Session session = (from s in DatabaseContext.Sessions where s.SessionUID == User.Identity.Name select s).FirstOrDefault();
                 if (session != null)
                 {
-                    DatabaseContext.Detach(session);
+                    DatabaseContext.DeleteObject(session);
+                    //DatabaseContext.Detach(session);
                     DatabaseContext.SaveChanges();
                 }
             }

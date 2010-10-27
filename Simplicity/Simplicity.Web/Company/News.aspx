@@ -17,7 +17,7 @@
         </div>
         <div class="solutiontext"  style="padding-right:20px;">
         <p>
-                For read the latest news from Simplicity For Business please click on the month
+                To read the latest news from Simplicity For Business please click on the month
                 and then story headline you are interested in.</p>
             <p>
                 <a href="#Jantop">Jan 2010</a></p>

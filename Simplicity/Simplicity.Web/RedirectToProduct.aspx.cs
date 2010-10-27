@@ -14,7 +14,7 @@ namespace Simplicity.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             if (int.Parse(Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID]) == 2)  
-                Response.Redirect(AppSettings["HSURL"] + "/TermsConditions.aspx");
+                Response.Redirect(AppSettings["HSURL"] + "/TermsConditions.aspx",false);
         }
     }
 }
