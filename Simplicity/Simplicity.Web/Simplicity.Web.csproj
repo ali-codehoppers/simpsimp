@@ -54,6 +54,7 @@
     <Content Include="AccountAddress.aspx" />
     <Content Include="BuyProduct.aspx" />
     <Content Include="CallMeBack.aspx" />
+    <Content Include="CaseStudies.aspx" />
     <Content Include="Common\Controls\CallMeUserControl.ascx" />
     <Content Include="Common\Controls\Currencies.ascx" />
     <Content Include="Common\Controls\PriceEdition.ascx" />
@@ -166,6 +167,7 @@
     <Content Include="Images\icon_safety.jpg" />
     <Content Include="Images\icon_shopping.jpg" />
     <Content Include="Images\ie7.jpg" />
+    <Content Include="Images\img_0.jpg" />
     <Content Include="Images\img_1.jpg" />
     <Content Include="Images\img_2.jpg" />
     <Content Include="Images\img_3.jpg" />
@@ -343,6 +345,13 @@
     </Compile>
     <Compile Include="CallMeBack.aspx.designer.cs">
       <DependentUpon>CallMeBack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CaseStudies.aspx.cs">
+      <DependentUpon>CaseStudies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CaseStudies.aspx.designer.cs">
+      <DependentUpon>CaseStudies.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\Community.master.cs">
       <DependentUpon>Community.master</DependentUpon>
@@ -911,6 +920,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Docs\Simplicity_SJE_Case Study.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

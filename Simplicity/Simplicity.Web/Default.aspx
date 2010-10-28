@@ -40,7 +40,7 @@
         <div class="floatRight" style="width:165px; margin-right:50px; margin-top:50px;">
             <div id="manImage">
                 <div style="padding-top:42px; text-align:center">
-                    <a href="PageConstruction.aspx"><img src="Images/btn_case_study.jpg" />  </a>
+                    <a href="CaseStudies.aspx"><img src="Images/btn_case_study.jpg" />  </a>
                 </div>
             </div>
 		</div>
