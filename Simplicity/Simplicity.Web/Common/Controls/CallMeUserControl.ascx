@@ -37,7 +37,7 @@
         </div>
         <div class="col2">
             <div class="forgetErrorMsg">
-                <asp:TextBox ID="txtFirstName" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtFirstName" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rf10" runat="server" ErrorMessage="* Enter First Name"
                     ControlToValidate="txtFirstName" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="txtFirstName"
@@ -53,7 +53,7 @@
         </div>
         <div class="col2">
             <div class="forgetErrorMsg">
-                <asp:TextBox ID="txtSurName" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtSurName" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rf11" runat="server" ErrorMessage="* Enter Surname"
                     ControlToValidate="txtSurName" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtSurName"
@@ -68,7 +68,7 @@
             Telephone</div>
         <div class="col2">
             <div class="forgetErrorMsg">
-                <asp:TextBox ID="txtTelephone" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtTelephone" CssClass="callme_field_big" MaxLength="30" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rf12" runat="server" ErrorMessage="* Enter Telephone"
                     ControlToValidate="txtTelephone" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="txtTelephone"
@@ -83,7 +83,7 @@
             Mobile</div>
         <div class="col2">
             <div class="forgetErrorMsg">
-                <asp:TextBox ID="txtMobile" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtMobile" CssClass="callme_field_big" MaxLength="30" runat="server"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="txtMobile"
                     ErrorMessage="* Mobile must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
                     Display="Dynamic">
@@ -96,7 +96,7 @@
             Email</div>
         <div class="col2">
             <div class="forgetErrorMsg">
-                <asp:TextBox ID="txtEmail" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rf1" runat="server" ErrorMessage="* Enter Email"
                     ControlToValidate="txtEmail" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Enter Email."
@@ -111,7 +111,7 @@
             Confirm Email</div>
         <div class="col2">
             <div class="forgetErrorMsg">
-                <asp:TextBox ID="txtConfirmEmail" CssClass="callme_field_big" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtConfirmEmail" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rf2" runat="server" ErrorMessage="* Enter Confirm Email"
                     ControlToValidate="txtConfirmEmail" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="* Enter Email address"
@@ -170,13 +170,13 @@
         <div class="col1">
             Company Name</div>
         <div class="col2">
-            <asp:TextBox ID="txtCompanyName" CssClass="callme_field_big" runat="server"></asp:TextBox></div>
+            <asp:TextBox ID="txtCompanyName" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox></div>
     </div>
     <div class="row">
         <div class="col1">
             Company website</div>
         <div class="col2">
-            <asp:TextBox ID="txtCompanyWebsite" CssClass="callme_field_big" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtCompanyWebsite" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="* Enter Company Website"
                 ControlToValidate="txtCompanyWebsite" CssClass="CallMeErrorMsg" ValidationExpression="http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?"></asp:RegularExpressionValidator>
         </div>
@@ -185,19 +185,19 @@
         <div class="col1">
             Postal Address</div>
         <div class="col2">
-            <asp:TextBox ID="txtPostalAddress" CssClass="callme_field_big" runat="server"></asp:TextBox></div>
+            <asp:TextBox ID="txtPostalAddress" CssClass="callme_field_big" MaxLength="255" runat="server"></asp:TextBox></div>
     </div>
     <div class="row">
         <div class="col1">
             Postcode</div>
         <div class="col2">
-            <asp:TextBox ID="txtPostCode" CssClass="callme_field_big" runat="server"></asp:TextBox></div>
+            <asp:TextBox ID="txtPostCode" CssClass="callme_field_big" MaxLength="9" runat="server"></asp:TextBox></div>
     </div>
     <div class="row">
         <div class="col1">
             Comments</div>
         <div class="col2">
-            <asp:TextBox ID="txtComments" CssClass="callme_textfield_big" runat="server" TextMode="MultiLine"></asp:TextBox></div>
+            <asp:TextBox ID="txtComments" CssClass="callme_textfield_big" MaxLength="1000" runat="server" TextMode="MultiLine"></asp:TextBox></div>
     </div>
     <div class="row" style="margin-top: 20px;">
         <asp:CheckBox ID="cbEmails" runat="server" CssClass="col5" Text="Please indicate if you would like to receives further updates for products"

@@ -37,7 +37,7 @@
                         <asp:Label ID="Label1" runat="server" Text="Forgot Password Answer:"></asp:Label></h3>
                 </div>
                 <div class="floatLeft" >
-                    <asp:TextBox ID="txtForgotPasswordAnswer" CssClass="login_field_big" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtForgotPasswordAnswer" CssClass="login_field_big" MaxLength="50" runat="server"></asp:TextBox>
                     <div class="forgetErrorMsg">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Enter Forget Password Answer"
                             ControlToValidate="txtForgotPasswordAnswer" CssClass="errorMessage"></asp:RequiredFieldValidator>

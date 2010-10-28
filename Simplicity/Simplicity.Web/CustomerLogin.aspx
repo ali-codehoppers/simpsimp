@@ -25,7 +25,7 @@
                     <h3>Username:</h3>
                 </div>
                 <div class="floatLeft">
-                    <asp:TextBox runat="server" ID="username" CssClass="login_field"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="username" MaxLength="60" CssClass="login_field"></asp:TextBox>
                     <div class="ErrorMsg" style="padding:0px;">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="username"
                             ErrorMessage="* Username is required." Display="Dynamic"> 
@@ -45,7 +45,7 @@
                     <h3>Password:</h3>
                 </div>
                 <div class="floatLeft">
-                    <asp:TextBox runat="server" ID="password" CssClass="login_field" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="password" MaxLength="50" CssClass="login_field" TextMode="Password"></asp:TextBox>
                     <div class="ErrorMsg" style="padding:0px;">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Password is required."
                             ControlToValidate="password"> 

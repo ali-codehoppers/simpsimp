@@ -68,7 +68,10 @@
                     <div class="trolleyActionsCol3">
                         <div class="trolleyCell">
                             <asp:TextBox ID="tbQuantity" runat="server" Width="25px" CssClass="qtystyle" Text='<%# DataBinder.Eval(Container, "DataItem.Quantity")%>'
-                                AutoPostBack="True" OnTextChanged="tbQuantity_OnTextChanged" EnableViewState="False"></asp:TextBox></span>
+                                AutoPostBack="True" OnTextChanged="tbQuantity_OnTextChanged" EnableViewState="False"></asp:TextBox>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" ForeColor="Red"
+                                    ControlToValidate="tbQuantity" Type="Integer" Operator="DataTypeCheck">
+                                    </asp:CompareValidator>
                         </div>
                     </div>
                     <div class="trolleyActionsCol4">
