@@ -12,13 +12,13 @@ namespace Simplicity.Web
 {
     public partial class Trolley : GenericPage
     {
-        protected override void  OnInit(EventArgs e)
+        protected override void OnInit(EventArgs e)
         {
             this.CurrenciesControl.CurrencyClick += new EventHandler(CurrencyControl_Click);
- 	        base.OnInit(e);
+            base.OnInit(e);
         }
 
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (GetShoppingTrolley().Count == 0)
@@ -59,54 +59,61 @@ namespace Simplicity.Web
             {
                 if (LoggedIsUser != null)
                 {
-                    int index = int.Parse(e.CommandArgument.ToString());
-                    ShoppingItem currentItem = GetShoppingTrolley()[index];
-                    //Save record for current user
-                    
-                    WishList wishList = null;
-                    if (currentItem.ProductDetailEntity != null)
+                    try
                     {
-                        wishList = (from wl in DatabaseContext.WishLists
+                        int index = int.Parse(e.CommandArgument.ToString());
+                        ShoppingItem currentItem = GetShoppingTrolley()[index];
+                        //Save record for current user
+
+                        WishList wishList = null;
+                        if (currentItem.ProductDetailEntity != null)
+                        {
+                            wishList = (from wl in DatabaseContext.WishLists
                                         where wl.UserID == LoggedIsUser.UserID
                                         && wl.ProductID == currentItem.ProductEntity.ProductID
                                         && wl.ProductDetailID == currentItem.ProductDetailEntity.ProductDetailID
                                         && wl.VersionID == currentItem.VersionEntity.VersionID
                                         select wl).FirstOrDefault();
-                    }
-                    else
-                    {
-                        wishList = (from wl in DatabaseContext.WishLists
+                        }
+                        else
+                        {
+                            wishList = (from wl in DatabaseContext.WishLists
                                         where wl.UserID == LoggedIsUser.UserID
                                         && wl.ProductID == currentItem.ProductEntity.ProductID
                                         && wl.ProductDetailID == null
                                         && wl.VersionID == currentItem.VersionEntity.VersionID
                                         select wl).FirstOrDefault();
-                    }
-                    
-                    if (wishList != null)
-                    {
-                        wishList.Quantity += currentItem.Quantity;
-                        DatabaseContext.SaveChanges();
-                    }
-                    else
-                    {
-                        wishList = new WishList();
-                        wishList.Duration = currentItem.DurationInMonths;
-                        if (currentItem.ProductDetailEntity != null)
-                        {
-                            wishList.ProductDetailID = currentItem.ProductDetailEntity.ProductDetailID;
                         }
-                        wishList.ProductID = currentItem.ProductEntity.ProductID;
-                        wishList.Quantity = currentItem.Quantity;
-                        wishList.UserID = LoggedIsUser.UserID;
-                        wishList.VersionID = currentItem.VersionEntity.VersionID;
 
-                        DatabaseContext.AddToWishLists(wishList);
-                        DatabaseContext.SaveChanges();
+                        if (wishList != null)
+                        {
+                            wishList.Quantity += currentItem.Quantity;
+                            DatabaseContext.SaveChanges();
+                        }
+                        else
+                        {
+                            wishList = new WishList();
+                            wishList.Duration = currentItem.DurationInMonths;
+                            if (currentItem.ProductDetailEntity != null)
+                            {
+                                wishList.ProductDetailID = currentItem.ProductDetailEntity.ProductDetailID;
+                            }
+                            wishList.ProductID = currentItem.ProductEntity.ProductID;
+                            wishList.Quantity = currentItem.Quantity;
+                            wishList.UserID = LoggedIsUser.UserID;
+                            wishList.VersionID = currentItem.VersionEntity.VersionID;
+
+                            DatabaseContext.AddToWishLists(wishList);
+                            DatabaseContext.SaveChanges();
+                        }
+                        GetShoppingTrolley().RemoveAt(index);
+                        SetSuccessMessage("Item successfully added to your wishlist");
+                        BindRepeater();
                     }
-                    GetShoppingTrolley().RemoveAt(index);
-                    SetSuccessMessage("Item successfully added to your wishlist");
-                    BindRepeater(); 
+                    catch (FormatException ex)
+                    {
+                        SetErrorMessage("Quantity must be integer");
+                    }
                 }
                 else
                 {
@@ -118,24 +125,32 @@ namespace Simplicity.Web
         protected void tbQuantity_OnTextChanged(object sender, EventArgs e)
         {
             TextBox tbQuantity = ((TextBox)(sender));
-            int qty = int.Parse(tbQuantity.Text);
-            RepeaterItem repeaterItem = ((RepeaterItem)(tbQuantity.NamingContainer));
-            if (GetShoppingTrolley()[repeaterItem.ItemIndex].VersionEntity != null
-                && qty < GetShoppingTrolley()[repeaterItem.ItemIndex].VersionEntity.MinUsers)
+            try
             {
-                tbQuantity.Text = GetShoppingTrolley()[repeaterItem.ItemIndex].VersionEntity.MinUsers.ToString();
-                SetErrorMessage("Number of licenses must be atleast " + GetShoppingTrolley()[repeaterItem.ItemIndex].VersionEntity.MinUsers + ". Changes have not been comitted to the Trolley");
+                int qty = int.Parse(tbQuantity.Text);
+
+                RepeaterItem repeaterItem = ((RepeaterItem)(tbQuantity.NamingContainer));
+                if (GetShoppingTrolley()[repeaterItem.ItemIndex].VersionEntity != null
+                    && qty < GetShoppingTrolley()[repeaterItem.ItemIndex].VersionEntity.MinUsers)
+                {
+                    tbQuantity.Text = GetShoppingTrolley()[repeaterItem.ItemIndex].VersionEntity.MinUsers.ToString();
+                    SetErrorMessage("Number of licenses must be atleast " + GetShoppingTrolley()[repeaterItem.ItemIndex].VersionEntity.MinUsers + ". Changes have not been comitted to the Trolley");
+                }
+                else
+                {
+                    Label lblTotalPrice = (Label)repeaterItem.FindControl("totalPrice");
+                    GetShoppingTrolley()[repeaterItem.ItemIndex].Quantity = Convert.ToInt32(tbQuantity.Text);
+                    lblTotalPrice.Text = String.Format("{0:N2}", GetShoppingTrolley()[repeaterItem.ItemIndex].Total);
+                }
             }
-            else
+            catch (FormatException ex)
             {
-                Label lblTotalPrice = (Label)repeaterItem.FindControl("totalPrice");
-                GetShoppingTrolley()[repeaterItem.ItemIndex].Quantity = Convert.ToInt32(tbQuantity.Text);
-                lblTotalPrice.Text = String.Format("{0:N2}", GetShoppingTrolley()[repeaterItem.ItemIndex].Total);
+                SetErrorMessage("Quantity must be integer");
             }
         }
 
-        
-        
+
+
 
         protected void btnContinueShopping_Click(object sender, ImageClickEventArgs e)
         {

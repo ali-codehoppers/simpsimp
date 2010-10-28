@@ -62,29 +62,44 @@ namespace Simplicity.Web
         {
             if (e.CommandName.Equals("Remove"))
             {
-                int wishListId = int.Parse(e.CommandArgument.ToString());
-                WishList wishList = (from wl in DatabaseContext.WishLists where wl.WishListID == wishListId select wl).FirstOrDefault();
-                DatabaseContext.DeleteObject(wishList);
-                DatabaseContext.SaveChanges();
-                BindRepeater();                
+                try
+                {
+                    int wishListId = int.Parse(e.CommandArgument.ToString());
+                    WishList wishList = (from wl in DatabaseContext.WishLists where wl.WishListID == wishListId select wl).FirstOrDefault();
+                    DatabaseContext.DeleteObject(wishList);
+                    DatabaseContext.SaveChanges();
+                    BindRepeater();
+                
+                }
+                catch (FormatException ex)
+                {
+                        SetErrorMessage("Quantity must be integer");
+                }
             }
         }
         protected void tbQuantity_OnTextChanged(object sender, EventArgs e)
         {
             TextBox tbQuantity = ((TextBox)(sender));
-            int qty = int.Parse(tbQuantity.Text);
-            RepeaterItem repeaterItem = ((RepeaterItem)(tbQuantity.NamingContainer));
-            if (GetWishList()[repeaterItem.ItemIndex].VersionEntity != null
-                && qty < GetWishList()[repeaterItem.ItemIndex].VersionEntity.MinUsers)
+            try
             {
-                tbQuantity.Text = GetWishList()[repeaterItem.ItemIndex].VersionEntity.MinUsers.ToString();
-                SetErrorMessage("Number of licenses must be atleast " + GetWishList()[repeaterItem.ItemIndex].VersionEntity.MinUsers + ". Changes have not been comitted to the Trolley");
+                int qty = int.Parse(tbQuantity.Text);
+                RepeaterItem repeaterItem = ((RepeaterItem)(tbQuantity.NamingContainer));
+                if (GetWishList()[repeaterItem.ItemIndex].VersionEntity != null
+                    && qty < GetWishList()[repeaterItem.ItemIndex].VersionEntity.MinUsers)
+                {
+                    tbQuantity.Text = GetWishList()[repeaterItem.ItemIndex].VersionEntity.MinUsers.ToString();
+                    SetErrorMessage("Number of licenses must be atleast " + GetWishList()[repeaterItem.ItemIndex].VersionEntity.MinUsers + ". Changes have not been comitted to the Trolley");
+                }
+                else
+                {
+                    Label lblTotalPrice = (Label)repeaterItem.FindControl("totalPrice");
+                    GetWishList()[repeaterItem.ItemIndex].Quantity = Convert.ToInt32(tbQuantity.Text);
+                    lblTotalPrice.Text = String.Format("{0:N2}", GetWishList()[repeaterItem.ItemIndex].Total);
+                }
             }
-            else
+            catch (FormatException ex)
             {
-                Label lblTotalPrice = (Label)repeaterItem.FindControl("totalPrice");
-                GetWishList()[repeaterItem.ItemIndex].Quantity = Convert.ToInt32(tbQuantity.Text);
-                lblTotalPrice.Text = String.Format("{0:N2}", GetWishList()[repeaterItem.ItemIndex].Total);
+                SetErrorMessage("Quantity must be integer");
             }
         }
         protected void imbBtnContinue_Click(object sender, ImageClickEventArgs e)

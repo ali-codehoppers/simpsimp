@@ -27,7 +27,7 @@
                             Username:</h3>
                     </div>
                     <div class="floatLeft">
-                        <asp:TextBox runat="server" ID="username" CssClass="login_field_big"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="username" MaxLength="60" CssClass="login_field_big"></asp:TextBox>
                         <div class="forgetErrorMsg">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="username"
                                 ErrorMessage="* Username is required" Display="Dynamic"> 
