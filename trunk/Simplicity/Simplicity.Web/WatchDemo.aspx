@@ -51,7 +51,7 @@
 <param name="quality" value="high" />
 
 <param name="FlashVars" value="flvpFolderLocation=http://flvplayer.com/free-flv-player/flvplayer/&flvpVideoSource=<%=VideoURL%>&flvpWidth=540&flvpHeight=380&flvpInitVolume=50&flvpTurnOnCorners=true&flvpBgColor=292F8D"
-<embed src="http://flvplayer.com/free-flv-player/FlvPlayer.swf" flashvars="flvpFolderLocation=http://flvplayer.com/free-flv-player/flvplayer/&flvpVideoSource=<%=VideoURL%>&flvpWidth=540&flvpHeight=380&flvpInitVolume=50&flvpTurnOnCorners=true&flvpBgColor=292F8D" quality="high" bgcolor="292F8D" width="500" height="400" name="FlvPlayer" align="middle" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+<embed src="http://flvplayer.com/free-flv-player/FlvPlayer.swf" flashvars="flvpFolderLocation=http://flvplayer.com/free-flv-player/flvplayer/&flvpVideoSource=<%=VideoURL%>&flvpWidth=540&flvpHeight=380&flvpInitVolume=50&flvpTurnOnCorners=true&flvpBgColor=292F8D" quality="high" width="600" height="400" name="FlvPlayer" align="middle" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
 </object>
                      
 </div>
