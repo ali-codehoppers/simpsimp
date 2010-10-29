@@ -81,7 +81,7 @@
             <h4>
                 How to Apply</h4>
             <p>
-                Preferably email: tell-me-more@ultranovecoding.com with a CV and covering letter.</p>
+                Preferably email: tell-me-more@simplicity4business.com with a CV and covering letter.</p>
             <p>
                 If you cannot email, post to:</p>
             <p>
