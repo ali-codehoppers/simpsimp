@@ -142,7 +142,7 @@ namespace Simplicity.Web.Utilities
                 templateFactory.Paramters.Add("##REMINDER_ANSWER##", reminderAnswer);
                 string Imageurl = HttpContext.Current.Request.Url.ToString();
                 templateFactory.Paramters.Add("##ImageUrl##", Imageurl);
-                EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.USERACTIVATION);
+                EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.USERCREATION);
                 if (emailTemplate != null)
                 {
                     message.Body = emailTemplate.HTML;
