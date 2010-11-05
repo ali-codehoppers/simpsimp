@@ -20,6 +20,7 @@ namespace Simplicity.Web.Utilities
         public static class TemplateNames
         {
             public static string ACTIVATION = "ACTIVATION";
+            public static string USERACTIVATION = "USERACTIVATION";
             public static string PASSWORD = "PASSWORD";
             public static string PAYMENT = "PAYMENT";
             public static string CALLUSER = "CALLUSER";

@@ -116,7 +116,7 @@ namespace Simplicity.Web.Utilities
                 {
                     message.Body = "Thank you for registering with Simplicity4Business. <br/> <br/>"
                                 + " Please click the following URL to activate your account. <br/><br/>"
-                                + " <a href=' " + url + "'>" + url + "</a>";
+                                + " <a href=' " + url + "'>" + url + "</a>" + "Username: " + customer.Email + "<br/>Password: " + password;
                     message.Subject = "Activation Code for Simplicity for Business";
                 }
                 message.IsBodyHtml = true;
@@ -124,6 +124,42 @@ namespace Simplicity.Web.Utilities
             }
         }
 
+        public static void SendUserAccountCreationEmail(User customer, string password,string reminderAnswer)
+        {
+            if (customer != null)
+            {
+                MailMessage message = new MailMessage();
+                message.To.Add(new MailAddress(customer.Email));
+                string url = HttpContext.Current.Request.Url.ToString();
+                string[] paths = url.Split('/');
+                url = url.Replace(paths[paths.Length - 1], "VerifyEmail.aspx");
+                url += "?" + WebConstants.Request.USER_UID + "=" + customer.UserUID;
+                url += "&" + WebConstants.Request.VERIFICATION_CODE + "=" + Utility.GetMd5Sum(customer.VerificationCode);
+                EmailTemplateFactory templateFactory = new EmailTemplateFactory(customer);
+                templateFactory.Paramters.Add("##PASSWORD##", password);
+                templateFactory.Paramters.Add("##URL##", url);
+                templateFactory.Paramters.Add("##REMINDER_QUESTION##",customer.ReminderQuestion);
+                templateFactory.Paramters.Add("##REMINDER_ANSWER##", reminderAnswer);
+                string Imageurl = HttpContext.Current.Request.Url.ToString();
+                templateFactory.Paramters.Add("##ImageUrl##", Imageurl);
+                EmailTemplate emailTemplate = templateFactory.GetEmailContents(WebConstants.TemplateNames.USERACTIVATION);
+                if (emailTemplate != null)
+                {
+                    message.Body = emailTemplate.HTML;
+                    message.Subject = emailTemplate.Subject;
+                }
+                else
+                {
+                    message.Body = "Thank you for registering with Simplicity4Business. <br/> <br/>"
+                                + " Please click the following URL to activate your account. <br/><br/>"
+                                + " <a href=' " + url + "'>" + url + "</a>"+"Username: "+ customer.Email +"<br/>Password: "+password+"<br/> Reminder Question: "
+                                + customer.ReminderQuestion +"<br/> Reminder Answer: "+reminderAnswer;
+                    message.Subject = "Activation Code for Simplicity for Business";
+                }
+                message.IsBodyHtml = true;
+                SendEmail(message);
+            }
+        }
         public static void SendPasswordEmail(User customer, string emailAddress, string password)
         {
             MailMessage message = new MailMessage();

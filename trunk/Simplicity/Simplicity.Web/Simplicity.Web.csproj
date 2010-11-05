@@ -80,6 +80,7 @@
     <Content Include="ForgotPasswordNextPage.aspx" />
     <Content Include="Images\01.jpg" />
     <Content Include="Images\02.jpg" />
+    <Content Include="Images\add_user.png" />
     <Content Include="Images\astadia.png" />
     <Content Include="Images\bg_repeat.jpg" />
     <Content Include="Images\bg_rotate_banner.jpg" />

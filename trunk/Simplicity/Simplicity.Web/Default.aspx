@@ -4,8 +4,21 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('.slideShow').cycle({
-                fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+                fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+                timeoutFn: calculateTimeout,
+                delay: -2000
+
             });
+            var timeouts = [2, 1, 1, 1, 1, 1, 1];
+            function calculateTimeout(currElement, nextElement, opts, isForward) {
+                var index = opts.currSlide;
+                if (index == 0) {
+                    return 30000;
+                }
+                else {
+                    return 3000;
+                }
+            }
         });
     </script>
 </asp:Content>
@@ -22,7 +35,7 @@
 		<div class="floatRight">
 			<div class="rightBannerTop"></div>
 			<div class="slideShow">
-				<a><img src="images/img_0.jpg" width="655" height="257" /></a>
+				<a id="desc_img"><img alt="description_Image" src="images/img_0.jpg" width="655" height="257" /></a>
 				<a href="Products/HS/Home.aspx"><img src="images/img_2.jpg" width="655" height="257" /></a>
 				<a href="Products/HandyGas/Home.aspx"><img src="images/img_3.jpg" width="655" height="257" /></a>
 				<a href="Products/HandyLEC/Home.aspx"><img src="images/img_4.jpg" width="655" height="257" /></a>
@@ -40,7 +53,7 @@
         <div class="floatRight" style="width:165px; margin-right:50px; margin-top:50px;">
             <div id="manImage">
                 <div style="padding-top:42px; text-align:center">
-                    <a href="CaseStudies.aspx"><img src="Images/btn_case_study.jpg" />  </a>
+                    <a href="CaseStudies.aspx"><img src="Images/btn_case_study2.jpg" />  </a>
                 </div>
             </div>
 		</div>

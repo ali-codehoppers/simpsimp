@@ -17,7 +17,9 @@ namespace Simplicity.Web.Utilities
 
         public enum ENTITY_TYPE
         {
-            USER
+            USER,
+            ADMIN,
+            COMPANY_ADMIN
         }
     }
 }
