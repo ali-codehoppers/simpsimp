@@ -977,6 +977,17 @@ div.myChangeTab
 	background: url(../Images/login_btn_disable.jpg) bottom left no-repeat;
 	float:left;
 }
+div.myCompanyTab
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(../Images/login_btn_disable.jpg) bottom left no-repeat;
+	float:left;
+}
 div.myProductsTabOnMouseOver
 {
 	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
@@ -1001,11 +1012,22 @@ div.myChangeTabOnMouseOver
 	cursor:pointer;
 	float:left;
 }
+div.myCompanyTabOnMouseOver
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(../Images/login_btn_highlight.jpg) bottom left no-repeat;
+	cursor:pointer;
+	float:left;
+}
 div.myAccountTabs
 {
 	margin-top:10px; 
 	padding-left:50px;
-	width:850px;
 }
 
 #myAccountMyPersonalInfoTab
@@ -1037,6 +1059,12 @@ div.myAccountTabs
 	background: url(../images/login_lft_line.jpg) 0 0 no-repeat;
 }
 #MyPasswordTab
+{	
+	display:none;
+	padding-left:30px;
+	background: url(../images/login_lft_line.jpg) 0 0 no-repeat;
+}
+#MyCompanyTab
 {	
 	display:none;
 	padding-left:30px;
@@ -1386,6 +1414,7 @@ div.myChangeTabs
 	padding-left:80px;
 	width:850px;
 }
+
 div.myChangeTabs div.row
 {
 	padding-top:5px;

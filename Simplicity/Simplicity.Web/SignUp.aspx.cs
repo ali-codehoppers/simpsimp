@@ -13,6 +13,7 @@ namespace Simplicity.Web
     public partial class SignUp : GenericPage
     {
         public int SelectedTabElement = 1;
+
         List<Product> UserCompanyProduct;
         List<Product> UserProduct;
         protected void Page_Load(object sender, EventArgs e)
@@ -42,7 +43,36 @@ namespace Simplicity.Web
                 telephone2.Text = address.Telephone2;
                 fax.Text = address.Fax;
                 mobile.Text = mobile.Text;
-
+                //////////////////////////Company Panel////////////////////////////////////////
+                Simplicity.Data.Company company = null;
+                User Admin = null;
+                
+                if (LoggedIsUser.Company != null)
+                    company = (from c in DatabaseContext.Companies where c.CompanyID == LoggedIsUser.CompanyID select c).First();
+                if (company != null)
+                {
+                    if (company.Users != null && company.Users.Count > 0)
+                    {
+                        if (LoggedIsUser.Type == "ADMIN" || LoggedIsUser.Type == "COMPANY_ADMIN")
+                        {
+                            Admin = company.Users.FirstOrDefault();
+                        }
+                        CompanyUserRepeater.DataSource = company.Users;
+                        CompanyUserRepeater.DataBind();
+                        userCompanyField.Text = company.Name;
+                    }
+                }
+                if (Admin != null)
+                {
+                    CompanyPanel.Visible = true;
+                    MyCompanyPanelHeader.Visible = true;
+                }
+                else
+                {
+                    CompanyPanel.Visible = false;
+                    MyCompanyPanelHeader.Visible = false;
+                }
+                ///////////////////////////////////////////////////////////////////////////////
 
                 if (LoggedIsUser.Company != null)
                 {
@@ -72,9 +102,40 @@ namespace Simplicity.Web
                 {
                     SecondMyProductPanel.Visible = false;
                 }
+
             }
             else if (LoggedIsUser != null)
             {
+                //////////////////////////Company Panel////////////////////////////////////////
+                Simplicity.Data.Company company = null;
+                User Admin = null;
+                if (LoggedIsUser.Company != null)
+                    company = (from c in DatabaseContext.Companies where c.CompanyID == LoggedIsUser.CompanyID select c).First();
+                if (company != null)
+                {
+                    if (company.Users != null && company.Users.Count > 0)
+                    {
+                        if (LoggedIsUser.Type == "ADMIN" || LoggedIsUser.Type == "COMPANY_ADMIN")
+                        {
+                            Admin = company.Users.FirstOrDefault();
+                        }
+                        CompanyUserRepeater.DataSource = company.Users;
+                        CompanyUserRepeater.DataBind();
+
+                    }
+                }
+                if (Admin != null)
+                {
+                    CompanyPanel.Visible = true;
+                    MyCompanyPanelHeader.Visible = true;
+                }
+                else
+                {
+                    CompanyPanel.Visible = false;
+                    MyCompanyPanelHeader.Visible = false;
+                }
+                ///////////////////////////////////////////////////////////////////////////////
+
                 ChangePasswordPanel.Visible = true;
                 LoginAccount.Visible = true;
                 MyProductPanel.Visible = true;
@@ -90,12 +151,14 @@ namespace Simplicity.Web
                 {
                     SecondMyProductPanel.Visible = false;
                 }
+
             }
             else
             {
                 ChangePasswordPanel.Visible = false;
                 LoginAccount.Visible = false;
                 MyProductPanel.Visible = false;
+                CompanyPanel.Visible = false;
             }
         }
         private bool ChangeValidateFields()
@@ -192,7 +255,7 @@ namespace Simplicity.Web
                         ReminderAnswer = Utility.GetMd5Sum(txtForgotPasswordAnswer.Text),
                         CreationDate = DateTime.Now,
                         LastAmendmentDate = DateTime.Now,
-                        Type = Enum.GetName(typeof(Enums.ENTITY_TYPE), Enums.ENTITY_TYPE.USER),
+                        Type = Enum.GetName(typeof(Enums.ENTITY_TYPE), Enums.ENTITY_TYPE.COMPANY_ADMIN),
                         Deleted = false,
                         OnHold = false,
                         Verified = false,
@@ -384,6 +447,149 @@ namespace Simplicity.Web
             fullAddress += postalcode.Text;
             return fullAddress;
         }
+        protected void ChangeRowCreated(object sender, GridViewRowEventArgs e)
+        {
+            e.Row.Cells[1].Visible = false;
+            e.Row.Cells[2].Visible = false;
+            e.Row.Cells[3].Visible = false;
+            e.Row.Cells[4].Visible = false;
+            e.Row.Cells[5].Visible = false;
+            e.Row.Cells[6].Visible = false;
+            e.Row.Cells[7].Visible = false;
+            e.Row.Cells[9].Visible = false;
+            e.Row.Cells[10].Visible = false;
+            e.Row.Cells[15].Visible = false;
+            e.Row.Cells[16].Visible = false;
+            e.Row.Cells[17].Visible = false;
+            e.Row.Cells[18].Visible = false;
+            e.Row.Cells[19].Visible = false;
+            e.Row.Cells[20].Visible = false;
+            e.Row.Cells[21].Visible = false;
+            e.Row.Cells[22].Visible = false;
+            e.Row.Cells[23].Visible = false;
+            e.Row.Cells[24].Visible = false;
+            e.Row.Cells[25].Visible = false;
+            e.Row.Cells[26].Visible = false;
+            e.Row.Cells[27].Visible = false;
+            e.Row.Cells[28].Visible = false;
+            e.Row.Cells[29].Visible = false;
+            e.Row.Cells[30].Visible = false;
+        }
 
+        protected void addUser_Click(object sender, EventArgs e)
+        {
+            SelectedTabElement = 4;
+            newUserPanel.Visible = true;
+            addUser.Visible = false;
+        }
+
+        protected void userSubmitButton_Click(object sender, ImageClickEventArgs e)
+        {
+            SelectedTabElement = 4;
+            newUserPanel.Visible = false;
+            addUser.Visible = true;
+            List<User> checkuser = (from UserTable in DatabaseContext.Users where UserTable.Email == userEmailField.Text select UserTable).ToList();
+            if (checkuser.Any())
+            {
+                SetErrorMessage("Email address already resgistered with Simplicity");
+            }
+            else
+            {
+                Address Companyaddress = (from addr in LoggedIsUser.Addresses where addr.MultiAddressType == "COMPANY" select addr).FirstOrDefault();
+                User user = new User
+                {
+                    FullName = userSurNameField.Text + ", " + userFirstNameField.Text,
+                    Surname = userSurNameField.Text,
+                    Forename = userFirstNameField.Text,
+                    JobTitle = userJobTitle.Text,
+                    Email = userEmailField.Text,
+                    Password = Utility.GetMd5Sum(userPasswordField.Text),
+                    ReminderQuestionID = byte.Parse(userlistForgotPasswordQuestion.SelectedValue),
+                    ReminderQuestion = userlistForgotPasswordQuestion.SelectedItem.Text,
+                    ReminderAnswer = Utility.GetMd5Sum(usertxtForgotPasswordAnswer.Text),
+                    CreationDate = DateTime.Now,
+                    LastAmendmentDate = DateTime.Now,
+                    Type = Enum.GetName(typeof(Enums.ENTITY_TYPE), Enums.ENTITY_TYPE.USER),
+                    Deleted = false,
+                    OnHold = false,
+                    Verified = false,
+                    Enabled = false,
+                    UserUID = Guid.NewGuid().ToString(),
+                    VerificationCode = Guid.NewGuid().ToString(),
+                    Approved = 0,
+                    PaymentType = 0,
+                    LoginAttempts = 0
+                };
+
+                Address address = new Address
+                {
+                    Deleted = Companyaddress.Deleted,
+                    AddressFull = Companyaddress.AddressFull,
+                    AddressNo = Companyaddress.AddressNo,
+                    AddressLine1 = Companyaddress.AddressLine1,
+                    AddressLine2 = Companyaddress.AddressLine2,
+                    AddressLine3 = Companyaddress.AddressLine3,
+                    AddressLine4 = Companyaddress.AddressLine4,
+                    AddressLine5 = Companyaddress.AddressLine5,
+                    PostalCode = Companyaddress.PostalCode,
+                    Telephone1 = Companyaddress.Telephone1,
+                    Telephone2 = Companyaddress.Telephone2,
+                    Fax = Companyaddress.Fax,
+                    Mobile = Companyaddress.Mobile,
+                    Town = Companyaddress.Town,
+                    County = Companyaddress.County,
+                    Country = Companyaddress.Country,
+                    UserId = user.UserID,
+                    SameAsCustomer = Companyaddress.SameAsCustomer,
+                    SameAsBilling = Companyaddress.SameAsBilling,
+                    MultiAddressType = Enum.GetName(typeof(Enums.ADDRESS_TYPE), Enums.ADDRESS_TYPE.PERSONAL),
+                    CreationDate = DateTime.Now,
+                    LastAmendmentDate = DateTime.Now,
+                    AddressName = Companyaddress.AddressName,
+                    CreatedBy = LoggedIsUser.UserID,
+                    LastAmendedBy = Companyaddress.LastAmendedBy
+                };
+
+                Address companyAddress = new Address
+                {
+                    Deleted = Companyaddress.Deleted,
+                    AddressFull = Companyaddress.AddressFull,
+                    AddressNo = Companyaddress.AddressNo,
+                    AddressLine1 = Companyaddress.AddressLine1,
+                    AddressLine2 = Companyaddress.AddressLine2,
+                    AddressLine3 = Companyaddress.AddressLine3,
+                    AddressLine4 = Companyaddress.AddressLine4,
+                    AddressLine5 = Companyaddress.AddressLine5,
+                    PostalCode = Companyaddress.PostalCode,
+                    Telephone1 = Companyaddress.Telephone1,
+                    Telephone2 = Companyaddress.Telephone2,
+                    Fax = Companyaddress.Fax,
+                    Mobile = Companyaddress.Mobile,
+                    Town = Companyaddress.Town,
+                    County = Companyaddress.County,
+                    Country = Companyaddress.Country,
+                    UserId = user.UserID,
+                    SameAsCustomer = Companyaddress.SameAsCustomer,
+                    SameAsBilling = Companyaddress.SameAsBilling,
+                    MultiAddressType = Enum.GetName(typeof(Enums.ADDRESS_TYPE), Enums.ADDRESS_TYPE.COMPANY),
+                    CreationDate = DateTime.Now,
+                    LastAmendmentDate = DateTime.Now,
+                    AddressName = Companyaddress.AddressName,
+                    CreatedBy = LoggedIsUser.UserID,
+                    LastAmendedBy = Companyaddress.LastAmendedBy
+                };
+
+                user.Addresses.Add(address);
+                user.Addresses.Add(companyAddress);
+                user.CompanyID = LoggedIsUser.CompanyID;
+                DatabaseContext.AddToUsers(user);
+                DatabaseContext.SaveChanges();
+
+                //call health and safety stored procedure over here to insert company there as well
+                addCompanyToHS(user);
+                EmailUtility.SendUserAccountCreationEmail(user, userPasswordField.Text,usertxtForgotPasswordAnswer.Text);
+                Response.Redirect("~/SignUp.aspx?SelectedTabElement="+SelectedTabElement);
+            }
+        }
     }
 }
