@@ -15,9 +15,11 @@ body img
 h2 {
 	font: normal 20px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 	color: #145b86;
+	font-weight:bolder;
 	padding:0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 }
+
 h3 {
 	font: normal 14px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 	color: #444444;
@@ -530,6 +532,7 @@ div.leftNavBarGas {
 	height:265px;
 	padding-top:55px;
 }
+
 #contentTop div.leftNavItem
 {
     background: url(../Images/simple_nav_bg.jpg) 0 0 no-repeat;
@@ -772,7 +775,7 @@ a.moreDetails:hover,a.solutionMoreDetails:hover
 }
 .stylecolor
 {
-    color: #cccccc;
+    color: #666666;
 }
 .imgdim
 {

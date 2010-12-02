@@ -10,7 +10,7 @@
             <div>
                 <div style="padding-left: 50px; padding-bottom: 15px;">
                     <h2>
-                        <span style="color: #cccccc;">Payment</span> Receipt</h2>
+                        <span style="color: #666666;">Payment</span> Receipt</h2>
                 </div>
                 <div class="loginhead">
                     <img src="../images/subheading_bar.jpg" alt="" width="565" height="21" />

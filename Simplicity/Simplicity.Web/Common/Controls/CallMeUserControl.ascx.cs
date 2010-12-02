@@ -36,8 +36,8 @@ namespace Simplicity.Web.Common.Controls
             {
                 string emailContents = null;
                 var context = new SimplicityEntities();
-                CallUser user = new CallUser{Forename=txtFirstName.Text,Surname=txtSurName.Text,CellNumber=txtMobile.Text,Telephone=txtTelephone.Text,Email=txtEmail.Text,CompanyName=txtCompanyName.Text,CompanyWebsite=txtCompanyWebsite.Text,
-                   AddressFull=txtPostalAddress.Text,PostalCode= txtPostCode.Text,Comments=txtComments.Text,ViewDemo= viewDemo,ReceiveEmails=(Request[WebConstants.Request.RECEIVE_EMAILS] != "") ? true : false};
+                CallUser user = new CallUser{Forename=txtFirstName.Text,Surname=txtSurName.Text,CellNumber=txtMobile.Text,Telephone=txtTelephone.Text,Email=txtEmail.Text,CompanyName="",CompanyWebsite="",
+                   AddressFull="",PostalCode= "",Comments="",ViewDemo= viewDemo,ReceiveEmails=(Request[WebConstants.Request.RECEIVE_EMAILS] != "") ? true : false};
                 CallUserProduct product = new CallUserProduct();
                 
                     if (cbHS.Checked)
@@ -106,11 +106,6 @@ namespace Simplicity.Web.Common.Controls
         }
         private bool ValidateFields()
         {
-            if (txtEmail.Text.ToLower().Equals(txtConfirmEmail.Text.ToLower()) == false)
-            {
-                SetErrorMessage("Email Addresses do not match");
-                return false;
-            }
             if (cbEAS.Checked == false && cbHandyGas.Checked == false && cbHandyLEC.Checked == false && cbHandyServe.Checked == false && cbHS.Checked == false)
             {
                 SetErrorMessage("Atleast one product must be selected.");

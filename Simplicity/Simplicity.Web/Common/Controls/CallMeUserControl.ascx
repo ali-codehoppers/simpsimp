@@ -2,7 +2,7 @@
     Inherits="Simplicity.Web.Common.Controls.CallMeUserControl" %>
 <div class="headstyle">
     <h2>
-        <span style="color: #cccccc;">
+        <span style="color: #666666;">
             <%=PageName%></h2>
 </div>
 <asp:Panel ID="errorPanel" runat="server" CssClass="error" Visible="false" Style="margin-top: 75px;
@@ -33,7 +33,7 @@
 <div id="CallMe">
     <div class="row">
         <div class="col1">
-            First Name
+            Name
         </div>
         <div class="col2">
             <div class="forgetErrorMsg">
@@ -47,19 +47,13 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="display:none;">
         <div class="col1">
             Surname
         </div>
         <div class="col2">
             <div class="forgetErrorMsg">
-                <asp:TextBox ID="txtSurName" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rf11" runat="server" ErrorMessage="* Enter Surname"
-                    ControlToValidate="txtSurName" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtSurName"
-                    ErrorMessage="* Surname have atleast 3 characters" ValidationExpression="[A-za-z]{3,60}"
-                    Display="Dynamic">
-                </asp:RegularExpressionValidator>
+                <asp:TextBox ID="txtSurName" Text="" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox>
             </div>
         </div>
     </div>
@@ -78,12 +72,12 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="visibility:hidden;display:none">
         <div class="col1">
             Mobile</div>
         <div class="col2">
             <div class="forgetErrorMsg">
-                <asp:TextBox ID="txtMobile" CssClass="callme_field_big" MaxLength="30" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtMobile" CssClass="callme_field_big" MaxLength="30" runat="server" Text="11111"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="txtMobile"
                     ErrorMessage="* Mobile must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
                     Display="Dynamic">
@@ -106,19 +100,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col1">
-            Confirm Email</div>
-        <div class="col2">
-            <div class="forgetErrorMsg">
-                <asp:TextBox ID="txtConfirmEmail" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rf2" runat="server" ErrorMessage="* Enter Confirm Email"
-                    ControlToValidate="txtConfirmEmail" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="* Enter Email address"
-                    ControlToValidate="txtConfirmEmail" CssClass="CallMeErrorMsg" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-            </div>
-        </div>
-    </div>
+
 </div>
 <div class="dotted_line" style="margin-top: 5px; width: 70%; margin-left: 90px;">
 </div>
@@ -161,44 +143,15 @@
         </div>
         <div class="col1">
             Simplicity Handy LEC</div>
+
     </div>
 </div>
+
 <div class="dotted_line" style="margin-top: 20px; width: 70%; margin-left: 90px;">
 </div>
+
 <div id="callMeBack">
-    <div class="row">
-        <div class="col1">
-            Company Name</div>
-        <div class="col2">
-            <asp:TextBox ID="txtCompanyName" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox></div>
-    </div>
-    <div class="row">
-        <div class="col1">
-            Company website</div>
-        <div class="col2">
-            <asp:TextBox ID="txtCompanyWebsite" CssClass="callme_field_big" MaxLength="60" runat="server"></asp:TextBox>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="* Enter Company Website"
-                ControlToValidate="txtCompanyWebsite" CssClass="CallMeErrorMsg" ValidationExpression="http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?"></asp:RegularExpressionValidator>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col1">
-            Postal Address</div>
-        <div class="col2">
-            <asp:TextBox ID="txtPostalAddress" CssClass="callme_field_big" MaxLength="255" runat="server"></asp:TextBox></div>
-    </div>
-    <div class="row">
-        <div class="col1">
-            Postcode</div>
-        <div class="col2">
-            <asp:TextBox ID="txtPostCode" CssClass="callme_field_big" MaxLength="9" runat="server"></asp:TextBox></div>
-    </div>
-    <div class="row">
-        <div class="col1">
-            Comments</div>
-        <div class="col2">
-            <asp:TextBox ID="txtComments" CssClass="callme_textfield_big" MaxLength="1000" runat="server" TextMode="MultiLine"></asp:TextBox></div>
-    </div>
+  
     <div class="row" style="margin-top: 20px;">
         <asp:CheckBox ID="cbEmails" runat="server" CssClass="col5" Text="Please indicate if you would like to receives further updates for products"
             Checked="true" />
@@ -210,5 +163,6 @@
         </div>
     </div>
 </div>
+
 <div>
 </div>

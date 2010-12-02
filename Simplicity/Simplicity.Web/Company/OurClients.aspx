@@ -6,7 +6,7 @@
         <div id="secnavbar" class="floatLeft">
             <div id="icon1" class="floatLeft">
                 <h2 id="ourSolution">
-                    <span style="color: #cccccc;">OUR</span> CLIENTS</h2>
+                    <span style="color: #666666;">OUR</span> CLIENTS</h2>
             </div>
             <div id="nsecnavbar">
                 

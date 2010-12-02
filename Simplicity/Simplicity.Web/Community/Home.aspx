@@ -49,7 +49,7 @@
         <div id="secnavbar" class="floatLeft">
             <div id="icon1" class="floatLeft">
                 <h2 id="ourCommunity">
-                    <span style="color: #cccccc;">OUR</span> COMMUNITY
+                    <span style="color: #666666;">OUR</span> COMMUNITY
                 </h2>
             </div>
             <div id="nsecnavbar">

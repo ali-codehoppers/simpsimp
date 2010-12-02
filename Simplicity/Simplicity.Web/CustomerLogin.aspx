@@ -7,7 +7,7 @@
     <div>
         <div class="headstyle">
             <h2>
-                <span style="color: #cccccc;">CUSTOMER</span> LOGIN</h2>
+                <span style="color: #666666;">CUSTOMER</span> LOGIN</h2>
         </div>
         <div class="loginhead">
             <img src="../images/subheading_bar.jpg" alt="" width="565" height="21" />
@@ -76,7 +76,7 @@
             <img src="../images/icon_member.jpg" alt="" width="23" height="25" /></div>
         <div style="margin-left:20px">
             <h2>
-                <span style="color: #cccccc;">Not a </span>member</h2>
+                <span style="color: #666666;">Not a </span>member</h2>
         </div>
         <img src="../images/login_not_member.jpg" alt="" width="332" height="21" />
         <div style="margin-left:20px">

@@ -6,9 +6,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <div style="float: left; width: 650px">
         <div id="secnavbar" class="floatLeft">
-            <div id="icon1" class="floatLeft" style="width:50%;">
+            <div id="icon1" class="floatLeft" style="width: 50%;">
                 <h2 id="ourSolution">
-                    <span style="color: #cccccc;">RESOURCE</span> &amp; MANAGEMENT</h2>
+                    <span style="color: #666666;">RESOURCE</span> &amp; MANAGEMENT</h2>
             </div>
             <div id="nsecnavbar">
                 <div>
@@ -17,34 +17,39 @@
             </div>
         </div>
         <div id="contentsDiv" class="servicetext">
-            <p style="width:95%">
+            <p style="width: 95%">
                 The resource management suite is more than just a diary. All entries within it can
                 be linked to other departments to ensure more efficient business performance.</p>
-            <p style="width:95%">
+            <p style="width: 95%">
                 For example, site managers can use it to log staff time on timesheets which are
-                then automatically co-ordinated by payroll. For seamless business the resources management
-                tool is a must.</p>
-            <p style="width:95%">
-                Also, unlike less sophisticated software with this software incorporates a postcode
-                checker so you can track staff and assets. This function then allows you to view
-                your data by postcode or region, as well as day, week, month, resource, job</p>
+                then automatically co-ordinated by payroll. For seamless business the resources
+                management tool is a must.</p>
+            <p style="width: 95%">
+                Also, unlike less sophisticated software this software incorporates a postcode checker
+                so you can track staff and assets. This function then allows you to view your data
+                by postcode or region, as well as day, week, month, resource, job</p>
             <p>
                 To find out more about its features click on the links.</p>
-            <div id="tag"> 
-               <ul>
-                <li class="secondlist"><a href="#assetmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Asset Mgt</a></li>
-                <li class="secondlist"><a href="#clientmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Client Mgt </a></li>
-                <li class="secondlist"><a href="#diary" style="font-weight: bolder;font-size:13px;color: #0066FF;">Diary</a></li>
-                <li class="secondlist"><a href="#projectmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Project Mgt</a></li>
-                <li class="secondlist"><a href="#hardwarespecs" style="font-weight: bolder;font-size:13px;color: #0066FF;">Hardware Specs</a></li>
+            <div id="tag">
+                <ul>
+                    <li class="secondlist"><a href="#assetmgt" style="font-weight: bolder; font-size: 13px;
+                        color: #0066FF;">Asset Mgt</a></li>
+                    <li class="secondlist"><a href="#clientmgt" style="font-weight: bolder; font-size: 13px;
+                        color: #0066FF;">Client Mgt </a></li>
+                    <li class="secondlist"><a href="#diary" style="font-weight: bolder; font-size: 13px;
+                        color: #0066FF;">Diary</a></li>
+                    <li class="secondlist"><a href="#projectmgt" style="font-weight: bolder; font-size: 13px;
+                        color: #0066FF;">Project Mgt</a></li>
+                    <li class="secondlist"><a href="#hardwarespecs" style="font-weight: bolder; font-size: 13px;
+                        color: #0066FF;">Hardware Specs</a></li>
                 </ul>
             </div>
             <div id="assetmgt">
-                <div  style="width:95%;">
-                    <a href="#tag" style="float:right;"><img src="../../Images/top.jpg"/></a>
-                    <div class="dotted_line" style="padding-top:15px;">
+                <div style="width: 95%;">
+                    <a href="#tag" style="float: right;">
+                        <img src="../../Images/top.jpg" /></a>
+                    <div class="dotted_line" style="padding-top: 15px;">
                     </div>
-                    
                 </div>
                 <h2>
                     Note key dates for your resources and staff</h2>
@@ -60,11 +65,11 @@
                     <li class="list">Attach documents to assets to store extra information</li></ul>
             </div>
             <div id="clientmgt">
-                <div  style="width:95%;">
-                    <a href="#tag" style="float:right;"><img src="../../Images/top.jpg"/></a>
-                    <div class="dotted_line" style="padding-top:15px;">
+                <div style="width: 95%;">
+                    <a href="#tag" style="float: right;">
+                        <img src="../../Images/top.jpg" /></a>
+                    <div class="dotted_line" style="padding-top: 15px;">
                     </div>
-                    
                 </div>
                 <h2>
                     Keep up-to-date records on all</h2>
@@ -81,45 +86,47 @@
                     <li class="list">Link to project, live and historical</li></ul>
             </div>
             <div id="diary">
-                <div  style="width:95%;">
-                    <a href="#tag" style="float:right;"><img src="../../Images/top.jpg"/></a>
-                    <div class="dotted_line" style="padding-top:15px;">
+                <div style="width: 95%;">
+                    <a href="#tag" style="float: right;">
+                        <img src="../../Images/top.jpg" /></a>
+                    <div class="dotted_line" style="padding-top: 15px;">
                     </div>
-                    
                 </div>
                 <h2>
                     Ensures resources are allocated to optimum efficiency every day</h2>
                 <ul>
-                    <li class="list">Choose view of calendar by day, week, month, resources, department, job, postcode,
-                        region</li>
+                    <li class="list">Choose view of calendar by day, week, month, resources, department,
+                        job, postcode, region</li>
                     <li class="list">Incorporates postcode checker to optimise logistics</li>
                     <li class="list">Run reports to analysis KPIs</li>
                     <li class="list">Attach document folders</li></ul>
             </div>
             <div id="projectmgt">
-                <div  style="width:95%;">
-                    <a href="#tag" style="float:right;"><img src="../../Images/top.jpg"/></a>
-                    <div class="dotted_line" style="padding-top:15px;">
+                <div style="width: 95%;">
+                    <a href="#tag" style="float: right;">
+                        <img src="../../Images/top.jpg" /></a>
+                    <div class="dotted_line" style="padding-top: 15px;">
                     </div>
-                    
                 </div>
                 <h2>
-                    Ensure every job has the optimum staff and resources needed <br />to complete a deadline</h2>
+                    Ensure every job has the optimum staff and resources needed
+                    <br />
+                    to complete a deadline</h2>
                 <ul>
                     <li class="list">Incorporate postcode checker to optimise staff and resource allocation</li>
                     <li class="list">Use diary to book planned &amp; preventive maintenance</li>
-                    <li class="list">Track allocation of staff and resources by self-selecting data segments i.e day,
-                        week, resource, job, postcode</li>
+                    <li class="list">Track allocation of staff and resources by self-selecting data segments
+                        i.e day, week, resource, job, postcode</li>
                     <li class="list">Diarise and alerts for H&amp;S inspections</li>
                     <li class="list">Diarise progress of job</li>
                     <li class="list">Attach document folders to store job supplementary information</li></ul>
             </div>
             <div id="hardwarespecs">
-                <div  style="width:95%;">
-                    <a href="#tag" style="float:right;"><img src="../../Images/top.jpg"/></a>
-                    <div class="dotted_line" style="padding-top:15px;">
+                <div style="width: 95%;">
+                    <a href="#tag" style="float: right;">
+                        <img src="../../Images/top.jpg" /></a>
+                    <div class="dotted_line" style="padding-top: 15px;">
                     </div>
-                    
                 </div>
                 <p>
                     Click on the options below to view the Browsers and Information needed to avail

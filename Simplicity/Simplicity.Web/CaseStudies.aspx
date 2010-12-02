@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="heading1">
         <h2>
-            <span style="color: #cccccc;">CASE</span> STUDIES</h2>
+            <span style="color: #666666;">CASE</span> STUDIES</h2>
     </div>
     <div>
         <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />

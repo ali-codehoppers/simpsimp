@@ -21,7 +21,7 @@
     <div class="floatRight" style="width: 630px; padding-right:20px" >
         <div id="icon1">
             <h2 style="padding-top:20px;">
-                <span style="color: #cccccc;">CONTACT</span> US</h2>
+                <span style="color: #666666;">CONTACT</span> US</h2>
         </div>
         <div>
             <asp:Image runat="server" ImageUrl="~/Images/subheading_bar.jpg" ID="Image1" />
@@ -42,7 +42,7 @@
                 class="login">training@simplicity4business.com</a><br />
             <br />
             We do not accept training or support calls on any other number. Calling on this
-            number from BT line is charged at £1.50 per minute for a maximum of 20 minutes.
+            number from BT line is charged at standard rate.
             <br />
             Charges from other service providers and mobile phones may vary.</div>
         <div class="dotted_line">

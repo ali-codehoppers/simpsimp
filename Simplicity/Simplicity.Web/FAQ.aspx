@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="faqsHeader">
-        <h2><span style="color: #cccccc;">SIMPLICITY</span> FAQs</h2>
+        <h2><span style="color: #666666;">SIMPLICITY</span> FAQs</h2>
     </div>
     <div>
         <asp:Image ID="Image1" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
