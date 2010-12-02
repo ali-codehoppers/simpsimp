@@ -33,7 +33,7 @@ namespace Simplicity.Web.Utilities
             parameters.Add("##IMAGE_URL##", GetImagesUrl());
             if (customer != null)
             {
-                parameters.Add("##CUSTOMER_NAME##", customer.Surname + ", " + customer.Forename);
+                parameters.Add("##CUSTOMER_NAME##", customer.Forename + ", " + customer.Surname);
                 parameters.Add("##USER_NAME##", customer.Email);
                 //parameters.Add("##PASSWORD##", customer.Password);
             }

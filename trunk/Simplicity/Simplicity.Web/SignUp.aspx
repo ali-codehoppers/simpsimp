@@ -32,7 +32,7 @@
         <div>
             <div style="margin-top: 30px; margin-left: 50px; margin-bottom: 10px;">
                 <h2>
-                    <span style="color: #cccccc;">MY</span> ACCOUNT</h2>
+                    <span style="color: #666666;">MY</span> ACCOUNT</h2>
             </div>
             <div>
                 <img src="images/subheading_bar.jpg" alt="" width="565" height="21" /></div>
@@ -171,6 +171,9 @@
                                     <asp:ListItem Text="What is the name of a college you applied to but didn't attend?"
                                         Value="19"></asp:ListItem>
                                     <asp:ListItem Text="Where were you when you first heard about 9/11?" Value="20"></asp:ListItem>
+                                    <asp:ListItem Text="What is your favourite Colour?" Value="21"></asp:ListItem>
+                                    <asp:ListItem Text="What is your favourite Flower?" Value="22"></asp:ListItem>
+                                    <asp:ListItem Text="What is your mothers Maiden Name?" Value="23"></asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" InitialValue="#" runat="server"
                                     ErrorMessage="* Select Question" ControlToValidate="listForgotPasswordQuestion"

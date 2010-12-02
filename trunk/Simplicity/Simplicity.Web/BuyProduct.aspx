@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <div id="icon1">
         <h2>
-            <span style="color: #cccccc;">
+            <span style="color: #666666;">
                 <%=GetBuyOrTry()%></span> A Solution</h2>
     </div>
     <div>

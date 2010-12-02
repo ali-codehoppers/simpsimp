@@ -7,7 +7,7 @@
     <div>
         <div class="headstyle">
             <h2>
-                <span style="color: #cccccc;">FORGOT</span> PASSWORD</h2>
+                <span style="color: #666666;">FORGOT</span> PASSWORD</h2>
         </div>
         <div class="loginhead">
             <img src="images/subheading_bar.jpg" alt="" width="565" height="21" />

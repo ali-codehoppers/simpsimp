@@ -13,7 +13,7 @@
     </div>
     <div id="heading1">
         <h2>
-            <span style="color: #cccccc;">BILLING &amp;</span> SHOPPING DETAILS</h2>
+            <span style="color: #666666;">BILLING &amp;</span> SHOPPING DETAILS</h2>
     </div>
     <div>
         <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />

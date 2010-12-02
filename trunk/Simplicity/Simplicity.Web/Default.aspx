@@ -24,16 +24,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
 
-    <div id="contentTop" >
+    <div id="contentTop" style="height:320px">
         
 		<div class="floatLeft leftNavBar">
-			<div> <a href="WatchDemo.aspx" id="watch"> </a> </div>
+			<div> <a href="WatchDemo.aspx" id="watch"> </a></div>
 			<div> <a href="BuyProduct.aspx" id="buy"> </a> </div>
 			<div> <a href="BuyProduct.aspx?try=try" id="try"> </a> </div>
 			<div> <a href="CallMeBack.aspx" id="call"> </a> </div>
 		</div>
 		<div class="floatRight">
-			<div class="rightBannerTop"></div>
+			<div class="rightBannerTop" style="height:20px"></div>
 			<div class="slideShow">
 				<a id="desc_img"><img alt="description_Image" src="images/img_0.jpg" width="655" height="257" /></a>
 				<a href="Products/HS/Home.aspx"><img src="images/img_2.jpg" width="655" height="257" /></a>
@@ -77,7 +77,7 @@
 		</div>
 	</div>
 	<div id="contentBottom">	
-		<div id="ourSolutions"><h2><span style="color:#cccccc;">OUR</span> SOLUTIONS</h2></div>
+		<div id="ourSolutions"><h2><span style="color:#666666;">OUR</span> SOLUTIONS</h2></div>
 		<div><img src="images/subheading_bar.jpg" alt="" width="565" height="21" /></div>
 		<div id="links">
 			<div id="salesMarketing">

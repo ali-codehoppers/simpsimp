@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="HeadingContentPlaceHolder" runat="server">
     <h2 id="ourServices">
-        <span style="color: #cccccc;">Training &amp;</span> Support
+        <span style="color: #666666;">Training &amp;</span> Support
     </h2>
 </asp:Content>
 

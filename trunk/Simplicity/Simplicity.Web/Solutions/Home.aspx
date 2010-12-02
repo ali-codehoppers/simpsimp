@@ -4,11 +4,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-    <div class="floatRight"style=" width: 650px;">
-        <div id="secnavbar" class="floatLeft">
-            <div id="icon1" class="floatLeft">
+    
+    <div class="floatRight"style=" width: 655px;" >
+        <div id="secnavbar" class="floatLeft" >
+            <div id="icon1" class="floatLeft" >
                 <h2 id="ourSolution">
-                    <span style="color: #cccccc;">OUR</span> SOLUTIONS</h2>
+                    <span style="color: #666666;">OUR</span> SOLUTIONS</h2>
             </div>
             <div id="nsecnavbar">
                 
@@ -17,6 +18,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="solutiontext">
             <p>
                 We have created leading resource management solutions for clients across multiple
@@ -66,4 +68,5 @@
             </div>
         </div>
     </div>
+    
 </asp:Content>

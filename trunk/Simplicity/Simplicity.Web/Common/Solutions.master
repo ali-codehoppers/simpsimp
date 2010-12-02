@@ -4,7 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="contentTop">
-		<div class="floatLeft leftNavBarSimple">
+		
+        <div class="floatLeft leftNavBarSimple">
             <div class="leftNavItem"> 
                 <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Solutions/SaleM/Home.aspx">Sales & Marketing</asp:HyperLink> 
             </div>
@@ -24,7 +25,9 @@
                 <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Solutions/Mobile/Home.aspx">Mobile Apps</asp:HyperLink> 
             </div>
 		</div>
+        
 		<asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder"></asp:ContentPlaceHolder>
+        
 		<div class="clearFloat"></div>
 	</div>
 </asp:Content>

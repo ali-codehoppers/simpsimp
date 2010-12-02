@@ -16,7 +16,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
         <div id="icon1">
             <h2 id="ProductHeading">
-                <span style="color: #cccccc;">OUR</span> PRODUCTS</h2>
+                <span style="color: #666666;">OUR</span> PRODUCTS</h2>
         </div>
         <div>
             <asp:Image runat="server" ImageUrl="~/Images/subheading_bar.jpg" ID="Image1" /></div>

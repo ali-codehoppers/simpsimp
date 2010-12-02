@@ -8,7 +8,7 @@
         <div id="secnavbar" class="floatLeft">
             <div id="icon1" class="floatLeft">
                 <h2 id="ourSolution">
-                    <span style="color: #cccccc;">H&amp;S</span> Live</h2>
+                    <span style="color: #666666;">H&amp;S</span> Live</h2>
             </div>
             <div id="nsecnavbar">
                 <div>
