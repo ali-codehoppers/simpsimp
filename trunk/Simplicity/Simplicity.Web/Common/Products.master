@@ -28,7 +28,7 @@
                 <div class="rightprodbottom">
                     <asp:ImageButton ID="Image11" ImageUrl="~/Images/icon_img_5.jpg" PostBackUrl="~/Products/EAS/Home.aspx" width="124" height="97" border="0" runat="server"/></div>
                 <div class="leftprodbottom">
-                    <asp:ImageButton ID="Image12" ImageUrl="~/Images/icon_img_6.jpg" PostBackUrl="~/PageConstruction.aspx" width="124" height="97" border="0" runat="server"/></div>
+                    <asp:ImageButton ID="Image12" ImageUrl="~/Images/icon_img_6.jpg" PostBackUrl="~/Products/PS/Home.aspx" width="124" height="97" border="0" runat="server"/></div>
            </div>
         </div>
         <div class="clearFloat">
