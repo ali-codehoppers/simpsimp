@@ -39,7 +39,7 @@
             Jim Sanders, Joint MD, SJE Carpentry & Joinery
         </p>
         <p>
-            <a style="color:#145b86; font-weight:bold; font-size:13px;" href="Docs/Simplicity_SJE_Case Study.pdf">Click here</a> for a case study on SJE using
+            <a style="color:#145b86; font-weight:bold; font-size:13px;" href="Docs/Simplicity_SJE_Case Study.pdf" target="_blank">Click here</a> for a case study on SJE using
             Simplicity.
         </p>
         <h3 style="color:#145b86;">
