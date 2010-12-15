@@ -54,7 +54,7 @@
 		</div>
         <div class="textDiv">
 			<div style="border-top:1px solid #d4efff; ">
-				<p style="text-align:justify">Simplicity for Business is an award winning software house that has developed a suite of business applications to help companies streamline and manage their business processes. By taking information from first point of contact through to final invoicing, Simplicity for Business provides a seamless way of managing enquiries, estimates, orders, variation orders, purchasing, invoicing and payments and much much more. Information is entered once, giving you full visibility of all of your business activity.</p>		
+				<p style="text-align:justify; font-size:16px">Simplicity for Business is an award winning software house that has developed a suite of business applications to help companies streamline and manage their business processes. By taking information from first point of contact through to final invoicing, Simplicity for Business provides a seamless way of managing enquiries, estimates, orders, variation orders, purchasing, invoicing and payments and much much more. Information is entered once, giving you full visibility of all of your business activity.</p>		
 			</div>
 		</div>
 	</div>
