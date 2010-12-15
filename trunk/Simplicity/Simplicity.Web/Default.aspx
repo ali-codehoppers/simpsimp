@@ -9,15 +9,11 @@
                 delay: -2000
 
             });
-            var timeouts = [2, 1, 1, 1, 1, 1, 1];
+            var timeouts = [1, 1, 1, 1, 1, 1];
             function calculateTimeout(currElement, nextElement, opts, isForward) {
                 var index = opts.currSlide;
-                if (index == 0) {
-                    return 30000;
-                }
-                else {
-                    return 3000;
-                }
+                return 5000;
+                
             }
         });
     </script>
@@ -35,7 +31,6 @@
 		<div class="floatRight">
 			<div class="rightBannerTop" style="height:20px"></div>
 			<div class="slideShow">
-				<a id="desc_img"><img alt="description_Image" src="images/img_0.jpg" width="655" height="257" /></a>
 				<a href="Products/HS/Home.aspx"><img src="images/img_2.jpg" width="655" height="257" /></a>
 				<a href="Products/HandyGas/Home.aspx"><img src="images/img_3.jpg" width="655" height="257" /></a>
 				<a href="Products/HandyLEC/Home.aspx"><img src="images/img_4.jpg" width="655" height="257" /></a>
@@ -59,25 +54,12 @@
 		</div>
         <div class="textDiv">
 			<div style="border-top:1px solid #d4efff; ">
-				<p>Simplicity for Business is an award- winning software company which provides  business resource planning <br />
-				  solutions to help your company achieve maximum efficiency and profitability.</p>		
-			</div>
-			<div style="color:white">
-                <div class="floatLeft" style="padding-right:5px"><img src="images/quot1.jpg" alt="" /></div>
-				<div class="floatLeft">
-					<div style="padding-top:1px;">When we needed urgent software solutions in the past we always needed to license complex,</div>
-					<div style="padding-top:1px;">expensive and inflexible software. Simplicity Health &amp; Safety Live and EAS have changed all that. All</div>
-					<div class="floatLeft" style="padding-top:1px;">we need is a web browser and £110/user a month.</div>
-					<div class="floatLeft" style="padding-left:5px"><img src="images/quot2.jpg" alt=""/></div>
-					<div class="clearFloat"></div>
-					<div style="color:#d4efff;">Jordan Reay Westgate Maintenance Ltd</div>
-				</div>
-				<div class="clearFloat"></div>
+				<p style="text-align:justify">Simplicity for Business is an award winning software house that has developed a suite of business applications to help companies streamline and manage their business processes. By taking information from first point of contact through to final invoicing, Simplicity for Business provides a seamless way of managing enquiries, estimates, orders, variation orders, purchasing, invoicing and payments and much much more. Information is entered once, giving you full visibility of all of your business activity.</p>		
 			</div>
 		</div>
 	</div>
 	<div id="contentBottom">	
-		<div id="ourSolutions"><h2><span style="color:#666666;">OUR</span> SOLUTIONS</h2></div>
+		<div id="ourSolutions" style="padding:10px"><h2><span style="color:#666666;">OUR</span> SOLUTIONS</h2></div>
 		<div><img src="images/subheading_bar.jpg" alt="" width="565" height="21" /></div>
 		<div id="links">
 			<div id="salesMarketing">
