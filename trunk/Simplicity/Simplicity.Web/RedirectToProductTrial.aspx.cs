@@ -12,8 +12,14 @@ namespace Simplicity.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (int.Parse(Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID]) == 2) //Health And Safety
-                Response.Redirect(AppSettings["HSURL"] + "/Register/ForTrial.aspx");
-        }
+            if (User.Identity.IsAuthenticated)
+            {
+                if (int.Parse(Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID]) == 2) //Health And Safety
+                    Response.Redirect(AppSettings["HSURL"] + "/Register/ForTrial.aspx");
+            }
+            else {
+                RedirectToLogin();
+            }
+        } 
     }
 }
