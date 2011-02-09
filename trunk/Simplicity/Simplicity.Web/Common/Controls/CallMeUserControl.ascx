@@ -66,7 +66,7 @@
                 <asp:RequiredFieldValidator ID="rf12" runat="server" ErrorMessage="* Enter Telephone"
                     ControlToValidate="txtTelephone" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="txtTelephone"
-                    ErrorMessage="* Telephone must have atleast 5 digits" ValidationExpression="[\s\w]*[\w\s]*\d{5,30}[\s\w]*[\w\s]*"
+                    ErrorMessage="* Telephone must have atleast 5 digits" ValidationExpression="([\s\w ]*[\w\s ]*\d[\s\w ]*[\w\s ]*){5,30}"
                     Display="Dynamic">
                 </asp:RegularExpressionValidator>
             </div>
