@@ -41,7 +41,7 @@
                 <asp:RequiredFieldValidator ID="rf10" runat="server" ErrorMessage="* Enter First Name"
                     ControlToValidate="txtFirstName" CssClass="CallMeErrorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="txtFirstName"
-                    ErrorMessage="* First Name have atleast 3 characters" ValidationExpression="[A-za-z]{3,60}"
+                    ErrorMessage="* First Name have atleast 3 characters" ValidationExpression="^([a-zA-Z]+(?:\.)?(?: [a-zA-Z]+(?:\.)?)*)$"
                     Display="Dynamic">
                 </asp:RegularExpressionValidator>
             </div>

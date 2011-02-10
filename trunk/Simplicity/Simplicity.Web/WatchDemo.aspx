@@ -2,7 +2,8 @@
     AutoEventWireup="true" CodeBehind="WatchDemo.aspx.cs" Inherits="Simplicity.Web.WatchDemo" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
-</asp:Content>
+    
+    </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
     <div>
         <asp:Repeater ID="rptVideos" runat="server">
@@ -17,8 +18,10 @@
                 </ol>
             </FooterTemplate>
         </asp:Repeater>
-    </div>
-    <div style="padding-top: 50px;">
+    </div>   
+    
+    <asp:Panel runat="server" ID="videoPanel" Visible="false">
+    <div id="videoDiv"  style="padding-top: 50px;">
         <object width="640" height="600" type="application/x-shockwave-flash" data="http://flvplayer.com/free-flv-player/FlvPlayer.swf"
             codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
             id="embed_player" style="visibility: visible;">
@@ -31,4 +34,5 @@
 
         </object>
     </div>
+    </asp:Panel>
 </asp:Content>
