@@ -24,23 +24,21 @@
                         <a href="#atop">A</a>&nbsp;&nbsp;&nbsp; <a href="#btop">B</a>&nbsp;&nbsp;&nbsp;
                         <a href="#ctop">C</a>&nbsp;&nbsp;&nbsp; <a href="#dtop">D</a>
                         <h2 id="atop">
-                            Links - A</h2>
+                      A</h2>
                         <p>
                             Goverment Department and Agencies<br />
                             Adjudicators Office<br />
                             <a href="http://www.adjudicatorsoffice.gov.uk/">www.adjudicatorsoffice.gov.uk/</a></p>
                     </p>
                     <p>
-                        <h2 id="btop">
-                            Links - B</h2>
+                        <h2 id="btop">B</h2>
                         <p>
                             Business Link<br />
                             <a href="http://www.businesslink.gov.uk/bdotg/action/home?domain=www.businesslink.gov.uk&target=http://www.businesslink.gov.uk/">
                                 www.businesslink.gov.uk/</a></p>
                     </p>
                     <p>
-                        <h2 id="ctop">
-                            Links - C</h2>
+                        <h2 id="ctop">C</h2>
                         <p>
                             Central Office for information<br />
                             <a href="http://www.coi.gov.uk/">www.coi.gov.uk/</a></p>
@@ -50,7 +48,7 @@
                     </p>
                     <p>
                         <h2 id="dtop">
-                            Links - D</h2>
+                      D</h2>
                         <p>
                             Department for Business, Innovation and Skills<br />
                             <a href="http://www.bis.gov.uk/">www.bis.gov.uk/</a></p>

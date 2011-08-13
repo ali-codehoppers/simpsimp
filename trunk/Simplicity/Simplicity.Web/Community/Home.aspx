@@ -61,7 +61,7 @@
         <div id="contentsDiv" class="communitytext">
             <p>
                 Get the latest information and extend your knowledge with news, tutorials and downloads.
-                Stay on top of trends and new techniques, visit exciting portals, exchange and events.</p>
+                Stay on top of trends and new techniques, visit exciting portals, exchange and events. </p>
             <p>
                 Experts need experts</p>
             <p>
@@ -77,7 +77,7 @@
                 For example, when our team said 'clients will be able to have a more cost effective
                 and accessible enterprise application suite if it was available on the web' we knew
                 we need a partner with expertise in cloud computing and software as a Service (SaaS)
-                technologies. Hence our close relationship with Astadia was born.</p>
+                technologies. Hence our close relationship with Salesforce was born.</p>
             <div class="menuLabel" id="sfDiv">
                 <div style="float:left;width:3%;"><img id="Img10" src="../Images/curve_left_c.jpg"/></div>
                  <div class="menuback"><img id="sfDivImg" alt="plus" class="plus" />
@@ -91,27 +91,14 @@
                     and customer service - also known as customer relationship management or CRM</p>
                 <p>
                     To find out more visit their website:</p>
-                <a href="http://www.salesforce.com/uk/">www.salesforce.com/uk/</a>
+                <a href="http://www.salesforce.com/uk/" target="_new">www.salesforce.com/uk/</a>
             </div>
             <div class="menuLabel" id="arbiDiv">
-                <div style="float:left;width:3%;"><img id="Img5" src="../Images/curve_left_c.jpg"/></div>
-                <div class="menuback"><img id="arbiDivImg" alt="plus" class="plus" />
-                <img ID="Img3" height="35" src="../Images/astadia.png" /></div>
-                <div style="float:right;"><img id="Img4"  src="../Images/curve_right_c.jpg"/></div>
-            </div>
-            <div class="menuDetail">
-                <p>
-                    Astadia is the global leader in technology-enabled business consulting, focused
-                    on Cloud Computing and SaaS technologies. Their unique methodologies analyze business
-                    challenges and document clear, effective solutions that lead to improved customer
-                    relations and tangible business results.
-                </p>
-                <p>
-                    To find out more visit their website:</p>
-                <a href="http://www.astadia.com/">www.astadia.com/</a>
+          <div class="menuback"></div>
+                <div style="float:right;"></div>
             </div>
             <div class="menuLabel" id="sageDiv">
-            <div style="float:left;width:3%;"><img id="Img1" src="../Images/curve_left_c.jpg"/></div>
+          <div style="float:left;width:3%;"><img id="Img1" src="../Images/curve_left_c.jpg"/></div>
                 <div class="menuback"><img id="sageDivImg" alt="plus" class="plus" />
                 <img ID="Img6" height="35" src="../Images/sageLogo80.gif" /></div>
                 <div style="float:right;"><img id="Img7"  src="../Images/curve_right_c.jpg"/></div>
@@ -127,8 +114,8 @@
                     end to end business processes within Simplicity and the financials within Sage Accounts
                     and Payroll.</p>
                 <p>
-                    To find out more visits their website:</p>
-                <a href="http://www.sage.com/">www.sage.com</a>
+                    To find out more visit their website:</p>
+                <a href="http://www.sage.com/" target="_new">www.sage.com</a>
             </div>
             
         </div>
