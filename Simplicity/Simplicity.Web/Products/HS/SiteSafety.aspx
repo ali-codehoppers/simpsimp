@@ -14,5 +14,5 @@ Helps you ensure that all sites comply with health and safety, be they your offi
 <li class="list">Maintain first aiders</li>
 <li class="list">Maintain fire officers</li>
 <li class="list">Maintain fire drill information</li>
-<li class="list">Log 'no access' &amp; notify customer</li>
+<li class="list">Log 'no access' &amp; notify customers</li>
 </ul>
