@@ -22,7 +22,7 @@
                 place on creating a rewarding working relationship with them.</p>
             <p>
                 But you don't have to take our word for it, read what some of our clients have to
-                say about us below in testimonials.</p>
+                say about us in <a href="../CaseStudies.aspx"> Case Studies. </a></p>
         </div>
     </div>
 </asp:Content>
