@@ -8,7 +8,7 @@
         <div id="secnavbar" class="floatLeft">
             <div id="icon1" class="floatLeft">
                 <h2 id="ourSolution">
-                    <span style="color: #666666;">MOBILE</span> &amp; APPS</h2>
+                    <span style="color: #666666;">MOBILE</span>  APPS</h2>
             </div>
             <div id="nsecnavbar">
                 <div>
@@ -26,7 +26,7 @@
                 Mobile phones that support Microsoft Office can be used to view and edit documents,
                 spreadsheets and presentations. They can also be used to view Portable Document
                 Format (PDF) documents. Another key facility of business mobile phones is data synchronisation.
-                This means your mobile calendar, contact list, pictures, for instance, can be kept
+                This means your mobile calendar, contact list and pictures, for instance, can be kept
                 as up-to-date as your PC. Super fast information synchronisation between two platforms,
                 allow for this. This cable, or wireless, connection could be used to transfer information
                 between phones or from phones to PC's. This would allow you to send a text message,
@@ -39,7 +39,7 @@
                 <li class="secondlist"><a href="#handygas" style="font-weight: bolder;font-size:13px;color: #0066FF;">HandyGas</a></li>
                 <li class="secondlist"><a href="#handyserve" style="font-weight: bolder;font-size:13px;color: #0066FF;">HandyServe</a></li>
                 <li class="secondlist"><a href="#handylec" style="font-weight: bolder;font-size:13px;color: #0066FF;">HandyLEC</a></li>
-                <li class="secondlist"><a href="#hardwarespecs" style="font-weight: bolder;font-size:13px;color: #0066FF;">Hardware Specs</a></li>
+                <li class="secondlist"><a href="#hardwarespecs" style="font-weight: bolder;font-size:13px;color: #0066FF;">Hardware Specification</a></li>
                 </ul>
             </div>
             <div id="handygas">
@@ -49,8 +49,8 @@
                     </div>
                     
                 </div>
-                <p style="width:95%">
-                    Simplicity HandyGas empowers your team of engineers by letting them manage visits,
+                <h2 style="width:95%">HandyGas                    </h2>
+                <p style="width:95%">Simplicity HandyGas empowers your team of engineers by letting them manage visits,
                     inspections and CP12 certification on a Smartphone.</p>
                 <p>
                     The engineers use practical screens on the phone to:-</p>
@@ -72,9 +72,8 @@
                     </div>
                     
                 </div>
-                <h2>
-                    Want innovative mobile apps for your field operatives?</h2>
-                <p style="width:95%">
+                <h2>HandyServe</h2>
+                <p>Want innovative mobile apps for your field operatives?
                     Are you confident that your operatives and engineers are achieving the key performance
                     indicators (KPIs) demanded by your clients? Do you have the KPI analysis available
                     in real time? For example:-</p>
@@ -109,8 +108,8 @@
                     </div>
                     
                 </div>
-                <p style="width:95%">
-                    Simplicity HandyLEC empowers your team of engineers by letting them manage visits,
+                <h2 style="width:95%">HandyLEC                    </h2>
+                <p style="width:95%">Simplicity HandyLEC empowers your team of engineers by letting them manage visits,
                     inspections and PAT testing on a Smartphone. The engineers use practical screens
                     on the phone to:-</p>
                 <ul>
@@ -130,8 +129,8 @@
                     </div>
                     
                 </div>
-                <p>
-                    Click on the options below to view the Browsers and Information needed to avail
+                <h2>Hardware Specification </h2>
+<p>Click on the options below to view the Browsers and Information needed to avail
                     of any of the Simplicity Products</p>
                 <div class="browserlist">
                     <div>

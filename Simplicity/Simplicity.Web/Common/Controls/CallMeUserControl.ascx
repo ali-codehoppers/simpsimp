@@ -114,7 +114,7 @@
             <asp:CheckBox ID="cbEAS" runat="server" Text="" Selected="false" />
         </div>
         <div class="col1">
-            Simplicity EAS</div>
+            Simplicity Online</div>
         <div class="col2">
             <asp:CheckBox ID="cbHS" runat="server" Text="" Selected="false" />
         </div>

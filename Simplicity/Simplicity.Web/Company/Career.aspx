@@ -8,7 +8,7 @@
         <div id="secnavbar" class="floatLeft">
             <div id="icon1" class="floatLeft">
                 <h2 id="ourSolution">
-                    CAREER</h2>
+                    CAREERS</h2>
             </div>
             <div id="nsecnavbar">
                 <div>
@@ -18,14 +18,14 @@
         </div>
         <div class="solutiontext" style="padding-right: 20px;">
             <p>
-                We are really proud of what we achieve at Simplicity for business. Our great team
+                We are really proud of what we achieve at Simplicity For Business. Our great team
                 of people are focused on providing excellent value products and services to meet
                 customers' needs, which is how we manage to produce award winning solutions.</p>
             <p>
                 Our people believe that to be happy at work you need to be challenged and the challenge
                 should be fun. This is the ideal company culture in which to create great software
-                solutions. Our people bring a wide range of experience to this meet this
-                challenge and this provides a simulating environment in which individuals can both further
+                solutions. Our people bring a wide range of experience to  meet this
+                challenge and this provides a stimulating environment in which individuals can both further
                 their personal skills and contribute to the success of the business.</p>
             <p>
                 Training and personal development are of great importance because by enhancing the
@@ -38,7 +38,7 @@
                 service, sales and marketing to name a few.</p>
             <p>
                 If you would like to work for an award-winning software company based in London
-                please submit your CV to the following.</p>
+                please submit your CV to the address at the bottom of the page. </p>
             <h4>
                 Important Information</h4>
             <p>
@@ -60,14 +60,14 @@
             <p>
                 Individuals from countries outside the European Economic Area (EEA) must be in possession
                 of a work permit to allow them to take up employment. For more information please
-                visit Government's website.</p>
+                visit the Government's website. </p>
             <p>
                 European Community law grants EEA nationals a right to live and work in the United
                 Kingdom. This is called a right of residence. Further information can be found at
                 the website of the British Home Office.</p>
             <p>
-                For information on immigration to the UK, take a look at the website of the British
-                Home Office.</p>
+                For information on immigration to the UK, take a look at the website of the <a href="http://www.homeoffice.gov.uk/passports-and-immigration/" target="_new">British
+            Home Office</a>.</p>
             <p>
                 Ultra Nova Codling Ltd has anti-smoking policies and is an anti-smoking company.</p>
             <p>

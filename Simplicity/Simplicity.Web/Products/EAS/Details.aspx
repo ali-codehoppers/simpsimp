@@ -7,19 +7,23 @@
     browser to use and is available on low-cost subscription.</p>
 <p>
     The completely managed service - often called Software as a Service (SaaS) - has
-    13 key tools on a shared, single database, which cover the critical business processes
+     tools on a shared, single database, which cover the critical business processes
     that impact profit. The suite includes:
 </p>
 <ul>
-    <li class="list">Enquiries &amp; projects (Click Sales &amp; Marketing below)</li>
-    <li class="list">Invoices (Click Finance &amp; Accounts below)</li>
-    <li class="list">Diary (Click Resource mgt below)</li>
-    <li class="list">Payroll (Click Finance &amp; Accounts below)</li>
-    <li class="list">Training (Click Service above)</li>
-    <li class="list">Suppliers (Click Operations below)</li>
-    <li class="list">Petty cash (Click Finance &amp; Accounts below)</li>
+    <li class="list">Enquiries &amp; projects</li>
+    <li class="list">Invoices </li>
+    <li class="list">Diary </li>
+    <li class="list">Payroll </li>
+    <li class="list">Training </li>
+    <li class="list">Suppliers </li>
+    <li class="list">Petty cash </li>
     <li class="list">Construction Industry Scheme</li>
     <li class="list">Contractors</li>
-    <li class="list">Vehicle Management (Click Operations below)</li>
-    <li class="list">Asset Management (Click Operations below)</li>
+    <li class="list">Vehicle Management </li>
+    <li class="list">Asset Management</li>
+</ul>
+<ul>
+  <li class="list"><a href="home2.aspx">Top 15 issues that businesses face</a>    </li>
+  <li class="list"><a href="home2.aspx">businesses face Recession</a>    </li>
 </ul>

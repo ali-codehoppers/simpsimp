@@ -71,7 +71,7 @@
             of our effort on Enterprise Application Development.</p>
         <p>
             Our company philosophy is to produce sophisticated easy to use business software
-            which ensures out clients increase profits and business performance.</p>
+            which ensures our clients increase profits and business performance.</p>
         <p>
             We strive to produce this software at the lowest cost possible to you, with the
             best customer service imaginable.</p>
@@ -93,7 +93,7 @@
                 It does not matter which platform you are using to use our system, we make sure
                 that the response from our system is instantaneous.</p>
             <p>
-                Simple does not mean functional lacking, our systems encapsulate in them all the
+                Simple does not mean lacking in functionality, our systems encapsulate in them all the
                 business needs that would make sure that they help with long term profits for our
                 clients and also improve their business efficiency.</p>
         </div>
@@ -108,15 +108,15 @@
         </div>
         <div class="menuDetail">
             <p>
-                We do recognize that technology is always changing. To address to this ever changing
+                We do recognize that technology is always changing. To address to this,
                 we have a world class technical team who are always pushing the limits to evolve
                 our business software.</p>
             <p>
-                We understand that the world is increasingly mobile and web based. This is our dedication
+                We understand that the world is increasingly mobile and web based. Our dedication
                 to improving business process, means we strive to develop new products.</p>
             <p>
-                Simplicy EAS is our latest web based suite of software, whilst Simplicity Handy
-                Range includes a suit of mobile apps.</p>
+                Simplicy Online is our latest web based suite of software, whilst Simplicity Handy
+                Range includes a suite of mobile apps.</p>
             <p>
                 Challenging existing systems allowed us to be award-winners (The Best use of Mobile
                 and Wireless technology, DTIs eCommerce Award) and meet our clients' requirements.</p>

@@ -18,14 +18,12 @@
         <div class="solutiontext"  style="padding-right:20px;">
         <p>
                 To read the latest news from Simplicity For Business please click on the month
-                and then story headline you are interested in.</p>
+                and then the story headline you are interested in.</p>
             <p>
-                <a href="#Jantop">Jan 2010</a></p>
-            <p id="Jantop">
-                <a>Press release VAT increase</a>
-                <br />
-                <a>Press release Snow hits economy</a><br />
-                <a>Press release - Estimating in today's harsh economic environment</a></p>
+              <a href="#Jantop">2011</a></p>
+          <p><a href="http://www.bbc.co.uk/news/technology-14052944" target="_new">Press release - Free airwaves for rural broadband</a><br />
+            <a href="http://www.bbc.co.uk/news/business-14029919" target="_new">Press release - Campaign to flush out unpaid VAT</a><br />
+          <a href="http://www.bbc.co.uk/news/business-14029957" target="_new">Press release - UK services sustain 'solid' growth in June 2011</a>     </p>
 </div>
     </div>
 </asp:Content>
