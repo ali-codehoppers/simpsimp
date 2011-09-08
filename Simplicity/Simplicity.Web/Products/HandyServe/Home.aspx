@@ -66,7 +66,7 @@
             <li class="list">Visits not completed owing to non-access</li></ul>
         <p>
             Are you happy with the labour utilisation of your service engineers? If you could
-            plan one extra appointment per day/engineer what would be the impact on your bottom
+            plan one extra appointment per day/engineer, what would be the impact on your bottom
             line?</p>
         <p>
             Simplicity HandyServe empowers your team of engineers by letting them manage visits,
