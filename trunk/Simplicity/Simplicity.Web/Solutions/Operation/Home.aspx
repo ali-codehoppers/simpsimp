@@ -17,9 +17,9 @@
             </div>
         </div>
         <div id="contentsDiv" class="servicetext">
-            <h2>
-                Simplicity EAS will help manage costs and time on all your <br />operations and projects.
-                It allows you to:</h2>
+            <p>
+                Simplicity Online will help manage costs and time on all your operations and projects.
+              It allows you to:</p>
             <ul>
                 <li class="list">Enquire/ Order/ Job Ticket Works Orders and Bills of Materials to complete projects
                     and orders</li>
@@ -30,14 +30,14 @@
                 <li class="list">Analyse all the other business processes, from beginning to end</li>
             </ul>
             <p>
-                To find out more about what Simplicity EAS has to offer and how they can help your
-                business click on the below</p>
+                To find out more about what Simplicity Online has to offer and how they can help your
+                business click on the links below</p>
             <div id="tag">
                 <ul>
-                <li class="secondlist"><a href="#workmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Work Mgt </a></li>
-                <li class="secondlist"><a href="#supplymgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Supply Mgt </a></li>
-                <li class="secondlist"><a href="#projectmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Project Mgt</a></li>
-                <li class="secondlist"><a href="#hardware" style="font-weight: bolder;font-size:13px;color: #0066FF;">Hardware Specs</a></li>
+                <li class="secondlist"><a href="#workmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Work Management </a></li>
+                <li class="secondlist"><a href="#supplymgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Supply </a><a href="#workmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Management </a><a href="#supplymgt" style="font-weight: bolder;font-size:13px;color: #0066FF;"> </a></li>
+                <li class="secondlist"><a href="#projectmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Project </a><a href="#workmgt" style="font-weight: bolder;font-size:13px;color: #0066FF;">Management </a></li>
+                <li class="secondlist"><a href="#hardware" style="font-weight: bolder;font-size:13px;color: #0066FF;">Hardware Specification</a></li>
                 </ul>
             </div>
             <div id="workmgt">
@@ -48,10 +48,10 @@
                     
                 </div>
                 <h2>
-                    'Save time and make management of jobs from "quote" to <br />"work-in-progress" easy'</h2>
+                Work Management - Save time and make management of jobs from "quote" to "work-in-progress" easy</h2>
                 <ul>
                     <li class="list">Convert successful tenders to work in progress</li>
-                    <li class="list">Allocate to job manager</li>
+                    <li class="list">Allocate to a job manager</li>
                     <li class="list">Alert to compliance needs against each job and store completed documentation</li>
                     <li class="list">Alert for contract status and store documents against job</li>
                     <li class="list">Issue permits and authorisation for each job</li></ul>
@@ -64,7 +64,7 @@
                     
                 </div>
                 <h2>
-                    Track orders suppliers so every penny is accounted for</h2>
+                    Supply Management - Monitor orders/suppliers so every penny is accounted for</h2>
                 <ul>
                     <li class="list">Start, amend and update order checklists</li>
                     <li class="list">Receive delivery notes</li>
@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 <h2>
-                    Enables project managers to control costs &amp; resources</h2>
+                    Project Management - Enables project managers to control costs &amp; resources</h2>
                 <ul>
                     <li class="list">Update job status</li>
                     <li class="list">Create invoice records for certified works</li>
@@ -98,8 +98,8 @@
                     <li class="list">Issue requests for resources</li>
                     <li class="list">Check staff have the qualifications needed for tasks</li>
                     <li class="list">Record accidents</li>
-                    <li class="list">Log awaiting other trades &amp; notify customer</li>
-                    <li class="list">Log 'No Access' &amp; notify customer</li>
+                    <li class="list">Log awaiting other trades &amp; notify customers</li>
+                    <li class="list">Log 'No Access' &amp; notify customers</li>
                     <li class="list">Create &amp; log documents for suite inductions &amp; invite attendants</li>
                     <li class="list">Manage the delivery of purchases</li>
                     <li class="list">Story log-in and log-out on timesheets</li>
@@ -111,8 +111,8 @@
                     <div class="dotted_line" style="padding-top:15px;">
                     </div>
                 </div>
-                <p>
-                    Click on the options below to view the Browsers and Information needed to avail
+                <h2>Hardware Specification </h2>
+                <p>Click on the options below to view the Browsers and Information needed to avail
                     of any of the Simplicity Products</p>
                 <div class="browserlist">
                     <div>

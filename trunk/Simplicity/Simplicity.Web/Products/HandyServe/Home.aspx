@@ -51,15 +51,14 @@
                     Home </a>
             </div>
             <div>
+                <p>
                 <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
+              </p>
             </div>
         </div>
     </div>
     <div class="text" id="contentsDiv">
-        <h2>
-            Want innovative mobile apps for your field operatives?</h2>
-        <p>
-            Are you confident that your operatives and engineers are achieving the key performance
+        <p>Do you want an innovative mobile app for your field operatives?        Are you confident that your operatives and engineers are achieving the key performance
             indicators (KPIs) demanded by your clients? Do you have the KPI analysis available
             in real time? For example:-</p>
         <ul>
@@ -84,6 +83,6 @@
         <p>
             Simplicity HandyServe runs on MS Windows Mobile powered smartphones added to the
             agreement with your current service provider and costs just £110/month per engineer.
-            Efficiency and effectiveness at an affordable price</p>
+            Efficiency and effectiveness at an affordable price.</p>
     </div>
 </asp:Content>

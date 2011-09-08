@@ -15,7 +15,7 @@
                 <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Community/Events.aspx">Event</asp:HyperLink> 
             </div>
 			<div class="leftNavItem">
-                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Community/Blogs.aspx">Blogs</asp:HyperLink> 
+                <asp:HyperLink ID="HyperLink4" target="_blank" runat="server" NavigateUrl="http://simplicity4business.blogspot.com/">Blogs</asp:HyperLink> 
             </div>
 			<div class="leftNavItem">
                 <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Community/Campaigns.aspx">Campaigns</asp:HyperLink> 

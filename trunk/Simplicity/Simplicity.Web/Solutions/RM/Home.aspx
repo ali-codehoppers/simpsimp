@@ -8,7 +8,7 @@
         <div id="secnavbar" class="floatLeft">
             <div id="icon1" class="floatLeft" style="width: 50%;">
                 <h2 id="ourSolution">
-                    <span style="color: #666666;">RESOURCE</span> &amp; MANAGEMENT</h2>
+                    <span style="color: #666666;">RESOURCE</span>  MANAGEMENT</h2>
             </div>
             <div id="nsecnavbar">
                 <div>
@@ -27,21 +27,23 @@
             <p style="width: 95%">
                 Also, unlike less sophisticated software this software incorporates a postcode checker
                 so you can track staff and assets. This function then allows you to view your data
-                by postcode or region, as well as day, week, month, resource, job</p>
+                by postcode or region, as well as day, week, month, resource or job.</p>
             <p>
                 To find out more about its features click on the links.</p>
             <div id="tag">
                 <ul>
                     <li class="secondlist"><a href="#assetmgt" style="font-weight: bolder; font-size: 13px;
-                        color: #0066FF;">Asset Mgt</a></li>
+                        color: #0066FF;">Asset Management</a></li>
                     <li class="secondlist"><a href="#clientmgt" style="font-weight: bolder; font-size: 13px;
-                        color: #0066FF;">Client Mgt </a></li>
+                        color: #0066FF;">Client </a><a href="#assetmgt" style="font-weight: bolder; font-size: 13px;
+                        color: #0066FF;">Management</a></li>
                     <li class="secondlist"><a href="#diary" style="font-weight: bolder; font-size: 13px;
                         color: #0066FF;">Diary</a></li>
                     <li class="secondlist"><a href="#projectmgt" style="font-weight: bolder; font-size: 13px;
-                        color: #0066FF;">Project Mgt</a></li>
+                        color: #0066FF;">Project </a><a href="#assetmgt" style="font-weight: bolder; font-size: 13px;
+                        color: #0066FF;">Management</a></li>
                     <li class="secondlist"><a href="#hardwarespecs" style="font-weight: bolder; font-size: 13px;
-                        color: #0066FF;">Hardware Specs</a></li>
+                        color: #0066FF;">Hardware Specification</a></li>
                 </ul>
             </div>
             <div id="assetmgt">
@@ -52,7 +54,7 @@
                     </div>
                 </div>
                 <h2>
-                    Note key dates for your resources and staff</h2>
+                    Asset Management - Note key dates for your resources and staff</h2>
                 <ul>
                     <li class="list">Link projects to staff and business key performance indicators (KPIs)</li>
                     <li class="list">Diarise vehicle and asset maintenance, with alerts</li>
@@ -72,7 +74,7 @@
                     </div>
                 </div>
                 <h2>
-                    Keep up-to-date records on all</h2>
+                    Client Management - Keep up-to-date records</h2>
                 <ul>
                     <li class="list">Create client records</li>
                     <li class="list">Allocate client to staff</li>
@@ -80,10 +82,10 @@
                     <li class="list">View contact history</li>
                     <li class="list">Book appointments, with alerts</li>
                     <li class="list">Link contact details direct to e-marketing campaigns</li>
-                    <li class="list">Attach an account to client</li>
+                    <li class="list">Attach an account to a client</li>
                     <li class="list">Note payment terms</li>
-                    <li class="list">Attach documents to clients record to store extra information</li>
-                    <li class="list">Link to project, live and historical</li></ul>
+                    <li class="list">Attach documents to a client record to store extra information</li>
+                    <li class="list">Link to projects; live and historical</li></ul>
             </div>
             <div id="diary">
                 <div style="width: 95%;">
@@ -93,12 +95,12 @@
                     </div>
                 </div>
                 <h2>
-                    Ensures resources are allocated to optimum efficiency every day</h2>
+                    Diary - Ensures resources are allocated to optimum efficiency every day</h2>
                 <ul>
                     <li class="list">Choose view of calendar by day, week, month, resources, department,
-                        job, postcode, region</li>
+                        job, postcode and region</li>
                     <li class="list">Incorporates postcode checker to optimise logistics</li>
-                    <li class="list">Run reports to analysis KPIs</li>
+                    <li class="list">Run reports to analyse KPIs</li>
                     <li class="list">Attach document folders</li></ul>
             </div>
             <div id="projectmgt">
@@ -109,8 +111,7 @@
                     </div>
                 </div>
                 <h2>
-                    Ensure every job has the optimum staff and resources needed
-                    <br />
+                    Project Management - Ensure every job has the optimum staff and resources needed
                     to complete a deadline</h2>
                 <ul>
                     <li class="list">Incorporate postcode checker to optimise staff and resource allocation</li>
@@ -128,8 +129,9 @@
                     <div class="dotted_line" style="padding-top: 15px;">
                     </div>
                 </div>
-                <p>
-                    Click on the options below to view the Browsers and Information needed to avail
+                <h2>
+                    Hardware Specification </h2>
+                <p>Click on the options below to view the Browsers and Information needed to avail
                     of any of the Simplicity Products</p>
                 <div class="browserlist">
                     <div>

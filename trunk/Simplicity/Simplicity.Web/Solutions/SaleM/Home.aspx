@@ -19,7 +19,7 @@
         <div id="contentsDiv" class="servicetext">
             <p>
                 Simply put, for your Sales and Marketing department, the automated processes within
-                Simplicity EAS allows you to:</p>
+                Simplicity Online allows you to:</p>
             <ul>
                 <li class="list">Manage ITTs and Quotations to win business and protect profit margins</li>
                 <li class="list">Enquire/ Order/ Job Ticket Works Orders and Bills of Materials to complete projects
@@ -32,15 +32,15 @@
                 <li class="list">Analyse all other business processes, from beginning to end</li>
             </ul>
             <p>
-                To find out more about what Simplicity EAS has to offer and how they can help your
-                business click on the below</p>
+                To find out more about what Simplicity Online has to offer and how they can help your
+                business click on the links below</p>
             <div id="tag">
                 <ul>
                 <li class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#newbusiness">New Business</a></li>
                 <li  class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#market">Marketing</a></li>
                 <li  class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#estimate">Estimating</a></li>
                 <li  class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#analysis">Analysis</a></li>
-                <li  class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#hardware">Hardware Specs</a></li>
+                <li  class="secondlist"><a style="font-weight: bolder;font-size:13px;color: #0066FF;" href="#hardware">Hardware Specification</a></li>
             </ul>
             </div>
             <div id="newbusiness">
@@ -52,12 +52,12 @@
                     
                 </div>
                 <h2>
-                    Manage new business - never loose a business lead again!</h2>
+                    New Business - Manage new business, never lose a business lead again!</h2>
                 <ul>
                     <li class="list">Create &amp; allocate new leads</li>
                     <li class="list">Use diary to book sales activity (next call, appointments, comments...)</li>
                     <li class="list">Qualify &amp; prioritise leads</li>
-                    <li class="list">Convert success pitches to work in progress</li></ul>
+                    <li class="list">Convert successful pitches to work in progress</li></ul>
             </div>
             <div id="market">
                 <div  style="width:95%;">
@@ -67,7 +67,7 @@
                     
                 </div>
                 <h2>
-                    Generate business - track your marketing campaigns</h2>
+                    Marketing - Generate business, track your marketing campaigns</h2>
                 <ul>
                     <li class="list">Import existing information - i.e from bought lists</li>
                     <li class="list">Create &amp; send mass email campaigns</li>
@@ -82,18 +82,18 @@
                     
                 </div>
                 <h2>
-                    Win business with quotes that increase long-term profitability <br /> but still offer competitive
+                    Estimating - Win business with quotes that increase long-term profitability but still offer competitive
                     prices</h2>
                 <p>
                     Simply put, for your Sales and Marketing departments, the automated process within
-                    Simplicity EAS allow you to:</p>
+                    Simplicity Online allows you to:</p>
                 <ul>
                     <li class="list">Manage job costing &amp; quotations</li>
                     <li class="list">Book tender deadlines into diary</li>
                     <li class="list">Log new orders received by phone, fax, email &amp; portal</li>
                     <li class="list">Record client's specifications and with one click link to work schedule</li>
-                    <li class="list">Estimate using customised pre-populated pricing book</li>
-                    <li class="list">Adjust pricing book to find a balance between profit and competitive quoting</li>
+                    <li class="list">Estimate using customised pre-populated pricing books</li>
+                    <li class="list">Adjust pricing books to find a balance between profit and competitive quoting</li>
                     <li class="list">Automate personalised covering letter</li></ul>
             </div>
             <div id="#analysis">
@@ -104,7 +104,7 @@
                     
                 </div>
                 <h2>
-                    Achieve business objectives</h2>
+                    Analysis - Achieve business objectives</h2>
                 <ul>
                     <li class="list">Manage and analyse sales activity</li>
                     <li class="list">Track cost of sale (COS) from initial enquiry to winning the business</li>
@@ -118,8 +118,8 @@
                     </div>
                     
                 </div>
-                <p>
-                    Click on the options below to view the Browsers and Information needed to avail
+                <h2>Hardware Specification                    </h2>
+                <p>Click on the options below to view the Browsers and Information needed to avail
                     of any of the Simplicity Products</p>
                 <div class="browserlist">
                     <div>

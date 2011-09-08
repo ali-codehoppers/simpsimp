@@ -33,6 +33,7 @@
                 <li class="list">Maintain Sign-In Sheets</li>
                 <li class="list">Record permit to work - Hot Works </li>
             </ul>
+            <p>&nbsp;</p>
             <div id="tag">
                 <ul>
                     <li class="secondlist"><a href="#safety" style="font-weight: bolder; font-size: 13px;
@@ -40,7 +41,7 @@
                     <li class="secondlist"><a href="#documentation" style="font-weight: bolder; font-size: 13px;
                         color: #0066FF;">Documentation</a></li>
                     <li class="secondlist"><a href="#hardwarespecs" style="font-weight: bolder; font-size: 13px;
-                        color: #0066FF;">Hardware Specs</a></li>
+                        color: #0066FF;">Hardware Specification</a></li>
                 </ul>
             </div>
             <div id="safety">
@@ -53,7 +54,7 @@
                 <h2>
                     Site Safety</h2>
                 <p>
-                    Helps you ensure that all sites comply with health and safety, be they your offices
+                    Helps you ensure that all sites comply with health and safety, whether  they are  your offices
                     or project locations.</p>
                 <ul>
                     <li class="list">Flag awaiting compliance documents and inspections</li>
@@ -61,13 +62,12 @@
                     <li class="list">Record and reference staff qualifications</li>
                     <li class="list">Record accidents</li>
                     <li class="list">Log attendance</li>
-                    <li class="list">Ensure health and safety - In one click hold documents</li>
                     <li class="list">Maintain emergency points</li>
                     <li class="list">Maintain location of workers</li>
                     <li class="list">Maintain first aiders</li>
                     <li class="list">Maintain fire officers</li>
                     <li class="list">Maintain fire drill information</li>
-                    <li class="list">Log 'no access' &amp; notify customer</li>
+                    <li class="list">Log 'no access' &amp; notify customers</li>
                 </ul>
             </div>
             <div id="documentation">
@@ -103,8 +103,8 @@
                     <div class="dotted_line" style="padding-top: 15px;">
                     </div>
                 </div>
-                <p>
-                    Click on the options below to view the Browsers and Information needed to avail
+                <h2>Hardware Specification </h2>
+                <p>Click on the options below to view the Browsers and Information needed to avail
                     of any of the Simplicity Products</p>
                 <div class="browserlist">
                     <div>

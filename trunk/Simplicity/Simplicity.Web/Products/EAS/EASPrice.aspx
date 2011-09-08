@@ -22,14 +22,14 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
    <div id="subdirectory" class="bottom_border">
         <a href="../Home.aspx" class="login">Products</a> &gt;&gt; <a href="Home.aspx" class="login">
-            EAS</a>
+            Simplicity Online</a>
     </div>
     <div id="secnavbar" class="floatLeft">
         <div id="icon1" class="floatLeft">
             <h2>
                 <span class="stylecolor">Simplicity</span>
                 <br />
-                EAS</h2>
+                Online</h2>
         </div>
         <div id="nsecnavbar">
             <div id="hardicon" class="floatRight">
