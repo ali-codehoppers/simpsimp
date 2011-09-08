@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="LeftMenu.master.cs" Inherits="Simplicity.Web.Common.LeftMenu" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="HeadContentPlaceHolder"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+    <div id="contentTop">
+		<div class="floatLeft leftNavBar">
+			<div> <a href="../WatchDemo.aspx" id="watch"> </a> </div>
+			<div> <a href="../BuyProduct.aspx" id="buy"> </a> </div>
+			<div> <a href="../BuyProduct.aspx?try=try" id="try"> </a> </div>
+			<div> <a href="../CallMeBack.aspx" id="call"> </a> </div>
+		</div>
+        <asp:ContentPlaceHolder ID="HeadingPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+		<div class="floatRight" style="width: 650px;">
+        
+             
+            <asp:Panel ID="errorPanel" runat="server" CssClass="error" Visible="false" style="margin-top:75px;margin-left:0px;">
+                <div style="float:left">
+                    <asp:Image ID="Image1" ImageUrl="~/Images/error.png" runat="server" />
+                </div>   
+                <div style="float:left;margin-left:5px;margin-top:5px;">
+                    <asp:Label runat="server" ID="errorMessage"></asp:Label>
+                </div>
+                <div style="clear:both"></div>
+            </asp:Panel>
+            
+            <asp:Panel ID="successPanel" runat="server" CssClass="success" Visible="false" style="margin-top:75px;margin-left:0px;">
+                <div style="float:left">
+                    <asp:Image ID="Image2" ImageUrl="~/Images/success.png" runat="server" />
+                </div>   
+                <div style="float:left;margin-left:5px;margin-top:5px;">
+                    <asp:Label runat="server" ID="successMessage"></asp:Label>
+                </div>
+                <div style="clear:both"></div>
+            </asp:Panel>
+            
+            <div id="contentsDiv" class="producttext">
+
+               <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            
+        </div>
+        <div class="clearFloat"></div>
+	</div>
+    
+</asp:Content>
