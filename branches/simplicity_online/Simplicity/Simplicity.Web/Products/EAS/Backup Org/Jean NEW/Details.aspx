@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Details.aspx.cs" Inherits="Simplicity.Web.Products.EAS.Details" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Details.aspx.cs" Inherits="Simplicity.Web.Products.Online.Details" %>
 
 <p>
     This suite of web-based software will automate your business processes so you can

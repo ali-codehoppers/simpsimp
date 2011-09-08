@@ -43,7 +43,7 @@
       <div id="hardicon" class="floatRight"> <a href="javascript:populateContents('../HardwareSpecifications.aspx','contentsDiv')"
                     class="icon_link"><br />
       </a></div>
-      <div id="homeicon" class="floatRight"> <a href="javascript:populateContents('Details.aspx','contentsDiv')" class="icon_link"> Home </a></div>
+      <div id="homeicon" class="floatRight"></div>
       <div></div>
     </div>
   </div>

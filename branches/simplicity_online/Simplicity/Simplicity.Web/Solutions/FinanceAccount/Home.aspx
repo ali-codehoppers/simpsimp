@@ -18,10 +18,10 @@
         </div>
         <div id="contentsDiv" class="servicetext">
             <p>
-              Simplicity For Business is an end-to-end solution that takes information from  first point of contact through to final invoicing; this means increased revenue and improved profit margins which speeds up cash flow.</p>
+              Simplicity Online is an end-to-end solution that takes information from  first point of contact through to final invoicing; this means increased revenue and improved profit margins which speeds up cash flow.</p>
             <p>The application allows organisations to manage time and costs on  operations and projects, enabling departments to save time on routine tasks.</p>
-            <p>Simplicity  For Business is fully compatible with Sage and other accounting  packages</p>
-            <p>To find out more about what Simplicity  For Business has to offer and how it  can help your business, click on the links below. </p>
+            <p>Simplicity Online is fully compatible with Sage and other accounting  packages</p>
+            <p>To find out more about what Simplicity Online has to offer and how it  can help your business, click on the links below. </p>
             <div id="tag">
                 <ul>
                 <li class="secondlist"><a href="#boughtledger" style="font-weight: bolder;font-size:13px;color: #0066FF;">Sales Ledger</a></li>

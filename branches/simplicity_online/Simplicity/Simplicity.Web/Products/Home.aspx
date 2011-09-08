@@ -21,7 +21,7 @@
         <div><br />
         </div>
         <div>
-          <p>Simplicity for business offers a suite of business software which
+          <p>Simplicity for Business offers a suite of business software which
 requires nothing more than a web browser or mobile phone to
 access.</p>
 <p style="width:95%">The Simplicity Software as a Service (SaaS) suite is packed with specialist

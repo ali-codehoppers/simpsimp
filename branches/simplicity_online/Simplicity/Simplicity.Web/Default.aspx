@@ -30,15 +30,8 @@
 		</div>
 		<div class="floatRight">
 			<div class="rightBannerTop" style="height:20px"></div>
-			<div class="slideShow">
-				<a href="Products/HS/Home.aspx"><img src="images/img_2.jpg" width="655" height="257" /></a>
-				<a href="Products/HandyGas/Home.aspx"><img src="images/img_3.jpg" width="655" height="257" /></a>
-				<a href="Products/HandyLEC/Home.aspx"><img src="images/img_4.jpg" width="655" height="257" /></a>
-				<a href="Products/HandyServe/Home.aspx"><img src="images/img_5.jpg" width="655" height="257" /></a>
-				<a href="Products/EAS/Home.aspx"><img src="images/img_6.jpg" width="655" height="256" /></a>
-				<a href="Products/PS/Home.aspx"><img src="images/img_7.jpg" width="655" height="257" /></a>
-                <a href="Products/Home.aspx"><img src="images/img_1.jpg" width="655" height="257" /></a>
-			</div>
+			<div class="slideShow"><a href="Products/EAS/Home.aspx"><img src="images/img_6.jpg" width="655" height="256" /></a>
+			<a href="Products/PS/Home.aspx"><img src="images/img_7.jpg" width="655" height="257" /></a></div>
 		</div>
 		
         <div class="clearFloat"></div>

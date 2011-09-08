@@ -6,19 +6,13 @@
   <div id="contentTop">
 		<div class="floatLeft leftNavBarSimple">
             <div class="leftNavItem"> 
-                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Community/Tweets.aspx">Tweets</asp:HyperLink> 
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Company/News.aspx">News</asp:HyperLink> 
             </div>
             <div class="leftNavItem"> 
                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Community/Links.aspx">Links</asp:HyperLink> 
             </div>
 			<div class="leftNavItem">
                 <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Community/Events.aspx">Event</asp:HyperLink> 
-            </div>
-			<div class="leftNavItem">
-                <asp:HyperLink ID="HyperLink4" target="_blank" runat="server" NavigateUrl="http://simplicity4business.blogspot.com/">Blogs</asp:HyperLink> 
-            </div>
-			<div class="leftNavItem">
-                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Community/Campaigns.aspx">Campaigns</asp:HyperLink> 
             </div>
 		</div>
 		<asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder"></asp:ContentPlaceHolder>
