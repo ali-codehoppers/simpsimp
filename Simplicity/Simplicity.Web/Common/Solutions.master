@@ -13,7 +13,7 @@
                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Solutions/Operation/Home.aspx">Operations</asp:HyperLink> 
             </div>
 			<div class="leftNavItem">
-                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Solutions/HS/Home.aspx">Health & Safety</asp:HyperLink> 
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Solutions/HS/Home.aspx">Online</asp:HyperLink> 
             </div>
 			<div class="leftNavItem">
                 <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Solutions/RM/Home.aspx">Resource Management</asp:HyperLink> 

@@ -119,7 +119,7 @@
             </div>
         </asp:Panel>
         
-        <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server" >
+        <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
         </asp:ContentPlaceHolder>
         <div id="footer">
             Copyright©2010 Simplicity. All Rights Reserved.<br>

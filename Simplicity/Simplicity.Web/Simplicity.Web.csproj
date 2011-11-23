@@ -13,6 +13,7 @@
     <RootNamespace>Simplicity.Web</RootNamespace>
     <AssemblyName>Simplicity.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,9 +61,12 @@
     <Content Include="Common\Controls\PriceEdition.ascx" />
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
+    <Content Include="Community\Blogs.aspx" />
+    <Content Include="Community\Campaigns.aspx" />
     <Content Include="Community\Events.aspx" />
     <Content Include="Community\Home.aspx" />
     <Content Include="Community\Links.aspx" />
+    <Content Include="Community\Tweets.aspx" />
     <Content Include="Company\Career.aspx" />
     <Content Include="Company\Home.aspx" />
     <Content Include="Company\News.aspx" />
@@ -144,6 +148,10 @@
     <Content Include="Images\handyserver_watch_demo.jpg" />
     <Content Include="Images\header.jpg" />
     <Content Include="Images\health_safety.jpg" />
+    <Content Include="Images\icon-facebook.png" />
+    <Content Include="Images\icon-rss.png" />
+    <Content Include="Images\icon-twitter.png" />
+    <Content Include="Images\icon-youtube.png" />
     <Content Include="Images\icon_back.jpg" />
     <Content Include="Images\icon_chcklist.jpg" />
     <Content Include="Images\icon_clientsystem_requirement.jpg" />
@@ -236,6 +244,19 @@
     <Content Include="Images\sign_up_free.jpg" />
     <Content Include="Images\simple_nav_bg.jpg" />
     <Content Include="Images\simple_subnav_bg.jpg" />
+    <Content Include="Images\Slide_1.png" />
+    <Content Include="Images\Slide_10.png" />
+    <Content Include="Images\Slide_11.png" />
+    <Content Include="Images\Slide_12.png" />
+    <Content Include="Images\Slide_13.png" />
+    <Content Include="Images\Slide_2.png" />
+    <Content Include="Images\Slide_3.png" />
+    <Content Include="Images\Slide_4.png" />
+    <Content Include="Images\Slide_5.png" />
+    <Content Include="Images\Slide_6.png" />
+    <Content Include="Images\Slide_7.png" />
+    <Content Include="Images\Slide_8.png" />
+    <Content Include="Images\Slide_9.png" />
     <Content Include="Images\Sterling.jpg" />
     <Content Include="Images\subheading_bar.jpg" />
     <Content Include="Images\success.png" />
@@ -283,6 +304,7 @@
     <Content Include="Products\PS\Home.aspx" />
     <Content Include="RedirectToProduct.aspx" />
     <Content Include="RedirectToProductTrial.aspx" />
+    <Content Include="Scripts\3dslider.js" />
     <Content Include="Scripts\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\images\ui-bg_flat_75_292F8D_40x100.png" />
     <Content Include="Scripts\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -377,6 +399,8 @@
     <Compile Include="CaseStudies.aspx.designer.cs">
       <DependentUpon>CaseStudies.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\RSS\FeedParser.cs" />
+    <Compile Include="Classes\RSS\Item.cs" />
     <Compile Include="Common\Community.master.cs">
       <DependentUpon>Community.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -454,6 +478,20 @@
     <Compile Include="Common\WatchProductLeftMenu.master.designer.cs">
       <DependentUpon>WatchProductLeftMenu.master</DependentUpon>
     </Compile>
+    <Compile Include="Community\Blogs.aspx.cs">
+      <DependentUpon>Blogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Community\Blogs.aspx.designer.cs">
+      <DependentUpon>Blogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Community\Campaigns.aspx.cs">
+      <DependentUpon>Campaigns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Community\Campaigns.aspx.designer.cs">
+      <DependentUpon>Campaigns.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Community\Events.aspx.cs">
       <DependentUpon>Events.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -474,6 +512,13 @@
     </Compile>
     <Compile Include="Community\Links.aspx.designer.cs">
       <DependentUpon>Links.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Community\Tweets.aspx.cs">
+      <DependentUpon>Tweets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Community\Tweets.aspx.designer.cs">
+      <DependentUpon>Tweets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Company\Career.aspx.cs">
       <DependentUpon>Career.aspx</DependentUpon>
@@ -961,7 +1006,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>33412</DevelopmentServerPort>
+          <DevelopmentServerPort>33504</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

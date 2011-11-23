@@ -1,11 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/WatchProductLeftMenu.master"
-    AutoEventWireup="true" CodeBehind="WatchDemo.aspx.cs" Inherits="Simplicity.Web.WatchDemo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true"
+    CodeBehind="WatchDemo.aspx.cs" Inherits="Simplicity.Web.WatchDemo" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
-    
-    </asp:Content>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
-    <div>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+    <div style="width: 990px; min-height: 450px; margin: auto;">
+        <div style="width: 500px; margin: auto; font-size:22px; padding-top:160px; text-align:center; line-height:150%">
+            <span style="text-align:center"> Thankyou for requesting a demo. One of our team will be back in touch very soon. </span>
+        </div>
+    </div>
+    <!--   <div>
         <asp:Repeater ID="rptVideos" runat="server">
             <HeaderTemplate>
                 <ol>
@@ -35,4 +39,6 @@
         </object>
     </div>
     </asp:Panel>
+
+    -->
 </asp:Content>
