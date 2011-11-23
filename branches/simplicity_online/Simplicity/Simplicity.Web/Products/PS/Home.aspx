@@ -4,10 +4,24 @@
         type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftNavPlaceHolder" runat="server">
-  
+      <div class="leftNavBarEAS">
+        <div>
+            <a href="../../WatchDemo.aspx?product_id=1" id="watch_eas"></a>
+        </div>
+        <!--        <div>
+            <a href="EASPrice.aspx?productid=1" id="buy_eas"></a>
+        </div>
+        -->
+        <div>
+            <a href="EASPrice.aspx?productid=1&try=try" id="try_eas"></a>
+        </div>
+        <div>
+            <a href="../../CallMeBack.aspx" id="call_eas"></a>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
-  <div id="subdirectory" class="bottom_border"><a href="Web Pages/OnLine/SimplicityOnline/Products/Home.aspx" class="login">Products</a> &gt;&gt; <a href="Web Pages/OnLine/SimplicityOnline/Products/PS/Home.aspx" class="login"> Simplicity Professional Services </a> </div>
+  <div id="subdirectory" class="bottom_border"><a href="../Home.aspx" class="login">Products</a> &gt;&gt; <a href="Home.aspx" class="login"> Simplicity Professional Services </a> </div>
   <div id="secnavbar2" class="floatLeft">
     <div id="icon2" class="floatLeft">
       <h2>&nbsp;</h2>

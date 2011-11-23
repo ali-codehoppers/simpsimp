@@ -6,10 +6,11 @@
         type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftNavPlaceHolder" runat="server">
-    <div class="leftNavBar">
+    <div class="leftNavBar" style="padding-top: 85px">
 			<div> <a href="../WatchDemo.aspx" id="watch"> </a> </div>
-			<div> <a href="../BuyProduct.aspx" id="buy"> </a> </div>
-			<div> <a href="../BuyProduct.aspx?try=try" id="try"> </a> </div>
+			<%--<div> <a href="../BuyProduct.aspx" id="buy"> </a> </div>--%>
+			<div>                 <a target="_blank" href="https://sites.secure.force.com/appexchange/listingDetail?listingId=a0N30000004fll2EAA#"
+                    id="try"></a> </div>
 			<div> <a href="../CallMeBack.aspx" id="call"> </a> </div>
     </div>
 </asp:Content>

@@ -8,9 +8,10 @@
         <div>
             <a href="../../WatchDemo.aspx?product_id=1" id="watch_eas"></a>
         </div>
-        <div>
+        <!--        <div>
             <a href="EASPrice.aspx?productid=1" id="buy_eas"></a>
         </div>
+        -->
         <div>
             <a href="EASPrice.aspx?productid=1&try=try" id="try_eas"></a>
         </div>
@@ -27,8 +28,7 @@
     <div id="secnavbar" class="floatLeft">
         <div id="icon1" class="floatLeft">
             <h2>
-                <span class="stylecolor">Simplicity</span>
-                Online</h2>
+                <span class="stylecolor">Simplicity</span> Online</h2>
         </div>
         <div id="nsecnavbar">
             <div id="hardicon" class="floatRight">
@@ -39,7 +39,8 @@
                     Hardware Specs</a>
             </div>
             <div id="priceicon" class="floatRight">
-                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Products/EAS/EASPrice.aspx?productid=1" CssClass="icon_link" runat="server">
+                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Products/EAS/EASPrice.aspx?productid=1"
+                    CssClass="icon_link" runat="server">
                     <asp:Image ID="Image4" ImageUrl="~/Images/icon_price.jpg" alt="" class="imgdim" runat="server" /><br />
                     Prices/Editions</asp:HyperLink>
             </div>
@@ -61,7 +62,8 @@
             move up to an enterprise application suite that requires nothing more than a web
             browser to use and is available on low-cost subscription.</p>
         <p>
-            The completely managed service - often called Software as a Service (SaaS) - has tools on a shared, single database, which cover the critical business processes
+            The completely managed service - often called Software as a Service (SaaS) - has
+            tools on a shared, single database, which cover the critical business processes
             that impact profit. The suite includes:
         </p>
         <ul>
@@ -78,12 +80,14 @@
             <li class="list">Asset Management </li>
         </ul>
         <blockquote>
-          <p>Click below to find out more  information on how Simplicity Online can help your business </p>
-</blockquote>
+            <p>
+                Click below to find out more information on how Simplicity Online can help your
+                business
+            </p>
+        </blockquote>
         <ul>
-          <li class="list"><a href="home2.aspx">Top 15 issues that businesses face</a></li>
-          <li class="list"><a href="home2.aspx">Businesses face Recession</a> </li>
+            <li class="list"><a href="home2.aspx">Top 15 issues that businesses face</a></li>
+            <li class="list"><a href="home2.aspx">Businesses face Recession</a> </li>
         </ul>
     </div>
-    
 </asp:Content>

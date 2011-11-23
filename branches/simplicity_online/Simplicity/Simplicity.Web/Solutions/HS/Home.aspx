@@ -2,13 +2,32 @@
     CodeBehind="Home.aspx.cs" Inherits="Simplicity.Web.Solutions.HS.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+<script type="text/javascript">
+
+    var isShowingDetail = false;
+    function showLongDescription() {
+        if (!isShowingDetail) {
+            $('#details').show();
+            $('#showMore').text('Less');
+            isShowingDetail = true;
+        }
+        else 
+        {
+            $('#details').hide();
+            $('#showMore').text('More');
+            isShowingDetail = false;
+        }
+    }
+
+</script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <div style="float: left; width: 650px">
         <div id="secnavbar" class="floatLeft">
             <div id="icon1" class="floatLeft">
                 <h2 id="ourSolution">
-                    <span style="color: #666666;">H&amp;S</span> Live</h2>
+                    <span style="color: #666666;"></span>Online</h2>
             </div>
             <div id="nsecnavbar">
                 <div>
@@ -18,23 +37,55 @@
         </div>
         <div id="contentsDiv" class="servicetext">
             <p>
-                Guides you through the sequential processes, provides practical templates and an
-                extendable library of <br/>documents and content to publish H&amp;S folders in an easy
-                to read format.
+                End-to-end business management made simple! Simplicity Online can run your entire
+                business from enquiries, estimating and orders through to final invoicing and receipt
+                of payment giving visibility to your team and clarity to your clients.
             </p>
-            <p>
+
+            <div id="details" style="display:none;">
+            <%--            <p>
                 This practical tool allows you to:-
             </p>
+            --%>
             <ul>
-                <li class="list">Publish the Health &amp; Safety folder required onsite</li>
-                <li class="list">Document the safe way of working for the job - The Method Statement</li>
-                <li class="list">Analyse the risk for each specific task - The Risk Assessments</li>
-                <li class="list">Add new or changed risk content onsite</li>
-                <li class="list">Maintain Sign-In Sheets</li>
-                <li class="list">Record permit to work - Hot Works </li>
+                <li class="list">Enquiries/Estimates – Taking enquiries from first point of contact
+                    whilst linking with client CRM data enabling estimates to be generated with speed
+                    and efficiency. </li>
+                <li class="list">Orders/Pricing – Converting estimates or quotes into orders using innovative,
+                    accurate pricing books from an infinite library allowing complete business clarity.
+                </li>
+                <li class="list">Invoices/Payments – Invoicing for completed works either in a full
+                    or interim basis from your previously agreed orders, making the integrated payment
+                    reconciliation easy.</li>
             </ul>
-            <p>&nbsp;</p>
-            <div id="tag">
+            <p>
+                Our end-to-end business application helps manage your business processes. Built
+                natively, our managed service allows you to run your entire business seamlessly
+                from first point of contact through to final invoicing.
+            </p>
+            <p>
+                Using Simplicity’s integration with SalesForce CRM and multiple accounting packages,
+                you can view and edit the client account details in correlation with multiple related
+                company contacts in one easy to use screen. This quick and easy way to set up and
+                manage client contact data means that enquiries and estimates can be generated efficiently.</p>
+            <p>
+                Once an enquiry is in progress, information can be attributed to the works such
+                as job managers, work statuses and phases and various milestone dates. In addition
+                to this, Simplicity includes the ability to search for works location addresses
+                within the system other than the client’s address.</p>
+            <p>
+                When pricing estimates or quotations, Simplicity uses innovative, accurate pricing
+                books from an infinite internal library. This ensures that details of works to be
+                completed remain consistent throughout the life cycle of the project giving complete
+                business clarity from estimation through to invoice and payment for accounts.
+            </p>
+            </div>
+            <div> 
+                <a id="showMore" href="javascript:showLongDescription();" style="color:Blue; font-weight:bold" >More</a>
+            </div>
+
+
+ <%--           <div id="tag">
                 <ul>
                     <li class="secondlist"><a href="#safety" style="font-weight: bolder; font-size: 13px;
                         color: #0066FF;">Site Safety</a></li>
@@ -54,8 +105,8 @@
                 <h2>
                     Site Safety</h2>
                 <p>
-                    Helps you ensure that all sites comply with health and safety, whether  they are  your offices
-                    or project locations.</p>
+                    Helps you ensure that all sites comply with health and safety, whether they are
+                    your offices or project locations.</p>
                 <ul>
                     <li class="list">Flag awaiting compliance documents and inspections</li>
                     <li class="list">Issue permits and authorisation for each job</li>
@@ -103,8 +154,11 @@
                     <div class="dotted_line" style="padding-top: 15px;">
                     </div>
                 </div>
-                <h2>Hardware Specification </h2>
-                <p>Click on the options below to view the Browsers and Information needed to avail
+                <h2>
+                    Hardware Specification
+                </h2>
+                <p>
+                    Click on the options below to view the Browsers and Information needed to avail
                     of any of the Simplicity Products</p>
                 <div class="browserlist">
                     <div>
@@ -155,7 +209,7 @@
                         <a href="http://www.opera.com/browser/" target="_blank">Download version 10</a>
                     </div>
                 </div>
-            </div>
+            </div>--%>
         </div>
     </div>
 </asp:Content>

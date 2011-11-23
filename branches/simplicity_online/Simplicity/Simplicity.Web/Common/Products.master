@@ -12,7 +12,7 @@
             <asp:ContentPlaceHolder ID="ContentsPlaceHolder" runat="server"></asp:ContentPlaceHolder>
         </div>
         <div id="product">
-            <div>
+<%--            <div>
                 <div class="rightproduct"">
                     <asp:ImageButton ID="Image7" ImageUrl="../images/icon_img_1.jpg" PostBackUrl="~/Products/HandyServe/Home.aspx" width="124" height="97" border="0" runat="server" /></div>
                 <div class="leftproduct">
@@ -23,7 +23,7 @@
                     <asp:ImageButton ID="Image9" ImageUrl="~/Images/icon_img_3.jpg" PostBackUrl="~/Products/HandyGas/Home.aspx" width="109" height="97" border="0" runat="server"/></div>
                 <div class="leftproduct">
                     <asp:ImageButton ID="Image10" ImageUrl="~/Images/icon_img_4.jpg" PostBackUrl="~/Products/HS/Home.aspx" width="110" height="97" border="0" runat="server"/></div>
-            </div>
+            </div>--%>
             <div>
                 <div class="rightprodbottom">
                     <asp:ImageButton ID="Image11" ImageUrl="~/Images/icon_img_5.jpg" PostBackUrl="~/Products/EAS/Home.aspx" width="124" height="97" border="0" runat="server"/></div>

@@ -7,9 +7,10 @@
         <div>
             <a href="../../WatchDemo.aspx?product_id=1" id="watch_eas"></a>
         </div>
-        <div>
+<!--        <div>
             <a href="EASPrice.aspx?productid=1" id="buy_eas"></a>
         </div>
+-->
         <div>
             <a href="EASPrice.aspx?productid=1&try=try" id="try_eas"></a>
         </div>

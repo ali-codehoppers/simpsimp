@@ -40,13 +40,13 @@ namespace Simplicity.Web.Solutions {
         protected global::System.Web.UI.WebControls.Image Image8;
         
         /// <summary>
-        /// Image9 control.
+        /// Image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image9;
+        protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
         /// Image10 control.
@@ -58,6 +58,15 @@ namespace Simplicity.Web.Solutions {
         protected global::System.Web.UI.WebControls.Image Image10;
         
         /// <summary>
+        /// Image2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image2;
+        
+        /// <summary>
         /// Image11 control.
         /// </summary>
         /// <remarks>
@@ -65,14 +74,5 @@ namespace Simplicity.Web.Solutions {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image11;
-        
-        /// <summary>
-        /// Image12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image12;
     }
 }

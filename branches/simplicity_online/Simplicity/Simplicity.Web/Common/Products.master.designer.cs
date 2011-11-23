@@ -40,42 +40,6 @@ namespace Simplicity.Web.Common {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentsPlaceHolder;
         
         /// <summary>
-        /// Image7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Image7;
-        
-        /// <summary>
-        /// Image8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Image8;
-        
-        /// <summary>
-        /// Image9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Image9;
-        
-        /// <summary>
-        /// Image10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Image10;
-        
-        /// <summary>
         /// Image11 control.
         /// </summary>
         /// <remarks>

@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div id="contentsDiv" class="communitytext">
+        <div id="contentsDiv" class="communitytext" style="min-height:450px;">
               <div id="links">
 
                 <div class="linktext">

@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div id="contentsDiv" class="communitytext">
+        <div id="contentsDiv" class="communitytext" style="min-height:450px;">
             <p>
                     <h3>
                         January 25,2010</h3>
