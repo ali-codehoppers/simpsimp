@@ -14,10 +14,10 @@
                 </div>
             </div>
         </div>
-        <div id="contentsDiv" class="communitytext">
+        <div id="contentsDiv" class="communitytext" style="min-height:450px;">
               <div id="links">
 
-                <div class="linktext">
+                <div class="linktext" style="min-height:430px;">
                     <p>
                         A directory of some of the websites relevant to the business community.</p>
                     <p>
