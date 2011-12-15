@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div id="contentsDiv" class="communitytext">
+        <div id="contentsDiv" class="communitytext" style="min-height:450px;">
             <p>
                     <h3>Yearly events for Salesforce</h3>
                     <p>
