@@ -3,12 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<title>Simplicity For Business - Applications Suite For Estimates, Enquiries, Orders and Invoicing</title>
+	<META NAME="Author" CONTENT="Jean O Connor, jeanoconnor@simplicity4business.com">
     <link rel="shortcut icon" href="/favicon.ico" type="image/icon" />
-	<title>Simplicity4Business - ERP, Diary, Job and Estimate Management Software on Cloud</title>
-	<META NAME="Author" CONTENT="Rashid Awan, rashid.awan@gmail.com">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Simplicity, Simplicity4Business, Simplicity For Business, Health & Safety, Health & Safety Documents, HS Live, HandsLive, H&S Live, H&S, H&S Document Generation, Simplicity Online, Ultra Nova Coding, Ultranova Coding, Simplicity Software, data management software, business management software, erp software, enterprise resource planning software, enterprise resource planning solution, business management solutions, record keeping software, job management software, knowledge management system, knowledge management solution, resourcing management software, facilities management solutions, construction industry software, manufacturing software, remote working, mobile workforce, estimating software, job costing software, contractor software, accounting software, supply chain management, compliance software, CIS compliance, virtual filing system, Sage developer, ecommerce awards, e-commerce awards" />
-    <meta name="description" content="Simplicity - award winning business management software that improves business performance and profitability." />    <meta http-equiv="Expires" content="never" />
+    <meta name="description" content="Simplicity - award winning business management software that improves business performance and profitability." /> 
+    <meta http-equiv="Expires" content="never" />
     <meta name="revisit-after" content="1 days" />
     <meta name="distribution" content="global" />
     <meta name="robots" content="index,follow" />
@@ -19,11 +20,10 @@
     <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/SimplicityCommon.js")%>'></script>
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>
-</head>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-1483143-5']);
+    _gaq.push(['_setAccount', 'UA-25544592-2']);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -31,7 +31,10 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
 </script>
+</head>
+
 <body>
     <form id="form1" runat="server">
     <div id="container">
