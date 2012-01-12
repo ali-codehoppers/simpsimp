@@ -56,11 +56,13 @@
     <Content Include="BuyProduct.aspx" />
     <Content Include="CallMeBack.aspx" />
     <Content Include="CaseStudies.aspx" />
+    <Content Include="CloudTV.aspx" />
     <Content Include="Common\Controls\CallMeUserControl.ascx" />
     <Content Include="Common\Controls\Currencies.ascx" />
     <Content Include="Common\Controls\PriceEdition.ascx" />
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
+    <Content Include="Community\Blog.html" />
     <Content Include="Community\Blogs.aspx" />
     <Content Include="Community\Campaigns.aspx" />
     <Content Include="Community\Events.aspx" />
@@ -148,6 +150,9 @@
     <Content Include="Images\handyserver_watch_demo.jpg" />
     <Content Include="Images\header.jpg" />
     <Content Include="Images\health_safety.jpg" />
+    <Content Include="Images\icon-cloud.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\icon-facebook.png" />
     <Content Include="Images\icon-rss.png" />
     <Content Include="Images\icon-twitter.png" />
@@ -401,6 +406,13 @@
     </Compile>
     <Compile Include="Classes\RSS\FeedParser.cs" />
     <Compile Include="Classes\RSS\Item.cs" />
+    <Compile Include="CloudTV.aspx.cs">
+      <DependentUpon>CloudTV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CloudTV.aspx.designer.cs">
+      <DependentUpon>CloudTV.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Common\Community.master.cs">
       <DependentUpon>Community.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

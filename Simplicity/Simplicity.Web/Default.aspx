@@ -56,6 +56,10 @@
         {
             background: url(../../images/icon-rss.png) no-repeat 0 50%;
         }
+        #nav-social #icon-cloud a
+        {
+            background: url(../../images/icon-cloud.png) no-repeat 0 50%;
+        }        
         #nav-social #icon-youtube a
         {
             background: url(../../images/icon-youtube.png) no-repeat 0 50%;
@@ -161,7 +165,8 @@
                     <li id="icon-twitter"><a href="http://twitter.com/Simplicity4Bus" target="_blank"><span>
                         Follow us on </span>Twitter</a></li>
                     <li id="icon-facebook"><a href="" target="_blank"><span>Friend us on </span>Facebook</a></li>
-                    <li id="icon-rss"><a href="" target="_blank"><span>Subscribe to our </span>RSS Feed</a></li>
+                    <li id="icon-cloud"><a href="CloudTV.aspx"><span>Watch us on </span>CloudTV</a></li>
+                    <!--<li id="icon-rss"><a href="" target="_blank"><span>Subscribe to our </span>RSS Feed</a></li> -->
                     <li id="icon-youtube"><a href="" target="_blank"><span>Watch us on </span>Youtube</a></li>
                 </ul>
             </div>
