@@ -61,6 +61,7 @@
     <Content Include="Common\Controls\PriceEdition.ascx" />
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
+    <Content Include="Community\Blog.html" />
     <Content Include="Community\Blogs.aspx" />
     <Content Include="Community\Campaigns.aspx" />
     <Content Include="Community\Events.aspx" />
@@ -149,6 +150,7 @@
     <Content Include="Images\handyserver_watch_demo.jpg" />
     <Content Include="Images\header.jpg" />
     <Content Include="Images\health_safety.jpg" />
+    <Content Include="Images\icon-cloud.png" />
     <Content Include="Images\icon-facebook.png" />
     <Content Include="Images\icon-rss.png" />
     <Content Include="Images\icon-twitter.png" />
