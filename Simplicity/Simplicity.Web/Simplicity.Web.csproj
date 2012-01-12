@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.Entity" />
@@ -56,6 +59,7 @@
     <Content Include="BuyProduct.aspx" />
     <Content Include="CallMeBack.aspx" />
     <Content Include="CaseStudies.aspx" />
+    <Content Include="CloudTV.aspx" />
     <Content Include="Common\Controls\CallMeUserControl.ascx" />
     <Content Include="Common\Controls\Currencies.ascx" />
     <Content Include="Common\Controls\PriceEdition.ascx" />
@@ -390,6 +394,13 @@
     </Compile>
     <Compile Include="Classes\RSS\FeedParser.cs" />
     <Compile Include="Classes\RSS\Item.cs" />
+    <Compile Include="CloudTV.aspx.cs">
+      <DependentUpon>CloudTV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CloudTV.aspx.designer.cs">
+      <DependentUpon>CloudTV.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Common\Community.master.cs">
       <DependentUpon>Community.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

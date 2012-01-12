@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <div style="float: left; width: 650px">
         <div id="secnavbar" class="floatLeft">
-            <div id="icon1" class="floatLeft">
+            <div id="icon1">
                 <h2 id="ourSolution">
                     Tweets</h2>
             </div>
