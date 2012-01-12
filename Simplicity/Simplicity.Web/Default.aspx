@@ -59,7 +59,10 @@
         {
             background: url(../../images/icon-youtube.png) no-repeat 0 50%;
         }
-        
+        #nav-social #icon-cloud a
+        {
+            background: url(../../images/icon-cloud.png) no-repeat 0 50%;
+        }
         #social-title
         {
             border-bottom: 1px solid #EEE;
@@ -88,7 +91,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="contentTop" style="height: 380px">
-        <div class="floatLeft leftNavBar" style="height:250px">
+        <div class="floatLeft leftNavBar" style="height: 250px">
             <div>
                 <a href="WatchDemo.aspx" id="watch"></a>
             </div>
@@ -118,23 +121,24 @@
                         <img src="images/img_1.jpg" width="655" height="257" /></a>
             </div>
         </div>
-
-        <div style="max-width: 550px; margin-left: 30px; clear:both">
-            <h3 id="social-title" style="padding:0px">
+        <div style="max-width: 550px; margin-left: 30px; clear: both">
+            <h3 id="social-title" style="padding: 0px">
                 Find us elsewhere</h3>
-            <ul id="nav-social" style="padding: 5px; padding-top:0px">
+            <ul id="nav-social" style="padding: 5px; padding-top: 0px">
                 <li id="icon-twitter"><a href="http://twitter.com/Simplicity4Bus" target="_blank"><span>
                     Follow us on </span>Twitter</a></li>
                 <li id="icon-facebook"><a href="" target="_blank"><span>Friend us on </span>Facebook</a></li>
-                <li id="icon-rss"><a href="" target="_blank"><span>Subscribe to our </span>RSS Feed</a></li>
+                <li id="icon-cloud"><a href="CloudTV.aspx"><span>Watch us on </span>CloudTV</a></li>
+                <!--<li id="icon-rss"><a href="" target="_blank"><span>Subscribe to our </span>RSS Feed</a></li>-->
                 <li id="icon-youtube"><a href="" target="_blank"><span>Watch us on </span>Youtube</a></li>
             </ul>
         </div>
-        <div class="clearFloat" style="max-height:0px">
+        <div class="clearFloat" style="max-height: 0px">
         </div>
     </div>
     <div id="contentMiddle">
         <div class="floatRight" style="width: 165px; margin-right: 50px; margin-top: 50px;">
+
             <div id="manImage">
                 <div style="padding-top: 42px; text-align: center">
                     <a href="CaseStudies.aspx">
