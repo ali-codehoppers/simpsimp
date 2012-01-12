@@ -121,24 +121,28 @@
                         <img src="images/img_1.jpg" width="655" height="257" /></a>
             </div>
         </div>
-        <div style="max-width: 550px; margin-left: 30px; clear: both">
+        <div style="clear:both">
+        </div>
+        <div style="max-width: 600px; margin-left: 30px;">
+            <div style="padding-bottom:5px">
             <h3 id="social-title" style="padding: 0px">
                 Find us elsewhere</h3>
-            <ul id="nav-social" style="padding: 5px; padding-top: 0px">
-                <li id="icon-twitter"><a href="http://twitter.com/Simplicity4Bus" target="_blank"><span>
-                    Follow us on </span>Twitter</a></li>
-                <li id="icon-facebook"><a href="" target="_blank"><span>Friend us on </span>Facebook</a></li>
-                <li id="icon-cloud"><a href="CloudTV.aspx"><span>Watch us on </span>CloudTV</a></li>
-                <!--<li id="icon-rss"><a href="" target="_blank"><span>Subscribe to our </span>RSS Feed</a></li>-->
-                <li id="icon-youtube"><a href="" target="_blank"><span>Watch us on </span>Youtube</a></li>
-            </ul>
+            </div>
+
+                <ul id="nav-social" style="padding: 5px; padding-top: 0px;display:inline">
+                    <li id="icon-twitter"><a href="http://twitter.com/Simplicity4Bus" target="_blank"><span>
+                        Follow us on </span>Twitter</a></li>
+                    <li id="icon-facebook"  style="width:110px;"><a href="http://www.facebook.com/#!/pages/Simplicity4Business/283064001714871" target="_blank"><span>Like us on </span>Facebook</a></li>
+                    <li style="width:60px;"><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2F%23%21%2Fpages%2FSimplicity4Business%2F283064001714871&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=30" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:25px;" allowTransparency="true"></iframe></li>
+                    <li id="icon-cloud"><a href="http://www.businesscloudsummit.com/content/cloud-tv-catch" target="_blank"><span>Watch us on </span>CloudTV</a></li>
+                    <!--<li id="icon-rss"><a href="" target="_blank"><span>Subscribe to our </span>RSS Feed</a></li>-->
+                    <li id="icon-youtube"><a href="http://www.youtube.com/user/Simplicity4Business?blend=1&ob=video-mustangbase" target="_blank"><span>Watch us on </span>Youtube</a></li>
+                </ul>
         </div>
-        <div class="clearFloat" style="max-height: 0px">
-        </div>
+
     </div>
     <div id="contentMiddle">
         <div class="floatRight" style="width: 165px; margin-right: 50px; margin-top: 50px;">
-
             <div id="manImage">
                 <div style="padding-top: 42px; text-align: center">
                     <a href="CaseStudies.aspx">
