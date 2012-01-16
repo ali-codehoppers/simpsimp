@@ -150,6 +150,7 @@
     <Content Include="Images\handyserver_watch_demo.jpg" />
     <Content Include="Images\header.jpg" />
     <Content Include="Images\health_safety.jpg" />
+    <Content Include="Images\icon-appexchange.jpg" />
     <Content Include="Images\icon-cloud.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -174,6 +175,7 @@
     <Content Include="Images\icon_img_4.jpg" />
     <Content Include="Images\icon_img_5.jpg" />
     <Content Include="Images\icon_img_6.jpg" />
+    <Content Include="Images\icon_linkedin.png" />
     <Content Include="Images\icon_member.jpg" />
     <Content Include="Images\icon_minus.jpg" />
     <Content Include="Images\icon_plus.jpg" />
