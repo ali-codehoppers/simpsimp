@@ -49,7 +49,11 @@
         }
         #nav-social #icon-linkedin a
         {
-            background: url(../../images/icon-linkedin.png) no-repeat 0 50%;
+            background: url(../../images/icon_linkedin.png) no-repeat 0 50%;
+        }
+        #nav-social #icon-appexchange a
+        {
+            background: url(../../images/icon-appexchange.jpg) no-repeat 0 50%;
         }
         #nav-social #icon-rss a
         {
@@ -123,7 +127,7 @@
         </div>
         <div style="clear:both">
         </div>
-        <div style="max-width: 600px; margin-left: 30px;">
+        <div style="max-width: 850px; margin-left: 30px;">
             <div style="padding-bottom:5px">
             <h3 id="social-title" style="padding: 0px">
                 Find us elsewhere</h3>
@@ -132,11 +136,12 @@
                 <ul id="nav-social" style="padding: 5px; padding-top: 0px;display:inline">
                     <li id="icon-twitter"><a href="http://twitter.com/Simplicity4Bus" target="_blank"><span>
                         Follow us on </span>Twitter</a></li>
-                    <li id="icon-facebook"  style="width:110px;"><a href="http://www.facebook.com/#!/pages/Simplicity4Business/283064001714871" target="_blank"><span>Like us on </span>Facebook</a></li>
-                    <li style="width:60px;"><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2F%23%21%2Fpages%2FSimplicity4Business%2F283064001714871&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=30" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:25px;" allowTransparency="true"></iframe></li>
+                    <li id="icon-facebook"><a href="http://www.facebook.com/#!/pages/Simplicity4Business/283064001714871" target="_blank"><span>Like us on </span>Facebook</a></li>
                     <li id="icon-cloud"><a href="http://www.businesscloudsummit.com/content/cloud-tv-catch" target="_blank"><span>Watch us on </span>CloudTV</a></li>
                     <!--<li id="icon-rss"><a href="" target="_blank"><span>Subscribe to our </span>RSS Feed</a></li>-->
                     <li id="icon-youtube"><a href="http://www.youtube.com/user/Simplicity4Business?blend=1&ob=video-mustangbase" target="_blank"><span>Watch us on </span>Youtube</a></li>
+                    <li id="icon-linkedin"><a href="http://uk.linkedin.com/pub/simplicity-for-business/42/2b6/a02" target="_blank"><span>Join us on </span>LinkedIn</a></li>
+                    <li id="icon-appexchange"><a href="http://appexchange.salesforce.com/listingDetail?listingId=a0N30000004fll2EAA" target="_blank"><span>See us on </span>AppExchange</a></li>
                 </ul>
         </div>
 

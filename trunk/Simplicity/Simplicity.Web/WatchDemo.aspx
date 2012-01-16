@@ -22,7 +22,7 @@
     
     <asp:Panel runat="server" ID="videoPanel" Visible="false">
     <div id="videoDiv"  style="padding-top: 50px;">
-        <object width="640" height="600" type="application/x-shockwave-flash" data="http://flvplayer.com/free-flv-player/FlvPlayer.swf"
+        <!--<object width="640" height="600" type="application/x-shockwave-flash" data="http://flvplayer.com/free-flv-player/FlvPlayer.swf"
             codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
             id="embed_player" style="visibility: visible;">
             <param value="#FFFFFF" name="bgcolor">
@@ -32,7 +32,8 @@
             <param name="FlashVars" value="flvpFolderLocation=http://flvplayer.com/free-flv-player/flvplayer/&flvpVideoSource=<%=VideoURL%>&flvpWidth=640&flvpHeight=375&flvpInitVolume=50&flvpTurnOnCorners=true&flvpBgColor=FFFFFF"
 <embed src="http://flvplayer.com/free-flv-player/FlvPlayer.swf" flashvars="flvpFolderLocation=http://flvplayer.com/free-flv-player/flvplayer/&flvpVideoSource=<%=VideoURL%>&flvpWidth=640&flvpHeight=375&flvpInitVolume=50&flvpTurnOnCorners=true&flvpBgColor=FFFFFF" quality="high" bgcolor="FFFFFF" width="640" height="375" name="FlvPlayer" align="middle" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
 
-        </object>
+        </object>-->
+        <iframe width="560" height="315" src="<%=VideoURL%>" frameborder="0" allowfullscreen></iframe>
     </div>
     </asp:Panel>
 </asp:Content>
