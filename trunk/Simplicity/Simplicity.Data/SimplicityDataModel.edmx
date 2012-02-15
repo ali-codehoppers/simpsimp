@@ -351,7 +351,7 @@
           <Property Name="OnHold" Type="bit" Nullable="false" />
           <Property Name="Approved" Type="int" />
           <Property Name="PaymentType" Type="int" />
-          <Property Name="FullName" Type="varchar" MaxLength="60" />
+          <Property Name="FullName" Type="varchar" MaxLength="125" />
           <Property Name="Title" Type="varchar" MaxLength="7" />
           <Property Name="Initials" Type="varchar" MaxLength="3" />
           <Property Name="Forename" Type="varchar" MaxLength="60" />
@@ -360,7 +360,7 @@
           <Property Name="Email" Type="varchar" MaxLength="60" />
           <Property Name="Password" Type="varchar" MaxLength="50" />
           <Property Name="ReminderQuestionID" Type="tinyint" />
-          <Property Name="ReminderQuestion" Type="varchar" MaxLength="50" />
+          <Property Name="ReminderQuestion" Type="varchar" MaxLength="250" />
           <Property Name="ReminderAnswer" Type="varchar" MaxLength="50" />
           <Property Name="Details" Type="varchar" MaxLength="200" />
           <Property Name="Verified" Type="bit" Nullable="false" />
