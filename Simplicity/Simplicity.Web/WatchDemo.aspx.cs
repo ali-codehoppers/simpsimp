@@ -18,6 +18,9 @@ namespace Simplicity.Web
                 Response.Redirect("~/ViewDemo.aspx");
             }
             String product_id=Request.QueryString["product_id"];
+            //if (product_id == null || product_id .Equals("")) {
+                product_id = "2";
+            //}
             try
             {
                 if (product_id != null)
@@ -28,16 +31,26 @@ namespace Simplicity.Web
                 }
                 else
                 {
-                    SetSuccessMessage("Please select a product to view its Videos");
+                    //SetSuccessMessage("Please select a product to view its Videos");
                 }
             }
             catch(Exception ex)
             {
             
             }
+            int videoid=2;
+            if ((Request[WebConstants.Request.VIDEO_ID] == null || Request[WebConstants.Request.VIDEO_ID].Equals("")) && product_id.Equals("2"))
+            {
+                var WatchVideo = from c in DatabaseContext.Videos where c.VideoID == videoid select c;
+                if (WatchVideo.Any())
+                {
+                    videoURL = WatchVideo.FirstOrDefault().URL;
+                    videoPanel.Visible = true;
+                }
+            }
             if (Request[WebConstants.Request.VIDEO_ID] != null)
             {
-                int videoid = int.Parse(Request[WebConstants.Request.VIDEO_ID]);
+                videoid = int.Parse(Request[WebConstants.Request.VIDEO_ID]);
                 var WatchVideo = from c in DatabaseContext.Videos where c.VideoID == videoid select c;
                 if (WatchVideo.Any())
                 {

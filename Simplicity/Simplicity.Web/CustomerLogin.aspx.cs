@@ -55,6 +55,7 @@ namespace Simplicity.Web
                 Session["userName"] = user.Email;
                 if (Session[WebConstants.Session.RETURN_URL] != null)
                 {
+                    String redirectURL = (string)Session[WebConstants.Session.RETURN_URL];
                     Response.Redirect((string)Session[WebConstants.Session.RETURN_URL]);
                 }
                 else if (Request["GOTO_URL"] != null)

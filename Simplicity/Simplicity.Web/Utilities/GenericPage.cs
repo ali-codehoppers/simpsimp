@@ -99,6 +99,11 @@ namespace Simplicity.Web.Utilities
         protected void RedirectToLogin()
         {
             Session[WebConstants.Session.RETURN_URL] = Request.AppRelativeCurrentExecutionFilePath;
+            String query=Request.QueryString.ToString();
+            if (!query.Equals(""))
+            {
+                Session[WebConstants.Session.RETURN_URL] += "?" + Request.QueryString;
+            }
             Response.Redirect("~/CustomerLogin.aspx?" + WebConstants.Request.NEED_LOGIN + "=true");
         }
 

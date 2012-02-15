@@ -62,19 +62,19 @@
         </ItemTemplate>
         <FooterTemplate>
             <div class="row" style="background-image: url(../../images/curve_medium_big.jpg);">
-                <div class="floatLeft">
+                <div class="floatLeft" >
                     <img src="../../Images/curve_left_big.jpg" /></div>
-                <div class="floatRight">
+                <div class="floatRight" >
                     <img src="../../Images/curve_right_big.jpg" /></div>
-                <div class="col1" style="float: left; padding-right:30px;padding-top:35px;">
+                <div class="col1" style="float: left; padding-right:40px;padding-top:35px;">
                     <span style="font-size:16px;color:#6a6a6a;">Pricing structure per user per month</span></div>
                 <asp:Repeater ID="rptVersions" runat="server">
                     <ItemTemplate>
                         <div class="colfooter" style="float: left; padding-top:35px;">
                             <div style="float:left;">
-                            <div style="padding:5px;"><span style="font-size:22px;color:#6a6a6a; padding-left:40px;font-family:Lucida Sans;"><%# GetCurrencyHTMLCode()%><%# GetVersionPrice(DataBinder.Eval(Container.DataItem, "price"))%></span><br />
+                            <div style="padding:5px;"><span style="font-size:22px;color:#6a6a6a; padding-left:30px;font-family:Lucida Sans;"><%# GetCurrencyHTMLCode()%><%# GetVersionPrice(DataBinder.Eval(Container.DataItem, "price"))%></span><br />
                             </div>
-                            <div style="padding-left:45px; height:20px;">
+                            <div style="padding-left:35px; height:20px;">
                             <a  href='<%#GetVersionBuyNowURL(DataBinder.Eval(Container.DataItem, "versionID"))%>'>
                                 <img alt="Buy Now" src="../../images/btn_buynow.jpg" />
                             </a>
@@ -82,7 +82,7 @@
                             <br />
                             <%if (Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID] == "2")
                               {%>
-                            <span style="font-size: 10pt; color: Gray; padding-left:40px;">Try it now for</span> <a href="../../RedirectToProductTrial.aspx?productId=<%#Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID]%>" style="font-family:Lucida Sans;font-size: 12pt; color: #f29107">FREE</a>
+                            <span style="font-size: 10pt; color: Gray; padding-left:30px;">Try it now for</span> <a href="../../RedirectToProductTrial.aspx?productId=<%#Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID]%>" style="font-family:Lucida Sans;font-size: 12pt; color: #f29107">FREE</a>
                             <%}%>
                             </div>
                         </div>

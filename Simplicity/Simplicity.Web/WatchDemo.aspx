@@ -11,7 +11,7 @@
                 <ol>
             </HeaderTemplate>
             <ItemTemplate>
-                <li><a href='../WatchDemo.aspx?product_id=<%#Request.QueryString["product_id"] %>&videoId=<%#GetURL(DataBinder.Eval(Container.DataItem, "VideoID"))%>'>
+                <li><a href='#healthFrame'>
                     <%#DataBinder.Eval(Container.DataItem, "text")%></a></li>
             </ItemTemplate>
             <FooterTemplate>
@@ -33,7 +33,7 @@
 <embed src="http://flvplayer.com/free-flv-player/FlvPlayer.swf" flashvars="flvpFolderLocation=http://flvplayer.com/free-flv-player/flvplayer/&flvpVideoSource=<%=VideoURL%>&flvpWidth=640&flvpHeight=375&flvpInitVolume=50&flvpTurnOnCorners=true&flvpBgColor=FFFFFF" quality="high" bgcolor="FFFFFF" width="640" height="375" name="FlvPlayer" align="middle" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
 
         </object>-->
-        <iframe width="560" height="315" src="<%=VideoURL%>" frameborder="0" allowfullscreen></iframe>
+        <iframe id="healthFrame" width="560" class="navframe" onmouseover="this.className='navframeHover'" onmouseout="this.className='navframe'"  height="315" src="<%=VideoURL%>" frameborder="0" allowfullscreen></iframe>
     </div>
     </asp:Panel>
 </asp:Content>

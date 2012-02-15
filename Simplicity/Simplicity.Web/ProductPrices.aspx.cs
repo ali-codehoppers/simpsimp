@@ -39,6 +39,10 @@ namespace Simplicity.Web
         private ProductBO product = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (int.Parse(Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID]) == 2) //Health And Safety
+            {
+                Response.Redirect("/Products/HS/HSPrice.aspx?productId=2");
+            }
             if (Request[WebConstants.Request.PRODUCT_ID] != null)
             {
                 if (IsPostBack == false)
