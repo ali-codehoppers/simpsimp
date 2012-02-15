@@ -1541,3 +1541,14 @@ div.leftNavBarContact{
 	width:165px;
 	height:196px;
 }
+.navframe
+{
+	border:5px solid #3084b3;
+	cursor:pointer;
+}
+
+.navframeHover
+{
+	border:5px solid #145983;	
+	cursor:hand;
+}

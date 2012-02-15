@@ -7,7 +7,7 @@
   
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentsPlaceHolder" runat="server">
-  <div id="subdirectory" class="bottom_border"><a href="Web Pages/OnLine/SimplicityOnline/Products/Home.aspx" class="login">Products</a> &gt;&gt; <a href="Web Pages/OnLine/SimplicityOnline/Products/PS/Home.aspx" class="login"> Simplicity Professional Services </a> </div>
+  <div id="subdirectory" class="bottom_border"><a href="../Home.aspx" class="login">Products</a> &gt;&gt; <a href="Home.aspx" class="login"> Simplicity Professional Services </a> </div>
   <div id="secnavbar2" class="floatLeft">
     <div id="icon2" class="floatLeft">
       <h2>&nbsp;</h2>
@@ -39,13 +39,7 @@
     <div id="icon3" class="floatLeft">
       <h2><span class="stylecolor">Simplicity </span>Professional  Services </h2>
     </div>
-    <div id="nsecnavbar">
-      <div id="hardicon" class="floatRight"> <a href="javascript:populateContents('../HardwareSpecifications.aspx','contentsDiv')"
-                    class="icon_link"><br />
-      </a></div>
-      <div id="homeicon" class="floatRight"> <a href="javascript:populateContents('Details.aspx','contentsDiv')" class="icon_link"> Home </a></div>
-      <div></div>
-    </div>
+
   </div>
   <div class="text" id="contentsDiv2">
     <p>&nbsp;</p>
