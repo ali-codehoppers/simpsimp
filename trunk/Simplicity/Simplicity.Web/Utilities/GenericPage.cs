@@ -82,6 +82,14 @@ namespace Simplicity.Web.Utilities
                 return loggedInUser;
             }
         }
+        private Simplicity.Data.User loggedInAdmin;
+        protected Simplicity.Data.User LoggedIsAdmin
+        {
+            get
+            {
+                return loggedInAdmin;
+            }
+        }
         private int LoggedUserCompanyProduct;
         protected int IsUserCompanyProduct
         {
