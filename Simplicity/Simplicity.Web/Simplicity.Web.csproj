@@ -56,6 +56,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AccountAddress.aspx" />
+    <Content Include="Admin\AccountAddress.aspx" />
+    <Content Include="Admin\ConfirmCheckout.aspx" />
+    <Content Include="Admin\ManageSubscription.aspx" />
+    <Content Include="Admin\ManageUser.aspx" />
+    <Content Include="Admin\PaymentDetail.aspx" />
+    <Content Include="Admin\PaymentResponse.aspx" />
+    <Content Include="Admin\Price.aspx" />
+    <Content Include="Admin\PriceControl.ascx" />
+    <Content Include="Admin\Products.aspx" />
+    <Content Include="Admin\Trolley.aspx" />
     <Content Include="BuyProduct.aspx" />
     <Content Include="CallMeBack.aspx" />
     <Content Include="CaseStudies.aspx" />
@@ -368,6 +378,83 @@
     </Compile>
     <Compile Include="AccountAddress.aspx.designer.cs">
       <DependentUpon>AccountAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AccountAddress.aspx.cs">
+      <DependentUpon>AccountAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AccountAddress.aspx.designer.cs">
+      <DependentUpon>AccountAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ConfirmCheckout.aspx.cs">
+      <DependentUpon>ConfirmCheckout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ConfirmCheckout.aspx.designer.cs">
+      <DependentUpon>ConfirmCheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageSubscription.aspx.cs">
+      <DependentUpon>ManageSubscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageSubscription.aspx.designer.cs">
+      <DependentUpon>ManageSubscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PaymentDetail.aspx.cs">
+      <DependentUpon>PaymentDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PaymentDetail.aspx.designer.cs">
+      <DependentUpon>PaymentDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PaymentResponse.aspx.cs">
+      <DependentUpon>PaymentResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PaymentResponse.aspx.designer.cs">
+      <DependentUpon>PaymentResponse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Price.aspx.cs">
+      <DependentUpon>Price.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Price.aspx.designer.cs">
+      <DependentUpon>Price.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PriceControl.ascx.cs">
+      <DependentUpon>PriceControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PriceControl.ascx.designer.cs">
+      <DependentUpon>PriceControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Trolley.aspx.cs">
+      <DependentUpon>Trolley.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Trolley.aspx.designer.cs">
+      <DependentUpon>Trolley.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\PaymentDetails.cs" />
     <Compile Include="BusinessObjects\Product.cs" />
@@ -929,6 +1016,9 @@
     <Compile Include="Trolley.aspx.designer.cs">
       <DependentUpon>Trolley.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\AdminAuthenticatedPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Utilities\AuthenticatedPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -998,6 +1088,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Admin\AdminMaster.Master" />
     <None Include="Docs\Simplicity_SJE_Case Study.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
