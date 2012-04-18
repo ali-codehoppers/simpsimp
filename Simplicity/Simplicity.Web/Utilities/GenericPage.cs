@@ -39,6 +39,9 @@ namespace Simplicity.Web.Utilities
                 if (session != null && session.User != null)
                 {
                     loggedInUser = session.User;
+                    if (session.User.Type.Equals("ADMIN")) {
+                        loggedInAdmin = session.User;
+                    }
                     LoggedUserCompanyProduct =loggedInUser.Company.CompanyProducts.Count;
                     LoggedUserProduct =loggedInUser.UserProducts.Count;
                     session.LastActivityTime = DateTime.Now;
