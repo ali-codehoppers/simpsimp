@@ -53,6 +53,9 @@ namespace Simplicity.Web
                 FormsAuthentication.SetAuthCookie(session.SessionUID, false);
                 Session[WebConstants.Session.USER_ID] = user.UserID;
                 Session["userName"] = user.Email;
+                if (user.Type.Equals("ADMIN")) {
+                    Session["admin"] = "true";
+                }
                 if (Session[WebConstants.Session.RETURN_URL] != null)
                 {
                     String redirectURL = (string)Session[WebConstants.Session.RETURN_URL];
