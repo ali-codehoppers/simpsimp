@@ -67,7 +67,10 @@
   <ItemGroup>
     <Content Include="AccountAddress.aspx" />
     <Content Include="Admin\AccountAddress.aspx" />
+    <Content Include="Admin\ChangePassword.aspx" />
     <Content Include="Admin\ConfirmCheckout.aspx" />
+    <Content Include="Admin\EditCompany.aspx" />
+    <Content Include="Admin\EditUser.aspx" />
     <Content Include="Admin\ManageCompanies.aspx" />
     <Content Include="Admin\ManageSubscription.aspx" />
     <Content Include="Admin\ManageUser.aspx" />
@@ -77,6 +80,7 @@
     <Content Include="Admin\PriceControl.ascx" />
     <Content Include="Admin\Products.aspx" />
     <Content Include="Admin\Trolley.aspx" />
+    <Content Include="Admin\UserProducts.aspx" />
     <Content Include="BuyProduct.aspx" />
     <Content Include="CallMeBack.aspx" />
     <Content Include="CaseStudies.aspx" />
@@ -396,12 +400,33 @@
     <Compile Include="Admin\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ConfirmCheckout.aspx.cs">
       <DependentUpon>ConfirmCheckout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\ConfirmCheckout.aspx.designer.cs">
       <DependentUpon>ConfirmCheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditCompany.aspx.cs">
+      <DependentUpon>EditCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditCompany.aspx.designer.cs">
+      <DependentUpon>EditCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ManageCompanies.aspx.cs">
       <DependentUpon>ManageCompanies.aspx</DependentUpon>
@@ -465,6 +490,13 @@
     </Compile>
     <Compile Include="Admin\Trolley.aspx.designer.cs">
       <DependentUpon>Trolley.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserProducts.aspx.cs">
+      <DependentUpon>UserProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserProducts.aspx.designer.cs">
+      <DependentUpon>UserProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\PaymentDetails.cs" />
     <Compile Include="BusinessObjects\Product.cs" />

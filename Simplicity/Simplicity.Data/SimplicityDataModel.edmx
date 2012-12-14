@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SimplicityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="SimplicityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="SimplicityModelStoreContainer">
           <EntitySet Name="Addresses" EntityType="SimplicityModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CallUserProducts" EntityType="SimplicityModel.Store.CallUserProducts" store:Type="Tables" Schema="dbo" />
@@ -661,7 +661,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_Companies">
-          <End Role="Companies" Type="SimplicityModel.Store.Companies" Multiplicity="0..1" />
+          <End Role="Companies" Type="SimplicityModel.Store.Companies" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Users" Type="SimplicityModel.Store.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Companies">
@@ -720,8 +722,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SimplicityModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -1736,7 +1737,7 @@
         <EntityTypeShape EntityType="SimplicityModel.Address" Width="1.5" PointX="1.5" PointY="36.25" Height="6.4032194010416674" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.CallUserProduct" Width="1.5" PointX="5" PointY="5.5" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.CallUser" Width="1.5" PointX="2.75" PointY="4.25" Height="3.9033007812499987" IsExpanded="true" />
-        <EntityTypeShape EntityType="SimplicityModel.Company" Width="1.5" PointX="1.5" PointY="0.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimplicityModel.Company" Width="1.5" PointX="1.125" PointY="0.625" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.CompanyProduct" Width="1.5" PointX="5.25" PointY="22.5" Height="3.326396484374996" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.EmailQueue" Width="1.5" PointX="5.75" PointY="8" Height="2.9417936197916674" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.EmailTemplate" Width="1.5" PointX="4.75" PointY="2" Height="1.7879850260416674" IsExpanded="true" />
@@ -1754,13 +1755,13 @@
         <EntityTypeShape EntityType="SimplicityModel.Video" Width="1.5" PointX="3" PointY="33" Height="2.1725878906250102" IsExpanded="true" />
         <EntityTypeShape EntityType="SimplicityModel.WishList" Width="1.5" PointX="5.25" PointY="18.5" Height="3.1340950520833388" IsExpanded="true" />
         <AssociationConnector Association="SimplicityModel.FK_Companies_Addresses" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.5" PointY="36.25" />
-          <ConnectorPoint PointX="2.5" PointY="2.9225878906249996" />
+          <ConnectorPoint PointX="2.43749875" PointY="36.25" />
+          <ConnectorPoint PointX="2.43749875" PointY="2.7975878906249996" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_UserAddresses_Users" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="12.867208658854167" />
-          <ConnectorPoint PointX="2.2916641666666666" PointY="12.867208658854166" />
-          <ConnectorPoint PointX="2.5833333333333335" PointY="12.867208658854167" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="12.867208658854167" />
+          <ConnectorPoint PointX="2.5208320833333335" PointY="12.867208658854167" />
           <ConnectorPoint PointX="2.6250025" PointY="12.867208658854167" />
           <ConnectorPoint PointX="2.6250025" PointY="36.25" />
         </AssociationConnector>
@@ -1769,17 +1770,17 @@
           <ConnectorPoint PointX="5" PointY="6.297841796875" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_CompanyProducts_Companies" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.3749975" PointY="2.9225878906249996" />
-          <ConnectorPoint PointX="2.3749975" PointY="24.163198242187498" />
-          <ConnectorPoint PointX="2.4166666666666665" PointY="24.163198242187498" />
+          <ConnectorPoint PointX="2.5625018749999997" PointY="2.7975878906249996" />
+          <ConnectorPoint PointX="2.5625018749999997" PointY="24.163198242187498" />
+          <ConnectorPoint PointX="2.6041666666666665" PointY="24.163198242187498" />
           <ConnectorPoint PointX="2.7708333333333335" PointY="24.163198242187498" />
           <ConnectorPoint PointX="4.791666666666667" PointY="24.163198242187498" />
           <ConnectorPoint PointX="4.958333333333333" PointY="24.163198242187498" />
           <ConnectorPoint PointX="5.25" PointY="24.163198242187498" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_Users_Companies" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.875" PointY="2.9225878906249996" />
-          <ConnectorPoint PointX="1.875" PointY="6.75" />
+          <ConnectorPoint PointX="1.6875" PointY="2.7975878906249996" />
+          <ConnectorPoint PointX="1.6875" PointY="6.75" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_CompanyProducts_ProductDetails" ManuallyRouted="false">
           <ConnectorPoint PointX="3.75" PointY="21.691793619791667" />
@@ -1793,7 +1794,9 @@
           <ConnectorPoint PointX="1.5" PointY="25.026049863281248" />
           <ConnectorPoint PointX="1.8229191666666667" PointY="25.026049863281248" />
           <ConnectorPoint PointX="1.9895858333333332" PointY="25.026049863281248" />
-          <ConnectorPoint PointX="2.4166666666666665" PointY="25.026049863281248" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="25.026049863281248" />
+          <ConnectorPoint PointX="2.5208320833333335" PointY="25.026049863281248" />
+          <ConnectorPoint PointX="2.5416691666666664" PointY="25.026049863281248" />
           <ConnectorPoint PointX="2.7708333333333335" PointY="25.026049863281248" />
           <ConnectorPoint PointX="4.791666666666667" PointY="25.026049863281248" />
           <ConnectorPoint PointX="4.958333333333333" PointY="25.026049863281248" />
@@ -1814,16 +1817,16 @@
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_Modules_Products" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="17.028595377604166" />
-          <ConnectorPoint PointX="2.2916641666666666" PointY="17.028595377604166" />
-          <ConnectorPoint PointX="2.7708333333333335" PointY="17.028595377604166" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="17.028595377604166" />
+          <ConnectorPoint PointX="2.770833333333333" PointY="17.028595377604166" />
           <ConnectorPoint PointX="2.7916666666666665" PointY="17.028595377604166" />
           <ConnectorPoint PointX="2.9583333333333335" PointY="17.028595377604166" />
           <ConnectorPoint PointX="3" PointY="17.028595377604166" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_product_details_un_products" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="19.230499674479166" />
-          <ConnectorPoint PointX="2.2916641666666666" PointY="19.230499674479166" />
-          <ConnectorPoint PointX="2.7708333333333335" PointY="19.230499674479166" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="19.230499674479166" />
+          <ConnectorPoint PointX="2.770833333333333" PointY="19.230499674479166" />
           <ConnectorPoint PointX="3" PointY="19.230499674479166" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_product_details" ManuallyRouted="false">
@@ -1839,8 +1842,8 @@
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_Sessions_Products" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="18.213440755208332" />
-          <ConnectorPoint PointX="2.2916641666666666" PointY="18.213440755208332" />
-          <ConnectorPoint PointX="2.7708333333333335" PointY="18.213440755208332" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="18.213440755208332" />
+          <ConnectorPoint PointX="2.770833333333333" PointY="18.213440755208332" />
           <ConnectorPoint PointX="2.7916666666666665" PointY="18.213440755208332" />
           <ConnectorPoint PointX="2.9583333333333335" PointY="18.213440755208332" />
           <ConnectorPoint PointX="3.4485897435897432" PointY="18.213440755208332" />
@@ -1853,22 +1856,26 @@
         <AssociationConnector Association="SimplicityModel.FK_un_product_versions_un_products" ManuallyRouted="false">
           <ConnectorPoint PointX="1.9062525" PointY="19.710999348958332" />
           <ConnectorPoint PointX="1.9062525" PointY="30.720896809895834" />
-          <ConnectorPoint PointX="2.4166666666666665" PointY="30.720896809895834" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="30.720896809895834" />
+          <ConnectorPoint PointX="2.5208320833333335" PointY="30.720896809895834" />
+          <ConnectorPoint PointX="2.5416691666666664" PointY="30.720896809895834" />
           <ConnectorPoint PointX="2.7083358333333334" PointY="30.720896809895834" />
           <ConnectorPoint PointX="3" PointY="30.720896809895834" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_product_videos_un_products" ManuallyRouted="false">
           <ConnectorPoint PointX="1.0937475" PointY="19.710999348958332" />
           <ConnectorPoint PointX="1.0937475" PointY="34.086293945312505" />
-          <ConnectorPoint PointX="2.4166666666666665" PointY="34.086293945312505" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="34.086293945312505" />
+          <ConnectorPoint PointX="2.5208320833333335" PointY="34.086293945312505" />
+          <ConnectorPoint PointX="2.5416691666666664" PointY="34.086293945312505" />
           <ConnectorPoint PointX="2.7083358333333334" PointY="34.086293945312505" />
           <ConnectorPoint PointX="3" PointY="34.086293945312505" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transaction_details_un_products" ManuallyRouted="false">
           <ConnectorPoint PointX="2.10937875" PointY="19.710999348958332" />
           <ConnectorPoint PointX="2.10937875" PointY="21.893843964843757" />
-          <ConnectorPoint PointX="2.2916641666666666" PointY="21.893843964843757" />
-          <ConnectorPoint PointX="2.7708333333333335" PointY="21.893843964843757" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="21.893843964843757" />
+          <ConnectorPoint PointX="2.770833333333333" PointY="21.893843964843757" />
           <ConnectorPoint PointX="3.6666666666666665" PointY="21.893843964843757" />
           <ConnectorPoint PointX="3.8333333333333335" PointY="21.893843964843757" />
           <ConnectorPoint PointX="4.0729191666666669" PointY="21.893843964843757" />
@@ -1879,28 +1886,26 @@
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_UserProducts_Products" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="16.063460538461534" />
-          <ConnectorPoint PointX="2.3160719349011205" PointY="15.997388603560413" />
-          <ConnectorPoint PointX="2.4339230650988792" PointY="15.879537473362657" />
-          <ConnectorPoint PointX="2.4410744349011204" PointY="15.872386103560412" />
-          <ConnectorPoint PointX="2.5589255650988791" PointY="15.754534973362656" />
-          <ConnectorPoint PointX="2.5660769349011203" PointY="15.747383603560412" />
-          <ConnectorPoint PointX="2.7464255650988787" PointY="15.567034973362654" />
+          <ConnectorPoint PointX="2.3785731849011205" PointY="15.934887353560413" />
+          <ConnectorPoint PointX="2.4964243150988792" PointY="15.817036223362656" />
+          <ConnectorPoint PointX="2.5035763099011197" PointY="15.809884228560414" />
+          <ConnectorPoint PointX="2.7464255650988791" PointY="15.567034973362656" />
           <ConnectorPoint PointX="2.8125" PointY="15.500960538461534" />
           <ConnectorPoint PointX="2.8125" PointY="12.246104829427082" />
           <ConnectorPoint PointX="3" PointY="12.246104829427082" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_WishList_Products" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="18.59375" />
-          <ConnectorPoint PointX="2.2916641666666666" PointY="18.59375" />
-          <ConnectorPoint PointX="2.7708333333333335" PointY="18.59375" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="18.59375" />
+          <ConnectorPoint PointX="2.770833333333333" PointY="18.59375" />
           <ConnectorPoint PointX="4.791666666666667" PointY="18.59375" />
           <ConnectorPoint PointX="4.958333333333333" PointY="18.59375" />
           <ConnectorPoint PointX="5.25" PointY="18.59375" />
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_Sessions_Users" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="14.629466145833334" />
-          <ConnectorPoint PointX="2.2916641666666666" PointY="14.629466145833332" />
-          <ConnectorPoint PointX="2.7083358333333334" PointY="14.629466145833334" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="14.629466145833332" />
+          <ConnectorPoint PointX="2.7083358333333338" PointY="14.629466145833334" />
           <ConnectorPoint PointX="2.7291666666666665" PointY="14.629466145833334" />
           <ConnectorPoint PointX="2.8958333333333335" PointY="14.629466145833334" />
           <ConnectorPoint PointX="6" PointY="14.629466145833334" />
@@ -1917,12 +1922,10 @@
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_un_transactions_un_entity_details_core" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="14.821623599358976" />
-          <ConnectorPoint PointX="2.3160719349011214" PointY="14.887695534260095" />
-          <ConnectorPoint PointX="2.4339230650988792" PointY="15.005546664457853" />
-          <ConnectorPoint PointX="2.4410744349011213" PointY="15.012698034260096" />
-          <ConnectorPoint PointX="2.5589255650988791" PointY="15.130549164457854" />
-          <ConnectorPoint PointX="2.5660769349011212" PointY="15.137700534260096" />
-          <ConnectorPoint PointX="2.683928065098879" PointY="15.255551664457855" />
+          <ConnectorPoint PointX="2.3785731849011214" PointY="14.950196784260095" />
+          <ConnectorPoint PointX="2.4964243150988792" PointY="15.068047914457853" />
+          <ConnectorPoint PointX="2.503576309901121" PointY="15.075199909260096" />
+          <ConnectorPoint PointX="2.6839280650988795" PointY="15.255551664457855" />
           <ConnectorPoint PointX="2.6875" PointY="15.259123599358976" />
           <ConnectorPoint PointX="2.6875" PointY="27.125" />
           <ConnectorPoint PointX="4.041666666666667" PointY="27.125" />
@@ -1934,8 +1937,8 @@
         </AssociationConnector>
         <AssociationConnector Association="SimplicityModel.FK_UserProducts_Users" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="13.491048990885417" />
-          <ConnectorPoint PointX="2.2916641666666666" PointY="13.491048990885416" />
-          <ConnectorPoint PointX="2.7083358333333334" PointY="13.491048990885417" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="13.491048990885416" />
+          <ConnectorPoint PointX="2.7083358333333338" PointY="13.491048990885417" />
           <ConnectorPoint PointX="2.7291666666666665" PointY="13.491048990885417" />
           <ConnectorPoint PointX="2.8958333333333335" PointY="13.491048990885417" />
           <ConnectorPoint PointX="3" PointY="13.491048990885417" />
@@ -1943,8 +1946,8 @@
         <AssociationConnector Association="SimplicityModel.FK_WishList_Users" ManuallyRouted="false">
           <ConnectorPoint PointX="1.5" PointY="14.883932291666667" />
           <ConnectorPoint PointX="1.5" PointY="15.75" />
-          <ConnectorPoint PointX="2.2916641666666666" PointY="15.749999999999998" />
-          <ConnectorPoint PointX="2.7708333333333335" PointY="15.75" />
+          <ConnectorPoint PointX="2.3541654166666666" PointY="15.749999999999998" />
+          <ConnectorPoint PointX="2.770833333333333" PointY="15.75" />
           <ConnectorPoint PointX="2.875" PointY="15.75" />
           <ConnectorPoint PointX="2.875" PointY="18.5" />
           <ConnectorPoint PointX="4.875" PointY="18.5" />

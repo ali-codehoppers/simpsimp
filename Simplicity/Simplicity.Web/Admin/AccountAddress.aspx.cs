@@ -13,7 +13,7 @@ namespace Simplicity.Web.Admin
     {
         private void SetAddresses(ref Address accountAddress, ref Address billingAddress, ref Address shippingAddress)
         {
-            int UserId = Int32.Parse(Session["subscribeID"].ToString());
+            int UserId = Int32.Parse(Session["selectedUserValue"].ToString());
             var query = from c in DatabaseContext.Addresses where c.UserId == UserId select c;
             foreach (var n in query)
             {
@@ -33,7 +33,7 @@ namespace Simplicity.Web.Admin
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((IsPostBack == false) && (Session["subscribeID"] != null))
+            if ((IsPostBack == false) && (Session["selectedUserValue"] != null))
             {
                 Address accountAddress = null;
                 Address billingAddress = null;
@@ -190,7 +190,7 @@ namespace Simplicity.Web.Admin
             Address shippingAddress = null;
 
             SetAddresses(ref accountAddress, ref billingAddress, ref shippingAddress);
-            int UserId = Int32.Parse(Session["subscribeID"].ToString());
+            int UserId = Int32.Parse(Session["selectedUserValue"].ToString());
             if (BillingCheck.Checked)
             {
                 

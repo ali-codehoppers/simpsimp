@@ -1,20 +1,8 @@
-﻿<%@ Page Title="Manage Companies" Language="C#" MasterPageFile="AdminMaster.Master" AutoEventWireup="true" CodeBehind="ManageCompanies.aspx.cs" Inherits="Simplicity.Web.Admin.ManageCompanies" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMaster.Master" AutoEventWireup="true" CodeBehind="EditCompany.aspx.cs" Inherits="Simplicity.Web.Admin.EditCompany" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        function openAddCompany() {
-            $("#CompanyTab").dialog({
-                width: 640,
-                height: 540,
-                title: 'Add New Company Information',
-                modal: true
-            });
-            $("#CompanyTab").dialog("open");
-            $("#CompanyTab").parent().appendTo($("form:first"));
-        }
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
-    <div id="CompanyTab" style="display: none">
+<div id="CompanyTab" style="display: none">
         <div class="row">
             <div class="col1">
                 <asp:Label ID="Label4" runat="server" Text="Company Name"></asp:Label>
@@ -176,42 +164,5 @@
             <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="../images/btn_continue.jpg"
                 Width="107" Height="37" OnClick="btnSave_Click" ValidationGroup="PersonalInfoGroup" />
         </div>
-    </div>
-    <div style="width: 90%; margin: auto">
-        <asp:EntityDataSource ID="SimplicityDataSource" runat="server" ConnectionString="name=SimplicityEntities"
-            DefaultContainerName="SimplicityEntities" EnableDelete="True" EnableFlattening="False"
-            EnableInsert="True" EnableUpdate="True" EntitySetName="Companies" EntityTypeFilter="Company">
-        </asp:EntityDataSource>
-
-        <asp:Repeater ID="UserRepeater" runat="server" 
-            DataSourceID="SimplicityDataSource" 
-            onitemcommand="UserRepeater_ItemCommand">
-            <HeaderTemplate>
-                <div style="width: 100%;padding-bottom:25px;">
-                    <div class="floatLeft" style="width: 15%; padding: 1px; font-weight: bold">
-                        <!--<input type="button" value="Add Company" onclick="openAddCompany()" />-->
-                    </div>
-                    <div class="floatLeft" style="width: 49%; padding: 1px; font-weight: bold">
-                        <div>
-                            Company Name</div>
-                    </div>
-                    <div style="clear: both">
-                    </div>
-                </div>
-            </HeaderTemplate>
-            <ItemTemplate>
-                <div style="width: 100%;">
-                    <div class="floatLeft" style="width: 15%; padding: 1px;">
-                       <asp:Button ID="ManageUsers" runat="server" Text="Manage Users" CommandName="ManageUser" CommandArgument='<%#Eval("CompanyID")%>'/>
-                    </div>
-                    <div class="floatLeft" style="width: 49%; padding: 1px">
-                        <div>
-                            <asp:Label ID="CompanyName" runat="server" Text='<%#Eval("Name")%>'></asp:Label></div>
-                    </div>
-                    <div style="clear: both">
-                    </div>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
     </div>
 </asp:Content>
