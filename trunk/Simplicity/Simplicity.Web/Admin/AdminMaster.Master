@@ -28,7 +28,7 @@
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/ManageSubscription.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Manage Subscription</div></asp:HyperLink>
                 </div>
                 <div class="floatLeft">
-                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Admin/ManageCompanies.aspx"><div class="navBar" style="width:103px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Manage Companies</div></asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Admin/ManageCompanies.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Manage Companies</div></asp:HyperLink>
                 </div>
             </div>
         </div>

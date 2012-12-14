@@ -57,14 +57,14 @@ namespace Simplicity.Web.Admin
             }
             else if (e.CommandName.Equals("Save"))
             {
-                if (Session["subscribeID"] != null)
+                if (Session["selectedUserValue"] != null)
                 {
                     try
                     {
                         int index = int.Parse(e.CommandArgument.ToString());
                         ShoppingItem currentItem = GetShoppingTrolley()[index];
                         //Save record for current user
-                        int UserId = Int32.Parse(Session["subscribeID"].ToString());
+                        int UserId = Int32.Parse(Session["selectedUserValue"].ToString());
                         WishList wishList = null;
                         if (currentItem.ProductDetailEntity != null)
                         {

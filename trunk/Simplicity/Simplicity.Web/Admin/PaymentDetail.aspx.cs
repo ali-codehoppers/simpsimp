@@ -195,9 +195,9 @@ namespace Simplicity.Web.Admin
 
         protected string InsertTransaction()
         {
-            if (Session["subscribeID"] != null && Session[WebConstants.Session.TROLLEY] != null)
+            if (Session["selectedUserValue"] != null && Session[WebConstants.Session.TROLLEY] != null)
             {
-                int UserId = Int32.Parse(Session["subscribeID"].ToString());
+                int UserId = Int32.Parse(Session["selectedUserValue"].ToString());
                 Transaction transaction = new Transaction();
                 transaction.UserId = UserId;
                 transaction.CountryCode = ShoppingCart.GetCurrentCurrency().CountryCode;

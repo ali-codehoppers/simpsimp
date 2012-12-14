@@ -1033,6 +1033,27 @@ div.myAccountTabs
 	padding-left:50px;
 }
 
+#userAccountInfoTab
+{	
+    padding-top:50px;
+	padding-left:100px;
+	background: url(../images/login_lft_line.jpg) 0 0 no-repeat;
+}
+
+#userAccountInfoTab div.row
+{
+	padding-top:5px;
+}
+
+#userAccountInfoTab div.col1
+{
+	float:left;
+	width:196px;
+}
+
+#userAccountInfoTab div.col2
+{
+}
 #myAccountMyPersonalInfoTab
 {	
 	display:none;
