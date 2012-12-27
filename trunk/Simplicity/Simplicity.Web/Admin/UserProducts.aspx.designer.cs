@@ -22,15 +22,6 @@ namespace Simplicity.Web.Admin {
         protected global::System.Web.UI.WebControls.Repeater UserProductRepeater;
         
         /// <summary>
-        /// CompanyProductRepeater control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater CompanyProductRepeater;
-        
-        /// <summary>
         /// btnUpdateProduct control.
         /// </summary>
         /// <remarks>
@@ -38,5 +29,32 @@ namespace Simplicity.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpdateProduct;
+        
+        /// <summary>
+        /// SelectedCompanyID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField SelectedCompanyID;
+        
+        /// <summary>
+        /// SelectedProductID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField SelectedProductID;
+        
+        /// <summary>
+        /// CompanyProductRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater CompanyProductRepeater;
     }
 }

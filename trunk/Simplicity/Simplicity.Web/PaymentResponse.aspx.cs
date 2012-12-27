@@ -25,6 +25,10 @@ namespace Simplicity.Web
                 Transaction transaction = (from tr in DatabaseContext.Transactions where tr.TransactionUID == transactionUId select tr).FirstOrDefault();
                 if (Request.Form.Get("decision") == "ACCEPT" || Request.Form.Get("decision") == "REVIEW")
                 {
+
+                    List<ShoppingItem> shoppingItems = (List<ShoppingItem>)Session[WebConstants.Session.TROLLEY];
+                    shoppingItems.Clear();
+
                     lblAmountText.Text = GetAmountText();
                     panelSuccess.Visible = true;
 

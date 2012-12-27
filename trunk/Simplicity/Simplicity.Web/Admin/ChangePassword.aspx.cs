@@ -17,29 +17,14 @@ namespace Simplicity.Web.Admin
         }
         private bool ChangeValidateFields()
         {
-            if (oldpassword.Text.Equals(confirmoldPassowrd.Text) == false)
-            {
-                SetErrorMessage("Old Password do not match");
-                return false;
-            }
+            
             if (newpasswordfield.Text.Equals(newconfirmpasswordfield.Text) == false)
             {
                 SetErrorMessage("New Passwords do not match");
                 return false;
             }
-            String password = Utility.GetMd5Sum(oldpassword.Text);
 
-            List<User> user = (from UserTable in DatabaseContext.Users where (UserTable.Email == LoggedIsUser.Email) && (UserTable.Password == password) select UserTable).ToList();
-            if (user.Any())
-            {
-                return true;
-            }
-            else
-            {
-                SetErrorMessage("Old Password is not correct");
-                return false;
-            }
-
+            return true;
         }
         protected void ChangebtnSave_Click(object sender, EventArgs e) {
             if (ChangeValidateFields())

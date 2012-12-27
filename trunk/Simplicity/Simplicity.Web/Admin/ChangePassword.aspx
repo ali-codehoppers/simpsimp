@@ -8,32 +8,6 @@
         <div class="myChangeTabs">
             <div class="row">
                 <div class="col1">
-                    Old Password</div>
-                <div class="col2">
-                    <div class="forgetErrorMsg">
-                        <asp:TextBox TextMode="password" CssClass="login_field_big" MaxLength="50" ID="oldpassword"
-                            runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator111" runat="server" ControlToValidate="oldpassword"
-                            ErrorMessage="* Password required" Display="Dynamic" ValidationGroup="ChangePasswordGroup"> 
-                        </asp:RequiredFieldValidator>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col1">
-                    Confirm Old Password</div>
-                <div class="col2">
-                    <div class="forgetErrorMsg">
-                        <asp:TextBox TextMode="password" CssClass="login_field_big" MaxLength="50" ID="confirmoldPassowrd"
-                            runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator112" runat="server" ControlToValidate="confirmoldPassowrd"
-                            ErrorMessage="* Password required" Display="Dynamic" ValidationGroup="ChangePasswordGroup"> 
-                        </asp:RequiredFieldValidator>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col1">
                     New Password</div>
                 <div class="col2">
                     <div class="forgetErrorMsg">

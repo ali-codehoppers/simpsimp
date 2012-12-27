@@ -12,6 +12,13 @@ body img
 {
     border:0px;
 }
+h1 {
+	font: normal 20px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	color: #145b86;
+	font-weight:bolder;
+	padding:0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
 h2 {
 	font: normal 20px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 	color: #145b86;
@@ -703,7 +710,7 @@ a.moreDetails:hover,a.solutionMoreDetails:hover
 }
 #icon1
 {
-    width: 250px;
+    width: 500px;
     padding-top: 15px;
     padding-bottom:15px;
 }

@@ -116,42 +116,7 @@ namespace Simplicity.Web.Admin
             };
             return addr;
         }
-        private void addCompanyToHS(User user)
-        {
-            SqlConnection conn = new SqlConnection(AppSettings["HSDB"]);
-            try
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand(AppSettings["CopyDataToHSProcedure"], conn);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@co_name_short", user.Company.Name.Length > 16 ? user.Company.Name.Substring(0, 16) : user.Company.Name);
-                command.Parameters.AddWithValue("@co_name_long", user.Company.Name.Length > 60 ? user.Company.Name.Substring(0, 60) : user.Company.Name);
-                command.Parameters.AddWithValue("@contact_forename", user.Forename);
-                command.Parameters.AddWithValue("@contact_surname", user.Surname);
-                command.Parameters.AddWithValue("@address_no", user.Company.Address.AddressNo == null ? "" : user.Company.Address.AddressNo);
-                command.Parameters.AddWithValue("@address_line1", user.Company.Address.AddressLine1 == null ? "" : user.Company.Address.AddressLine1);
-                command.Parameters.AddWithValue("@address_line2", user.Company.Address.AddressLine2 == null ? "" : user.Company.Address.AddressLine2);
-                command.Parameters.AddWithValue("@address_line3", user.Company.Address.AddressLine3 == null ? "" : user.Company.Address.AddressLine3);
-                command.Parameters.AddWithValue("@address_line4", user.Company.Address.AddressLine4 == null ? "" : user.Company.Address.AddressLine4);
-                command.Parameters.AddWithValue("@address_line5", user.Company.Address.AddressLine5 == null ? "" : user.Company.Address.AddressLine5);
-                command.Parameters.AddWithValue("@address_post_code", user.Company.Address.PostalCode == null ? "" : user.Company.Address.PostalCode);
-                command.Parameters.AddWithValue("@address_full", user.Company.Address.AddressFull == null ? "" : user.Company.Address.AddressFull);
-                command.Parameters.AddWithValue("@tel_1", user.Company.Address.Telephone1 == null ? "" : user.Company.Address.Telephone1);
-                command.Parameters.AddWithValue("@tel_2", user.Company.Address.Telephone2 == null ? "" : user.Company.Address.Telephone2);
-                command.Parameters.AddWithValue("@tel_fax", user.Company.Address.Fax == null ? "" : user.Company.Address.Fax);
-                command.Parameters.AddWithValue("@created_by", user.UserID);
-                command.Parameters.AddWithValue("@date_created", DateTime.Now);
-                command.Parameters.AddWithValue("@simplicity_company_id", user.Company.CompanyID);
-                command.Parameters.AddWithValue("@simplicity_user_id", user.UserID);
-                command.Parameters.AddWithValue("@user_email", user.Email);
-                command.Parameters.AddWithValue("@user_password", user.Password);
-                command.ExecuteReader();
-            }
-            finally
-            {
-                if (conn != null) conn.Close();
-            }
-        }
+        
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
             //if (LoggedIsAdmin == null)//means its sign-up process
@@ -181,7 +146,7 @@ namespace Simplicity.Web.Admin
                             Deleted = false,
                             OnHold = false,
                             Verified = false,
-                            Enabled = false,
+                            Enabled = true,
                             UserUID = Guid.NewGuid().ToString(),
                             VerificationCode = Guid.NewGuid().ToString(),
                             Approved = 0,
@@ -205,7 +170,7 @@ namespace Simplicity.Web.Admin
                         DatabaseContext.SaveChanges();
 
                         //call health and safety stored procedure over here to insert company there as well
-                        addCompanyToHS(user);
+                        DatabaseUtility.addCompanyToHS(user);
                         EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
                         SetSuccessMessage("User added successfully.");
                         Response.Redirect("~/Admin/ManageUser.aspx");
@@ -229,7 +194,7 @@ namespace Simplicity.Web.Admin
                             Deleted = false,
                             OnHold = false,
                             Verified = false,
-                            Enabled = false,
+                            Enabled = true,
                             UserUID = Guid.NewGuid().ToString(),
                             VerificationCode = Guid.NewGuid().ToString(),
                             Approved = 0,
@@ -246,7 +211,7 @@ namespace Simplicity.Web.Admin
                         DatabaseContext.SaveChanges();
 
                         //call health and safety stored procedure over here to insert company there as well
-                        addCompanyToHS(user);
+                        DatabaseUtility.addCompanyToHS(user);
                         EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
                         SetSuccessMessage("User added successfully.");
                         Response.Redirect("~/Admin/ManageUser.aspx?companyId="+company.CompanyID);
