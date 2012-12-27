@@ -10,51 +10,69 @@
 namespace Simplicity.Web.Admin {
     
     
-    public partial class ChangePassword {
+    public partial class CompanyProductDetails {
         
         /// <summary>
-        /// newpasswordfield control.
+        /// companyProductDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox newpasswordfield;
+        protected global::System.Web.UI.WebControls.TextBox companyProductDate;
         
         /// <summary>
-        /// RequiredFieldValidator113 control.
+        /// LicenseNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator113;
+        protected global::System.Web.UI.WebControls.TextBox LicenseNum;
         
         /// <summary>
-        /// newconfirmpasswordfield control.
+        /// updateCompanyProductDetials control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox newconfirmpasswordfield;
+        protected global::System.Web.UI.WebControls.Button updateCompanyProductDetials;
         
         /// <summary>
-        /// RequiredFieldValidator114 control.
+        /// selectedUsersToDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator114;
+        protected global::System.Web.UI.WebControls.HiddenField selectedUsersToDelete;
         
         /// <summary>
-        /// ImageButton3 control.
+        /// activeUsersCheckBoxList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton3;
+        protected global::System.Web.UI.WebControls.CheckBoxList activeUsersCheckBoxList;
+        
+        /// <summary>
+        /// okaySelectedUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button okaySelectedUser;
+        
+        /// <summary>
+        /// Cancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cancel;
     }
 }

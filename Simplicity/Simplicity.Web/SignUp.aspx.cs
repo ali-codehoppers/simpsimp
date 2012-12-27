@@ -57,7 +57,7 @@ namespace Simplicity.Web
                         {
                             Admin = company.Users.FirstOrDefault();
                         }
-                        CompanyUserRepeater.DataSource = company.Users;
+                        CompanyUserRepeater.DataSource = company.Users.Where(user => user.Enabled == true);
                         CompanyUserRepeater.DataBind();
                         userCompanyField.Text = company.Name;
                     }
@@ -119,9 +119,8 @@ namespace Simplicity.Web
                         {
                             Admin = company.Users.FirstOrDefault();
                         }
-                        CompanyUserRepeater.DataSource = company.Users;
+                        CompanyUserRepeater.DataSource = company.Users.Where(user => user.Enabled == true);
                         CompanyUserRepeater.DataBind();
-
                     }
                 }
                 if (Admin != null)
@@ -259,7 +258,7 @@ namespace Simplicity.Web
                         Deleted = false,
                         OnHold = false,
                         Verified = false,
-                        Enabled = false,
+                        Enabled = true,
                         UserUID = Guid.NewGuid().ToString(),
                         VerificationCode = Guid.NewGuid().ToString(),
                         Approved = 0,
@@ -354,17 +353,17 @@ namespace Simplicity.Web
                 command.Parameters.AddWithValue("@co_name_long", user.Company.Name.Length > 60 ? user.Company.Name.Substring(0, 60) : user.Company.Name);
                 command.Parameters.AddWithValue("@contact_forename", user.Forename);
                 command.Parameters.AddWithValue("@contact_surname", user.Surname);
-                command.Parameters.AddWithValue("@address_no", user.Company.Address.AddressNo);
-                command.Parameters.AddWithValue("@address_line1", user.Company.Address.AddressLine1);
-                command.Parameters.AddWithValue("@address_line2", user.Company.Address.AddressLine2);
-                command.Parameters.AddWithValue("@address_line3", user.Company.Address.AddressLine3);
-                command.Parameters.AddWithValue("@address_line4", user.Company.Address.AddressLine4);
-                command.Parameters.AddWithValue("@address_line5", user.Company.Address.AddressLine5);
-                command.Parameters.AddWithValue("@address_post_code", user.Company.Address.PostalCode);
-                command.Parameters.AddWithValue("@address_full", user.Company.Address.AddressFull);
-                command.Parameters.AddWithValue("@tel_1", user.Company.Address.Telephone1);
-                command.Parameters.AddWithValue("@tel_2", user.Company.Address.Telephone2);
-                command.Parameters.AddWithValue("@tel_fax", user.Company.Address.Fax);
+                command.Parameters.AddWithValue("@address_no", user.Company.Address.AddressNo == null ? "" : user.Company.Address.AddressNo);
+                command.Parameters.AddWithValue("@address_line1", user.Company.Address.AddressLine1 == null ? "" : user.Company.Address.AddressLine1);
+                command.Parameters.AddWithValue("@address_line2", user.Company.Address.AddressLine2 == null ? "" : user.Company.Address.AddressLine2);
+                command.Parameters.AddWithValue("@address_line3", user.Company.Address.AddressLine3 == null ? "" : user.Company.Address.AddressLine3);
+                command.Parameters.AddWithValue("@address_line4", user.Company.Address.AddressLine4 == null ? "" : user.Company.Address.AddressLine4);
+                command.Parameters.AddWithValue("@address_line5", user.Company.Address.AddressLine5 == null ? "" : user.Company.Address.AddressLine5);
+                command.Parameters.AddWithValue("@address_post_code", user.Company.Address.PostalCode == null ? "" : user.Company.Address.PostalCode);
+                command.Parameters.AddWithValue("@address_full", user.Company.Address.AddressFull == null ? "" : user.Company.Address.AddressFull);
+                command.Parameters.AddWithValue("@tel_1", user.Company.Address.Telephone1 == null ? "" : user.Company.Address.Telephone1);
+                command.Parameters.AddWithValue("@tel_2", user.Company.Address.Telephone2 == null ? "" : user.Company.Address.Telephone2);
+                command.Parameters.AddWithValue("@tel_fax", user.Company.Address.Fax == null ? "" : user.Company.Address.Fax);
                 command.Parameters.AddWithValue("@created_by", user.UserID);
                 command.Parameters.AddWithValue("@date_created", DateTime.Now);
                 command.Parameters.AddWithValue("@simplicity_company_id", user.Company.CompanyID);
@@ -485,6 +484,10 @@ namespace Simplicity.Web
 
         protected void userSubmitButton_Click(object sender, ImageClickEventArgs e)
         {
+            //var allUsersofCompany = (from UserTable in DatabaseContext.Users where UserTable.CompanyID == LoggedIsUser.CompanyID && UserTable.Enabled == true select UserTable);
+            //int totalEnabledUsers = allUsersofCompany.Count();
+            //if(totalEnabledUsers == allUsersofCompany.)
+
             SelectedTabElement = 4;
             newUserPanel.Visible = false;
             addUser.Visible = true;
@@ -513,7 +516,7 @@ namespace Simplicity.Web
                     Deleted = false,
                     OnHold = false,
                     Verified = false,
-                    Enabled = false,
+                    Enabled = true,
                     UserUID = Guid.NewGuid().ToString(),
                     VerificationCode = Guid.NewGuid().ToString(),
                     Approved = 0,

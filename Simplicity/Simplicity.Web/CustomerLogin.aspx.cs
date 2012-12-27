@@ -8,10 +8,12 @@ using Simplicity.Data;
 using Simplicity.Web.Utilities;
 
 using System.Web.Security;
+using log4net;
 namespace Simplicity.Web
 {
     public partial class CustomerLogin : GenericPage
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(CustomerLogin));
         protected void Page_Load(object sender, EventArgs e)
         {
             if ((LoggedIsUser != null) || (User.Identity.IsAuthenticated))
@@ -38,7 +40,8 @@ namespace Simplicity.Web
             Simplicity.Data.User user = (from u in DatabaseContext.Users
                                          where u.Email == username.Text
                                          && u.Password == Collectpassword 
-                                         && u.Verified == true select u).FirstOrDefault();
+                                         && u.Verified == true
+                                         && u.Enabled == true select u).FirstOrDefault();
             if (user != null)
             {
                 Simplicity.Data.Session session = new Data.Session();
@@ -53,6 +56,8 @@ namespace Simplicity.Web
                 FormsAuthentication.SetAuthCookie(session.SessionUID, false);
                 Session[WebConstants.Session.USER_ID] = user.UserID;
                 Session["userName"] = user.Email;
+                Session.Timeout = 5;
+                log.Info("User successfully login");
                 if (user.Type.Equals("ADMIN")) {
                     Session["admin"] = "true";
                 }

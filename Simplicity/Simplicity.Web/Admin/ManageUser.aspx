@@ -376,7 +376,7 @@
     <div style="width: 95%; margin: auto">
         <asp:EntityDataSource ID="SimplicityDataSource" runat="server" ConnectionString="name=SimplicityEntities"
             DefaultContainerName="SimplicityEntities" EnableDelete="True" EnableFlattening="False"
-            EnableInsert="True" EnableUpdate="True" EntitySetName="Users" EntityTypeFilter="User" AutoGenerateWhereClause="false" Where="@companyId IS NULL OR it.CompanyID==@companyId">
+            EnableInsert="True" EnableUpdate="True" EntitySetName="Users" EntityTypeFilter="User" AutoGenerateWhereClause="false" Where="@companyId IS NULL OR it.CompanyID==@companyId AND it.Enabled!=False">
             <WhereParameters>
                 <asp:QueryStringParameter DbType="Int32" QueryStringField="companyId" Name="companyId"/>
             </WhereParameters>

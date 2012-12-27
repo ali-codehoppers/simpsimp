@@ -183,13 +183,12 @@ namespace Simplicity.Web.Admin
                     ex.StackTrace.ToString();
                 }
 
-
                 HttpWebResponse res = (HttpWebResponse)req.GetResponse();
 
                 Stream resst = res.GetResponseStream();
                 StreamReader sr = new StreamReader(resst);
                 string response = sr.ReadToEnd();
-                Response.Write(response);
+                //Response.Write(response);
             }
         }
 
