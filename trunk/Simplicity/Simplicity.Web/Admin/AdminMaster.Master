@@ -6,27 +6,32 @@
 <head runat="server">
     <title>Simplicity For Business - Applications Suite For Estimates, Enquiries, Orders
         and Invoicing</title>
-    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery-1.4.2.min.js")%>'></script>
-    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/Scripts/jquery-ui-1.8.18.custom.css")%>" />
-    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/Scripts/jquery-ui-1.8.18.custom.min.js")%>"></script>
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/adminJquery/jquery-ui-1.9.1.custom/js/jquery-1.8.2.js")%>'></script>
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/jquery-ui-1.9.1.custom.min.css")%>" />
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/Scripts/adminJquery/jquery-ui-1.9.1.custom/js/jquery-ui-1.9.1.custom.min.js")%>"></script>
     <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/SimplicityCommon.js")%>'></script>
     <link type="text/css" href="<%=Page.ResolveClientUrl("~/Styles/simplicity_css.css")%>"
         rel="stylesheet" />
+    <style type="text/css">
+        html, body {
+            height:100%;
+        }
+    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="height:100%;">
     <div id="container">
         <div id="header">
             <div class="floatLeft" style="width:339px;height:125px;display:block;"></div>
             <div style="padding-top: 78px;">
-                <div class="floatLeft">
+                <%--<div class="floatLeft">
                     <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Admin/ManageUser.aspx"><div class="navBar" style="width:107px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Manage User</div></asp:HyperLink>
                 </div>
                 <div class="floatLeft">
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/ManageSubscription.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Manage Subscription</div></asp:HyperLink>
-                </div>
+                </div>--%>
                 <div class="floatLeft">
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Admin/ManageCompanies.aspx"><div class="navBar" style="width:109px;" onmouseover="this.className='navBarHover'" onmouseout="this.className='navBar'" >Manage Companies</div></asp:HyperLink>
                 </div>

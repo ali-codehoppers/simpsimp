@@ -40,15 +40,6 @@ namespace Simplicity.Web.Admin {
         protected global::System.Web.UI.WebControls.Repeater rptItems;
         
         /// <summary>
-        /// imbBtnContinue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbBtnContinue;
-        
-        /// <summary>
         /// imbBtnCheckout control.
         /// </summary>
         /// <remarks>

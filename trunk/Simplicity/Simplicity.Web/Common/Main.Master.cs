@@ -20,6 +20,9 @@ namespace Simplicity.Web.Common
                 MyAccountLink.Visible = true;
                 String b = "You are logged in as "+ (String)Session["userName"];
                 usernameLabel.Text = b;
+                String isAdmin = (String) Session["admin"];
+                if (isAdmin != null && isAdmin.CompareTo("true") == 0)
+                    AdminPanelLink.Visible = true;
             }
             else {
                 LoginLink.Visible = true;

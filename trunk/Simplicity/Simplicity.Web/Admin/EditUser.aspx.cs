@@ -46,6 +46,8 @@ namespace Simplicity.Web.Admin
                         }
                     }
                     checkbox.Checked = user.ReceiveEmails;
+                    if (user.Company.Name.CompareTo(WebConstants.Config.ADMIN_COMPANY_NAME) == 0)
+                        userTypeList.Items.FindByValue("Admin").Enabled = true;
                     userTypeList.SelectedIndex = user.Type.ToLower() == ("Admin").ToLower() ? 0 : (user.Type.ToLower() == ("Company_Admin").ToLower() ? 1 : 2);
                 }
             }
@@ -67,10 +69,41 @@ namespace Simplicity.Web.Admin
             {
                 int userId = Int32.Parse(selectedUserValue.Value);
                 var user = (from u in DatabaseContext.Users where u.UserID == userId select u).FirstOrDefault();
+                bool isAdminComp = String.Compare(user.Company.Name, WebConstants.Config.ADMIN_COMPANY_NAME)==0? true : false;
+
+                if (isAdminComp == true)
+                {
+                    IEnumerable<Simplicity.Data.User> usersCheckAdmin = (from usrs in DatabaseContext.Users where usrs.CompanyID == user.CompanyID && String.Compare(WebConstants.UserType.USER_TYPE_ADMIN, usrs.Type, true) == 0 select usrs);
+                    int countAdmin = usersCheckAdmin.Count();
+                    if (countAdmin <= 1)
+                    {
+                        if (userTypeList.SelectedValue.ToUpper().CompareTo(WebConstants.UserType.USER_TYPE_ADMIN.ToUpper()) != 0 && String.Compare(user.Type, WebConstants.UserType.USER_TYPE_ADMIN, true)==0)
+                        {
+                            SetErrorMessage("One Admin Must exist.");
+                            return;
+                        }
+                    }//One Admin user must exist in Ultra nova.
+                }
+                else {
+                    IEnumerable<Simplicity.Data.User> usersCheckCompanyAdmin = (from usrs in DatabaseContext.Users where usrs.CompanyID == user.CompanyID && String.Compare(WebConstants.UserType.USER_TYPE_COMPANY_ADMIN, usrs.Type, true) == 0 select usrs);
+                    int countCompanyAdmin = usersCheckCompanyAdmin.Count();
+                    if (countCompanyAdmin <= 1)
+                    {
+                        if (userTypeList.SelectedValue.ToUpper().CompareTo(WebConstants.UserType.USER_TYPE_COMPANY_ADMIN.ToUpper()) != 0 && String.Compare(user.Type, WebConstants.UserType.USER_TYPE_COMPANY_ADMIN, true)==0)
+                        {
+                            SetErrorMessage("One Company Admin Must exist.");
+                            return;
+                        }
+                    }
+                }
+                
+
+                user.Type = userTypeList.SelectedValue.ToUpper();
+
                 user.Forename = firstname.Text;
                 user.Surname = surname.Text;
                 jobtitle.Text = user.JobTitle;
-                user.Type = userTypeList.SelectedValue.ToUpper();
+
                 foreach (Address address in user.Addresses)
                 {
                     if (address.MultiAddressType == "PERSONAL")

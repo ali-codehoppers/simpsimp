@@ -35,10 +35,15 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div style="padding:15px;padding-bottom:38%;">
+        <div style="padding-bottom:20px;">
+            <h2>
+                Edit Subscription detail of product <span><asp:Label ID="ProductNameLabel" style="color:#808080" runat="server" Text="" /></span> subscribed by <span><asp:Label ID="CompanyNameLabel" style="color:#808080" runat="server" Text=""></asp:Label> </span>
+            </h2>
+        </div>
         <div class="productDateColumn">
             <div>
                 <h2>
-                    Product Exp Date
+                    Renewal Date
                 </h2>
             </div>
             <div style="padding-top: 10px;width:180px;">

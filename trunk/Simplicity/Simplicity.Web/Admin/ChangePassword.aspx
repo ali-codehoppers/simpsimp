@@ -6,6 +6,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="MyPasswordTab" style="display:block">
         <div class="myChangeTabs">
+            <div style="padding-bottom:20px;">
+                <h2>
+                    Change User Password.
+                </h2>
+            </div>
             <div class="row">
                 <div class="col1">
                     New Password</div>

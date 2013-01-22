@@ -1175,7 +1175,7 @@ div.myAccountTabs
 
 .myaccountinfoContinue
 {
-    padding-left: 200px;
+    padding-left: 210px;
     padding-bottom: 10px;
     
 }
@@ -1579,4 +1579,23 @@ div.leftNavBarContact{
 {
 	border:5px solid #145983;	
 	cursor:hand;
+}
+
+#EditCompanyDetailsDiv div.row {
+    clear:both;
+    padding: 5px 0;
+}
+
+#EditCompanyDetailsDiv div.col1 {
+    padding: 0 20px;
+    width:150px;
+    display:inline;
+    float:left;
+}
+
+#EditCompanyDetailsDiv div.col2 {
+    padding: 0 0 0 20px;
+    width:300px;
+    display:inline;
+    float:left;
 }

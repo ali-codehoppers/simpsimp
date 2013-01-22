@@ -110,8 +110,8 @@
             </div>
         </div>
         <div class="floatRight">
-            <asp:ImageButton ID="imbBtnContinue" runat="server" ImageUrl="~/Images/btn_continue_shopping.jpg"
-                OnClick="btnContinueShopping_Click" />
+            <%--<asp:ImageButton ID="imbBtnContinue" runat="server" ImageUrl="~/Images/btn_continue_shopping.jpg"
+                OnClick="btnContinueShopping_Click" />--%>
             &nbsp;<asp:ImageButton ID="imbBtnCheckout" runat="server" ImageUrl="~/Images/btn_checkout.jpg"
                 OnClick="btnCheckout_Click" />
         </div>

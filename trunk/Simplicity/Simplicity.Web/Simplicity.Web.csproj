@@ -84,6 +84,7 @@
     <Content Include="Admin\Price.aspx" />
     <Content Include="Admin\PriceControl.ascx" />
     <Content Include="Admin\Products.aspx" />
+    <Content Include="Admin\SubscribeUserProduct.aspx" />
     <Content Include="Admin\Trolley.aspx" />
     <Content Include="Admin\UserProducts.aspx" />
     <Content Include="bin\log4net.dll" />
@@ -335,6 +336,27 @@
     <Content Include="Products\PS\Home.aspx" />
     <Content Include="RedirectToProduct.aspx" />
     <Content Include="RedirectToProductTrial.aspx" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-bg_flat_55_999999_40x100.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-bg_glass_45_1789a4_1x400.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-bg_gloss-wave_50_79c9ec_500x100.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-bg_gloss-wave_75_4075ab_500x100.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-icons_056b93_256x240.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\jquery-ui-1.9.1.custom.css" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\css\custom-theme\jquery-ui-1.9.1.custom.min.css" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\js\jquery-1.8.2.js" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\js\jquery-ui-1.9.1.custom.js" />
+    <Content Include="Scripts\adminJquery\jquery-ui-1.9.1.custom\js\jquery-ui-1.9.1.custom.min.js" />
     <Content Include="Scripts\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Scripts\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
     <Content Include="Scripts\images\ui-bg_flat_10_000000_40x100.png" />
@@ -500,6 +522,13 @@
     </Compile>
     <Compile Include="Admin\Products.aspx.designer.cs">
       <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SubscribeUserProduct.aspx.cs">
+      <DependentUpon>SubscribeUserProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SubscribeUserProduct.aspx.designer.cs">
+      <DependentUpon>SubscribeUserProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Trolley.aspx.cs">
       <DependentUpon>Trolley.aspx</DependentUpon>
@@ -1150,6 +1179,7 @@
     <Content Include="Admin\AdminMaster.Master" />
     <None Include="Docs\Simplicity_SJE_Case Study.pdf" />
     <Content Include="logs\logger.log" />
+    <None Include="Properties\PublishProfiles\Muneeb.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

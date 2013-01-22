@@ -49,6 +49,7 @@ namespace Simplicity.Web.Utilities
             public static string RECEIVE_EMAILS = "receiveEmails";
             public static string PRODUCT_ID = "productId";
             public static string VERSION_ID = "versionId";
+            public static string COMPANY_ID = "companyId";
             public static string PRODUCT_DETAIL_ID = "productDetailId";
             public static string PRICE = "price";
             public static string VIDEO_ID = "videoId";
@@ -92,6 +93,14 @@ namespace Simplicity.Web.Utilities
             public static string PRIVATE_KEY = "PrivateKey";
             public static string SERIAL_NUMBER = "SerialNumber";
             public static string HS_URL = "HSURL";
+            public static string ADMIN_COMPANY_NAME = "Ultra Nova Coding Ltd";
+        }
+
+        public static class UserType
+        {
+            public static string USER_TYPE_ADMIN = "ADMIN";
+            public static string USER_TYPE_COMPANY_ADMIN = "COMPANY_ADMIN";
+            public static string USER_TYPE_USER = "USER";
         }
     } 
 }

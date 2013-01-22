@@ -6,6 +6,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <asp:HiddenField runat="server" ID="selectedUserValue"/>
     <div id="userAccountInfoTab">
+        <div style="padding-bottom:20px;">
+            <h2>
+                Edit User Details.
+            </h2>
+        </div>
         <div class="row">
             <div class="col1">
                 <asp:Label ID="EmailLabel" runat="server">Email</asp:Label></div>
@@ -231,8 +236,8 @@
             <div class="col2">
                 <div class="forgetErrorMsg">
                     <asp:DropDownList runat="server" ID="userTypeList">
-                        <asp:ListItem Value="Admin">Admin</asp:ListItem>
-                        <asp:ListItem Value="Company_Admin">Company Admin</asp:ListItem>
+                        <asp:ListItem Enabled="false" Value="Admin">Ultra Nova Admin</asp:ListItem>
+                        <asp:ListItem Value="Company_Admin">Admin</asp:ListItem>
                         <asp:ListItem Value="User">User</asp:ListItem>
                     </asp:DropDownList>
                 </div>

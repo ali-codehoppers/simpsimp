@@ -75,6 +75,10 @@
                 <div style="float: right;">
                     <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/icon_shopping.jpg" />
                 </div>
+                <div class="headerLinksSeparator">
+                    |</div>
+                <div class="headerLinks">
+                    <asp:HyperLink Visible="false" Target="_blank" ID="AdminPanelLink" NavigateUrl="../Admin/ManageCompanies.aspx" runat="server">Admin</asp:HyperLink></div>
                 <div class="clearFloat">
                 </div>
             </div>

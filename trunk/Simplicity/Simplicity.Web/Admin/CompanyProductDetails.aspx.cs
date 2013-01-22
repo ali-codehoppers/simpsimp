@@ -21,7 +21,10 @@ namespace Simplicity.Web.Admin
                 var companyProducts = from cp in DatabaseContext.CompanyProducts where cp.CompanyID == companyID && cp.ProductID == productID select cp;
                 companyProductDate.Text = companyProducts.FirstOrDefault().EndDate.ToString("dd/MM/yyyy");
                 LicenseNum.Text = companyProducts.FirstOrDefault().NumOfLicenses.ToString();
+                CompanyNameLabel.Text = companyProducts.FirstOrDefault().Company.Name;
+                ProductNameLabel.Text = companyProducts.FirstOrDefault().Product.Name;
             }
+            
         }
 
         protected void updateCompanyProductDetials_Click(object sender, EventArgs e)
