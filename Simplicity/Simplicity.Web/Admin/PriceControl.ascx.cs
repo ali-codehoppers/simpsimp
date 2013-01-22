@@ -50,27 +50,29 @@ namespace Simplicity.Web.Admin
                         {
                             int productDetailId = int.Parse(Request[WebConstants.Request.PRODUCT_DETAIL_ID]);
                             int versionId = int.Parse(Request[WebConstants.Request.VERSION_ID]);
-                            ShoppingCart.AddProductDetail(product.ProductEnity, productDetailId, versionId);
-                            if (ConfigurationSettings.AppSettings[WebConstants.Config.PAYMENT_OFFLINE].Equals("true"))
+                            ProductDetail productDetail = ProductBO.GetProductDetail(productDetailId);
+                            //ShoppingCart.AddProductDetail(product.ProductEnity, productDetailId, versionId);
+                            
                             {
-                                Response.Redirect("/Admin/PaymentOffline.aspx");
-                            }
-                            else
-                            {
-                                Response.Redirect("/Admin/Trolley.aspx");
+                                Response.Redirect("/Admin/SubscribeUserProduct.aspx?" + WebConstants.Request.PRODUCT_ID+"="+Request[WebConstants.Request.PRODUCT_ID]
+                                                    + "&" + WebConstants.Request.PRODUCT_DETAIL_ID+"="+Request[WebConstants.Request.PRODUCT_DETAIL_ID]
+                                                    + "&" + WebConstants.Request.VERSION_ID+"="+Request[WebConstants.Request.VERSION_ID]
+                                                    + "&" + WebConstants.Request.COMPANY_ID + "=" + Request[WebConstants.Request.COMPANY_ID]);
                             }
                         }
                         else if (Request[WebConstants.Request.VERSION_ID] != null)
                         {
                             int versionId = int.Parse(Request[WebConstants.Request.VERSION_ID]);
-                            ShoppingCart.AddProductVersion(product.ProductEnity, versionId);
-                            if (ConfigurationSettings.AppSettings[WebConstants.Config.PAYMENT_OFFLINE].Equals("true"))
+                            //ShoppingCart.AddProductVersion(product.ProductEnity, versionId);
+                            //if (ConfigurationSettings.AppSettings[WebConstants.Config.PAYMENT_OFFLINE].Equals("true"))
+                            //{
+                            //    Response.Redirect("/Admin/PaymentOffline.aspx");
+                            //}
+                            //else
                             {
-                                Response.Redirect("/Admin/PaymentOffline.aspx");
-                            }
-                            else
-                            {
-                                Response.Redirect("/Admin/Trolley.aspx");
+                                Response.Redirect("/Admin/SubscribeUserProduct.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
+                                                    + "&" + WebConstants.Request.VERSION_ID + "=" + Request[WebConstants.Request.VERSION_ID]
+                                                    + "&" + WebConstants.Request.COMPANY_ID + "=" + Request[WebConstants.Request.COMPANY_ID]);
                             }
                         }
                     }
@@ -206,7 +208,7 @@ namespace Simplicity.Web.Admin
                 if (Request[WebConstants.Request.PRODUCT_ID] == "1" || Request[WebConstants.Request.PRODUCT_ID] == "2" || Request[WebConstants.Request.PRODUCT_ID] == "3"
                     || Request[WebConstants.Request.PRODUCT_ID] == "4" || Request[WebConstants.Request.PRODUCT_ID] == "5")
                 {
-                    return "/Admin/Price.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId;
+                    return "/Admin/Price.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId + "&" + WebConstants.Request.COMPANY_ID + "=" + Request[WebConstants.Request.COMPANY_ID];
                 }
                /* else if (Request[WebConstants.Request.PRODUCT_ID] == "2")
                 {
@@ -240,8 +242,8 @@ namespace Simplicity.Web.Admin
                 {
                     return "/Admin/Price.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID
                     + "&" + WebConstants.Request.VERSION_ID + "=" + versionId
-                    + "&" + WebConstants.Request.PRODUCT_DETAIL_ID + "=" + productDetailId;
-
+                    + "&" + WebConstants.Request.PRODUCT_DETAIL_ID + "=" + productDetailId
+                    + "&" + WebConstants.Request.COMPANY_ID + "=" + Request[WebConstants.Request.COMPANY_ID];
                 }
                 /*else if (Request[WebConstants.Request.PRODUCT_ID] == "2")
                 {

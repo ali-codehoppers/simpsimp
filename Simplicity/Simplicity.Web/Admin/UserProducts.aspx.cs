@@ -16,21 +16,24 @@ namespace Simplicity.Web.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
-                if (Session["selectedUserValue"] != null)
+                if (Request[WebConstants.Request.COMPANY_ID] != null)
                 {
-                    int userId = Int32.Parse(Session["selectedUserValue"].ToString());
-                    var userProducts = from up in DatabaseContext.UserProducts where up.UserID==userId && (from p in DatabaseContext.Products select up.ProductID).Contains(up.ProductID) select new { Product = up.Product, UserProduct = up};
-                    UserProductRepeater.DataSource = userProducts;
-                    UserProductRepeater.DataBind();
-                    var userCompanyId = (from u in DatabaseContext.Users where u.UserID == userId select u.CompanyID).FirstOrDefault();
-                    var companyProducts = from cp in DatabaseContext.CompanyProducts where cp.CompanyID==userCompanyId && (from p in DatabaseContext.Products select p.ProductID).Contains(cp.ProductID) select new { Product = cp.Product, CompanyProduct = cp };
-                    CompanyProductRepeater.DataSource = companyProducts;
-                    CompanyProductRepeater.DataBind();
+                    //int userId = Int32.Parse(Session["selectedUserValue"].ToString());
+                    //var userProducts = from up in DatabaseContext.UserProducts where up.UserID==userId && (from p in DatabaseContext.Products select up.ProductID).Contains(up.ProductID) select new { Product = up.Product, UserProduct = up};
+                    //UserProductRepeater.DataSource = userProducts;
+                    //UserProductRepeater.DataBind();
+                    int companyId = int.Parse(Request[WebConstants.Request.COMPANY_ID]);
+                    var companyProducts = from cp in DatabaseContext.CompanyProducts where cp.CompanyID == companyId && (from p in DatabaseContext.Products select p.ProductID).Contains(cp.ProductID) select new { Product = cp.Product, CompanyProduct = cp };
+                    CompanyProductsGrid.DataSource = companyProducts;
+                    CompanyProductsGrid.DataBind();
+
+                    CompanyNameLabel.Text = companyProducts.FirstOrDefault().CompanyProduct.Company.Name;
+                    CompanyNameLabel.Visible = true;
                 }
             }
         }
 
-        protected void viewProductDetails_btn_Click(object sender, EventArgs e) {
+        protected void editProductDetails_btn_Click(object sender, EventArgs e) {
             String companyId = SelectedCompanyID.Value;
             String productId = SelectedProductID.Value;
 

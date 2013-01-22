@@ -58,6 +58,15 @@ namespace Simplicity.Web.Common {
         protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
+        /// AdminPanelLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink AdminPanelLink;
+        
+        /// <summary>
         /// HyperLink6 control.
         /// </summary>
         /// <remarks>

@@ -72,18 +72,18 @@
                     <ItemTemplate>
                         <div class="colfooter" style="float: left; padding-top:35px;">
                             <div style="float:left;">
-                            <div style="padding:5px;"><span style="font-size:22px;color:#6a6a6a; padding-left:30px;font-family:Lucida Sans;"><%# GetCurrencyHTMLCode()%><%# GetVersionPrice(DataBinder.Eval(Container.DataItem, "price"))%></span><br />
-                            </div>
+                            <%--<div style="padding:5px;"><span style="font-size:22px;color:#6a6a6a; padding-left:30px;font-family:Lucida Sans;"><%# GetCurrencyHTMLCode()%><%# GetVersionPrice(DataBinder.Eval(Container.DataItem, "price"))%></span><br />
+                            </div>--%>
                             <div style="padding-left:35px; height:20px;">
-                            <a  href='<%#GetVersionBuyNowURL(DataBinder.Eval(Container.DataItem, "versionID"))%>'>
-                                <img alt="Buy Now" src="../../images/btn_buynow.jpg" />
+                            <a href='<%#GetVersionBuyNowURL(DataBinder.Eval(Container.DataItem, "versionID"))%>' style="background-color:lightblue;height:20px;padding: 3px 15px;width: 100px;border-radius: 5px;height: 20px;">
+                                <%--<img alt="Buy Now" src="../../images/btn_buynow.jpg" />--%> Select 
                             </a>
                             </div>
                             <br />
-                            <%if (Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID] == "2")
+                            <%--<%if (Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID] == "2")
                               {%>
                             <span style="font-size: 10pt; color: Gray; padding-left:30px;">Try it now for</span> <a href="../../RedirectToProductTrial.aspx?productId=<%#Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID]%>" style="font-family:Lucida Sans;font-size: 12pt; color: #f29107">FREE</a>
-                            <%}%>
+                            <%}%>--%>
                             </div>
                         </div>
                     </ItemTemplate>
@@ -112,9 +112,9 @@
                     <ItemTemplate>
                         <div class="col2" style="float: left">
                             <div class="price" style="padding-left:10px;padding-top:10px;">
-                                <div style="width:60px; float:left;" ><span style="font-size:14px;color:#3E3C95;font-weight:bold;"><%# GetCurrencyHTMLCode()%><%# DataBinder.Eval(Container.DataItem, "Price", "{0:N2}")%></span></div>
-                                <div style="float:left"><a href='<%#GetProductDetailBuyNowURL(DataBinder.Eval(Container.DataItem, "VersionId"),DataBinder.Eval(Container.DataItem, "ProductDetailId"),DataBinder.Eval(Container.DataItem, "Price"))%>'>
-                                    <img alt="Buy Now" src="../../images/btn_buynow.jpg" />
+                                <%--<div style="width:60px; float:left;" ><span style="font-size:14px;color:#3E3C95;font-weight:bold;"><%# GetCurrencyHTMLCode()%><%# DataBinder.Eval(Container.DataItem, "Price", "{0:N2}")%></span></div>--%>
+                                <div style="float:left"><a href='<%#GetProductDetailBuyNowURL(DataBinder.Eval(Container.DataItem, "VersionId"),DataBinder.Eval(Container.DataItem, "ProductDetailId"),DataBinder.Eval(Container.DataItem, "Price"))%>' style="background-color:lightblue;height:20px;padding: 3px 15px;width: 100px;border-radius: 5px;height: 20px;">
+                                    <%--<img alt="Buy Now" src="../../images/btn_buynow.jpg" />--%> Select 
                                 </a></div>
                             </div>
                             <div style="clear: both">

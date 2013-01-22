@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -414,8 +415,25 @@ namespace Simplicity.Data
             }
         }
         private ObjectSet<WishList> _WishLists;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<ManageCompanyView> ManageCompanyViews
+        {
+            get
+            {
+                if ((_ManageCompanyViews == null))
+                {
+                    _ManageCompanyViews = base.CreateObjectSet<ManageCompanyView>("ManageCompanyViews");
+                }
+                return _ManageCompanyViews;
+            }
+        }
+        private ObjectSet<ManageCompanyView> _ManageCompanyViews;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -577,13 +595,21 @@ namespace Simplicity.Data
         {
             base.AddObject("WishLists", wishList);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the ManageCompanyViews EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToManageCompanyViews(ManageCompanyView manageCompanyView)
+        {
+            base.AddObject("ManageCompanyViews", manageCompanyView);
+        }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -620,6 +646,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1250,6 +1277,7 @@ namespace Simplicity.Data
         partial void OnCountryChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1314,6 +1342,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1350,6 +1379,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1692,6 +1722,7 @@ namespace Simplicity.Data
         partial void OnCreationDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1718,6 +1749,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1744,6 +1776,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1801,6 +1834,7 @@ namespace Simplicity.Data
         partial void OnProductNameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1843,6 +1877,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1871,6 +1906,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1949,6 +1985,7 @@ namespace Simplicity.Data
         partial void OnAddressIDChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2035,6 +2072,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2071,6 +2109,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2269,6 +2308,7 @@ namespace Simplicity.Data
         partial void OnNumOfLicensesChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2425,6 +2465,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2465,6 +2506,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2711,6 +2753,7 @@ namespace Simplicity.Data
         partial void OnSentTimeChanged();
 
         #endregion
+
     
     }
     
@@ -2742,6 +2785,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2844,6 +2888,7 @@ namespace Simplicity.Data
         partial void OnHTMLChanged();
 
         #endregion
+
     
     }
     
@@ -2875,6 +2920,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2980,6 +3026,199 @@ namespace Simplicity.Data
         partial void OnHTMLCurrencyCodeChanged();
 
         #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="SimplicityModel", Name="ManageCompanyView")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ManageCompanyView : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ManageCompanyView object.
+        /// </summary>
+        /// <param name="deleted">Initial value of the Deleted property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="companyID">Initial value of the CompanyID property.</param>
+        /// <param name="addressID">Initial value of the AddressID property.</param>
+        public static ManageCompanyView CreateManageCompanyView(global::System.Boolean deleted, global::System.String name, global::System.Int32 companyID, global::System.Int32 addressID)
+        {
+            ManageCompanyView manageCompanyView = new ManageCompanyView();
+            manageCompanyView.Deleted = deleted;
+            manageCompanyView.Name = name;
+            manageCompanyView.CompanyID = companyID;
+            manageCompanyView.AddressID = addressID;
+            return manageCompanyView;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Deleted
+        {
+            get
+            {
+                return _Deleted;
+            }
+            set
+            {
+                if (_Deleted != value)
+                {
+                    OnDeletedChanging(value);
+                    ReportPropertyChanging("Deleted");
+                    _Deleted = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Deleted");
+                    OnDeletedChanged();
+                }
+            }
+        }
+        private global::System.Boolean _Deleted;
+        partial void OnDeletedChanging(global::System.Boolean value);
+        partial void OnDeletedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AddressFull
+        {
+            get
+            {
+                return _AddressFull;
+            }
+            set
+            {
+                OnAddressFullChanging(value);
+                ReportPropertyChanging("AddressFull");
+                _AddressFull = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AddressFull");
+                OnAddressFullChanged();
+            }
+        }
+        private global::System.String _AddressFull;
+        partial void OnAddressFullChanging(global::System.String value);
+        partial void OnAddressFullChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Telephone1
+        {
+            get
+            {
+                return _Telephone1;
+            }
+            set
+            {
+                OnTelephone1Changing(value);
+                ReportPropertyChanging("Telephone1");
+                _Telephone1 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Telephone1");
+                OnTelephone1Changed();
+            }
+        }
+        private global::System.String _Telephone1;
+        partial void OnTelephone1Changing(global::System.String value);
+        partial void OnTelephone1Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                if (_Name != value)
+                {
+                    OnNameChanging(value);
+                    ReportPropertyChanging("Name");
+                    _Name = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Name");
+                    OnNameChanged();
+                }
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CompanyID
+        {
+            get
+            {
+                return _CompanyID;
+            }
+            set
+            {
+                if (_CompanyID != value)
+                {
+                    OnCompanyIDChanging(value);
+                    ReportPropertyChanging("CompanyID");
+                    _CompanyID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("CompanyID");
+                    OnCompanyIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _CompanyID;
+        partial void OnCompanyIDChanging(global::System.Int32 value);
+        partial void OnCompanyIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 AddressID
+        {
+            get
+            {
+                return _AddressID;
+            }
+            set
+            {
+                if (_AddressID != value)
+                {
+                    OnAddressIDChanging(value);
+                    ReportPropertyChanging("AddressID");
+                    _AddressID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("AddressID");
+                    OnAddressIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _AddressID;
+        partial void OnAddressIDChanging(global::System.Int32 value);
+        partial void OnAddressIDChanged();
+
+        #endregion
+
     
     }
     
@@ -3009,6 +3248,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3135,6 +3375,7 @@ namespace Simplicity.Data
         partial void OnParentModuleIDChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3237,6 +3478,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3267,6 +3509,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3393,6 +3636,7 @@ namespace Simplicity.Data
         partial void OnTermsURLChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3595,6 +3839,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3629,6 +3874,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3779,6 +4025,7 @@ namespace Simplicity.Data
         partial void OnPriceChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3887,6 +4134,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3923,6 +4171,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4121,6 +4370,7 @@ namespace Simplicity.Data
         partial void OnIPChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4201,6 +4451,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4231,6 +4482,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4333,6 +4585,7 @@ namespace Simplicity.Data
         partial void OnSettingValueChanged();
 
         #endregion
+
     
     }
     
@@ -4368,6 +4621,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4614,6 +4868,7 @@ namespace Simplicity.Data
         partial void OnExchangeRateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4678,6 +4933,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4714,6 +4970,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4984,6 +5241,7 @@ namespace Simplicity.Data
         partial void OnPriceChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5140,6 +5398,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5182,6 +5441,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5932,6 +6192,7 @@ namespace Simplicity.Data
         partial void OnCompanyIDChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6084,6 +6345,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6116,6 +6378,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6245,6 +6508,7 @@ namespace Simplicity.Data
         partial void OnEndDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6325,6 +6589,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6355,6 +6620,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6505,6 +6771,7 @@ namespace Simplicity.Data
         partial void OnDiscountChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6613,6 +6880,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6645,6 +6913,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6771,6 +7040,7 @@ namespace Simplicity.Data
         partial void OnURLChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6813,6 +7083,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6845,6 +7116,7 @@ namespace Simplicity.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -7019,6 +7291,7 @@ namespace Simplicity.Data
         partial void OnDurationChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -7175,8 +7448,10 @@ namespace Simplicity.Data
         }
 
         #endregion
+
     }
 
     #endregion
+
     
 }

@@ -13,6 +13,24 @@ namespace Simplicity.Web.Admin {
     public partial class CompanyProductDetails {
         
         /// <summary>
+        /// ProductNameLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ProductNameLabel;
+        
+        /// <summary>
+        /// CompanyNameLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CompanyNameLabel;
+        
+        /// <summary>
         /// companyProductDate control.
         /// </summary>
         /// <remarks>

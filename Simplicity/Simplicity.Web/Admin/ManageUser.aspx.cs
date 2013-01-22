@@ -15,11 +15,19 @@ namespace Simplicity.Web.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
-                if (Request["companyId"] != null) {
+                if (Request["companyId"] != null)
+                {
                     companyname.Enabled = false;
                     int id = Int32.Parse(Request["companyId"]);
                     Simplicity.Data.Company company = (from c in DatabaseContext.Companies where c.CompanyID == id select c).FirstOrDefault();
                     companyname.Text = company.Name;
+                    ChangeSubscribedProducts.Visible = true;
+
+                    CompanyNameLabel.Visible = true;
+                    CompanyNameLabel.Text = company.Name;
+                }
+                else {
+                    ChangeSubscribedProducts.Visible = false;
                 }
             }
         }
@@ -214,7 +222,7 @@ namespace Simplicity.Web.Admin
                         DatabaseUtility.addCompanyToHS(user);
                         EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
                         SetSuccessMessage("User added successfully.");
-                        Response.Redirect("~/Admin/ManageUser.aspx?companyId="+company.CompanyID);
+                        Response.Redirect("~/Admin/ManageUser.aspx?"+WebConstants.Request.COMPANY_ID+"="+company.CompanyID);
                     }
                 }
           //  }
@@ -273,36 +281,139 @@ namespace Simplicity.Web.Admin
             }*/
         }
 
-        protected void UserRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        protected void UserGrid_RowCommand(object source, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "Subscribe")
+            if (e.CommandName == "ChangeUserPassword")
             {
-                int id = Int32.Parse(e.CommandArgument.ToString());
-                Session["subscribeID"] = id;
-                Response.Redirect("~/Admin/Products.aspx");
-            }
-            else if(e.CommandName=="Delete"){
-
-            }
-        }
-        protected void btnEditListItem_Click(object sender, EventArgs e) 
-        {
-            Session["selectedUserValue"] = SelectedUserValue.Value;
-            if (EditCheckList.SelectedValue == "1") 
-            {
-                Response.Redirect("~/Admin/EditUser.aspx");
-            }
-            else if (EditCheckList.SelectedValue == "2") {
+                Session["selectedUserValue"] = e.CommandArgument.ToString();
                 Response.Redirect("~/Admin/ChangePassword.aspx");
             }
-            else if (EditCheckList.SelectedValue == "3")
+            else if (e.CommandName == "EditUserDetails")
             {
-                Response.Redirect("~/Admin/UserProducts.aspx");
+                Session["selectedUserValue"] = e.CommandArgument.ToString();
+                Response.Redirect("~/Admin/EditUser.aspx");
             }
-            else if (EditCheckList.SelectedValue == "4")
+        }
+
+        protected void UserGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            e.Cancel = true;
+            int userId = -1;
+            userId = ((int)e.Keys["UserID"]);
+            Simplicity.Data.User user = null;
+            int companyId = int.Parse(Request[WebConstants.Request.COMPANY_ID]);
+            if (userId >= 0)
             {
-                Response.Redirect("~/Admin/Products.aspx");
-            }   
+                user = (from usr in DatabaseContext.Users where usr.CompanyID == companyId && usr.UserID == userId select usr).FirstOrDefault();//select company
+                
+                bool isAdminComp = String.Compare(user.Company.Name, WebConstants.Config.ADMIN_COMPANY_NAME) == 0 ? true : false;
+
+                if (isAdminComp == true)
+                {
+                    IEnumerable<Simplicity.Data.User> usersCheckAdmin = (from usrs in DatabaseContext.Users where usrs.CompanyID == user.CompanyID && String.Compare(WebConstants.UserType.USER_TYPE_ADMIN, usrs.Type, true) == 0 select usrs);
+                    int countAdmin = usersCheckAdmin.Count();
+                    if (countAdmin <= 1)
+                    {
+                        if (String.Compare(user.Type, WebConstants.UserType.USER_TYPE_ADMIN, true) == 0)
+                        {
+                            SetErrorMessage("Can not delete the only Admin.");
+                            return;
+                        }
+                    }//One Admin user must exist in Ultra nova.
+                }
+                else
+                {
+                    IEnumerable<Simplicity.Data.User> usersCheckCompanyAdmin = (from usrs in DatabaseContext.Users where usrs.CompanyID == user.CompanyID && String.Compare(WebConstants.UserType.USER_TYPE_COMPANY_ADMIN, usrs.Type, true) == 0 select usrs);
+                    int countCompanyAdmin = usersCheckCompanyAdmin.Count();
+                    if (countCompanyAdmin <= 1)
+                    {
+                        if (String.Compare(user.Type, WebConstants.UserType.USER_TYPE_COMPANY_ADMIN, true) == 0)
+                        {
+                            SetErrorMessage("Can not delete the only Company Admin.");
+                            return;
+                        }
+                    }
+                }
+
+
+                user.Enabled = false;
+                user.Deleted = true;//delete address
+                DatabaseContext.SaveChanges();
+                if (SearchTextBox.Text.ToString().CompareTo("") != 0)
+                {
+                    this.SetWhereClause();
+                }//if user is deleted.
+                else
+                {
+                    UserGrid.DataBind();
+                }
+            }
+        }
+        
+        //protected void btnEditListItem_Click(object sender, EventArgs e) 
+        //{
+        //    Session["selectedUserValue"] = SelectedUserValue.Value;
+        //    if (EditCheckList.SelectedValue == "1")
+        //    {
+                
+        //    }
+        //    else if (EditCheckList.SelectedValue == "2") {
+                
+        //    }
+        //    else if (EditCheckList.SelectedValue == "3")
+        //    {
+                
+        //    }
+        //    //else if (EditCheckList.SelectedValue == "4")
+        //    //{
+        //    //    Response.Redirect("~/Admin/Products.aspx");
+        //    //}   
+        //}
+
+        protected void SubscribeCompanyProducts_Click(object sender, EventArgs e)
+        {
+            String companyId = Request["companyId"];
+            if (companyId != null && companyId.CompareTo("") != 0)
+            {
+                Response.Redirect("~/Admin/Products.aspx?companyId=" + companyId);
+            }
+            else {
+                Response.Redirect("~/Admin/ManageCompanies.aspx");
+            }
+        }
+
+        protected void SearchUser_ButtonClickEvent(object source, EventArgs e)
+        {
+            this.SetWhereClause();
+            UserGrid.DataBind();
+        }
+
+        protected void ChangeSubscribedProducts_Click(object sender, EventArgs e)
+        {
+            String companyId = Request[WebConstants.Request.COMPANY_ID];
+            Response.Redirect("~/Admin/UserProducts.aspx?"+WebConstants.Request.COMPANY_ID+ "=" + companyId);
+        }
+
+        private void SetWhereClause()
+        {
+            SimplicityDataSource.Where = "@companyId IS NULL OR it.CompanyID==@companyId AND it.Enabled!=False AND it.Deleted!=True";
+            if (SearchTextBox.Text.Length > 0)
+            {
+                SimplicityDataSource.Where += " AND (it.FullName LIKE @SearchString OR it.Email LIKE @SearchString OR it.Type LIKE @SearchString)";
+                if (SimplicityDataSource.WhereParameters["SearchString"] != null)
+                {
+                    SimplicityDataSource.WhereParameters["SearchString"].DefaultValue = "%" + SearchTextBox.Text + "%";
+                }
+                else
+                {
+                    Parameter searchStringParameter = new Parameter();
+                    searchStringParameter.Name = "SearchString";
+
+                    searchStringParameter.DbType = System.Data.DbType.String;
+                    searchStringParameter.DefaultValue = "%" + SearchTextBox.Text + "%";
+                    SimplicityDataSource.WhereParameters.Add(searchStringParameter);
+                }
+            }
         }
     }
 }

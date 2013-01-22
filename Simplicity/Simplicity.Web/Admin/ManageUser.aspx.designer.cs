@@ -13,33 +13,6 @@ namespace Simplicity.Web.Admin {
     public partial class AdminDefault {
         
         /// <summary>
-        /// SelectedUserValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField SelectedUserValue;
-        
-        /// <summary>
-        /// EditCheckList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList EditCheckList;
-        
-        /// <summary>
-        /// btnEditListItem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditListItem;
-        
-        /// <summary>
         /// EmailLabel control.
         /// </summary>
         /// <remarks>
@@ -661,6 +634,51 @@ namespace Simplicity.Web.Admin {
         protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
         
         /// <summary>
+        /// CompanyNameLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CompanyNameLabel;
+        
+        /// <summary>
+        /// SearchTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SearchTextBox;
+        
+        /// <summary>
+        /// searchButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button searchButton;
+        
+        /// <summary>
+        /// SubscribeCompanyProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SubscribeCompanyProducts;
+        
+        /// <summary>
+        /// ChangeSubscribedProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ChangeSubscribedProducts;
+        
+        /// <summary>
         /// SimplicityDataSource control.
         /// </summary>
         /// <remarks>
@@ -670,12 +688,12 @@ namespace Simplicity.Web.Admin {
         protected global::System.Web.UI.WebControls.EntityDataSource SimplicityDataSource;
         
         /// <summary>
-        /// UserRepeater control.
+        /// UserGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater UserRepeater;
+        protected global::System.Web.UI.WebControls.GridView UserGrid;
     }
 }

@@ -41,23 +41,23 @@ namespace Simplicity.Web.Admin
             int indexInt = int.Parse(index.ToString());
             if (indexInt == 1)
             {
-                return "/Admin/Price.aspx?productId=" + indexInt;
+                return "/Admin/Price.aspx?productId=" + indexInt + "&" + WebConstants.Request.COMPANY_ID + "=" + Request[WebConstants.Request.COMPANY_ID];
             }
             else if (indexInt == 2)
             {
-                return "/Admin/Price.aspx?productId=" + indexInt;
+                return "/Admin/Price.aspx?productId=" + indexInt + "&" + WebConstants.Request.COMPANY_ID + "=" + Request[WebConstants.Request.COMPANY_ID];
             }
             else if (indexInt == 3)
             {
-                return "/Admin/Price.aspx?productId=" + indexInt;
+                return "/Admin/Price.aspx?productId=" + indexInt + "&" + WebConstants.Request.COMPANY_ID + "=" + Request[WebConstants.Request.COMPANY_ID];
             }
             else if (indexInt == 4)
             {
-                return "/Admin/Price.aspx?productId=" + indexInt;
+                return "/Admin/Price.aspx?productId=" + indexInt + "&" + WebConstants.Request.COMPANY_ID + "=" + Request[WebConstants.Request.COMPANY_ID];
             }
             else if (indexInt == 5)
             {
-                return "/Admin/Price.aspx?productId=" + indexInt;
+                return "/Admin/Price.aspx?productId=" + indexInt+"&"+WebConstants.Request.COMPANY_ID+"="+Request[WebConstants.Request.COMPANY_ID];
             }
             else
             {

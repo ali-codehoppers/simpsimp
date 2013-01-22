@@ -31,7 +31,6 @@ namespace Simplicity.Web
                     SetSuccessMessage("An email has been sent to you for your login details");
                 }
             }
-
         }
 
         protected void LoginButtonClick(object sender, ImageClickEventArgs e)
@@ -56,7 +55,7 @@ namespace Simplicity.Web
                 FormsAuthentication.SetAuthCookie(session.SessionUID, false);
                 Session[WebConstants.Session.USER_ID] = user.UserID;
                 Session["userName"] = user.Email;
-                Session.Timeout = 5;
+                Session.Timeout = 30;
                 log.Info("User successfully login");
                 if (user.Type.Equals("ADMIN")) {
                     Session["admin"] = "true";

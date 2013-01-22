@@ -16,24 +16,24 @@
         function confirmDelete(name) {
             return confirm("Are you certain to delete "+name+"?");
         }
-        function editUser(userId) {
-            $("#<%=SelectedUserValue.ClientID %>").val(userId);
-            $("#UserEditTab").dialog({
-                width: 360,
-                height: 200,
-                minHeight: 200,
-                minWidth: 360,
-                title: 'Edit User',
-                modal: true
-            });
-            $("#UserEditTab").dialog("open");
-            $("#UserEditTab").parent().appendTo($("form:first"));
-            return false;
-        }
+        //function editUser(userId) {
+        
+        //    $("#UserEditTab").dialog({
+        //        width: 360,
+        //        height: 200,
+        //        minHeight: 200,
+        //        minWidth: 360,
+        //        title: 'Edit User',
+        //        modal: true
+        //    });
+        //    $("#UserEditTab").dialog("open");
+        //    $("#UserEditTab").parent().appendTo($("form:first"));
+        //    return false;
+        //}
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
-    <div id="UserEditTab" style="display: none">
+    <%--<div id="UserEditTab" style="display: none">
         <asp:HiddenField ID="SelectedUserValue" runat="server"/>
         <asp:RadioButtonList ID="EditCheckList" runat="server">
             <asp:ListItem Value="1">Change Information</asp:ListItem>
@@ -42,7 +42,7 @@
             <asp:ListItem Value="4">Subscribe Products</asp:ListItem>
         </asp:RadioButtonList>
         <asp:Button runat="server" ID="btnEditListItem" Text="Select" OnClick="btnEditListItem_Click"/>
-    </div>
+    </div>--%>
     <div id="UserTab" style="display: none">
         <div id="Emailrow" class="row">
             <div class="col1">
@@ -373,15 +373,82 @@
                 Width="107" Height="37" OnClick="btnSave_Click" ValidationGroup="PersonalInfoGroup" />
         </div>
     </div>
-    <div style="width: 95%; margin: auto">
+    <div style="width: 95%; margin: auto;">
+        <div style="padding-top:10px;">
+            <h2>
+                Manage Users Of Company <span><asp:Label ID="CompanyNameLabel" style="color:#808080" runat="server" Visible="false" Text=""></asp:Label> </span>
+            </h2>
+        </div>
+
+        <div id="searchDiv" style="margin:20px;">
+            <center>
+                <div style="display:inline;margin-right:5px;">
+                    <asp:TextBox runat="server" Height="20px" style="border-color:black;border:1px solid; border-radius:5px;" Width="300px" ID="SearchTextBox" />
+                </div>
+                <div style="display:inline;">
+                    <asp:Button ID="searchButton" OnClick="SearchUser_ButtonClickEvent" Text="Search Users" runat="server" />
+                </div>
+                <div style="font-size:85%;color:#999999;position:relative;left:-50px;">Enter Text to perform search on User's Name, Email and User Type.</div>
+            </center>
+        </div>
+
+        <div style="margin:30px 10px;">
+            <div style="padding:20px 5px 20px 0;display:inline;" >
+                <input type="button" value="Add User" onclick="openAddUser()" style="width:80px;height: 40px; font-weight: bold;"/>
+            </div>
+            <div style="padding:20px 5px 20px 0;display:inline;" >
+                <asp:Button ID="SubscribeCompanyProducts" Text="Subscribe Product" runat="server" OnClick="SubscribeCompanyProducts_Click" style="width: 150px; height: 40px; font-weight: bold;" />
+            </div>
+
+            <div style="padding:20px 5px 20px 0;display:inline;" >
+                <asp:Button ID="ChangeSubscribedProducts" Text="Change Subscribed Products" runat="server" Visible="false" OnClick="ChangeSubscribedProducts_Click" style="width: 300px; height: 40px; font-weight: bold;" />
+            </div>
+        </div>
+
         <asp:EntityDataSource ID="SimplicityDataSource" runat="server" ConnectionString="name=SimplicityEntities"
             DefaultContainerName="SimplicityEntities" EnableDelete="True" EnableFlattening="False"
-            EnableInsert="True" EnableUpdate="True" EntitySetName="Users" EntityTypeFilter="User" AutoGenerateWhereClause="false" Where="@companyId IS NULL OR it.CompanyID==@companyId AND it.Enabled!=False">
+            EnableInsert="True" EnableUpdate="True" EntitySetName="Users" EntityTypeFilter="User" AutoGenerateWhereClause="false" Where="@companyId IS NULL OR it.CompanyID==@companyId AND it.Enabled!=False AND it.Deleted!=True">
             <WhereParameters>
                 <asp:QueryStringParameter DbType="Int32" QueryStringField="companyId" Name="companyId"/>
             </WhereParameters>
         </asp:EntityDataSource>
-        <asp:Repeater ID="UserRepeater" runat="server" 
+        <div style="padding-bottom:30px;">
+            <asp:GridView ID="UserGrid" runat="server" PageSize="30" DataKeyNames="UserID" Style="width: 100%"
+                DataSourceID="SimplicityDataSource" OnRowDeleting="UserGrid_RowDeleting" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False"
+                OnRowCommand="UserGrid_RowCommand" >
+
+                <Columns>
+                    <asp:CommandField HeaderText="Delete User" HeaderStyle-Width="8%" ShowDeleteButton="True"></asp:CommandField>
+                    <asp:TemplateField HeaderText="Edit User" InsertVisible="False">
+                        <HeaderStyle Width="10%" Font-Bold="true" />
+                        <ItemTemplate>
+                            <center>
+                                <asp:LinkButton ID="EditUser" runat="server" Text="Edit User" CommandName="EditUserDetails" CommandArgument='<%#Eval("UserID")%>' />
+                            </center>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Change User Password" InsertVisible="False">
+                        <HeaderStyle Width="10%" Font-Bold="true" />
+                        <ItemTemplate>
+                            <center>
+                                <asp:LinkButton ID="ChangeUserPassword" runat="server" Text="Change Password" CommandName="ChangeUserPassword" CommandArgument='<%#Eval("UserID")%>' />
+                            </center>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="FullName" HeaderText="Name" SortExpression="FullName">
+                        <HeaderStyle Width="20%" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email">
+                        <HeaderStyle Width="25%" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Type" HeaderText="User Type" SortExpression="Type">
+                        <HeaderStyle Width="10%" />
+                    </asp:BoundField>
+                </Columns>
+            </asp:GridView>
+        </div>
+
+        <%--<asp:Repeater ID="UserRepeater" runat="server" 
             DataSourceID="SimplicityDataSource" 
             onitemcommand="UserRepeater_ItemCommand" >
             <HeaderTemplate>
@@ -410,9 +477,6 @@
             </HeaderTemplate>
             <ItemTemplate>
                 <div style="width: 100%;">
-                    <!--<div class="floatLeft" style="width: 10%; padding: 1px;">
-                       <asp:Button runat="server" Text="Subscribe" CommandName="Subscribe" CommandArgument='<%#Eval("UserID")%>'/>
-                    </div>-->
                     <div class="floatLeft" style="width: 10%; padding: 1px;">
                        <asp:Button style="width:80px" ID="btnEditUser" runat="server" Text="Edit" OnClientClick='<%# "javascript:return editUser(\""+Eval("UserID").ToString()+"\")"%>'/>
                     </div>
@@ -428,13 +492,26 @@
                             <asp:Label ID="LabelEmail" runat="server" Text='<%#Eval("Email")%>'></asp:Label></div>
                     </div>
                     <div class="floatLeft" style="width: 15%; padding: 1px;">
-                        <div>
-                            <asp:Label ID="Label20" runat="server" Text='<%#Eval("Type").ToString().Replace("_"," ")%>'></asp:Label></div>
+                        <div>--%>
+                            
+                               <%-- <%String userType = "";%>
+                                <% String currUserType = "Eval('Type')"; %>
+                                
+                                <% if (currUserType.CompareTo("COMPANY_ADMIN") == 0) %>
+	                                <% userType = "Admin"; %>
+                                <% if (currUserType.CompareTo("Admin") == 0)  %>
+                                    <%userType = "Ultra Nova Admin";%>
+                                <% else
+                                    userType = "User";
+                                    //Label lbl = (Label)UserRepeater.FindControl("Label20");
+                                    //lbl.Text = userType;
+                                %>--%>
+                            <%--<asp:Label ID="Label20" runat="server" Text='<%# Eval("Type").ToString().Replace("_", " ")%>' ></asp:Label></div>
                     </div>
                     <div style="clear: both">
                     </div>
                 </div>
             </ItemTemplate>
-        </asp:Repeater>
+        </asp:Repeater>--%>
     </div>
 </asp:Content>
