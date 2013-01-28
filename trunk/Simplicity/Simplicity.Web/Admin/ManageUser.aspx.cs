@@ -153,7 +153,7 @@ namespace Simplicity.Web.Admin
                             Type = CompanyType,
                             Deleted = false,
                             OnHold = false,
-                            Verified = false,
+                            Verified = true,
                             Enabled = true,
                             UserUID = Guid.NewGuid().ToString(),
                             VerificationCode = Guid.NewGuid().ToString(),
@@ -293,19 +293,20 @@ namespace Simplicity.Web.Admin
                 Session["selectedUserValue"] = e.CommandArgument.ToString();
                 Response.Redirect("~/Admin/EditUser.aspx");
             }
+            else if (e.CommandName == "Delete")
+            {
+                int id = Int32.Parse(e.CommandArgument.ToString());
+                deleteUserRow(id);
+            }
         }
 
-        protected void UserGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            e.Cancel = true;
-            int userId = -1;
-            userId = ((int)e.Keys["UserID"]);
+        private void deleteUserRow(int userId) {
             Simplicity.Data.User user = null;
             int companyId = int.Parse(Request[WebConstants.Request.COMPANY_ID]);
             if (userId >= 0)
             {
                 user = (from usr in DatabaseContext.Users where usr.CompanyID == companyId && usr.UserID == userId select usr).FirstOrDefault();//select company
-                
+
                 bool isAdminComp = String.Compare(user.Company.Name, WebConstants.Config.ADMIN_COMPANY_NAME) == 0 ? true : false;
 
                 if (isAdminComp == true)
@@ -334,8 +335,6 @@ namespace Simplicity.Web.Admin
                         }
                     }
                 }
-
-
                 user.Enabled = false;
                 user.Deleted = true;//delete address
                 DatabaseContext.SaveChanges();
@@ -348,6 +347,11 @@ namespace Simplicity.Web.Admin
                     UserGrid.DataBind();
                 }
             }
+        }
+
+        protected void UserGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            e.Cancel = true;
         }
         
         //protected void btnEditListItem_Click(object sender, EventArgs e) 

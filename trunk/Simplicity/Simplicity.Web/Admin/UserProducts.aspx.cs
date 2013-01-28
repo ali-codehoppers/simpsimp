@@ -27,7 +27,12 @@ namespace Simplicity.Web.Admin
                     CompanyProductsGrid.DataSource = companyProducts;
                     CompanyProductsGrid.DataBind();
 
-                    CompanyNameLabel.Text = companyProducts.FirstOrDefault().CompanyProduct.Company.Name;
+                    if (companyProducts != null && companyProducts.Count() > 0)
+                        CompanyNameLabel.Text = companyProducts.FirstOrDefault().CompanyProduct.Company.Name;
+                    else {
+                        Simplicity.Data.Company company = DatabaseContext.Companies.Where(comp => comp.CompanyID == companyId).FirstOrDefault();
+                        CompanyNameLabel.Text = company.Name;
+                    }
                     CompanyNameLabel.Visible = true;
                 }
             }

@@ -418,7 +418,16 @@
                 OnRowCommand="UserGrid_RowCommand" >
 
                 <Columns>
-                    <asp:CommandField HeaderText="Delete User" HeaderStyle-Width="8%" ShowDeleteButton="True"></asp:CommandField>
+                    <asp:TemplateField HeaderText="Delete User" InsertVisible="False">
+                        <HeaderStyle Width="8%" Font-Bold="true" />
+                        <ItemTemplate>
+                            <center>
+                                <asp:LinkButton ID="DeleteUserButton" runat="server" Text="Delete" CommandName="Delete" CommandArgument='<%#Eval("UserID")%>'
+                                    OnClientClick="return confirm('Are you sure you want to delete this user?');" />
+                            </center>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <%--<asp:CommandField HeaderText="Delete User" HeaderStyle-Width="8%" ShowDeleteButton="True"></asp:CommandField>--%>
                     <asp:TemplateField HeaderText="Edit User" InsertVisible="False">
                         <HeaderStyle Width="10%" Font-Bold="true" />
                         <ItemTemplate>

@@ -17,13 +17,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:13</publishTime>
     </File>
     <File Include="Admin/AdminMaster.Master">
-      <publishTime>12/24/2012 19:04:13</publishTime>
+      <publishTime>01/21/2013 19:13:42</publishTime>
     </File>
     <File Include="Admin/ChangePassword.aspx">
-      <publishTime>12/18/2012 17:32:59</publishTime>
+      <publishTime>01/21/2013 18:19:19</publishTime>
     </File>
     <File Include="Admin/CompanyProductDetails.aspx">
-      <publishTime>12/21/2012 15:57:21</publishTime>
+      <publishTime>01/21/2013 18:12:48</publishTime>
     </File>
     <File Include="Admin/ConfirmCheckout.aspx">
       <publishTime>12/24/2012 19:04:13</publishTime>
@@ -32,16 +32,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:13</publishTime>
     </File>
     <File Include="Admin/EditUser.aspx">
-      <publishTime>12/24/2012 19:04:13</publishTime>
+      <publishTime>01/23/2013 15:26:33</publishTime>
     </File>
     <File Include="Admin/ManageCompanies.aspx">
-      <publishTime>12/24/2012 19:04:13</publishTime>
+      <publishTime>01/23/2013 19:20:14</publishTime>
     </File>
     <File Include="Admin/ManageSubscription.aspx">
       <publishTime>12/24/2012 19:04:13</publishTime>
     </File>
     <File Include="Admin/ManageUser.aspx">
-      <publishTime>12/24/2012 13:17:29</publishTime>
+      <publishTime>01/23/2013 18:44:36</publishTime>
     </File>
     <File Include="Admin/PaymentDetail.aspx">
       <publishTime>12/24/2012 19:04:13</publishTime>
@@ -53,25 +53,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:13</publishTime>
     </File>
     <File Include="Admin/PriceControl.ascx">
-      <publishTime>12/24/2012 19:04:13</publishTime>
+      <publishTime>01/21/2013 02:48:58</publishTime>
     </File>
     <File Include="Admin/Products.aspx">
       <publishTime>12/24/2012 19:04:13</publishTime>
     </File>
+    <File Include="Admin/SubscribeUserProduct.aspx">
+      <publishTime>01/20/2013 22:31:40</publishTime>
+    </File>
     <File Include="Admin/Trolley.aspx">
-      <publishTime>12/24/2012 19:04:13</publishTime>
+      <publishTime>01/15/2013 20:45:51</publishTime>
     </File>
     <File Include="Admin/UserProducts.aspx">
-      <publishTime>12/21/2012 12:31:39</publishTime>
+      <publishTime>01/23/2013 18:09:42</publishTime>
     </File>
     <File Include="bin/log4net.dll">
       <publishTime>10/06/2011 19:44:20</publishTime>
     </File>
     <File Include="bin/Simplicity.Data.dll">
-      <publishTime>12/27/2012 16:12:02</publishTime>
+      <publishTime>01/22/2013 16:16:56</publishTime>
     </File>
     <File Include="bin/Simplicity.Web.dll">
-      <publishTime>01/03/2013 12:05:51</publishTime>
+      <publishTime>01/23/2013 19:24:00</publishTime>
     </File>
     <File Include="BuyProduct.aspx">
       <publishTime>12/24/2012 19:04:13</publishTime>
@@ -104,7 +107,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:14</publishTime>
     </File>
     <File Include="Common/Main.Master">
-      <publishTime>12/24/2012 19:04:14</publishTime>
+      <publishTime>01/21/2013 15:49:13</publishTime>
     </File>
     <File Include="Common/Products.master">
       <publishTime>12/24/2012 19:04:13</publishTime>
@@ -743,7 +746,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:13</publishTime>
     </File>
     <File Include="logs/logger.log">
-      <publishTime>01/03/2013 11:59:22</publishTime>
+      <publishTime>01/23/2013 19:16:48</publishTime>
     </File>
     <File Include="Oops.aspx">
       <publishTime>12/24/2012 19:04:12</publishTime>
@@ -826,47 +829,110 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="RedirectToProductTrial.aspx">
       <publishTime>12/24/2012 19:04:07</publishTime>
     </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-bg_flat_55_999999_40x100.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-bg_flat_75_aaaaaa_40x100.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-bg_glass_45_1789a4_1x400.png">
+      <publishTime>11/14/2012 07:29:00</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-bg_glass_55_f8da4e_1x400.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-bg_glass_75_79c9ec_1x400.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-bg_gloss-wave_45_e14f1c_500x100.png">
+      <publishTime>11/14/2012 07:29:00</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-bg_gloss-wave_50_79c9ec_500x100.png">
+      <publishTime>11/14/2012 07:29:00</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-bg_gloss-wave_75_4075ab_500x100.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-bg_inset-hard_100_fcfdfd_1x100.png">
+      <publishTime>11/14/2012 07:29:00</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-icons_0078ae_256x240.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-icons_056b93_256x240.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-icons_d8e7f3_256x240.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-icons_e0fdff_256x240.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-icons_f5e175_256x240.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-icons_f7a50d_256x240.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/images/ui-icons_fcd113_256x240.png">
+      <publishTime>11/14/2012 07:29:02</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/jquery-ui-1.9.1.custom.css">
+      <publishTime>11/14/2012 07:29:00</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/css/custom-theme/jquery-ui-1.9.1.custom.min.css">
+      <publishTime>11/14/2012 07:29:00</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/js/jquery-1.8.2.js">
+      <publishTime>11/14/2012 07:29:00</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/js/jquery-ui-1.9.1.custom.js">
+      <publishTime>11/14/2012 07:29:00</publishTime>
+    </File>
+    <File Include="Scripts/adminJquery/jquery-ui-1.9.1.custom/js/jquery-ui-1.9.1.custom.min.js">
+      <publishTime>11/14/2012 07:29:00</publishTime>
+    </File>
     <File Include="Scripts/images/ui-bg_diagonals-thick_18_b81900_40x40.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-bg_diagonals-thick_20_666666_40x40.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-bg_flat_10_000000_40x100.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-bg_glass_100_f6f6f6_1x400.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-bg_glass_100_fdf5ce_1x400.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-bg_glass_65_ffffff_1x400.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-bg_gloss-wave_35_f6a828_500x100.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-bg_highlight-soft_100_eeeeee_1x100.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-bg_highlight-soft_75_ffe45c_1x100.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-icons_222222_256x240.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-icons_228ef1_256x240.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-icons_ef8c08_256x240.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-icons_ffd27a_256x240.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/images/ui-icons_ffffff_256x240.png">
-      <publishTime>12/24/2012 19:04:15</publishTime>
+      <publishTime>01/21/2013 18:38:13</publishTime>
     </File>
     <File Include="Scripts/jquery-1.4.1.min.js">
       <publishTime>12/24/2012 19:04:15</publishTime>
@@ -932,7 +998,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:14</publishTime>
     </File>
     <File Include="Styles/simplicity_css.css">
-      <publishTime>12/14/2012 18:30:03</publishTime>
+      <publishTime>01/21/2013 19:17:46</publishTime>
     </File>
     <File Include="Support.aspx">
       <publishTime>12/24/2012 19:04:07</publishTime>
@@ -953,7 +1019,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:08</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/03/2013 12:05:52</publishTime>
+      <publishTime>01/23/2013 19:24:03</publishTime>
     </File>
     <File Include="WishListPage.aspx">
       <publishTime>12/24/2012 19:04:13</publishTime>
