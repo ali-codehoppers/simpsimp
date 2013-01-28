@@ -97,7 +97,7 @@
                     <HeaderStyle Width="10%" Font-Bold="true" />
                     <ItemTemplate>
                         <center>
-                            <asp:Label ID="ProductRenewalDate" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "CompanyProduct.EndDate")%>' />
+                            <asp:Label ID="ProductRenewalDate" runat="server" Text='<%# DateTime.Parse(DataBinder.Eval(Container.DataItem, "CompanyProduct.EndDate").ToString()).ToString("dd/MM/yyyy")%>' />
                         </center>
                     </ItemTemplate>
                 </asp:TemplateField>

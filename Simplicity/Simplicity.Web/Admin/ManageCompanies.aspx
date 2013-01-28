@@ -532,7 +532,7 @@
     <div id="GridDiv" runat="server" style="width: 90%; margin: auto">
         <div style="padding-top:10px;">
             <h2>
-                Manage Comapaies
+                Manage Companies
             </h2>
         </div>
         <div style="padding-top:20px;">
@@ -547,7 +547,7 @@
         <div id="searchDiv" style="margin:20px;">
             <center>
                 <div style="display:inline;margin-right:5px;">
-                    <asp:TextBox runat="server" Height="20px" style="border-color:black;border:1px solid; border-radius:5px;" Width="300px" ID="SearchTextBox" />
+                    <asp:TextBox runat="server" Height="20px" AutoPostBack="true" style="border-color:black;border:1px solid; border-radius:5px;" Width="300px" ID="SearchTextBox" />
                 </div>
                 <div style="display:inline;">
                     <asp:Button ID="searchButton" OnClick="SearchCompanies_ButtonClickEvent" Text="Search Companies" runat="server" />
@@ -567,82 +567,48 @@
                 PageSize="50" OnRowCommand="GridView1_RowCommand">
 
         </asp:GridView>--%>
-        <asp:GridView ID="UserGrid" runat="server" PageSize="30" DataKeyNames="CompanyID" Style="width: 100%"
-            DataSourceID="SimplicityDataSource" OnRowDeleting="UserGrid_RowDeleting" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False"
-            OnRowCommand="UserGrid_RowCommand" >
+        <div style="padding-bottom:30px;">
+            <asp:GridView ID="UserGrid" runat="server" PageSize="30" DataKeyNames="CompanyID" Style="width: 100%"
+                DataSourceID="SimplicityDataSource" OnRowDeleting="UserGrid_RowDeleting" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False"
+                OnRowCommand="UserGrid_RowCommand" >
 
-            <Columns>
-                <asp:CommandField HeaderText="Delete Company" HeaderStyle-Width="8%" ShowDeleteButton="True"></asp:CommandField>
-                <asp:TemplateField HeaderText="Edit Company Details" InsertVisible="False">
-                    <HeaderStyle Width="10%" Font-Bold="true" />
-                    <ItemTemplate>
-                        <center>
-                            <asp:LinkButton ID="EditCompany" runat="server" Text="Edit Company" CommandName="EditCompanyDetails" CommandArgument='<%#Eval("CompanyID")%>' />
-                        </center>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Manage Company Users" InsertVisible="False">
-                    <HeaderStyle Width="10%" Font-Bold="true" />
-                    <ItemTemplate>
-                        <center>
-                            <asp:LinkButton ID="ManageUsers" runat="server" Text="Manage Users" CommandName="ManageUser" CommandArgument='<%#Eval("CompanyID")%>' />
-                        </center>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:BoundField DataField="Name" HeaderText="Company Name" SortExpression="Name">
-                    <HeaderStyle Width="20%" />
-                </asp:BoundField>
-                <asp:BoundField DataField="Address.AddressFull" HeaderText="Company Address" SortExpression="Address.AddressFull">
-                    <HeaderStyle Width="25%" />
-                </asp:BoundField>
-                <asp:BoundField DataField="Address.Telephone1" HeaderText="Telephone" SortExpression="Address.Telephone1">
-                    <HeaderStyle Width="10%" />
-                </asp:BoundField>
-            </Columns>
-
-
-            <%--<HeaderTemplate>
-                <div style="width: 100%;padding-bottom:25px;">
-                    <div class="floatLeft" style="width: 14%; padding: 1px; border-right: 2px solid gray; font-weight: bold">
-                        <div>Manage Company Users</div>
-                        <!--<input type="button" value="Add Company" onclick="openAddCompany()" />-->
-                    </div>
-                    <div class="floatLeft" style="width: 25%; padding: 5px; border-right: 2px solid gray; font-weight: bold">
-                        <div>
-                            Company Name</div>
-                    </div>
-                    <div class="floatLeft" style="width: 20%; padding: 5px; border-right: 2px solid gray; font-weight: bold">
-                        <div>Company Address</div>
-                    </div>
-                    <div class="floatLeft" style="width: 12%; padding: 5px; font-weight: bold">
-                        <div>Telephone</div>
-                    </div>
-                    <div style="clear: both">
-                    </div>
-                </div>
-            </HeaderTemplate>
-            <ItemTemplate>
-                <div style="width: 100%;">
-                    <div class="floatLeft" style="width: 14%; padding: 1px;">
-                        <asp:Button ID="ManageUsers" runat="server" Text="Manage Users" CommandName="ManageUser" CommandArgument='<%#Eval("CompanyID")%>' />
-                    </div>
-                    <div class="floatLeft" style="width: 25%; padding: 5px; border-left: 2px solid gray;">
-                        <div>
-                            <asp:Label ID="CompanyName" runat="server" Text='<%#Eval("Name")%>'></asp:Label></div>
-                    </div>
-                    <div class="floatLeft" style="width: 20%; padding: 5px; border-left: 2px solid gray; border-right: 2px solid gray;">
-                        <div>
-                            <asp:Label ID="CompanyAddress" runat="server" Text='<%#Eval("AddressFull")%>'></asp:Label></div>
-                    </div>
-                    <div class="floatLeft" style="width: 12%; padding: 5px;">
-                        <div>
-                            <asp:Label ID="Label1" runat="server" Text='<%#Eval("Telephone1")%>'></asp:Label></div>
-                    </div>
-                    <div style="clear: both">
-                    </div>
-                </div>
-                <hr />
-            </ItemTemplate>--%>
-        </asp:GridView>
+                <Columns>
+                    <asp:TemplateField HeaderText="Delete Company" InsertVisible="False">
+                        <HeaderStyle Width="10%" Font-Bold="true" />
+                        <ItemTemplate>
+                            <center>
+                                <asp:LinkButton ID="DeleteCompanyButton" runat="server" Text="Delete" CommandName="Delete" CommandArgument='<%#Eval("CompanyID")%>'
+                                    OnClientClick="return confirm('Are you sure you want to delete this Company?');" />
+                            </center>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Edit Company Details" InsertVisible="False">
+                        <HeaderStyle Width="10%" Font-Bold="true" />
+                        <ItemTemplate>
+                            <center>
+                                <asp:LinkButton ID="EditCompany" runat="server" Text="Edit Company" CommandName="EditCompanyDetails" CommandArgument='<%#Eval("CompanyID")%>' />
+                            </center>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Manage Company Users" InsertVisible="False">
+                        <HeaderStyle Width="10%" Font-Bold="true" />
+                        <ItemTemplate>
+                            <center>
+                                <asp:LinkButton ID="ManageUsers" runat="server" Text="Manage Users" CommandName="ManageUser" CommandArgument='<%#Eval("CompanyID")%>' />
+                            </center>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="Name" HeaderText="Company Name" SortExpression="Name">
+                        <HeaderStyle Width="20%" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Address.AddressFull" HeaderText="Company Address" SortExpression="Address.AddressFull">
+                        <HeaderStyle Width="25%" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Address.Telephone1" HeaderText="Telephone" SortExpression="Address.Telephone1">
+                        <HeaderStyle Width="10%" />
+                    </asp:BoundField>
+                </Columns>
+            </asp:GridView>
+        </div>
     </div>
 </asp:Content>

@@ -54,6 +54,10 @@ namespace Simplicity.Web.Admin
                 }
             }
             SimplicityDataSource.Where = "";
+            if (SearchTextBox.Text.ToString().CompareTo("") != 0)
+            {
+                this.searchCompanies();
+            }
         }
 
         private bool companyNameAlreadyExistsUsingName()
@@ -112,6 +116,10 @@ namespace Simplicity.Web.Admin
 
         protected void SearchCompanies_ButtonClickEvent(object source, EventArgs e)
         {
+            this.searchCompanies();
+        }
+
+        private void searchCompanies() {
             this.SetWhereClause();
             UserGrid.DataBind();
         }
@@ -122,29 +130,32 @@ namespace Simplicity.Web.Admin
                 int id = Int32.Parse(e.CommandArgument.ToString());
                 Response.Redirect("~/Admin/ManageUser.aspx?companyId="+id);
             }
-            if (e.CommandName == "EditCompanyDetails")
+            else if (e.CommandName == "EditCompanyDetails")
             {
                 int id = Int32.Parse(e.CommandArgument.ToString());
                 Response.Redirect("~/Admin/ManageCompanies.aspx?companyId=" + id);
             }
+            else if (e.CommandName == "Delete")
+            {
+                int id = Int32.Parse(e.CommandArgument.ToString());
+                deleteCompanyRow(id);
+            }
         }
 
-        protected void UserGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            e.Cancel = true;
-            int companyId = -1;
-            companyId = ((int)e.Keys["CompanyID"]);
-
-            if (companyId >= 0) {
+        private void deleteCompanyRow(int companyId) {
+            if (companyId >= 0)
+            {
                 this.company = (from c in DatabaseContext.Companies where c.CompanyID == companyId select c).FirstOrDefault();//select company
                 this.company.Address.Deleted = true;//delete address
                 IEnumerable<Simplicity.Data.CompanyProduct> products = from cp in DatabaseContext.CompanyProducts where cp.CompanyID == companyId select cp;
-                foreach (CompanyProduct product in products) {
+                foreach (CompanyProduct product in products)
+                {
                     DatabaseContext.CompanyProducts.DeleteObject(product);
                 }//delete all company products.
 
                 IEnumerable<User> users = from usrs in DatabaseContext.Users where usrs.CompanyID == companyId select usrs;
-                foreach(User usr in users) {
+                foreach (User usr in users)
+                {
                     usr.CompanyID = null;
                     usr.Deleted = true;
                 }//delete users belong to the company also set company id to null so that foriegn key constraint allows company to be deleted.
@@ -161,6 +172,11 @@ namespace Simplicity.Web.Admin
                     UserGrid.DataBind();
                 }
             }
+        }
+
+        protected void UserGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            e.Cancel = true;
         }
 
         private void fillAddress(Simplicity.Data.Address companyAddress)
@@ -310,7 +326,7 @@ namespace Simplicity.Web.Admin
                         Type = CompanyType,
                         Deleted = false,
                         OnHold = false,
-                        Verified = false,
+                        Verified = true,
                         Enabled = true,
                         UserUID = Guid.NewGuid().ToString(),
                         VerificationCode = Guid.NewGuid().ToString(),

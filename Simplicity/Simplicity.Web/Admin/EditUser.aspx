@@ -17,17 +17,7 @@
             <div class="col2">
                 <div class="forgetErrorMsg">
                     <asp:TextBox runat="server" CssClass="login_field_big" MaxLength="60" ID="emailfield" Enabled="false"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="emailfield"
-                        ErrorMessage="* Email required" Display="Dynamic" ValidationGroup="PersonalInfoGroup"> 
-                    </asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailfield"
-                        ErrorMessage="* Enter Email." ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                        Display="Dynamic" ValidationGroup="PersonalInfoGroup">
-                    </asp:RegularExpressionValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="emailfield"
-                        ErrorMessage=" Must be 8 characters" ValidationExpression=".{8,60}" Display="Dynamic"
-                        ValidationGroup="PersonalInfoGroup">
-                    </asp:RegularExpressionValidator>
+                    
                     <asp:Label runat="server" ID="emailLength" Visible="false"></asp:Label>
                 </div>
             </div>
