@@ -10,7 +10,7 @@ using Simplicity.Data;
 using System.Web.UI.HtmlControls;
 namespace Simplicity.Web.Admin
 {
-    public partial class ManageCompanies : GenericPage
+    public partial class ManageCompanies : AdminAuthenticatedPage
     {
         private Simplicity.Data.Company company = null;
 
@@ -352,7 +352,7 @@ namespace Simplicity.Web.Admin
 
                     //call health and safety stored procedure over here to insert company there as well
                     DatabaseUtility.addCompanyToHS(user);
-                    EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
+//                    EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
                     SetSuccessMessage("Company added successfully.");
                     Response.Redirect("~/Admin/ManageCompanies.aspx");
                 }
@@ -392,7 +392,7 @@ namespace Simplicity.Web.Admin
                         Type = CompanyType,
                         Deleted = false,
                         OnHold = false,
-                        Verified = false,
+                        Verified = true,
                         Enabled = true,
                         UserUID = Guid.NewGuid().ToString(),
                         VerificationCode = Guid.NewGuid().ToString(),
@@ -411,7 +411,7 @@ namespace Simplicity.Web.Admin
 
                     //call health and safety stored procedure over here to insert company there as well
                     DatabaseUtility.addCompanyToHS(user);
-                    EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
+//                    EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
                     SetSuccessMessage("Admin added successfully.");
                     Response.Redirect("~/Admin/ManageCompanies.aspx");
                 }
@@ -426,6 +426,16 @@ namespace Simplicity.Web.Admin
             AddCompanyAdminButton.Visible = false;
 
             ClientScript.RegisterStartupScript(this.GetType(), "openAddCompany", "$(document).ready(openAddCompany);", true);
+        }
+
+        protected void AddCompanyPopUpButton_Click(object source, EventArgs e)
+        {
+            CompanyTabCompanyName.Text = "";
+            CompanyTabCompanyName.Enabled = true;
+            AddAdminPopUP_Button.Visible = false;
+            AddCompanyAdminButton.Visible = true;
+
+            ClientScript.RegisterStartupScript(this.GetType(), "openAddNewCompany", "$(document).ready(openAddNewCompany);", true);
         }
     }
 }

@@ -537,7 +537,8 @@
         </div>
         <div style="padding-top:20px;">
             <div style="padding:0px 5px 10px 0; display:inline;">
-                <input type="button" value="Add Company" onclick="openAddNewCompany()" style="width: 150px; height: 40px; font-weight: bold;" />
+                <asp:Button runat="server" Text="Add Company" ID="AddCompanyPopUpButton" OnClick="AddCompanyPopUpButton_Click" style="width: 150px; height: 40px; font-weight: bold;" />
+                <%--<input type="button" value="Add Company" onclick="openAddNewCompany()" style="width: 150px; height: 40px; font-weight: bold;" />--%>
             </div>
             <div style="padding:0px 5px 10px 0; display:inline;">
                 <asp:Button runat="server" Text="Add Admin" ID="AddAdminButton" OnClick="AddAdminButton_Click" style="width: 150px; height: 40px; font-weight: bold;" />

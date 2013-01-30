@@ -363,6 +363,19 @@
             </div>
         </div>
         <div class="row">
+            <div class="col1">
+                <asp:Label ID="Label20" runat="server" Text="User Type"></asp:Label>
+            </div>
+            <div class="col2">
+                <div class="forgetErrorMsg">
+                    <asp:DropDownList runat="server" ID="userTypeList">
+                        <asp:ListItem Value="User">User</asp:ListItem>
+                        <asp:ListItem Value="Company_Admin">Admin</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <asp:CheckBox runat="server" ID="checkbox" Text="Please indicate if you would like to receives further updates for products"
                 Checked="true" />
         </div>

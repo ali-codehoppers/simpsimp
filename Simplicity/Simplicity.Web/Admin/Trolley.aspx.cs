@@ -10,7 +10,7 @@ using Simplicity.Data;
 
 namespace Simplicity.Web.Admin
 {
-    public partial class Trolly : GenericPage
+    public partial class Trolly : AdminAuthenticatedPage
     {
         protected override void OnInit(EventArgs e)
         {

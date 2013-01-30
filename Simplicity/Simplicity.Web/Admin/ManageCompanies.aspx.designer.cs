@@ -1003,6 +1003,15 @@ namespace Simplicity.Web.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl GridDiv;
         
         /// <summary>
+        /// AddCompanyPopUpButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddCompanyPopUpButton;
+        
+        /// <summary>
         /// AddAdminButton control.
         /// </summary>
         /// <remarks>

@@ -9,7 +9,7 @@ using Simplicity.Data;
 
 namespace Simplicity.Web.Admin
 {
-    public partial class ChangePassword : GenericPage
+    public partial class ChangePassword : AdminAuthenticatedPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

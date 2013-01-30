@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Simplicity.Web.Admin
 {
-    public partial class UserProducts : GenericPage
+    public partial class UserProducts : AdminAuthenticatedPage
     {
 
         protected void Page_Load(object sender, EventArgs e)

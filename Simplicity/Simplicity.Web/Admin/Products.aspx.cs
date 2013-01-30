@@ -8,7 +8,7 @@ using Simplicity.Web.Utilities;
 
 namespace Simplicity.Web.Admin
 {
-    public partial class Products : GenericPage
+    public partial class Products : AdminAuthenticatedPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
