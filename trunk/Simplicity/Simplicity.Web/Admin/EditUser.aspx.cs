@@ -9,7 +9,7 @@ using Simplicity.Data;
 
 namespace Simplicity.Web.Admin
 {
-    public partial class EditUser : GenericPage
+    public partial class EditUser : AdminAuthenticatedPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

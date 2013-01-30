@@ -51,19 +51,19 @@ namespace Simplicity.Web.Admin
             }
         }
 
-        protected void deleteSelectedUser_Click(object sender, EventArgs e)
-        {
-            String selectedUsers = selectedUsersToDelete.Value;
-            String [] arrayOfSelectedUsers = selectedUsers.Split(',');
-            int companyID = Int32.Parse(Request["companyId"]);
+        //protected void deleteSelectedUser_Click(object sender, EventArgs e)
+        //{
+        //    String selectedUsers = selectedUsersToDelete.Value;
+        //    String [] arrayOfSelectedUsers = selectedUsers.Split(',');
+        //    int companyID = Int32.Parse(Request["companyId"]);
 
-            for (int i = 0; i < arrayOfSelectedUsers.Length-1; i++)
-            {
-                int userGoingToBeDisabled = int.Parse(arrayOfSelectedUsers[i]);
-                var userToDelete = from userToDel in DatabaseContext.Users where userToDel.CompanyID == companyID && userToDel.UserID == userGoingToBeDisabled select userToDel;
-                userToDelete.FirstOrDefault().Enabled = false;
-                DatabaseContext.SaveChanges();
-            }
-        }
+        //    for (int i = 0; i < arrayOfSelectedUsers.Length-1; i++)
+        //    {
+        //        int userGoingToBeDisabled = int.Parse(arrayOfSelectedUsers[i]);
+        //        var userToDelete = from userToDel in DatabaseContext.Users where userToDel.CompanyID == companyID && userToDel.UserID == userGoingToBeDisabled select userToDel;
+        //        userToDelete.FirstOrDefault().Enabled = false;
+        //        DatabaseContext.SaveChanges();
+        //    }
+        //}
     }
 }

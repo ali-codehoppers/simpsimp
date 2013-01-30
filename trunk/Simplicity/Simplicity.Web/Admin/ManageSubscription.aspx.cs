@@ -10,7 +10,7 @@ using Simplicity.Data;
 
 namespace Simplicity.Web.Admin
 {
-    public partial class ManageSubscription : GenericPage
+    public partial class ManageSubscription : AdminAuthenticatedPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

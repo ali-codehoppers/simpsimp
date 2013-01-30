@@ -68,15 +68,14 @@
     <div id="activeUsersDialog">
         <asp:HiddenField ID="selectedUsersToDelete" ClientIDMode="Static" Value="" runat="server" />
         <div>
-            <p>No. of active users are greater than the number of Licenses. Please select the users from below list which you want to disable.</p>
+            <p>No. of active users are greater than the number of Licenses. Please delete some users from the manage users page.</p>
         </div>
         <div>
-            <asp:CheckBoxList runat="server" ID="activeUsersCheckBoxList" DataTextField="Email" DataValueField="UserID">
-            </asp:CheckBoxList>
+            <asp:BulletedList runat="server" ID="activeUsersCheckBoxList" DataTextField="Email" DataValueField="UserID"></asp:BulletedList>
         </div>
         <div>
-            <asp:Button runat="server" ID="okaySelectedUser" Text="Okay" Width="50px" OnClick="deleteSelectedUser_Click" OnClientClick="return prepareSelectedUserList();" />
-            <asp:Button runat="server" ID="Cancel" Text="Cancel" Width="50px" OnClientClick="return closeDialog();" />
+            <%--<asp:Button runat="server" ID="okaySelectedUser" Text="Okay" Width="50px" OnClick="deleteSelectedUser_Click" OnClientClick="return prepareSelectedUserList();" />--%>
+            <asp:Button runat="server" ID="Cancel" Text="Okay" Width="50px" OnClientClick="return closeDialog();" />
         </div>
 
     </div>

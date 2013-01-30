@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Simplicity.Web.Admin
 {
-    public partial class AdminDefault : GenericPage
+    public partial class AdminDefault : AdminAuthenticatedPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -174,16 +174,16 @@ namespace Simplicity.Web.Admin
                         DatabaseContext.SaveChanges();
 
                         user.CompanyID = company.CompanyID;
-                        //DatabaseContext.Users.AddObject(user);
                         DatabaseContext.SaveChanges();
 
                         //call health and safety stored procedure over here to insert company there as well
                         DatabaseUtility.addCompanyToHS(user);
-                        EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
+//                        EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
                         SetSuccessMessage("User added successfully.");
                         Response.Redirect("~/Admin/ManageUser.aspx");
                     }
                     else {
+                        String userType = userTypeList.SelectedValue.ToUpper();
                         User user = new User
                         {
                             ReceiveEmails = checkbox.Checked,
@@ -198,10 +198,10 @@ namespace Simplicity.Web.Admin
                             ReminderAnswer = Utility.GetMd5Sum(txtForgotPasswordAnswer.Text),
                             CreationDate = DateTime.Now,
                             LastAmendmentDate = DateTime.Now,
-                            Type = CompanyType,
+                            Type = userType,
                             Deleted = false,
                             OnHold = false,
-                            Verified = false,
+                            Verified = true,
                             Enabled = true,
                             UserUID = Guid.NewGuid().ToString(),
                             VerificationCode = Guid.NewGuid().ToString(),
@@ -220,7 +220,7 @@ namespace Simplicity.Web.Admin
 
                         //call health and safety stored procedure over here to insert company there as well
                         DatabaseUtility.addCompanyToHS(user);
-                        EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
+//                        EmailUtility.SendAccountCreationEmail(user, passwordfield.Text);
                         SetSuccessMessage("User added successfully.");
                         Response.Redirect("~/Admin/ManageUser.aspx?"+WebConstants.Request.COMPANY_ID+"="+company.CompanyID);
                     }
