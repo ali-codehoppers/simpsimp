@@ -314,6 +314,9 @@
     <Content Include="PaymentDetail.aspx" />
     <Content Include="PaymentResponse.aspx" />
     <Content Include="ProductPrices.aspx" />
+    <Content Include="Products\EstateAgent\Details.aspx" />
+    <Content Include="Products\EstateAgent\EstateAgentPrice.aspx" />
+    <Content Include="Products\EstateAgent\Home.aspx" />
     <Content Include="Products\EAS\Details.aspx" />
     <Content Include="Products\EAS\EASPrice.aspx" />
     <Content Include="Products\EAS\Home.aspx" />
@@ -836,6 +839,27 @@
     </Compile>
     <Compile Include="ProductPrices.aspx.designer.cs">
       <DependentUpon>ProductPrices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\EstateAgent\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\EstateAgent\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\EstateAgent\EstateAgentPrice.aspx.cs">
+      <DependentUpon>EstateAgentPrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\EstateAgent\EstateAgentPrice.aspx.designer.cs">
+      <DependentUpon>EstateAgentPrice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\EstateAgent\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\EstateAgent\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products\EAS\Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>

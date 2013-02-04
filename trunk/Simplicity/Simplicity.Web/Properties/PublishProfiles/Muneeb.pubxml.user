@@ -56,7 +56,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/21/2013 02:48:58</publishTime>
     </File>
     <File Include="Admin/Products.aspx">
-      <publishTime>12/24/2012 19:04:13</publishTime>
+      <publishTime>01/31/2013 12:51:14</publishTime>
     </File>
     <File Include="Admin/SubscribeUserProduct.aspx">
       <publishTime>01/20/2013 22:31:40</publishTime>
@@ -74,7 +74,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/22/2013 16:16:56</publishTime>
     </File>
     <File Include="bin/Simplicity.Web.dll">
-      <publishTime>01/29/2013 17:08:43</publishTime>
+      <publishTime>02/05/2013 01:31:02</publishTime>
     </File>
     <File Include="BuyProduct.aspx">
       <publishTime>12/24/2012 19:04:13</publishTime>
@@ -110,7 +110,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/21/2013 15:49:13</publishTime>
     </File>
     <File Include="Common/Products.master">
-      <publishTime>12/24/2012 19:04:13</publishTime>
+      <publishTime>01/30/2013 16:43:05</publishTime>
     </File>
     <File Include="Common/Services.master">
       <publishTime>12/24/2012 19:04:14</publishTime>
@@ -746,7 +746,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:13</publishTime>
     </File>
     <File Include="logs/logger.log">
-      <publishTime>01/29/2013 15:42:14</publishTime>
+      <publishTime>02/04/2013 14:47:02</publishTime>
     </File>
     <File Include="Oops.aspx">
       <publishTime>12/24/2012 19:04:12</publishTime>
@@ -771,6 +771,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Products/EAS/Home.aspx">
       <publishTime>12/24/2012 19:04:14</publishTime>
+    </File>
+    <File Include="Products/EstateAgent/Details.aspx">
+      <publishTime>01/30/2013 18:52:25</publishTime>
+    </File>
+    <File Include="Products/EstateAgent/EstateAgentPrice.aspx">
+      <publishTime>01/30/2013 18:54:01</publishTime>
+    </File>
+    <File Include="Products/EstateAgent/Home.aspx">
+      <publishTime>01/30/2013 18:54:59</publishTime>
     </File>
     <File Include="Products/HandyGas/Details.aspx">
       <publishTime>12/24/2012 19:04:14</publishTime>
@@ -1019,7 +1028,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:08</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/29/2013 17:17:16</publishTime>
+      <publishTime>02/05/2013 01:32:54</publishTime>
     </File>
     <File Include="WishListPage.aspx">
       <publishTime>12/24/2012 19:04:13</publishTime>

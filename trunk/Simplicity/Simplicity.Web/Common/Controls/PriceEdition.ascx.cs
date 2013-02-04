@@ -119,6 +119,11 @@ namespace Simplicity.Web.Common.Controls
                         hlBack.NavigateUrl = "/Products/HandyLEC/HandyLECPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
                         hlBack.Visible = true;
                     }
+                    else if (Request[WebConstants.Request.PRODUCT_ID] == "6")
+                    {
+                        hlBack.NavigateUrl = "/Products/EstateAgent/EstateAgentPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
+                        hlBack.Visible = true;
+                    }
                 }
                 else
                 {
@@ -159,6 +164,12 @@ namespace Simplicity.Web.Common.Controls
                     else if (Request[WebConstants.Request.PRODUCT_ID] == "5")
                     {
                         hlMore.NavigateUrl = "/Products/HandyLEC/HandyLECPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
+                            + "&" + WebConstants.Request.MORE + "=true";
+
+                    }
+                    else if (Request[WebConstants.Request.PRODUCT_ID] == "6")
+                    {
+                        hlMore.NavigateUrl = "/Products/EstateAgent/EstateAgentPrice.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
                             + "&" + WebConstants.Request.MORE + "=true";
 
                     }
