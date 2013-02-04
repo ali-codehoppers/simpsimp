@@ -59,6 +59,10 @@ namespace Simplicity.Web.Admin
             {
                 return "/Admin/Price.aspx?productId=" + indexInt+"&"+WebConstants.Request.COMPANY_ID+"="+Request[WebConstants.Request.COMPANY_ID];
             }
+            else if (indexInt == 6)
+            {
+                return "/Admin/Price.aspx?productId=" + indexInt + "&" + WebConstants.Request.COMPANY_ID + "=" + Request[WebConstants.Request.COMPANY_ID];
+            }
             else
             {
                 return "#";

@@ -15,6 +15,8 @@ namespace Simplicity.Web
         {
             if (int.Parse(Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID]) == 2)  
                 Response.Redirect(AppSettings["HSURL"] + "/TermsConditions.aspx",false);
+            if (int.Parse(Request[Simplicity.Web.Utilities.WebConstants.Request.PRODUCT_ID]) == 6)
+                Response.Redirect(AppSettings["EAURL"] + "/TermsConditions.aspx", false);
         }
     }
 }
