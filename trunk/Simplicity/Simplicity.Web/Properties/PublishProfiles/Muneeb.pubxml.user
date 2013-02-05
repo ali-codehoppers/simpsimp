@@ -74,7 +74,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/22/2013 16:16:56</publishTime>
     </File>
     <File Include="bin/Simplicity.Web.dll">
-      <publishTime>02/05/2013 01:31:02</publishTime>
+      <publishTime>02/05/2013 19:07:01</publishTime>
     </File>
     <File Include="BuyProduct.aspx">
       <publishTime>12/24/2012 19:04:13</publishTime>
@@ -746,7 +746,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:13</publishTime>
     </File>
     <File Include="logs/logger.log">
-      <publishTime>02/04/2013 14:47:02</publishTime>
+      <publishTime>02/05/2013 19:05:07</publishTime>
     </File>
     <File Include="Oops.aspx">
       <publishTime>12/24/2012 19:04:12</publishTime>
@@ -1028,7 +1028,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2012 19:04:08</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/05/2013 01:32:54</publishTime>
+      <publishTime>02/05/2013 19:07:02</publishTime>
     </File>
     <File Include="WishListPage.aspx">
       <publishTime>12/24/2012 19:04:13</publishTime>

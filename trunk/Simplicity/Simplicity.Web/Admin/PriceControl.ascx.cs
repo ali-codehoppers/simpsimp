@@ -97,7 +97,7 @@ namespace Simplicity.Web.Admin
                         rptOptional.DataBind();
                     }
                     if (Request[WebConstants.Request.PRODUCT_ID] == "1" || Request[WebConstants.Request.PRODUCT_ID] == "2" || Request[WebConstants.Request.PRODUCT_ID] == "3"
-                        || Request[WebConstants.Request.PRODUCT_ID] == "4" || Request[WebConstants.Request.PRODUCT_ID] == "5")
+                        || Request[WebConstants.Request.PRODUCT_ID] == "4" || Request[WebConstants.Request.PRODUCT_ID] == "5" || Request[WebConstants.Request.PRODUCT_ID] == "6")
                     {
                         hlBack.NavigateUrl = "/Admin/Price.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID];
                         hlBack.Visible = true;
@@ -139,7 +139,7 @@ namespace Simplicity.Web.Admin
                     }
                     rptOptional.DataBind();
                     if (Request[WebConstants.Request.PRODUCT_ID] == "1" || Request[WebConstants.Request.PRODUCT_ID] == "2" || Request[WebConstants.Request.PRODUCT_ID] == "3"
-                        || Request[WebConstants.Request.PRODUCT_ID] == "4" || Request[WebConstants.Request.PRODUCT_ID] == "5")
+                        || Request[WebConstants.Request.PRODUCT_ID] == "4" || Request[WebConstants.Request.PRODUCT_ID] == "5" || Request[WebConstants.Request.PRODUCT_ID] == "6")
                     {
                         hlMore.NavigateUrl = "/Admin/Price.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + Request[WebConstants.Request.PRODUCT_ID]
                             + "&" + WebConstants.Request.MORE + "=true";
@@ -206,7 +206,7 @@ namespace Simplicity.Web.Admin
             if (product != null)
             {
                 if (Request[WebConstants.Request.PRODUCT_ID] == "1" || Request[WebConstants.Request.PRODUCT_ID] == "2" || Request[WebConstants.Request.PRODUCT_ID] == "3"
-                    || Request[WebConstants.Request.PRODUCT_ID] == "4" || Request[WebConstants.Request.PRODUCT_ID] == "5")
+                    || Request[WebConstants.Request.PRODUCT_ID] == "4" || Request[WebConstants.Request.PRODUCT_ID] == "5" || Request[WebConstants.Request.PRODUCT_ID] == "6")
                 {
                     return "/Admin/Price.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID + "&" + WebConstants.Request.VERSION_ID + "=" + versionId + "&" + WebConstants.Request.COMPANY_ID + "=" + Request[WebConstants.Request.COMPANY_ID];
                 }
@@ -237,8 +237,8 @@ namespace Simplicity.Web.Admin
             if (product != null)
             {
                 if (Request[WebConstants.Request.PRODUCT_ID] == "1" || Request[WebConstants.Request.PRODUCT_ID] == "2" ||
-                    Request[WebConstants.Request.PRODUCT_ID] == "3" || Request[WebConstants.Request.PRODUCT_ID] == "4" || 
-                    Request[WebConstants.Request.PRODUCT_ID] == "5")
+                    Request[WebConstants.Request.PRODUCT_ID] == "3" || Request[WebConstants.Request.PRODUCT_ID] == "4" ||
+                    Request[WebConstants.Request.PRODUCT_ID] == "5" || Request[WebConstants.Request.PRODUCT_ID] == "6")
                 {
                     return "/Admin/Price.aspx?" + WebConstants.Request.PRODUCT_ID + "=" + product.ProductEnity.ProductID
                     + "&" + WebConstants.Request.VERSION_ID + "=" + versionId
