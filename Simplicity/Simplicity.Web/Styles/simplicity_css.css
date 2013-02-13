@@ -987,6 +987,19 @@ div.myChangeTab
 	background: url(../Images/login_btn_disable.jpg) bottom left no-repeat;
 	float:left;
 }
+/*zain*/
+div.myLicenceTab
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(../Images/login_btn_disable.jpg) bottom left no-repeat;
+	float:left;
+}
+/*zain*/
 div.myCompanyTab
 {
 	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
@@ -1022,6 +1035,20 @@ div.myChangeTabOnMouseOver
 	cursor:pointer;
 	float:left;
 }
+/*zain*/
+div.myLicenceTabOnMouseOver
+{
+	font: normal 12px Arial, Verdana, Helvetica, sans-serif;
+	color: #015d8c;
+	width:150px;
+	height:36px;
+	line-height:14px;
+	text-align:center;
+	background: url(../Images/login_btn_highlight.jpg) bottom left no-repeat;
+	cursor:pointer;
+	float:left;
+}
+/*zain*/
 div.myCompanyTabOnMouseOver
 {
 	font: normal 12px Arial, Verdana, Helvetica, sans-serif;

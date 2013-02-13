@@ -59,6 +59,19 @@
                     <div style="padding-top: 10px">
                         Change Password</div>
                 </div>
+
+                <!--zain-->
+                <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
+                    </div>
+                <asp:Panel runat="server" ID="licenceTab">
+                    <div id="tabLicence" class="myLicenceTab">
+                        <div style="padding-top: 10px">
+                            Licences</div>
+                    </div>
+                </asp:Panel>
+<!--zain-->
+
+
                 <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
                 </div>
                 <asp:Panel runat="server" ID="MyCompanyPanelHeader">
@@ -680,6 +693,33 @@
                     </asp:Panel>
                 </div>
             </asp:Panel>
+
+            <!---->
+            <asp:Panel ID="MyLicencePanel" runat="server">
+                <div id="MyLicenceTab" class="clearFloat">
+
+                ok !!
+
+                <asp:GridView ID="dynamicLicenceGridView" runat="server" AutoGenerateColumns="false">
+                    
+
+                
+                </asp:GridView>
+                </div>
+            </asp:Panel>
+            <!---->
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     </div>
     <script type="text/javascript">
@@ -696,6 +736,9 @@
             }
             if (selectedTab == 4) {
                 companyTab();
+            }
+            if (selectedTab == 5) {
+                licenceTab();
             }
             $('#tabPersonalInfo').click(function () {
                 selectedTab = 1;
@@ -778,7 +821,31 @@
                     $('#tabCompany').addClass('myCompanyTab');
                 }
             });
+
+            $('#tabLicence').click(function () {
+                selectedTab = 5;
+                //document.getElementById('SelectTabName').value = selectedTab;
+                licenceTab();
+            });
+            $('#tabLicence').mouseover(function () {
+                $('#tabLicence').addClass('myLicenceTabOnMouseOver');
+                $('#tabLicence').removeClass('myLicenceTab');
+            });
+            $('#tabLicence').mouseout(function () {
+                if (selectedTab == 1) {
+                    $('#tabLicence').addClass('myLicenceTabOnMouseOver');
+                    $('#tabLicence').removeClass('myLicenceTab');
+                }
+                else {
+                    $('#tabLicence').removeClass('myLicenceTabOnMouseOver');
+                    $('#tabLicence').addClass('myLicenceTab');
+                }
+            });
+
             function infoTab() {
+                $('#tabLicence').removeClass('myLicenceTabOnMouseOver');
+                $('#tabLicence').addClass('myLicenceTab');
+
                 $('#tabPersonalInfo').addClass('myPersonalInfoTabOnMouseOver');
                 $('#tabPersonalInfo').removeClass('myPersonalInfoTab');
                 $('#tabProducts').removeClass('myProductsTabOnMouseOver');
@@ -791,8 +858,13 @@
                 $('#myAccountMyProductsTab').hide();
                 $('#MyPasswordTab').hide();
                 $('#MyCompanyTab').hide();
+
+                $('#MyLicenceTab').hide();
             }
             function productTab() {
+                $('#tabLicence').removeClass('myLicenceTabOnMouseOver');
+                $('#tabLicence').addClass('myLicenceTab');
+
                 $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
                 $('#tabPersonalInfo').addClass('myPersonalInfoTab');
                 $('#tabProducts').addClass('myProductsTabOnMouseOver');
@@ -805,8 +877,14 @@
                 $('#MyPasswordTab').hide();
                 $('#myAccountMyProductsTab').show();
                 $('#MyCompanyTab').hide();
+
+                $('#MyLicenceTab').hide();
             }
             function passwordTab() {
+
+                $('#tabLicence').removeClass('myLicenceTabOnMouseOver');
+                $('#tabLicence').addClass('myLicenceTab');
+
                 $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
                 $('#tabPersonalInfo').addClass('myPersonalInfoTab');
                 $('#tabProducts').removeClass('myProductsTabOnMouseOver');
@@ -819,8 +897,14 @@
                 $('#myAccountMyProductsTab').hide();
                 $('#MyPasswordTab').show();
                 $('#MyCompanyTab').hide();
+
+                $('#MyLicenceTab').hide();
             }
             function companyTab() {
+
+                $('#tabLicence').removeClass('myLicenceTabOnMouseOver');
+                $('#tabLicence').addClass('myLicenceTab');
+
                 $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
                 $('#tabPersonalInfo').addClass('myPersonalInfoTab');
                 $('#tabProducts').removeClass('myProductsTabOnMouseOver');
@@ -833,6 +917,32 @@
                 $('#myAccountMyProductsTab').hide();
                 $('#MyPasswordTab').hide();
                 $('#MyCompanyTab').show();
+
+                $('#MyLicenceTab').hide();
+
+            }
+            function licenceTab() {
+                $('#tabPersonalInfo').removeClass('myPersonalInfoTabOnMouseOver');
+                $('#tabPersonalInfo').addClass('myPersonalInfoTab');
+
+                $('#tabProducts').removeClass('myProductsTabOnMouseOver');
+                $('#tabProducts').addClass('myProductsTab');
+
+                $('#tabPassword').removeClass('myChangeTabOnMouseOver');
+                $('#tabPassword').addClass('myChangeInfoTab');
+
+                $('#tabCompany').removeClass('myCompanyTabOnMouseOver');
+                $('#tabCompany').addClass('myCompanyTab');
+                /*z*/
+                $('#tabLicence').addClass('myLicenceTabOnMouseOver');
+                $('#tabLicence').removeClass('myLicenceTab');
+                /*z*/
+
+                $('#myAccountMyPersonalInfoTab').hide();
+                $('#myAccountMyProductsTab').hide();
+                $('#MyPasswordTab').hide();
+                $('#MyCompanyTab').hide();
+                $('#MyLicenceTab').show();  //page data load
             }
         });
     </script>
