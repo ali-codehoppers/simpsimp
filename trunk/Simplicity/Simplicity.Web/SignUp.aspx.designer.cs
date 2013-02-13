@@ -40,6 +40,15 @@ namespace Simplicity.Web {
         protected global::System.Web.UI.WebControls.Panel SecondMyProductPanel;
         
         /// <summary>
+        /// licenceTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel licenceTab;
+        
+        /// <summary>
         /// MyCompanyPanelHeader control.
         /// </summary>
         /// <remarks>
@@ -1100,5 +1109,23 @@ namespace Simplicity.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton userSubmitButton;
+        
+        /// <summary>
+        /// MyLicencePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel MyLicencePanel;
+        
+        /// <summary>
+        /// dynamicLicenceGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dynamicLicenceGridView;
     }
 }

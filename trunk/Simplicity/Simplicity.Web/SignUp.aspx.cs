@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Simplicity.Web.Utilities;
 using Simplicity.Data;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Simplicity.Web
 {
@@ -66,11 +67,14 @@ namespace Simplicity.Web
                 {
                     CompanyPanel.Visible = true;
                     MyCompanyPanelHeader.Visible = true;
+                    MyLicencePanel.Visible = true;
+
                 }
                 else
                 {
                     CompanyPanel.Visible = false;
                     MyCompanyPanelHeader.Visible = false;
+                    MyLicencePanel.Visible = false;
                 }
                 ///////////////////////////////////////////////////////////////////////////////
 
@@ -86,6 +90,41 @@ namespace Simplicity.Web
                     UserProduct = BindUserProduct();
                     UserProductRepeater.DataSource = UserProduct;
                     UserProductRepeater.DataBind();
+                    /*z*/
+                    /*const string NAME = "NAME";
+                    DataTable dt = new DataTable();
+                    DataColumn dcol = new DataColumn(NAME, typeof(System.String));
+                    dt.Columns.Add(dcol);
+
+
+
+                    //Now add data for dynamic columns
+
+                    //As the first column is auto-increment, we do not have to add any thing.
+
+                    //Let's add some data to the second column.
+
+                    for (int nIndex = 0; nIndex < 10; nIndex++)
+                    {
+
+                        //Create a new row
+
+                        DataRow drow = dt.NewRow();
+
+
+
+                        //Initialize the row data.
+
+                        drow[NAME] = "Row-" + Convert.ToString((nIndex + 1));
+
+
+
+                        //Add the row to the datatable.
+
+                        dt.Rows.Add(drow);
+
+                    }
+                    *//*z*/
                 }
                 LoginAccount.Visible = true;
                 MyProductPanel.Visible = true;
