@@ -3,18 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftNavPlaceHolder" runat="server">
-    <div class="leftNavBarLEC">
+    <div class="leftNavBarEA">
         <div>
-            <a href="../../WatchDemo.aspx?product_id=5" id="watch_lec"></a>
+            <a href="../../WatchDemo.aspx?product_id=6" id="watch_ea"></a>
         </div>
         <div>
-            <a href="HandyLECPrice.aspx?productid=5" id="buy_lec"></a>
+            <a href="EstateAgentPrice.aspx?productid=6" id="buy_ea"></a>
         </div>
         <div>
-            <a href="HandyLECPrice.aspx?productid=5&try=try" id="try_lec"></a>
+            <a href="EstateAgentPrice.aspx?productid=6&try=try" id="try_ea"></a>
         </div>
         <div>
-            <a href="../../CallMeBack.aspx" id="call_lec"></a>
+            <a href="../../CallMeBack.aspx" id="call_ea"></a>
         </div>
     </div>
 </asp:Content>

@@ -487,31 +487,40 @@ namespace Simplicity.Web
         }
         protected void ChangeRowCreated(object sender, GridViewRowEventArgs e)
         {
-            e.Row.Cells[1].Visible = false;
-            e.Row.Cells[2].Visible = false;
-            e.Row.Cells[3].Visible = false;
-            e.Row.Cells[4].Visible = false;
-            e.Row.Cells[5].Visible = false;
-            e.Row.Cells[6].Visible = false;
-            e.Row.Cells[7].Visible = false;
-            e.Row.Cells[9].Visible = false;
-            e.Row.Cells[10].Visible = false;
-            e.Row.Cells[15].Visible = false;
-            e.Row.Cells[16].Visible = false;
-            e.Row.Cells[17].Visible = false;
-            e.Row.Cells[18].Visible = false;
-            e.Row.Cells[19].Visible = false;
-            e.Row.Cells[20].Visible = false;
-            e.Row.Cells[21].Visible = false;
-            e.Row.Cells[22].Visible = false;
-            e.Row.Cells[23].Visible = false;
-            e.Row.Cells[24].Visible = false;
-            e.Row.Cells[25].Visible = false;
-            e.Row.Cells[26].Visible = false;
-            e.Row.Cells[27].Visible = false;
-            e.Row.Cells[28].Visible = false;
-            e.Row.Cells[29].Visible = false;
-            e.Row.Cells[30].Visible = false;
+            //e.Row.Cells[1].Visible = false;
+            //e.Row.Cells[2].Visible = false;
+            //e.Row.Cells[3].Visible = false;
+            //e.Row.Cells[4].Visible = false;
+            //e.Row.Cells[5].Visible = false;
+            //e.Row.Cells[6].Visible = false;
+            //e.Row.Cells[7].Visible = false;
+            //e.Row.Cells[9].Visible = false;
+            //e.Row.Cells[10].Visible = false;
+            //e.Row.Cells[15].Visible = false;
+            //e.Row.Cells[16].Visible = false;
+            //e.Row.Cells[17].Visible = false;
+            //e.Row.Cells[18].Visible = false;
+            //e.Row.Cells[19].Visible = false;
+            //e.Row.Cells[20].Visible = false;
+            //e.Row.Cells[21].Visible = false;
+            //e.Row.Cells[22].Visible = false;
+            //e.Row.Cells[23].Visible = false;
+            //e.Row.Cells[24].Visible = false;
+            //e.Row.Cells[25].Visible = false;
+            //e.Row.Cells[26].Visible = false;
+            //e.Row.Cells[27].Visible = false;
+            //e.Row.Cells[28].Visible = false;
+            //e.Row.Cells[29].Visible = false;
+            //e.Row.Cells[30].Visible = false;
+        }
+
+        protected String GetUserType(String userType){
+            if (userType.CompareTo("COMPANY_ADMIN") == 0)
+                return "Company Admin";
+            else if (userType.CompareTo("ADMIN") == 0)
+                return "Ultra Nova Admin";
+            else
+                return "User";
         }
 
         protected void addUser_Click(object sender, EventArgs e)

@@ -303,7 +303,7 @@ A.icon_link:hover {
 	color: #333333;
 	text-decoration: none;
 }
-#watch_hns,#watch_serve,#buy_hns,#buy_serve,#try_hns,#try_serve,#call_hns,#call_serve,#watch_lec,#buy_lec,#try_lec,#call_lec,#watch_gas,#buy_gas,#try_gas,#call_gas,#watch_eas,#buy_eas,#try_eas,#call_eas{
+#watch_hns,#watch_serve,#buy_hns,#buy_serve,#try_hns,#try_serve,#call_hns,#call_serve,#watch_lec,#buy_lec,#try_lec,#call_lec,#watch_gas,#buy_gas,#try_gas,#call_gas,#watch_eas,#buy_eas,#try_eas,#call_eas,#watch_ea,#buy_ea,#try_ea,#call_ea{
     font: bold 11px "Trebuchet MS",Arial, Verdana, Helvetica, sans-serif;
 	color: #ffffff;
 	text-decoration: none;
@@ -317,7 +317,7 @@ A.icon_link:hover {
 	text-align: left;
 	text-indent:54px;	
 }
-#watch_hns:hover,#watch_serve:hover,#buy_hns:hover,#buy_serve:hover,#try_hns:hover,#try_serve:hover,#call_hns:hover,#call_serve:hover,#watch_lec:hover,#buy_lec:hover,#try_lec:hover,#call_lec:hover,#watch_gas:hover,#buy_gas:hover,#try_gas:hover,#call_gas:hover,#watch_eas:hover,#buy_eas:hover,#try_eas:hover,#call_eas:hover{
+#watch_hns:hover,#watch_serve:hover,#buy_hns:hover,#buy_serve:hover,#try_hns:hover,#try_serve:hover,#call_hns:hover,#call_serve:hover,#watch_lec:hover,#buy_lec:hover,#try_lec:hover,#call_lec:hover,#watch_gas:hover,#buy_gas:hover,#try_gas:hover,#call_gas:hover,#watch_eas:hover,#buy_eas:hover,#try_eas:hover,#call_eas:hover,#watch_ea:hover,#buy_ea:hover,#try_ea:hover,#call_ea:hover{
 	background-position: bottom left;
 }
 #watch_hns
@@ -335,6 +335,9 @@ A.icon_link:hover {
 #watch_eas
 {   background: url(../Images/eas_watch.jpg) top left no-repeat;
 }   
+#watch_ea
+{   background: url(../Images/lec_watch.jpg) top left no-repeat;
+}
 #buy_hns
 {
     background: url(../Images/buy_sol_hns.jpg) top left no-repeat;
@@ -351,6 +354,9 @@ A.icon_link:hover {
 #buy_eas{
 	background: url(../Images/eas_buy.jpg) top left no-repeat;
 }
+#buy_ea{
+	background: url(../Images/lec_buy.jpg) top left no-repeat;
+}
 #try_hns{
     background: url(../Images/try_sol_hns.jpg) top left no-repeat;  
 }
@@ -365,6 +371,9 @@ A.icon_link:hover {
 }
 #try_eas{
 	background: url(../Images/eas_try.jpg) top left no-repeat;
+}
+#try_ea{
+	background: url(../Images/lec_try.jpg) top left no-repeat;
 }
 #call_hns
 {
@@ -381,6 +390,9 @@ A.icon_link:hover {
 }
 #call_eas{
 	background: url(../Images/eas_call.jpg) top left no-repeat;
+}
+#call_ea{
+	background: url(../Images/gas_call.jpg) top left no-repeat;
 }
 .leftnav_hns_bg {
 	background: url(../Images/left_nav_hns.jpg) 0 0 no-repeat;
@@ -534,6 +546,14 @@ div.leftNavBarEAS {
 }
 div.leftNavBarGas {
 	background: url(../Images/left_nav_gas.jpg) 0 0 no-repeat;
+	text-decoration: none;
+	width:333px;
+	height:265px;
+	padding-top:55px;
+}
+
+div.leftNavBarEA {
+	background: url(../Images/left_nav.jpg) 0 0 no-repeat;
 	text-decoration: none;
 	width:333px;
 	height:265px;
