@@ -530,9 +530,24 @@
                     <div style="padding-top:10px; padding-bottom:15px;"><h2>
                         Company Users</h2>
                     </div>
-                    <asp:GridView ID="CompanyUserRepeater" runat="server" 
+                    <asp:GridView ID="CompanyUserRepeater" runat="server" AutoGenerateColumns="false"
                         OnRowCreated="ChangeRowCreated" Width="601px">
-                        
+                        <Columns>
+                            <asp:BoundField ReadOnly="true" HeaderText="UserID" DataField="UserID" />
+                            <asp:BoundField ReadOnly="true" HeaderText="Full Name" DataField="FullName" />
+                            <asp:BoundField ReadOnly="true" HeaderText="Fore Name" DataField="Forename" />
+                            <asp:BoundField ReadOnly="true" HeaderText="Sur Name" DataField="Surname" />
+                            <asp:BoundField ReadOnly="true" HeaderText="Job Title" DataField="JobTitle" />
+                            <asp:BoundField ReadOnly="true" HeaderText="Email" DataField="Email" />
+                            <asp:TemplateField HeaderText="User Type" InsertVisible="False">
+                                <HeaderStyle Font-Bold="true" />
+                                <ItemTemplate>
+                                    <center>
+                                        <asp:Label ID="UserTypeLabel" runat="server" Text='<%#GetUserType(Eval("Type").ToString())%>' />
+                                    </center>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
                     </asp:GridView>
                     <div style="padding-top:10px; padding-bottom:20px; padding-left:230px;">
                     <asp:ImageButton ID="addUser" ImageUrl="~/Images/add_user.png"  runat="server" OnClick="addUser_Click" />
