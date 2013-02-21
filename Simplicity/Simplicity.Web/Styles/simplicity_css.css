@@ -1646,3 +1646,8 @@ div.leftNavBarContact{
     display:inline;
     float:left;
 }
+
+.UserProdMappingTable-AssignedProd {
+    background-color:lightblue;
+    text-align:center;
+}

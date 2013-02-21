@@ -22,12 +22,14 @@ namespace Simplicity.Web.Admin
                     Simplicity.Data.Company company = (from c in DatabaseContext.Companies where c.CompanyID == id select c).FirstOrDefault();
                     companyname.Text = company.Name;
                     ChangeSubscribedProducts.Visible = true;
+                    MapUserToProductButton.Visible = true;
 
                     CompanyNameLabel.Visible = true;
                     CompanyNameLabel.Text = company.Name;
                 }
                 else {
                     ChangeSubscribedProducts.Visible = false;
+                    MapUserToProductButton.Visible = false;
                 }
             }
         }
@@ -417,6 +419,15 @@ namespace Simplicity.Web.Admin
                     searchStringParameter.DefaultValue = "%" + SearchTextBox.Text + "%";
                     SimplicityDataSource.WhereParameters.Add(searchStringParameter);
                 }
+            }
+        }
+
+        protected void MapUserToProductButton_Click(object sender, EventArgs e)
+        {
+            String companyId = Request["companyId"];
+            if (companyId != null && companyId.CompareTo("") != 0)
+            {
+                Response.Redirect("~/Admin/UserToProductMappingAdmin.aspx?companyId=" + companyId);
             }
         }
     }

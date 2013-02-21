@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true"
     CodeBehind="SignUp.aspx.cs" Inherits="Simplicity.Web.SignUp" %>
+<%@ Register Src="~/Common/Controls/UserProductMapping.ascx" TagName="UPMapping" TagPrefix="UPMap" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
     <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.cycle.all.min.js")%>'></script>
@@ -69,7 +70,7 @@
                             Licences</div>
                     </div>
                 </asp:Panel>
-<!--zain-->
+                <!--zain-->
 
 
                 <div class="floatLeft" style="height: 35px; width: 5px; border-bottom: 1px solid #e5e5e5;">
@@ -712,14 +713,8 @@
             <!---->
             <asp:Panel ID="MyLicencePanel" runat="server">
                 <div id="MyLicenceTab" class="clearFloat">
-
-                ok !!
-
-                <asp:GridView ID="dynamicLicenceGridView" runat="server" AutoGenerateColumns="false">
-                    
-
-                
-                </asp:GridView>
+                    <UPMap:UPMapping ID="UserProductMappingControl" runat="server">
+                    </UPMap:UPMapping>
                 </div>
             </asp:Panel>
             <!---->
@@ -776,7 +771,6 @@
             });
             $('#tabProducts').click(function () {
                 selectedTab = 2;
-                //document.getElementById('SelectTabName').value = selectedTab;
                 productTab();
             });
             $('#tabProducts').mouseover(function () {
@@ -795,10 +789,7 @@
             });
             $('#tabPassword').click(function () {
                 selectedTab = 3;
-                //document.getElementById('SelectTabName').value = selectedTab;
-                //
                 passwordTab();
-                //var flag = Page_ClientValidate('ChangePasswordGroup');
             });
             $('#tabPassword').mouseover(function () {
                 $('#tabPassword').addClass('myChangeTabOnMouseOver');
@@ -817,10 +808,7 @@
 
             $('#tabCompany').click(function () {
                 selectedTab = 4;
-                //document.getElementById('SelectTabName').value = selectedTab;
-                //
                 companyTab();
-                //var flag = Page_ClientValidate('ChangePasswordGroup');
             });
             $('#tabCompany').mouseover(function () {
                 $('#tabCompany').addClass('myCompanyTabOnMouseOver');
@@ -847,7 +835,7 @@
                 $('#tabLicence').removeClass('myLicenceTab');
             });
             $('#tabLicence').mouseout(function () {
-                if (selectedTab == 1) {
+                if (selectedTab == 5) {
                     $('#tabLicence').addClass('myLicenceTabOnMouseOver');
                     $('#tabLicence').removeClass('myLicenceTab');
                 }

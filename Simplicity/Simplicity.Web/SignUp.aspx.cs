@@ -57,6 +57,7 @@ namespace Simplicity.Web
                         if (LoggedIsUser.Type == "ADMIN" || LoggedIsUser.Type == "COMPANY_ADMIN")
                         {
                             Admin = company.Users.FirstOrDefault();
+                            UserProductMappingControl.company = LoggedIsUser.Company;
                         }
                         CompanyUserRepeater.DataSource = company.Users.Where(user => user.Enabled == true);
                         CompanyUserRepeater.DataBind();
@@ -157,6 +158,7 @@ namespace Simplicity.Web
                         if (LoggedIsUser.Type == "ADMIN" || LoggedIsUser.Type == "COMPANY_ADMIN")
                         {
                             Admin = company.Users.FirstOrDefault();
+                            UserProductMappingControl.company = LoggedIsUser.Company;
                         }
                         CompanyUserRepeater.DataSource = company.Users.Where(user => user.Enabled == true);
                         CompanyUserRepeater.DataBind();
@@ -166,11 +168,13 @@ namespace Simplicity.Web
                 {
                     CompanyPanel.Visible = true;
                     MyCompanyPanelHeader.Visible = true;
+                    MyLicencePanel.Visible = true;
                 }
                 else
                 {
                     CompanyPanel.Visible = false;
                     MyCompanyPanelHeader.Visible = false;
+                    MyLicencePanel.Visible = false;
                 }
                 ///////////////////////////////////////////////////////////////////////////////
 

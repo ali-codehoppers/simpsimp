@@ -87,6 +87,7 @@
     <Content Include="Admin\SubscribeUserProduct.aspx" />
     <Content Include="Admin\Trolley.aspx" />
     <Content Include="Admin\UserProducts.aspx" />
+    <Content Include="Admin\UserToProductMappingAdmin.aspx" />
     <Content Include="bin\log4net.dll" />
     <Content Include="bin\Simplicity.Data.dll" />
     <Content Include="bin\Simplicity.Data.pdb" />
@@ -99,6 +100,7 @@
     <Content Include="Common\Controls\CallMeUserControl.ascx" />
     <Content Include="Common\Controls\Currencies.ascx" />
     <Content Include="Common\Controls\PriceEdition.ascx" />
+    <Content Include="Common\Controls\UserProductMapping.ascx" />
     <Content Include="Common\LeftMenu.master" />
     <Content Include="Common\Main.Master" />
     <Content Include="Community\Blog.html" />
@@ -547,6 +549,13 @@
     <Compile Include="Admin\UserProducts.aspx.designer.cs">
       <DependentUpon>UserProducts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\UserToProductMappingAdmin.aspx.cs">
+      <DependentUpon>UserToProductMappingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserToProductMappingAdmin.aspx.designer.cs">
+      <DependentUpon>UserToProductMappingAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\PaymentDetails.cs" />
     <Compile Include="BusinessObjects\Product.cs" />
     <Compile Include="BusinessObjects\ShoppingItem.cs" />
@@ -615,6 +624,13 @@
     </Compile>
     <Compile Include="Common\Controls\PriceEdition.ascx.designer.cs">
       <DependentUpon>PriceEdition.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\UserProductMapping.ascx.cs">
+      <DependentUpon>UserProductMapping.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\UserProductMapping.ascx.designer.cs">
+      <DependentUpon>UserProductMapping.ascx</DependentUpon>
     </Compile>
     <Compile Include="Common\LeftMenu.master.cs">
       <DependentUpon>LeftMenu.master</DependentUpon>
