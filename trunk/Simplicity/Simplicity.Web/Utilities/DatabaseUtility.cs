@@ -74,5 +74,14 @@ namespace Simplicity.Web.Utilities
             }
         }
 
+        public static List<Simplicity.Data.User> GetCompanyEnableUsers(int companyId)
+        {
+            SimplicityEntities DatabaseContext = new SimplicityEntities();
+            var companyUsers = (from usr in DatabaseContext.Users where usr.CompanyID == companyId && usr.Enabled == true && usr.Verified == true select usr);
+            List<Simplicity.Data.User> users = companyUsers.ToList();
+            DatabaseContext.Dispose();
+            return users;
+        }
+
     }
 }

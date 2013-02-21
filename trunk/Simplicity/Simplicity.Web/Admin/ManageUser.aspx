@@ -416,6 +416,9 @@
             <div style="padding:20px 5px 20px 0;display:inline;" >
                 <asp:Button ID="ChangeSubscribedProducts" Text="Change Subscribed Products" runat="server" Visible="false" OnClick="ChangeSubscribedProducts_Click" style="width: 300px; height: 40px; font-weight: bold;" />
             </div>
+            <div style="padding:20px 5px 20px 0;display:inline;" >
+                <asp:Button ID="MapUserToProductButton" Text="Assign Product To Users" runat="server" Visible="false" OnClick="MapUserToProductButton_Click" style="width: 300px; height: 40px; font-weight: bold;" />
+            </div>
         </div>
 
         <asp:EntityDataSource ID="SimplicityDataSource" runat="server" ConnectionString="name=SimplicityEntities"
