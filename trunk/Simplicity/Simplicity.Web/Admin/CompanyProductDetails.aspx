@@ -71,11 +71,11 @@
             <p>No. of active users are greater than the number of Licenses. Please delete some users from the manage users page.</p>
         </div>
         <div>
-            <asp:BulletedList runat="server" ID="activeUsersCheckBoxList" DataTextField="Email" DataValueField="UserID"></asp:BulletedList>
+            <asp:CheckBoxList runat="server" ID="activeUsersCheckBoxList" DataTextField="Email" DataValueField="UserID"></asp:CheckBoxList>
         </div>
         <div>
-            <%--<asp:Button runat="server" ID="okaySelectedUser" Text="Okay" Width="50px" OnClick="deleteSelectedUser_Click" OnClientClick="return prepareSelectedUserList();" />--%>
-            <asp:Button runat="server" ID="Cancel" Text="Okay" Width="50px" OnClientClick="return closeDialog();" />
+            <asp:Button runat="server" ID="okaySelectedUser" Text="Okay" Width="50px" OnClick="deleteSelectedUser_Click" OnClientClick="return prepareSelectedUserList();" />
+            <asp:Button runat="server" ID="Cancel" Text="Cancel" Width="100px" OnClientClick="return closeDialog();" />
         </div>
 
     </div>
