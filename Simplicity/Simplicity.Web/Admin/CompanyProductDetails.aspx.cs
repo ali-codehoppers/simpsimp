@@ -34,7 +34,8 @@ namespace Simplicity.Web.Admin
             int companyID = Int32.Parse(Request["companyId"]);
             int productID = Int32.Parse(Request["productId"]);
 
-            var noOfactiveUsers = from actUsers in DatabaseContext.Users where actUsers.CompanyID == companyID && actUsers.Enabled == true select actUsers; // select * from [PROD_SIMPLICITY].[dbo].[Users] where CompanyID = 1 and Enabled = 1;
+            var noOfactiveUsers = from actUsers in DatabaseContext.UserProducts where actUsers.ProductID == productID && actUsers.IsTrial == false && actUsers.EndDate.CompareTo(DateTime.Now) >= 0 && actUsers.User.CompanyID == companyID && actUsers.User.Enabled == true && actUsers.User.Verified == true select new { UserID = actUsers.UserID, Email = actUsers.User.Email};
+       //     var noOfactiveUsers = from actUsers in DatabaseContext.Users where actUsers.CompanyID == companyID && actUsers.Enabled == true select actUsers; // select * from [PROD_SIMPLICITY].[dbo].[Users] where CompanyID = 1 and Enabled = 1;
             activeUsers = noOfactiveUsers.Count();
             totalLicenses = int.Parse(LicenseNum.Text);
             if (totalLicenses < activeUsers)
@@ -51,19 +52,23 @@ namespace Simplicity.Web.Admin
             }
         }
 
-        //protected void deleteSelectedUser_Click(object sender, EventArgs e)
-        //{
-        //    String selectedUsers = selectedUsersToDelete.Value;
-        //    String [] arrayOfSelectedUsers = selectedUsers.Split(',');
-        //    int companyID = Int32.Parse(Request["companyId"]);
+        protected void deleteSelectedUser_Click(object sender, EventArgs e)
+        {
+            String selectedUsers = selectedUsersToDelete.Value;
+            String[] arrayOfSelectedUsers = selectedUsers.Split(',');
+            int companyID = Int32.Parse(Request["companyId"]);
+            int productID = Int32.Parse(Request["productId"]);
 
-        //    for (int i = 0; i < arrayOfSelectedUsers.Length-1; i++)
-        //    {
-        //        int userGoingToBeDisabled = int.Parse(arrayOfSelectedUsers[i]);
-        //        var userToDelete = from userToDel in DatabaseContext.Users where userToDel.CompanyID == companyID && userToDel.UserID == userGoingToBeDisabled select userToDel;
-        //        userToDelete.FirstOrDefault().Enabled = false;
-        //        DatabaseContext.SaveChanges();
-        //    }
-        //}
+            for (int i = 0; i < arrayOfSelectedUsers.Length - 1; i++)
+            {
+                int userGoingToBeDisabled = int.Parse(arrayOfSelectedUsers[i]);
+                var deassignUserFromProduct = from userToDeassign in DatabaseContext.UserProducts where userToDeassign.UserID == userGoingToBeDisabled && userToDeassign.ProductID == productID && userToDeassign.IsTrial == false && DateTime.Now.CompareTo(userToDeassign.EndDate) <=0 && userToDeassign.User.CompanyID == companyID select userToDeassign;
+                //var userToDelete = from userToDel in DatabaseContext.Users where userToDel.CompanyID == companyID && userToDel.UserID == userGoingToBeDisabled select userToDel;
+                //userToDelete.FirstOrDefault().Enabled = false;
+                DatabaseContext.UserProducts.DeleteObject(deassignUserFromProduct.FirstOrDefault());
+                DatabaseContext.SaveChanges();
+            }
+            updateCompanyProductDetials_Click(sender, e);
+        }
     }
 }

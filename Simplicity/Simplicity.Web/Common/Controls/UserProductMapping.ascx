@@ -1,5 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserProductMapping.ascx.cs" Inherits="Simplicity.Web.Common.Controls.UserProductMapping" %>
 
+    <div style="margin-bottom:20px;h4{color:black;}">
+        <ul>
+            <li><h4>Header represents the Product Name and No. Of Licenses User has for that particular Product.</h4></li>
+            <li><h4>Blue cells represents user assigned to that product.</h4></li>
+        </ul>
+    </div>
+
     <asp:Table ID="UserProdMapTable" ClientIDMode="Static" Visible="true" runat="server"></asp:Table>
     
     <div ID="UserProdMappingImageButtonId" runat="server" style="padding-top:10px; padding-bottom:20px; padding-left:230px;">

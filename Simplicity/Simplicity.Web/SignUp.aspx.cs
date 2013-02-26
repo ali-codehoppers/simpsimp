@@ -69,13 +69,14 @@ namespace Simplicity.Web
                     CompanyPanel.Visible = true;
                     MyCompanyPanelHeader.Visible = true;
                     MyLicencePanel.Visible = true;
-
+                    licenceTab.Visible = true;
                 }
                 else
                 {
                     CompanyPanel.Visible = false;
                     MyCompanyPanelHeader.Visible = false;
                     MyLicencePanel.Visible = false;
+                    licenceTab.Visible = false;
                 }
                 ///////////////////////////////////////////////////////////////////////////////
 
@@ -169,12 +170,14 @@ namespace Simplicity.Web
                     CompanyPanel.Visible = true;
                     MyCompanyPanelHeader.Visible = true;
                     MyLicencePanel.Visible = true;
+                    licenceTab.Visible = true;
                 }
                 else
                 {
                     CompanyPanel.Visible = false;
                     MyCompanyPanelHeader.Visible = false;
                     MyLicencePanel.Visible = false;
+                    licenceTab.Visible = false;
                 }
                 ///////////////////////////////////////////////////////////////////////////////
 
@@ -247,7 +250,7 @@ namespace Simplicity.Web
         }
         private List<Product> BindUserProduct()
         {
-            return ((from UserProductTable in DatabaseContext.UserProducts where UserProductTable.UserID == LoggedIsUser.UserID && UserProductTable.EndDate >= DateTime.Now select UserProductTable.Product).Distinct()).ToList();
+            return ((from UserProductTable in DatabaseContext.UserProducts where UserProductTable.UserID == LoggedIsUser.UserID && UserProductTable.EndDate >= DateTime.Now && UserProductTable.IsTrial == true select UserProductTable.Product).Distinct()).ToList();
         }
         private bool ValidateFields()
         {

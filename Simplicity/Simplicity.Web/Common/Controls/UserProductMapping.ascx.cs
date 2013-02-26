@@ -74,9 +74,13 @@ namespace Simplicity.Web.Common.Controls
             int companyId = company.CompanyID;
             List<Simplicity.Data.User> compEnabledUsers = Utilities.DatabaseUtility.GetCompanyEnableUsers(companyId);
             SimplicityEntities DatabaseContext = new SimplicityEntities();
+            int index = 0;
             foreach (Simplicity.Data.User usr in compEnabledUsers)
             {
                 TableRow row = new TableRow();
+                if(index % 2 == 0)
+                    row.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+                index++;
                 foreach(Simplicity.Data.CompanyProduct prod in validCompanyProducts) 
                 {
                     var userUsingProduct = from usrProd in DatabaseContext.UserProducts where usrProd.User.CompanyID == companyId && usrProd.ProductID == prod.ProductID && usrProd.IsTrial == false select usrProd;
@@ -95,6 +99,8 @@ namespace Simplicity.Web.Common.Controls
                     cell.BorderColor = System.Drawing.Color.Black;
                     cell.ID = usr.UserID + "_" + prod.ProductID;
                     cell.Text = usr.Email;
+                    //cell.Text = "<div style=\"display:inline;float:left;margin-right:10px; \">" + usr.Email + "</div>" +
+                    //    "<div style=\"background-color:black;float:right;display:inline-block;width:20px;border:medium none black;\">&nbsp;</div>";
                     if(cell.CssClass.CompareTo("")==0)
                         cell.CssClass = prod.ProductID.ToString();
                     else

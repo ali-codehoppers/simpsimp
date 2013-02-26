@@ -36,15 +36,15 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_product_versions_un_products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "Versions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Version), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_product_videos_un_products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "Videos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Video), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_transaction_details_un_products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "TransactionDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.TransactionDetail), true)]
-[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_UserProducts_Products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "UserProducts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.UserProduct), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_WishList_Products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "WishList", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.WishList), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_Sessions_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "Sessions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Session), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_transaction_details_un_product_versions", "Versions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Version), "TransactionDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.TransactionDetail), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_transaction_details_un_transactions", "Transactions", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Transaction), "TransactionDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.TransactionDetail), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_un_transactions_un_entity_details_core", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "Transactions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.Transaction), true)]
-[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_UserProducts_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "UserProducts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.UserProduct), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_WishList_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "WishList", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.WishList), true)]
 [assembly: EdmRelationshipAttribute("SimplicityModel", "FK_WishList_ProductVersions", "Versions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Simplicity.Data.Version), "WishList", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.WishList), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_UserProducts_Products", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.Product), "UserProduct", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.UserProduct), true)]
+[assembly: EdmRelationshipAttribute("SimplicityModel", "FK_UserProducts_Users", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Simplicity.Data.User), "UserProduct", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Simplicity.Data.UserProduct), true)]
 
 #endregion
 
@@ -339,22 +339,6 @@ namespace Simplicity.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<UserProduct> UserProducts
-        {
-            get
-            {
-                if ((_UserProducts == null))
-                {
-                    _UserProducts = base.CreateObjectSet<UserProduct>("UserProducts");
-                }
-                return _UserProducts;
-            }
-        }
-        private ObjectSet<UserProduct> _UserProducts;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<User> Users
         {
             get
@@ -431,6 +415,22 @@ namespace Simplicity.Data
             }
         }
         private ObjectSet<ManageCompanyView> _ManageCompanyViews;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<UserProduct> UserProducts
+        {
+            get
+            {
+                if ((_UserProducts == null))
+                {
+                    _UserProducts = base.CreateObjectSet<UserProduct>("UserProducts");
+                }
+                return _UserProducts;
+            }
+        }
+        private ObjectSet<UserProduct> _UserProducts;
 
         #endregion
 
@@ -557,14 +557,6 @@ namespace Simplicity.Data
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the UserProducts EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToUserProducts(UserProduct userProduct)
-        {
-            base.AddObject("UserProducts", userProduct);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the Users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToUsers(User user)
@@ -602,6 +594,14 @@ namespace Simplicity.Data
         public void AddToManageCompanyViews(ManageCompanyView manageCompanyView)
         {
             base.AddObject("ManageCompanyViews", manageCompanyView);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the UserProducts EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToUserProducts(UserProduct userProduct)
+        {
+            base.AddObject("UserProducts", userProduct);
         }
 
         #endregion
@@ -3800,28 +3800,6 @@ namespace Simplicity.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Products", "UserProducts")]
-        public EntityCollection<UserProduct> UserProducts
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Products", "UserProducts");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Products", "UserProducts", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_WishList_Products", "WishList")]
         public EntityCollection<WishList> WishLists
         {
@@ -3834,6 +3812,28 @@ namespace Simplicity.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<WishList>("SimplicityModel.FK_WishList_Products", "WishList", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Products", "UserProduct")]
+        public EntityCollection<UserProduct> UserProducts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Products", "UserProduct");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Products", "UserProduct", value);
                 }
             }
         }
@@ -6306,28 +6306,6 @@ namespace Simplicity.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Users", "UserProducts")]
-        public EntityCollection<UserProduct> UserProducts
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Users", "UserProducts");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Users", "UserProducts", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_WishList_Users", "WishList")]
         public EntityCollection<WishList> WishLists
         {
@@ -6340,6 +6318,28 @@ namespace Simplicity.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<WishList>("SimplicityModel.FK_WishList_Users", "WishList", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Users", "UserProduct")]
+        public EntityCollection<UserProduct> UserProducts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Users", "UserProduct");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserProduct>("SimplicityModel.FK_UserProducts_Users", "UserProduct", value);
                 }
             }
         }
@@ -6438,7 +6438,7 @@ namespace Simplicity.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Boolean IsTrial
         {
@@ -6448,11 +6448,14 @@ namespace Simplicity.Data
             }
             set
             {
-                OnIsTrialChanging(value);
-                ReportPropertyChanging("IsTrial");
-                _IsTrial = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsTrial");
-                OnIsTrialChanged();
+                if (_IsTrial != value)
+                {
+                    OnIsTrialChanging(value);
+                    ReportPropertyChanging("IsTrial");
+                    _IsTrial = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IsTrial");
+                    OnIsTrialChanged();
+                }
             }
         }
         private global::System.Boolean _IsTrial;
@@ -6518,16 +6521,16 @@ namespace Simplicity.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Products", "Products")]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Products", "Product")]
         public Product Product
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Products").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Product").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Products").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Product").Value = value;
             }
         }
         /// <summary>
@@ -6539,13 +6542,13 @@ namespace Simplicity.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Products");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Product");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Products", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("SimplicityModel.FK_UserProducts_Products", "Product", value);
                 }
             }
         }
@@ -6556,16 +6559,16 @@ namespace Simplicity.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Users", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("SimplicityModel", "FK_UserProducts_Users", "User")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "User").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "User").Value = value;
             }
         }
         /// <summary>
@@ -6577,13 +6580,13 @@ namespace Simplicity.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "User");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SimplicityModel.FK_UserProducts_Users", "User", value);
                 }
             }
         }
