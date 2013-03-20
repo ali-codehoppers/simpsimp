@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eForms.Web", "eForms.Web\eForms.Web.csproj", "{3EF8212F-7E66-432F-96B3-6D29E004F68D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eForms.Data", "eForms.Data\eForms.Data.csproj", "{AADF0DC2-C9F6-478E-99C7-FD98D16BFDE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EF8212F-7E66-432F-96B3-6D29E004F68D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF8212F-7E66-432F-96B3-6D29E004F68D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF8212F-7E66-432F-96B3-6D29E004F68D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF8212F-7E66-432F-96B3-6D29E004F68D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AADF0DC2-C9F6-478E-99C7-FD98D16BFDE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AADF0DC2-C9F6-478E-99C7-FD98D16BFDE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AADF0DC2-C9F6-478E-99C7-FD98D16BFDE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AADF0DC2-C9F6-478E-99C7-FD98D16BFDE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
