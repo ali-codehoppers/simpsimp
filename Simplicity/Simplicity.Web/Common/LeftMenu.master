@@ -1,11 +1,11 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="LeftMenu.master.cs" Inherits="Simplicity.Web.Common.LeftMenu" %>
+<%@ Master Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="LeftMenu.master.cs" Inherits="Simplicity.Web.Common.LeftMenu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
     <asp:ContentPlaceHolder runat="server" ID="HeadContentPlaceHolder"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="contentTop">
 		<div class="floatLeft leftNavBar">
-			<div> <a href="../WatchDemo.aspx" id="watch"> </a> </div>
+			<div> <a href="../WatchDemo.aspx" id="watch" class="watch-demo"> </a> </div>
 <!--			<div> <a href="../BuyProduct.aspx" id="buy"> </a> </div> -->
 			<div>                 <a target="_blank" href="https://sites.secure.force.com/appexchange/listingDetail?listingId=a0N30000004fll2EAA#"
                     id="try"></a> </div>

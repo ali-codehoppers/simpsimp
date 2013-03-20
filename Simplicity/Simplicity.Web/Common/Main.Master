@@ -135,6 +135,14 @@
             <a href="../../FAQ.aspx" class="bold_13_white">FAQs</a>
         </div>
     </div>
+	<script>
+$(function(){
+	$(".watch-demo").click(function(){
+		window.open("https://www.youtube.com/user/Simplicity4Business?blend=1&ob=video-mustangbase");
+		return false;
+	});
+});
+</script>
     </form>
 </body>
 </html>
