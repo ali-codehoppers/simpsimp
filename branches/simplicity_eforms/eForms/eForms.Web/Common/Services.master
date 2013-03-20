@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Common/Main.Master" AutoEventWireup="true" CodeBehind="Services.master.cs" Inherits="eForms.Web.Common.Services" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+        <div id="contentTop">
+		<div class="floatLeft leftNavBarSimple">
+            <div class="leftNavItem"> 
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Services/Training.aspx">Training & Support</asp:HyperLink> 
+            </div>
+            <div class="leftNavItem"> 
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Services/Consultancy.aspx">Consultancy</asp:HyperLink> 
+            </div>
+			<div class="leftNavItem">
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Services/ProjectManagement.aspx">Project Management</asp:HyperLink> 
+            </div>
+			<div class="leftNavItem">
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Services/Development.aspx">Development</asp:HyperLink> 
+            </div>
+		</div>
+		<div class="floatRight" style="width: 650px;">
+        <div id="secnavbar" class="floatLeft">
+            <div id="icon1" class="floatLeft">
+                <asp:ContentPlaceHolder ID="HeadingContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <div id="nsecnavbar">
+                <div>
+                    <asp:Image ID="Image6" ImageUrl="~/Images/subheading_bar.jpg" Height="21" runat="server" />
+                </div>
+            </div>
+        </div>
+        <div id="contentsDiv" class="servicetext">
+           <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </div>
+		<div class="clearFloat"></div>
+	</div>
+
+</asp:Content>
